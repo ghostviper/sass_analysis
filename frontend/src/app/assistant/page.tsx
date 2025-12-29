@@ -35,6 +35,13 @@ interface ToolStatus {
   result?: string
 }
 
+// 消息统计
+interface MessageMetrics {
+  duration?: number  // 耗时（秒）
+  tokens?: number    // token 数
+  cost?: number      // 费用
+}
+
 // 消息类型
 interface Message {
   id: string
@@ -47,6 +54,8 @@ interface Message {
   }
   isStreaming?: boolean
   toolStatus?: ToolStatus[]
+  metrics?: MessageMetrics
+  startTime?: number  // 开始时间戳，用于计算耗时
 }
 
 // SSE 事件类型
@@ -206,7 +215,8 @@ export default function AssistantPage() {
     onText: (text: string) => void,
     onToolStart: (tool: ToolStatus) => void,
     onToolEnd: (toolName: string, result: string) => void,
-    onError: (error: string) => void
+    onError: (error: string) => void,
+    onDone: (cost?: number) => void
   ): Promise<void> => {
     try {
       const response = await fetch('/api/chat/stream', {
@@ -276,8 +286,8 @@ export default function AssistantPage() {
                   onError(event.content || '未知错误')
                   break
                 case 'done':
-                  // 可以在这里处理成本信息
-                  console.log('Stream completed, cost:', event.cost)
+                  // 传递成本信息
+                  onDone(event.cost)
                   break
               }
             } catch {
@@ -383,18 +393,21 @@ export default function AssistantPage() {
     }
 
     const aiMessageId = (Date.now() + 1).toString()
+    const startTime = Date.now()
     const messagesWithStreaming = [...newMessages, {
       id: aiMessageId,
       role: 'assistant' as MessageRole,
       content: '',
       timestamp: new Date(),
       isStreaming: true,
-      toolStatus: []
+      toolStatus: [],
+      startTime,
     }]
     setMessages(messagesWithStreaming)
 
-    // 累积响应文本
+    // 累积响应文本和成本
     let accumulatedText = ''
+    let totalCost = 0
 
     try {
       await streamFromBackend(
@@ -439,13 +452,27 @@ export default function AssistantPage() {
               ? { ...msg, content: `抱歉，发生了错误：${errorMsg}`, isStreaming: false }
               : msg
           ))
+        },
+        // onDone - 完成处理
+        (cost) => {
+          totalCost = cost || 0
         }
       )
 
-      // 标记流式传输完成
+      // 标记流式传输完成，计算耗时
+      const duration = (Date.now() - startTime) / 1000
       setMessages(prev => {
         const finalMessages = prev.map(msg =>
-          msg.id === aiMessageId ? { ...msg, isStreaming: false } : msg
+          msg.id === aiMessageId
+            ? {
+                ...msg,
+                isStreaming: false,
+                metrics: {
+                  duration,
+                  cost: totalCost,
+                }
+              }
+            : msg
         )
         // 保存到会话
         setSessions(prevSessions => prevSessions.map(s =>
@@ -485,6 +512,20 @@ export default function AssistantPage() {
   const handleSuggestedPrompt = (prompt: string) => {
     setInput(prompt)
     inputRef.current?.focus()
+  }
+
+  // 重试消息
+  const handleRetry = (messageId: string) => {
+    // 找到这条消息之前的用户消息
+    const messageIndex = messages.findIndex(m => m.id === messageId)
+    if (messageIndex <= 0) return
+
+    const userMessage = messages[messageIndex - 1]
+    if (userMessage.role !== 'user') return
+
+    // 删除当前 AI 消息，重新发送
+    setMessages(prev => prev.filter(m => m.id !== messageId))
+    sendMessage(userMessage.content)
   }
 
   const hasMessages = messages.length > 0
@@ -936,7 +977,11 @@ export default function AssistantPage() {
             <div className="flex-1 overflow-y-auto px-4 py-4">
               <div className="max-w-3xl mx-auto space-y-6">
                 {messages.map((message) => (
-                  <ChatMessage key={message.id} message={message} />
+                  <ChatMessage
+                    key={message.id}
+                    message={message}
+                    onRetry={message.role === 'assistant' ? () => handleRetry(message.id) : undefined}
+                  />
                 ))}
                 <div ref={messagesEndRef} />
               </div>

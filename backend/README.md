@@ -4,19 +4,52 @@
 
 ## 环境准备
 
-```bash
-# 1. 创建虚拟环境
-python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Mac/Linux
+**要求：Python 3.10+**
 
-# 2. 安装依赖
+### Windows
+
+```bash
+# 1. 查看已安装的 Python 版本
+py -0
+
+# 2. 创建虚拟环境（指定 Python 3.10+）
+py -3.10 -m venv venv
+# 或 py -3.11 -m venv venv
+# 或 py -3.12 -m venv venv
+
+# 3. 激活虚拟环境
+venv\Scripts\activate
+
+# 4. 确认 Python 版本
+python --version
+
+# 5. 安装依赖
 pip install -r requirements.txt
 playwright install chromium
 
-# 3. 配置环境变量
+# 6. 配置环境变量
+copy .env.example .env
+```
+
+### Mac/Linux
+
+```bash
+# 1. 创建虚拟环境
+python3.10 -m venv venv
+# 或 python3.11 -m venv venv
+
+# 2. 激活虚拟环境
+source venv/bin/activate
+
+# 3. 安装依赖
+pip install -r requirements.txt
+playwright install chromium
+
+# 4. 配置环境变量
 cp .env.example .env
 ```
+
+> **注意**：如果系统没有 Python 3.10+，请从 https://www.python.org/downloads/ 下载安装。
 
 编辑 `.env` 文件：
 ```bash

@@ -23,6 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "recharts": "^2.12.0",
+    "streamdown": "^1.6.10",
     "tailwind-merge": "^2.2.0"
   },
   "devDependencies": {
