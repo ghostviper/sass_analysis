@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FlashKing</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col min-h-screen">
+    <nav class="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+     <div class="container mx-auto px-4 py-3">
+      <div class="flex justify-between items-center">
+       <a class="flex items-center space-x-2" href="/">
+        <img alt="FlashKing Logo" class="object-contain" height="32" src="/_next/image?url=%2Flogo.png&amp;w=64&amp;q=75" width="32"/>
+        <span class="text-xl font-bold text-gray-800">
+         FlashKing
+        </span>
+       </a>
+       <div class="hidden md:flex items-center space-x-6">
+        <div class="flex items-center gap-2">
+         <button class="flex items-center gap-1 py-2 px-3 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition text-sm font-medium">
+          Google
+         </button>
+         <button class="flex items-center gap-1 py-2 px-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition text-sm font-medium">
+          GitHub
+         </button>
+         <button class="flex items-center gap-1 py-2 px-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition text-sm font-medium">
+          Discord
+         </button>
+        </div>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2">
+         See Premium
+        </button>
+       </div>
+      </div>
+      <div class="max-h-0 md:hidden overflow-hidden transition-all duration-300 ease-in-out">
+       <div class="flex flex-col space-y-3">
+        <div class="flex flex-col space-y-2">
+         <button class="flex items-center justify-center gap-2 py-2 px-3 bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition text-sm font-medium">
+          Sign in with Google
+         </button>
+         <button class="flex items-center justify-center gap-2 py-2 px-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition text-sm font-medium">
+          Sign in with GitHub
+         </button>
+         <button class="flex items-center justify-center gap-2 py-2 px-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition text-sm font-medium">
+          Sign in with Discord
+         </button>
+        </div>
+        <div>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 w-full">
+          See Premium Features
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <main class="flex-grow">
+     <div class="grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 pb-20 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)] bg-gradient-to-b from-blue-50 to-white">
+      <div class="w-full max-w-6xl text-center">
+       <div class="mb-6 inline-block p-2 px-3 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+        Your Learning Assistant
+       </div>
+       <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+        Smart Study with
+        <span class="text-blue-600">
+         AI-Powered
+        </span>
+        Learning Tools
+       </h1>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
+        Generate flashcards, create MCQs, and manage your study materials with our comprehensive learning platform.
+       </p>
+       <div class="flex flex-wrap gap-4 justify-center">
+        <a class="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition shadow-lg hover:shadow-xl transform hover:-translate-y-1" href="/flashcards">
+         Get Started
+        </a>
+        <a class="px-8 py-3 bg-white text-blue-600 font-medium rounded-lg border border-blue-200 hover:bg-blue-50 transition shadow-md hover:shadow-lg" href="/import">
+         Import Content
+        </a>
+       </div>
+      </div>
+      <div class="w-full max-w-6xl">
+       <div class="grid md:grid-cols-3 gap-8 mt-12">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+         <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+           AI Flashcards
+          </h3>
+          <p class="text-gray-600 mb-4">
+           Generate custom flashcards from any text, PDF, or topic. Perfect for quick learning and revision.
+          </p>
+          <a class="text-blue-600 font-medium hover:text-blue-800 inline-flex items-center" href="/flashcards">
+           Create Flashcards
+          </a>
+         </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+         <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+           Multiple Choice
+          </h3>
+          <p class="text-gray-600 mb-4">
+           Generate challenging multiple choice questions to test your knowledge on any subject.
+          </p>
+          <a class="text-green-600 font-medium hover:text-green-800 inline-flex items-center" href="/mcq">
+           Create MCQs
+          </a>
+         </div>
+        </div>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition group">
+         <div class="p-6">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">
+           Anki Import
+          </h3>
+          <p class="text-gray-600 mb-4">
+           Import your existing Anki flashcards and convert them into our interactive format.
+          </p>
+          <a class="text-purple-600 font-medium hover:text-purple-800 inline-flex items-center" href="/import">
+           Import Cards
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="mt-20">
+        <div class="text-center mb-8">
+         <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Try It Before You Sign Up
+         </h2>
+         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Experience a limited preview of our AI-powered MCQ generator with this free one-time demo.
+         </p>
+        </div>
+        <div class="bg-white shadow-lg rounded-xl overflow-hidden">
+         <div class="bg-gradient-to-r from-blue-500 to-indigo-600 px-6 py-4">
+          <h2 class="text-xl font-semibold text-white">
+           Try FlashKing's MCQ Generator
+          </h2>
+         </div>
+         <div class="p-6 space-y-6">
+          <div>
+           <label class="block text-sm font-medium text-gray-700 mb-2">
+            What would you like to create MCQs about?
+           </label>
+           <div class="flex justify-between text-xs text-gray-500 mt-1">
+            <span>
+             Keep it short and specific for best results
+            </span>
+            <span class="">
+             0/200
+            </span>
+           </div>
+          </div>
+          <div class="flex flex-col space-y-4">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow h-9 px-4 py-2 bg-blue-600 hover:bg-blue-700">
+            Generate Demo MCQs
+           </button>
+           <div class="text-center py-2 px-4 bg-amber-50 border border-amber-200 rounded-lg">
+            <p class="text-amber-800">
+             <strong>
+              One-time demo:
+             </strong>
+             This simplified version gives you a small taste of our MCQ generator and can only be used once per device.
+             <a class="text-blue-600 underline ml-1" href="/login">
+              Sign up
+             </a>
+             for unlimited access.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="w-full max-w-6xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+         <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Supercharge Your Learning with Premium
+         </h2>
+         <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Unlock all features and take your study experience to the next level.
+         </p>
+        </div>
+        <div class="relative">
+         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 py-8">
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Advanced AI Model
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Upgrade to use an enhanced AI model for higher quality and more accurate learning materials.
+           </p>
+           <div class="mt-auto">
+            <div class="flex items-center text-sm text-blue-600 font-medium">
+             Faster response times
+            </div>
+            <div class="flex items-center text-sm text-blue-600 font-medium">
+             Better understanding of context
+            </div>
+           </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Unlimited Content
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Create as many flashcards, MCQs, and study materials as you need without any monthly limits.
+           </p>
+           <div class="mt-auto">
+            <div class="flex items-center text-sm text-green-600 font-medium">
+             Unlimited flashcards
+            </div>
+            <div class="flex items-center text-sm text-green-600 font-medium">
+             Unlimited MCQ sets
+            </div>
+           </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Project Organization
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Organize all your study materials by course, subject, or topic with unlimited projects and sharing.
+           </p>
+           <div class="mt-auto">
+            <div class="flex items-center text-sm text-purple-600 font-medium">
+             Share with study partners
+            </div>
+            <div class="flex items-center text-sm text-purple-600 font-medium">
+             Context-aware generation
+            </div>
+           </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden relative opacity-80">
+           <div class="absolute top-0 right-0 bg-gray-900 text-white px-3 py-1 rounded-bl-lg font-bold text-sm">
+            COMING SOON
+           </div>
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Smart Practice Mode
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Study more efficiently with our advanced practice mode featuring spaced repetition and detailed analytics (coming soon).
+           </p>
+           <div class="mt-auto">
+            <div class="flex items-center text-sm text-amber-600 font-medium">
+             Spaced repetition system (coming soon)
+            </div>
+            <div class="flex items-center text-sm text-amber-600 font-medium">
+             Performance analytics (coming soon)
+            </div>
+           </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            Multi-format Export
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Export your study materials to various formats including Anki, PDF, CSV, and more for flexible studying.
+           </p>
+           <div class="mt-auto">
+            <div class="flex items-center text-sm text-red-600 font-medium">
+             Anki compatibility (coming soon)
+            </div>
+            <div class="flex items-center text-sm text-red-600 font-medium">
+             PDF and print options
+            </div>
+           </div>
+          </div>
+          <div class="bg-white rounded-xl shadow-md hover:shadow-lg transition p-6 overflow-hidden">
+           <h3 class="text-lg font-bold text-gray-900 mb-2">
+            PDF Analysis
+           </h3>
+           <p class="text-gray-600 mb-4">
+            Upload your lecture notes and course materials in PDF format and let our AI extract key concepts for flashcards and multiple choice quizzes.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="mt-12 text-center">
+         <div class="inline-flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/login">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow bg-blue-600 hover:bg-blue-700 text-lg px-8 py-3 h-auto">
+            Upgrade to Premium
+           </button>
+          </a>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground text-lg px-8 py-3 h-auto">
+           View All Features
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </main>
+    <div class="w-full items-center justify-items-center grid grid-rows-[auto_1fr_auto] p-4">
+     <footer class="w-full max-w-6xl text-center text-gray-500 text-sm mt-12 space-y-4">
+      <div class="flex justify-center space-x-6">
+       <a class="hover:text-blue-600" href="/about">
+        About
+       </a>
+       <a class="hover:text-blue-600" href="/contact">
+        Contact
+       </a>
+       <a class="hover:text-blue-600" href="/privacy">
+        Privacy
+       </a>
+       <a class="hover:text-blue-600" href="/terms">
+        Terms
+       </a>
+      </div>
+      <p class="text-xs text-gray-400 px-4">
+       We improve our products by using Microsoft Clarity to see how you use our website. By using our site, you agree that we and Microsoft can collect and use this data. Our
+       <a class="underline hover:text-blue-600" href="/privacy">
+        privacy statement
+       </a>
+       has more details.
+      </p>
+      <p>
+       © 2025 FlashKing – A GowTom Tech Learning Assistant. All rights reserved.
+      </p>
+     </footer>
+    </div>
+    <div class="fixed inset-0 z-50 flex items-center justify-center backdrop-blur-sm bg-black/50 p-4">
+     <div class="bg-gray-800 text-white rounded-lg shadow-lg p-6 max-w-md w-full space-y-4">
+      <p class="text-sm text-center">
+       We use analytics cookies to improve your experience.
+       <a class="underline" href="/privacy">
+        Learn more in our privacy policy.
+       </a>
+       Please accept or decline cookies below.
+      </p>
+      <div class="flex justify-center gap-2">
+       <button class="px-4 py-2 bg-gray-700 rounded-md text-sm hover:bg-gray-600">
+        Decline cookies
+       </button>
+       <button class="px-4 py-2 bg-blue-600 rounded-md text-sm hover:bg-blue-700">
+        Accept cookies
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

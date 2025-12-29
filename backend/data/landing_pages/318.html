@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Photo Animate - Photo to Video AI Animator | Image to video</title>
+</head>
+<body>
+  <body>
+   <div class="antialiased">
+    <div class="min-h-screen">
+     <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-sm border-b border-border">
+      <div class="container mx-auto px-4 h-16 flex items-center">
+       <div class="flex-shrink-0">
+        <a href="/">
+         <div class="flex items-center hover:scale-105 active:scale-95 transition-transform">
+          <span class="font-bold text-primary text-xl md:text-2xl">
+           Photo Animate
+          </span>
+         </div>
+        </a>
+       </div>
+       <nav class="hidden md:flex items-center justify-center flex-1 space-x-8">
+        <div class="relative">
+         <a class="relative transition-all duration-200 hover:font-semibold active:scale-95 text-primary font-semibold" href="/">
+          Home
+         </a>
+        </div>
+        <div class="relative">
+         <div class="relative tools-dropdown">
+          <button class="flex items-center space-x-1 relative transition-all duration-200 hover:font-semibold active:scale-95 text-foreground hover:text-primary">
+           <span>
+            Tools
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="relative">
+         <div class="relative models-dropdown">
+          <button class="flex items-center space-x-1 relative transition-all duration-200 hover:font-semibold active:scale-95 text-foreground hover:text-primary">
+           <span>
+            Models
+           </span>
+           <span class="relative ml-1.5 px-2 py-0.5 text-[9px] font-semibold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-full shadow-sm animate-pulse">
+            NEW
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="relative">
+         <a class="relative transition-all duration-200 hover:font-semibold active:scale-95 text-foreground hover:text-primary" href="/blog">
+          Blog
+         </a>
+        </div>
+        <div class="relative">
+         <a class="relative transition-all duration-200 hover:font-semibold active:scale-95 text-foreground hover:text-primary" href="/pricing">
+          Pricing
+         </a>
+        </div>
+       </nav>
+       <div class="hidden md:flex items-center space-x-4 flex-shrink-0">
+        <a href="/app/tools/photo-animate">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow hover:bg-primary/90 h-8 rounded-md px-3 text-xs bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white hover:opacity-90 hover:scale-105 active:scale-95 transition-all duration-200">
+          Try Free Now
+         </button>
+        </a>
+        <a href="/auth/signin">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs hover:font-semibold active:scale-95 transition-all duration-200">
+          Login
+         </button>
+        </a>
+        <a href="/auth/signup">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-8 rounded-md px-3 text-xs bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 active:scale-95 transition-all duration-200">
+          Sign Up
+         </button>
+        </a>
+       </div>
+      </div>
+     </header>
+     <div class="fixed bottom-3 left-3 right-3 z-[60] pb-[env(safe-area-inset-bottom)] sm:left-6 sm:right-6 sm:bottom-4">
+      <div class="pointer-events-auto relative overflow-hidden rounded-2xl border border-white/25 bg-gradient-to-r from-rose-600 via-red-600 to-amber-500 text-white shadow-2xl backdrop-blur">
+       <div class="relative flex flex-col gap-3 p-3 sm:flex-row sm:items-center sm:gap-4 sm:p-4 lg:p-5">
+        <div class="flex flex-1 items-start gap-3">
+         <div class="space-y-1.5">
+          <div class="flex flex-wrap items-center gap-2">
+           <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-secondary/80 border-white/25 bg-white/20 text-white shadow-sm backdrop-blur">
+            Christmas Special
+           </div>
+           <span class="text-lg font-semibold leading-tight sm:text-xl">
+            Save 20% today
+           </span>
+           <div class="flex items-center gap-1.5 rounded-full border border-white/35 bg-white/20 px-2.5 py-0.5 text-[11px] font-semibold uppercase tracking-wide shadow-sm">
+            <span class="opacity-90">
+             Promotion code
+            </span>
+            <span class="rounded-full bg-white px-2 py-[2px] text-[11px] font-bold text-rose-600 shadow">
+             FAXMAS
+            </span>
+           </div>
+          </div>
+          <p class="text-sm text-white/95 sm:text-base">
+           Annual plans stack another 20% with promotion code FAXMAS — up to ~36% off the first year.
+          </p>
+          <p class="text-xs text-white/85">
+           Promotion code auto-applies at checkout. • Ends: 2026/01/01 24:00 (JST)
+          </p>
+         </div>
+        </div>
+        <div class="flex flex-col gap-2 sm:w-[280px] sm:flex-row sm:items-center sm:justify-end">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-8 rounded-md px-3 text-xs w-full border border-white/35 bg-white/15 text-white shadow-none hover:bg-white/25" type="button">
+          Copy promotion code
+         </button>
+         <a class="w-full sm:w-auto" href="/pricing">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-8 rounded-md px-3 text-xs w-full bg-white text-rose-700 shadow hover:bg-white/90">
+           Get the deal
+          </button>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="pt-24 pb-10 px-4 bg-white" id="workbench">
+      <div class="container mx-auto max-w-[1200px]">
+       <div class="mb-6">
+        <div class="inline-block px-4 py-2 bg-primary/10 border border-primary/20 rounded-full text-primary text-sm mb-4">
+         AI Photo Animation Tool
+        </div>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight gradient-text">
+         Photo Animate - Photo to Video AI Animator | Animate Photos Online Free
+        </h1>
+        <p class="text-lg md:text-xl text-muted-foreground mt-3 max-w-4xl lg:max-w-5xl">
+         Photo Animate turns any photo into a video with AI (Sora 2, Veo 3.1). Make kissing videos, talking portraits, and memorial slideshows. Free to try, no download.
+        </p>
+        <p class="text-sm text-muted-foreground mt-2">
+         Loved by 12,000+ creators • 2.4M+ photos processed • 100% online • No download
+        </p>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-5 gap-6 items-start">
+        <div class="lg:col-span-2 relative z-10">
+         <div class="space-y-4">
+          <div class="relative border-2 border-dashed rounded-2xl p-8 cursor-pointer transition-all bg-secondary border-border hover:border-primary/50">
+           <div class="flex flex-col gap-3">
+            <div class="flex items-center gap-3">
+             <div class="text-2xl">
+              📂⬆️
+             </div>
+             <div>
+              <p class="text-base font-medium">
+               Drop photo or click to upload
+              </p>
+              <p class="text-xs text-muted-foreground">
+               Drag, click or paste. Portraits, landscapes, products, old photos.
+              </p>
+             </div>
+            </div>
+            <div class="pt-1">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md px-8 btn-gradient-primary w-full sm:w-auto">
+              Choose files
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="bg-white border border-border rounded-xl p-2 flex gap-2 text-sm">
+           <button class="flex-1 px-3 py-2 rounded-md bg-primary text-primary-foreground" type="button">
+            Photo to Video
+           </button>
+           <button class="flex-1 px-3 py-2 rounded-md hover:bg-muted/50" type="button">
+            Popular Effects to Video
+           </button>
+          </div>
+          <div class="mt-4">
+           <button class="w-full flex items-center justify-between p-3 bg-muted/30 hover:bg-muted/50 rounded-lg transition-colors text-sm" type="button">
+            <div class="flex items-center gap-2">
+             <span class="font-medium">
+              Advanced AI Models for Custom Photo Animation
+             </span>
+            </div>
+           </button>
+          </div>
+          <div class="space-y-4">
+           <div class="bg-card border border-border rounded-xl shadow-sm p-4 space-y-4">
+            <div class="relative">
+             <button class="w-full text-left bg-muted/50 hover:bg-muted border border-border rounded-xl px-4 py-3 flex items-center justify-between transition" type="button">
+              <div class="flex items-center gap-3">
+               <div class="w-8 h-8 rounded-md bg-muted grid place-items-center overflow-hidden">
+                <img alt="Veo3 icon" class="h-6 w-6 object-contain" height="24" src="/modelicon/google-veo3.svg" width="24"/>
+               </div>
+               <div>
+                <div class="font-medium">
+                 Veo3
+                </div>
+                <div class="text-xs text-muted-foreground">
+                 Generate with Veo3
+                </div>
+               </div>
+              </div>
+              <div class="text-4xl leading-none text-muted-foreground">
+               ▾
+              </div>
+             </button>
+            </div>
+            <div class="w-full space-y-2 text-sm">
+             <div class="flex w-full rounded-2xl bg-muted/40 p-1 gap-1.5">
+              <button class="flex-1 rounded-xl px-3 py-2 font-medium transition bg-primary/15 text-primary shadow-sm" type="button">
+               Fast
+              </button>
+              <button class="flex-1 rounded-xl px-3 py-2 font-medium transition text-muted-foreground hover:text-foreground" type="button">
+               Pro
+              </button>
+             </div>
+            </div>
+            <div class="space-y-2">
+             <div class="flex items-center justify-between text-sm">
+              <span class="font-semibold text-foreground">
+               Prompt
+               <span class="font-normal text-muted-foreground">
+                (≤1000 chars)
+               </span>
+              </span>
+              <span class="text-xs text-muted-foreground">
+               1000 left
+              </span>
+             </div>
+            </div>
+            <div class="space-y-3 text-sm">
+             <div class="flex items-center justify-between rounded-2xl bg-muted/40 px-4 py-2 text-sm text-muted-foreground">
+              <span>
+               Duration
+              </span>
+              <span>
+               8s
+              </span>
+             </div>
+             <div class="flex w-full gap-2">
+              <div class="flex flex-1 rounded-2xl bg-muted/40 p-1 gap-1.5">
+               <button class="flex-1 rounded-xl px-3 py-2 font-medium transition bg-primary/15 text-primary shadow-sm" type="button">
+                16:9
+               </button>
+               <button class="flex-1 rounded-xl px-3 py-2 font-medium transition text-muted-foreground hover:text-foreground" type="button">
+                9:16
+               </button>
+              </div>
+              <select class="w-28 text-sm border border-border bg-background rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary/40">
+               <option value="720p">
+                720p
+               </option>
+               <option value="1080p">
+                1080p
+               </option>
+              </select>
+             </div>
+             <div class="flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+              <label class="inline-flex items-center gap-2 select-none">
+               <input type="checkbox"/>
+               <span>
+                Include audio
+               </span>
+              </label>
+             </div>
+            </div>
+           </div>
+           <div class="text-xs text-muted-foreground">
+            Supported formats: JPG, PNG, WebP
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="lg:col-span-3 space-y-4 relative z-0">
+         <div class="rounded-xl border border-border bg-card overflow-hidden">
+          <div class="p-3 text-sm text-muted-foreground flex items-center justify-between">
+           <span>
+            Preview
+           </span>
+           <span class="text-xs">
+            Intensity: 50% · Ratio: 16:9 · Model: Google Veo 3
+           </span>
+          </div>
+          <div class="grid grid-cols-2 border-t border-border">
+           <div class="relative aspect-[4/5]">
+            <img alt="Default example" class="object-cover" src="/home/hero-preview.webp"/>
+           </div>
+           <div class="relative aspect-[4/5] bg-black">
+            <div class="relative w-full h-full">
+             <button class="absolute inset-0 grid place-items-center text-white" type="button">
+              <span class="px-3 py-2 rounded-full bg-black/50 backdrop-blur border border-white/30 flex items-center gap-2">
+               <span>
+                Play
+               </span>
+              </span>
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="p-3 border-t border-border flex items-center justify-between gap-3 flex-wrap">
+           <div class="text-xs text-muted-foreground">
+            Credits required: • 	 30 Credits
+           </div>
+           <div class="flex gap-2">
+            <a href="/app/tools/photo-animate?intensity=50&amp;ratio=16%3A9&amp;videoModel=Google%20Veo%203">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-8 rounded-md px-3 text-xs bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-105 active:scale-95">
+              Try Free Now
+             </button>
+            </a>
+            <a href="#faq">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs">
+              Learn more
+             </button>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background">
+      <div class="container mx-auto max-w-[1200px]">
+       <header class="w-full">
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+         Viral AI Effects — Turn Any Photo into a Scroll-Stopping Video
+        </h2>
+        <p class="mt-4 text-base md:text-lg text-muted-foreground">
+         Choose from 40+ photo-to-video effects powered by AI. One click to make kiss clips, transformations, and cinematic motion—perfect for TikTok, Instagram Reels, and Shorts. Free to try.
+        </p>
+       </header>
+       <div class="mt-10 grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 place-items-center">
+        <article class="group relative flex w-full max-w-[220px] md:max-w-[260px] flex-col overflow-hidden rounded-2xl border border-border/70 bg-background shadow-sm transition-transform hover:-translate-y-1">
+         <div class="relative w-full overflow-hidden aspect-[4/5]">
+          <img alt="Kiss Me AI preview" class="object-cover transition duration-500 md:group-hover:opacity-0 md:group-focus-within:opacity-0" src="https://image.photoanimate.net/homeres/case-kiss.jpg"/>
+          <div class="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
+           Viral
+          </div>
+          <div class="absolute inset-x-3 bottom-3 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 btn-gradient-primary w-full text-sm font-semibold">
+            Use this effect
+           </button>
+          </div>
+         </div>
+         <div class="flex flex-1 flex-col p-3">
+          <h3 class="text-lg font-semibold text-foreground text-center">
+           Kiss Me AI
+          </h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed text-center">
+           Generate romantic kiss animations that trend on TikTok and Reels.
+          </p>
+         </div>
+        </article>
+        <article class="group relative flex w-full max-w-[220px] md:max-w-[260px] flex-col overflow-hidden rounded-2xl border border-border/70 bg-background shadow-sm transition-transform hover:-translate-y-1">
+         <div class="relative w-full overflow-hidden aspect-[4/5]">
+          <img alt="Long Hair Magic preview" class="object-cover transition duration-500 md:group-hover:opacity-0 md:group-focus-within:opacity-0" src="https://image.photoanimate.net/homeres/case-goldgirl.webp"/>
+          <div class="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
+           Viral
+          </div>
+          <div class="absolute inset-x-3 bottom-3 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 btn-gradient-primary w-full text-sm font-semibold">
+            Use this effect
+           </button>
+          </div>
+         </div>
+         <div class="flex flex-1 flex-col p-3">
+          <h3 class="text-lg font-semibold text-foreground text-center">
+           Long Hair Magic
+          </h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed text-center">
+           Instantly extend hair with flowing motion for drama-packed portraits.
+          </p>
+         </div>
+        </article>
+        <article class="group relative flex w-full max-w-[220px] md:max-w-[260px] flex-col overflow-hidden rounded-2xl border border-border/70 bg-background shadow-sm transition-transform hover:-translate-y-1">
+         <div class="relative w-full overflow-hidden aspect-[4/5]">
+          <img alt="Baby Face preview" class="object-cover transition duration-500 md:group-hover:opacity-0 md:group-focus-within:opacity-0" src="https://image.photoanimate.net/homeres/case-goldgirl.webp"/>
+          <div class="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
+           Viral
+          </div>
+          <div class="absolute inset-x-3 bottom-3 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 btn-gradient-primary w-full text-sm font-semibold">
+            Use this effect
+           </button>
+          </div>
+         </div>
+         <div class="flex flex-1 flex-col p-3">
+          <h3 class="text-lg font-semibold text-foreground text-center">
+           Baby Face
+          </h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed text-center">
+           Soft lighting and smoothing for ultra-cute, youthful reactions.
+          </p>
+         </div>
+        </article>
+        <article class="group relative flex w-full max-w-[220px] md:max-w-[260px] flex-col overflow-hidden rounded-2xl border border-border/70 bg-background shadow-sm transition-transform hover:-translate-y-1">
+         <div class="relative w-full overflow-hidden aspect-[4/5]">
+          <img alt="Zombie Mode preview" class="object-cover transition duration-500 md:group-hover:opacity-0 md:group-focus-within:opacity-0" src="https://image.photoanimate.net/homeres/case-boy.webp"/>
+          <div class="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
+           Viral
+          </div>
+          <div class="absolute inset-x-3 bottom-3 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 btn-gradient-primary w-full text-sm font-semibold">
+            Use this effect
+           </button>
+          </div>
+         </div>
+         <div class="flex flex-1 flex-col p-3">
+          <h3 class="text-lg font-semibold text-foreground text-center">
+           Zombie Mode
+          </h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed text-center">
+           Add undead FX, glowing eyes, and cinematic horror vibes instantly.
+          </p>
+         </div>
+        </article>
+        <article class="group relative flex w-full max-w-[220px] md:max-w-[260px] flex-col overflow-hidden rounded-2xl border border-border/70 bg-background shadow-sm transition-transform hover:-translate-y-1">
+         <div class="relative w-full overflow-hidden aspect-[4/5]">
+          <img alt="Thunder God preview" class="object-cover transition duration-500 md:group-hover:opacity-0 md:group-focus-within:opacity-0" src="https://image.photoanimate.net/homeres/case-swinggirl.webp"/>
+          <div class="absolute left-3 top-3 flex items-center gap-1 rounded-full bg-black/60 px-2 py-1 text-xs text-white backdrop-blur">
+           Viral
+          </div>
+          <div class="absolute inset-x-3 bottom-3 opacity-100 transition-opacity duration-300 md:opacity-0 md:group-hover:opacity-100 md:group-focus-within:opacity-100">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 btn-gradient-primary w-full text-sm font-semibold">
+            Use this effect
+           </button>
+          </div>
+         </div>
+         <div class="flex flex-1 flex-col p-3">
+          <h3 class="text-lg font-semibold text-foreground text-center">
+           Thunder God
+          </h3>
+          <p class="mt-2 text-sm text-muted-foreground leading-relaxed text-center">
+           Summon cinematic lightning arcs and dramatic power stances.
+          </p>
+         </div>
+        </article>
+       </div>
+       <div class="mt-12 flex justify-center">
+        <a class="inline-flex" href="/app/tools/photo-animate?tab=effects">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md btn-gradient-primary px-8 py-6 text-base md:text-lg">
+          View All Effect
+         </button>
+        </a>
+       </div>
+      </div>
+     </section>
+     <section class="py-16 px-4 bg-gradient-to-b from-background via-muted/30 to-background" id="example-use-cases">
+      <div class="container mx-auto max-w-6xl space-y-16">
+       <article class="space-y-10" id="social-creators">
+        <header class="max-w-3xl">
+         <span class="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          Social Media Creators
+         </span>
+         <h2 class="mt-6 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          Make Your Social Media Content Unstoppable
+         </h2>
+         <p class="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          Static photos get 2 seconds of attention in social feeds. Animated posts win the scroll.
+         </p>
+        </header>
+        <div class="grid gap-6 md:grid-cols-2">
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             The Problem
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Static photos get lost in the feed.
+            </h3>
+           </div>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-muted-foreground leading-relaxed">
+           <li>
+            Static photos get 2 seconds of attention in social feeds.
+           </li>
+           <li>
+            Your carefully shot content gets ignored in the endless scroll.
+           </li>
+           <li>
+            Meanwhile, creators with animated content see 3x more engagement.
+           </li>
+          </ul>
+         </div>
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             The Solution
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Transform any photo into scroll-stopping animated videos.
+            </h3>
+           </div>
+          </div>
+          <ul class="mt-4 space-y-3">
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             Instagram Reels Templates – Viral animation styles
+            </span>
+           </li>
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             TikTok Perfect Format – Auto 9:16 vertical export
+            </span>
+           </li>
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             30-Second Creation – Faster than posting a story
+            </span>
+           </li>
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             No Skills Required – If you can upload, you can animate
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm md:col-span-2">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             Real Results
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Creators turn static posts into viral moments.
+            </h3>
+           </div>
+          </div>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+           <blockquote class="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-muted/20 p-4">
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             “My product photos got 300 likes. The animated version? 1,200 likes and 5x more comments. Game changer for my small business!”
+            </p>
+            <div>
+             <p class="text-sm font-semibold text-foreground">
+              Sarah Chen
+             </p>
+             <p class="text-xs uppercase tracking-wide text-muted-foreground">
+              Beauty Blogger @glowwithsarah (15K followers)
+             </p>
+            </div>
+           </blockquote>
+           <blockquote class="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-muted/20 p-4">
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             “I went from 500 views per Reel to 8,000+ by animating my travel photos. My follower growth is up 300%.”
+            </p>
+            <div>
+             <p class="text-sm font-semibold text-foreground">
+              Mike Torres
+             </p>
+             <p class="text-xs uppercase tracking-wide text-muted-foreground">
+              Travel Creator
+             </p>
+            </div>
+           </blockquote>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-4">
+         <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+           Before &amp; After Examples
+          </p>
+          <h3 class="text-2xl font-semibold text-foreground leading-tight">
+           See how creators turn photos into viral Reels.
+          </h3>
+         </div>
+         <div class="mt-2 grid grid-cols-1 gap-4">
+          <article class="flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+           <div class="relative w-full overflow-hidden">
+            <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <img alt="Romantic kiss reveal – before" class="object-cover" src="https://image.photoanimate.net/homeres/photoanimate-panda.webp"/>
+              <span class="absolute left-2 top-2 rounded-full bg-black/60 px-2 py-1 text-xs font-medium text-white">
+               Before
+              </span>
+             </div>
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <span class="absolute left-2 top-2 rounded-full bg-primary/80 px-2 py-1 text-xs font-medium text-white">
+               After
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex flex-1 flex-col gap-3 border-t border-border/70 p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+             <p class="text-base font-semibold text-foreground leading-tight md:text-lg">
+              Romantic kiss reveal
+             </p>
+            </div>
+            <p class="text-sm text-muted-foreground">
+             TikTok duet
+            </p>
+           </div>
+          </article>
+          <article class="flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+           <div class="relative w-full overflow-hidden">
+            <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <img alt="Keyframe storytelling – before" class="object-cover" src="https://image.photoanimate.net/homeres/keyframe.webp"/>
+              <span class="absolute left-2 top-2 rounded-full bg-black/60 px-2 py-1 text-xs font-medium text-white">
+               Before
+              </span>
+             </div>
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <span class="absolute left-2 top-2 rounded-full bg-primary/80 px-2 py-1 text-xs font-medium text-white">
+               After
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex flex-1 flex-col gap-3 border-t border-border/70 p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+             <p class="text-base font-semibold text-foreground leading-tight md:text-lg">
+              Keyframe storytelling
+             </p>
+            </div>
+            <p class="text-sm text-muted-foreground">
+             Before/after transformation
+            </p>
+           </div>
+          </article>
+         </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,260px)] md:items-start">
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-foreground">
+           Perfect For
+          </h3>
+          <ul class="mt-4 grid gap-3 text-sm text-muted-foreground">
+           <li class="flex items-start gap-2">
+            <span>
+             Instagram Reels &amp; Stories
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             TikTok viral content
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Product showcases
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Personal branding
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Travel &amp; lifestyle vlogs
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Food &amp; recipe videos
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="flex flex-col gap-3 rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <p class="text-sm text-muted-foreground">
+           Create a Reel-ready animation in 30 seconds. Import your photo, pick a motion preset, and export directly for Instagram or TikTok.
+          </p>
+          <a class="inline-flex w-full" href="/app/tools/photo-animate?tab=effects&amp;ratio=9-16">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md px-8 btn-gradient-primary w-full">
+            Create My First Reel →
+           </button>
+          </a>
+         </div>
+        </div>
+       </article>
+       <article class="space-y-10" id="memories-family">
+        <header class="max-w-3xl">
+         <span class="inline-flex items-center rounded-full border border-border bg-background px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+          Memories &amp; Family
+         </span>
+         <h2 class="mt-6 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+          Bring Your Precious Memories Back to Life
+         </h2>
+         <p class="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          Remember flipping through old family photo albums? Those frozen moments of grandparents' smiles, parents' youth, childhood innocence?
+         </p>
+         <p class="mt-4 text-base md:text-lg text-muted-foreground leading-relaxed">
+          What if those moments could move again?
+         </p>
+        </header>
+        <div class="grid gap-6 md:grid-cols-2">
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             The Emotion
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Old photos feel frozen when you want them to feel alive.
+            </h3>
+           </div>
+          </div>
+          <ul class="mt-4 space-y-2 text-sm text-muted-foreground leading-relaxed">
+           <li>
+            Family albums sit untouched on shelves or in cloud backups.
+           </li>
+           <li>
+            Faded photos lose color, clarity, and the emotion you remember.
+           </li>
+           <li>
+            Sharing memories at reunions or memorials feels static and distant.
+           </li>
+          </ul>
+         </div>
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             Now They Can
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Restore, animate, and relive your family's favorite moments.
+            </h3>
+           </div>
+          </div>
+          <ul class="mt-4 space-y-3">
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             Restore &amp; Animate Old Photos – upload faded prints and let AI enhance plus add lifelike motion.
+            </span>
+           </li>
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             Create Heartfelt Memorial Videos – combine multiple photos with captions and music for meaningful tributes.
+            </span>
+           </li>
+           <li class="flex items-start gap-2 text-sm text-muted-foreground leading-relaxed">
+            <span>
+             Build Living Family History – animate entire albums and create keepsake slideshows for generations.
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm md:col-span-2">
+          <div class="flex items-start gap-3">
+           <div>
+            <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+             Real Results
+            </p>
+            <h3 class="mt-1 text-xl font-semibold text-foreground">
+             Families turn dusty albums into emotional keepsakes.
+            </h3>
+           </div>
+          </div>
+          <div class="mt-6 grid gap-4 md:grid-cols-2">
+           <blockquote class="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-muted/20 p-4">
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             “When I showed my mom the animated photo of my grandparents on their wedding day, she cried tears of joy. This was the best Mother's Day gift I've ever given her.”
+            </p>
+            <div>
+             <p class="text-sm font-semibold text-foreground">
+              Jennifer Wang
+             </p>
+             <p class="text-xs uppercase tracking-wide text-muted-foreground">
+              Family storyteller
+             </p>
+            </div>
+           </blockquote>
+           <blockquote class="flex h-full flex-col gap-3 rounded-2xl border border-border/70 bg-muted/20 p-4">
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             “We used Photo Animate to create a memorial video for my father's funeral. Seeing him move again brought comfort to our entire family during a difficult time.”
+            </p>
+            <div>
+             <p class="text-sm font-semibold text-foreground">
+              Robert Martinez
+             </p>
+             <p class="text-xs uppercase tracking-wide text-muted-foreground">
+              58, Nashville TN
+             </p>
+            </div>
+           </blockquote>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-4">
+         <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+           Before &amp; After Example
+          </p>
+          <h3 class="text-2xl font-semibold text-foreground leading-tight">
+           Watch a single photo become a living memory.
+          </h3>
+         </div>
+         <div class="mt-2 grid grid-cols-1 gap-4">
+          <article class="flex w-full flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-sm">
+           <div class="relative w-full overflow-hidden">
+            <div class="grid grid-cols-1 gap-px bg-border sm:grid-cols-2">
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <img alt="Grandpa says hello again – before" class="object-cover" src="https://image.photoanimate.net/homeres/photoanimate-linken.webp"/>
+              <span class="absolute left-2 top-2 rounded-full bg-black/60 px-2 py-1 text-xs font-medium text-white">
+               Before
+              </span>
+             </div>
+             <div class="relative aspect-[4/5] bg-black sm:aspect-auto sm:min-h-[320px] md:min-h-[360px]">
+              <span class="absolute left-2 top-2 rounded-full bg-primary/80 px-2 py-1 text-xs font-medium text-white">
+               After
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex flex-1 flex-col gap-3 border-t border-border/70 p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3">
+             <p class="text-base font-semibold text-foreground leading-tight md:text-lg">
+              Grandpa says hello again
+             </p>
+            </div>
+            <p class="text-sm text-muted-foreground">
+             Memorial tribute clip
+            </p>
+           </div>
+          </article>
+         </div>
+        </div>
+        <div class="grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,260px)] md:items-start">
+         <div class="rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <h3 class="text-xl font-semibold text-foreground">
+           Perfect Gift Ideas
+          </h3>
+          <ul class="mt-4 grid gap-3 text-sm text-muted-foreground">
+           <li class="flex items-start gap-2">
+            <span>
+             Parent's birthday (childhood photos)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Wedding anniversaries (dating photos)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Family reunions (ancestral photos)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Memorial services (tribute videos)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span>
+             Grandparents Day (youth photos)
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="flex flex-col gap-3 rounded-2xl border border-border bg-background p-6 shadow-sm">
+          <p class="text-sm text-muted-foreground">
+           Upload vintage photos, let AI restore subtle motion, and share a heartfelt tribute in minutes.
+          </p>
+          <a class="inline-flex w-full" href="/app/tools/photo-keyframe?tab=memories">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md px-8 btn-gradient-primary w-full">
+            Animate My Family Photos →
+           </button>
+          </a>
+         </div>
+        </div>
+       </article>
+      </div>
+     </section>
+     <section class="py-16 px-4 bg-white">
+      <div class="container mx-auto">
+       <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+         ✨ Photo Animate – Core Features
+        </h2>
+        <p class="text-muted-foreground text-lg max-w-3xl mx-auto">
+         AI photo animation with smart presets, instant preview, and export-ready results for social media and business.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="One-click Animation - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/3170004912.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            One-click Animation
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Upload a still photo and generate natural motion automatically with AI.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="Smart Scene Detection - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/3939565216.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Smart Scene Detection
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            AI recognizes portraits, landscapes, and products to recommend the best motion.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="Preset Styles - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/2059979464.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Preset Styles
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Choose from Zoom &amp; Pan, 3D Parallax, Particle, Light Shift, and more.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="Commercial Safe - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/403100032.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Commercial Safe
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Export watermark-free results with clear usage rights on paid plans.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="Instant Preview - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/1573002659.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Instant Preview
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            See before/after and progress in real time before downloading.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="group">
+         <div class="card-elevated p-6 h-full">
+          <div class="mb-4">
+           <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+            <img alt="Social-Ready Export - Photo Animate Feature Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/4162928580.svg" width="24"/>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Social-Ready Export
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Export for Reels, Stories, and Posts (9:16, 1:1, 16:9).
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div id="tutorial">
+      <section class="py-16 px-4 bg-muted/30">
+       <div class="container mx-auto">
+        <div class="text-center mb-12">
+         <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+          How to Animate Photos in 3 Simple Steps
+         </h2>
+         <p class="text-muted-foreground text-lg max-w-3xl mx-auto">
+          You only need a single photo. Pick a style, preview the motion, and export a ready-to-share video in under a minute.
+         </p>
+        </div>
+        <div class="relative mb-12">
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="text-center group">
+           <div class="relative mb-6 z-10">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+             <span class="text-2xl font-bold text-primary-foreground">
+              1
+             </span>
+            </div>
+            <div class="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center mx-auto">
+             <img alt="Upload Your Photo - AI Image Generation Step 1 Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/2306923860.svg" width="24"/>
+            </div>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Upload Your Photo
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Drag &amp; drop JPG, PNG, HEIC, or WebP up to 10MB from any device—mobile, tablet, or desktop.
+           </p>
+          </div>
+          <div class="text-center group">
+           <div class="relative mb-6 z-10">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+             <span class="text-2xl font-bold text-primary-foreground">
+              2
+             </span>
+            </div>
+            <div class="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center mx-auto">
+             <img alt="Choose Animation Style - AI Image Generation Step 2 Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/1729729583.svg" width="24"/>
+            </div>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Choose Animation Style
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            Let AI pick, or choose Zoom &amp; Pan, 3D Parallax, Particle effects, Light Shift, or Custom Motion.
+           </p>
+          </div>
+          <div class="text-center group lg:col-start-3">
+           <div class="relative mb-6 z-10">
+            <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
+             <span class="text-2xl font-bold text-primary-foreground">
+              3
+             </span>
+            </div>
+            <div class="w-12 h-12 bg-secondary/50 rounded-lg flex items-center justify-center mx-auto">
+             <img alt="Preview &amp; Export - AI Image Generation Step 3 Icon" class="w-6 h-6 filter brightness-0 invert opacity-80" height="24" src="https://ext.same-assets.com/3508820607/3141040381.svg" width="24"/>
+            </div>
+           </div>
+           <h3 class="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+            Preview &amp; Export
+           </h3>
+           <p class="text-muted-foreground leading-relaxed">
+            See real-time results, tweak intensity, then export MP4 for Instagram, TikTok, and more.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="text-center">
+         <a href="/app/tools/photo-animate">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 rounded-md btn-gradient-primary px-8 py-4 text-lg">
+           Start Animating Photos
+          </button>
+         </a>
+        </div>
+       </div>
+      </section>
+     </div>
+     <section class="py-16 px-4 bg-white" id="faq">
+      <div class="container mx-auto max-w-4xl">
+       <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+         Photo Animate - Frequently Asked Questions
+        </h2>
+        <p class="text-muted-foreground text-lg">
+         Find answers about animating photos with AI: upload, styles, export, and devices.
+        </p>
+       </div>
+       <div class="space-y-4">
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_5raudb_" type="button">
+           <span class="text-lg font-semibold">
+            How to animate a photo?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_9raudb_" type="button">
+           <span class="text-lg font-semibold">
+            How to animate a photo with AI?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_draudb_" type="button">
+           <span class="text-lg font-semibold">
+            Can you animate a photo?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_hraudb_" type="button">
+           <span class="text-lg font-semibold">
+            How to animate old photos?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_lraudb_" type="button">
+           <span class="text-lg font-semibold">
+            How to animate a still photo?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border rounded-lg px-6 data-[state=open]:border-primary/50 data-[state=open]:shadow-lg">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between text-sm font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline hover:text-primary py-6" id="radix-_R_praudb_" type="button">
+           <span class="text-lg font-semibold">
+            How to animate photos on iPhone?
+           </span>
+          </button>
+         </h3>
+        </div>
+       </div>
+       <div class="text-center mt-8">
+        <a class="inline-block px-4 py-2 rounded-md border border-border hover:border-primary/50 text-sm" href="/resources/faq">
+         View all FAQs
+        </a>
+       </div>
+      </div>
+     </section>
+     <footer class="bg-card border-t border-border mt-16">
+      <div class="container mx-auto px-4 py-12">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="space-y-4">
+         <div class="text-2xl font-bold text-primary">
+          Photo Animate
+         </div>
+         <div class="text-sm text-muted-foreground">
+          Bring Your Photos to Life with AI ✨
+         </div>
+         <p class="text-muted-foreground text-sm leading-relaxed">
+          AI photo animation tool. Turn still photos into engaging animations for social and business in seconds.
+         </p>
+         <div class="text-sm text-muted-foreground">
+          © 2025 Photo Animate. All rights reserved.
+         </div>
+        </div>
+        <div class="space-y-4">
+         <h3 class="font-semibold text-foreground">
+          Contact
+         </h3>
+         <a class="block text-muted-foreground hover:text-primary hover:font-semibold active:scale-95 transition-all duration-200 text-sm" href="mailto:support@photoanimate.net">
+          support@photoanimate.net
+         </a>
+         <div class="pt-4">
+          <h3 class="font-semibold text-foreground mb-3">
+           Legal
+          </h3>
+          <div class="space-y-2">
+           <a class="block text-muted-foreground hover:text-primary hover:font-semibold active:scale-95 transition-all duration-200 text-sm" href="/terms">
+            Terms of Service
+           </a>
+           <a class="block text-muted-foreground hover:text-primary hover:font-semibold active:scale-95 transition-all duration-200 text-sm" href="/privacy">
+            Privacy Policy
+           </a>
+           <a class="block text-muted-foreground hover:text-primary hover:font-semibold active:scale-95 transition-all duration-200 text-sm" href="/refund">
+            Refund Policy
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-4">
+         <h3 class="font-semibold text-foreground">
+          Languages
+         </h3>
+         <div class="grid grid-cols-2 gap-1">
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-primary font-medium">
+           <span>
+            🇺🇸
+           </span>
+           <span>
+            English
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇨🇳
+           </span>
+           <span>
+            中文
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇩🇪
+           </span>
+           <span>
+            Deutsch
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇪🇸
+           </span>
+           <span>
+            Español
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇫🇷
+           </span>
+           <span>
+            Français
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇮🇹
+           </span>
+           <span>
+            Italiano
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇯🇵
+           </span>
+           <span>
+            日本語
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇰🇷
+           </span>
+           <span>
+            한국어
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇳🇱
+           </span>
+           <span>
+            Nederlands
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇵🇱
+           </span>
+           <span>
+            Polski
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇵🇹
+           </span>
+           <span>
+            Português
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇷🇺
+           </span>
+           <span>
+            Русский
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇹🇷
+           </span>
+           <span>
+            Türkçe
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇸🇦
+           </span>
+           <span>
+            العربية
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇮🇳
+           </span>
+           <span>
+            हिन्दी
+           </span>
+          </button>
+          <button class="flex items-center space-x-2 transition-all duration-200 text-sm py-1 hover:font-semibold active:scale-95 text-muted-foreground hover:text-primary">
+           <span>
+            🇧🇩
+           </span>
+           <span>
+            বাংলা
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 pt-8 border-t border-border">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+         <div class="text-sm text-muted-foreground">
+          Built with ❤️ for creators worldwide
+         </div>
+         <div class="flex items-center gap-4">
+          <a class="text-sm text-muted-foreground hover:text-primary hover:font-semibold transition-all duration-200" href="https://ecfotos.com" rel="noreferrer" target="_blank">
+           Product Photography
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

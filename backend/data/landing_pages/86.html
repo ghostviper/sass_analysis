@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatFaster - AI Chat with GPT-4, Claude & Gemini</title>
+</head>
+<body>
+  <body>
+   <div class="flex-1 flex flex-col min-h-0">
+    <div class="flex h-[100dvh] flex-col bg-background">
+     <header class="sticky top-0 z-40 flex h-14 items-center border-b border-sidebar-border bg-sidebar px-4 safe-area-top">
+      <div class="hidden md:flex items-center gap-2 shrink-0">
+       <h1 class="text-base font-semibold tracking-tight text-sidebar-foreground">
+        ChatFaster
+       </h1>
+      </div>
+      <div class="flex md:hidden items-center gap-2">
+       <h1 class="text-base font-semibold tracking-tight text-sidebar-foreground">
+        ChatFaster
+       </h1>
+      </div>
+      <div class="flex items-center gap-2 ml-4">
+       <a href="/login">
+        <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 px-3 text-sidebar-foreground/70 hover:text-sidebar-foreground hover:bg-sidebar-accent">
+         Sign in
+        </button>
+       </a>
+      </div>
+     </header>
+     <div class="flex flex-1 overflow-hidden">
+      <aside class="relative hidden md:flex h-full flex-col border-r border-sidebar-border bg-sidebar overflow-hidden">
+       <div class="py-4 px-4">
+        <div class="flex items-center gap-2 mb-3">
+         <div class="flex-1 min-w-0 rtl:order-2">
+          <button class="inline-flex items-center whitespace-nowrap rounded-md text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:hover:bg-accent/50 py-2 has-[&gt;svg]:px-3 w-full justify-between h-10 px-3 gap-2 transition-all duration-200 hover:bg-sidebar-accent/60 active:scale-[0.98]" type="button">
+           <div class="flex items-center gap-2.5 min-w-0">
+            <span class="truncate font-medium text-sm text-sidebar-foreground/70">
+             Main Workspace
+            </span>
+           </div>
+          </button>
+         </div>
+        </div>
+        <div class="flex items-center justify-between gap-1">
+         <button class="inline-flex items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:hover:bg-accent/50 rounded-md has-[&gt;svg]:px-2.5 h-8 gap-1.5 px-2.5 text-xs font-medium text-sidebar-foreground/70 hover:text-sidebar-foreground transition-all duration-200 hover:bg-sidebar-accent active:scale-95" title="New chat">
+          <span>
+           New
+          </span>
+         </button>
+        </div>
+       </div>
+       <div class="px-3 pb-3">
+        <div class="relative">
+         <input class="file:text-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 w-full min-w-0 border px-3 py-1 shadow-xs outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 ps-9 text-sm rounded-lg text-sidebar-foreground bg-sidebar-accent/40 border-sidebar-border/50 focus-visible:ring-1 focus-visible:ring-sidebar-ring focus-visible:bg-sidebar-accent placeholder:text-sidebar-foreground/40 transition-all duration-200" placeholder="Search chats..." value=""/>
+        </div>
+       </div>
+       <div class="flex-1 overflow-hidden">
+        <div class="relative h-full px-2">
+         <div class="focus-visible:ring-ring/50 size-full rounded-[inherit] transition-[color,box-shadow] outline-none focus-visible:ring-[3px] focus-visible:outline-1">
+          <div>
+           <div class="flex flex-col items-center justify-center px-4 py-12 text-center">
+            <p class="mt-4 text-sm font-medium text-sidebar-foreground/70">
+             No chats yet
+            </p>
+            <p class="mt-1 text-xs text-sidebar-foreground/50">
+             Start a new conversation!
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="border-t border-sidebar-border/50 p-4 space-y-3">
+        <a class="flex items-center rounded-md text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors gap-2 px-2 py-1.5 -mx-2" href="/settings" title="Settings">
+         <span class="text-xs">
+          Settings
+         </span>
+        </a>
+        <a class="flex items-center rounded-md text-primary/80 hover:text-primary hover:bg-primary/10 transition-colors gap-2 px-2 py-1.5 -mx-2" href="/pricing" title="Upgrade">
+         <span class="text-xs font-medium">
+          Upgrade
+         </span>
+        </a>
+        <div class="flex items-center justify-between gap-2 -mx-2">
+         <a class="flex items-center gap-2 px-2 py-1.5 rounded-md text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors rtl:order-2" href="/en/blog" title="Blog">
+          <span class="text-xs">
+           Blog
+          </span>
+         </a>
+         <button class="flex items-center gap-1.5 px-2 py-1.5 rounded-md text-sidebar-foreground/60 hover:text-sidebar-foreground hover:bg-sidebar-accent transition-colors rtl:order-1" id="radix-_r_o_" type="button">
+          <span class="text-xs">
+           English
+          </span>
+         </button>
+        </div>
+        <div class="flex items-center justify-between">
+         <div class="flex items-center gap-2">
+          <label class="flex items-center gap-2 font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 text-xs text-sidebar-foreground/60 cursor-pointer" for="theme-toggle">
+           Dark mode
+          </label>
+         </div>
+        </div>
+        <div class="flex items-center gap-2 text-[10px] text-sidebar-foreground/40 pt-3 mt-1 border-t border-sidebar-border/30">
+         <a class="hover:text-sidebar-foreground/60 transition-colors" href="/terms">
+          Terms
+         </a>
+         <span>
+          ·
+         </span>
+         <a class="hover:text-sidebar-foreground/60 transition-colors" href="/privacy">
+          Privacy
+         </a>
+         <span>
+          ·
+         </span>
+         <a class="hover:text-sidebar-foreground/60 transition-colors" href="/refund">
+          Refund
+         </a>
+        </div>
+       </div>
+      </aside>
+      <main class="flex flex-1 flex-col relative">
+       <div class="aui-root aui-thread-root @container flex h-full flex-col bg-background">
+        <div class="aui-thread-viewport relative flex flex-1 flex-col overflow-x-auto overflow-y-scroll scroll-smooth px-4 pt-4">
+         <div class="aui-thread-welcome-root relative mx-auto flex w-full max-w-[var(--thread-max-width)] flex-grow flex-col pt-[15vh] pb-8">
+          <div class="aui-thread-welcome-center relative flex w-full flex-col items-center">
+           <div class="aui-thread-welcome-message flex w-full flex-col items-center px-8 text-center mb-12">
+            <div class="aui-thread-welcome-message-motion-1 text-3xl font-bold tracking-tight">
+             Welcome to ChatFaster
+            </div>
+            <div class="aui-thread-welcome-message-motion-2 mt-2 text-lg text-muted-foreground">
+             Your AI assistant for creative conversations
+            </div>
+           </div>
+           <div class="aui-thread-welcome-suggestions grid w-full gap-2 pb-4 @md:grid-cols-2">
+            <div class="aui-thread-welcome-suggestion-display [&amp;:nth-child(n+3)]:hidden @md:[&amp;:nth-child(n+3)]:block">
+             <button class="inline-flex whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground has-[&gt;svg]:px-3 aui-thread-welcome-suggestion h-auto w-full flex-1 flex-wrap items-start justify-start gap-1 rounded-3xl border px-5 py-4 text-left text-sm @md:flex-col dark:hover:bg-accent/60" type="button">
+              <span class="aui-thread-welcome-suggestion-text-1 font-medium">
+               Explain React hooks
+              </span>
+              <span class="aui-thread-welcome-suggestion-text-2 text-muted-foreground">
+               like useState and useEffect
+              </span>
+             </button>
+            </div>
+            <div class="aui-thread-welcome-suggestion-display [&amp;:nth-child(n+3)]:hidden @md:[&amp;:nth-child(n+3)]:block">
+             <button class="inline-flex whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground has-[&gt;svg]:px-3 aui-thread-welcome-suggestion h-auto w-full flex-1 flex-wrap items-start justify-start gap-1 rounded-3xl border px-5 py-4 text-left text-sm @md:flex-col dark:hover:bg-accent/60" type="button">
+              <span class="aui-thread-welcome-suggestion-text-1 font-medium">
+               What's the weather
+              </span>
+              <span class="aui-thread-welcome-suggestion-text-2 text-muted-foreground">
+               in San Francisco?
+              </span>
+             </button>
+            </div>
+            <div class="aui-thread-welcome-suggestion-display [&amp;:nth-child(n+3)]:hidden @md:[&amp;:nth-child(n+3)]:block">
+             <button class="inline-flex whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground has-[&gt;svg]:px-3 aui-thread-welcome-suggestion h-auto w-full flex-1 flex-wrap items-start justify-start gap-1 rounded-3xl border px-5 py-4 text-left text-sm @md:flex-col dark:hover:bg-accent/60" type="button">
+              <span class="aui-thread-welcome-suggestion-text-1 font-medium">
+               Create a meal plan
+              </span>
+              <span class="aui-thread-welcome-suggestion-text-2 text-muted-foreground">
+               for healthy weight loss
+              </span>
+             </button>
+            </div>
+            <div class="aui-thread-welcome-suggestion-display [&amp;:nth-child(n+3)]:hidden @md:[&amp;:nth-child(n+3)]:block">
+             <button class="inline-flex whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground has-[&gt;svg]:px-3 aui-thread-welcome-suggestion h-auto w-full flex-1 flex-wrap items-start justify-start gap-1 rounded-3xl border px-5 py-4 text-left text-sm @md:flex-col dark:hover:bg-accent/60" type="button">
+              <span class="aui-thread-welcome-suggestion-text-1 font-medium">
+               Write a SQL query
+              </span>
+              <span class="aui-thread-welcome-suggestion-text-2 text-muted-foreground">
+               to find top customers
+              </span>
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="aui-thread-viewport-footer sticky bottom-0 mx-auto mt-4 flex w-full max-w-[var(--thread-max-width)] flex-col gap-4 overflow-visible rounded-t-3xl bg-background pb-4 md:pb-6">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input aui-button-icon size-6 aui-thread-scroll-to-bottom absolute -top-12 z-10 self-center rounded-full p-4 disabled:invisible dark:bg-background dark:hover:bg-accent" type="button">
+           <span class="aui-sr-only sr-only">
+            Scroll to bottom
+           </span>
+          </button>
+          <div class="px-0 shadow-none ring-0 outline-none">
+           <button class="justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 py-2 has-[&gt;svg]:px-3 flex h-9 items-center gap-2 rounded-xl border border-input bg-background/50 px-3 text-foreground hover:bg-accent/50 shadow-sm" id="radix-_r_1i_" type="button">
+            <span class="max-w-[140px] truncate text-sm font-medium">
+             GPT-4o
+            </span>
+            <span class="inline-flex items-center justify-center rounded-full border py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent text-secondary-foreground [a&amp;]:hover:bg-secondary/90 h-5 px-1.5 text-[10px] bg-muted/50">
+             128K
+            </span>
+           </button>
+          </div>
+          <form class="aui-composer-root relative flex w-full flex-col">
+           <div class="aui-composer-attachment-dropzone group/input-group flex w-full flex-col rounded-2xl border px-1 pt-2 shadow-lg transition-all duration-200 outline-none data-[dragging=true]:border-dashed data-[dragging=true]:border-primary data-[dragging=true]:bg-accent/50 border-input bg-background shadow-black/5 dark:bg-card dark:shadow-black/20 has-[textarea:focus-visible]:border-primary/50 has-[textarea:focus-visible]:ring-4 has-[textarea:focus-visible]:ring-primary/10 has-[textarea:focus-visible]:shadow-xl has-[textarea:focus-visible]:shadow-primary/5">
+            <div class="aui-composer-action-wrapper relative mx-2 mt-2 mb-2.5 flex items-center justify-between">
+             <div class="flex items-center gap-1.5">
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:hover:bg-accent/50 aui-button-icon p-1 aui-composer-add-attachment size-8 rounded-lg bg-muted/50 text-muted-foreground transition-all duration-200 hover:bg-muted hover:scale-105 focus-visible:ring-0 focus-visible:ring-offset-0" type="button">
+               <span class="aui-sr-only sr-only">
+                Add Attachment
+               </span>
+              </button>
+              <button class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 rounded-md has-[&gt;svg]:px-2.5 h-8 px-2.5 gap-1.5 text-xs text-muted-foreground hover:text-foreground" type="button">
+               <span>
+                Save to memory
+               </span>
+              </button>
+             </div>
+            </div>
+           </div>
+          </form>
+         </div>
+        </div>
+       </div>
+      </main>
+     </div>
+    </div>
+    <div class="fixed inset-0 z-[9998] overflow-y-auto overflow-x-hidden">
+     <div class="relative max-w-6xl mx-0 sm:mx-4 lg:mx-auto min-h-screen mt-0 sm:mt-4 lg:mt-8 overflow-hidden">
+      <div class="relative w-full">
+       <div class="relative overflow-hidden bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-400">
+        <a class="relative block cursor-pointer group" href="/teams/pricing">
+         <div class="max-w-6xl mx-auto px-4 sm:px-6 py-5 sm:py-7">
+          <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-5">
+           <div class="flex items-center gap-2.5">
+            <span class="px-2.5 py-1 bg-black/20 backdrop-blur-sm rounded text-xs sm:text-sm font-bold text-black uppercase tracking-wider animate-pulse">
+             New
+            </span>
+            <div class="flex items-center gap-2">
+             <span class="text-black font-bold text-base sm:text-xl tracking-tight">
+              ChatFaster Teams
+             </span>
+            </div>
+           </div>
+           <span class="hidden sm:block text-black/30 text-lg">
+            |
+           </span>
+           <p class="text-black/80 text-sm sm:text-base font-medium text-center sm:text-left">
+            AI-powered collaboration for your entire organization
+           </p>
+           <div class="flex items-center gap-2 px-5 py-2 bg-black text-yellow-400 rounded-full font-bold text-sm sm:text-base shadow-lg group-hover:shadow-xl group-hover:scale-105 transition-all duration-200">
+            <span>
+             Explore Team Plans
+            </span>
+           </div>
+          </div>
+         </div>
+        </a>
+       </div>
+       <section class="min-h-screen flex flex-col items-center justify-start px-6 sm:px-10 lg:px-16 pt-12 sm:pt-16 pb-12 sm:pb-20 overflow-hidden">
+        <div class="w-full max-w-4xl mx-auto text-center">
+         <div class="inline-flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6 sm:mb-8">
+          <span class="text-xs sm:text-sm font-medium text-amber-300">
+           Now with GPT-5 &amp; Claude Opus 4.5
+          </span>
+         </div>
+         <h1 class="text-[1.75rem] sm:text-4xl md:text-6xl font-bold text-white mb-4 sm:mb-6 tracking-tight leading-tight">
+          Break Free from AI Subscriptions
+          <br/>
+          <span class="bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 bg-clip-text text-transparent">
+           Your Data. On Your Device
+          </span>
+         </h1>
+         <p class="text-base sm:text-xl md:text-2xl text-white/60 mb-6 sm:mb-10 max-w-2xl mx-auto leading-relaxed px-2">
+          Access the world's best AI models in one beautiful interface. ChatGPT, Claude, Gemini, and more.
+         </p>
+         <div class="flex items-center justify-center mb-8 sm:mb-12 w-full max-w-sm sm:max-w-none mx-auto">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 h-10 has-[&gt;svg]:px-4 w-full sm:w-auto bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 sm:px-12 py-5 sm:py-7 text-base sm:text-xl font-semibold rounded-xl shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all duration-300">
+           Get a lifetime license now
+          </button>
+         </div>
+         <p class="text-xs sm:text-sm text-white/40 mb-8 sm:mb-12">
+          No credit card required • Free to use • Your API keys
+         </p>
+         <div class="w-full overflow-hidden">
+          <p class="text-center text-white/30 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] mb-6 sm:mb-8 font-medium px-4 mt-4 sm:mt-0">
+           Powered by leading AI providers
+          </p>
+          <div class="relative overflow-hidden">
+           <div class="flex items-center gap-6 sm:gap-12 md:gap-16">
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              OpenAI
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Anthropic
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Google
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Perplexity
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Mistral
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              OpenAI
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Anthropic
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Google
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Perplexity
+             </span>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-3 md:gap-4 shrink-0">
+             <span class="text-base sm:text-xl md:text-2xl font-light text-white/60 tracking-wide whitespace-nowrap">
+              Mistral
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="hidden sm:flex mt-16 md:mt-24 flex-col items-center gap-2">
+          <span class="text-xs text-white/40">
+           Scroll to explore
+          </span>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-10 sm:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+           The all-in-one platform for
+           <span class="text-amber-400">
+            AI chats
+           </span>
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-white/50 max-w-2xl mx-auto">
+           Everything you need to harness the power of AI, without the complexity.
+          </p>
+         </div>
+         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Multi-Model Support
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             Access GPT-5, Claude Opus, Gemini 3, and more. Switch models mid-conversation.
+            </p>
+           </div>
+          </div>
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Use Your API Keys
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             No monthly subscriptions. Pay only for what you use with your own API keys.
+            </p>
+           </div>
+          </div>
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Privacy First
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             Your data stays on your device. No training on your conversations.
+            </p>
+           </div>
+          </div>
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Smart Organization
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             Folders, workspaces, and powerful search. Find any chat instantly.
+            </p>
+           </div>
+          </div>
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Web Search
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             Ground responses in real-time web data with Perplexity or Tavily.
+            </p>
+           </div>
+          </div>
+          <div class="group relative p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-white/[0.02] border border-white/[0.08] hover:border-amber-500/30 transition-all duration-300">
+           <div class="relative">
+            <h3 class="text-base sm:text-lg font-semibold text-white mb-1.5 sm:mb-2">
+             Image Generation
+            </h3>
+            <p class="text-xs sm:text-sm text-white/60 leading-relaxed">
+             Create images with DALL-E, GPT-Image, and Gemini directly in chat.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="mt-8 sm:mt-10">
+          <div class="flex items-center justify-center gap-2 mb-6">
+           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-purple-500/10 border border-purple-500/20">
+            <span class="text-xs sm:text-sm font-medium text-purple-300">
+             Cosmos Exclusive
+            </span>
+           </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+           <div class="group relative p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-transparent border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300">
+            <div class="relative">
+             <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">
+              AI Memory
+             </h3>
+             <p class="text-sm sm:text-base text-white/60 leading-relaxed">
+              Your AI that truly remembers you. Save personal details, preferences, and important context that the AI recalls across all conversations. Just type ## followed by anything you want to remember.
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-transparent border border-emerald-500/20 hover:border-emerald-400/40 transition-all duration-300">
+            <div class="relative">
+             <h3 class="text-lg sm:text-xl font-semibold text-white mb-2 sm:mb-3">
+              Personal Knowledge Base
+             </h3>
+             <p class="text-sm sm:text-base text-white/60 leading-relaxed">
+              Your private AI-powered document library. Upload PDFs, notes, and files that the AI searches and references when helping you. It's like giving your AI access to your personal library.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 border-y border-white/10">
+        <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-8 sm:mb-12">
+          <p class="text-white/40 uppercase tracking-wider text-xs sm:text-sm font-medium mb-2">
+           Trusted by professionals worldwide
+          </p>
+         </div>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div class="text-center">
+           <p class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
+            <span>
+             0K+
+            </span>
+           </p>
+           <p class="text-white/50 text-xs sm:text-sm">
+            Active Users
+           </p>
+          </div>
+          <div class="text-center">
+           <p class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
+            <span>
+             0M+
+            </span>
+           </p>
+           <p class="text-white/50 text-xs sm:text-sm">
+            Messages Sent
+           </p>
+          </div>
+          <div class="text-center">
+           <p class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
+            <span>
+             0+
+            </span>
+           </p>
+           <p class="text-white/50 text-xs sm:text-sm">
+            AI Models
+           </p>
+          </div>
+          <div class="text-center">
+           <p class="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-1 sm:mb-2">
+            <span>
+             0%
+            </span>
+           </p>
+           <p class="text-white/50 text-xs sm:text-sm">
+            Uptime
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <div class="max-w-6xl mx-auto overflow-hidden">
+         <div class="grid lg:grid-cols-[3fr_2fr] gap-8 lg:gap-16 items-center">
+          <div>
+           <p class="text-amber-400 font-medium mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm">
+            Built for power users
+           </p>
+           <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+            Pro features for a
+            <br/>
+            <span class="text-amber-400 sm:text-6xl md:text-7xl ms-4">
+             Pro user
+            </span>
+           </h2>
+           <p class="text-white/50 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
+            Fine-tune every aspect of your AI experience. From custom system prompts to advanced parameter controls.
+           </p>
+           <ul class="space-y-3 sm:space-y-4">
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Custom system prompts to personalize AI behavior for every chat
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Temperature and max tokens controls to fine-tune model responses
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Smart context management to maximize your conversation depth
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Detailed model specs, context length, capabilities, and release info
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Full data portability, export and import everything with one click
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Access 30+ AI models from OpenAI, Anthropic, and Google in one place
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              AI Memory that remembers your preferences across all conversations
+             </span>
+            </li>
+            <li class="flex items-center gap-2.5 sm:gap-3">
+             <span class="text-sm sm:text-base text-white/80">
+              Personal Knowledge Base to upload and search your own documents
+             </span>
+            </li>
+           </ul>
+          </div>
+          <div class="relative hidden md:block">
+           <div class="relative max-w-md mx-auto">
+            <img alt="Pro features interface" class="w-full h-auto rounded-2xl shadow-2xl" src="/assets/homepage/pro-features-section.png"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 bg-gradient-to-b from-transparent via-amber-500/5 to-transparent">
+        <div class="max-w-6xl mx-auto overflow-hidden">
+         <div class="grid lg:grid-cols-[2fr_3fr] gap-8 lg:gap-16 items-center">
+          <div class="order-1 lg:order-2">
+           <p class="text-amber-400 font-medium mb-3 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm">
+            Your data, your control
+           </p>
+           <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-4 sm:mb-6">
+            Privacy-first
+            <br/>
+            <span class="text-amber-400 sm:text-6xl md:text-7xl ms-2">
+             AI workspace
+            </span>
+           </h2>
+           <p class="text-white/50 text-sm sm:text-base md:text-lg mb-6 sm:mb-8 leading-relaxed">
+            Your data in your browser.
+            <span class="text-amber-400 font-semibold">
+             Encrypted
+            </span>
+            cloud sync uses your
+            <span class="text-amber-400 font-semibold">
+             own passkey
+            </span>
+            with
+            <span class="text-amber-400 font-semibold">
+             AES-256
+            </span>
+            , we never know it and can never see your content.
+           </p>
+           <div class="space-y-4 sm:space-y-6">
+            <div class="flex gap-3 sm:gap-4">
+             <div>
+              <p class="text-white font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">
+               Your data stays local
+              </p>
+              <p class="text-white/50 text-xs sm:text-sm">
+               All your data lives in your local browser. Nothing leaves your device unless you choose to sync.
+              </p>
+             </div>
+            </div>
+            <div class="flex gap-3 sm:gap-4">
+             <div>
+              <p class="text-white font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">
+               No training on your data
+              </p>
+              <p class="text-white/50 text-xs sm:text-sm">
+               We never access, read, or use your conversations for any purpose.
+              </p>
+             </div>
+            </div>
+            <div class="flex gap-3 sm:gap-4">
+             <div>
+              <p class="text-white font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">
+               Your API keys, your control
+              </p>
+              <p class="text-white/50 text-xs sm:text-sm">
+               Keys stored only in your browser and sent directly to AI providers.
+              </p>
+             </div>
+            </div>
+            <div class="flex gap-3 sm:gap-4">
+             <div>
+              <p class="text-white font-medium mb-0.5 sm:mb-1 text-sm sm:text-base">
+               Pure end-to-end encryption
+              </p>
+              <p class="text-white/50 text-xs sm:text-sm">
+               Cloud sync encrypted with YOUR passkey using AES-256. We never know your passkey and can never decrypt your data. True E2E.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <div class="max-w-6xl mx-auto overflow-hidden">
+         <div class="grid md:grid-cols-2 gap-4 sm:gap-8">
+          <div class="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 relative overflow-hidden">
+           <div class="absolute top-3 end-3 sm:top-4 sm:end-4 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-500/20 text-amber-400 text-[10px] sm:text-xs font-medium">
+            Coming Soon
+           </div>
+           <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Build smart AI agents
+           </h3>
+           <p class="text-white/50 leading-relaxed text-sm sm:text-base">
+            Create autonomous agents that can browse the web, execute code, and complete complex multi-step tasks.
+           </p>
+          </div>
+          <div class="p-5 sm:p-8 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 relative overflow-hidden">
+           <div class="absolute top-3 end-3 sm:top-4 sm:end-4 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-amber-500/20 text-amber-400 text-[10px] sm:text-xs font-medium">
+            Coming Soon
+           </div>
+           <h3 class="text-xl sm:text-2xl font-bold text-white mb-2 sm:mb-3">
+            Use plugins or build your own
+           </h3>
+           <p class="text-white/50 leading-relaxed text-sm sm:text-base">
+            Extend ChatFaster with plugins for integrations, custom tools, and workflows tailored to your needs.
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16 border-y border-white/10">
+        <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-10 sm:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+           What our
+           <span class="text-amber-400">
+            users
+           </span>
+           say
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-white/50">
+           Join thousands of professionals who've made the switch.
+          </p>
+         </div>
+         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/[0.08]">
+           <p class="text-white/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+            “Finally, a ChatGPT interface that doesn't feel like a toy. The multi-model support is game-changing for my workflow.”
+           </p>
+           <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-amber-500/30 to-amber-600/20 flex items-center justify-center text-amber-300 font-semibold text-xs sm:text-sm">
+             SC
+            </div>
+            <div>
+             <p class="text-white font-medium text-xs sm:text-sm">
+              Sarah Chen
+             </p>
+             <p class="text-white/50 text-[10px] sm:text-xs">
+              AI Researcher
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/[0.08]">
+           <p class="text-white/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+            “I switched from ChatGPT Plus and I'm saving $20/month while getting access to way more models. No brainer.”
+           </p>
+           <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-amber-500/30 to-amber-600/20 flex items-center justify-center text-amber-300 font-semibold text-xs sm:text-sm">
+             MJ
+            </div>
+            <div>
+             <p class="text-white font-medium text-xs sm:text-sm">
+              Marcus Johnson
+             </p>
+             <p class="text-white/50 text-[10px] sm:text-xs">
+              Software Engineer
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="p-4 sm:p-6 rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/[0.08]">
+           <p class="text-white/80 mb-4 sm:mb-6 leading-relaxed text-sm sm:text-base">
+            “The privacy aspect sold me. My company's data never leaves our control, and we can still use the best AI models.”
+           </p>
+           <div class="flex items-center gap-2.5 sm:gap-3">
+            <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-amber-500/30 to-amber-600/20 flex items-center justify-center text-amber-300 font-semibold text-xs sm:text-sm">
+             ER
+            </div>
+            <div>
+             <p class="text-white font-medium text-xs sm:text-sm">
+              Elena Rodriguez
+             </p>
+             <p class="text-white/50 text-[10px] sm:text-xs">
+              CTO, Startup
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 sm:py-24 px-6 sm:px-10 lg:px-16">
+        <div class="max-w-3xl mx-auto">
+         <div class="text-center mb-10 sm:mb-16">
+          <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold text-white mb-3 sm:mb-4">
+           Frequently asked
+           <span class="text-amber-400">
+            questions
+           </span>
+          </h2>
+          <p class="text-sm sm:text-base md:text-lg text-white/50">
+           Everything you need to know about ChatFaster.
+          </p>
+         </div>
+         <div class="rounded-xl sm:rounded-2xl bg-gradient-to-br from-white/[0.05] to-transparent border border-white/10 px-6 sm:px-10 lg:px-16 md:px-8">
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             How is this different from ChatGPT?
+            </span>
+           </button>
+          </div>
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             Do I need API keys to use ChatFaster?
+            </span>
+           </button>
+          </div>
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             Is my data secure?
+            </span>
+           </button>
+          </div>
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             What AI models are supported?
+            </span>
+           </button>
+          </div>
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             Is there a free tier?
+            </span>
+           </button>
+          </div>
+          <div class="border-b border-white/10 last:border-0">
+           <button class="w-full py-4 sm:py-5 flex items-center justify-between text-start group">
+            <span class="text-sm sm:text-base text-white font-medium pe-4 sm:pe-8 group-hover:text-amber-400 transition-colors">
+             Can I build my own AI knowledge base?
+            </span>
+           </button>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 sm:py-32 px-6 sm:px-10 lg:px-16">
+        <div class="max-w-5xl mx-auto">
+         <div class="p-6 sm:p-10 md:p-12 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/20 relative overflow-hidden">
+          <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+           <div class="text-center lg:text-start">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 sm:mb-5">
+             Set up your own
+             <span class="text-amber-400">
+              AI workspace
+             </span>
+             now
+            </h2>
+            <p class="text-sm sm:text-base text-white/50 mb-6 sm:mb-8 max-w-md mx-auto lg:mx-0">
+             Join thousands of users who've upgraded their AI experience. It's free to get started.
+            </p>
+            <div class="flex items-center justify-center lg:justify-start">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 h-10 has-[&gt;svg]:px-4 group relative overflow-hidden bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 bg-[length:200%_100%] hover:bg-[position:100%_0] text-white px-10 py-6 text-lg font-bold rounded-2xl shadow-2xl shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-500 hover:scale-105">
+              <span class="relative z-10 flex items-center gap-3">
+               View Pricing
+              </span>
+             </button>
+            </div>
+            <p class="text-xs text-white/40 mt-4 lg:mt-5">
+             No credit card required • Setup in 2 minutes
+            </p>
+           </div>
+           <div class="bg-white/[0.03] rounded-2xl p-6 sm:p-8 border border-white/10 relative overflow-hidden">
+            <div class="relative">
+             <div class="flex items-center justify-between mb-3">
+              <div class="flex items-center gap-2">
+               <span class="text-sm font-medium text-amber-400">
+                Newsletter
+               </span>
+              </div>
+              <div class="flex items-center gap-1.5 px-2.5 py-1 bg-amber-500/15 border border-amber-500/30 rounded-full">
+               <span class="text-xs font-semibold text-amber-400">
+                10% OFF
+               </span>
+              </div>
+             </div>
+             <h3 class="text-lg sm:text-xl font-semibold text-white mb-2">
+              Get 10% OFF your first plan
+             </h3>
+             <p class="text-sm text-white/50 mb-5">
+              Subscribe to unlock your exclusive discount code and receive AI tips, tricks, and feature updates.
+             </p>
+             <form class="space-y-3">
+              <div class="relative">
+               <input class="w-full px-4 py-3.5 bg-white/5 border rounded-xl text-white placeholder:text-white/30 focus:outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed border-white/10 focus:border-amber-500/50 focus:ring-1 focus:ring-amber-500/30" placeholder="Enter your email" type="email" value=""/>
+              </div>
+              <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 px-4 has-[&gt;svg]:px-3 w-full py-3.5 rounded-xl font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed bg-white/10 hover:bg-white/15 text-white border border-white/10 hover:border-white/20" type="submit">
+               Notify Me
+              </button>
+             </form>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+     </div>
+    </div>
+   </div>
+   <section>
+   </section>
+   <title>
+    ChatFaster - AI Chat with GPT-4, Claude &amp; Gemini
+   </title>
+   <div class="fixed bottom-4 left-4 right-4 z-[99999] sm:left-auto sm:right-6 sm:max-w-[420px]">
+    <div class="relative overflow-hidden rounded-2xl bg-[oklch(0.14_0.02_260/0.95)] backdrop-blur-xl border border-white/[0.08] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.5),0_0_0_1px_rgba(255,255,255,0.05)_inset]">
+     <div class="relative p-5">
+      <div class="flex items-start gap-4">
+       <div class="flex-1 min-w-0">
+        <h3 class="text-[15px] font-semibold text-white/95 leading-tight">
+         We value your privacy
+        </h3>
+        <p class="mt-1.5 text-[13px] leading-relaxed text-white/50">
+         We use cookies to improve your experience and analyze site traffic.
+        </p>
+       </div>
+      </div>
+      <div class="mt-4 flex items-center gap-2">
+       <button class="flex items-center gap-1 text-[12px] text-white/40 hover:text-white/60 transition-colors">
+        <span>
+         Learn more
+        </span>
+       </button>
+       <button class="inline-flex items-center justify-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-9 px-4 text-[13px] text-white/50 hover:text-white/80 hover:bg-white/5">
+        Decline
+       </button>
+       <button class="inline-flex items-center justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-primary/90 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-9 px-5 text-[13px] font-medium bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-400 hover:to-orange-400 text-black shadow-lg shadow-amber-500/20 transition-all duration-200 hover:shadow-amber-500/30">
+        Accept
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

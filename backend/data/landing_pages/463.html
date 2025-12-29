@@ -1,0 +1,1640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAANG Jobs Posted in the Last 24 Hours</title>
+</head>
+<body>
+  <body>
+   <header class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+     <div class="navbar-header">
+      <a class="navbar-brand" href="/">
+       Top Jobs Today
+      </a>
+     </div>
+     <ul class="nav navbar-nav navbar-right">
+      <li>
+       <a href="/profile" id="accountLink">
+        Account
+       </a>
+      </li>
+     </ul>
+    </div>
+   </header>
+   <input id="isLoggedIn" type="hidden" value="false"/>
+   <section id="hero">
+    <div class="container">
+     <h1 class="hero-title">
+      📩 Fresh FAANG Jobs – No Browsing, Just Daily Email Alerts
+     </h1>
+     <div>
+      Only new jobs. Only top companies. Filtered for your role. Zero spam.
+     </div>
+     <div class="logos-section">
+      <a href="https://www.apple.com/careers/us/" rel="noopener noreferrer" target="_blank">
+       <img alt="Apple careers" class="img-responsive logo-img" src="/images/logos/apple.webp"/>
+      </a>
+      <a href="https://www.google.com/about/careers/applications/" rel="noopener noreferrer" target="_blank">
+       <img alt="Google careers" class="img-responsive logo-img" src="/images/logos/google.webp"/>
+      </a>
+      <a href="https://www.amazon.jobs/" rel="noopener noreferrer" target="_blank">
+       <img alt="Amazon careers" class="img-responsive logo-img" src="/images/logos/amazon.webp"/>
+      </a>
+      <a href="https://www.metacareers.com/jobs/" rel="noopener noreferrer" target="_blank">
+       <img alt="Meta careers" class="img-responsive logo-img" src="/images/logos/meta.webp"/>
+      </a>
+      <a href="https://openai.com/careers/search/" rel="noopener noreferrer" target="_blank">
+       <img alt="OpenAI careers" class="img-responsive logo-img" src="/images/logos/openai.webp"/>
+      </a>
+      <a href="https://careers.microsoft.com/" rel="noopener noreferrer" target="_blank">
+       <img alt="Microsoft careers" class="img-responsive logo-img" src="/images/logos/microsoft.webp"/>
+      </a>
+      <a href="https://www.nvidia.com/en-eu/about-nvidia/careers/apply/" rel="noopener noreferrer" target="_blank">
+       <img alt="NVIDIA careers" class="img-responsive logo-img" src="/images/logos/nvidia.webp"/>
+      </a>
+      <a href="https://stripe.com/jobs/search" rel="noopener noreferrer" target="_blank">
+       <img alt="Stripe careers" class="img-responsive logo-img" src="/images/logos/stripe.webp"/>
+      </a>
+      <a href="https://lifeattiktok.com/m/" rel="noopener noreferrer" target="_blank">
+       <img alt="TikTok careers" class="img-responsive logo-img" src="/images/logos/tiktok.webp"/>
+      </a>
+      <a href="https://jobs.netflix.com/careers/content" rel="noopener noreferrer" target="_blank">
+       <img alt="Netflix careers" class="img-responsive logo-img" src="/images/logos/netflix.webp"/>
+      </a>
+      <a href="https://www.uber.com/global/en/careers/" rel="noopener noreferrer" target="_blank">
+       <img alt="Uber careers" class="img-responsive logo-img" src="/images/logos/uber.webp"/>
+      </a>
+      <a href="https://careers.airbnb.com/" rel="noopener noreferrer" target="_blank">
+       <img alt="Airbnb careers" class="img-responsive logo-img" src="/images/logos/airbnb.webp"/>
+      </a>
+      <a href="https://www.tesla.com/careers/search" rel="noopener noreferrer" target="_blank">
+       <img alt="Tesla careers" class="img-responsive logo-img" src="/images/logos/tesla.webp"/>
+      </a>
+      <a href="https://careers.booking.com/start-your-journey/" rel="noopener noreferrer" target="_blank">
+       <img alt="Booking careers" class="img-responsive logo-img" src="/images/logos/booking.webp"/>
+      </a>
+      <a href="https://www.lifeatspotify.com/" rel="noopener noreferrer" target="_blank">
+       <img alt="Spotify careers" class="img-responsive logo-img" src="/images/logos/spotify.webp"/>
+      </a>
+      <a href="https://www.lifeatcanva.com/en/" rel="noopener noreferrer" target="_blank">
+       <img alt="Canva careers" class="img-responsive logo-img" src="/images/logos/canva.webp"/>
+      </a>
+      <a href="https://www.pinterestcareers.com/jobs/" rel="noopener noreferrer" target="_blank">
+       <img alt="Pinterest careers" class="img-responsive logo-img" src="/images/logos/pinterest.webp"/>
+      </a>
+     </div>
+     <div>
+      <div>
+       <p>
+        As seen on
+       </p>
+      </div>
+      <div>
+       <a href="https://www.digitaljournal.com/pr/news/pr-zen/topjobstoday-tracks-fresh-faang-job-1250413984.html" rel="noopener noreferrer" target="_blank">
+        <img alt="Digital Journal Press Coverage" src="/images/digital-journey.webp"/>
+       </a>
+       <a href="https://markets.businessinsider.com/news/stocks/software-engineer-creates-platform-to-track-big-tech-job-openings-daily-1035089945" rel="noopener noreferrer" target="_blank">
+        <img alt="Business Insider Press Coverage" src="/images/business-insider-logo.webp"/>
+       </a>
+       <a href="https://www.producthunt.com/products/top-jobs-today/launches/top-jobs-today" rel="noopener noreferrer" target="_blank">
+        <div>
+         <div>
+          <span>
+           P
+          </span>
+         </div>
+         <span>
+          Product Hunt
+         </span>
+        </div>
+       </a>
+      </div>
+      <span>
+       🌟 Trusted by 10,000+ professionals
+      </span>
+     </div>
+     <div class="subscription-section-container">
+      <div class="subscription-card">
+       <div class="subscription-header">
+        <h2 class="subscription-title">
+         Subscribe to Job Alerts
+        </h2>
+        <p class="subscription-description">
+         <span>
+          No need to check this page daily - subscribe and get an email whenever new jobs are posted
+         </span>
+        </p>
+       </div>
+       <div class="login-section">
+        <form class="email-form" id="emailForm">
+         <div class="input-group">
+          <input class="form-control clean-input" id="email" name="email" placeholder="Enter your email address" type="email"/>
+          <button class="btn clean-btn-primary" id="submitBtn" type="submit">
+           Subscribe
+          </button>
+         </div>
+         <div class="error-message" id="errorMessage">
+          An error occurred. Please try again.
+         </div>
+        </form>
+       </div>
+       <div class="clean-divider">
+        <span>
+         or
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="job-block" id="latest-jobs">
+    <h3 class="text-center hero-title">
+     FAANG+ Jobs Posted in the Last 24 Hours
+    </h3>
+    <div id="filters-wrapper">
+     <form action="/#latest-jobs" class="filter-container aligned-form" id="filter-form" method="get">
+      <div class="choices">
+       <div class="choices__inner">
+        <input class="choices__input choices__input--cloned" placeholder="Select Roles" type="search"/>
+       </div>
+       <div class="choices__list choices__list--dropdown">
+        <div class="choices__list">
+         <div class="choices__item choices__item--choice choices__item--selectable is-highlighted" id="choices--roleFilter-item-choice-1">
+          🖥️ FullStack Developer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-2">
+          💻 Frontend Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-3">
+          🔧 Backend Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-4">
+          📱 iOS Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-5">
+          🤖 Android Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-6">
+          🧪 QA Engineer / SDET
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-7">
+          🔐 Security Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-8">
+          ☁️ DevOps/Cloud Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-9">
+          🏗️ Data Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-10">
+          📊 Data Scientist
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-11">
+          📊 Data Analyst
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-12">
+          🤖 AI/ML Engineer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-13">
+          📋 Product Manager
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-14">
+          🗂️ Program Manager
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-15">
+          🎨 Product Designer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-16">
+          📈 Marketing Manager
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-17">
+          💼 Business Analyst
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-18">
+          🛠️ Solutions Architect
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-19">
+          🔗 Supply Chain
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-20">
+          🏗️ Engineering Manager
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-21">
+          🕵️ Recruiter/Sourcer
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--roleFilter-item-choice-22">
+          👨‍💻 Interns / Entry Level
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="choices">
+       <div class="choices__inner">
+        <input class="choices__input choices__input--cloned" placeholder="Select Locations" type="search"/>
+       </div>
+       <div class="choices__list choices__list--dropdown">
+        <div class="choices__list">
+         <div class="choices__item choices__item--choice choices__item--selectable is-highlighted" id="choices--locationFilter-item-choice-1">
+          🏠 Remote
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-2">
+          🇺🇸 United States
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-3">
+          🇮🇳 India
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-4">
+          🇨🇦 Canada
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-5">
+          🇬🇧 United Kingdom
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-6">
+          🇦🇺 Australia
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-7">
+          🇩🇪 Germany
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-8">
+          🇳🇱 Netherlands
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-9">
+          🇮🇪 Ireland
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-10">
+          🇫🇷 France
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-11">
+          🇪🇸 Spain
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-12">
+          🇵🇱 Poland
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-13">
+          🇸🇪 Sweden
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-14">
+          🇨🇭 Switzerland
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-15">
+          🇸🇬 Singapore
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-16">
+          🇯🇵 Japan
+         </div>
+         <div class="choices__item choices__item--choice choices__item--selectable" id="choices--locationFilter-item-choice-17">
+          🇰🇷 South Korea
+         </div>
+        </div>
+       </div>
+      </div>
+      <button class="btn apply-btn" type="submit">
+       Apply
+      </button>
+     </form>
+    </div>
+    <div class="job-list" id="job-list">
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🏨 Booking
+       </div>
+       <h4 class="job-title">
+        CS Finance Junior Specialist-1
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Amsterdam, North Holland
+  Netherlands
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/booking/job/cs-finance-junior-specialist-1-amsterdam-north-holland-netherlands">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.booking.com/booking/jobs/27562?lang=en-us" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        UX Engineer, Chrome Desktop
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Seattle, WA, USA
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/ux-engineer-chrome-desktop-place-seattle-wa-usa-1">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/105419743258649286-ux-engineer-chrome-desktop?q=android%20kotlin&amp;location=United%20States" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Senior Software Engineer, Android, Auto Developer Platforms
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Kraków, Poland
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/senior-software-engineer-android-auto-developer-platforms-poland-1">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/73248033029923526-senior-software-engineer-android-auto-developer-platforms?q=android%20kotlin&amp;location=Poland" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🍎 Apple
+       </div>
+       <h4 class="job-title">
+        Full Stack Engineer, Apple Pay
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Austin
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/apple/job/full-stack-engineer-apple-pay-austin">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.apple.com/en-us/details/200623031-0157/full-stack-engineer-apple-pay?team=SFTWR" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🛒 Amazon
+       </div>
+       <h4 class="job-title">
+        Material Buyer, Supply Chain Materials Management
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Tokyo, JPN
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/amazon/job/material-buyer-supply-chain-materials-management-tokyo-jpn-1">
+         View Job
+        </a>
+        <a class="apply-button" href="https://amazon.jobs/en/jobs/3148516/material-buyer-supply-chain-materials-management" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🚕 Uber
+       </div>
+       <h4 class="job-title">
+        Staff Software Engineer
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Bangalore, India
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/uber/job/staff-software-engineer-bangalore-india-4">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.uber.com/careers/list/148401" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🎵 TikTok
+       </div>
+       <h4 class="job-title">
+        Beauty - Consumer Goods Project Intern (GBS) - 2026 Start (BS/MS)
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Paris
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/tiktok/job/beauty-consumer-goods-project-intern-gbs-2026-start-bsms-paris">
+         View Job
+        </a>
+        <a class="apply-button" href="https://lifeattiktok.com/search/7586758588761950517" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🛒 Amazon
+       </div>
+       <h4 class="job-title">
+        Principal Solutions Architect for Public Sector
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Stockholm, SWE
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/amazon/job/principal-solutions-architect-public-sector-stockholm-swe">
+         View Job
+        </a>
+        <a class="apply-button" href="https://amazon.jobs/en/jobs/3148364/principal-solutions-architect-for-public-sector" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🍎 Apple
+       </div>
+       <h4 class="job-title">
+        Software Engineer - Full Stack, eBusiness Services
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 No Location
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/apple/job/software-engineer-full-stack-ebusiness-services-no-location">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.apple.com/en-us/details/200635004-0240/software-engineer-full-stack-ebusiness-services?team=SFTWR" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Program Manager, Customer Support Operations, Google Cloud
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Waterloo, ON, Canada
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/program-manager-customer-support-operations-google-cloud-canada">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/86946573522477766-program-manager-customer-support-operations-google-cloud?q=%22program%20manager%22&amp;location=Canada" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🍎 Apple
+       </div>
+       <h4 class="job-title">
+        Camera Firmware Engineer
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Singapore
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/apple/job/camera-firmware-engineer-singapore">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.apple.com/en-us/details/200635521-3278/camera-firmware-engineer?team=HRDWR" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Staff Software Engineer, Storage, Google Cloud
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Hyderabad, Telangana, India
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/staff-software-engineer-storage-google-cloud-india">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/99090722400936646-staff-software-engineer-storage-google-cloud?q=full%20stack&amp;location=India" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Software Engineer III, Business Messaging Infrastructure
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Kraków, Poland
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/software-engineer-iii-business-messaging-infrastructure-place-krakw-poland">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/113501016283849414-software-engineer-iii-business-messaging-infrastructure?q=full%20stack&amp;location=Poland" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Solutions Developer, Mission Critical Services, Networking, Google Cloud
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  Waterloo, ON, Canada
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/solutions-developer-mission-critical-services-networking-google-cloud">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/100503208295572166-solutions-developer-mission-critical-services-networking-google-cloud?q=full%20stack&amp;location=Canada" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🚕 Uber
+       </div>
+       <h4 class="job-title">
+        Senior Staff Engineer
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Bangalore, India
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/uber/job/senior-staff-engineer-bangalore-india-1">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.uber.com/careers/list/142584" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🍎 Apple
+       </div>
+       <h4 class="job-title">
+        Technical Experience Designer - Apple Vision Pro
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 No Location
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/apple/job/technical-experience-designer-apple-vision-pro-no-location">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.apple.com/en-us/details/200639091-1756/technical-experience-designer-apple-vision-pro?team=DESGN" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🛒 Amazon
+       </div>
+       <h4 class="job-title">
+        Software Development Engineer II, IMDb iOS App, IMDb
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Santa Monica, CA, USA, Seattle, WA, USA
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/amazon/job/software-development-engineer-ii-imdb-ios-app-imdb-usa">
+         View Job
+        </a>
+        <a class="apply-button" href="https://amazon.jobs/en/jobs/3148680/software-development-engineer-ii-imdb-ios-app-imdb" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🎶 Spotify
+       </div>
+       <h4 class="job-title">
+        Fullstack Engineer, Subscriptions
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 London or Stockholm
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/spotify/job/fullstack-engineer-subscriptions-london-or-stockholm-1">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.lifeatspotify.com/jobs/fullstack-engineer-subscriptions-2" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🍎 Apple
+       </div>
+       <h4 class="job-title">
+        Software Engineer, Full stack , Retail Engineering Apps &amp; Services
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 Sunnyvale
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/apple/job/software-engineer-full-stack-retail-engineering-apps-services-sunnyvale-3">
+         View Job
+        </a>
+        <a class="apply-button" href="https://jobs.apple.com/en-us/details/200624755-3956/software-engineer-full-stack-retail-engineering-apps-services?team=SFTWR" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="job-card">
+      <div class="job-content">
+       <div class="job-details company-name">
+        🔍 Google
+       </div>
+       <h4 class="job-title">
+        Software Engineer III, Performance
+       </h4>
+       <div class="job-details">
+        <span class="job-location">
+         📍 place
+  London, UK
+        </span>
+       </div>
+       <div class="apply-button-container">
+        <a class="apply-button" href="/company/google/job/software-engineer-iii-performance-place-london-uk">
+         View Job
+        </a>
+        <a class="apply-button" href="https://www.google.com/about/careers/applications/jobs/results/105014023467999942-software-engineer-iii-performance?q=full%20stack&amp;location=United%20Kingdom" rel="noopener noreferrer" target="_blank">
+         Apply
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="subscription-container pink-area">
+    <p class="cta-text">
+     ✉️ More Big Tech jobs tomorrow. Stay in the loop — subscribe now.
+    </p>
+    <form class="email-form" id="clonedEmailForm">
+     <input class="form-control clean-input" id="clonedEmail" name="email" placeholder="Enter your email address" type="email"/>
+     <button class="btn clean-btn-primary" id="clonedSubmitBtn" type="submit">
+      Subscribe
+     </button>
+    </form>
+    <div class="clean-divider">
+     <span class="pink-area">
+      or
+     </span>
+    </div>
+   </div>
+   <section class="card-section" id="about-me-section">
+    <h2 class="hero-title">
+     Why I Created Top Jobs Today
+    </h2>
+    <img alt="Stanislav Prigodich" src="/images/stanislav-prigodich.webp"/>
+    <h3>
+     Hey, I’m Stan 👋
+    </h3>
+    <p>
+     I’m a software developer, and over time I realized I cared mostly about roles at big tech companies - not just whatever happened to show up on LinkedIn or generic job boards. But those sources weren’t enough - some roles were delayed, or never posted at all.
+    </p>
+    <p>
+     So I built this
+     <a href="https://topjobstoday.com">
+      project
+     </a>
+     to solve that. It scrapes fresh job postings directly from official company sites, figures out what kind of roles they really are, and sends them as email alerts - simple, fast, and focused.
+    </p>
+    <p>
+     Hope it makes your search easier too. Wishing you the best of luck - and I’m really glad you’re here!
+    </p>
+    <div>
+     <div>
+      <a href="https://www.linkedin.com/in/sprigodich/" rel="noopener noreferrer" target="_blank">
+       Connect with me on LinkedIn
+      </a>
+      <br/>
+      <a href="https://www.reddit.com/r/FAANGJobs/" rel="noopener noreferrer" target="_blank">
+       <img alt="Reddit" height="25" src="/images/reddit.webp" width="25"/>
+       Join my r/FAANGJobs Community
+      </a>
+     </div>
+    </div>
+   </section>
+   <section class="card-section text-center" id="why-subscribe-section">
+    <h2 class="hero-title">
+     What Daily FAANG Job Alerts Look Like
+    </h2>
+    <div class="example-email-block">
+     <div class="example-email-text">
+      <p>
+       Receive emails like this every day—featuring the best tech jobs from FAANG and other top companies like
+       <strong>
+        Apple, Google, Amazon, Meta, Nvidia, Stripe, Microsoft, Netflix, Tesla, Uber, Airbnb, TikTok, Spotify, Booking.com, Pinterest, Canva, and OpenAI.
+       </strong>
+       Stay ahead with the latest job opportunities delivered to your inbox.
+      </p>
+     </div>
+     <div class="image-container">
+      <img alt="FAANG Jobs Posted in the Last 24h" class="newsletter-image img-responsive" src="/images/email-screenshot/email-example-fullstack.webp"/>
+     </div>
+    </div>
+   </section>
+   <section class="card-section text-center" id="how-top-jobs-today-works-section">
+    <div class="container">
+     <h2 class="hero-title">
+      How Top Jobs Today Works
+     </h2>
+     <div class="feature-cards">
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        🤖
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Smart scraping from official sources: job listings are parsed from the official career pages of top tech companies, with optimized search parameters for relevance.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        🧹
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Curated, spam-free, and role-focused: only high-quality, fresh openings from top companies, tailored to your preferences.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        📬
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Delivered daily to your inbox: get a clean, personalized email with direct links to apply on official career sites.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="card-section benefits-section text-center">
+    <div class="container">
+     <h2 class="hero-title">
+      Why Subscribe to FAANG+ Job Alerts?
+     </h2>
+     <div class="feature-cards">
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        💼
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Only jobs from FAANG and other top tech companies—meticulously curated for quality and relevance.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        📧
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Never miss a FAANG MAANG job opportunity—daily alerts delivered directly to your inbox.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        🚀
+       </span>
+       <div class="feature-card-content">
+        <p>
+         First-to-know advantage—get access to fresh listings before they appear on generic job boards.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        🎯
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Tailored job alerts—select your desired role and location for highly relevant, personalized alerts.
+        </p>
+       </div>
+      </div>
+      <div class="feature-card">
+       <span class="feature-card-icon">
+        📬
+       </span>
+       <div class="feature-card-content">
+        <p>
+         Delivered daily—curated, fresh opportunities from top tech companies, every single day.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="text-center" id="resume-masterclass-section">
+    <div class="container">
+     <h2 class="hero-title">
+      Ex-Google Recruiter Teaches Resume Masterclass to get FAANG Interviews
+     </h2>
+     <div>
+      <div>
+       <p>
+        Former recruiter for
+        <strong>
+         Google, Lyft, Uber, TikTok, and The New York Times
+        </strong>
+        <a href="https://www.youtube.com/watch?v=ck5nw7R1uEs" target="_blank">
+         shares
+        </a>
+        step-by-step tips to create a resume that grabs attention, avoids common mistakes, and lands you interviews—no matter your background.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="faq-section text-center">
+    <div class="container">
+     <h2 class="hero-title">
+      Frequently Asked Questions
+     </h2>
+     <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingOne">
+        <h4 class="panel-title">
+         <a href="#collapseOne">
+          What exactly are FAANG (MAANG) and Top Tech Companies?
+         </a>
+        </h4>
+       </div>
+       <div class="panel-collapse collapse in" id="collapseOne">
+        <div class="panel-body text-left">
+         FAANG (MAANG) refers to the tech giants Facebook (Meta), Apple, Amazon, Netflix, and Google. Top Jobs Today also includes other leading tech companies that offer highly sought-after roles, such as Microsoft, OpenAI, Nvidia, Stripe, Tesla, Uber, Airbnb, TikTok, Spotify, Booking, Pinterest, and Canva. These organizations are known for their innovation, competitive compensation, and challenging work environments, making their job opportunities highly coveted by professionals worldwide.
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingTwo">
+        <h4 class="panel-title">
+         <a class="collapsed" href="#collapseTwo">
+          How often are the job alerts sent to my email?
+         </a>
+        </h4>
+       </div>
+       <div class="panel-collapse collapse" id="collapseTwo">
+        <div class="panel-body text-left">
+         Top Jobs Today send out daily email alerts. The system continuously scrapes official career pages, and any new FAANG or other top tech companies job postings detected within the last 24 hours are included in your next daily summary. This ensures you receive the freshest opportunities every morning, giving you the fastest access to new roles.
+        </div>
+       </div>
+      </div>
+      <div class="panel panel-default">
+       <div class="panel-heading" id="headingThree">
+        <h4 class="panel-title">
+         <a class="collapsed" href="#collapseThree">
+          Can I filter alerts for specific job roles or locations?
+         </a>
+        </h4>
+       </div>
+       <div class="panel-collapse collapse" id="collapseThree">
+        <div class="panel-body text-left">
+         Absolutely! When you subscribe, or if you visit your account profile, you can easily select your preferred job roles (e.g., Software Engineer, Product Manager, Data Scientist, iOS Developer, Frontend Developer, etc.) and locations (e.g., Remote, United States, India, Canada, UK). This allows the system to provide you with highly relevant and personalized FAANG+ job alerts, cutting through the noise and delivering exactly what you're looking for.
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <footer class="footer bg-dark text-white text-center">
+    <div class="container">
+     <div class="row">
+      <div class="col">
+       <h5>
+        Jobs by Company
+       </h5>
+       <p>
+        <a href="/company/google">
+         Google Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/apple">
+         Apple Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/meta">
+         Meta Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/amazon">
+         Amazon Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/netflix">
+         Netflix Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/microsoft">
+         Microsoft Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/tesla">
+         Tesla Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/nvidia">
+         Nvidia Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/uber">
+         Uber Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/airbnb">
+         Airbnb Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/stripe">
+         Stripe Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/tiktok">
+         TikTok Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/spotify">
+         Spotify Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/booking">
+         Booking Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/pinterest">
+         Pinterest Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/canva">
+         Canva Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/openai">
+         OpenAI Jobs
+        </a>
+       </p>
+      </div>
+      <div class="col">
+       <h5>
+        Remote Jobs by Company
+       </h5>
+       <p>
+        <a href="/company/google-remote-jobs">
+         Google Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/apple-remote-jobs">
+         Apple Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/meta-remote-jobs">
+         Meta Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/amazon-remote-jobs">
+         Amazon Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/netflix-remote-jobs">
+         Netflix Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/microsoft-remote-jobs">
+         Microsoft Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/tesla-remote-jobs">
+         Tesla Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/nvidia-remote-jobs">
+         Nvidia Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/uber-remote-jobs">
+         Uber Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/airbnb-remote-jobs">
+         Airbnb Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/stripe-remote-jobs">
+         Stripe Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/tiktok-remote-jobs">
+         TikTok Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/spotify-remote-jobs">
+         Spotify Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/booking-remote-jobs">
+         Booking Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/pinterest-remote-jobs">
+         Pinterest Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/canva-remote-jobs">
+         Canva Remote Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/company/openai-remote-jobs">
+         OpenAI Remote Jobs
+        </a>
+       </p>
+      </div>
+      <div class="col">
+       <h5>
+        FAANG Jobs by Country
+       </h5>
+       <p>
+        <a href="/usa-faang-jobs">
+         United States FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/canada-faang-jobs">
+         Canada FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/uk-faang-jobs">
+         UK FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/germany-faang-jobs">
+         Germany FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/ireland-faang-jobs">
+         Ireland FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/netherlands-faang-jobs">
+         Netherlands FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/france-faang-jobs">
+         France FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/poland-faang-jobs">
+         Poland FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/sweden-faang-jobs">
+         Sweden FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/switzerland-faang-jobs">
+         Switzerland FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/india-faang-jobs">
+         India FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/singapore-faang-jobs">
+         Singapore FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/spain-faang-jobs">
+         Spain FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/australia-faang-jobs">
+         Australia FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/japan-faang-jobs">
+         Japan FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/korea-faang-jobs">
+         Korea FAANG Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-faang-jobs">
+         Remote FAANG Jobs
+        </a>
+       </p>
+      </div>
+      <div class="col">
+       <h5>
+        Remote FAANG Jobs by Role
+       </h5>
+       <p>
+        <a href="/remote-ios-developer-jobs">
+         Remote iOS Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-android-developer-jobs">
+         Remote Android Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-frontend-developer-jobs">
+         Remote Frontend Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-backend-developer-jobs">
+         Remote Backend Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-fullstack-developer-jobs">
+         Remote FullStack Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-qa-engineer-jobs">
+         Remote QA Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-data-scientist-jobs">
+         Remote Data Scientist Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-data-engineer-jobs">
+         Remote Data Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-data-analyst-jobs">
+         Remote Data Analyst Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-machine-learning-engineer-jobs">
+         Remote ML Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-product-manager-jobs">
+         Remote Product Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-program-manager-jobs">
+         Remote Program Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-business-analyst-jobs">
+         Remote Business Analyst Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-engineering-manager-jobs">
+         Remote Engineering Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-devops-jobs">
+         Remote DevOps Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-cybersecurity-jobs">
+         Remote Cybersecurity Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-solutions-architect-jobs">
+         Remote Solutions Architect Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-marketing-jobs">
+         Remote Marketing Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-supply-chain-jobs">
+         Remote Supply Chain Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-product-designer-jobs">
+         Remote Designer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/remote-faang-internship">
+         Remote FAANG Internships
+        </a>
+       </p>
+       <p>
+        <a href="/remote-technical-recruiter-jobs">
+         Remote Recruiter Jobs
+        </a>
+       </p>
+      </div>
+      <div class="col">
+       <h5>
+        Popular Job Categories
+       </h5>
+       <p>
+        <a href="/usa-software-engineer-jobs">
+         United States Software Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/faang-software-engineer-jobs">
+         FAANG Software Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/full-stack-developer-jobs">
+         Full Stack Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/frontend-web-developer-jobs">
+         Frontend Web Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/backend-software-developer-jobs">
+         Backend Software Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/data-science-engineering-jobs">
+         Data Science &amp; Data Engineering Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/artificial-intelligence-machine-learning-jobs">
+         AI &amp; Machine Learning Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/cybersecurity-it-security-jobs">
+         Cybersecurity &amp; IT Security Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/faang-product-manager-jobs">
+         FAANG Product Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/engineering-leadership-manager-jobs">
+         Engineering Leadership &amp; Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/product-design-ux-jobs">
+         Product Design &amp; UX Designer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/devops-cloud-infrastructure-jobs">
+         DevOps &amp; Cloud Infrastructure Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/quality-assurance-testing-jobs">
+         QA &amp; Software Testing Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/faang-data-jobs">
+         Business &amp; Data Analyst Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/supply-chain-operations-jobs">
+         Supply Chain &amp; Operations Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/digital-product-marketing-jobs">
+         Digital &amp; Product Marketing Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/technical-recruiter-jobs">
+         Technical Recruiter Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/internships-entry-level-jobs">
+         FAANG Internships &amp; Entry Level Jobs
+        </a>
+       </p>
+      </div>
+      <div class="col">
+       <h5>
+        H1B Visa Jobs by Role
+       </h5>
+       <p>
+        <a href="/h1b-software-engineer-jobs">
+         H1B Software Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-ios-developer-jobs">
+         H1B iOS Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-android-developer-jobs">
+         H1B Android Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-frontend-developer-jobs">
+         H1B Frontend Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-backend-developer-jobs">
+         H1B Backend Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-fullstack-developer-jobs">
+         H1B Full Stack Developer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-qa-engineer-jobs">
+         H1B QA Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-data-scientist-jobs">
+         H1B Data Scientist Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-data-engineer-jobs">
+         H1B Data Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-data-analyst-jobs">
+         H1B Data Analyst Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-machine-learning-engineer-jobs">
+         H1B ML Engineer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-product-manager-jobs">
+         H1B Product Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-program-manager-jobs">
+         H1B Program Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-business-analyst-jobs">
+         H1B Business Analyst Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-engineering-manager-jobs">
+         H1B Engineering Manager Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-devops-jobs">
+         H1B DevOps Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-cybersecurity-jobs">
+         H1B Cybersecurity Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-solutions-architect-jobs">
+         H1B Solutions Architect Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-marketing-jobs">
+         H1B Marketing Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-supply-chain-jobs">
+         H1B Supply Chain Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-product-designer-jobs">
+         H1B Product Designer Jobs
+        </a>
+       </p>
+       <p>
+        <a href="/h1b-technical-recruiter-jobs">
+         H1B Technical Recruiter Jobs
+        </a>
+       </p>
+      </div>
+     </div>
+     <div>
+      <p>
+       © 2025 Top Jobs Today. All Rights Reserved.
+      </p>
+      <p>
+       Contact us at
+       <a href="mailto:newsletter@topjobstoday.com">
+        newsletter@topjobstoday.com
+       </a>
+      </p>
+      <p>
+       <a href="/blog">
+        Blog
+       </a>
+       |
+       <a href="/jobs">
+        Explore more Jobs
+       </a>
+      </p>
+      <p>
+       <a href="/terms-of-use">
+        Terms of Use
+       </a>
+       |
+       <a href="/privacy-policy">
+        Privacy Policy
+       </a>
+      </p>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

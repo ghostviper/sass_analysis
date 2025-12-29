@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Comedeez</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col min-h-screen bg-background text-foreground antialiased relative overflow-x-hidden">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full border-b bg-background/95 backdrop-blur-lg supports-[backdrop-filter]:bg-background/80 shadow-sm">
+     <div class="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+      <a class="flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm group" href="/">
+       <span class="text-2xl font-bold">
+        Comedeez
+       </span>
+      </a>
+      <nav class="flex items-center gap-2 sm:gap-4">
+       <a class="text-sm font-medium hover:text-accent transition-colors hidden sm:inline-block" href="#features">
+        Features
+       </a>
+       <a class="text-sm font-medium hover:text-accent transition-colors hidden sm:inline-block" href="#pricing">
+        Pricing
+       </a>
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 w-8">
+        <span class="sr-only">
+         Toggle theme
+        </span>
+       </button>
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 relative overflow-hidden group flex items-center gap-2" href="/login">
+        <img alt="Google" class="relative z-10" height="18" src="/google-logo.svg" width="18"/>
+        <span class="relative z-10">
+         Sign in with Google
+        </span>
+       </a>
+      </nav>
+     </div>
+    </header>
+    <main class="flex-grow relative z-10 pt-16">
+     <section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+      <div class="absolute inset-0 z-0">
+       <img alt="Comedy Background" class="object-cover" src="/hero-banner-dark.svg"/>
+      </div>
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
+       <div class="text-center max-w-5xl mx-auto">
+        <div>
+         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
+          <span class="text-sm font-medium text-accent">
+           4 AI Models • Unlimited Creativity
+          </span>
+         </div>
+        </div>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight mb-6 leading-tight">
+         <span class="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 via-cyan-600 to-sky-600 dark:from-blue-400 dark:via-cyan-400 dark:to-sky-400">
+          Unleash Your
+         </span>
+         <br/>
+         <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-600 via-indigo-600 to-blue-600 dark:from-sky-400 dark:via-indigo-400 dark:to-blue-400">
+          Inner Comedian
+         </span>
+        </h1>
+        <p class="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
+         The ultimate AI-powered comedy platform. Choose from
+         <strong>
+          GPT-5, Claude, Gemini, or Grok
+         </strong>
+         .
+         <br class="hidden sm:block"/>
+         Write jokes, get feedback, perform live—all in one place.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+         <div>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-11 rounded-md text-lg px-10 py-7 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 flex items-center gap-2" href="/register">
+           Get Started Free
+          </a>
+         </div>
+         <div>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md text-lg px-10 py-7 border-2" href="#ai-tools-showcase">
+           Explore AI Tools
+          </a>
+         </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 mt-16 text-sm">
+         <div class="flex items-center gap-2">
+          <span class="text-muted-foreground">
+           24+ AI Tools
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-muted-foreground">
+           4 AI Models
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-muted-foreground">
+           Growing Community
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-muted-foreground">
+           $10 Lifetime
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 relative z-10" id="features">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="">
+        <div class="text-center mb-16">
+         <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+          <span class="text-sm font-medium text-accent">
+           FEATURES
+          </span>
+         </div>
+         <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+          Everything You Need to Shine
+         </h2>
+         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          From writing to performing, Comedeez has your entire comedy journey covered.
+         </p>
+        </div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Joke Book
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Craft, organize, and rate your jokes. Never lose a brilliant idea again.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            24+ AI Writing Tools
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Choose from GPT-5, Claude, Gemini, or Grok. Customize with taste sliders for your unique style.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Joke Bot Chat
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Have conversations with AI about your comedy. Upload your material for personalized feedback.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Meme Creator
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Generate hilarious memes with AI and share them with the community.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Community Hub
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Share jokes, get feedback, follow comedians, and build your comedy network.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Open Mic Live
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Perform live, get instant reactions, and climb the comedy ladder.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50 overflow-hidden relative">
+          <div class="flex flex-col space-y-1.5 items-center text-center p-6 relative z-10">
+           <div class="font-semibold tracking-tight text-2xl">
+            Comedy Workshops
+           </div>
+          </div>
+          <div class="p-6 pt-0 text-center px-6 pb-6 relative z-10">
+           <p class="text-muted-foreground">
+            Join or host interactive workshops to learn new skills and share expertise.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 bg-muted/30 relative z-10" id="ai-tools-showcase">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+        <div class="">
+         <div class="relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl group bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center p-4">
+          <img alt="AI Tools Showcase" class="object-contain" src="/_next/image?url=%2Fai-tools.webp&amp;w=3840&amp;q=80"/>
+          <div class="absolute bottom-6 left-6 right-6 pointer-events-none">
+           <h3 class="text-white text-2xl font-bold mb-2 drop-shadow-lg">
+            Powered by 4 AI Models
+           </h3>
+           <p class="text-white/90 drop-shadow-lg">
+            GPT-5 • Claude Sonnet 4.5 • Gemini Flash 2.5 • Grok-4
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="">
+         <div>
+          <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+           <span class="text-sm font-medium text-accent">
+            AI TOOLS
+           </span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+           Your AI Comedy Writing Suite
+          </h2>
+          <p class="text-lg text-muted-foreground mb-8">
+           Choose the AI model that fits your style. Customize every output with our unique taste sliders— control weirdness, edginess, wordiness, and formality. It's like having 4 comedy writers at your fingertips.
+          </p>
+          <div class="space-y-4">
+           <div class="flex items-start gap-3">
+            <div>
+             <h4 class="font-semibold mb-1">
+              24+ Specialized Tools
+             </h4>
+             <p class="text-sm text-muted-foreground">
+              From joke rewriting to character creation, we've got every angle covered.
+             </p>
+            </div>
+           </div>
+           <div class="flex items-start gap-3">
+            <div>
+             <h4 class="font-semibold mb-1">
+              Customizable Output
+             </h4>
+             <p class="text-sm text-muted-foreground">
+              Taste sliders let you dial in exactly the style you want.
+             </p>
+            </div>
+           </div>
+           <div class="flex items-start gap-3">
+            <div>
+             <h4 class="font-semibold mb-1">
+              Free to Try
+             </h4>
+             <p class="text-sm text-muted-foreground">
+              3 free uses per day. Test drive before you commit.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="mt-8">
+           <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700" href="/register">
+            Try AI Tools Free
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="">
+        <div class="text-center mb-12">
+         <h3 class="text-3xl font-bold mb-4">
+          Featured AI Tools
+         </h3>
+         <p class="text-muted-foreground">
+          Try 8 tools for free with public demos—no signup required
+         </p>
+        </div>
+       </div>
+       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div>
+         <a href="/tools/joke-rewriter">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Joke Rewriter
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Get AI-powered suggestions to punch up your existing jokes.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/joke-analyzer">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Joke Analyzer
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Understand the structure and potential of your jokes.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/punchline-generator">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Punchline Generator
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Stuck on a setup? Let AI brainstorm killer punchlines.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/topic-explorer">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Topic Explorer
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Find funny angles and ideas for new comedy topics.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/character-creator">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Character Creator
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Develop quirky and memorable characters for your bits.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/premise-expander">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Premise Expander
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Take a simple idea and flesh it out into a full premise.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/analogy-generator">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Analogy Generator
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Find hilarious and unexpected analogies.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div>
+         <a href="/tools/roast-writer">
+          <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-accent/50 cursor-pointer overflow-hidden relative">
+           <div class="flex flex-col space-y-1.5 p-4 relative z-10">
+            <div class="tracking-tight text-lg font-semibold">
+             Roast Writer
+            </div>
+           </div>
+           <div class="p-4 pt-0 relative z-10">
+            <div class="text-muted-foreground text-sm">
+             Generate witty roasts for any occasion.
+            </div>
+           </div>
+          </div>
+         </a>
+        </div>
+       </div>
+       <div class="">
+        <div class="text-center mt-12">
+         <p class="text-muted-foreground mb-4">
+          Plus 16+ more tools for Pro members
+         </p>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8" href="/register">
+          View All Tools
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="">
+         <div class="order-2 lg:order-1">
+          <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+           <span class="text-sm font-medium text-accent">
+            COMMUNITY
+           </span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+           Connect. Share. Grow Together.
+          </h2>
+          <p class="text-lg text-muted-foreground mb-8">
+           Join a vibrant community of comedians. Share your jokes, follow your favorites, get feedback, and discover new comedic voices. Build your comedy network and grow together.
+          </p>
+          <div class="space-y-4">
+           <div class="flex items-center gap-3">
+            <span>
+             Public profiles to showcase your best work
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span>
+             Follow system to build your comedy network
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span>
+             Community feed to share and get feedback
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span>
+             Live Open Mic performances with real audiences
+            </span>
+           </div>
+          </div>
+          <div class="mt-8">
+           <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 border-2" href="/comedians">
+            Browse Comedians
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="">
+         <div class="order-1 lg:order-2 relative h-[400px] lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl group">
+          <img alt="Community Feature" class="object-cover" src="/_next/image?url=%2Flanding-page-for-light.webp&amp;w=3840&amp;q=80"/>
+          <div class="absolute bottom-6 left-6 right-6">
+           <h3 class="text-white text-2xl font-bold mb-2">
+            Your Stage Awaits
+           </h3>
+           <p class="text-white/90">
+            Share, perform, and connect with fellow comedians
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-sky-500/10 relative z-10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="">
+        <div class="max-w-4xl mx-auto text-center">
+         <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-8">
+          <span class="text-sm font-medium text-accent">
+           FROM THE FOUNDER
+          </span>
+         </div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-2xl border-2 border-accent/20">
+          <div class="p-6 pt-12 pb-8 px-8">
+           <div class="flex justify-center mb-6">
+            <div>
+             <span class="relative flex shrink-0 overflow-hidden rounded-full h-20 w-20 border-4 border-accent">
+              <span class="flex h-full w-full items-center justify-center rounded-full text-2xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white">
+               LA
+              </span>
+             </span>
+            </div>
+           </div>
+           <p class="text-2xl md:text-3xl font-semibold mb-6 leading-relaxed">
+            "I built Comedeez because I love everything about comedy. When AI came out I learned to make apps, I made a lot of bad apps before making this.  This is a culmination of all of that into one sexy little comedy writing app.  Comics need their own version of X where anything goes, and this is it. I work on the app daily, I take all suggestions seriously, and
+            <span class="text-accent">
+             I love it
+            </span>
+            . I use it every day."
+           </p>
+           <div class="border-t pt-6">
+            <p class="font-bold text-lg">
+             Lalo
+            </p>
+            <p class="text-muted-foreground">
+             Founder &amp; Only Current Testimonial (for now 😄)
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 relative z-10" id="pricing">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="">
+        <div class="text-center mb-16">
+         <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+          <span class="text-sm font-medium text-accent">
+           PRICING
+          </span>
+         </div>
+         <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+          Simple, Honest Pricing
+         </h2>
+         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Start free, upgrade whenever. No subscriptions, just one lifetime payment.
+         </p>
+        </div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-2 hover:border-accent/50">
+          <div class="flex flex-col space-y-1.5 text-center p-8">
+           <div class="tracking-tight text-3xl font-semibold mb-4">
+            Free Plan
+           </div>
+           <div class="mb-4">
+            <span class="text-5xl font-bold">
+             $0
+            </span>
+            <span class="text-muted-foreground ml-2">
+             /month
+            </span>
+           </div>
+           <p class="text-muted-foreground">
+            Basic access to core features
+           </p>
+          </div>
+          <div class="p-8 pt-0">
+           <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+             <span>
+              Unlimited jokes in the joke book
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span class="h-5 w-5 flex-shrink-0 mt-1 text-muted-foreground">
+              ⊖
+             </span>
+             <span class="text-muted-foreground">
+              No access to meme creation
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Post in the community
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span class="h-5 w-5 flex-shrink-0 mt-1 text-muted-foreground">
+              ⊖
+             </span>
+             <span class="text-muted-foreground">
+              View comedy workshops (not host)
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span class="h-5 w-5 flex-shrink-0 mt-1 text-muted-foreground">
+              ⊖
+             </span>
+             <span class="text-muted-foreground">
+              View open mics (not host)
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span class="h-5 w-5 flex-shrink-0 mt-1 text-muted-foreground">
+              ⊖
+             </span>
+             <span class="text-muted-foreground">
+              Limited to 3 AI Writing Tools uses per day
+             </span>
+            </li>
+           </ul>
+          </div>
+          <div class="flex items-center p-8 pt-0">
+           <div class="w-full">
+            <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 w-full text-lg py-6" href="/register">
+             Start Free
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="rounded-lg bg-card text-card-foreground shadow-sm h-full group hover:shadow-2xl transition-all duration-300 border-accent border-4 ring-4 ring-accent/30 transform scale-105">
+          <div class="bg-gradient-to-r from-blue-600 to-cyan-600 text-white text-center py-2 font-semibold text-sm">
+           BEST VALUE 🎉
+          </div>
+          <div class="flex flex-col space-y-1.5 text-center p-8">
+           <div class="tracking-tight text-3xl font-semibold mb-4">
+            Lifetime Plan
+           </div>
+           <div class="mb-4">
+            <span class="text-5xl font-bold">
+             $10
+            </span>
+            <span class="text-muted-foreground ml-2">
+             lifetime
+            </span>
+           </div>
+           <p class="text-muted-foreground">
+            Full access to all Comedeez premium features
+           </p>
+          </div>
+          <div class="p-8 pt-0">
+           <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+             <span>
+              Unlimited jokes in the joke book
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Unlimited meme creations
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Full community participation
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Host and view comedy workshops
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Host and view open mics
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Unlimited access to all AI Writing Tools
+             </span>
+            </li>
+            <li class="flex items-start gap-3">
+             <span>
+              Priority support
+             </span>
+            </li>
+           </ul>
+          </div>
+          <div class="flex items-center p-8 pt-0">
+           <div class="w-full">
+            <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 w-full text-lg py-6 bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700" href="/register">
+             Get Lifetime Access
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 bg-muted/30 relative z-10" id="faq">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="">
+        <div class="text-center mb-16">
+         <div class="inline-block px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-4">
+          <span class="text-sm font-medium text-accent">
+           FAQ
+          </span>
+         </div>
+         <h2 class="text-4xl md:text-6xl font-bold mb-4 tracking-tight">
+          Frequently Asked Questions
+         </h2>
+         <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+          Everything you need to know about Comedeez
+         </p>
+        </div>
+       </div>
+       <div class="">
+        <div class="max-w-3xl mx-auto">
+         <div class="w-full space-y-4">
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_c_" type="button">
+               What is Comedeez?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_0_" type="button">
+               How do the AI writing tools work?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_2_" type="button">
+               What's included in the Free Plan?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_4_" type="button">
+               What do I get with the Lifetime Plan?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_6_" type="button">
+               Is my content safe and private?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div>
+           <div class="border-0">
+            <div class="rounded-lg border bg-card text-card-foreground shadow-md hover:shadow-xl transition-shadow">
+             <h3 class="flex">
+              <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-lg hover:no-underline text-left font-semibold" id="radix-_r_8_" type="button">
+               Who is Comedeez for?
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-16 md:py-20 bg-background relative z-10 overflow-hidden">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+       <div class="relative overflow-hidden rounded-3xl border-4 border-blue-500 dark:border-transparent bg-gradient-to-br dark:from-blue-800 dark:via-cyan-800 dark:to-indigo-900 py-12 md:py-16">
+        <div class="grid lg:grid-cols-2 gap-8 items-center">
+         <div class="">
+          <div class="relative h-[300px] lg:h-[350px] flex items-center justify-center">
+           <img alt="Level Up Your Comedy" class="object-contain w-full h-full drop-shadow-2xl" height="400" src="/_next/image?url=%2Flevel-up.webp&amp;w=828&amp;q=80" width="400"/>
+          </div>
+         </div>
+         <div class="">
+          <div class="relative z-10">
+           <h2 class="text-3xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white dark:drop-shadow-lg">
+            Ready to Level Up Your Comedy?
+           </h2>
+           <p class="text-lg md:text-xl mb-6 text-gray-700 dark:text-white/90 dark:drop-shadow-lg">
+            Join Comedeez today and get instant access to 24+ AI tools, a supportive community, and everything you need to write better comedy.
+           </p>
+           <div class="flex flex-col sm:flex-row gap-4">
+            <div>
+             <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md text-lg px-10 py-7 bg-blue-600 text-white hover:bg-blue-700 dark:bg-white dark:text-blue-600 dark:hover:bg-gray-100 shadow-xl flex items-center gap-2" href="/register">
+              Start Free Now
+             </a>
+            </div>
+            <div>
+             <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-background hover:text-accent-foreground h-11 rounded-md text-lg px-10 py-7 border-2 border-blue-600 text-blue-600 hover:bg-blue-50 dark:border-white dark:text-white dark:hover:bg-white/10 shadow-xl" href="/login">
+              Sign In
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="py-12 border-t bg-background relative z-10">
+     <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <a class="flex items-center justify-center gap-2 mb-6 group focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-sm" href="/">
+       <span class="text-3xl font-bold">
+        Comedeez
+       </span>
+      </a>
+      <p class="text-muted-foreground mb-6 max-w-md mx-auto">
+       Your one-stop platform for comedy creation, collaboration, and performance.
+      </p>
+      <p class="text-sm text-muted-foreground">
+       © 2025 Comedeez. All rights reserved. Built for laughs.
+      </p>
+      <div class="mt-2 space-x-4 text-sm">
+       <a class="text-muted-foreground hover:text-accent transition-colors" href="/privacy">
+        Privacy Policy
+       </a>
+       <span class="text-muted-foreground">
+        |
+       </span>
+       <a class="text-muted-foreground hover:text-accent transition-colors" href="/terms">
+        Terms of Service
+       </a>
+       <span class="text-muted-foreground">
+        |
+       </span>
+       <a class="text-muted-foreground hover:text-accent transition-colors" href="/support">
+        Support
+       </a>
+       <span class="text-muted-foreground">
+        |
+       </span>
+       <a class="text-muted-foreground hover:text-accent transition-colors" href="/explore/open-mic">
+        Open Mics
+       </a>
+       <span class="text-muted-foreground">
+        |
+       </span>
+       <a class="text-muted-foreground hover:text-accent transition-colors" href="/blog">
+        Comedy Blog
+       </a>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

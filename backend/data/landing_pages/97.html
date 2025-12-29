@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instant classification of goods and services | Classifast</title>
+</head>
+<body>
+  <body>
+   <header class="bg-sky-100 relative">
+    <div class="container mx-auto flex justify-between items-center max-w-6xl px-4 py-4">
+     <div class="flex items-center">
+      <a class="flex items-center" href="https://classifast.com/">
+       <p class="text-xl font-bold text-gray-800">
+        Classi
+        <span class="text-sky-600">
+         fast
+        </span>
+       </p>
+      </a>
+     </div>
+     <nav class="desktop-nav">
+      <ul class="flex space-x-6 items-center">
+       <li>
+        <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://blog.classifast.com" rel="noopener" target="_blank">
+         Blog
+        </a>
+       </li>
+       <li>
+        <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://rapidapi.com/DmitryMatv/api/classifast-api" rel="noopener" target="_blank">
+         API
+        </a>
+       </li>
+       <li id="desktop-auth-container">
+        <div class="bg-sky-50 text-sky-700 hover:bg-sky-100 active:bg-sky-100 active:scale-95 px-4 py-1 rounded text-sm transition-all duration-150 ease-in-out transform cursor-pointer auth-loaded" id="clerk-sign-in-button-desktop">
+         Sign In
+        </div>
+        <div class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white px-4 py-1 rounded text-sm transition-all duration-150 ease-in-out transform cursor-pointer auth-loaded ml-2" id="clerk-sign-up-button-desktop">
+         Sign Up
+        </div>
+       </li>
+      </ul>
+     </nav>
+    </div>
+    <nav class="mobile-menu" id="mobile-menu">
+     <ul class="flex flex-col">
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors font-bold" href="https://blog.classifast.com" rel="noopener" target="_blank">
+        Blog
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors font-bold" href="https://rapidapi.com/DmitryMatv/api/classifast-api" rel="noopener" target="_blank">
+        API
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/UNSPSC/">
+        UNSPSC
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/NAICS/">
+        NAICS
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/CN/">
+        CN
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/ETIM/">
+        ETIM
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/ISIC/">
+        ISIC
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/HS/">
+        HS
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/HTS/">
+        HTS
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/NACE/">
+        NACE
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/CPV/">
+        CPV
+       </a>
+      </li>
+      <li>
+       <a class="text-gray-600 hover:text-sky-600 transition-colors" href="https://classifast.com/NSN/">
+        NSN
+       </a>
+      </li>
+      <li id="mobile-auth-container">
+       <div class="bg-sky-50 text-sky-700 hover:bg-sky-100 active:bg-sky-100 active:scale-95 px-4 py-1 rounded text-sm transition-all duration-150 ease-in-out transform cursor-pointer auth-loaded w-full text-center mb-2" id="clerk-sign-in-button-mobile">
+        Sign In
+       </div>
+       <div class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white px-4 py-1 rounded text-sm transition-all duration-150 ease-in-out transform cursor-pointer auth-loaded w-full text-center mb-2" id="clerk-sign-up-button-mobile">
+        Sign Up
+       </div>
+      </li>
+     </ul>
+    </nav>
+   </header>
+   <main class="grow">
+    <section class="bg-sky-100 pt-6 md:pt-20 pb-8 md:pb-20">
+     <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center">
+       <h1 class="text-5xl md:text-6xl font-bold text-gray-800">
+        From any description
+        <br/>
+        to category code
+       </h1>
+       <p class="text-5xl md:text-6xl font-bold text-sky-600 mb-10">
+        in 1 second.
+       </p>
+       <p class="text-xl text-gray-600 mb-10 max-w-3xl mx-auto">
+        Classify anything, instantly, and with state-of-the-art accuracy.
+       </p>
+       <div class="flex flex-wrap justify-center gap-4 max-w-xl mx-auto">
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/UNSPSC/">
+         UNSPSC
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/NAICS/">
+         NAICS
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/ISIC/">
+         ISIC
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/NACE/">
+         NACE
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/ETIM/">
+         ETIM
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/HS/">
+         HS
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/HTS/">
+         HTS
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/CN/">
+         CN
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/CPV/">
+         CPV
+        </a>
+        <a class="bg-sky-600 hover:bg-sky-700 active:bg-sky-800 active:scale-95 text-white font-semibold px-6 py-2 rounded text-base transition-all duration-150 ease-in-out transform" href="https://classifast.com/NSN/">
+         NSN
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-white">
+     <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center mb-16">
+       <h2 class="text-4xl font-bold text-gray-800 mb-4">
+        Save days of manual classification.
+        <span class="text-sky-600">
+         Try for free.
+        </span>
+       </h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+       <article class="text-center p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+         Cost-effective
+        </h3>
+        <p class="text-gray-600">
+         Eliminate guesswork without costly per-match fees and subscriptions.
+        </p>
+       </article>
+       <article class="text-center p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+         Almost instant
+        </h3>
+        <p class="text-gray-600">
+         Skip time-consuming classification and reduce manual labor costs.
+        </p>
+       </article>
+       <article class="text-center p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+         Simple
+        </h3>
+        <p class="text-gray-600">
+         Familiar basic lookup UI. Advanced semantic search technology in the
+                              backend.
+        </p>
+       </article>
+       <article class="text-center p-6">
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">
+         Accurate
+        </h3>
+        <p class="text-gray-600">
+         Latest embedding models can assign codes at scale and remove human
+                              bias.
+        </p>
+       </article>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-gray-800 text-white">
+    <div class="container mx-auto max-w-6xl px-4 py-12">
+     <div class="grid md:grid-cols-4 gap-8">
+      <div class="md:col-span-2">
+       <p class="text-lg font-bold mb-4">
+        <a class="hover:text-sky-600 transition-colors" href="https://classifast.com/">
+         Classifast.com
+        </a>
+       </p>
+       <p class="text-gray-400 mb-4">
+        Instant category code search and classifier for UNSPSC, NAICS, HS, CN
+                          and other classification standards.
+       </p>
+      </div>
+      <div>
+       <h4 class="text-lg font-semibold mb-4">
+        Classification Standards
+       </h4>
+       <ul class="space-y-2">
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/ETIM/">
+          ETIM Technical Information
+                                  Model
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/UNSPSC/">
+          United Nations Standard
+                                  Products and Services Code (UNSPSC)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/NAICS/">
+          North American Industry
+                                  Classification System (NAICS)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/ISIC/">
+          International Standard
+                                  Industrial Classification of All Economic Activities (ISIC)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/HS/">
+          Harmonized System (HS)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/HTS/">
+          Harmonized Tariff Schedule
+                                  (HTS)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/CN/">
+          Combined Nomenclature (CN)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/NACE/">
+          Statistical Classification of
+                                  Economic Activities in the European Community (NACE)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/CPV/">
+          Common Procurement Vocabulary
+                                  (CPV)
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://classifast.com/NSN/">
+          NATO Stock Number or National
+                                  Stock Number (NSN)
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h4 class="text-lg font-semibold mb-4">
+        Resources
+       </h4>
+       <ul class="space-y-2">
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://blog.classifast.com" rel="noopener" target="_blank">
+          Classifast Blog
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://github.com/DmitryMatv/classifast" rel="noopener" target="_blank">
+          Code on GitHub
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://rapidapi.com/DmitryMatv/api/classifast-api" rel="noopener" target="_blank">
+          API on RapidAPI Hub
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-400 hover:text-white transition-colors" href="https://converter.classifast.com" rel="noopener" target="_blank">
+          BMEcat to ETIM xChange
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+      <p class="text-gray-400">
+       <a class="hover:text-white" href="https://github.com/DmitryMatv">
+        Dmitry Matv
+       </a>
+       <br/>
+       2025
+      </p>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Compare AI Models - Test ChatGPT vs Claude vs Gemini | PromptPerf</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <header class="sticky top-4 w-full z-50 px-4">
+     <div class="max-w-7xl mx-auto bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border border-slate-200/50 dark:border-slate-700/50 shadow-soft-lg rounded-2xl px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center">
+       <a class="flex items-center" href="/">
+        <span class="text-xl font-bold text-[#4f46e5] dark:text-[#6366f1]">
+         PromptPerf
+        </span>
+       </a>
+      </div>
+      <div class="flex items-center space-x-4">
+       <a href="/blog">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+         Blog
+        </button>
+       </a>
+       <a href="/pricing">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+         Pricing
+        </button>
+       </a>
+       <div class="ml-4 flex items-center space-x-2">
+        <a href="/login">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+          Login
+         </button>
+        </a>
+        <a href="/signup">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2">
+          Sign Up
+         </button>
+        </a>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="min-h-screen flex flex-col">
+     <div class="bg-white dark:bg-slate-950 border-b border-slate-200/50 dark:border-slate-800/50">
+      <div class="w-full flex justify-center">
+       <div class="w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+        <div class="py-20 md:py-32">
+         <div class="flex flex-col md:flex-row items-center gap-16 md:gap-20">
+          <div class="flex-1 space-y-6">
+           <h1 class="text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-900 dark:text-white leading-[1.1]">
+            Find the best AI for
+            <span class="block text-[#4f46e5]">
+             your actual prompts.
+            </span>
+           </h1>
+           <p class="text-lg md:text-xl text-slate-600 dark:text-slate-300 max-w-xl">
+            Test your prompts on GPT, Claude, Gemini &amp; more. See which one wins. Takes 2 minutes.
+           </p>
+           <div class="flex flex-col sm:flex-row gap-4 pt-2">
+            <a href="/evaluator">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 w-full sm:w-auto text-base font-semibold px-10 py-7 bg-[#4f46e5] hover:bg-[#4338ca] shadow-soft-lg hover-lift rounded-xl">
+              Try Free - No Signup
+             </button>
+            </a>
+            <button class="justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 flex items-center gap-1 mt-0">
+             Watch Demo
+            </button>
+           </div>
+           <p class="text-sm text-slate-500 dark:text-slate-400">
+            Free forever • 100+ models • No credit card
+           </p>
+          </div>
+          <div class="flex-1 mt-8 md:mt-0">
+           <div class="bg-white dark:bg-slate-800/50 shadow-soft-lg rounded-2xl border border-slate-200/50 dark:border-slate-700/50 overflow-hidden relative hover-lift">
+            <div class="absolute top-4 right-4 bg-[#4f46e5] text-white text-xs font-semibold px-4 py-2 rounded-lg z-10 shadow-lg">
+             ACTUAL DASHBOARD
+            </div>
+            <img alt="AI Model Comparison Dashboard" class="w-full h-auto" src="/model-comparison-dashboard.png"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg-gradient-to-b from-slate-50 to-white dark:from-slate-900 dark:to-slate-950 border-b border-slate-200/50 dark:border-slate-800/50">
+      <div class="w-full flex justify-center">
+       <div class="w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+        <div class="py-16">
+         <div class="text-center mb-10">
+          <h2 class="text-2xl md:text-3xl font-semibold text-slate-900 dark:text-white mb-4">
+           Here's What "Testing" Actually Means
+          </h2>
+          <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+           You give us an example prompt + what a good answer looks like. We test it on multiple AIs and show you which one performs best.
+          </p>
+         </div>
+         <div class="max-w-4xl mx-auto">
+          <div class="grid md:grid-cols-3 gap-6 items-start">
+           <div class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 shadow-soft">
+            <div class="flex items-center gap-2 mb-3">
+             <div class="bg-[#4f46e5] text-white text-xs font-bold px-2.5 py-1 rounded-full">
+              1
+             </div>
+             <span class="text-sm font-semibold text-slate-900 dark:text-white">
+              Your Example
+             </span>
+            </div>
+            <div class="space-y-3">
+             <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-3">
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-1">
+               INPUT:
+              </p>
+              <p class="text-sm text-slate-700 dark:text-slate-300">
+               "Summarize this support ticket in 2 sentences"
+              </p>
+             </div>
+             <div class="bg-slate-50 dark:bg-slate-900 rounded-lg p-3">
+              <p class="text-xs text-slate-500 dark:text-slate-400 mb-1">
+               EXPECTED ANSWER:
+              </p>
+              <p class="text-sm text-slate-700 dark:text-slate-300">
+               "Customer was overcharged $50, requests refund."
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="bg-white dark:bg-slate-800 rounded-xl p-5 border border-slate-200 dark:border-slate-700 shadow-soft">
+            <div class="flex items-center gap-2 mb-3">
+             <div class="bg-[#4f46e5] text-white text-xs font-bold px-2.5 py-1 rounded-full">
+              2
+             </div>
+             <span class="text-sm font-semibold text-slate-900 dark:text-white">
+              Each AI Responds
+             </span>
+            </div>
+            <div class="space-y-2">
+             <div class="flex items-center justify-between bg-green-50 dark:bg-green-900/20 rounded-lg p-3 border border-green-200 dark:border-green-800">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-300">
+               Claude 3.5
+              </span>
+              <span class="text-sm font-bold text-green-600 dark:text-green-400">
+               94% match
+              </span>
+             </div>
+             <div class="flex items-center justify-between bg-amber-50 dark:bg-amber-900/20 rounded-lg p-3 border border-amber-200 dark:border-amber-800">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-300">
+               GPT-4o
+              </span>
+              <span class="text-sm font-bold text-amber-600 dark:text-amber-400">
+               78% match
+              </span>
+             </div>
+             <div class="flex items-center justify-between bg-red-50 dark:bg-red-900/20 rounded-lg p-3 border border-red-200 dark:border-red-800">
+              <span class="text-sm font-medium text-slate-700 dark:text-slate-300">
+               Gemini Pro
+              </span>
+              <span class="text-sm font-bold text-red-600 dark:text-red-400">
+               61% match
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="bg-[#4f46e5]/5 dark:bg-[#4f46e5]/10 rounded-xl p-5 border-2 border-[#4f46e5]/30">
+            <div class="flex items-center gap-2 mb-3">
+             <div class="bg-[#4f46e5] text-white text-xs font-bold px-2.5 py-1 rounded-full">
+              3
+             </div>
+             <span class="text-sm font-semibold text-slate-900 dark:text-white">
+              You See the Winner
+             </span>
+            </div>
+            <div class="text-center py-4">
+             <div class="bg-yellow-100 dark:bg-yellow-900/30 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3">
+              <span class="text-2xl">
+               🏆
+              </span>
+             </div>
+             <p class="text-lg font-bold text-[#4f46e5] mb-1">
+              Claude 3.5 Wins
+             </p>
+             <p class="text-sm text-slate-600 dark:text-slate-400">
+              Best match for YOUR task
+             </p>
+             <p class="text-xs text-green-600 dark:text-green-400 mt-2">
+              + 40% cheaper than GPT-4o
+             </p>
+            </div>
+           </div>
+          </div>
+          <p class="text-center text-sm text-slate-500 dark:text-slate-400 mt-8">
+           That's it. No coding. No API setup. Just paste your prompt and see which AI works best.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="w-full flex justify-center">
+      <div class="w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+       <div class="py-24 border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="text-center mb-20">
+         <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6">
+          The 4 Problems Every AI Builder Faces
+         </h2>
+         <p class="text-lg text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed-plus">
+          If you're using AI for work, you've hit at least one of these walls
+         </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+         <div class="rounded-lg text-card-foreground shadow-sm border-0 shadow-soft-lg hover-lift bg-white dark:bg-slate-900">
+          <div class="flex flex-col space-y-1.5 p-6 pb-6">
+           <div class="flex items-start gap-4">
+            <div class="flex-1">
+             <h3 class="tracking-tight text-2xl font-semibold">
+              "Which AI should I even use?"
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div class="p-6 space-y-4 pt-0">
+           <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed-plus">
+            Everyone says ChatGPT is the best. But Claude might be better for YOUR task. Gemini is free—could it work just as well? You're stuck guessing.
+           </p>
+           <div class="bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-700 rounded-lg p-3">
+            <p class="text-sm text-slate-900 dark:text-slate-100 font-medium">
+             ✓ PromptPerf tests YOUR prompts across all major AIs so you know which one actually performs best for your specific use case.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-lg text-card-foreground shadow-sm border-0 shadow-soft-lg hover-lift bg-white dark:bg-slate-900">
+          <div class="flex flex-col space-y-1.5 p-6 pb-6">
+           <div class="flex items-start gap-4">
+            <div class="flex-1">
+             <h3 class="tracking-tight text-2xl font-semibold">
+              "I'm paying for the wrong AI model"
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div class="p-6 space-y-4 pt-0">
+           <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed-plus">
+            ChatGPT-4 costs 30x more than GPT-3.5. What if a cheaper model works just as well for YOUR prompts? Most teams never find out—they just pick the "best" model by reputation, not by testing.
+           </p>
+           <div class="bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-700/50 rounded-xl p-4">
+            <p class="text-sm text-slate-900 dark:text-slate-100 font-medium">
+             ✓ PromptPerf tests YOUR prompts across all major AIs to find the most cost-effective option for your specific use case.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-lg text-card-foreground shadow-sm border-0 shadow-soft-lg hover-lift bg-white dark:bg-slate-900">
+          <div class="flex flex-col space-y-1.5 p-6 pb-6">
+           <div class="flex items-start gap-4">
+            <div class="flex-1">
+             <h3 class="tracking-tight text-2xl font-semibold">
+              "I don't know if my prompts actually work"
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div class="p-6 space-y-4 pt-0">
+           <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed-plus">
+            You write a prompt that seems to work. But does it work reliably across different inputs? You have no way to systematically test it before putting it in production.
+           </p>
+           <div class="bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-700/50 rounded-xl p-4">
+            <p class="text-sm text-slate-900 dark:text-slate-100 font-medium">
+             ✓ PromptPerf lets you create tests with multiple examples, so you can verify your prompts work across different scenarios.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-lg text-card-foreground shadow-sm border-0 shadow-soft-lg hover-lift bg-white dark:bg-slate-900">
+          <div class="flex flex-col space-y-1.5 p-6 pb-6">
+           <div class="flex items-start gap-4">
+            <div class="flex-1">
+             <h3 class="tracking-tight text-2xl font-semibold">
+              "My prompts suddenly got worse"
+             </h3>
+            </div>
+           </div>
+          </div>
+          <div class="p-6 space-y-4 pt-0">
+           <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed-plus">
+            OpenAI, Anthropic, and Google update their AIs constantly. A prompt that worked great last month might suck today—and you'd never know.
+           </p>
+           <div class="bg-slate-50 dark:bg-slate-900/50 border border-slate-200/50 dark:border-slate-700/50 rounded-xl p-4">
+            <p class="text-sm text-slate-900 dark:text-slate-100 font-medium">
+             ✓ PromptPerf lets you save tests and re-run them anytime to catch when AI updates break your prompts.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="max-w-5xl mx-auto bg-slate-50 dark:bg-slate-900/50 border-0 shadow-soft-lg rounded-3xl p-12">
+         <h3 class="text-3xl font-semibold text-slate-900 dark:text-white mb-8 text-center">
+          PromptPerf solves all of this—without writing code
+         </h3>
+         <div class="grid md:grid-cols-2 gap-6 mb-10">
+          <div class="flex items-start gap-4">
+           <p class="text-slate-700 dark:text-slate-300 text-lg">
+            Test your prompts across 100+ AI models including GPT-5.1, Claude 4.5, and Gemini 3
+           </p>
+          </div>
+          <div class="flex items-start gap-4">
+           <p class="text-slate-700 dark:text-slate-300 text-lg">
+            See which AI performs best for YOUR specific task (not generic benchmarks)
+           </p>
+          </div>
+          <div class="flex items-start gap-4">
+           <p class="text-slate-700 dark:text-slate-300 text-lg">
+            Access free models from DeepSeek, Meta Llama 4, and others
+           </p>
+          </div>
+          <div class="flex items-start gap-4">
+           <p class="text-slate-700 dark:text-slate-300 text-lg">
+            Save tests and re-run anytime to monitor when models update
+           </p>
+          </div>
+         </div>
+         <div class="text-center">
+          <a href="/evaluator">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 bg-[#4f46e5] hover:bg-[#4338ca] px-10 py-7 text-base font-semibold shadow-soft-lg hover-lift rounded-xl">
+            Try It Now - No Signup Required
+           </button>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg-slate-50 dark:bg-slate-900">
+      <div class="w-full flex justify-center">
+       <div class="w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+        <div class="py-24">
+         <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-semibold text-slate-900 dark:text-white mb-6">
+           See It In Action
+          </h2>
+          <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed-plus">
+           walkthrough of how PromptPerf works
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg-[#4f46e5]">
+      <div class="w-full flex justify-center">
+       <div class="w-full max-w-7xl px-4 sm:px-6 md:px-8 lg:px-12">
+        <div class="py-24 text-center">
+         <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 leading-tight">
+          Stop Guessing. Start Testing.
+         </h2>
+         <p class="text-lg md:text-xl text-slate-100 max-w-3xl mx-auto mb-10 leading-relaxed-plus">
+          Join 117+ AI builders who've found their best AI model with PromptPerf
+         </p>
+         <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/evaluator">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 bg-white text-[#4f46e5] hover:bg-slate-100 text-base font-semibold px-10 py-7 shadow-soft-lg hover-lift rounded-xl">
+            Try It Free - No Signup
+           </button>
+          </a>
+          <button class="justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input hover:text-accent-foreground h-11 flex items-center gap-1 bg-[#4f46e5] hover:bg-[#4338ca] text-white border-0 text-base font-semibold px-10 py-7 shadow-soft-lg hover-lift rounded-xl">
+           Watch Demo
+          </button>
+         </div>
+         <p class="text-base text-slate-200 mt-8">
+          Plans starting at $9/month • Lifetime access available for $199
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+     <footer class="w-full py-4 border-t mt-auto bg-muted/20">
+      <div class="container mx-auto text-sm text-muted-foreground px-4">
+       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center justify-center gap-4">
+         <a class="text-primary flex items-center hover:underline font-medium" href="/blog">
+          Blog
+         </a>
+         <a class="hover:text-primary hover:underline" href="/pricing">
+          Pricing
+         </a>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-2">
+         <span>
+          Have feedback?
+         </span>
+         <a class="text-primary flex items-center hover:underline font-medium" href="mailto:hsiyani@promptperf.dev?subject=Feedback-Promptperf">
+          hsiyani@promptperf.dev
+         </a>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

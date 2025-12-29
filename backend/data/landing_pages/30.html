@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Anifusion - AI Manga Generator</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="w-full h-full overflow-hidden svelte-1u4q50c">
+     <nav class="fixed h-auto w-full z-10 navbar svelte-1u4q50c border-b border-input scrolled">
+      <div class="container flex items-center h-16 svelte-1u4q50c">
+       <a class="flex items-center svelte-1u4q50c" href="/">
+        <img alt="Anifusion" class="svelte-1u4q50c" height="64" src="https://cdn.anifusioncdn.com/assets/logo.webp" width="96"/>
+       </a>
+       <div class="ml-auto hidden md:flex gap-1 mr-5 items-center svelte-1u4q50c">
+        <span class="w-[150px] svelte-1u4q50c">
+         <button class="flex h-10 items-center justify-between rounded-md border border-input px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-[120px] bg-transparent" id="BgquYLqeVY" type="button">
+          <span>
+           English
+          </span>
+         </button>
+        </span>
+        <button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" type="button">
+         Features
+        </button>
+        <button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" type="button">
+         Pricing
+        </button>
+        <button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2" type="button">
+         <a class="text-md svelte-1u4q50c" href="/blog/en">
+          Blog
+         </a>
+        </button>
+        <a class="ring-offset-background focus-visible:ring-ring justify-center whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3 w-full flex items-center gap-1 text-md" href="/auth">
+         <span class="text-md svelte-1u4q50c">
+          Login
+         </span>
+        </a>
+       </div>
+      </div>
+     </nav>
+     <section class="sm:pt-16 bg-cover flex justify-center items-center relative svelte-1u4q50c">
+      <div class="mt-20 mb-40 z-100 svelte-1u4q50c">
+       <div class="lg:mx-auto max-w-6xl mx-[1.5rem] svelte-1u4q50c">
+        <div class="container lg:py-20 svelte-1u4q50c">
+         <div class="grid grid-cols-12 gap-x-5 gap-y-12 lg:items-center svelte-1u4q50c">
+          <div class="col-span-full lg:col-span-6 space-y-8 svelte-1u4q50c">
+           <div class="svelte-1u4q50c">
+            <a class="text-gray-100 font-semibold flex gap-1 items-center no-underline focus:outline-none svelte-1u4q50c" href="https://x.com/anifusion_ai" rel="noopener noreferrer" target="_blank">
+             As seen on
+            </a>
+            <h2 class="text-6xl font-bold text-white mt-2 select-none svelte-1u4q50c">
+             Create Comics and Manga with AI!
+            </h2>
+           </div>
+           <p class="text-2xl text-gray-100 select-none svelte-1u4q50c">
+            Turn any story you have dreamed of into reality using Anifusion's powerful AI tools. Create captivating stories with just a few clicks and share them with the world.
+           </p>
+           <a class="ring-offset-background focus-visible:ring-ring justify-center whitespace-nowrap transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-8 font-bold flex items-center gap-1 text-lg h-16" href="/auth">
+            <span class="svelte-1u4q50c">
+             Try Now For Free!
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full mt-10 svelte-1u4q50c">
+      <div class="text-md font-bold text-primary select-none text-center uppercase mb-3 mx-5 svelte-1u4q50c">
+       Anifusion: Unleash your creativity with AI
+      </div>
+      <h2 class="text-5xl font-semibold text-center mb-4 mx-5 svelte-1u4q50c">
+       Create Comics and Manga with AI
+      </h2>
+      <p class="text-xl text-center mb-5 text-slate-700 mx-10 svelte-1u4q50c">
+       Tell the story of your dreams without hassle. No art skills needed!
+      </p>
+      <div class="container svelte-1u4q50c">
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 svelte-1u4q50c">
+        <div class="flex flex-col border-2 border-input rounded-lg p-4 relative shadow-xl svelte-1u4q50c">
+         <div class="flex items-center gap-2 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi1.webp"/>
+          <div class="flex flex-col svelte-1u4q50c">
+           <div class="text-xl font-bold text-primary svelte-1u4q50c">
+            Step 1
+           </div>
+           <div class="text-xl text-slate-700 svelte-1u4q50c">
+            Choose a Layout
+           </div>
+          </div>
+         </div>
+         <img alt="Choose layout example" class="w-48 mx-auto svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/landing_chooselayout.webp"/>
+        </div>
+        <div class="flex flex-col border-2 border-input rounded-lg p-4 relative shadow-xl svelte-1u4q50c">
+         <div class="flex items-center gap-2 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi2.webp"/>
+          <div class="flex flex-col svelte-1u4q50c">
+           <div class="text-xl font-bold text-primary svelte-1u4q50c">
+            Step 2
+           </div>
+           <div class="text-xl text-slate-700 svelte-1u4q50c">
+            Tell your Story
+           </div>
+          </div>
+         </div>
+         <div class="flex-1 flex items-center justify-center svelte-1u4q50c">
+          <img alt="Story prompt example" class="w-full mx-auto svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/landing_storyprompt.webp"/>
+         </div>
+        </div>
+        <div class="flex flex-col border-2 border-input rounded-lg p-4 shadow-xl svelte-1u4q50c">
+         <div class="flex items-center gap-2 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi4.webp"/>
+          <div class="flex flex-col svelte-1u4q50c">
+           <div class="text-xl font-bold text-primary svelte-1u4q50c">
+            Step 3
+           </div>
+           <div class="text-xl text-slate-700 svelte-1u4q50c">
+            Final Edits &amp; Download
+           </div>
+          </div>
+         </div>
+         <img alt="Edit page example" class="mx-auto h-64 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/landing_editpage.webp"/>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full mt-20 py-10 border-y border-input bg-gray-50 svelte-1u4q50c">
+      <div class="text-md font-bold text-primary select-none text-center uppercase mb-3 mx-5 svelte-1u4q50c">
+       Anifusion: AI Manga Studio Inside Your Browser
+      </div>
+      <h2 class="text-5xl font-semibold text-center mb-2 mx-5 svelte-1u4q50c">
+       Full-featured AI Manga Studio
+      </h2>
+      <p class="text-xl text-center mb-5 text-slate-700 mx-10 svelte-1u4q50c">
+       No external tools or skills needed. Edit and polish your manga with our powerful canvas editor!
+      </p>
+      <div class="container svelte-1u4q50c">
+       <button class="w-full svelte-1u4q50c">
+        <img alt="Screenshot" class="max-w-full hover:scale-105 transition-all cursor-pointer svelte-1u4q50c" src="https://cdn.anifusioncdn.com/landing_assets/screenshot.webp"/>
+       </button>
+      </div>
+     </section>
+     <section class="w-full mt-10 svelte-1u4q50c">
+      <div class="text-md font-bold text-primary select-none text-center uppercase mb-3 mx-5 svelte-1u4q50c">
+       Anifusion: Unleash your creativity with AI
+      </div>
+      <h2 class="text-5xl font-semibold text-center mb-4 mx-5 svelte-1u4q50c">
+       Example Works
+      </h2>
+      <div class="container svelte-1u4q50c">
+       <div class="text-center text-xl font-bold mb-2 mt-10 svelte-1u4q50c">
+        Colored Manga
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 svelte-1u4q50c">
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, Ganyu is looking for flowers to pick in the forest." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/ganyu1.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.1
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "Ganyu is looking for flowers to pick in the forest."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, She is startled by a sudden noise and gets ready to fight." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/ganyu2.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.1
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "She is startled by a sudden noise and gets ready to fight."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, Turns out it was only Qiqi lurking in the bushes." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/ganyu3.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.1
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "Turns out it was only Qiqi lurking in the bushes."
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="text-center text-xl font-bold mb-2 mt-10 svelte-1u4q50c">
+        Black and White Manga
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 svelte-1u4q50c">
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, A girl is bored in class." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/schoolgirl1.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.0
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "A girl is bored in class."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, During her walk home she encounters an incredible view of the city." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/schoolgirl2.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.0
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "During her walk home she encounters an incredible view of the city."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, She takes a selfie." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/schoolgirl3.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: AnimagineXL 3.0
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "She takes a selfie."
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="text-center text-xl font-bold mb-2 mt-10 svelte-1u4q50c">
+        Superhero Comics
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 svelte-1u4q50c">
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, Stare-off between Batman and the Joker." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/batman1.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Schnell
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "Stare-off between Batman and the Joker."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, Batman chases the Joker." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/batman2.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Schnell
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "Batman chases the Joker."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, He continues chasing him." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/batman3.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Schnell
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "He continues chasing him."
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="text-center text-xl font-bold mb-2 mt-10 svelte-1u4q50c">
+        Shounen Manga
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-2 svelte-1u4q50c">
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, A detective is chasing a masked robber." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/chase1.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Dev
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "A detective is chasing a masked robber."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, He confronts him in the train." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/chase2.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Dev
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "He confronts him in the train."
+          </p>
+         </div>
+        </div>
+        <div class="relative group svelte-1u4q50c">
+         <img alt="Generated AI Manga page, generated with Anifusion, Both pull out a gun." class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/example_comics/chase3.webp"/>
+         <div class="rounded-lg absolute bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity p-4 bottom-10 left-1/2 -translate-x-1/2 w-64 min-h-32 svelte-1u4q50c">
+          <p class="text-red-300 svelte-1u4q50c">
+           Model: FLUX.1 Dev
+          </p>
+          <br class="svelte-1u4q50c"/>
+          <p class="text-white svelte-1u4q50c">
+           "Both pull out a gun."
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full mt-20 border-input svelte-1u4q50c">
+      <div class="container my-5 svelte-1u4q50c">
+       <div class="grid grid-cols-12 gap-x-5 gap-y-12 items-center svelte-1u4q50c">
+        <div class="col-span-full lg:col-span-6 space-y-4 svelte-1u4q50c">
+         <div class="flex items-center gap-4 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi1.webp"/>
+          <div class="text-lg font-bold text-primary select-none uppercase svelte-1u4q50c">
+           Anifusion: AI Manga Layout Tool
+          </div>
+         </div>
+         <h2 class="text-3xl font-bold select-none svelte-1u4q50c">
+          Easy Layout Creation
+         </h2>
+         <p class="text-lg prose text-slate-500 svelte-1u4q50c">
+          Unleash your creativity with Anifusion's intuitive layout tools! Choose from designed comic presets, or create your own unique layouts! Whether you're a seasoned artist or just starting out, our flexible system empowers you to bring your story visions to life with ease.
+         </p>
+         <a class="ring-offset-background focus-visible:ring-ring justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 font-bold flex items-center gap-1" href="/auth">
+          <span class="svelte-1u4q50c">
+           Try Now For Free!
+          </span>
+         </a>
+         <a class="flex items-center gap-1 text-blue-600 underline svelte-1u4q50c" href="https://anifusion.ai/blog/en/2024-10-27-panel-layouts" rel="noopener noreferrer" target="_blank">
+          <span class="svelte-1u4q50c">
+           Learn More
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full border-t border-input svelte-1u4q50c">
+      <div class="my-10 container svelte-1u4q50c">
+       <div class="grid grid-cols-12 gap-x-5 gap-y-12 items-center svelte-1u4q50c">
+        <div class="col-span-full lg:col-span-6 space-y-4 gap-x-8 svelte-1u4q50c">
+         <div class="flex items-center gap-4 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi2.webp"/>
+          <div class="text-lg font-bold text-primary select-none uppercase svelte-1u4q50c">
+           Anifusion: Text-to-Manga AI
+          </div>
+         </div>
+         <h2 class="text-3xl font-bold select-none svelte-1u4q50c">
+          Text-to-Manga
+         </h2>
+         <p class="text-lg prose text-slate-500 svelte-1u4q50c">
+          After choosing your layout, describe the contents of the page with a simple prompt and let AI tell your story. Refine the results with Anifusion's powerful canvas editor. From epic superhero sagas to heartwarming slice-of-life tales, your narrative potential is limitless – let Anifusion be your artistic partner in storytelling today!
+         </p>
+         <a class="ring-offset-background focus-visible:ring-ring justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 font-bold flex items-center gap-1" href="/auth">
+          <span class="svelte-1u4q50c">
+           Try Now For Free!
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full border-t border-input svelte-1u4q50c">
+      <div class="my-10 container svelte-1u4q50c">
+       <div class="grid grid-cols-12 gap-x-5 gap-y-12 items-center svelte-1u4q50c">
+        <div class="col-span-full lg:col-span-6 space-y-4 gap-x-8 svelte-1u4q50c">
+         <div class="flex items-center gap-4 svelte-1u4q50c">
+          <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi4.webp"/>
+          <div class="text-lg font-bold text-primary select-none uppercase svelte-1u4q50c">
+           Anifusion: Text-to-Manga AI
+          </div>
+         </div>
+         <h2 class="text-3xl font-bold select-none svelte-1u4q50c">
+          Advanced Text Support
+         </h2>
+         <p class="text-lg prose text-slate-500 svelte-1u4q50c">
+          We also support vertical text and a variety of popular manga fonts. Choose between different text styles and effects to create more impactful panels!
+         </p>
+        </div>
+        <div class="col-span-full lg:col-span-6 svelte-1u4q50c">
+         <img alt="Japanese text example" class="w-full h-full shadow-2xl svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/landing_japanese.webp"/>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full mt-20 py-5 border-y border-input bg-gray-50 svelte-1u4q50c">
+      <div class="container svelte-1u4q50c">
+       <div class="flex flex-col svelte-1u4q50c">
+        <div class="flex items-center gap-4 svelte-1u4q50c">
+         <img alt="Chibi" class="w-16 h-16 svelte-1u4q50c" src="https://cdn.anifusioncdn.com/assets/chibi4.webp"/>
+         <h2 class="text-lg font-bold text-primary select-none uppercase svelte-1u4q50c">
+          Anifusion: AI Anime Art Generator
+         </h2>
+        </div>
+        <h3 class="text-3xl font-bold select-none svelte-1u4q50c">
+         Create Beautiful AI Anime Art
+        </h3>
+        <div class="text-lg mb-5 text-slate-500 select-none svelte-1u4q50c">
+         On an infinite canvas with no distractions!
+        </div>
+       </div>
+      </div>
+      <div class="container grid grid-cols-12 gap-x-4 gap-y-4 lg:items-center svelte-1u4q50c">
+       <div class="col-span-full lg:col-start-9 lg:col-end-12 grid grid-cols-4 gap-y-4 gap-x-2 svelte-1u4q50c">
+        <button class="rounded-lg w-full h-48 text-white flex flex-col bg-cover bg-center cursor-pointer text-left col-span-1 lg:col-span-2 hover:scale-105 transition-all relative shadow-xl svelte-1u4q50c">
+         <div class="p-5 w-full h-full top-0 bottom-0 rounded-lg transition-all bg-black duration-300 hover:bg-opacity-20 flex flex-col absolute inset-0 svelte-1u4q50c bg-opacity-70">
+          <div class="text-xl font-semibold svelte-1u4q50c">
+           Text-to-image
+          </div>
+          <div class="text-sm svelte-1u4q50c">
+           Create stunning anime characters with one click
+          </div>
+         </div>
+        </button>
+        <button class="rounded-lg w-full h-48 text-white flex flex-col bg-cover bg-center cursor-pointer text-left col-span-1 lg:col-span-2 hover:scale-105 transition-all relative shadow-xl svelte-1u4q50c">
+         <div class="p-5 w-full h-full top-0 bottom-0 rounded-lg transition-all bg-black duration-300 hover:bg-opacity-20 flex flex-col absolute inset-0 svelte-1u4q50c bg-opacity-70">
+          <div class="text-xl font-semibold svelte-1u4q50c">
+           Inpaint
+          </div>
+          <div class="text-sm svelte-1u4q50c">
+           Super easy way to edit your generations
+          </div>
+         </div>
+        </button>
+        <button class="rounded-lg w-full h-48 text-white flex flex-col bg-cover bg-center cursor-pointer text-left col-span-1 lg:col-span-2 hover:scale-105 transition-all relative shadow-xl svelte-1u4q50c">
+         <div class="p-5 w-full h-full top-0 bottom-0 rounded-lg transition-all bg-black duration-300 hover:bg-opacity-20 flex flex-col absolute inset-0 svelte-1u4q50c bg-opacity-20">
+          <div class="text-xl font-semibold svelte-1u4q50c">
+           Face Enhancement
+          </div>
+          <div class="text-sm svelte-1u4q50c">
+           Easily add detail to your generations
+          </div>
+         </div>
+        </button>
+        <button class="rounded-lg w-full h-48 text-white flex flex-col bg-cover bg-center cursor-pointer text-left col-span-1 lg:col-span-2 hover:scale-105 transition-all relative shadow-xl svelte-1u4q50c">
+         <div class="p-5 w-full h-full top-0 bottom-0 rounded-lg transition-all bg-black duration-300 hover:bg-opacity-20 flex flex-col absolute inset-0 svelte-1u4q50c bg-opacity-70">
+          <div class="text-xl font-semibold svelte-1u4q50c">
+           Pose-Control
+          </div>
+          <div class="text-sm svelte-1u4q50c">
+           Generate any pose you want! You are in control
+          </div>
+         </div>
+        </button>
+       </div>
+      </div>
+     </section>
+     <section class="w-full py-20 bg-slate-50 border-bottom border-input svelte-1u4q50c">
+      <div class="container lg:w-[1000px] mx-auto svelte-1u4q50c">
+       <h2 class="text-5xl text-center font-bold select-none mb-2 svelte-1u4q50c">
+        Pricing
+       </h2>
+       <div class="text-md mb-10 text-gray-500 select-none text-center svelte-1u4q50c">
+        You have full commercial rights to all the works you create with Anifusion.
+       </div>
+       <div class="grid grid-cols-12 gap-x-4 gap-y-8">
+        <div class="rounded-lg border bg-card text-card-foreground flex flex-col col-span-12 md:col-start-3 md:col-end-7 shadow-xl">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-4">
+           <img alt="Chibi" class="w-16 h-16" src="https://cdn.anifusioncdn.com/assets/chibi2.webp"/>
+           <h1 class="text-lg font-bold text-primary select-none">
+            Free Tier
+           </h1>
+          </h3>
+          <p class="text-sm text-muted-foreground flex items-center">
+           <span class="font-bold text-5xl text-zinc-600 select-none">
+            €0
+           </span>
+           <span class="select-none">
+            /mo
+           </span>
+          </p>
+         </div>
+         <div class="p-6 pt-0">
+          <ul class="my-3 text-sm">
+           <li class="text-zinc-600">
+            20 free credits
+           </li>
+           <li class="text-zinc-600">
+            One workspace
+           </li>
+          </ul>
+         </div>
+         <div class="flex items-center p-6 pt-0 mt-auto">
+          <button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground border h-11 rounded-md px-8 w-full text-zinc-600" type="button">
+           Try Free Tier
+          </button>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground flex flex-col col-span-12 md:col-start-7 md:col-end-11 shadow-xl border-primary">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="text-lg font-semibold leading-none tracking-tight flex items-center gap-4">
+           <img alt="Chibi" class="w-16 h-16" src="https://cdn.anifusioncdn.com/assets/chibi1.webp"/>
+           <h1 class="text-lg font-bold text-primary select-none">
+            Premium Tier
+           </h1>
+          </h3>
+          <p class="text-sm text-muted-foreground flex items-center">
+           <span class="font-bold text-5xl text-zinc-900">
+            €20
+           </span>
+           <span>
+            /mo
+           </span>
+          </p>
+         </div>
+         <div class="p-6 pt-0">
+          <ul class="my-3 text-sm">
+           <li>
+            10,000 credits per month
+           </li>
+           <li>
+            Unlimited workspaces
+           </li>
+           <li>
+            Unlimited comic generation
+           </li>
+           <li>
+            Use multiple LoRA models
+           </li>
+           <li>
+            Early access to new features
+           </li>
+           <li>
+            Export comics to Photoshop
+           </li>
+          </ul>
+         </div>
+         <div class="flex items-center p-6 pt-0 mt-auto">
+          <button class="ring-offset-background focus-visible:ring-ring inline-flex items-center justify-center whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-primary-foreground h-11 rounded-md px-8 bg-green-700 hover:bg-green-500 w-full font-bold" type="button">
+           Log in to subscribe
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full py-20 svelte-1u4q50c">
+      <div class="container lg:w-[1000px] mx-auto svelte-1u4q50c">
+       <h2 class="text-5xl text-center font-bold select-none mb-2 svelte-1u4q50c">
+        FAQ
+       </h2>
+       <div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           How does AI manga generation work?
+          </button>
+         </div>
+        </div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           Do you offer a free plan?
+          </button>
+         </div>
+        </div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           How does the credit system work?
+          </button>
+         </div>
+        </div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           Can I use Anifusion for commercial purposes?
+          </button>
+         </div>
+        </div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           Do you offer a mobile version?
+          </button>
+         </div>
+        </div>
+        <div class="border-b">
+         <div class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg" type="button">
+           Do you allow NSFW content?
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

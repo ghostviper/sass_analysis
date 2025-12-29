@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Provamoda - Generative AI for Fashion</title>
+</head>
+<body>
+  <body>
+   <div>
+    <div class="z-50 px-8 py-4 sticky top-0 transition-all duration-300 bg-black/60 backdrop-blur-lg }">
+     <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-10">
+       <a href="/">
+        <img alt="Provamoda" height="150" src="/logo-white.svg" width="150"/>
+       </a>
+       <nav class="hidden md:flex items-center space-x-11">
+        <a class="text-sm font-semibold text-white dark:text-gray-300" href="/examples">
+         Examples
+        </a>
+        <a class="text-sm font-semibold text-white dark:text-gray-300" href="/styles">
+         Photography Styles
+        </a>
+        <a class="text-sm font-semibold text-white dark:text-gray-300" href="/outfit-planner">
+         Free Outfit Planner
+        </a>
+        <a class="text-sm font-semibold text-white dark:text-gray-300" href="/pricing">
+         Pricing
+        </a>
+       </nav>
+      </div>
+      <div class="hidden md:flex items-center space-x-6">
+       <a class="text-sm font-semibold text-white dark:text-white" href="/blog">
+        Blog
+       </a>
+       <a class="flex items-center font-semibold text-sm gap-3 px-5 py-3 bg-black text-white border border-white/40 rounded-full" href="/login">
+        Log In
+       </a>
+      </div>
+      <button class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-200" type="button">
+       <span class="sr-only">
+        Open main menu
+       </span>
+      </button>
+     </div>
+    </div>
+    <div class="min-h-screen antialiased text-white bg-black overflow-x-hidden">
+     <main class="z-10 pb-0 relative">
+      <section class="flex flex-col lg:px-8 lg:pt-20 max-w-6xl mr-auto ml-auto pt-16 pr-4 pl-4">
+       <div class="text-center max-w-3xl mx-auto">
+        <div class="flex flex-col animate-[fadeSlideIn_0.8s_ease-out_0.2s_both] mb-6 space-y-3 items-center">
+         <div class="flex items-center space-x-3">
+          <div class="flex -space-x-2">
+           <img alt="Customer avatar" class="h-8 w-8 rounded-full border-2 border-slate-950 object-cover" height="32" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1544723795-3fb6469f5b39%3Fauto%3Dformat%26fit%3Dcrop%26w%3D200%26q%3D80&amp;w=64&amp;q=75" width="32"/>
+           <img alt="Customer avatar" class="h-8 w-8 rounded-full border-2 border-slate-950 object-cover" height="32" src="/_next/image?url=https%3A%2F%2Fhoirqrkdgbmvpwutwuwj.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fassets%2Fassets%2F917d6f93-fb36-439a-8c48-884b67b35381_1600w.jpg&amp;w=64&amp;q=75" width="32"/>
+           <img alt="Customer avatar" class="h-8 w-8 rounded-full border-2 border-slate-950 object-cover" height="32" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1524504388940-b1c1722653e1%3Fauto%3Dformat%26fit%3Dcrop%26w%3D200%26q%3D80&amp;w=64&amp;q=75" width="32"/>
+           <img alt="Customer avatar" class="h-8 w-8 rounded-full border-2 border-slate-950 object-cover" height="32" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1535713875002-d1d0cf377fde%3Fauto%3Dformat%26fit%3Dcrop%26w%3D200%26q%3D80&amp;w=64&amp;q=75" width="32"/>
+           <div class="flex h-8 w-8 items-center justify-center rounded-full border-2 border-slate-950 bg-white/10 text-[10px] font-medium text-slate-100">
+            +9k
+           </div>
+          </div>
+          <p class="text-[10px] font-medium uppercase tracking-[0.2em] text-slate-200/80">
+           Trusted by fashion brands worldwide
+          </p>
+         </div>
+        </div>
+        <div class="space-y-4">
+         <h1 class="sm:text-5xl lg:text-6xl animate-[fadeSlideIn_0.8s_ease-out_0.3s_both] text-4xl font-semibold text-slate-50 tracking-tight">
+          Fashion photography with
+          <span class="italic font-medium">
+           AI models
+          </span>
+         </h1>
+        </div>
+        <p class="sm:text-base animate-[fadeSlideIn_0.8s_ease-out_0.5s_both] text-sm font-normal text-slate-200/80 max-w-xl mt-5 mr-auto ml-auto">
+         Generate professional-grade, high quality fashion photos for your e-commerce store in minutes using AI.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:justify-center animate-[fadeSlideIn_0.8s_ease-out_0.6s_both] mt-8 gap-x-4 gap-y-4 items-center">
+         <a class="relative cursor-pointer inline-flex items-center justify-center bg-black/60 hover:bg-black/70 text-xs font-medium text-white tracking-tight pt-3 pb-3 px-8 rounded-md border-none transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900" href="/signup">
+          <span class="relative z-10 flex items-center gap-2">
+           Upload product photos
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="w-full mt-8 sm:mt-14 animate-[fadeSlideIn_0.8s_ease-out_0.7s_both]">
+        <div class="bg-gradient-to-br from-black/10 to-black/0 rounded-2xl sm:rounded-3xl pt-4 sm:pt-6 pr-2 sm:pr-4 pb-4 sm:pb-6 pl-2 sm:pl-4 relative shadow-[0_24px_80px_rgba(0,0,0,0.8)] backdrop-blur space-y-4">
+         <div class="jsx-6d9ce39ffb472e91 mt-2 sm:mt-4">
+          <div class="jsx-6d9ce39ffb472e91 grid grid-cols-2 gap-2 sm:gap-3 md:flex md:gap-4 min-w-full pr-2 sm:pr-1 pb-2 pl-2 sm:pl-1 md:overflow-x-auto lg:overflow-visible scrollbar-hide" id="provamoda-gallery">
+           <div class="jsx-6d9ce39ffb472e91 gallery-card w-full md:flex-shrink-0 md:w-48 lg:w-56 xl:w-64 transform transition-all duration-700 ease-out cursor-pointer active:scale-105 sm:hover:scale-105 touch-manipulation">
+            <div class="jsx-6d9ce39ffb472e91 aspect-[3/4] overflow-visible rounded-xl sm:rounded-2xl ring-1 ring-black/40 shadow-lg border-gradient before:rounded-xl sm:before:rounded-2xl relative">
+             <div class="jsx-6d9ce39ffb472e91 w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
+              <img alt="AI fashion model in jacket" class="w-full h-full object-cover" height="341" src="/_next/image?url=%2Fhero_images%2Fhero_gallery%2Fjacket.webp&amp;w=640&amp;q=75" width="256"/>
+             </div>
+             <div class="jsx-6d9ce39ffb472e91 absolute -top-4 -right-4 w-10 h-10 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 border-white/30 shadow-lg bg-black/40 backdrop-blur-sm z-10 rotate-12">
+              <img alt="Original product photo" class="w-full h-full object-cover" height="50" src="/_next/image?url=%2Fexamples%2Foriginal%2Fjacket.webp&amp;w=128&amp;q=75" width="50"/>
+             </div>
+            </div>
+           </div>
+           <div class="jsx-6d9ce39ffb472e91 gallery-card w-full md:flex-shrink-0 md:w-48 lg:w-56 xl:w-64 transform transition-all duration-700 ease-out cursor-pointer active:scale-105 sm:hover:scale-105 touch-manipulation">
+            <div class="jsx-6d9ce39ffb472e91 aspect-[3/4] overflow-visible rounded-xl sm:rounded-2xl ring-1 ring-black/40 shadow-lg border-gradient before:rounded-xl sm:before:rounded-2xl relative">
+             <div class="jsx-6d9ce39ffb472e91 w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
+              <img alt="AI fashion model in dress" class="w-full h-full object-cover" height="341" src="/_next/image?url=%2Fhero_images%2Fhero_gallery%2Fdress.webp&amp;w=640&amp;q=75" width="256"/>
+             </div>
+             <div class="jsx-6d9ce39ffb472e91 absolute -top-4 -right-4 w-10 h-10 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 border-white/30 shadow-lg bg-black/40 backdrop-blur-sm z-10 rotate-12">
+              <img alt="Original product photo" class="w-full h-full object-cover" height="50" src="/_next/image?url=%2Fexamples%2Foriginal%2Fdress.png&amp;w=128&amp;q=75" width="50"/>
+             </div>
+            </div>
+           </div>
+           <div class="jsx-6d9ce39ffb472e91 gallery-card w-full md:flex-shrink-0 md:w-48 lg:w-56 xl:w-64 transform transition-all duration-700 ease-out cursor-pointer active:scale-105 sm:hover:scale-105 touch-manipulation">
+            <div class="jsx-6d9ce39ffb472e91 aspect-[3/4] overflow-visible rounded-xl sm:rounded-2xl ring-1 ring-black/40 shadow-lg border-gradient before:rounded-xl sm:before:rounded-2xl relative">
+             <div class="jsx-6d9ce39ffb472e91 w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
+              <img alt="AI fashion model in pants" class="w-full h-full object-cover" height="341" src="/_next/image?url=%2Fhero_images%2Fhero_gallery%2Fblazer.webp&amp;w=640&amp;q=75" width="256"/>
+             </div>
+             <div class="jsx-6d9ce39ffb472e91 absolute -top-4 -right-4 w-10 h-10 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 border-white/30 shadow-lg bg-black/40 backdrop-blur-sm z-10 rotate-12">
+              <img alt="Original product photo" class="w-full h-full object-cover" height="50" src="/_next/image?url=%2Fexamples%2Foriginal%2Fblazer.webp&amp;w=128&amp;q=75" width="50"/>
+             </div>
+            </div>
+           </div>
+           <div class="jsx-6d9ce39ffb472e91 gallery-card w-full md:flex-shrink-0 md:w-48 lg:w-56 xl:w-64 transform transition-all duration-700 ease-out cursor-pointer active:scale-105 sm:hover:scale-105 touch-manipulation">
+            <div class="jsx-6d9ce39ffb472e91 aspect-[3/4] overflow-visible rounded-xl sm:rounded-2xl ring-1 ring-black/40 shadow-lg border-gradient before:rounded-xl sm:before:rounded-2xl relative">
+             <div class="jsx-6d9ce39ffb472e91 w-full h-full overflow-hidden rounded-xl sm:rounded-2xl">
+              <img alt="AI fashion model in swimsuit" class="w-full h-full object-cover" height="341" src="/_next/image?url=%2Fhero_images%2Fhero_gallery%2Fxmas.webp&amp;w=640&amp;q=75" width="256"/>
+             </div>
+             <div class="jsx-6d9ce39ffb472e91 absolute -top-4 -right-4 w-10 h-10 sm:w-16 sm:h-16 md:w-16 md:h-16 lg:w-20 lg:h-20 rounded-lg overflow-hidden border-2 border-white/30 shadow-lg bg-black/40 backdrop-blur-sm z-10 rotate-12">
+              <img alt="Original product photo" class="w-full h-full object-cover" height="50" src="/_next/image?url=%2Fexamples%2Foriginal%2Fxmas.png&amp;w=128&amp;q=75" width="50"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="sm:p-4 bg-neutral-900/60 max-w-6xl border-white/10 border rounded-3xl mt-20 mx-5 mb-20 pt-8 pb-8 px-1 md:px-8 md:mx-auto relative backdrop-blur">
+       <div class="grid grid-cols-1 lg:grid-cols-2 sm:gap-6 z-10 relative gap-x-6 gap-y-6 items-stretch">
+        <div class="flex flex-col min-h-full pr-10 pl-10 pb-10 justify-between">
+         <div>
+          <span class="text-sm font-normal text-neutral-400">
+           How it works
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl leading-[1.05] text-white tracking-tight mt-2 font-semibold">
+           From product shot to campaign-ready in minutes.
+          </h2>
+          <div class="mt-6 relative">
+           <div class="hidden sm:flex flex-col gap-3 relative text-neutral-300 bg-transparent pr-3 pl-3">
+            <div class="relative">
+             <div class="flex gap-3 items-start">
+              <div class="flex-1 pb-4">
+               <span class="text-sm font-medium text-emerald-300">
+                Upload your product photo
+               </span>
+               <p class="text-xs text-neutral-400 mt-1">
+                Shoot on a simple background, then drag &amp; drop your flat lay image to start.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="relative">
+             <div class="flex gap-3 items-start">
+              <div class="flex-1 pb-4">
+               <span class="text-sm font-medium text-sky-300">
+                Choose model, pose &amp; setting
+               </span>
+               <p class="text-xs text-neutral-400 mt-1">
+                Pick body type, skin tone, location and camera style that match your brand guidelines.
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="relative">
+             <div class="flex items-start gap-3">
+              <div class="flex-1">
+               <span class="text-sm font-medium text-fuchsia-300">
+                Generate, review &amp; export
+               </span>
+               <p class="text-xs text-neutral-400 mt-1">
+                Create entire campaigns in a few clicks, then export ready‑to‑ship images for your store and ads.
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="sm:hidden mt-4 space-y-3">
+            <div class="border border-white/10 rounded-2xl p-3 bg-black/40">
+             <p class="text-xs font-medium text-emerald-300">
+              1. Upload your product photos
+             </p>
+             <p class="text-xs text-neutral-400 mt-1">
+              Start from simple flat lays or product shots — our AI understands the garment.
+             </p>
+            </div>
+            <div class="border border-white/10 rounded-2xl p-3 bg-black/40">
+             <p class="text-xs font-medium text-sky-300">
+              2. Select model &amp; scene
+             </p>
+             <p class="text-xs text-neutral-400 mt-1">
+              Mix and match AI models, poses and locations to match each collection.
+             </p>
+            </div>
+            <div class="border border-white/10 rounded-2xl p-3 bg-black/40">
+             <p class="text-xs font-medium text-fuchsia-300">
+              3. Approve &amp; publish
+             </p>
+             <p class="text-xs text-neutral-400 mt-1">
+              Approve the best looks, then export high-resolution assets.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="w-full mt-6">
+          <div>
+           <p class="text-sm font-medium text-white tracking-tight">
+            Replace weeks of shoots with one upload.
+           </p>
+           <p class="text-sm text-neutral-300 max-w-sm mt-1">
+            No model bookings, no studio fees. Just on‑brand, production‑ready imagery that scales with your catalog.
+           </p>
+           <a class="inline-flex font-semibold items-center justify-center gap-2 hover:bg-emerald-500/90 transition text-sm font-normal text-white bg-emerald-500 h-9 max-w-xs rounded-full mt-3 pr-4 pl-4" href="/signup">
+            See it in action
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="lg:mt-0 flex mt-4 relative items-center justify-center">
+         <div class="w-full h-full pt-16 pr-16 pb-16 pl-16 relative">
+          <div class="aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-black/60 shadow-[0_14px_40px_rgba(0,0,0,0.9)]">
+           <img alt="AI generated campaign-ready result" class="w-full h-full object-cover" height="533" src="/_next/image?url=%2Fhero_images%2Fhow_it_works.png&amp;w=828&amp;q=75" width="400"/>
+          </div>
+          <div class="block absolute top-10 right-10 w-24 sm:w-20 md:w-20 lg:w-28 origin-top-right rotate-6">
+           <div class="aspect-[4/5] rounded-xl overflow-hidden border border-white/20 bg-black/80 shadow-[0_10px_30px_rgba(0,0,0,0.8)]">
+            <img alt="Original product photo before AI" class="w-full h-full object-cover" height="140" src="/_next/image?url=%2Fhero_images%2Fexample_how_it_works.jpeg&amp;w=256&amp;q=75" width="112"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="sm:p-4 max-w-6xl rounded-3xl mt-10 mx-5 mb-20 pt-8 pb-8 px-1 md:px-8 md:mx-auto relative backdrop-blur">
+       <div class="grid grid-cols-1 lg:grid-cols-[0.9fr,1.1fr] sm:gap-8 gap-8 items-start z-10 relative">
+        <div class="flex flex-col gap-5 px-6">
+         <div>
+          <span class="text-sm bg-emerald-500/10 text-emerald-300 border border-emerald-400/30 font-normal px-3 py-1 rounded-full">
+           Accesories now supported!
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-[34px] leading-[1.08] text-white tracking-tight mt-2 font-semibold">
+           See how Provamoda styles a simple belt into a full look.
+          </h2>
+         </div>
+         <p class="text-sm text-neutral-300">
+          Start from a basic product shot, keep the belt 1:1 accurate, and let the AI handle the model, outfit and scene around it. Perfect for accessories where every detail matters.
+         </p>
+         <div class="mt-2 space-y-3 text-xs text-neutral-300">
+          <div class="flex items-start gap-2">
+           <p>
+            Upload one clean belt photo on a neutral background.
+           </p>
+          </div>
+          <div class="flex items-start gap-2">
+           <p>
+            Choose the model, styling and environment that matches your brand.
+           </p>
+          </div>
+          <div class="flex items-start gap-2">
+           <p>
+            Export consistent before / after visuals for PDPs, ads and lookbooks.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="px-4 lg:px-0">
+         <div class="bg-black/70 border border-white/12 rounded-2xl shadow-[0_16px_40px_rgba(0,0,0,0.9)] p-4 sm:p-5 space-y-4">
+          <div class="flex items-center justify-between gap-3">
+           <div class="flex items-center gap-2">
+            <div class="inline-flex items-center rounded-full bg-white/5 border border-white/15 px-3 py-1">
+             <span class="text-[10px] font-medium uppercase tracking-[0.16em] text-neutral-200">
+              Before
+             </span>
+            </div>
+            <div class="inline-flex items-center rounded-full bg-emerald-500/10 border border-emerald-400/40 px-3 py-1">
+             <span class="text-[10px] font-medium uppercase tracking-[0.16em] text-emerald-200">
+              After · Provamoda
+             </span>
+            </div>
+           </div>
+           <span class="text-[10px] text-neutral-400">
+            Belt · Accessories
+           </span>
+          </div>
+          <div class="grid grid-cols-2 gap-3 sm:gap-4">
+           <div class="relative overflow-hidden rounded-xl border border-white/15 bg-black/80">
+            <img alt="Original belt product photo before AI" class="w-full h-full object-cover" height="320" src="/_next/image?url=%2Fexamples%2Foriginal%2Fbelt.webp&amp;w=640&amp;q=75" width="320"/>
+            <div class="absolute bottom-2 left-2 rounded-full h-[20px] bg-black/75 border border-white/20 px-2.5 py-0.5">
+             <span class="text-[9px] font-medium uppercase tracking-[0.14em] text-neutral-100 flex items-center justify-center">
+              Before
+             </span>
+            </div>
+           </div>
+           <div class="relative overflow-hidden rounded-xl border border-emerald-400/35 bg-black/80">
+            <img alt="AI generated campaign photo featuring belt accessory" class="w-full h-full object-cover" height="320" src="/_next/image?url=%2Fhero_images%2Fhero_gallery%2Fbelt.webp&amp;w=640&amp;q=75" width="320"/>
+            <div class="absolute bottom-2 left-2 rounded-full h-[20px] bg-emerald-500/90 px-2.5 py-0.5">
+             <span class="text-[9px] font-medium uppercase tracking-[0.14em] text-slate-950 flex items-center justify-center">
+              After
+             </span>
+            </div>
+           </div>
+          </div>
+          <p class="text-[11px] sm:text-xs text-neutral-400">
+           Same belt, new context. Keep your accessory exactly as shot while Provamoda rebuilds the model, styling and environment around it for campaign-ready visuals.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="sm:px-4 lg:px-8 max-w-6xl mr-auto ml-auto pt-4 pb-20">
+       <div class="mx-auto max-w-3xl text-center">
+        <span class="inline-flex items-center gap-2 rounded-full border border-emerald-400/30 bg-emerald-500/10 px-3 sm:px-4 py-1.5 sm:py-2 text-[11px] font-medium text-emerald-300 tracking-[0.18em] uppercase">
+         Example images
+        </span>
+        <h2 class="mt-4 sm:mt-6 text-2xl sm:text-3xl lg:text-4xl tracking-tight text-white font-semibold">
+         See how brands style Provamoda looks in the wild
+        </h2>
+        <p class="mt-3 sm:mt-4 text-xs sm:text-sm font-normal text-slate-300/90">
+         We have created over 1,000 fashion photos with our AI.
+        </p>
+       </div>
+       <div class="jsx-be58f16f745e5570 relative mt-8 sm:mt-10">
+        <div class="jsx-be58f16f745e5570 mx-auto max-w-5xl overflow-hidden space-y-4">
+         <div class="jsx-be58f16f745e5570 flex w-max">
+          <div class="jsx-be58f16f745e5570 flex gap-2 sm:gap-3 flex-shrink-0 pr-2 sm:pr-4">
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 1" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F1.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 2" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F2.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 3" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F3.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 4" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F4.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 5" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F5.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 6" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F6.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+          </div>
+          <div class="jsx-be58f16f745e5570 flex gap-2 sm:gap-3 flex-shrink-0 pr-2 sm:pr-4">
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 1" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F1.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 2" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F2.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 3" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F3.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 4" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F4.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 5" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F5.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 6" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F6.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+          </div>
+         </div>
+         <div class="jsx-be58f16f745e5570 flex w-max">
+          <div class="jsx-be58f16f745e5570 flex gap-2 sm:gap-3 flex-shrink-0 pr-2 sm:pr-4">
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 8" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F7.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 9" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F8.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 10" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F9.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 11" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F10.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 12" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F11.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 13" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F12.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+          </div>
+          <div class="jsx-be58f16f745e5570 flex gap-2 sm:gap-3 flex-shrink-0 pr-2 sm:pr-4">
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 8" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F7.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 9" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F8.webp&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 10" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F9.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 11" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F10.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 12" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F11.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+           <div class="jsx-be58f16f745e5570 flex-shrink-0 rounded-xl overflow-hidden ring-1 ring-white/10 bg-white/5 w-32 sm:w-40 lg:w-48">
+            <img alt="Community fashion look 13" class="h-32 sm:h-40 lg:h-48 w-full object-cover" height="200" src="/_next/image?url=%2Fexamples%2Fexample_gallery%2F12.jpg&amp;w=640&amp;q=75" width="200"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="jsx-b2000ac32d77c295 sm:px-6 lg:px-8 lg:py-10 max-w-6xl mt-10 mr-auto mb-10 ml-auto pt-2 pr-4 pb-10 pl-4">
+       <div class="jsx-b2000ac32d77c295 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+        <div class="jsx-b2000ac32d77c295 flex justify-center lg:justify-start">
+         <div class="jsx-b2000ac32d77c295 overflow-hidden shadow-black/40 sm:max-w-sm bg-gradient-to-br from-white/10 to-white/0 w-full max-w-xs rounded-[2.5rem] relative shadow-2xl gap-x-3 gap-y-3">
+          <div class="jsx-b2000ac32d77c295 flex items-center justify-between px-4 pt-3 pb-2 text-[13px] text-slate-200">
+           <div class="jsx-b2000ac32d77c295 flex items-center gap-1.5">
+            <span class="jsx-b2000ac32d77c295 text-xl font-semibold tracking-tight">
+             Provamoda
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex items-center gap-3 text-xs">
+            <span class="jsx-b2000ac32d77c295">
+             9:41
+            </span>
+           </div>
+          </div>
+          <div class="jsx-b2000ac32d77c295 flex gap-3 overflow-x-auto no-scrollbar pr-3 pb-3 pl-3 gap-x-3 gap-y-3 items-center">
+           <div class="jsx-b2000ac32d77c295 flex flex-col items-center gap-1">
+            <div class="jsx-b2000ac32d77c295 relative w-11 h-11 rounded-full bg-slate-900 flex items-center justify-center border border-cyan-400/70">
+             <span class="jsx-b2000ac32d77c295 text-[11px] font-semibold tracking-tight text-cyan-100">
+              PM
+             </span>
+             <span class="jsx-b2000ac32d77c295 absolute -right-0.5 -bottom-0.5 inline-flex items-center justify-center w-4 h-4 rounded-full bg-cyan-500 text-xs text-slate-950 font-medium">
+              +
+             </span>
+            </div>
+            <span class="jsx-b2000ac32d77c295 text-xs text-slate-400">
+             You
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col items-center gap-1">
+            <div class="jsx-b2000ac32d77c295 w-11 h-11 rounded-full border border-fuchsia-400/80 p-[2px]">
+             <img alt="3D render capsule" class="w-full h-full object-cover rounded-full" height="44" src="/_next/image?url=https%3A%2F%2Fhoirqrkdgbmvpwutwuwj.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fassets%2Fassets%2F419fb450-fb0d-4f9e-9852-133d18177ec0_320w.webp&amp;w=96&amp;q=75" width="44"/>
+            </div>
+            <span class="jsx-b2000ac32d77c295 text-xs text-slate-400">
+             Luma
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col items-center gap-1">
+            <div class="jsx-b2000ac32d77c295 w-11 h-11 rounded-full border border-amber-400/80 p-[2px]">
+             <img alt="Minimal product" class="w-full h-full object-cover rounded-full" height="44" src="/_next/image?url=https%3A%2F%2Fhoirqrkdgbmvpwutwuwj.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fassets%2Fassets%2Ffeadc71c-fe96-42c7-912b-466bd1d637b6_320w.webp&amp;w=96&amp;q=75" width="44"/>
+            </div>
+            <span class="jsx-b2000ac32d77c295 text-xs text-slate-400">
+             Radius
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col items-center gap-1">
+            <div class="jsx-b2000ac32d77c295 w-11 h-11 rounded-full border border-emerald-400/80 p-[2px]">
+             <img alt="Soft light render" class="w-full h-full object-cover rounded-full" height="44" src="/_next/image?url=https%3A%2F%2Fhoirqrkdgbmvpwutwuwj.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fassets%2Fassets%2Feb7d05f7-a48c-46ee-89a0-43060e107242_320w.webp&amp;w=96&amp;q=75" width="44"/>
+            </div>
+            <span class="jsx-b2000ac32d77c295 text-xs text-slate-400">
+             Halo
+            </span>
+           </div>
+          </div>
+          <div class="jsx-b2000ac32d77c295 border-t border-slate-800/80 pt-2 pb-3">
+           <div class="jsx-b2000ac32d77c295 flex items-center justify-between px-3 pb-2">
+            <div class="jsx-b2000ac32d77c295 flex items-center gap-2">
+             <div class="jsx-b2000ac32d77c295 w-7 h-7 rounded-full overflow-hidden border border-slate-700">
+              <img alt="Profile avatar" class="w-full h-full object-cover" height="28" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1524504388940-b1c1722653e1%3Fauto%3Dformat%26fit%3Dcrop%26w%3D200%26q%3D80&amp;w=64&amp;q=75" width="28"/>
+             </div>
+             <div class="jsx-b2000ac32d77c295 flex flex-col">
+              <span class="jsx-b2000ac32d77c295 text-xs font-medium text-slate-100 tracking-tight">
+               Provamoda Studio
+              </span>
+              <span class="jsx-b2000ac32d77c295 text-xs text-slate-500">
+               Sponsored · Fashion
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="jsx-b2000ac32d77c295 px-3 pt-2">
+            <button class="jsx-b2000ac32d77c295 w-full rounded-xl bg-cyan-500 text-slate-950 text-xs font-medium py-1.5 flex items-center justify-between px-3 hover:bg-cyan-400 transition">
+             <span class="jsx-b2000ac32d77c295">
+              Launch your visual campaign
+             </span>
+            </button>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex text-xs text-slate-400 pt-2 pr-3 pb-2 pl-3 items-center justify-between">
+            <span class="jsx-b2000ac32d77c295">
+             312 likes · 8 comments
+            </span>
+            <span class="jsx-b2000ac32d77c295">
+             View insights
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="jsx-b2000ac32d77c295 flex flex-col gap-6 px-5 md:px-0">
+         <div class="jsx-b2000ac32d77c295 flex flex-col gap-2">
+          <p class="jsx-b2000ac32d77c295 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-500">
+           Motion from stills
+          </p>
+          <h2 class="jsx-b2000ac32d77c295 text-3xl sm:text-4xl lg:text-[36px] font-semibold tracking-tight text-slate-50">
+           Turn Provamoda photos into scrolling-stopping fashion videos.
+          </h2>
+          <p class="jsx-b2000ac32d77c295 text-sm sm:text-base text-slate-300 max-w-md">
+           Feed any Provamoda still into our motion engine, describe the mood in a sentence, and generate vertical-ready videos that feel like full productions – without reshoots.
+          </p>
+         </div>
+         <div class="jsx-b2000ac32d77c295 space-y-4">
+          <div class="jsx-b2000ac32d77c295 flex items-start gap-3 border-t border-slate-800/80 pt-4">
+           <div class="jsx-b2000ac32d77c295 flex bg-slate-900/80 w-[40px] h-[30px] border-slate-800/90 border rounded-full items-center justify-center">
+            <span class="jsx-b2000ac32d77c295 text-[11px] font-medium text-slate-100">
+             1
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col gap-1">
+            <span class="jsx-b2000ac32d77c295 text-sm font-medium tracking-tight text-slate-50">
+             Pick your hero still
+            </span>
+            <p class="jsx-b2000ac32d77c295 text-xs sm:text-sm text-slate-400">
+             Start from any Provamoda shot you love – a lookbook pose, e‑commerce angle, or campaign hero image.
+            </p>
+           </div>
+          </div>
+          <div class="jsx-b2000ac32d77c295 flex items-start gap-3 border-t border-slate-800/80 pt-4">
+           <div class="jsx-b2000ac32d77c295 flex bg-slate-900/80 w-[40px] h-[30px] border-slate-800/90 border rounded-full items-center justify-center">
+            <span class="jsx-b2000ac32d77c295 text-[11px] font-medium text-slate-100">
+             2
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col gap-1">
+            <span class="jsx-b2000ac32d77c295 text-sm font-medium tracking-tight text-slate-50">
+             Type a motion prompt
+            </span>
+            <p class="jsx-b2000ac32d77c295 text-xs sm:text-sm text-slate-400">
+             Describe the movement you want – e.g. "slow pan down, soft camera shake, studio lights pulsing to the beat".
+            </p>
+           </div>
+          </div>
+          <div class="jsx-b2000ac32d77c295 flex items-start gap-3 border-t border-b border-slate-800/80 py-4">
+           <div class="jsx-b2000ac32d77c295 flex bg-slate-900/80 w-[40px] h-[30px] border-slate-800/90 border rounded-full items-center justify-center">
+            <span class="jsx-b2000ac32d77c295 text-[11px] font-medium text-slate-100">
+             3
+            </span>
+           </div>
+           <div class="jsx-b2000ac32d77c295 flex flex-col gap-1">
+            <span class="jsx-b2000ac32d77c295 text-sm font-medium tracking-tight text-slate-50">
+             Export ready‑to‑post clips
+            </span>
+            <p class="jsx-b2000ac32d77c295 text-xs sm:text-sm text-slate-400">
+             Download vertical videos in the right aspect ratios for Reels, TikTok, and Stories – no extra editing needed.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="jsx-b2000ac32d77c295 flex flex-wrap items-center gap-3">
+          <button class="jsx-b2000ac32d77c295 inline-flex items-center gap-2 rounded-2xl bg-slate-50 text-[13px] font-medium text-slate-950 px-3 py-2 hover:bg-slate-200 transition">
+           <span class="jsx-b2000ac32d77c295">
+            Generate a sample video
+           </span>
+          </button>
+          <span class="jsx-b2000ac32d77c295 text-[11px] text-slate-400">
+           Built for AI models, optimized for social feeds.
+          </span>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="sm:p-8 max-w-7xl mt-5 mr-auto mb-5 ml-auto pt-8 pr-4 pb-8 pl-4">
+       <div class="text-center mb-12">
+        <h2 class="sm:text-5xl lg:text-6xl leading-[1.05] text-4xl text-white tracking-tight font-geist font-light mb-6">
+         Edit with AI-Powered Prompts
+        </h2>
+        <p class="sm:text-lg text-base text-neutral-300 max-w-3xl mx-auto font-geist">
+         Transform your product photos with natural language prompts. Simply describe the style, setting, or mood you want, and watch as AI brings your vision to life. No complex editing software required, just type what you imagine.
+        </p>
+       </div>
+       <div class="sm:h-[700px] flex h-[450px] mt-14 relative items-center justify-center overflow-hidden">
+        <div class="absolute w-48 sm:w-64 md:w-80 aspect-[3/4] rounded-xl sm:rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 overflow-hidden shadow-2xl">
+         <img alt="Alpine valley with granite peak" class="absolute inset-0 size-full object-cover w-full h-auto" src="/examples/edited/1.webp"/>
+         <div class="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 flex items-center justify-between">
+          <div>
+           <p class="text-xs sm:text-sm font-medium tracking-tight text-white">
+            Make the sleeves shorter
+           </p>
+           <p class="text-[10px] sm:text-xs text-neutral-300">
+            36 photos
+           </p>
+          </div>
+          <div class="inline-flex items-center gap-1 rounded-full bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] text-neutral-200">
+           Alps
+          </div>
+         </div>
+        </div>
+        <div class="absolute w-48 sm:w-64 md:w-80 aspect-[3/4] rounded-xl sm:rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 overflow-hidden shadow-2xl">
+         <img alt="Minimal portrait in orange light" class="absolute inset-0 size-full object-cover w-full h-auto" src="/examples/edited/4.webp"/>
+         <div class="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 flex items-center justify-between">
+          <div>
+           <p class="text-xs sm:text-sm font-medium tracking-tight text-white">
+            Make the t-shirt red
+           </p>
+           <p class="text-[10px] sm:text-xs text-neutral-300">
+            22 photos
+           </p>
+          </div>
+          <div class="hidden md:inline-flex items-center gap-1 rounded-full bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] text-neutral-200">
+           Hispanic Model
+          </div>
+         </div>
+        </div>
+        <div class="absolute w-48 sm:w-64 md:w-80 aspect-[3/4] rounded-xl sm:rounded-2xl bg-neutral-900/40 ring-1 ring-white/10 overflow-hidden shadow-2xl">
+         <img alt="Snowy village at dusk in the mountains" class="absolute inset-0 size-full object-cover w-full h-auto" src="/examples/edited/2.webp"/>
+         <div class="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 flex items-center justify-between">
+          <div>
+           <p class="text-xs sm:text-sm font-medium tracking-tight text-white">
+            Make the sleeves longer
+           </p>
+           <p class="text-[10px] sm:text-xs text-neutral-300">
+            41 photos
+           </p>
+          </div>
+          <div class="hidden md:inline-flex items-center gap-1 rounded-full bg-white/10 px-1.5 sm:px-2 py-0.5 sm:py-1 text-[9px] sm:text-[10px] text-neutral-200">
+           Studio Background
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <div class="mt-20" id="features">
+       <div class="flex flex-col items-center justify-center">
+        <h1 class="text-4xl font-bold text-neutral-900 dark:text-white ml-8 md:ml-0">
+         And tons of other AI Features
+        </h1>
+        <p class="text-lg text-muted-foreground mt-2">
+         We've got it all. And we're just getting started.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 relative z-10 py-10 max-w-7xl mx-auto">
+        <div class="flex flex-col lg:border-r py-10 relative group/feature lg:border-l lg:border-b dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Generate with different fashion models
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Generate with different fashion models, including men, women, teens, and more.
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature lg:border-b dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Generate with different backgrounds
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Generate different backgrounds on your generated images.
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature lg:border-b dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Generate videos from your images
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Generate videos from your generated images with a single prompt.
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature lg:border-b dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Support for bottom and top clothes
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Generate with different bottom and top clothes, including pants, skirts, and more.
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature lg:border-l dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           High resolution images
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          We automatically upscale to high resolution images at no extra cost.
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Generate front and back views of your clothing products
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Generate front and back views of your clothing products
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Generate random models
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          completely random models on each generation
+         </p>
+        </div>
+        <div class="flex flex-col lg:border-r py-10 relative group/feature dark:border-white/20">
+         <div class="text-lg font-bold mb-2 relative z-10 px-10">
+          <span class="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-white">
+           Multiple Models per image
+          </span>
+         </div>
+         <p class="text-sm text-neutral-600 dark:text-white/80 max-w-xs relative z-10 px-10">
+          Add multiple models to your images by selecting the "Model Quantity" option.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="jsx-2bb83f14365e0341 sm:px-6 lg:px-8 max-w-7xl mr-auto ml-auto pr-4 pl-4">
+       <div class="jsx-2bb83f14365e0341 mb-12">
+        <span class="jsx-2bb83f14365e0341 text-sm font-medium text-blue-400">
+         Testimonials
+        </span>
+        <h2 class="jsx-2bb83f14365e0341 mt-2 text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight">
+         Real stories from teams who transformed their product photography.
+        </h2>
+        <div class="jsx-2bb83f14365e0341 mt-4 inline-flex items-center gap-2 rounded-full border px-3 py-1.5 border-white/10 bg-white/5">
+         <span class="jsx-2bb83f14365e0341 inline-flex items-center -space-x-2">
+          <img alt="Reviewer 1" class="h-6 w-6 rounded-full ring-2 object-cover ring-neutral-900" height="24" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D1&amp;w=48&amp;q=75" width="24"/>
+          <img alt="Reviewer 2" class="h-6 w-6 rounded-full ring-2 object-cover ring-neutral-900" height="24" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D2&amp;w=48&amp;q=75" width="24"/>
+          <img alt="Reviewer 3" class="h-6 w-6 rounded-full ring-2 object-cover ring-neutral-900" height="24" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D3&amp;w=48&amp;q=75" width="24"/>
+          <img alt="Reviewer 4" class="h-6 w-6 rounded-full ring-2 object-cover ring-neutral-900" height="24" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D4&amp;w=48&amp;q=75" width="24"/>
+         </span>
+         <span class="jsx-2bb83f14365e0341 ml-2 inline-flex items-center gap-1 text-sm text-neutral-300">
+          <span class="jsx-2bb83f14365e0341 ml-1">
+           4.9/5 • 2,431 reviews
+          </span>
+         </span>
+        </div>
+       </div>
+       <div class="jsx-2bb83f14365e0341 grid grid-cols-1 overflow-hidden md:grid-cols-3 py-12 gap-x-6 gap-y-6">
+        <div class="jsx-2bb83f14365e0341 overflow-hidden">
+         <div class="jsx-2bb83f14365e0341 space-y-6 md:hidden">
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda completely transformed our e-commerce store. The virtual try-on feature has boosted customer confidence, and our sales have skyrocketed!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Sophia Williams" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D1&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Sophia Williams
+             </div>
+             <div class="text-xs text-neutral-400">
+              Founder, ChicStyle Boutique
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The ease of generating high-quality product images with Provamoda is unmatched. It has made my product launches seamless and stress-free."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="James Anderson" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D2&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              James Anderson
+             </div>
+             <div class="text-xs text-neutral-400">
+              Owner, Urban Threads
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda's AI is amazing! The customization options for virtual try-ons are endless, and my customers love the interactive experience."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Emily Davis" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D3&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Emily Davis
+             </div>
+             <div class="text-xs text-neutral-400">
+              E-Commerce Manager, LuxeWear
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda completely transformed our e-commerce store. The virtual try-on feature has boosted customer confidence, and our sales have skyrocketed!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Sophia Williams" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D1&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Sophia Williams
+             </div>
+             <div class="text-xs text-neutral-400">
+              Founder, ChicStyle Boutique
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+         <div class="jsx-2bb83f14365e0341 hidden md:block space-y-6">
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda completely transformed our e-commerce store. The virtual try-on feature has boosted customer confidence, and our sales have skyrocketed!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Sophia Williams" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D1&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Sophia Williams
+             </div>
+             <div class="text-xs text-neutral-400">
+              Founder, ChicStyle Boutique
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "We've cut our photoshoot costs by over 70% thanks to Provamoda. The platform is intuitive and perfect for scaling our fashion catalog."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Michael Carter" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D4&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Michael Carter
+             </div>
+             <div class="text-xs text-neutral-400">
+              Creative Director, Modern Attire
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Using Provamoda has been a game-changer for us. The time we save on creating product photos has allowed us to focus more on growing our business."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Sophia Roberts" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D7&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Sophia Roberts
+             </div>
+             <div class="text-xs text-neutral-400">
+              Brand Strategist, Ethereal Design Co.
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda has revolutionized the way we showcase our collections. It's efficient, affordable, and delivers consistent results every time."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="William Green" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D10&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              William Green
+             </div>
+             <div class="text-xs text-neutral-400">
+              Product Manager, StyleSphere
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda completely transformed our e-commerce store. The virtual try-on feature has boosted customer confidence, and our sales have skyrocketed!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Sophia Williams" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D1&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Sophia Williams
+             </div>
+             <div class="text-xs text-neutral-400">
+              Founder, ChicStyle Boutique
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+        <div class="jsx-2bb83f14365e0341 hidden md:block overflow-hidden">
+         <div class="jsx-2bb83f14365e0341 space-y-6">
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The ease of generating high-quality product images with Provamoda is unmatched. It has made my product launches seamless and stress-free."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="James Anderson" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D2&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              James Anderson
+             </div>
+             <div class="text-xs text-neutral-400">
+              Owner, Urban Threads
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda makes creating professional photoshoots so easy. The quality and speed are game-changing for any fashion brand."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Olivia Martinez" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D5&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Olivia Martinez
+             </div>
+             <div class="text-xs text-neutral-400">
+              CEO, TrendSetters
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda's virtual try-on feature is a customer favorite! It's interactive and has significantly reduced our return rates."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Liam Evans" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D8&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Liam Evans
+             </div>
+             <div class="text-xs text-neutral-400">
+              Co-Founder, Streetwear Syndicate
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The integration with Shopify was seamless, and now we can generate product photos and update our store effortlessly. Highly recommend it!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Chloe Lee" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D11&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Chloe Lee
+             </div>
+             <div class="text-xs text-neutral-400">
+              Fashion Designer
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The ease of generating high-quality product images with Provamoda is unmatched. It has made my product launches seamless and stress-free."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="James Anderson" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D2&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              James Anderson
+             </div>
+             <div class="text-xs text-neutral-400">
+              Owner, Urban Threads
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+        <div class="jsx-2bb83f14365e0341 hidden md:block overflow-hidden">
+         <div class="jsx-2bb83f14365e0341 space-y-6">
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda's AI is amazing! The customization options for virtual try-ons are endless, and my customers love the interactive experience."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Emily Davis" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D3&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Emily Davis
+             </div>
+             <div class="text-xs text-neutral-400">
+              E-Commerce Manager, LuxeWear
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The ability to customize everything from models to backgrounds has given my brand a professional edge. Provamoda is a must-have for modern fashion businesses."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Benjamin Taylor" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D6&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Benjamin Taylor
+             </div>
+             <div class="text-xs text-neutral-400">
+              Operations Manager, CasualCore
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The quality of the AI-generated photoshoots is outstanding. It's hard to tell they aren't from a professional studio!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Amelia Johnson" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D9&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Amelia Johnson
+             </div>
+             <div class="text-xs text-neutral-400">
+              Marketing Manager, Glamorify
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "The efficiency with Provamoda has helped us achieve our product photography goals in record time. It's a must-have for growing online brands!"
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Noah Wilson" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D12&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Noah Wilson
+             </div>
+             <div class="text-xs text-neutral-400">
+              E-Commerce Specialist
+             </div>
+            </div>
+           </div>
+          </article>
+          <article class="rounded-2xl border p-6 border-white/10 bg-neutral-900/70">
+           <blockquote class="text-[16px] sm:text-[18px] text-neutral-100">
+            <span class="inline-flex items-center gap-2">
+             "Provamoda's AI is amazing! The customization options for virtual try-ons are endless, and my customers love the interactive experience."
+            </span>
+           </blockquote>
+           <div class="mt-5 flex items-center gap-3">
+            <img alt="Emily Davis" class="h-10 w-10 rounded-full object-cover ring-2 ring-white/10" height="40" src="/_next/image?url=https%3A%2F%2Fi.pravatar.cc%2F150%3Fimg%3D3&amp;w=96&amp;q=75" width="40"/>
+            <div>
+             <div class="text-sm font-medium">
+              Emily Davis
+             </div>
+             <div class="text-xs text-neutral-400">
+              E-Commerce Manager, LuxeWear
+             </div>
+            </div>
+           </div>
+          </article>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="mx-auto max-w-7xl px-6 pb-10 my-10">
+        <div class="mx-auto max-w-4xl divide-y divide-gray-900/10 dark:divide-gray-100/10">
+         <h2 class="text-4xl font-semibold tracking-tight text-gray-900 dark:text-gray-100 sm:text-5xl">
+          Frequently asked questions
+         </h2>
+         <dl class="mt-10 space-y-6 divide-y divide-gray-900/10 dark:divide-gray-100/10">
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R2d5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              How does the virtual try-on feature work?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R2l5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              Can I use Provamoda for all types of clothing?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R2t5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              Can I use Provamoda for accessories?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R355nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              Do you offer refunds?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R3d5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              What kind of support does Provamoda offer?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R3l5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              How long are the AI generated videos?
+             </span>
+            </button>
+           </dt>
+          </div>
+          <div class="pt-6">
+           <dt>
+            <button class="group flex w-full items-start justify-between text-left text-gray-900 dark:text-gray-100" id="headlessui-disclosure-button-:R3t5nqulb:" type="button">
+             <span class="text-base/7 font-semibold">
+              How much does it cost to use background replacement and generate videos?
+             </span>
+            </button>
+           </dt>
+          </div>
+         </dl>
+        </div>
+       </div>
+      </div>
+      <section class="sm:p-8 max-w-7xl mr-auto mb-24 ml-auto pt-8 pr-4 pb-8 pl-4">
+       <div class="relative overflow-hidden rounded-3xl bg-neutral-900/60 border border-white/10">
+        <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-0">
+         <div class="p-6 sm:p-10 lg:p-12 flex flex-col justify-center order-2 lg:order-1">
+          <h2 class="sm:text-5xl lg:text-6xl leading-[1.05] text-4xl text-white tracking-tight mt-6 font-geist font-light">
+           Ready to transform your product photography?
+          </h2>
+          <p class="sm:mt-6 sm:text-base text-sm text-neutral-300 max-w-[48ch] mt-6 font-geist">
+           Generate professional-grade fashion photos for your e-commerce store. Focus on building your brand, not managing photoshoots.
+          </p>
+          <div class="flex flex-col sm:flex-row sm:gap-4 sm:mt-10 md:mt-12 md:mb-12 mt-10 mb-12 gap-x-3 gap-y-3 items-center justify-center">
+           <a class="styled-button inline-flex items-center justify-center transition sm:text-base sm:w-auto text-sm font-medium text-white w-full font-geist" href="/signup">
+            Get Started
+           </a>
+           <a class="inline-flex items-center justify-center gap-2 hover:bg-white/10 hover:text-white transition sm:text-base sm:px-6 sm:py-3 sm:w-auto text-sm font-medium text-white/70 bg-white/5 w-full h-14 ring-white/10 ring-1 rounded-full pt-2 pr-4 pb-2 pl-4 shadow-sm backdrop-blur font-geist" href="/examples">
+            View Examples
+           </a>
+          </div>
+         </div>
+         <div class="overflow-hidden lg:border-t-0 lg:border-l order-1 lg:order-2 sm:p-10 lg:p-12 flex bg-neutral-950 border-white/10 border-t px-6 py-6 relative items-center justify-center">
+          <div class="relative w-full max-w-lg">
+           <div class="absolute top-12 -left-8 z-[15] transform rotate-[-2deg] hover:rotate-0 transition-transform duration-500">
+            <div class="overflow-hidden bg-neutral-900/90 border-white/10 border ring-white/5 ring-1 rounded-2xl shadow-2xl backdrop-blur">
+             <div class="p-5">
+              <div class="flex items-center gap-2 mb-4">
+               <div class="flex flex-col">
+                <span class="text-xs font-medium text-white font-geist">
+                 Performance
+                </span>
+                <span class="text-[10px] text-neutral-400 font-geist">
+                 Real-time stats
+                </span>
+               </div>
+              </div>
+              <div class="space-y-4">
+               <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                 <span class="text-[11px] text-neutral-300 font-geist">
+                  Generation Speed
+                 </span>
+                </div>
+                <span class="text-[11px] font-semibold text-emerald-400 font-geist">
+                 2.3s
+                </span>
+               </div>
+               <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                 <span class="text-[11px] text-neutral-300 font-geist">
+                  Avg. Processing
+                 </span>
+                </div>
+                <span class="text-[11px] font-semibold text-purple-400 font-geist">
+                 45s
+                </span>
+               </div>
+               <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                 <span class="text-[11px] text-neutral-300 font-geist">
+                  Success Rate
+                 </span>
+                </div>
+                <span class="text-[11px] font-semibold text-pink-400 font-geist">
+                 99.2%
+                </span>
+               </div>
+              </div>
+              <div class="mt-4 pt-4 border-t border-white/10">
+               <div class="flex items-center justify-between">
+                <span class="text-[10px] text-neutral-400 font-geist">
+                 Total Generated
+                </span>
+                <span class="text-xs font-bold text-white font-geist">
+                 12,847
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="absolute -bottom-8 -right-8 z-20 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div class="ring-inset overflow-hidden bg-neutral-900 border-white/10 border ring-white/5 ring-1 rounded-2xl shadow-2xl">
+             <div class="h-40 relative">
+              <img alt="Fashion product" class="opacity-70 object-cover" src="/_next/image?url=%2Fhero_images%2Fdress.jpeg&amp;w=3840&amp;q=75"/>
+              <div class="absolute right-3 top-3 w-32 rounded-xl bg-neutral-900/80 border border-white/10 backdrop-blur p-2.5 shadow-lg">
+               <div class="flex items-center gap-2 text-[10px] font-medium text-neutral-200">
+                <span class="truncate font-geist">
+                 Generating
+                </span>
+               </div>
+              </div>
+              <div class="absolute left-1/2 -translate-x-1/2 bottom-3 flex items-center gap-1.5">
+               <div class="rounded-lg bg-neutral-900/80 border border-white/10 backdrop-blur px-2 py-1 flex items-center gap-1">
+                <span class="text-[9px] text-neutral-300 rounded bg-white/5 border border-white/10 px-1.5 py-0.5 font-geist">
+                 ⌘
+                </span>
+                <span class="text-[9px] text-neutral-400 font-geist">
+                 K
+                </span>
+               </div>
+               <div class="rounded-lg bg-neutral-900/80 border border-white/10 backdrop-blur px-1.5 py-1 flex items-center gap-0.5">
+                <span class="text-[9px] text-neutral-300 rounded bg-white/5 border border-white/10 px-1.5 py-0.5 font-geist">
+                 ↑
+                </span>
+                <span class="text-[9px] text-neutral-300 rounded bg-white/5 border border-white/10 px-1.5 py-0.5 font-geist">
+                 ↓
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="flex gap-2 text-[10px] text-neutral-400 border-white/10 border-t pt-2 pr-3 pb-2 pl-3 items-center">
+              <span class="truncate font-geist">
+               AI-generated fashion photo
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </main>
+    </div>
+    <div class="w-full max-w-[1440px] mx-auto px-4">
+     <div class="grid grid-cols-1 md:grid-cols-5 gap-8 mt-20">
+      <div class="col-span-2">
+       <div class="mb-4">
+        <img alt="Provamoda" height="150" src="/logo-white.svg" width="150"/>
+       </div>
+       <p class="text-[#525259] mb-8 max-w-[300px]">
+        Virtual try-on and stunning fashion photoshoots in minutes
+       </p>
+       <div class="flex gap-4">
+        <a class="w-[25px] h-[25px] flex items-center justify-center" href="https://www.instagram.com/provamoda_ai/">
+         <img alt="Instagram" height="20" src="/icons/instagram.svg" width="20"/>
+        </a>
+       </div>
+      </div>
+      <div>
+       <h3 class="text-white text-sm font-semibold mb-4">
+        Company
+       </h3>
+       <ul class="space-y-4 text-sm text-[#525259]">
+        <li>
+         <a href="/examples">
+          Examples
+         </a>
+        </li>
+        <li>
+         <a href="/pricing">
+          Pricing
+         </a>
+        </li>
+        <li>
+         <a href="/styles">
+          Photography Styles
+         </a>
+        </li>
+        <li>
+         <a href="/provamoda-vs-competitors">
+          Provamoda vs competitors
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="text-white text-sm font-semibold mb-4">
+        Help
+       </h3>
+       <ul class="space-y-4 text-sm text-[#525259]">
+        <li>
+         <a href="https://provamoda.tolt.io/login">
+          Affiliate Program
+         </a>
+        </li>
+        <li>
+         <a href="mailto:alecattie@provamoda.ai">
+          Customer Support
+         </a>
+        </li>
+        <li>
+         <a href="/terms">
+          Terms &amp; Conditions
+         </a>
+        </li>
+        <li>
+         <a href="/privacy">
+          Privacy Policy
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div>
+       <h3 class="text-white text-sm font-semibold mb-4">
+        Company Platforms
+       </h3>
+       <ul class="space-y-4 text-sm text-[#525259]">
+        <li>
+         <a href="https://artevia.ai" target="_blank">
+          Artevia
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="border-t border-white/10 pt-8 pb-4 mt-4">
+      <p class="text-center text-sm text-[#717179]">
+       © Copyright 2025, All Rights Reserved by Provamoda
+      </p>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LogoDope - App logo maker</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col h-screen bg-gray-50 dark:bg-slate-950">
+    <header class="flex-shrink-0 h-14 sm:h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between px-3 sm:px-4 lg:px-6 shadow-sm">
+     <div class="flex items-center gap-2 sm:gap-3 lg:gap-4 min-w-0">
+      <a class="flex gap-1 items-center min-w-0" href="/">
+       <img alt="logo" height="32" src="/logo.svg" width="32"/>
+       <h1 class="text-md sm:text-md lg:text-xl font-bold text-slate-800 dark:text-slate-200 truncate max-sm:hidden">
+        LogoDope
+       </h1>
+      </a>
+      <div class="flex items-center gap-1 sm:gap-2">
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-7 sm:h-8 lg:h-9 px-1.5 sm:px-2 lg:px-3 bg-transparent text-xs sm:text-sm">
+        <span class="hidden md:inline ml-1">
+         Undo
+        </span>
+       </button>
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-7 sm:h-8 lg:h-9 px-1.5 sm:px-2 lg:px-3 bg-transparent text-xs sm:text-sm">
+        <span class="hidden md:inline ml-1">
+         Redo
+        </span>
+       </button>
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input shadow-sm rounded-md h-7 sm:h-8 lg:h-9 px-1.5 sm:px-2 lg:px-3 text-red-600 hover:text-red-700 hover:bg-red-50 dark:text-red-400 dark:hover:text-red-300 dark:hover:bg-red-900/20 bg-transparent text-xs sm:text-sm">
+        <span class="hidden md:inline ml-1">
+         Reset
+        </span>
+       </button>
+      </div>
+     </div>
+     <div class="flex items-center gap-1 sm:gap-2 lg:gap-3">
+      <div class="flex gap-2 items-center">
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs" id="radix-_r_2_" type="button">
+        <span class="max-sm:hidden">
+         Export
+        </span>
+       </button>
+      </div>
+     </div>
+    </header>
+    <div class="flex flex-1 overflow-hidden">
+     <div class="hidden lg:flex flex-1 overflow-hidden">
+      <div class="w-full xl:w-96 bg-white dark:bg-slate-900 border-r-0 xl:border-r border-slate-200 dark:border-slate-800 flex flex-col shadow-sm">
+       <div class="sticky topO z-10 flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 border-b-2 border-blue-500 text-blue-600 dark:text-blue-400 shadow-sm">
+         <span class="hidden xs:inline">
+          Icon
+         </span>
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+         <span class="hidden xs:inline">
+          Text
+         </span>
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+         <span class="hidden xs:inline">
+          Background
+         </span>
+        </button>
+       </div>
+       <div class="flex-1 overflow-y-auto scrollbar-class p-3 sm:p-4 lg:p-6 bg-gradient-to-b from-white“ to-slate-50 dark:from-slate-900 dark:to-slate-800">
+        <div class="space-y-6 sm:space-y-8">
+         <div class="space-y-3 sm:space-y-4">
+          <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+           Icon Selection
+          </label>
+          <div class="grid grid-cols-3 gap-2 sm:gap-3">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-slate-50 to-slate-100 hover:from-slate-100 hover:to-slate-200 dark:from-slate-800 dark:to-slate-700 dark:hover:from-slate-700 dark:hover:to-slate-600 border-2 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-200" title="Select an icon from the library">
+            <div class="flex flex-col items-center gap-1 sm:gap-2">
+             <span class="text-xs font-medium text-slate-600 dark:text-slate-400">
+              Select
+             </span>
+            </div>
+           </button>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 dark:from-green-900/20 dark:to-green-800/20 dark:hover:from-green-800/30 dark:hover:to-green-700/30 border-2 hover:border-green-300 dark:hover:border-green-600 transition-all duration-200" title="Upload a custom icon">
+            <div class="flex flex-col items-center gap-1 sm:gap-2">
+             <span class="text-xs font-medium text-green-700 dark:text-green-300">
+              Upload
+             </span>
+            </div>
+           </button>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 dark:from-purple-900/20 dark:to-purple-800/20 dark:hover:from-purple-800/30 dark:hover:to-purple-700/30 border-2 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-200" title="Paste SVG code to create an icon">
+            <div class="flex flex-col items-center gap-1 sm:gap-2">
+             <span class="text-xs font-medium text-purple-700 dark:text-purple-300">
+              SVG
+             </span>
+            </div>
+           </button>
+          </div>
+          <input class="hidden" type="file"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex-1 flex items-center justify-center p-4 lg:p-8 bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-blue-950 dark:to-purple-900 overflow-hidden relative">
+       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-[10] p-4 flex">
+        <a class="relative flex items-center bg-indigo-500 text-white text-sm font-medium px-4 py-2 rounded-full shadow-lg transition-transform hover:scale-110" href="https://ideadope.com" rel="noopener noreferrer" target="_blank">
+         try ideadope
+        </a>
+        <div class="flex gap-3 pl-2 items-center">
+         <a href="/privacy-policy">
+          privacy
+         </a>
+         <a href="/tos">
+          tos
+         </a>
+        </div>
+       </div>
+       <div class="flex flex-col items-center justify-center gap-3 sm:gap-4 lg:gap-6 w-full">
+        <div class="text-[0.65rem] py-0.5 px-2 text-slate-600 dark:text-slate-400 font-medium bg-white dark:bg-slate-800 rounded-full border border-slate-200 dark:border-slate-700 shadow-sm sm:text-sm sm:px-3 sm:py-1 md:text-base">
+         <span class="hidden sm:inline">
+          Preview Area
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="lg:hidden flex flex-col flex-1 overflow-hidden">
+      <div class="flex-1 overflow-y-auto scrollbar-class">
+       <div class="w-full xl:w-96 bg-white dark:bg-slate-900 border-r-0 xl:border-r border-slate-200 dark:border-slate-800 flex flex-col shadow-sm">
+        <div class="sticky topO z-10 flex border-b border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 bg-white dark:bg-slate-900 border-b-2 border-blue-500 text-blue-600 dark:text-blue-400 shadow-sm">
+          <span class="hidden xs:inline">
+           Icon
+          </span>
+         </button>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+          <span class="hidden xs:inline">
+           Text
+          </span>
+         </button>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 flex-1 rounded-none h-12 sm:h-14 text-xs sm:text-sm font-semibold transition-all duration-200 text-slate-600 dark:text-slate-400 hover:text-slate-800 dark:hover:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700">
+          <span class="hidden xs:inline">
+           Background
+          </span>
+         </button>
+        </div>
+        <div class="flex-1 overflow-y-auto scrollbar-class p-3 sm:p-4 lg:p-6 bg-gradient-to-b from-white“ to-slate-50 dark:from-slate-900 dark:to-slate-800">
+         <div class="space-y-6 sm:space-y-8">
+          <div class="space-y-3 sm:space-y-4">
+           <label class="peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-sm sm:text-base font-semibold text-slate-800 dark:text-slate-200 flex items-center gap-2">
+            Icon Selection
+           </label>
+           <div class="grid grid-cols-3 gap-2 sm:gap-3">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-slate-50 to-slate-100 hover:from-slate-100 hover:to-slate-200 dark:from-slate-800 dark:to-slate-700 dark:hover:from-slate-700 dark:hover:to-slate-600 border-2 hover:border-blue-300 dark:hover:border-blue-600 transition-all duration-200" title="Select an icon from the library">
+             <div class="flex flex-col items-center gap-1 sm:gap-2">
+              <span class="text-xs font-medium text-slate-600 dark:text-slate-400">
+               Select
+              </span>
+             </div>
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-green-50 to-green-100 hover:from-green-100 hover:to-green-200 dark:from-green-900/20 dark:to-green-800/20 dark:hover:from-green-800/30 dark:hover:to-green-700/30 border-2 hover:border-green-300 dark:hover:border-green-600 transition-all duration-200" title="Upload a custom icon">
+             <div class="flex flex-col items-center gap-1 sm:gap-2">
+              <span class="text-xs font-medium text-green-700 dark:text-green-300">
+               Upload
+              </span>
+             </div>
+            </button>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input shadow-sm hover:bg-accent hover:text-accent-foreground rounded-md h-12 sm:h-16 p-0 bg-gradient-to-br from-purple-50 to-purple-100 hover:from-purple-100 hover:to-purple-200 dark:from-purple-900/20 dark:to-purple-800/20 dark:hover:from-purple-800/30 dark:hover:to-purple-700/30 border-2 hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-200" title="Paste SVG code to create an icon">
+             <div class="flex flex-col items-center gap-1 sm:gap-2">
+              <span class="text-xs font-medium text-purple-700 dark:text-purple-300">
+               SVG
+              </span>
+             </div>
+            </button>
+           </div>
+           <input class="hidden" type="file"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <button class="w-full py-1 bg-blue-500 text-white text-center hover:bg-blue-600 transition-colors">
+       Show Preview
+      </button>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

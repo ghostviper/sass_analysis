@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tactiqo Space - Create Professional Football Training Sessions Online | Tactiqo Space - Professional Football Training Session Builder</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="fixed bottom-0 left-0 right-0 z-50 p-4 sm:p-6 animate-in slide-in-from-bottom duration-500">
+     <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border border-gray-200 overflow-hidden">
+      <div class="relative p-6 sm:p-8">
+       <div class="flex items-start gap-4 pr-8">
+        <div class="flex-1">
+         <h3 class="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+          We Value Your Privacy
+         </h3>
+         <p class="text-sm sm:text-base text-gray-600 mb-4 leading-relaxed">
+          We use cookies to enhance your experience, analyze site traffic, and provide personalized content. By clicking "Accept", you consent to our use of cookies for analytics and personalization. You can manage your preferences at any time.
+         </p>
+         <div class="flex flex-col sm:flex-row gap-3 items-start sm:items-center">
+          <div class="flex gap-3">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-elegant h-10 bg-green-600 hover:bg-green-700 text-white px-6 py-2 text-sm font-medium">
+            Accept All
+           </button>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-2 text-sm font-medium">
+            Decline
+           </button>
+          </div>
+          <a class="text-sm text-green-600 hover:text-green-700 underline ml-0 sm:ml-2" href="/privacy">
+           Learn More
+          </a>
+         </div>
+         <details class="mt-4 text-xs text-gray-500">
+          <summary class="cursor-pointer hover:text-gray-700 font-medium">
+           Cookie Details
+          </summary>
+          <div class="mt-2 pl-4 space-y-2">
+           <div>
+            <strong>
+             Essential Cookies:
+            </strong>
+            Required for the website to function properly (authentication, session management).
+           </div>
+           <div>
+            <strong>
+             Analytics Cookies:
+            </strong>
+            Help us understand how visitors interact with our website (Google Analytics).
+           </div>
+           <div>
+            <strong>
+             Performance Cookies:
+            </strong>
+            Used to improve site performance and user experience.
+           </div>
+          </div>
+         </details>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="min-h-screen bg-white">
+     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white/95 backdrop-blur-md shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex justify-between items-center h-16 sm:h-20">
+        <a class="flex items-center space-x-2 sm:space-x-3 group" href="/">
+         <img alt="Tactiqo Space" class="w-8 h-8 sm:w-10 sm:h-10 group-hover:scale-105 transition-transform" src="/favicon.svg"/>
+         <div class="flex flex-col items-center -space-y-1">
+          <span class="text-base sm:text-lg font-bold text-gray-900">
+           Tactiqo
+          </span>
+          <span class="text-base sm:text-lg font-normal text-green-600">
+           Space
+          </span>
+         </div>
+        </a>
+        <div class="hidden md:flex items-center space-x-1">
+         <button class="px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
+          Benefits
+         </button>
+         <button class="px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
+          How It Works
+         </button>
+         <button class="px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
+          Testimonials
+         </button>
+         <button class="px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
+          Pricing
+         </button>
+         <button class="px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-colors">
+          FAQ
+         </button>
+        </div>
+        <div class="hidden md:flex items-center space-x-3">
+         <a href="/login">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-10 px-4 py-2 text-gray-700 hover:text-green-600">
+           Log In
+          </button>
+         </a>
+         <a href="/login">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-elegant h-10 px-4 py-2 bg-green-600 hover:bg-green-700 text-white shadow-md hover:shadow-lg transition-all">
+           Sign Up Free
+          </button>
+         </a>
+        </div>
+       </div>
+      </div>
+     </nav>
+     <section class="relative overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-green-50/50 pt-20 pb-16 lg:pt-32 lg:pb-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="text-center lg:text-left space-y-8">
+         <div class="flex items-center justify-center lg:justify-start space-x-2">
+          <div class="flex -space-x-2">
+           <img alt="User 1" class="w-10 h-10 rounded-full border-2 border-white shadow-md" src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&amp;backgroundColor=b6e3f4"/>
+           <img alt="User 2" class="w-10 h-10 rounded-full border-2 border-white shadow-md" src="https://api.dicebear.com/7.x/notionists/svg?seed=Aneka&amp;backgroundColor=ffd5dc"/>
+           <img alt="User 3" class="w-10 h-10 rounded-full border-2 border-white shadow-md" src="https://api.dicebear.com/7.x/notionists/svg?seed=Sarah&amp;backgroundColor=c0aede"/>
+           <img alt="User 4" class="w-10 h-10 rounded-full border-2 border-white shadow-md" src="https://api.dicebear.com/7.x/notionists/svg?seed=Marco&amp;backgroundColor=d1d4f9"/>
+          </div>
+          <div class="flex items-center space-x-1 text-sm text-gray-600">
+           <span class="font-semibold">
+            34+ active users
+           </span>
+          </div>
+         </div>
+         <div class="space-y-4">
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+           Create and Share
+           <span class="text-green-600 block">
+            Professional Training
+           </span>
+           Sessions Online
+          </h1>
+          <p class="text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
+           Design tactical drills, animate movements, and export professional PDFs—all in one powerful platform built for modern coaches.
+          </p>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+          <a href="/tactical-board">
+           <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 shadow-elegant h-11 rounded-md bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-8 py-6 text-lg gap-3 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 w-full sm:w-auto">
+            Go to Tactical Board
+           </button>
+          </a>
+          <a href="/login">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md border-2 border-gray-800 bg-white text-gray-800 hover:bg-gray-800 hover:text-white px-8 py-6 text-lg w-full sm:w-auto font-semibold shadow-md transition-colors">
+            Create Drills Now
+           </button>
+          </a>
+         </div>
+        </div>
+        <div class="relative">
+         <div class="bg-white rounded-2xl shadow-2xl p-4 border border-gray-200">
+          <div class="max-w-md mx-auto bg-gray-50 border border-gray-200 rounded-2xl p-4 sm:p-6 shadow-sm">
+           <div class="relative mb-4">
+            <div class="relative w-full h-44 sm:h-52 rounded-xl border-4 border-gray-300 shadow-lg overflow-hidden cursor-default bg-green-500 touch-none">
+             <div class="absolute cursor-move select-none transition-transform hover:scale-110 active:scale-95 w-8 h-8 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl">
+              1
+             </div>
+             <div class="absolute cursor-move select-none transition-transform hover:scale-110 active:scale-95 w-8 h-8 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl">
+              2
+             </div>
+             <div class="absolute cursor-move select-none transition-transform hover:scale-110 active:scale-95 w-8 h-8 rounded-full border-3 border-white shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl">
+              3
+             </div>
+            </div>
+            <p class="text-center text-sm text-black/90 mt-3">
+             🎯 Drag the players to move them around and experiment!
+            </p>
+           </div>
+           <div class="text-center space-y-3">
+            <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-elegant h-11 bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-lg shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-105 flex items-center gap-2" href="/tactical-board">
+             Try Full Tactical Board - Free Forever!
+            </a>
+            <p class="text-xs text-black/70">
+             Or
+             <a class="text-green-700 hover:text-green-400 font-medium underline" href="/login">
+              create training sessions
+             </a>
+             with our complete builder
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="absolute -top-4 -right-4 bg-green-600 text-white px-4 py-2 rounded-full shadow-lg text-sm font-semibold animate-bounce">
+          Try it now! 🎯
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="animate-on-scroll transition-all duration-1000 animate-fade-in">
+      <section class="py-12 bg-gray-50 border-y border-gray-200">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+         <p class="text-sm font-semibold text-gray-500 uppercase tracking-wide">
+          Trusted by coaches worldwide
+         </p>
+        </div>
+        <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="United Kingdom">
+          <img alt="United Kingdom" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/gb.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="United States">
+          <img alt="United States" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/us.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Germany">
+          <img alt="Germany" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/de.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Spain">
+          <img alt="Spain" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/es.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Italy">
+          <img alt="Italy" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/it.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="France">
+          <img alt="France" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/fr.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Brazil">
+          <img alt="Brazil" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/br.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Argentina">
+          <img alt="Argentina" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/ar.png" width="80"/>
+         </div>
+         <div class="flex flex-col items-center space-y-2 hover:scale-110 transition-transform duration-200" title="Netherlands">
+          <img alt="Netherlands" class="opacity-80 hover:opacity-100 transition-opacity rounded shadow-sm" src="https://flagcdn.com/w80/nl.png" width="80"/>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll transition-all duration-1000 animate-fade-in">
+      <section class="py-20 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden" id="benefits">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          How Will It Help You?
+         </h2>
+         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Real value that transforms the way you coach—not just features, but outcomes.
+         </p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Save Time
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             Cut your planning time from hours to minutes. Spend less time at your desk and more time on the pitch.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Look Professional
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             Your players and their parents will notice the difference when you hand them a clean, well-designed training plan.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Stay Organized
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             All your drills in one place, accessible from anywhere. No more lost notebooks or scattered files.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Learn from Others
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             See what works for coaches at every level. Get inspired by thousands of real training sessions.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Easy to Share
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             Download as PDF and hand it to your assistant coach, or share it with the whole team instantly.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group relative bg-white rounded-3xl p-8 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden">
+          <div class="relative z-10 space-y-5">
+           <div class="space-y-3">
+            <h3 class="text-xl font-bold text-gray-900 group-hover:text-gray-800">
+             Animated Drills
+            </h3>
+            <p class="text-gray-600 leading-relaxed text-sm">
+             Show player movement, passing patterns, and tactical positioning with animated diagrams that bring your ideas to life.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll transition-all duration-1000 animate-fade-in">
+      <section class="py-20 bg-white relative overflow-hidden" id="how-it-works">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+         <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+          Get Started in 3 Simple Steps
+         </h2>
+         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          From idea to professional training session in minutes
+         </p>
+        </div>
+        <div class="relative">
+         <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div class="relative">
+           <div class="relative bg-white rounded-3xl p-8 text-center space-y-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group">
+            <div class="relative z-10 space-y-6">
+             <div class="relative inline-block">
+              <div class="w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-600 text-white rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+               1
+              </div>
+             </div>
+             <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-gray-900">
+               Sign Up Free
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+               Create your account in 30 seconds or try tactical board without signing up now!
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative">
+           <div class="relative bg-white rounded-3xl p-8 text-center space-y-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group">
+            <div class="relative z-10 space-y-6">
+             <div class="relative inline-block">
+              <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-indigo-600 text-white rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+               2
+              </div>
+             </div>
+             <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-gray-900">
+               Design Your Session
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+               Drag &amp; drop equipment on our interactive pitch to create professional drills.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative">
+           <div class="relative bg-white rounded-3xl p-8 text-center space-y-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group">
+            <div class="relative z-10 space-y-6">
+             <div class="relative inline-block">
+              <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-600 text-white rounded-2xl flex items-center justify-center mx-auto text-3xl font-bold shadow-lg group-hover:scale-110 transition-transform duration-300">
+               3
+              </div>
+             </div>
+             <div class="space-y-3">
+              <h3 class="text-2xl font-bold text-gray-900">
+               Export &amp; Coach
+              </h3>
+              <p class="text-gray-600 leading-relaxed">
+               Download as PDF or share with your team and start coaching immediately.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll transition-all duration-1000 animate-fade-in">
+      <section class="py-20 bg-white" id="pricing">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Simple, Transparent Pricing
+         </h2>
+         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          Choose the plan that's right for you
+         </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+         <div class="relative bg-white rounded-2xl p-8 border-2 border-gray-200 shadow-lg hover:shadow-2xl transition-all duration-300">
+          <div class="space-y-6">
+           <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900">
+             Free
+            </h3>
+            <p class="text-gray-600 mt-2">
+             Perfect for trying out Tactiqo Space
+            </p>
+            <div class="mt-4">
+             <span class="text-5xl font-bold text-gray-900">
+              $0
+             </span>
+             <span class="text-gray-600">
+              /forever
+             </span>
+            </div>
+           </div>
+           <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Create &amp; save unlimited sessions
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Access "My Sessions" library
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Full Tactical Board access
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Save unlimited drills
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              3 FREE exports from Tactical Board
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-400">
+              Export sessions (PDF/Image)
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-400">
+              Access Global Library
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-400">
+              Unlimited exports
+             </span>
+            </li>
+           </ul>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow-elegant h-10 px-4 w-full py-6 text-lg bg-gray-900 hover:bg-gray-800 disabled:bg-gray-400">
+            Get Started Free
+           </button>
+          </div>
+         </div>
+         <div class="relative bg-white rounded-2xl p-8 border-2 border-green-500 shadow-2xl scale-105 hover:shadow-2xl transition-all duration-300">
+          <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+           <span class="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
+            Most Popular
+           </span>
+          </div>
+          <div class="space-y-6">
+           <div class="text-center">
+            <h3 class="text-2xl font-bold text-gray-900">
+             Pro
+            </h3>
+            <p class="text-gray-600 mt-2">
+             For serious coaches who need everything
+            </p>
+            <div class="mt-4">
+             <span class="text-5xl font-bold text-gray-900">
+              $6.99
+             </span>
+             <span class="text-gray-600">
+              /month
+             </span>
+            </div>
+           </div>
+           <ul class="space-y-3">
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700 font-semibold">
+              Everything in Free, plus:
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Unlimited session exports (PDF/Image)
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Full Global Library access
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Unlimited Tactical Board exports
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Priority support
+             </span>
+            </li>
+            <li class="flex items-start space-x-3">
+             <span class="text-gray-700">
+              Early access to new features
+             </span>
+            </li>
+           </ul>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground shadow-elegant h-10 px-4 w-full py-6 text-lg bg-green-600 hover:bg-green-700 disabled:bg-green-300">
+            Upgrade to Pro
+           </button>
+           <div class="mt-4 text-center">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 px-4 w-full py-3 text-sm border-green-600 text-green-600 hover:bg-green-50">
+             Or $39.99/year (Save 53%)
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll transition-all duration-1000 animate-fade-in">
+      <section class="py-20 bg-gray-50" id="testimonials">
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Loved by Coaches Worldwide
+         </h2>
+         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+          See what professional coaches are saying about Tactiqo Space
+         </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+         <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative">
+          <div class="space-y-6">
+           <p class="text-gray-700 leading-relaxed italic">
+            "Tactiqo Space has completely transformed how I plan training sessions. What used to take hours now takes minutes, and the quality is outstanding."
+           </p>
+           <div class="flex items-center space-x-4 pt-4 border-t border-gray-200">
+            <img alt="Marcus Vanderbilt" class="w-12 h-12 rounded-full border-2 border-green-500" src="https://api.dicebear.com/7.x/notionists/svg?seed=Marcus&amp;backgroundColor=b6e3f4"/>
+            <div>
+             <p class="font-bold text-gray-900">
+              Marcus Vanderbilt
+             </p>
+             <p class="text-sm text-gray-600">
+              U16 Head Coach
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative">
+          <div class="space-y-6">
+           <p class="text-gray-700 leading-relaxed italic">
+            "The ability to share sessions with the entire coaching staff has been a game changer. Everyone is on the same page, and the drills look incredibly professional."
+           </p>
+           <div class="flex items-center space-x-4 pt-4 border-t border-gray-200">
+            <img alt="David Anderson" class="w-12 h-12 rounded-full border-2 border-green-500" src="https://api.dicebear.com/7.x/notionists/svg?seed=David&amp;backgroundColor=c0aede"/>
+            <div>
+             <p class="font-bold text-gray-900">
+              David Anderson
+             </p>
+             <p class="text-sm text-gray-600">
+              Youth Head Coach
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 relative">
+          <div class="space-y-6">
+           <p class="text-gray-700 leading-relaxed italic">
+            "As a volunteer coach, I needed something simple but professional. Tactiqo Space is perfect—my players' parents are impressed, and I can focus on coaching instead of planning."
+           </p>
+           <div class="flex items-center space-x-4 pt-4 border-t border-gray-200">
+            <img alt="James Gavin" class="w-12 h-12 rounded-full border-2 border-green-500" src="https://api.dicebear.com/7.x/notionists/svg?seed=James&amp;backgroundColor=d1d4f9"/>
+            <div>
+             <p class="font-bold text-gray-900">
+              James Gavin
+             </p>
+             <p class="text-sm text-gray-600">
+              Grassroots Coach
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll opacity-0 transition-all duration-1000">
+      <section class="py-20 bg-white" id="faq">
+       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+         <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          Frequently Asked Questions
+         </h2>
+         <p class="text-xl text-gray-600">
+          Everything you need to know about Tactiqo Space
+         </p>
+        </div>
+        <div class="space-y-4">
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:r0:" type="button">
+            Is it really free?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:r2:" type="button">
+            Do I need design experience?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:r4:" type="button">
+            Can I print the sessions?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:r6:" type="button">
+            How many sessions can I create?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:r8:" type="button">
+            Can I share sessions with my coaching staff?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:ra:" type="button">
+            What devices does it work on?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:rc:" type="button">
+            Do I need to install any software?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-gray-50 rounded-xl px-6 border border-gray-200 hover:border-green-500 transition-colors">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold text-gray-900 hover:text-green-600 py-5" id="radix-:re:" type="button">
+            Can I access sessions from other coaches?
+           </button>
+          </h3>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <div class="animate-on-scroll opacity-0 transition-all duration-1000">
+      <section class="py-20 bg-gradient-to-br from-green-600 via-green-700 to-emerald-800 relative overflow-hidden">
+       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="space-y-8">
+         <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2">
+          <span class="text-white font-medium">
+           Start Your Journey Today
+          </span>
+         </div>
+         <h2 class="text-4xl sm:text-5xl font-bold text-white leading-tight">
+          Ready to Transform Your
+          <span class="block">
+           Coaching Experience?
+          </span>
+         </h2>
+         <p class="text-xl text-green-50 max-w-2xl mx-auto leading-relaxed">
+          Join coaches worldwide who are creating professional training sessions with Tactiqo Space. Start free today—no credit card required.
+         </p>
+         <div class="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+          <a href="/login">
+           <button class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-elegant h-11 rounded-md bg-white text-green-700 hover:bg-green-50 px-8 py-6 text-lg gap-3 shadow-2xl hover:shadow-3xl transition-all duration-200 hover:scale-105 w-full sm:w-auto font-semibold">
+            Get Started Free
+           </button>
+          </a>
+          <a href="/tactical-board">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-elegant h-11 rounded-md bg-white/20 backdrop-blur-md border-2 border-white/40 text-white hover:bg-white hover:text-green-700 px-8 py-6 text-lg w-full sm:w-auto font-semibold transition-all shadow-lg">
+            Try Tactical Board
+           </button>
+          </a>
+         </div>
+         <div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6 text-green-50">
+          <div class="flex items-center space-x-2">
+           <span>
+            Free Forever
+           </span>
+          </div>
+          <div class="flex items-center space-x-2">
+           <span>
+            No Credit Card Required
+           </span>
+          </div>
+          <div class="flex items-center space-x-2">
+           <span>
+            Setup in 30 Seconds
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <footer class="bg-gradient-to-br from-green-50 via-white to-blue-50 py-8 border-t border-green-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid md:grid-cols-3 gap-6">
+        <div class="text-center md:text-left">
+         <div class="flex items-center justify-center md:justify-start space-x-2 mb-3">
+          <img alt="Tactiqo Space" class="w-8 h-8" src="/favicon.svg"/>
+          <span class="text-xl font-bold text-gray-900">
+           TACTIQO SPACE
+          </span>
+         </div>
+         <p class="text-sm text-gray-600">
+          Professional football (soccer) training session builder.
+          <br/>
+          Made by coaches, for coaches worldwide.
+         </p>
+         <p class="text-xs text-gray-500 mt-3">
+          © 2025 Tactiqo Space. All rights reserved.
+         </p>
+        </div>
+        <div class="text-center md:text-left">
+         <h4 class="text-gray-900 font-semibold mb-3">
+          Quick Links
+         </h4>
+         <div class="space-y-1">
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/blog">
+           Blog
+          </a>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/about">
+           About Us
+          </a>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/feedback">
+           Feedback
+          </a>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/shortcuts">
+           Keyboard Shortcuts
+          </a>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/faq">
+           FAQ &amp; Help
+          </a>
+         </div>
+        </div>
+        <div class="text-center md:text-left">
+         <h4 class="text-gray-900 font-semibold mb-3">
+          Support &amp; Legal
+         </h4>
+         <div class="space-y-1">
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="mailto:tactiqospace@gmail.com">
+           Contact Support
+          </a>
+          <span class="block text-xs text-gray-500 mt-1">
+           (Placeholder during Beta)
+          </span>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/privacy">
+           Privacy Policy
+          </a>
+          <a class="block text-sm text-gray-600 hover:text-green-600 transition-colors" href="/terms">
+           Terms of Service
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

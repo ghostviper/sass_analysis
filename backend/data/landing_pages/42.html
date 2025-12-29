@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aura - Hyper-Realistic AI Images & Videos</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-white dark:bg-black">
+    <div class="min-h-screen">
+     <aside class="fixed top-[72px] bg-[#171717] z-40 flex flex-col overflow-hidden transition-transform duration-200 -translate-x-full">
+      <div class="flex-1 flex flex-col min-h-0 overflow-hidden">
+       <div class="flex-1 overflow-y-auto custom-scrollbar px-2.5">
+        <div class="pt-4 pb-3">
+         <button class="w-full h-9 rounded-lg flex items-center justify-center gap-2 text-sm font-britti transition-colors bg-white/5 hover:bg-white/10 text-white" title="Create new project">
+          <span>
+           New Project
+          </span>
+         </button>
+        </div>
+        <div class="space-y-0.5">
+         <button class="w-full h-9 rounded-lg flex items-center px-2.5 gap-2.5 text-sm font-britti text-left transition-all duration-150 bg-white/10 text-white">
+          <span class="truncate flex-1">
+           All Creations
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+      <div class="border-t border-white/10 p-2">
+       <div class="text-[10px] text-white/40 font-medium uppercase tracking-wide px-1 mb-2">
+        Saved Media
+       </div>
+       <p class="text-[11px] text-white/30 text-center py-3">
+        No saved media yet
+       </p>
+      </div>
+      <div class="border-t border-white/10 p-3">
+       <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full overflow-hidden bg-white/10 flex-shrink-0">
+         <div class="w-full h-full flex items-center justify-center text-white/60 text-sm font-britti">
+          ?
+         </div>
+        </div>
+        <div class="flex-1 min-w-0">
+         <p class="text-sm font-britti font-medium text-white truncate">
+          User
+         </p>
+         <p class="text-xs font-britti text-white/50">
+          Free Plan
+         </p>
+        </div>
+       </div>
+      </div>
+     </aside>
+     <div>
+      <header class="fixed inset-x-0 top-0 z-50 h-[72px] border-b transition-all duration-500 ease-out bg-white/70 dark:bg-black/70 backdrop-blur-2xl backdrop-saturate-150 border-white/20 dark:border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.1)]">
+       <nav class="relative flex items-center justify-between h-full px-6 lg:px-10">
+        <div class="flex lg:flex-1">
+         <a class="-m-1.5 p-1.5 flex items-center" href="/">
+          <img alt="Aura" class="h-4 w-auto" height="16" src="https://i.ibb.co/v4SHZf8h/NEW-LOGO-AURA.webp" width="16"/>
+         </a>
+        </div>
+        <div class="flex lg:hidden">
+         <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-600" type="button">
+          <span class="sr-only">
+           Open main menu
+          </span>
+         </button>
+        </div>
+        <div class="hidden lg:flex lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:justify-center lg:items-center">
+         <a class="relative px-4 py-2 group" href="/">
+          <span class="text-[15px] font-medium tracking-[-0.01em] transition-all duration-300 ease-out font-montreal text-gray-900 dark:text-white">
+           Home
+          </span>
+         </a>
+         <a class="relative px-4 py-2 group" href="/examples">
+          <span class="text-[15px] font-medium tracking-[-0.01em] transition-all duration-300 ease-out font-montreal text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white">
+           Explore
+          </span>
+         </a>
+         <a class="relative px-4 py-2 group" href="/pricing">
+          <span class="text-[15px] font-medium tracking-[-0.01em] transition-all duration-300 ease-out font-montreal text-gray-400 dark:text-gray-500 group-hover:text-gray-900 dark:group-hover:text-white">
+           Pricing
+          </span>
+         </a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+         <div class="flex items-center">
+          <button class="polished-button no-shimmer no-shadow flat-black items-center gap-2 w-fit text-white dark:text-[#252525] font-semibold text-[14px] tracking-[-0.13px] px-4 py-2 flex font-britti group">
+           <span class="relative z-10 overflow-hidden inline-flex">
+            <span class="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+             Sign in with Google
+            </span>
+            <span class="absolute left-0 top-full inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+             Sign in with Google
+            </span>
+           </span>
+          </button>
+         </div>
+        </div>
+       </nav>
+      </header>
+      <main class="pt-24 ml-0">
+       <div class="max-w-4xl mx-auto px-6 py-6 md:py-4">
+        <div class="text-center mb-8 md:mb-12">
+         <div class="flex items-center justify-center gap-2 mb-8">
+          <span class="text-xs font-britti font-bold tracking-tight text-[#252525] dark:text-white uppercase">
+           3000+ USERS WORLDWIDE
+          </span>
+         </div>
+         <h1 class="text-4xl md:text-6xl lg:text-7xl font-semibold text-gray-900 dark:text-white mb-4 md:mb-6 leading-tight font-britti">
+          <span class="md:hidden">
+           <span class="block">
+            Create
+           </span>
+           <span class="block my-1">
+            <span class="inline-block min-w-[160px] md:min-w-[220px]">
+             <span class="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent font-bold animate-gradient bg-[length:200%_200%]">
+              YouTube Thumbnails
+             </span>
+            </span>
+           </span>
+           <span class="block">
+            in just seconds.
+           </span>
+          </span>
+          <span class="hidden md:block">
+           <span class="block">
+            Create
+           </span>
+           <span class="block my-2">
+            <span class="inline-block min-w-[160px] md:min-w-[220px]">
+             <span class="bg-gradient-to-r from-purple-600 via-pink-500 to-blue-600 bg-clip-text text-transparent font-bold animate-gradient bg-[length:200%_200%]">
+              YouTube Thumbnails
+             </span>
+            </span>
+           </span>
+           <span class="block">
+            in just seconds.
+           </span>
+          </span>
+         </h1>
+         <div class="mt-2 flex justify-center">
+          <button class="polished-button items-center gap-2 w-fit text-white dark:text-[#252525] font-semibold text-[16px] tracking-[-0.13px] px-5 py-2.5 flex font-britti">
+           <span class="relative z-10">
+            Try It Now
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="flex items-center justify-center gap-3 mb-10">
+         <span class="text-[13px] text-gray-400 dark:text-gray-500 font-britti font-normal tracking-wide">
+          Featured on:
+         </span>
+         <a class="flex items-center gap-1.5 group" href="https://news.ycombinator.com/" rel="noopener noreferrer" target="_blank">
+          <img alt="Hacker News" class="h-[18px] w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-200 relative -top-0.5" src="https://i.ibb.co/4gYN94cm/gg.png"/>
+          <span class="text-[13px] text-gray-600 dark:text-gray-400 font-britti font-medium group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-200">
+           Hacker News
+          </span>
+         </a>
+         <a class="flex items-center gap-1.5 group" href="https://www.producthunt.com/" rel="noopener noreferrer" target="_blank">
+          <img alt="Product Hunt" class="h-[18px] w-auto opacity-80 group-hover:opacity-100 transition-opacity duration-200 relative -top-0.5" src="https://i.ibb.co/8gWyhM1T/Untitled-design-22.png"/>
+          <span class="text-[13px] text-gray-600 dark:text-gray-400 font-britti font-medium group-hover:text-gray-800 dark:group-hover:text-gray-200 transition-colors duration-200">
+           Product Hunt
+          </span>
+         </a>
+        </div>
+       </div>
+       <section class="pt-5 pb-5 bg-white dark:bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+         <div class="text-center mb-8 md:mb-10">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-britti tracking-tight mb-4">
+           How It Works
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 text-lg font-britti font-light max-w-xl mx-auto">
+           Create stunning AI content in three simple steps
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8 lg:gap-12">
+          <div class="text-left">
+           <div class="relative mb-8">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+             <img alt="Describe Your Vision" class="w-full h-full object-cover" src="https://i.ibb.co/sv6TW7L0/Untitled-design-18.png"/>
+            </div>
+           </div>
+           <div class="flex items-baseline gap-3 mb-3">
+            <span class="text-3xl md:text-4xl font-bold text-gray-300 dark:text-gray-600 font-britti">
+             1
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white font-britti tracking-tight">
+             Describe Your Vision
+            </h3>
+           </div>
+           <p class="text-gray-500 dark:text-gray-400 font-britti font-light text-base leading-relaxed">
+            Type a simple prompt describing what you want to create.
+           </p>
+          </div>
+          <div class="text-left">
+           <div class="relative mb-8">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+             <img alt="AI Generates" class="w-full h-full object-cover" src="https://i.ibb.co/PGrbs1c1/Untitled-design-19.png"/>
+            </div>
+           </div>
+           <div class="flex items-baseline gap-3 mb-3">
+            <span class="text-3xl md:text-4xl font-bold text-gray-300 dark:text-gray-600 font-britti">
+             2
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white font-britti tracking-tight">
+             AI Generates
+            </h3>
+           </div>
+           <p class="text-gray-500 dark:text-gray-400 font-britti font-light text-base leading-relaxed">
+            Our AI creates hyper-realistic images and videos in seconds.
+           </p>
+          </div>
+          <div class="text-left">
+           <div class="relative mb-8">
+            <div class="aspect-[4/3] rounded-2xl overflow-hidden">
+             <img alt="Download &amp; Use" class="w-full h-full object-cover" src="https://i.ibb.co/CKygCDzg/Untitled-design-21.png"/>
+            </div>
+           </div>
+           <div class="flex items-baseline gap-3 mb-3">
+            <span class="text-3xl md:text-4xl font-bold text-gray-300 dark:text-gray-600 font-britti">
+             3
+            </span>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white font-britti tracking-tight">
+             Download &amp; Use
+            </h3>
+           </div>
+           <p class="text-gray-500 dark:text-gray-400 font-britti font-light text-base leading-relaxed">
+            Download your creations instantly with full commercial rights.
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <div class="max-w-4xl mx-auto px-6">
+        <div class="mb-20">
+         <div class="text-center mb-8 md:mb-10">
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white font-britti tracking-tight mb-4">
+           See What's Possible
+          </h2>
+          <p class="text-gray-500 dark:text-gray-400 text-lg font-britti font-light max-w-xl mx-auto">
+           Get inspired by what you can create with Aura
+          </p>
+         </div>
+         <div>
+          <div class="relative w-full">
+           <div class="relative h-[450px] md:h-[520px] flex items-start justify-center pt-4 overflow-hidden">
+            <div class="relative w-full h-full flex items-start justify-center pt-8">
+             <div class="absolute cursor-pointer">
+              <div class="relative w-[280px] md:w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-300">
+               <img alt="AI Generated Paris cafe portrait" class="object-cover" src="https://i.ibb.co/tMdRdqtX/example-8.webp"/>
+              </div>
+             </div>
+             <div class="absolute cursor-pointer">
+              <div class="relative w-[280px] md:w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-300">
+               <img alt="AI Generated airplane portrait" class="object-cover" src="https://i.ibb.co/6JD74T31/example-9.webp"/>
+              </div>
+             </div>
+             <div class="absolute cursor-pointer">
+              <div class="relative w-[280px] md:w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-300 ring-1 ring-gray-200/50 dark:ring-gray-700/30">
+               <img alt="AI Generated mountain portrait" class="object-cover" src="https://i.ibb.co/xSGS2K4s/image1.webp"/>
+              </div>
+             </div>
+             <div class="absolute cursor-pointer">
+              <div class="relative w-[280px] md:w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-300">
+               <img alt="AI Generated cheerleader portrait" class="object-cover" src="https://i.ibb.co/4wCgCvvV/example-2.webp"/>
+              </div>
+             </div>
+             <div class="absolute cursor-pointer">
+              <div class="relative w-[280px] md:w-[340px] aspect-[3/4] rounded-2xl overflow-hidden transition-all duration-300">
+               <img alt="AI Generated bed selfie" class="object-cover" src="https://i.ibb.co/spGbRJk0/image3.webp"/>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="mt-6 max-w-xl mx-auto text-center px-6">
+            <p class="text-gray-900 dark:text-white text-xs font-britti font-medium leading-relaxed line-clamp-3">
+             A naturally posed side profile of an individual standing relaxed in front of a textured rugged rock wall within a mountainous terrain. The person wears a matte black technical waterproof hardshell jacket with an oversized hood fully raised featuring angular shaping and cinch cords creating a sculptural structured form.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="bg-gradient-to-br from-gray-50 to-white rounded-3xl p-8 border border-gray-200 shadow-sm mt-10 mb-20">
+         <div class="text-center mb-8">
+          <div class="flex justify-center items-center mb-6">
+           <div class="flex -space-x-2">
+            <img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" height="48" src="/Wky2CjVf_400x400.jpg" width="48"/>
+            <img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" height="48" src="/9xG4CKCV_400x400.jpg" width="48"/>
+            <img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" height="48" src="/Jg6GEYpD_400x400.jpg" width="48"/>
+            <img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-white shadow-sm object-cover" height="48" src="/UJu_-GEz_400x400.jpg" width="48"/>
+            <div class="w-12 h-12 rounded-full bg-[#252525] border-2 border-white shadow-lg flex items-center justify-center text-xs">
+             <span class="text-white font-semibold">
+              +2K
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3 tracking-tighter">
+           Join thousands of creators already using Aura
+          </h3>
+          <div class="flex items-center justify-center space-x-1 mb-4">
+           <span class="text-gray-600 dark:text-gray-600 text-sm ml-2">
+            4.9/5 from 2,847 creators
+           </span>
+          </div>
+         </div>
+         <div class="flex justify-center space-x-4">
+          <a class="polished-button no-shimmer no-shadow items-center gap-1.5 w-fit text-white dark:text-[#252525] font-semibold text-[14px] tracking-[-0.13px] px-4 py-2 flex font-britti" href="/examples">
+           <span class="relative z-10 tracking-tighter">
+            View Examples
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </main>
+      <footer class="bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800 hidden lg:block">
+       <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+         <div class="lg:col-span-1 mt-3">
+          <h3 class="text-sm font-semibold text-transparent tracking-wider uppercase font-britti mb-4">
+           <a href="/">
+            <img alt="Aura" class="h-2 w-auto -mt-2" height="8" src="https://i.ibb.co/v4SHZf8h/NEW-LOGO-AURA.webp" width="8"/>
+           </a>
+          </h3>
+          <ul class="space-y-3">
+           <li class="text-sm text-gray-600 dark:text-white font-britti font-light mt-7">
+            Create hyper-realistic AI images &amp; videos, fast.
+           </li>
+           <li class="text-sm font-britti font-light mt-2 pb-24">
+            <a class="text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors duration-200 font-bold" href="mailto:support@auraforcreators.com">
+             support@auraforcreators.com
+            </a>
+           </li>
+          </ul>
+          <div class="flex space-x-4 mt-29">
+           <a class="text-gray-500 dark:text-white hover:scale-110 transition-transform duration-200 flex items-center justify-center" href="https://www.instagram.com/auraforcreators" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             Instagram
+            </span>
+           </a>
+           <a class="text-gray-500 dark:text-white hover:scale-110 transition-transform duration-200 flex items-center justify-center" href="https://www.youtube.com/@AuraForCreators" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             YouTube
+            </span>
+           </a>
+           <a class="text-gray-500 dark:text-white hover:scale-110 transition-transform duration-200 flex items-center justify-center" href="https://www.linkedin.com/company/108941097" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             LinkedIn
+            </span>
+           </a>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase font-britti mb-4">
+           Resources
+          </h3>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-image-generator">
+             AI Image Generator
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ugc-creator-tools">
+             UGC Creator Tools
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-influencer-generator">
+             AI Influencer Generator
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/brand-content-studio">
+             Brand Content Studio
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/marketing-templates">
+             Marketing Templates
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/social-media-assets">
+             Social Media Assets
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase font-britti mb-4">
+           Industries
+          </h3>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ecommerce-ai-content">
+             E-commerce Brands
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/fashion-beauty-ai">
+             Fashion &amp; Beauty
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/food-beverage-ai">
+             Food &amp; Beverage
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/tech-saas-ai-content">
+             Tech &amp; SaaS
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/fitness-wellness-ai">
+             Fitness &amp; Wellness
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/travel-lifestyle-ai">
+             Travel &amp; Lifestyle
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase font-britti mb-4">
+           Use Cases
+          </h3>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-product-photography">
+             Product Photography
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-lifestyle-content">
+             Lifestyle Content
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-advertisement-creation">
+             Advertisement Creation
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-influencer-marketing">
+             Influencer Marketing
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-content-scaling">
+             Content Scaling
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/ai-brand-storytelling">
+             Brand Storytelling
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 dark:text-white tracking-wider uppercase font-britti mb-4">
+           Company
+          </h3>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/about">
+             About
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="https://affiliate.auraforcreators.com/" rel="noopener noreferrer" target="_blank">
+             Affiliate
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="https://docs.auraforcreators.com/" rel="noopener noreferrer" target="_blank">
+             Docs
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/privacy">
+             Privacy
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/terms">
+             Terms
+            </a>
+           </li>
+           <li>
+            <a class="text-sm text-gray-600 dark:text-white hover:text-gray-900 dark:hover:text-gray-200 transition-colors font-britti" href="/contact">
+             Contact
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+         <p class="text-center text-xs leading-5 text-gray-500 dark:text-gray-400 font-britti font-light">
+          © 2025
+          <span class="font-bold">
+           Aura For Creators
+          </span>
+          .
+         </p>
+        </div>
+       </div>
+      </footer>
+     </div>
+    </div>
+   </div>
+   <div class="fixed bottom-4 left-1/2 -translate-x-1/2 md:left-auto md:right-4 md:translate-x-0 z-[9999] transition-all duration-300 opacity-100 translate-y-0">
+    <div class="bg-[#252525] border border-gray-600 rounded-lg shadow-lg w-80 max-w-[calc(100vw-2rem)] p-3 touch-auto">
+     <div class="flex items-center justify-between gap-3">
+      <div class="flex-1">
+       <h3 class="text-sm font-semibold text-white font-britti mb-1">
+        Cookie Preferences
+       </h3>
+       <p class="text-xs text-gray-300 font-britti leading-tight">
+        We use essential cookies and analytics cookies to improve your experience.
+       </p>
+      </div>
+      <div class="flex flex-col gap-2">
+       <button class="bg-white text-[#252525] px-4 py-1.5 rounded font-medium text-xs font-britti hover:bg-gray-100 transition-colors border border-gray-300 whitespace-nowrap touch-auto cursor-pointer active:scale-95">
+        Accept All
+       </button>
+       <button class="bg-transparent text-white px-4 py-1.5 rounded font-medium text-xs font-britti border border-gray-600 whitespace-nowrap hover:bg-gray-800 touch-auto cursor-pointer active:scale-95">
+        Essential Only
+       </button>
+      </div>
+     </div>
+     <div class="mt-2 text-center">
+      <a class="text-xs text-gray-400 hover:text-gray-300 font-britti underline" href="/privacy">
+       Privacy Policy
+      </a>
+      <span class="text-xs text-gray-500 mx-2">
+       •
+      </span>
+      <a class="text-xs text-gray-400 hover:text-gray-300 font-britti underline" href="/terms">
+       Terms &amp; Conditions
+      </a>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

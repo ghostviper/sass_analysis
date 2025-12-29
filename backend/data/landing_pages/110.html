@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add CMS with visual editing to your website only in a minute! - Contza</title>
+</head>
+<body>
+  <body>
+   <div id="__next">
+    <div class="relative bg-background z-40">
+     <div class="section">
+      <div class="flex items-center justify-between py-6 lg:justify-start lg:space-x-10">
+       <div class="flex lg:flex-1 justify-start items-center space-x-10">
+        <a href="/">
+         <span class="sr-only">
+          Contza
+         </span>
+         <img alt="Contza logo" class="w-10 h-10 rounded" height="1000" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FlogoLight.59dfd2d1.png&amp;w=2048&amp;q=75" width="1000"/>
+        </a>
+        <nav class="hidden lg:flex space-x-10 justify-start items-center">
+         <a class="text-base font-medium text-white hover:text-gray-200" href="/">
+          Home
+         </a>
+         <a class="text-base font-medium text-white hover:text-gray-200" href="/#pricing">
+          Pricing
+         </a>
+         <a class="text-base font-medium text-white hover:text-gray-200" href="/docs">
+          Documentation
+         </a>
+         <div class="relative">
+          <button class="text-base font-medium text-white hover:text-gray-300 group inline-flex items-center" id="headlessui-popover-button-:R69b6:" type="button">
+           <span>
+            Resources
+           </span>
+          </button>
+         </div>
+        </nav>
+       </div>
+       <div class="-my-2 lg:hidden">
+        <button class="text-white hover:text-gray-200 focus:text-gray-200 focus:outline-none" id="headlessui-popover-button-:R2b6:" type="button">
+         <span class="sr-only">
+          Open menu
+         </span>
+        </button>
+       </div>
+       <div class="hidden items-center justify-end lg:flex lg:flex-1 lg:w-0">
+        <div class="space-x-4">
+         <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-700 focus:ring-blue-200" href="https://app.contza.com/login">
+          Log in
+         </a>
+         <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-600" href="https://app.contza.com/register">
+          Sign up
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <main class="space-y-20 pb-20">
+     <header class="section py-12 sm:py-20 lg:py-28">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+       <div class="relative space-y-8 z-10">
+        <h1>
+         Add CMS with visual editing to your website only in a minute
+        </h1>
+        <p class="lead">
+         Contza is a developer-first CMS platform. Our mission is to make it as easy as possible to add CMS to your website.
+        </p>
+        <div class="flex space-x-4">
+         <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-600" href="https://app.contza.com">
+          Get started
+         </a>
+         <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-700 focus:ring-blue-200" href="/docs">
+          Documentation
+         </a>
+        </div>
+        <div>
+         <a class="inline-block" href="https://www.producthunt.com/posts/contza-cms?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-contza-cms" rel="noreferrer" target="_blank">
+          <img alt="Contza CMS - Add visual editing to your website only in a minute. | Product Hunt" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=411416&amp;theme=dark&amp;date=1766584981028" width="250"/>
+         </a>
+        </div>
+       </div>
+       <div class="relative">
+        <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+         <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token keyword">import</span> <span class="token punctuation">{</span>
+    ContzaProvider<span class="token punctuation">,</span>
+    ContentProvider<span class="token punctuation">,</span>
+    ContzaText<span class="token punctuation">,</span>
+    ContzaImage
+  <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">"@contza/react"</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaProvider</span></span> <span class="token attr-name">websiteId</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>website-id<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContentProvider</span></span> <span class="token attr-name">slug</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>index<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Home heading</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaImage</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Home image</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaImage</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContentProvider</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaProvider</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token keyword">export</span> <span class="token keyword">default</span> App<span class="token punctuation">;</span></code></pre>
+        </div>
+       </div>
+      </div>
+     </header>
+     <section class="section">
+      <h2 class="mb-6">
+       What is Contza?
+      </h2>
+      <p class="lead text-gray-300 max-w-5xl">
+       We built Contza to make it easy for the developer to integrate a CMS for their website.
+       <br/>
+       We want content editors to spend their valuable time actually editing the content of the website instead of learning to use the platform.
+       <br/>
+      </p>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 mt-10">
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl">
+        <p class="lead font-medium mb-3">
+         Visual editing
+        </p>
+        <p>
+         We make it easy and intuitive to edit the website with visual editing. Just click a text on your website and write whatever you want.
+        </p>
+       </div>
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl">
+        <p class="lead font-medium mb-3">
+         Developer friendly
+        </p>
+        <p>
+         Contza is built for developers. Just use Contza components for texts and images. No extra configuration is required.
+        </p>
+       </div>
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl">
+        <p class="lead font-medium mb-3">
+         Internalization
+        </p>
+        <p>
+         Create multilingual websites and deliver personalized messages to each of you audiences, no matter what language they speak.
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="section" id="pricing">
+      <h2 class="mb-8">
+       Pricing
+      </h2>
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl border-2 border-opacity-60 border-transparent">
+        <p class="text-blue-400 font-medium text-3xl mb-2">
+         Starter
+        </p>
+        <p class="text-gray-300">
+         Get started with Contza.
+        </p>
+        <p class="font-bold text-5xl mt-4">
+         Free
+        </p>
+        <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-700 focus:ring-blue-200 w-full my-7" href="https://app.contza.com">
+         Try now
+        </a>
+        <div class="space-y-4">
+         <p class="flex items-center space-x-2">
+          <span>
+           1 Member
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           1000 Contents
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           100k API requests
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           5 GB of Assets
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl border-2 border-opacity-60 border-blue-400">
+        <p class="text-blue-400 font-medium text-3xl mb-2">
+         Pro
+        </p>
+        <p class="text-gray-300">
+         For small teams and agencies.
+        </p>
+        <p class="font-bold text-5xl mt-4">
+         19€ / month
+        </p>
+        <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-700 focus:ring-blue-200 w-full my-7" href="https://app.contza.com">
+         Try now
+        </a>
+        <div class="space-y-4">
+         <p class="flex items-center space-x-2">
+          <span>
+           5 Members
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           Unlimited Contents
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           1 million API requests
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           50 GB of Assets
+          </span>
+         </p>
+        </div>
+       </div>
+       <div class="bg-foreground z-10 p-4 md:p-8 rounded-2xl border-2 border-opacity-60 border-transparent">
+        <p class="text-blue-400 font-medium text-3xl mb-2">
+         Business
+        </p>
+        <p class="text-gray-300">
+         For large teams and agencies.
+        </p>
+        <p class="font-bold text-5xl mt-4">
+         99€ / month
+        </p>
+        <a class="inline-flex whitespace-nowrap justify-center items-center text-center font-medium border border-transparent shadow-sm focus:outline-none transition duration-150 px-4 py-2 text-lg rounded-xl bg-blue-100 hover:bg-blue-200 text-blue-700 focus:ring-blue-200 w-full my-7" href="https://app.contza.com">
+         Try now
+        </a>
+        <div class="space-y-4">
+         <p class="flex items-center space-x-2">
+          <span>
+           10 Members
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           Unlimited Contents
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           2 million API requests
+          </span>
+         </p>
+         <p class="flex items-center space-x-2">
+          <span>
+           75 GB of Assets
+          </span>
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="section">
+      <div class="grid grid-cols-5 gap-10">
+       <div class="col-span-5 lg:col-span-2">
+        <h2 class="mb-6">
+         Get started with Contza!
+        </h2>
+        <p class="lead">
+         There are currently five different components for React.
+        </p>
+       </div>
+       <div class="col-span-5 lg:col-span-3">
+        <div class="space-y-6">
+         <div>
+          <h3 class="font-medium text-2xl mb-4">
+           1. Wrap your app with ContzaProvider
+          </h3>
+          <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+           <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token keyword">const</span> <span class="token function-variable function">App</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">props</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">(</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaProvider</span></span><span class="token punctuation">&gt;</span></span><span class="token punctuation">{</span>props<span class="token punctuation">.</span>children<span class="token punctuation">}</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaProvider</span></span><span class="token punctuation">&gt;</span></span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+          </div>
+         </div>
+         <div>
+          <h3 class="font-medium text-2xl mb-4">
+           2. Add editable text
+          </h3>
+          <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+           <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Heading</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+         </div>
+         <div>
+          <h3 class="font-medium text-2xl mb-4">
+           3. Add editable rich text
+          </h3>
+          <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+           <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaRichText</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Content</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaRichText</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+         </div>
+         <div>
+          <h3 class="font-medium text-2xl mb-4">
+           4. Add editable image
+          </h3>
+          <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+           <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaImage</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Image</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaImage</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+         </div>
+         <div>
+          <h3 class="font-medium text-2xl mb-4">
+           5. Add a list with other components as children.
+          </h3>
+          <div class="bg-foreground z-10 rounded-2xl overflow-hidden relative">
+           <pre class="line-numbers language-jsx"><code class="language-jsx"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaList</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>List<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span><span class="token plain-text">Item</span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaText</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span><span class="token class-name">ContzaList</span></span><span class="token punctuation">&gt;</span></span></code></pre>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="border-t border-foreground py-6">
+     <div class="section md:flex items-center justify-between">
+      <p>
+       © 2025 Contza.com
+      </p>
+      <p>
+       Made by
+       <a href="https://codetum.com" rel="noreferrer" target="_blank">
+        Codetum Oy
+       </a>
+      </p>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

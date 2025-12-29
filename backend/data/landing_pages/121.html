@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deltalytix</title>
+</head>
+<body>
+  <body>
+   <div class="fixed bottom-0 left-0 right-0 z-9999 p-4 -m-4">
+    <div class="bg-background/80 backdrop-blur-lg border-t border-border/50 p-4 shadow-lg">
+     <div class="max-w-6xl mx-auto">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+       <div class="flex-1">
+        <p class="text-sm text-muted-foreground">
+         We use cookies to enhance your experience. You can update your preferences at any time by clicking
+         <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:underline p-0 h-auto text-sm text-foreground underline underline-offset-2">
+          Manage preferences
+         </button>
+         .
+        </p>
+       </div>
+       <div class="flex gap-3 shrink-0">
+        <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs">
+         Reject non-essential
+        </button>
+        <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-sm h-8 rounded-md px-3 text-xs bg-black text-white hover:bg-black/90">
+         Accept all
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="px-2 sm:px-6 lg:px-32">
+    <section>
+    </section>
+    <header class="max-w-7xl mx-auto fixed top-0 left-0 right-0 px-4 lg:px-6 h-14 flex items-center justify-between z-50 text-foreground transition-transform duration-300 translate-y-0">
+     <a class="flex items-center space-x-2" href="/">
+      <span class="font-bold text-xl">
+       Deltalytix
+      </span>
+     </a>
+     <div class="hidden lg:block">
+      <nav class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+       <div>
+        <ul class="group flex flex-1 items-center justify-center space-x-1 list-none">
+         <li>
+          <button class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-active:bg-accent/50 data-[state=open]:bg-accent/50 group bg-transparent" id="radix-_r_0_-trigger-radix-_r_1_">
+           Features
+          </button>
+         </li>
+         <li>
+          <button class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-active:bg-accent/50 data-[state=open]:bg-accent/50 group bg-transparent" id="radix-_r_0_-trigger-radix-_r_2_">
+           Pricing
+          </button>
+         </li>
+         <li>
+          <button class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-active:bg-accent/50 data-[state=open]:bg-accent/50 group bg-transparent" id="radix-_r_0_-trigger-radix-_r_3_">
+           Updates
+          </button>
+         </li>
+         <li>
+          <button class="group inline-flex h-10 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-hidden disabled:pointer-events-none disabled:opacity-50 data-active:bg-accent/50 data-[state=open]:bg-accent/50 group bg-transparent" id="radix-_r_0_-trigger-radix-_r_4_">
+           Developers
+          </button>
+         </li>
+        </ul>
+       </div>
+       <a class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 px-4 py-2 text-sm font-medium hover:text-accent-foreground" href="/authentication">
+        Sign in
+       </a>
+      </nav>
+     </div>
+     <div class="flex items-center space-x-4">
+      <button class="cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground py-2 hidden lg:inline-flex h-9 w-9 px-0" type="button">
+       <span class="sr-only">
+        Toggle theme
+       </span>
+      </button>
+     </div>
+    </header>
+    <div class="mt-8 sm:mt-20 max-w-(--breakpoint-xl) mx-auto">
+     <div class="flex flex-col min-h-dvh text-gray-900 dark:text-white transition-colors duration-300">
+      <main class="flex-1">
+       <section class="w-full py-14 md:py-12 lg:py-16 xl:py-24" id="">
+        <div class="container px-4 md:px-6 mx-auto">
+         <div class="flex flex-col w-full gap-y-24">
+          <div class="flex flex-col justify-center space-y-4 text-center">
+           <div class="space-y-2">
+            <a href="/updates">
+             <button class="cursor-pointer gap-2 whitespace-nowrap transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 underline-offset-4 hover:underline mx-auto sm:mb-8 box-border flex flex-row justify-center items-center px-4 py-2 h-[26px] bg-[#EAF6F5] dark:bg-[hsl(var(--chart-1)/0.1)] border border-[#BBE2DB] dark:border-[hsl(var(--chart-1)/0.3)] rounded-[26px] text-[10px] font-semibold leading-5 tracking-[0.35px] uppercase text-[rgba(36,36,36,0.8)] dark:text-[hsl(var(--chart-1)/0.8)]">
+              Latest Product Updates →
+             </button>
+            </a>
+            <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
+             Master your trading journey.
+            </h1>
+            <p class="mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl">
+             Deltalytix is a trading dashboard for futures traders to store, explore and understand their track-record.
+            </p>
+           </div>
+           <div class="flex w-full justify-center">
+            <a class="flex justify-center items-center px-8 py-2.5 h-10 bg-[#2E9987] hover:bg-[#267a6d] dark:bg-[hsl(var(--chart-1))] dark:hover:bg-[hsl(var(--chart-1)/0.9)] shadow-[0_0_0_6px_rgba(50,169,151,0.1),0_0_0_2px_rgba(50,169,151,0.25),0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] hover:shadow-[0_0_0_6px_rgba(50,169,151,0.2),0_0_0_2px_rgba(50,169,151,0.35),0_2px_4px_rgba(0,0,0,0.2),0_2px_3px_-1px_rgba(0,0,0,0.2)] dark:shadow-[0_0_0_6px_hsl(var(--chart-1)/0.1),0_0_0_2px_hsl(var(--chart-1)/0.25),0_1px_3px_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] dark:hover:shadow-[0_0_0_6px_hsl(var(--chart-1)/0.2),0_0_0_2px_hsl(var(--chart-1)/0.35),0_2px_4px_rgba(0,0,0,0.2),0_2px_3px_-1px_rgba(0,0,0,0.2)] rounded-xl transition-all duration-200" href="/dashboard">
+             <span class="font-medium text-sm text-white">
+              Get Started
+             </span>
+            </a>
+           </div>
+          </div>
+          <div class="flex w-full items-center justify-center relative rounded-lg">
+           <div class="relative w-full h-full">
+            <div class="w-full aspect-video flex items-center justify-center bg-gray-100 dark:bg-black rounded-lg">
+             <p class="text-red-500">
+              Failed to load video
+             </p>
+            </div>
+            <video class="w-full h-full rounded-[14.5867px] border-[1.82333px] border-[#E5E7EB] dark:border-gray-800 hidden">
+             <source src="/videos/demo_white.mp4" type="video/mp4"/>
+            </video>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="w-full py-6 md:py-12 lg:py-16 xl:py-24" id="partners">
+        <div class="container px-4 md:px-6">
+         <div class="flex flex-col items-center space-y-4 text-center">
+          <div class="space-y-2">
+           <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+            Our Partners
+           </h2>
+           <p class="mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed">
+            We collaborate with industry leaders to provide you with the best trading experience.
+           </p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-center justify-items-center w-full mt-8">
+           <a class="relative w-full h-[60px] flex items-center justify-center" href="https://account.ninjatrader.com/register?introducingPartner=deltalytix" rel="noopener noreferrer" target="_blank">
+            <img alt="NinjaTrader" class="object-contain filter dark:brightness-0 dark:invert" src="/logos/ninjatrader-ob.svg"/>
+           </a>
+           <a class="relative w-full h-[60px] flex items-center justify-center">
+            <img alt="Trade Copier by ETP" class="object-contain" src="/_next/image?url=%2Flogos%2Fetp-b.png&amp;w=3840&amp;q=75"/>
+           </a>
+           <a class="relative w-full h-[60px] flex items-center justify-center">
+            <img alt="Rithmic" class="object-contain" src="/_next/image?url=%2Flogos%2Frithmic-logo-black.png&amp;w=3840&amp;q=75"/>
+           </a>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="w-full py-6 md:py-12 lg:py-16 xl:py-24" id="features">
+        <main class="container mx-auto px-4 py-16">
+         <h1 class="text-4xl font-bold text-center mb-4">
+          Features
+         </h1>
+         <p class="text-xl text-center text-gray-600 mb-12">
+          The right tools to help you improve your trading.
+         </p>
+         <div class="grid grid-cols-1 lg:grid-cols-6 gap-4">
+          <div class="rounded-lg border text-card-foreground shadow-xs bg-card lg:col-span-3" id="ai-journaling">
+           <div class="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 class="tracking-tight text-lg font-medium">
+             AI-Powered Journaling
+            </h3>
+           </div>
+           <div class="p-6 pt-0">
+            <div class="flex flex-col space-y-4">
+             <div>
+              <div class="text-2xl font-bold">
+               Emotional Intelligence
+              </div>
+              <p class="text-sm text-muted-foreground mt-2">
+               Improve your trading emotions with AI-assisted journaling. Our advanced algorithms analyze your entries to identify emotional patterns and biases.
+              </p>
+             </div>
+             <div class="relative w-full flex justify-center items-center rounded-xl overflow-hidden h-[300px]">
+              <div class="jsx-85b0b20e47808844 relative w-full h-full min-h-0 bg-white dark:bg-black transition-colors duration-500">
+               <div class="jsx-85b0b20e47808844 w-full h-full border border-muted bg-white dark:bg-black shadow-lg dark:shadow-gray-900/50 transition-all duration-500 rounded-lg overflow-hidden">
+                <div class="jsx-85b0b20e47808844 p-4 h-full flex flex-col min-h-0">
+                 <div class="jsx-85b0b20e47808844 flex items-center gap-2 mb-4 pb-2 border-b border-muted transition-colors duration-300 shrink-0">
+                  <span class="jsx-85b0b20e47808844 text-sm font-medium text-black dark:text-white transition-colors duration-300">
+                   AI Trading Coach
+                  </span>
+                  <div class="jsx-85b0b20e47808844 ml-auto text-xs text-muted-foreground">
+                   Real-time Analysis
+                  </div>
+                 </div>
+                 <div class="jsx-85b0b20e47808844 flex-1 overflow-hidden relative">
+                  <div class="jsx-85b0b20e47808844 absolute inset-0 flex flex-col justify-end space-y-3 text-xs">
+                   <div class="jsx-85b0b20e47808844 flex gap-2 opacity-0 animate-slide-in justify-end">
+                    <div class="jsx-85b0b20e47808844 flex items-start gap-2 max-w-[85%] flex-row-reverse">
+                     <div class="jsx-85b0b20e47808844 p-2 rounded-lg transition-all duration-300 bg-black dark:bg-white text-white dark:text-black">
+                      <p class="jsx-85b0b20e47808844 leading-relaxed">
+                       Analyze my trading performance from last month and identify the key factors affecting my P&amp;L
+                      </p>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="jsx-85b0b20e47808844 flex gap-2 opacity-0 animate-slide-in">
+                    <div class="jsx-85b0b20e47808844 flex items-start gap-2 max-w-[85%]">
+                     <div class="jsx-85b0b20e47808844 p-2 rounded-lg transition-all duration-300 bg-muted text-black dark:text-white border border-muted">
+                      <p class="jsx-85b0b20e47808844 leading-relaxed">
+                       I've analyzed your 127 trades from last month. Your overall performance shows strong technical execution b
+                       <span class="jsx-85b0b20e47808844 animate-pulse text-gray-500 dark:text-gray-400 ml-1">
+                        |
+                       </span>
+                      </p>
+                      <div class="jsx-85b0b20e47808844 overflow-hidden transition-all duration-500 ease-out max-h-0 opacity-0 mt-0">
+                       <div class="jsx-85b0b20e47808844 pt-2 border-t border-muted-foreground transition-colors duration-300">
+                        <div class="jsx-85b0b20e47808844 flex items-center justify-between mb-1">
+                         <span class="jsx-85b0b20e47808844 font-medium text-black dark:text-white text-xs">
+                          Overall Win Rate
+                         </span>
+                         <div class="jsx-85b0b20e47808844 flex items-center gap-1">
+                          <span class="jsx-85b0b20e47808844 text-xs font-mono text-black dark:text-white">
+                           STRENGTH
+                          </span>
+                         </div>
+                        </div>
+                        <div class="jsx-85b0b20e47808844 text-sm font-semibold text-black dark:text-white mb-1">
+                         68%
+                        </div>
+                        <div class="jsx-85b0b20e47808844 text-xs text-gray-600 dark:text-gray-400">
+                         Above average but concentration risk in breakout trades (45% of volume) needs diversification
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground shadow-xs bg-card lg:col-span-3" id="performance-visualization">
+           <div class="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 class="tracking-tight text-lg font-medium">
+             Performance Visualization
+            </h3>
+           </div>
+           <div class="p-6 pt-0">
+            <div class="flex flex-col space-y-4">
+             <div>
+              <div class="text-2xl font-bold">
+               Comprehensive Analytics
+              </div>
+              <p class="text-sm text-muted-foreground mt-2">
+               Visualize your trading performance with interactive charts and graphs. Analyze patterns, identify strengths, and pinpoint areas for improvement.
+              </p>
+             </div>
+             <div class="relative w-full flex justify-center items-center rounded-xl overflow-hidden min-h-[420px]">
+              <div class="h-full w-full rounded-xl border bg-card shadow-sm pointer-events-none">
+               <div class="rounded-lg border bg-card text-card-foreground shadow-xs h-[500px] flex flex-col">
+                <div class="flex flex-row items-center justify-between space-y-0 border-b shrink-0 p-3 sm:p-4 h-[56px]">
+                 <div class="flex items-center justify-between w-full">
+                  <div class="flex items-center gap-1.5">
+                   <h3 class="font-semibold tracking-tight line-clamp-1 text-base">
+                    Avg Net P/L per Contract
+                   </h3>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground shadow-xs bg-card lg:col-span-4" id="daily-performance">
+           <div class="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 class="tracking-tight text-lg font-medium">
+             Daily Performance
+            </h3>
+           </div>
+           <div class="p-6 pt-0">
+            <div class="flex flex-col space-y-4">
+             <div>
+              <div class="text-2xl font-bold">
+               Calendar View
+              </div>
+              <p class="text-sm text-muted-foreground mt-2">
+               Track your daily trading results with an intuitive calendar view. Quickly identify trends and patterns in your trading performance.
+              </p>
+             </div>
+             <div class="relative w-full flex justify-center items-center rounded-xl overflow-hidden min-h-[420px] lg:min-h-[480px]">
+              <div class="h-full min-h-[380px] w-full overflow-hidden rounded-xl border bg-card shadow-sm pointer-events-none lg:min-h-[440px]">
+               <div class="rounded-lg border bg-card text-card-foreground shadow-xs h-full flex flex-col">
+                <div class="flex flex-row items-center justify-between space-y-0 border-b shrink-0 p-3 sm:p-4 h-[56px]">
+                 <div class="flex items-center gap-3">
+                  <h3 class="tracking-tight text-base sm:text-lg font-semibold truncate capitalize">
+                   December 2025
+                  </h3>
+                  <div class="text-sm sm:text-base font-semibold truncate text-green-600 dark:text-green-400">
+                   $3,860
+                  </div>
+                 </div>
+                 <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-2 max-sm:hidden">
+                   <span class="text-sm font-medium text-muted-foreground whitespace-nowrap">
+                    Filter news by importance
+                   </span>
+                   <div class="inline-flex items-center gap-1 p-2 rounded-md transition-all duration-300 h-8">
+                    <span class="sr-only">
+                     Selected impact levels: high
+                    </span>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="flex-1 min-h-0 p-1.5 sm:p-4">
+                 <div class="grid grid-cols-8 gap-x-px mb-1">
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Sun
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Mon
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Tue
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Wed
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Thu
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Fri
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Sat
+                  </div>
+                  <div class="text-center font-medium text-[9px] sm:text-[11px] text-muted-foreground">
+                   Weekly
+                  </div>
+                 </div>
+                 <div class="grid grid-cols-8 auto-rows-fr rounded-lg h-[calc(100%-20px)]">
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card rounded-tl-lg">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     30
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     1
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $120
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $118
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     2
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $620
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     4 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $606
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     3
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $80
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     2 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $75
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     4
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$240
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     3 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$249
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     5
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     6
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $380
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     2 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $375
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10 rounded-tr-lg">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-green-600 dark:text-green-400">
+                    $960
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     7
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$60
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$62
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     8
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     9
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $980
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     5 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $960
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     10
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     11
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $210
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     2 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $205
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     12
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$120
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     2 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$125
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     13
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-green-600 dark:text-green-400">
+                    $1,010
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     14
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $320
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $318
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     15
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $540
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     3 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $531
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     16
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     17
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     18
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$320
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     4 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$334
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     19
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $90
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $88
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     20
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-green-600 dark:text-green-400">
+                    $630
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     21
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $760
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     3 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $751
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     22
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$45
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$47
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     23
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 hover:ring-primary hover:z-10 dark:bg-green-900/20 ring-blue-500 bg-blue-500/5 z-10">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] min-w-[14px] text-center text-primary font-semibold">
+                     24
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $150
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     2 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $145
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     25
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $70
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $68
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     26
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-green-50 dark:bg-green-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     27
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-green-600 dark:text-green-400">
+                     $420
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     3 trades
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $411
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$0
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-green-600 dark:text-green-400">
+                    $1,355
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     28
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-red-50 dark:bg-red-900/20">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     29
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold truncate text-center text-red-600 dark:text-red-400">
+                     -$95
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     1 trade
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-green-600 dark:text-green-400 truncate text-center">
+                     Max P: $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-red-600 dark:text-red-400 truncate text-center">
+                     Max DD: -$97
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     30
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center">
+                     31
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     1
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     2
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     3
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-red-600 dark:text-red-400">
+                    -$95
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card rounded-bl-lg">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     4
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     5
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     6
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     7
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     8
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     9
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex flex-col cursor-pointer transition-all rounded-none p-1 ring-1 ring-border hover:ring-primary hover:z-10 bg-card">
+                   <div class="flex justify-between items-start gap-0.5">
+                    <span class="text-[9px] sm:text-[11px] font-medium min-w-[14px] text-center opacity-50">
+                     10
+                    </span>
+                   </div>
+                   <div class="flex-1 flex flex-col justify-end gap-0.5">
+                    <div class="text-[9px] sm:text-[11px] font-semibold invisible text-center opacity-50">
+                     $0
+                    </div>
+                    <div class="text-[7px] sm:text-[9px] text-muted-foreground truncate text-center opacity-50">
+                     No trades
+                    </div>
+                   </div>
+                  </div>
+                  <div class="h-full flex items-center justify-center rounded-none cursor-pointer ring-1 ring-border hover:ring-primary hover:z-10 rounded-br-lg">
+                   <div class="text-[9px] sm:text-[11px] font-semibold truncate px-0.5 text-green-600 dark:text-green-400">
+                    $0
+                   </div>
+                  </div>
+                 </div>
+                </div>
+                <div class="items-center p-6 pt-0 flex justify-end">
+                 <div class="flex items-center gap-1 border rounded-md p-0.5 bg-muted">
+                  <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-primary/90 rounded-md text-xs h-7 px-2 transition-colors bg-primary text-primary-foreground shadow-sm font-semibold">
+                   <span class="text-xs">
+                    Daily View
+                   </span>
+                  </button>
+                  <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-xs h-7 px-2 transition-colors">
+                   <span class="text-xs">
+                    Weekly View
+                   </span>
+                  </button>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground shadow-xs bg-card lg:col-span-2" id="data-import">
+           <div class="p-6 flex flex-row items-center justify-between space-y-0 pb-2">
+            <h3 class="tracking-tight text-lg font-medium">
+             Data Import
+            </h3>
+           </div>
+           <div class="p-6 pt-0">
+            <div class="flex flex-col space-y-4">
+             <div>
+              <div class="text-2xl font-bold">
+               Sync &amp; CSV imports
+              </div>
+              <p class="text-sm text-muted-foreground mt-2">
+               Import data from various providers. Our platform supports automatic imports with Rithmic via a sync or .CSV imports, allowing you to centralize all your trading information in one place.
+              </p>
+             </div>
+             <div class="relative w-full flex justify-center items-center rounded-xl overflow-hidden h-[300px]">
+              <div class="relative flex h-[300px] w-full items-center justify-center overflow-hidden p-10">
+               <div class="flex size-full max-h-[200px] max-w-lg flex-col items-stretch justify-between gap-10">
+                <div class="flex flex-row items-center justify-between">
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="Tradovate" height="24" src="/_next/image?url=%2Flogos%2Ftradovate.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="Topstep" height="24" src="/_next/image?url=%2Flogos%2Ftopstep.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                </div>
+                <div class="flex flex-row items-center justify-between">
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="NinjaTrader" height="24" src="/_next/image?url=%2Flogos%2Fninjatrader.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="Quantower" height="24" src="/_next/image?url=%2Flogos%2Fquantower.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                </div>
+                <div class="flex flex-row items-center justify-between">
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="Rithmic" height="24" src="/_next/image?url=%2Flogos%2Frithmic.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                 <div class="z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]">
+                  <img alt="Thor" height="24" src="/_next/image?url=%2Flogos%2Fetp.png&amp;w=48&amp;q=75" width="24"/>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </main>
+       </section>
+       <section class="w-full py-6 md:py-12 lg:py-16 xl:py-24" id="pricing">
+        <div>
+         <main class="container mx-auto px-4 py-16">
+          <h1 class="text-4xl font-bold text-center mb-4">
+           Pricing
+          </h1>
+          <p class="text-xl text-center text-gray-600 mb-12">
+           Store, explore and improve your trading data with the right plan for your needs.
+          </p>
+          <div class="sm:px-6">
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto w-full">
+            <div class="relative">
+             <div class="rounded-lg border text-card-foreground shadow-xs relative bg-background h-full">
+              <div class="flex flex-col space-y-1.5 p-6">
+               <h3 class="text-2xl font-semibold leading-none tracking-tight">
+                Basic
+               </h3>
+               <p class="text-sm text-muted-foreground">
+                Perfect for trying out Deltalytix and getting started with trading analytics.
+               </p>
+              </div>
+              <div class="p-6 pt-0">
+               <div class="text-4xl font-bold mb-4">
+                Free
+               </div>
+               <ul class="space-y-2">
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  Multiple trading accounts
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  2 weeks of data storage included
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  Basic CSV imports only
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  All statistics and charts (data limited to 2 weeks)
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  No AI features available
+                 </span>
+                </li>
+               </ul>
+              </div>
+              <div class="items-center p-6 pt-0 flex flex-col space-y-3">
+               <a class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2" href="/authentication">
+                Start basic
+               </a>
+               <p class="text-xs text-center text-muted-foreground">
+                By proceeding with payment, you agree to our
+                <a class="text-primary hover:underline" href="/terms">
+                 Terms of Service
+                </a>
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="relative z-10 w-full">
+             <div class="rounded-lg border text-card-foreground shadow-xs relative bg-background h-full">
+              <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+               <span class="bg-primary text-primary-foreground text-sm font-medium px-3 py-1 rounded-full whitespace-nowrap">
+                Full Version
+               </span>
+              </div>
+              <div class="flex flex-col space-y-1.5 p-6">
+               <h3 class="text-2xl font-semibold leading-none tracking-tight">
+                Plus
+               </h3>
+               <p class="text-sm text-muted-foreground">
+                For serious traders who want to unlock their full potential.
+               </p>
+              </div>
+              <div class="p-6 pt-0">
+               <div class="bg-muted rounded-lg p-4 mb-4 space-y-3 dark:bg-muted/50">
+                <span class="text-sm font-medium block text-center">
+                 Billing Period
+                </span>
+                <div class="grid grid-cols-3 gap-1 p-1 bg-background rounded-md">
+                 <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs capitalize">
+                  Monthly
+                 </button>
+                 <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs capitalize">
+                  Quarterly
+                 </button>
+                 <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-8 rounded-md px-3 text-xs capitalize">
+                  Yearly
+                 </button>
+                </div>
+                <div class="pt-2 border-t border-border">
+                 <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-8 rounded-md px-3 text-xs w-full">
+                  One-time payment for lifetime access
+                 </button>
+                </div>
+               </div>
+               <div class="mb-4">
+                <div class="text-center">
+                 <p class="text-xs text-center text-muted-foreground mt-2">
+                  €120 billed yearly
+                 </p>
+                </div>
+               </div>
+               <ul class="space-y-2">
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  Unlimited accounts (no limit on how many accounts to import)
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  Unlimited data storage (store as many trades as you want)
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  All statistics and charts
+                 </span>
+                </li>
+                <li class="flex items-start">
+                 <span class="text-sm">
+                  Chat with your data using advanced AI models for trading analysis and journaling
+                 </span>
+                </li>
+               </ul>
+              </div>
+              <div class="items-center p-6 pt-0 flex flex-col space-y-3">
+               <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground shadow-sm hover:bg-primary/90 h-9 px-4 py-2 w-full">
+                Start now with all features
+               </button>
+               <p class="text-xs text-center text-muted-foreground">
+                By proceeding with payment, you agree to our
+                <a class="text-primary hover:underline" href="/terms">
+                 Terms of Service
+                </a>
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </main>
+         <section class="py-16">
+          <div class="container mx-auto px-4">
+           <h2 class="text-3xl font-bold text-center mb-8">
+            Frequently Asked Questions
+           </h2>
+           <div class="max-w-3xl mx-auto space-y-6">
+            <details class="border-b pb-4">
+             <summary class="font-semibold cursor-pointer">
+              Does Deltalytix trade for me?
+             </summary>
+             <p class="mt-2 text-gray-600 dark:text-gray-400">
+              No, Deltalytix is not a brokerage. You execute trades on your broker and then transfer the data into Deltalytix to track and analyze your trading performance.
+             </p>
+            </details>
+            <details class="border-b pb-4">
+             <summary class="font-semibold cursor-pointer">
+              How secure is Deltalytix?
+             </summary>
+             <p class="mt-2 text-gray-600 dark:text-gray-400">
+              Your data security is our top priority. Deltalytix does not sell or advertise your data, and we employ industry-standard security measures to protect your information.
+             </p>
+            </details>
+           </div>
+          </div>
+         </section>
+        </div>
+       </section>
+       <section class="w-full py-6 md:py-12 lg:py-16 xl:py-24" id="open-source">
+        <div class="px-4 mb-8 md:mb-16 lg:mb-32">
+         <div class="mb-6 md:mb-12">
+          <h2 class="text-2xl md:text-3xl lg:text-4xl mb-2 md:mb-4 font-medium text-primary">
+           Open and Transparent
+          </h2>
+          <p class="text-sm md:text-base text-muted-foreground max-w-[500px]">
+           We believe in full transparency. Our
+           <a class="underline" href="https://github.com/hugodemenez/deltalytix" rel="noreferrer" target="_blank">
+            code
+           </a>
+           is open for everyone to inspect, audit, and verify - ensuring the highest standards of security and reliability.
+          </p>
+         </div>
+         <div class="rounded-lg text-card-foreground shadow-xs border border-border bg-background p-4 md:p-6 lg:p-8">
+          <div class="flex flex-col lg:flex-row lg:space-x-8 xl:space-x-16">
+           <div class="lg:basis-1/2 mb-6 lg:mb-0">
+            <div class="w-full">
+             <div class="border-b">
+              <h3 class="flex">
+               <button class="flex-1 py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 flex items-center justify-between text-primary" id="radix-_r_m_" type="button">
+                <div class="flex items-center space-x-2">
+                 <span class="text-sm md:text-base lg:text-lg">
+                  Open source
+                 </span>
+                </div>
+               </button>
+              </h3>
+              <div class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" id="radix-_r_n_">
+               <div class="pb-4 pt-0 text-xs md:text-sm text-muted-foreground">
+                <p>
+                 Our entire codebase is open source. Inspect the code, verify our security practices, and contribute to deltalytix.
+                </p>
+                <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 mt-2 md:mt-4 mb-2 border-primary text-primary text-xs md:text-sm">
+                 View repository
+                </button>
+               </div>
+              </div>
+             </div>
+             <div class="border-b">
+              <h3 class="flex">
+               <button class="flex-1 py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 flex items-center justify-between text-primary" id="radix-_r_o_" type="button">
+                <div class="flex items-center space-x-2">
+                 <span class="text-sm md:text-base lg:text-lg">
+                  Community
+                 </span>
+                </div>
+               </button>
+              </h3>
+              <div class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down" id="radix-_r_p_">
+               <div class="pb-4 pt-0 text-xs md:text-sm text-muted-foreground">
+                <p>
+                 Join a community of traders passionate about algorithmic trading and financial analysis.
+                </p>
+                <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-colors focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2 mt-2 md:mt-4 mb-2 border-primary text-primary text-xs md:text-sm">
+                 <a href="https://discord.gg/a5YVF5Ec2n" rel="noreferrer" target="_blank">
+                  Join Discord Community
+                 </a>
+                </button>
+               </div>
+              </div>
+             </div>
+             <div class="border-b">
+              <h3 class="flex">
+               <button class="flex-1 py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 flex items-center justify-between text-primary" id="radix-_r_q_" type="button">
+                <div class="flex items-center space-x-2">
+                 <span class="text-sm md:text-base lg:text-lg">
+                  Open roadmap
+                 </span>
+                </div>
+               </button>
+              </h3>
+             </div>
+            </div>
+           </div>
+           <div class="lg:basis-1/2">
+            <div class="rounded-lg text-card-foreground shadow-xs w-full h-full border border-border bg-card p-3 md:p-4 lg:p-6">
+             <div class="flex flex-col space-y-1.5 p-6 border-b border-border pb-3 md:pb-4 mb-3 md:mb-4">
+              <h3 class="tracking-tight font-medium text-base md:text-lg lg:text-xl text-primary">
+               deltalytix
+              </h3>
+             </div>
+             <div class="p-6 pt-0">
+              <div class="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm text-muted-foreground mb-4 md:mb-6">
+               <div class="flex items-center space-x-1">
+                <span>
+                 TypeScript
+                </span>
+               </div>
+               <div class="flex items-center space-x-1">
+                <span>
+                 MIT
+                </span>
+               </div>
+               <div class="flex items-center space-x-1">
+                <span>
+                 0
+                </span>
+               </div>
+               <div class="flex items-center space-x-1">
+                <span>
+                 0
+                </span>
+               </div>
+               <div class="flex items-center space-x-1">
+                <span>
+                 0
+                </span>
+               </div>
+              </div>
+              <div class="pb-6 md:pb-10 mt-6 md:mt-10 h-[100px] md:h-[130px]">
+               <p class="text-muted-foreground text-xs md:text-sm mt-2 md:mt-4">
+                5 minutes ago
+               </p>
+              </div>
+              <a class="border border-border flex justify-center h-7 md:h-8 leading-[28px] md:leading-[30px] text-muted-foreground mt-3 md:mt-4" href="https://github.com/hugodemenez/deltalytix" rel="noreferrer" target="_blank">
+               <div class="bg-background pl-2 pr-3 text-xs md:text-sm flex items-center space-x-2 border-r border-border">
+                <span class="font-medium">
+                 Star
+                </span>
+               </div>
+               <div class="px-3 md:px-4 text-xs md:text-sm items-center flex">
+                0
+               </div>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </main>
+     </div>
+    </div>
+    <footer class="py-12 transition-colors duration-300 max-w-7xl mx-auto">
+     <h2 class="sr-only" id="footer-heading">
+      Footer
+     </h2>
+     <div class="container mx-auto px-4">
+      <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+       <div class="space-y-8">
+        <div class="flex items-center">
+         <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+          Deltalytix
+         </h3>
+        </div>
+        <p class="text-sm text-gray-600 dark:text-gray-400">
+         Advanced analytics for modern traders.
+        </p>
+        <div class="flex space-x-6">
+         <a class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" href="https://github.com/hugodemenez/deltalytix">
+          <span class="sr-only">
+           GitHub
+          </span>
+         </a>
+         <a class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" href="https://www.youtube.com/@hugodemenez">
+          <span class="sr-only">
+           YouTube
+          </span>
+         </a>
+         <a class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300" href="https://discord.gg/a5YVF5Ec2n">
+          <span class="sr-only">
+           Discord
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+         <div>
+          <h4 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+           Product
+          </h4>
+          <ul class="mt-6 space-y-4">
+           <li>
+            <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/#features">
+             Features
+            </a>
+           </li>
+           <li>
+            <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/pricing">
+             Pricing
+            </a>
+           </li>
+           <li>
+            <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/teams">
+             Teams
+            </a>
+           </li>
+           <li>
+            <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/support">
+             Support
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="mt-10 md:mt-0">
+          <h4 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+           Company
+          </h4>
+          <ul class="mt-6 space-y-4">
+           <li>
+            <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/about">
+             About
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div>
+         <h4 class="text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+          Legal
+         </h4>
+         <ul class="mt-6 space-y-4">
+          <li>
+           <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/privacy">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/terms">
+            Terms of Service
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white" href="/disclaimers">
+            Disclaimers
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="mt-16 border-t border-gray-200 dark:border-gray-800 pt-8">
+       <div class="text-center text-sm text-gray-600 dark:text-gray-400">
+        © 2025 Deltalytix. All rights reserved.
+       </div>
+       <div class="mt-4 text-center text-xs text-gray-500 dark:text-gray-500">
+        Trading in futures and forex markets involves significant risks and is not suitable for all investors. An investor could potentially lose all or a portion of their initial investment. Risk capital is money that can be lost without jeopardizing one's financial security or lifestyle. Only risk capital should be used for trading, and only those with sufficient risk capital should consider trading. Past performance is not necessarily indicative of future results.
+       </div>
+       <div class="mt-4 text-center text-xs text-gray-500 dark:text-gray-500">
+        Hypothetical performance results have many inherent limitations, some of which are described below. No representation is being made that any account will or is likely to achieve profits or losses similar to those shown; in fact, there are frequently sharp differences between hypothetical performance results and the actual results subsequently achieved by any particular trading program. One of the limitations of hypothetical performance results is that they are generally prepared with the benefit of hindsight. In addition, hypothetical trading does not involve financial risk, and no hypothetical trading record can completely account for the impact of financial risk in actual trading. For example, the ability to withstand losses or to adhere to a particular trading program in spite of trading losses are material points which can also adversely affect actual trading results. There are numerous other factors related to the markets in general or to the implementation of any specific trading program which cannot be fully accounted for in the preparation of hypothetical performance results and all of which can adversely affect actual trading results.
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <span id="recharts_measurement_span">
+    $0
+   </span>
+  </body>
+
+</body>
+</html>

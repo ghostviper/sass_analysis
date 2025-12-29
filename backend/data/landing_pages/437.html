@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Free AI Code Converter, Generator & Debugger for Developers</title>
+</head>
+<body>
+  <body>
+   <header class="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-ink-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <nav class="flex items-center justify-between h-16">
+      <a class="flex items-center gap-2" href="/">
+       <img alt="Swapcode" class="h-8 w-auto" height="180" src="/swapcode_logo.png" width="500"/>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+       <a class="text-sm font-medium text-ink-700 hover:text-ink-900 transition-colors underline hover:no-underline" href="/ai-coder-online">
+        AI Coder
+       </a>
+       <div class="relative group">
+        <button class="text-sm font-medium text-ink-700 hover:text-ink-900 transition-colors flex items-center gap-1">
+         Code Tools
+        </button>
+        <div class="absolute top-full left-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+         <div class="bg-white border border-ink-200 rounded-lg shadow-lg py-2 min-w-[180px]">
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/generator">
+           Code Generator
+          </a>
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/converter">
+           Code Converter
+          </a>
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/free-code-debugger">
+           Code Debugger
+          </a>
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/code-formatter">
+           Code Formatter
+          </a>
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/code-review">
+           Code Review
+          </a>
+          <a class="block px-4 py-2 text-sm text-ink-700 hover:text-ink-900 hover:bg-ink-50 underline hover:no-underline" href="/code-explainer">
+           Code Explainer
+          </a>
+         </div>
+        </div>
+       </div>
+       <a class="text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors" href="/tools">
+        All Tools
+       </a>
+       <a class="text-sm font-medium text-ink-600 hover:text-ink-900 transition-colors" href="/pricing">
+        Pricing
+       </a>
+       <div class="relative" id="search-desktop-container">
+        <div class="form-control">
+         <div class="relative flex items-center">
+          <div class="relative flex-1 overflow-hidden transition-all duration-300 ease-in-out" id="search-desktop-input-wrapper">
+           <input class="w-full pr-10 pl-4 py-2.5 text-sm transition-all duration-300 bg-base-200/50 backdrop-blur-sm rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-base-200 placeholder:text-base-content/40" id="search-desktop-input" placeholder="Search tools..." type="text"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex items-center gap-3">
+       <div class="dropdown dropdown-end dropdown-bottom">
+        <button class="px-4 py-2 text-sm font-medium text-white bg-ink-900 hover:bg-ink-800 rounded-lg transition-colors" id="loginButton">
+         Sign In
+        </button>
+        <div class="dropdown-content bg-white rounded-xl shadow-xl border border-ink-200 w-80 mt-3 p-6 z-[100]">
+         <div class="text-center mb-6">
+          <h3 class="text-lg font-semibold text-ink-900 mb-1">
+           Sign in to continue
+          </h3>
+          <p class="text-sm text-ink-500">
+           Choose your preferred method
+          </p>
+         </div>
+         <div class="space-y-3">
+          <button class="w-full flex items-center gap-3 px-4 py-3 bg-white hover:bg-ink-50 text-ink-700 border border-ink-200 rounded-lg font-medium transition-colors" id="google-signin-header-btn">
+           <span class="flex-1 text-left">
+            Continue with Google
+           </span>
+          </button>
+          <button class="w-full flex items-center gap-3 px-4 py-3 bg-ink-900 hover:bg-ink-800 text-white border-0 rounded-lg font-medium transition-colors" id="github-signin-header-btn">
+           <span class="flex-1 text-left">
+            Continue with GitHub
+           </span>
+          </button>
+          <button class="w-full flex items-center gap-3 px-4 py-3 bg-white hover:bg-ink-50 text-ink-700 border border-ink-200 rounded-lg font-medium transition-colors" id="twitter-signin-header-btn">
+           <span class="flex-1 text-left">
+            Continue with Twitter
+           </span>
+          </button>
+         </div>
+         <div class="mt-6 pt-4 border-t border-ink-200">
+          <p class="text-xs text-center text-ink-400">
+           By continuing, you agree to our Terms of Service
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="dropdown dropdown-end dropdown-bottom">
+        <ul class="dropdown-content menu rounded-xl shadow-xl bg-white border border-ink-200 w-64 mt-3 p-0 z-[100] overflow-hidden">
+         <div class="w-full" id="auth-section-dropdown">
+          <div class="p-4">
+           <p class="text-sm text-center mb-4 text-ink-500">
+            Sign in to access all features
+           </p>
+           <button class="w-full flex items-center gap-3 px-4 py-3 mb-2 bg-white hover:bg-ink-50 text-ink-700 border border-ink-200 rounded-lg font-medium transition-colors" id="google-signin-dropdown">
+            <span>
+             Sign in with Google
+            </span>
+           </button>
+           <button class="w-full flex items-center gap-3 px-4 py-3 mb-2 bg-ink-900 hover:bg-ink-800 text-white rounded-lg font-medium transition-colors" id="github-signin-dropdown">
+            <span>
+             Sign in with GitHub
+            </span>
+           </button>
+           <button class="w-full flex items-center gap-3 px-4 py-3 bg-white hover:bg-ink-50 text-ink-700 border border-ink-200 rounded-lg font-medium transition-colors" id="twitter-signin-dropdown">
+            <span>
+             Sign in with Twitter
+            </span>
+           </button>
+          </div>
+         </div>
+        </ul>
+       </div>
+      </div>
+     </nav>
+    </div>
+   </header>
+   <div class="drawer drawer-end z-40">
+    <input class="drawer-toggle" id="mobile-drawer" type="checkbox"/>
+    <div class="drawer-side">
+     <div class="p-6 w-80 min-h-full bg-white text-ink-900">
+      <div class="flex items-center justify-between mb-8">
+       <span class="text-lg font-semibold">
+        Menu
+       </span>
+      </div>
+      <div class="mb-6">
+       <div class="relative" id="search-mobile-container">
+        <div class="form-control">
+         <div class="relative flex items-center">
+          <div class="relative flex-1 overflow-hidden transition-all duration-300 ease-in-out" id="search-mobile-input-wrapper">
+           <input class="w-full pr-10 pl-4 py-2.5 text-sm transition-all duration-300 bg-base-200/50 backdrop-blur-sm rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-primary/20 focus:bg-base-200 placeholder:text-base-content/40" id="search-mobile-input" placeholder="Search tools..." type="text"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <nav class="space-y-1">
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/">
+        Home
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-white bg-ink-900 rounded-lg font-medium" href="/ai-coder-online">
+        AI Coder
+       </a>
+       <div class="pt-4 pb-2">
+        <span class="px-4 text-xs font-medium text-ink-400 uppercase tracking-wider">
+         Code Tools
+        </span>
+       </div>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/generator">
+        Code Generator
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/converter">
+        Code Converter
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/free-code-debugger">
+        Code Debugger
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/code-formatter">
+        Code Formatter
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/code-review">
+        Code Review
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/code-explainer">
+        Code Explainer
+       </a>
+       <div class="pt-4 pb-2">
+        <span class="px-4 text-xs font-medium text-ink-400 uppercase tracking-wider">
+         More
+        </span>
+       </div>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/tools">
+        All Tools
+       </a>
+       <a class="flex items-center gap-3 px-4 py-3 text-ink-600 hover:text-ink-900 hover:bg-ink-50 rounded-lg transition-colors" href="/pricing">
+        Pricing
+       </a>
+      </nav>
+     </div>
+    </div>
+   </div>
+   <main>
+    <main>
+     <section class="h-[90vh] flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto overflow-hidden">
+      <div class="text-center">
+       <div class="mb-8">
+        <span class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-ink-600 border border-ink-200 rounded-full">
+         Trusted by 5,000+ Developers
+        </span>
+       </div>
+       <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-[1.1] tracking-tight text-ink-900">
+        AI-Powered Code Tools
+        <br/>
+        <span class="text-ink-400">
+         for Modern Developers
+        </span>
+       </h1>
+       <p class="text-xl sm:text-2xl mb-12 text-ink-500 max-w-3xl mx-auto leading-relaxed">
+        Convert, generate, debug, explain, and format code across 100+ programming languages. Free to start.
+       </p>
+       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+        <a class="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-ink-900 hover:bg-ink-800 rounded-lg transition-colors" href="/ai-coder-online">
+         Try Now for Free
+        </a>
+        <a class="inline-flex items-center justify-center gap-2 px-8 py-4 text-lg font-semibold text-ink-700 border border-ink-300 hover:border-ink-400 hover:bg-ink-50 rounded-lg transition-colors" href="/tools">
+         Explore All Tools
+        </a>
+       </div>
+       <div class="mb-12 inline-flex items-center gap-3 px-6 py-3 bg-ink-50 border border-ink-200 rounded-xl">
+        <span class="text-sm font-medium text-ink-700">
+         Login to get
+         <strong class="text-ink-900">
+          5 free credits
+         </strong>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Source Code Tools
+          </span>
+         </div>
+        </span>
+       </div>
+       <div class="pt-2">
+        <p class="text-xs uppercase tracking-widest text-ink-400 mb-6">
+         Featured On
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-8">
+         <a class="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity" href="https://www.appvizer.com/it/development-tools/swapcode-ai" rel="nofollow noopener noreferrer" target="_blank">
+          <img alt="Appvizer logo" class="h-6 w-auto grayscale group-hover:grayscale-0 transition-all" height="24" src="/press-logos/appvizer.png" width="auto"/>
+         </a>
+         <a class="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity" href="https://sourceforge.net/software/product/SwapCode-AI/" rel="nofollow noopener noreferrer" target="_blank">
+          <img alt="SourceForge logo" class="h-6 w-auto grayscale group-hover:grayscale-0 transition-all" height="24" src="/press-logos/sourceforge.png" width="auto"/>
+         </a>
+         <a class="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity" href="https://www.f6s.com/company/swapcodeai" rel="nofollow noopener noreferrer" target="_blank">
+          <img alt="F6S logo" class="h-6 w-auto grayscale group-hover:grayscale-0 transition-all" height="24" src="/press-logos/f6s.png" width="auto"/>
+         </a>
+         <a class="group flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity" href="https://slashdot.org/software/p/SwapCode-AI/" rel="nofollow noopener noreferrer" target="_blank">
+          <img alt="Slashdot logo" class="h-6 w-auto grayscale group-hover:grayscale-0 transition-all" height="24" src="/press-logos/slashdot.png" width="auto"/>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="h-[320px] overflow-hidden flex flex-col justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+       <h2 class="text-3xl font-bold text-center text-ink-900 mb-4">
+        100+ Languages Supported
+       </h2>
+       <p class="text-center text-ink-500 max-w-2xl mx-auto">
+        Convert, generate, and debug code in virtually any programming language
+       </p>
+      </div>
+      <div class="relative">
+       <div class="flex space-x-8 animate-scroll">
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="JavaScript" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/javascript.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          JavaScript
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Python" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/python.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Python
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Java" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/java.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Java
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="TypeScript" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/typescript.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          TypeScript
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="C++" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/cplusplus.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          C++
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="C#" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/csharp.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          C#
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Go" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/go.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Go
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Rust" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/rust.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Rust
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Ruby" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/ruby.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Ruby
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="PHP" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/php.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          PHP
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Swift" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/swift.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Swift
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Kotlin" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/kotlin.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Kotlin
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Scala" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/scala.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Scala
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="R" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/r.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          R
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="MATLAB" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/matlab.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          MATLAB
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Perl" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/perl.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Perl
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Dart" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/dart.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Dart
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Julia" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/julia.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Julia
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Haskell" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/haskell.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Haskell
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Erlang" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/erlang.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Erlang
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Elixir" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/elixir.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Elixir
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Clojure" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/clojure.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Clojure
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="F#" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/fsharp.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          F#
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Lua" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/lua.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Lua
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="JavaScript" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/javascript.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          JavaScript
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Python" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/python.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Python
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Java" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/java.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Java
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="TypeScript" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/typescript.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          TypeScript
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="C++" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/cplusplus.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          C++
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="C#" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/csharp.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          C#
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Go" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/go.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Go
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Rust" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/rust.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Rust
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Ruby" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/ruby.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Ruby
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="PHP" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/php.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          PHP
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Swift" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/swift.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Swift
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Kotlin" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/kotlin.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Kotlin
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Scala" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/scala.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Scala
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="R" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/r.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          R
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="MATLAB" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/matlab.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          MATLAB
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Perl" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/perl.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Perl
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Dart" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/dart.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Dart
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Julia" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/julia.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Julia
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Haskell" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/haskell.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Haskell
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Erlang" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/erlang.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Erlang
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Elixir" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/elixir.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Elixir
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Clojure" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/clojure.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Clojure
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="F#" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/fsharp.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          F#
+         </span>
+        </div>
+        <div class="flex flex-col items-center gap-3 min-w-[100px]">
+         <div class="w-16 h-16 bg-ink-50 border border-ink-200 rounded-xl p-3 flex items-center justify-center">
+          <img alt="Lua" class="w-10 h-10 grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300" height="40" src="/logos/lua.svg" width="40"/>
+         </div>
+         <span class="text-xs font-medium text-ink-500">
+          Lua
+         </span>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="h-[700px] bg-ink-900 overflow-hidden flex flex-col justify-center">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-white mb-3">
+         AI That Understands You
+        </h2>
+        <p class="text-ink-400 max-w-2xl mx-auto text-sm">
+         From simple prompts to production-ready output in seconds
+        </p>
+        <div class="google-anno-skip google-anno-sc">
+         <span>
+          Tools for Developers
+         </span>
+        </div>
+       </div>
+       <div class="max-w-3xl mx-auto">
+        <div class="mb-4">
+         <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs font-medium text-ink-400 uppercase tracking-wider">
+           Your Prompt
+          </span>
+         </div>
+         <div class="bg-ink-800 rounded-lg p-4 border border-ink-700">
+          <p class="text-ink-100 font-mono text-sm leading-relaxed" id="userPrompt">
+           Convert JSON to TypeScript
+          </p>
+         </div>
+        </div>
+        <div class="relative">
+         <div class="flex items-center gap-2 mb-2">
+          <span class="text-xs font-medium text-ink-400 uppercase tracking-wider">
+           <a class="google-anno" href="#">
+            <span class="google-anno-t">
+             AI
+            </span>
+           </a>
+           Response
+          </span>
+         </div>
+         <div class="bg-ink-800 rounded-lg p-4 border border-ink-700 h-[180px] overflow-hidden">
+          <pre class="text-ink-100 font-mono text-xs leading-relaxed whitespace-pre-wrap" id="aiResponse">interface User {
+    id: number;
+    name: string;
+    email: string;
+    isActive: boolean;
+    roles: string[];
+  }
+
+  const user: User = {
+    id: 1, name: 'John', email: 'john@example.com',
+    isActive: true, roles: ['admin']
+  };</pre>
+         </div>
+        </div>
+        <div class="flex flex-wrap justify-center gap-2 mt-6">
+         <button class="prompt-example-btn px-3 py-1.5 text-xs font-medium text-ink-300 bg-ink-800 border border-ink-700 rounded-full hover:bg-ink-700 hover:text-white transition-all">
+          Code Generation
+         </button>
+         <button class="prompt-example-btn px-3 py-1.5 text-xs font-medium text-ink-300 bg-ink-800 border border-ink-700 rounded-full hover:bg-ink-700 hover:text-white transition-all">
+          Code Debugging
+         </button>
+         <button class="prompt-example-btn px-3 py-1.5 text-xs font-medium text-ink-300 bg-ink-800 border border-ink-700 rounded-full hover:bg-ink-700 hover:text-white transition-all">
+          Code Conversion
+         </button>
+         <button class="prompt-example-btn active px-3 py-1.5 text-xs font-medium text-white bg-ink-700 border border-ink-600 rounded-full transition-all">
+          Data Conversion
+         </button>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-gray-50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6 text-ink-900">
+         Simple, Transparent Pricing
+        </h2>
+        <p class="text-lg text-ink-500 max-w-2xl mx-auto leading-relaxed">
+         Purchase credits once and use them whenever you need. No subscriptions, no recurring fees.
+        </p>
+        <div class="mt-4 inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 border border-emerald-200 rounded-full">
+         <span class="text-sm font-medium text-emerald-700">
+          Credits never expire once purchased
+         </span>
+        </div>
+       </div>
+       <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+         <div class="flex items-center gap-2 mb-6">
+          <span class="text-sm font-medium text-gray-500">
+           Starter
+          </span>
+         </div>
+         <div class="mb-2">
+          <span class="text-6xl font-black text-ink-900">
+           100
+          </span>
+          <span class="text-xl text-gray-400 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-3xl font-bold text-ink-900">
+           $10
+          </span>
+          <span class="text-sm text-gray-400">
+           one-time
+          </span>
+         </div>
+         <p class="text-sm text-gray-400 mb-6">
+          $0.10 per credit
+         </p>
+         <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+          Perfect for trying out the platform and small projects.
+         </p>
+         <button class="w-full py-3.5 px-6 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 border border-gray-200 rounded-xl transition-all duration-300 mb-8 purchase-credits-btn">
+          Get Started
+         </button>
+         <div class="border-t border-gray-100 pt-6 space-y-3">
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            100 AI requests
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            20,000 chars per request
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            All platform tools
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Credits never expire
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Ad-free experience
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="relative bg-white rounded-2xl border-2 border-amber-400 p-8 shadow-lg">
+         <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <div class="px-4 py-1.5 bg-amber-500 text-white text-xs font-bold rounded-full shadow-lg uppercase tracking-wide">
+           Most Popular
+          </div>
+         </div>
+         <div class="flex items-center gap-2 mb-6 mt-2">
+          <span class="text-sm font-medium text-amber-600">
+           Best Value
+          </span>
+         </div>
+         <div class="mb-2">
+          <span class="text-6xl font-black text-ink-900">
+           400
+          </span>
+          <span class="text-xl text-gray-400 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-3xl font-bold text-ink-900">
+           $25
+          </span>
+          <span class="text-sm text-gray-400">
+           one-time
+          </span>
+         </div>
+         <div class="flex items-center gap-2 mb-6">
+          <span class="text-sm text-gray-400">
+           $0.0625 per credit
+          </span>
+          <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">
+           Save 37.5%
+          </span>
+         </div>
+         <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+          Best for regular users and medium-sized projects.
+         </p>
+         <button class="w-full py-3.5 px-6 text-sm font-semibold text-white bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 rounded-xl transition-all duration-300 shadow-md shadow-amber-200 mb-8 purchase-credits-btn">
+          Get Started
+         </button>
+         <div class="border-t border-gray-100 pt-6 space-y-3">
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            400 AI requests
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            20,000 chars per request
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            All platform tools
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Priority chat support
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Ad-free experience
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="bg-white rounded-2xl border border-gray-200 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+         <div class="flex items-center gap-2 mb-6">
+          <span class="text-sm font-medium text-violet-600">
+           Pro
+          </span>
+         </div>
+         <div class="mb-2">
+          <span class="text-6xl font-black text-ink-900">
+           2000
+          </span>
+          <span class="text-xl text-gray-400 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-3xl font-bold text-ink-900">
+           $100
+          </span>
+          <span class="text-sm text-gray-400">
+           one-time
+          </span>
+         </div>
+         <div class="flex items-center gap-2 mb-6">
+          <span class="text-sm text-gray-400">
+           $0.05 per credit
+          </span>
+          <span class="px-2 py-0.5 bg-emerald-100 text-emerald-700 text-xs font-bold rounded">
+           Save 50%
+          </span>
+         </div>
+         <p class="text-sm text-gray-600 mb-6 leading-relaxed">
+          Ideal for teams, power users, and large projects.
+         </p>
+         <button class="w-full py-3.5 px-6 text-sm font-semibold text-white bg-violet-600 hover:bg-violet-700 rounded-xl transition-all duration-300 mb-8 purchase-credits-btn">
+          Get Started
+         </button>
+         <div class="border-t border-gray-100 pt-6 space-y-3">
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            2000 AI requests
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            20,000 chars per request
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            All platform tools
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Priority support + Best for teams
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-sm text-gray-600">
+            Ad-free experience
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 flex flex-wrap justify-center items-center gap-6">
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+         Credits never expire
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+         Secure payment
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-500">
+         No subscription required
+        </div>
+       </div>
+       <a class="inline-flex items-center gap-2 text-sm font-semibold text-violet-600 hover:text-violet-700 transition-colors group" href="/pricing">
+        Compare all plans in detail
+       </a>
+      </div>
+     </section>
+     <section class="h-[200px] bg-ink-900 text-white overflow-hidden flex flex-col justify-center">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+         <div class="text-4xl font-bold mb-2">
+          5,000+
+         </div>
+         <div class="text-sm text-ink-300">
+          Active Users
+         </div>
+        </div>
+        <div>
+         <div class="text-4xl font-bold mb-2">
+          100+
+         </div>
+         <div class="text-sm text-ink-300">
+          Languages
+         </div>
+        </div>
+        <div>
+         <div class="text-4xl font-bold mb-2">
+          95%+
+         </div>
+         <div class="text-sm text-ink-300">
+          Accuracy
+         </div>
+        </div>
+        <div>
+         <div class="text-4xl font-bold mb-2">
+          &lt;10s
+         </div>
+         <div class="text-sm text-ink-300">
+          Processing
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="h-[500px] overflow-hidden flex flex-col justify-center">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+       <h2 class="text-3xl font-bold text-center mb-4 text-ink-900">
+        Why Developers Choose Swapcode
+       </h2>
+       <p class="text-center text-ink-500 mb-16 max-w-2xl mx-auto">
+        Built by developers, for developers
+       </p>
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="p-6 border border-ink-200 rounded-xl">
+         <h3 class="text-lg font-semibold mb-2 text-ink-900">
+          AI-Powered Accuracy
+         </h3>
+         <p class="text-sm text-ink-500">
+          Advanced language models trained on millions of code examples. Understands context and intent, producing idiomatic code.
+         </p>
+        </div>
+        <div class="p-6 border border-ink-200 rounded-xl">
+         <h3 class="text-lg font-semibold mb-2 text-ink-900">
+          100+ Languages
+         </h3>
+         <p class="text-sm text-ink-500">
+          Support for 100+ programming languages with more language pairs than competitors. From Python to COBOL.
+         </p>
+        </div>
+        <div class="p-6 border border-ink-200 rounded-xl">
+         <h3 class="text-lg font-semibold mb-2 text-ink-900">
+          Privacy First
+         </h3>
+         <p class="text-sm text-ink-500">
+          Your code is processed securely with enterprise-grade encryption. Never stored or shared. GDPR compliant.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="h-[800px] bg-white overflow-hidden flex flex-col justify-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+       <h2 class="text-3xl font-bold text-center mb-12 text-ink-900">
+        Frequently Asked Questions
+       </h2>
+       <div class="space-y-4">
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           What programming languages do you support?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Swapcode supports 100+ programming languages including JavaScript, Python, Java, TypeScript, C++, C#, Go, Rust, Ruby, PHP, Swift, Kotlin, R, MATLAB, COBOL, Fortran, and many more. We regularly add new languages based on user demand.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           Does Swapcode offer free usage?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Yes! Every new user gets 5 free lifetime credits to try our tools - no credit card required. For more usage, purchase credit packages starting at $10 for 100 credits. Credits never expire, so you can use them at your own pace.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           How accurate is the code conversion?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Our AI models achieve 95%+ accuracy on most conversions, trained on millions of code examples. The AI understands context, preserves logic, and produces idiomatic code in the target language-not just syntax translation.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           Do you store my code?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           No. Your code is processed in real-time and immediately discarded after conversion. We never store, log, or share your code. All processing is done securely with enterprise-grade encryption. Your intellectual property remains completely private.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           Can it convert entire projects?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Yes! While the playground handles individual files, you can convert multiple files one at a time. For large-scale project migrations, our Pro plan includes batch processing and API access to automate conversions across entire codebases.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           What types of errors can the debugger fix?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Our AI debugger detects and fixes syntax errors, logic bugs, runtime errors, performance issues, security vulnerabilities, and best practice violations. It provides detailed explanations and corrected code for each issue found.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           How is this different from ChatGPT?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Swapcode is specifically optimized for code tasks with specialized models trained on programming languages. We offer instant conversions, side-by-side comparisons, maintain code structure better, and never use your code for training-unlike general-purpose AI.
+          </p>
+         </div>
+        </details>
+        <details class="group bg-white border border-ink-200 rounded-lg">
+         <summary class="flex justify-between items-center p-5 cursor-pointer list-none">
+          <span class="font-medium text-ink-900">
+           Do I need to sign up?
+          </span>
+         </summary>
+         <div class="px-5 pb-5">
+          <p class="text-sm text-ink-500 leading-relaxed">
+           Yes, a free account is required to access Swapcode. You'll get 5 free lifetime credits to try our tools. For more usage, purchase credits as needed - they never expire and you only pay for what you use.
+          </p>
+         </div>
+        </details>
+       </div>
+      </div>
+     </section>
+     <section class="h-[400px] overflow-hidden flex flex-col justify-center">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+       <h2 class="text-3xl font-bold mb-4 text-ink-900">
+        Ready to Code Smarter?
+       </h2>
+       <p class="text-ink-500 mb-8 max-w-xl mx-auto">
+        Join 5,000+ developers using Swapcode. Start free today.
+       </p>
+       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a class="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-white bg-ink-900 hover:bg-ink-800 rounded-lg transition-colors" href="/ai-coder-online">
+         Try Now for Free
+        </a>
+        <a class="inline-flex items-center gap-2 px-8 py-4 text-lg font-semibold text-ink-700 border border-ink-300 hover:border-ink-400 hover:bg-ink-50 rounded-lg transition-colors" href="/pricing">
+         View Pricing
+        </a>
+       </div>
+       <p class="text-sm mt-6 text-ink-400">
+        5 free lifetime credits · Credits never expire · Pay only for what you use
+       </p>
+      </div>
+     </section>
+    </main>
+   </main>
+   <dialog class="modal" id="pricingModal">
+    <div class="modal-box max-w-4xl w-full p-0 overflow-hidden">
+     <div class="px-6 pt-6 pb-4 border-b border-base-300">
+      <div class="flex justify-between items-start gap-4">
+       <div>
+        <div class="flex items-center gap-2 mb-1">
+         <h3 class="text-xl font-bold">
+          Buy Credits
+         </h3>
+        </div>
+        <p class="text-sm text-base-content/60">
+         Power your AI coding tools with credits that never expire
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="p-6 bg-base-100">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+       <div class="group border border-base-300 rounded-2xl p-5 bg-base-100 hover:border-base-content/20 hover:shadow-lg transition-all duration-300">
+        <div class="mb-4">
+         <div class="flex items-center gap-1.5 text-xs text-base-content/50 mb-3">
+          Starter
+         </div>
+         <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black tracking-tight">
+           100
+          </span>
+          <span class="text-base-content/40 text-sm">
+           credits
+          </span>
+         </div>
+         <div class="flex items-baseline gap-1.5">
+          <span class="text-xl font-bold">
+           $10
+          </span>
+          <span class="text-xs text-base-content/40">
+           one-time
+          </span>
+         </div>
+         <p class="text-xs text-base-content/50 mt-1">
+          $0.10 per credit
+         </p>
+        </div>
+        <ul class="space-y-2 mb-5">
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           100 AI requests
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           All AI models
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           Never expires
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           Ad-free experience
+          </span>
+         </li>
+        </ul>
+        <button class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-base-content bg-base-200 hover:bg-base-300 border border-base-300 transition-all duration-200 purchase-credits-btn">
+         Get Started
+        </button>
+       </div>
+       <div class="group relative">
+        <div class="relative border-2 border-amber-500/40 rounded-2xl p-5 bg-base-100 h-full shadow-lg">
+         <div class="absolute -top-2.5 left-1/2 -translate-x-1/2">
+          <div class="px-3 py-1 bg-gradient-to-r from-amber-500 to-orange-500 rounded-full text-white text-xs font-bold shadow-md">
+           MOST POPULAR
+          </div>
+         </div>
+         <div class="mb-4 mt-2">
+          <div class="flex items-center gap-1.5 text-xs text-amber-600 dark:text-amber-400 mb-3">
+           Best Value
+          </div>
+          <div class="flex items-baseline gap-1 mb-1">
+           <span class="text-4xl font-black tracking-tight">
+            400
+           </span>
+           <span class="text-base-content/40 text-sm">
+            credits
+           </span>
+          </div>
+          <div class="flex items-baseline gap-1.5">
+           <span class="text-xl font-bold">
+            $25
+           </span>
+           <span class="text-xs text-base-content/40">
+            one-time
+           </span>
+          </div>
+          <div class="flex items-center gap-1.5 mt-1">
+           <span class="text-xs text-base-content/50">
+            $0.0625/credit
+           </span>
+           <span class="px-1.5 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold rounded">
+            -37.5%
+           </span>
+          </div>
+         </div>
+         <ul class="space-y-2 mb-5">
+          <li class="flex items-center gap-2 text-xs">
+           <span class="font-medium">
+            400 AI requests
+           </span>
+          </li>
+          <li class="flex items-center gap-2 text-xs">
+           <span>
+            All AI models
+           </span>
+          </li>
+          <li class="flex items-center gap-2 text-xs">
+           <span>
+            Priority support
+           </span>
+          </li>
+          <li class="flex items-center gap-2 text-xs">
+           <span>
+            Ad-free experience
+           </span>
+          </li>
+         </ul>
+         <button class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 shadow-md shadow-amber-500/20 transition-all duration-200 purchase-credits-btn">
+          Get Started
+         </button>
+        </div>
+       </div>
+       <div class="group border border-base-300 rounded-2xl p-5 bg-base-100 hover:border-violet-500/30 hover:shadow-lg transition-all duration-300">
+        <div class="mb-4">
+         <div class="flex items-center gap-1.5 text-xs text-violet-600 dark:text-violet-400 mb-3">
+          Pro
+         </div>
+         <div class="flex items-baseline gap-1 mb-1">
+          <span class="text-4xl font-black tracking-tight">
+           2000
+          </span>
+          <span class="text-base-content/40 text-sm">
+           credits
+          </span>
+         </div>
+         <div class="flex items-baseline gap-1.5">
+          <span class="text-xl font-bold">
+           $100
+          </span>
+          <span class="text-xs text-base-content/40">
+           one-time
+          </span>
+         </div>
+         <div class="flex items-center gap-1.5 mt-1">
+          <span class="text-xs text-base-content/50">
+           $0.05/credit
+          </span>
+          <span class="px-1.5 py-0.5 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold rounded">
+           -50%
+          </span>
+         </div>
+        </div>
+        <ul class="space-y-2 mb-5">
+         <li class="flex items-center gap-2 text-xs">
+          <span class="font-medium">
+           2000 AI requests
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           All AI models
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           Best for teams
+          </span>
+         </li>
+         <li class="flex items-center gap-2 text-xs">
+          <span>
+           Ad-free experience
+          </span>
+         </li>
+        </ul>
+        <button class="w-full py-2.5 px-4 rounded-xl text-sm font-semibold text-white bg-violet-600 hover:bg-violet-700 shadow-md shadow-violet-500/20 transition-all duration-200 purchase-credits-btn">
+         Get Started
+        </button>
+       </div>
+      </div>
+      <div class="mt-6 pt-5 border-t border-base-300">
+       <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-base-content/60">
+        <div class="flex items-center gap-1.5">
+         <span>
+          Credits never expire
+         </span>
+        </div>
+        <div class="flex items-center gap-1.5">
+         <span>
+          Secure payment
+         </span>
+        </div>
+        <div class="flex items-center gap-1.5">
+         <span>
+          No subscription required
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="mt-5 pt-5 border-t border-base-300">
+       <h4 class="font-semibold mb-3 text-sm">
+        Frequently Asked Questions
+       </h4>
+       <div class="space-y-2">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer text-xs font-medium text-base-content list-none py-2">
+          <span>
+           How do credits work?
+          </span>
+         </summary>
+         <p class="text-xs text-base-content/70 mt-1 pl-4">
+          1 credit = 1 AI request. Use credits for code conversion, generation, debugging, and all other AI tools on the platform.
+         </p>
+        </details>
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer text-xs font-medium text-base-content list-none py-2">
+          <span>
+           Do credits expire?
+          </span>
+         </summary>
+         <p class="text-xs text-base-content/70 mt-1 pl-4">
+          No! Your credits never expire. Buy once and use them at your own pace.
+         </p>
+        </details>
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer text-xs font-medium text-base-content list-none py-2">
+          <span>
+           Can I buy more credits later?
+          </span>
+         </summary>
+         <p class="text-xs text-base-content/70 mt-1 pl-4">
+          Yes! You can purchase additional credits anytime. New credits are added to your existing balance.
+         </p>
+        </details>
+       </div>
+      </div>
+      <div class="mt-5 pt-4 border-t border-base-300 text-center">
+       <a class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="/pricing">
+        <span>
+         View full pricing page for more details
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <form class="modal-backdrop" method="dialog">
+     <button>
+      close
+     </button>
+    </form>
+   </dialog>
+   <dialog class="modal" id="creditPurchaseModal">
+    <div class="modal-box max-w-5xl w-full p-0 overflow-hidden">
+     <div class="px-6 pt-6 pb-4 border-b border-base-300">
+      <div class="flex justify-between items-start gap-4">
+       <div>
+        <h3 class="text-2xl font-bold mb-2">
+         Purchase Credits
+        </h3>
+        <p class="text-sm text-base-content/60">
+         Buy credits to power your AI coding tools. Credits never expire.
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="p-6 bg-base-100">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+       <div class="border border-base-300 rounded-xl p-6 bg-base-100 hover:border-primary/50 hover:shadow-lg transition-all">
+        <div class="text-center mb-4">
+         <div class="badge badge-neutral badge-sm mb-3">
+          Starter
+         </div>
+         <div class="mb-2">
+          <span class="text-4xl font-bold text-primary">
+           100
+          </span>
+          <span class="text-base-content/60 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="text-2xl font-bold mb-1">
+          $10
+         </div>
+         <p class="text-xs text-base-content/60">
+          $0.10 per credit
+         </p>
+        </div>
+        <ul class="space-y-2 mb-6">
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           100 AI requests
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Credits never expire
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           All AI models included
+          </span>
+         </li>
+        </ul>
+        <button class="btn btn-primary w-full purchase-credit-btn">
+         Purchase $10
+        </button>
+       </div>
+       <div class="border-2 border-primary rounded-xl p-6 bg-gradient-to-br from-primary/5 to-secondary/5 hover:shadow-xl transition-all relative">
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+         <span class="badge badge-primary">
+          Most Popular
+         </span>
+        </div>
+        <div class="text-center mb-4 mt-2">
+         <div class="badge badge-primary badge-sm mb-3">
+          Best Value
+         </div>
+         <div class="mb-2">
+          <span class="text-4xl font-bold text-primary">
+           400
+          </span>
+          <span class="text-base-content/60 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="text-2xl font-bold mb-1">
+          $25
+         </div>
+         <p class="text-xs text-success font-semibold">
+          $0.0625 per credit • Save 37.5%
+         </p>
+        </div>
+        <ul class="space-y-2 mb-6">
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           400 AI requests
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Credits never expire
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           All AI models included
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Priority support
+          </span>
+         </li>
+        </ul>
+        <button class="btn btn-primary w-full purchase-credit-btn">
+         Purchase $25
+        </button>
+       </div>
+       <div class="border border-base-300 rounded-xl p-6 bg-base-100 hover:border-primary/50 hover:shadow-lg transition-all">
+        <div class="text-center mb-4">
+         <div class="badge badge-secondary badge-sm mb-3">
+          Pro
+         </div>
+         <div class="mb-2">
+          <span class="text-4xl font-bold text-primary">
+           2000
+          </span>
+          <span class="text-base-content/60 ml-1">
+           credits
+          </span>
+         </div>
+         <div class="text-2xl font-bold mb-1">
+          $100
+         </div>
+         <p class="text-xs text-success font-semibold">
+          $0.05 per credit • Save 50%
+         </p>
+        </div>
+        <ul class="space-y-2 mb-6">
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           2000 AI requests
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Credits never expire
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           All AI models included
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Priority support
+          </span>
+         </li>
+         <li class="flex items-start gap-2 text-sm">
+          <span>
+           Best value for teams
+          </span>
+         </li>
+        </ul>
+        <button class="btn btn-primary w-full purchase-credit-btn">
+         Purchase $100
+        </button>
+       </div>
+      </div>
+      <div class="pt-6 border-t border-base-300">
+       <div class="flex flex-wrap items-center justify-center gap-6 text-sm text-base-content/60">
+        <div class="flex items-center gap-2">
+         <span>
+          Secure payment via LemonSqueezy
+         </span>
+        </div>
+        <div class="flex items-center gap-2">
+         <span>
+          Credits never expire
+         </span>
+        </div>
+        <div class="flex items-center gap-2">
+         <span>
+          All major cards accepted
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="mt-6 pt-6 border-t border-base-300">
+       <h4 class="font-semibold mb-4 text-center">
+        Frequently Asked Questions
+       </h4>
+       <div class="grid md:grid-cols-2 gap-4 text-sm">
+        <div>
+         <p class="font-medium mb-1">
+          How do credits work?
+         </p>
+         <p class="text-base-content/70">
+          Each AI request (conversion, generation, debugging, etc.) costs 1 credit. Simple and transparent.
+         </p>
+        </div>
+        <div>
+         <p class="font-medium mb-1">
+          Do credits expire?
+         </p>
+         <p class="text-base-content/70">
+          No! Your credits never expire. Use them at your own pace.
+         </p>
+        </div>
+        <div>
+         <p class="font-medium mb-1">
+          What if I run out of credits?
+         </p>
+         <p class="text-base-content/70">
+          Every new user gets 5 free lifetime credits. Once used, purchase credits to continue - they never expire!
+         </p>
+        </div>
+        <div>
+         <p class="font-medium mb-1">
+          Can I buy more credits later?
+         </p>
+         <p class="text-base-content/70">
+          Yes! You can purchase additional credits anytime and they're added to your balance instantly.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="mt-5 pt-4 border-t border-base-300 text-center">
+       <a class="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary/80 transition-colors" href="/pricing">
+        <span>
+         View full pricing page for more details
+        </span>
+       </a>
+      </div>
+     </div>
+    </div>
+    <form class="modal-backdrop" method="dialog">
+     <button>
+      close
+     </button>
+    </form>
+   </dialog>
+   <div class="google-auto-placed">
+    <ins class="adsbygoogle adsbygoogle-noablate">
+     <div id="aswift_1_host">
+      <div>
+       <div class="goog-rtopics">
+        Discover more
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Artificial intelligence
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Developer tools software
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Coding bootcamps online
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Language Conversion Service
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Mobile app development kits
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         debug
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         AI Code Formatter
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Cloud computing services
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         AI Debugger Software
+        </span>
+       </div>
+       <div class="google-anno-skip google-anno-sc">
+        <span>
+         Data science tools
+        </span>
+       </div>
+      </div>
+     </div>
+    </ins>
+   </div>
+   <footer class="bg-ink-100 border-t border-ink-200 mt-20" id="footer-tools">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+     <div class="mb-12 text-center">
+      <h2 class="text-xl font-semibold mb-6 text-ink-900">
+       Browse Tools by Category
+      </h2>
+      <div class="flex flex-wrap justify-center gap-3 mb-6">
+       <a class="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 border border-ink-300 hover:border-ink-400 rounded-lg transition-colors underline hover:no-underline" href="/tools/converters">
+        Converters (50+)
+       </a>
+       <a class="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 border border-ink-300 hover:border-ink-400 rounded-lg transition-colors underline hover:no-underline" href="/tools/generators">
+        Generators (70+)
+       </a>
+       <a class="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 border border-ink-300 hover:border-ink-400 rounded-lg transition-colors underline hover:no-underline" href="/tools/formatters">
+        Formatters (15+)
+       </a>
+       <a class="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 border border-ink-300 hover:border-ink-400 rounded-lg transition-colors underline hover:no-underline" href="/tools/validators">
+        Validators (10+)
+       </a>
+       <a class="px-4 py-2 text-sm font-medium text-ink-700 hover:text-ink-900 border border-ink-300 hover:border-ink-400 rounded-lg transition-colors underline hover:no-underline" href="/tools/parser">
+        Parsers (8+)
+       </a>
+      </div>
+      <a class="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-white bg-ink-900 hover:bg-ink-800 rounded-lg transition-colors" href="/tools">
+       View All Tools
+      </a>
+     </div>
+     <div class="google-auto-placed">
+      <ins class="adsbygoogle adsbygoogle-noablate">
+       <div id="aswift_2_host">
+        <div>
+         <div class="goog-rtopics">
+          Discover more
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           programming language
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Debugger
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Coding bootcamps online
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Web development frameworks
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Code Review Service
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Code Tools Platform
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Cybersecurity for developers
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           debugger
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           Software testing services
+          </span>
+         </div>
+         <div class="google-anno-skip google-anno-sc">
+          <span>
+           AI Coder Subscription
+          </span>
+         </div>
+        </div>
+       </div>
+      </ins>
+     </div>
+     <div class="border-t border-ink-200 pt-8">
+      <div class="mb-8">
+       <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-4 text-sm text-ink-700">
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/about">
+         About
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/pricing">
+         Pricing
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/contact">
+         Contact
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/terms">
+         Terms
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/privacy">
+         Privacy
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/cancellation">
+         Refunds
+        </a>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/sitemap.xml">
+         Sitemap
+        </a>
+       </div>
+      </div>
+      <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-ink-600">
+       <div class="flex flex-col md:flex-row items-center gap-2 md:gap-4">
+        <p>
+         © 2025 Swapcode AI. All rights reserved.
+        </p>
+        <span class="hidden md:inline">
+         ·
+        </span>
+        <p>
+         Bangalore, India
+        </p>
+       </div>
+       <div class="flex items-center gap-x-4 text-ink-700">
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/alternatives/swapcode-vs-chatgpt">
+         Swapcode vs ChatGPT
+        </a>
+        <span>
+         ·
+        </span>
+        <a class="hover:text-ink-900 transition-colors underline hover:no-underline" href="/alternatives/swapcode-vs-github-copilot">
+         Swapcode vs Copilot
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <div class="fixed inset-0 bg-ink-900/50 backdrop-blur-sm z-[990] hidden items-center justify-center p-4 transition-opacity duration-300 opacity-0" id="login-popup-overlay">
+    <div class="bg-white p-0 rounded-xl shadow-xl w-full max-w-md transform transition-all duration-300 opacity-0 scale-95 overflow-hidden border border-ink-200" id="login-popup">
+     <div class="px-6 pt-6 pb-4 border-b border-ink-200">
+      <div class="flex items-center justify-between">
+       <div>
+        <h2 class="text-xl font-semibold text-ink-900">
+         Sign in to continue
+        </h2>
+        <p class="text-sm text-ink-500 mt-1">
+         Choose your preferred method
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="p-6">
+      <div class="space-y-3">
+       <button class="w-full font-medium py-3 px-4 rounded-lg border border-ink-200 bg-white hover:bg-ink-50 flex items-center justify-center gap-3 text-sm transition-colors" id="login-popup-google-button">
+        <span class="provider-text text-ink-700">
+         Continue with Google
+        </span>
+       </button>
+       <button class="w-full font-medium py-3 px-4 rounded-lg bg-ink-900 hover:bg-ink-800 text-white flex items-center justify-center gap-3 text-sm transition-colors" id="login-popup-github-button">
+        <span class="provider-text">
+         Continue with GitHub
+        </span>
+       </button>
+       <button class="w-full font-medium py-3 px-4 rounded-lg border border-ink-200 bg-white hover:bg-ink-50 flex items-center justify-center gap-3 text-sm transition-colors" id="login-popup-twitter-button">
+        <span class="provider-text text-ink-700">
+         Continue with Twitter
+        </span>
+       </button>
+      </div>
+      <div class="mt-6 pt-6 border-t border-ink-200 space-y-3">
+       <div class="flex items-center gap-2.5 text-sm text-ink-500">
+        <span>
+         Free to start · No credit card required
+        </span>
+       </div>
+       <div class="flex items-center gap-2.5 text-sm text-ink-500">
+        <span>
+         Secure authentication
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div id="google-anno-sa">
+    <span>
+     <span class="google-anno-sa-qtx google-anno-skip">
+      Mobile app development kits
+     </span>
+    </span>
+   </div>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ZenMic - AI Podcast Generator</title>
+</head>
+<body>
+  <body>
+   <div class="bg-primary text-white py-2 text-center relative hidden">
+    <p class="text-sm">
+     💡 Need a SaaS built? I can help!
+     <a class="px-2 bg-light text-primary xunderline" href="mailto:dharmmotyar@gmail.com">
+      Hire me
+     </a>
+    </p>
+    <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white">
+     ×
+    </button>
+   </div>
+   <nav class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 border-b border-accent/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between h-20">
+      <div class="flex items-center">
+       <a href="/">
+        <span class="ml-3 text-2xl font-bold">
+         🎙️ ZenMic
+        </span>
+       </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+       <a class="text-dark hover:text-primary" href="#pricing">
+        Pricing
+       </a>
+       <a class="text-dark hover:text-primary" href="/docs">
+        API
+       </a>
+       <div class="flex items-center space-x-4">
+        <a class="text-primary hover:text-primary/80" href="/dashboard">
+         Log in
+        </a>
+        <a class="bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition duration-300 shadow-lg shadow-primary/20" href="/dashboard">
+         Get Started
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <div class="mobile-menu" id="mobileMenu">
+    <div class="p-4 border-b">
+     <div class="flex justify-between items-center">
+      <span class="text-xl font-bold gradient-text">
+       Menu
+      </span>
+     </div>
+    </div>
+    <div class="p-4">
+     <div class="space-y-4">
+      <a class="block py-2 text-dark" href="/docs">
+       API
+      </a>
+      <div class="pt-4 space-y-4">
+       <a class="w-full text-center text-primary hover:text-primary/80 py-2" href="/dashboard">
+        Log in
+       </a>
+      </div>
+      <div class="pt-4 space-y-4">
+       <a class="w-full bg-primary text-white px-6 py-2 rounded-lg hover:bg-secondary transition duration-300" href="/dashboard">
+        Get Started
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <main>
+    <section class="relative overflow-hidden bg-gradient-to-b from-white to-light pt-20 pb-40">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center max-w-4xl mx-auto">
+       <h1 class="text-4xl md:text-6xl font-bold text-dark mb-8 md:leading-tight">
+        Generate  Podcast Script and Audio with
+        <span class="gradient-text">
+         AI
+        </span>
+       </h1>
+       <p class="md:text-xl text-dark/70 mb-12 max-w-3xl mx-auto">
+        Transform any text into professional podcast content in minutes. Generate natural-sounding voices and engaging scripts with our advanced AI technology.
+       </p>
+       <div class="flex flex-col sm:flex-row justify-center gap-6">
+        <a class="bg-primary text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-secondary transition duration-300 shadow-xl shadow-primary/20 transform hover:-translate-y-1" href="/dashboard">
+         Start Creating Now
+        </a>
+        <a class="group border-2 border-primary text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary hover:text-white transition duration-300 flex items-center justify-center" href="/explore">
+         Check Samples
+        </a>
+       </div>
+       <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-lg">
+         <div class="text-4xl font-bold text-primary mb-2">
+          600+
+         </div>
+         <div class="text-dark/70">
+          Active Users
+         </div>
+        </div>
+        <div class="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-lg">
+         <div class="text-4xl font-bold text-primary mb-2">
+          5k+
+         </div>
+         <div class="text-dark/70">
+          Podcasts Created
+         </div>
+        </div>
+        <div class="bg-white/50 backdrop-blur-lg rounded-2xl p-6 shadow-lg">
+         <div class="text-4xl font-bold text-primary mb-2">
+          4.9/5
+         </div>
+         <div class="text-dark/70">
+          User Rating
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="hidden py-5 bg-light" id="explore">
+    </section>
+    <section class="py-20 bg-white">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-dark mb-16">
+       Transform Your Content with
+       <span class="gradient-text">
+        Powerful Features
+       </span>
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div class="group bg-light hover:bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-xl">
+        <h3 class="text-xl font-bold text-dark mb-4">
+         AI Script Generation
+        </h3>
+        <p class="text-dark/70 mb-6">
+         Convert any text or topic into engaging podcast scripts optimized for your audience.
+        </p>
+        <a class="text-primary hover:text-secondary flex items-center hidden" href="#">
+         Learn more
+        </a>
+       </div>
+       <div class="group bg-light hover:bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-xl">
+        <h3 class="text-xl font-bold text-dark mb-4">
+         Natural Voice Synthesis
+        </h3>
+        <p class="text-dark/70 mb-6">
+         We use AI voices that sound incredibly natural and engaging.
+        </p>
+        <a class="text-primary hover:text-secondary flex items-center hidden" href="#">
+         Learn more
+        </a>
+       </div>
+       <div class="group bg-light hover:bg-white p-8 rounded-2xl transition-all duration-300 hover:shadow-xl">
+        <h3 class="text-xl font-bold text-dark mb-4">
+         One-Click Export
+        </h3>
+        <p class="text-dark/70 mb-6">
+         Export your podcast in single click in format ready for distribution.
+        </p>
+        <a class="text-primary hover:text-secondary flex items-center hidden" href="#">
+         Learn more
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-light">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-dark mb-16">
+       How It Works
+      </h2>
+      <div class="relative">
+       <div class="grid md:grid-cols-3 gap-12">
+        <div class="relative bg-white p-8 rounded-2xl shadow-lg">
+         <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+          1
+         </div>
+         <h3 class="text-xl font-bold text-dark mb-4 mt-8 text-center">
+          Input Your Content
+         </h3>
+         <p class="text-dark/70 text-center">
+          Paste your text or describe your topic. Our AI understands and adapts to your needs.
+         </p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-lg">
+         <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+          2
+         </div>
+         <h3 class="text-xl font-bold text-dark mb-4 mt-8 text-center">
+          Customize &amp; Preview
+         </h3>
+         <p class="text-dark/70 text-center">
+          Adjust the script before finalizing and submitting it for audio conversion.
+         </p>
+        </div>
+        <div class="relative bg-white p-8 rounded-2xl shadow-lg">
+         <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-primary text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold">
+          3
+         </div>
+         <h3 class="text-xl font-bold text-dark mb-4 mt-8 text-center">
+          Export &amp; Share
+         </h3>
+         <p class="text-dark/70 text-center">
+          Download your podcast audi and share it to platforms.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-white overflow-hidden">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 hidden">
+      <h2 class="text-4xl font-bold text-center text-dark mb-16">
+       Loved by Content Creators
+      </h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div class="bg-light p-8 rounded-2xl">
+        <div class="flex items-center mb-6">
+         <div class="w-12 h-12 bg-primary/20 rounded-full flex items-center justify-center">
+          <span class="text-xl font-bold text-primary">
+           JD
+          </span>
+         </div>
+         <div class="ml-4">
+          <h4 class="font-bold text-dark">
+           John Doe
+          </h4>
+          <p class="text-dark/60 text-sm">
+           Content Creator
+          </p>
+         </div>
+        </div>
+        <p class="text-dark/80">
+         "ZenMic has revolutionized my content creation process. I can now turn my blog posts into engaging podcasts in minutes!"
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-light" id="pricing">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center text-dark mb-16">
+       Simple, Transparent Pricing
+      </h2>
+      <div class="flex justify-center">
+       <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform scale-105 w-full max-w-2xl relative">
+        <div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 rounded-bl-lg text-sm font-semibold">
+         Limited Seats
+        </div>
+        <div class="p-8">
+         <h3 class="text-2xl font-bold text-dark mb-4">
+          Early Adopter Plan
+         </h3>
+         <div class="flex items-baseline mb-8">
+          <span class="text-4xl font-bold text-dark">
+           $39
+          </span>
+          <span class="text-dark/60 ml-2">
+           /year
+          </span>
+         </div>
+         <ul class="space-y-4 mb-8">
+          <li class="flex items-center">
+           <span class="ml-2 text-dark/80">
+            10 episodes /month
+           </span>
+          </li>
+          <li class="flex items-center">
+           <span class="ml-2 text-dark/80">
+            Email Support
+           </span>
+          </li>
+          <li class="flex items-center">
+           <span class="ml-2 text-dark/80">
+            First Access to New Features
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="p-8 bg-light">
+         <a class="w-full bg-primary text-white p-3 rounded-lg hover:bg-secondary transition duration-300" href="https://motyar.lemonsqueezy.com/buy/2e4f5758-d07d-434d-88ce-dc4ace301dc7" target="_blank">
+          Get Started
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white hidden">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-8">
+       Ready to Transform Your Content?
+      </h2>
+      <p class="text-xl mb-12 opacity-90">
+       Join hundreds of content creators who are already using ZenMic to create amazing podcasts.
+      </p>
+      <a class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-light transition duration-300" href="/login">
+       Start Generating
+      </a>
+     </div>
+    </section>
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-8">
+       Ready to Transform Your Content?
+      </h2>
+      <p class="text-xl mb-12 opacity-90">
+       Join hundreds of content creators who are already using ZenMic to create amazing podcasts.
+      </p>
+      <a class="bg-white text-primary px-8 py-4 rounded-lg text-lg font-semibold hover:bg-light transition duration-300" href="/login">
+       Start Generating
+      </a>
+     </div>
+    </section>
+    <footer class="bg-dark text-white pt-20 pb-10">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 mb-16">
+       <div class="col-span-2">
+        <div class="flex items-center mb-6">
+         <span class="text-xl font-bold">
+          🎙️ ZenMic
+         </span>
+        </div>
+        <p class="text-white/60 mb-6">
+         Transform any text into professional podcast content with AI magic.
+        </p>
+       </div>
+       <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">
+         Tools
+        </h3>
+        <ul>
+         <li>
+          <a class="text-white/60 hover:text-white transition duration-300" href="/tool/ai_story_generator/">
+           AI Story Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-white/60 hover:text-white transition duration-300" href="/tool/podcast_name_generator/">
+           Podcast Name Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-white/60 hover:text-white transition duration-300" href="/tool/podcast_cover_art/">
+           Podcast Cover Generator
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">
+         Friends
+        </h3>
+        <ul>
+         <li>
+          <a class="text-white/60 hover:text-white transition duration-300" href="https://dubninja.com" target="_blank">
+           DubNinja.com – Powerful Free Online Tools
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="col-span-1">
+        <h3 class="text-lg font-semibold mb-4">
+         Contact
+        </h3>
+        <ul>
+         <li>
+          <a class="text-white/60 hover:text-white transition duration-300" href="mailto:info@zenmic.com">
+           info@zenmic.com
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </main>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -m crawler.html_parser:*)",
+      "Bash(cat:*)",
+      "Bash(python3:*)",
+      "Bash(wc:*)",
+      "Bash(find:*)",
+      "Bash(dir:*)",
+      "Bash(python main.py:*)",
+      "Bash(./venv/Scripts/python.exe:*)",
+      "Bash(ls:*)",
+      "Bash(grep:*)",
+      "Bash(tree:*)",
+      "Bash(.venvScriptspython.exe test_openai.py)",
+      "Bash(D:\\\\project\\\\sass_analysis\\\\backend\\\\venv\\\\Scripts\\\\python.exe:*)",
+      "Bash(D:projectsass_analysisbackendvenvScriptspython.exe main.py analyze landing --all --skip-analyzed)",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\backend && venv\\\\Scripts\\\\python.exe main.py analyze landing --all --skip-analyzed\")",
+      "Skill(frontend-design)",
+      "Bash(python -c:*)",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\backend && venv\\\\Scripts\\\\python.exe -c \"\"from crawler.html_parser import parse_html_file; data = parse_html_file\\(''data/html_snapshots/ai-billion.html''\\); print\\(''Name:'', data.get\\(''name''\\)\\); print\\(''Founded:'', data.get\\(''founded''\\)\\); print\\(''Country:'', data.get\\(''country''\\)\\); print\\(''Country Code:'', data.get\\(''country_code''\\)\\); print\\(''Category:'', data.get\\(''category''\\)\\)\"\"\")",
+      "Bash(powershell -Command:*)",
+      "Bash(npm install:*)",
+      "Bash(cd:*)",
+      "Bash(pnpm add:*)",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && pnpm add next-themes\")",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && dir src\\\\components\\\\ui\\\\Card.tsx\")",
+      "mcp__context7__resolve-library-id",
+      "mcp__context7__get-library-docs"
+    ]
+  }
+}

@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VerifyForge - Email Validation API for Developers</title>
+</head>
+<body>
+  <body>
+   <div class="flex min-h-screen flex-col">
+    <div class="relative bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 text-white">
+     <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between gap-4">
+       <div class="flex flex-1 flex-col items-center gap-2 sm:flex-row sm:justify-center sm:gap-4">
+        <div class="flex items-center gap-2">
+         <span class="rounded-full bg-white/20 px-3 py-1 text-xs font-bold uppercase tracking-wider">
+          Black Friday 2025
+         </span>
+         <span class="text-center text-sm font-semibold sm:text-base">
+          Get 30% OFF with code
+          <span class="font-mono font-bold">
+           BF2025
+          </span>
+         </span>
+        </div>
+        <div class="flex items-center gap-2 text-xs sm:text-sm">
+         <span class="hidden sm:inline">
+          Ends in:
+         </span>
+         <div class="flex gap-1">
+          <div class="rounded bg-white/20 px-2 py-1 font-mono font-bold">
+           00d
+          </div>
+          <div class="rounded bg-white/20 px-2 py-1 font-mono font-bold">
+           00h
+          </div>
+          <div class="rounded bg-white/20 px-2 py-1 font-mono font-bold">
+           00m
+          </div>
+          <div class="rounded bg-white/20 px-2 py-1 font-mono font-bold">
+           00s
+          </div>
+         </div>
+        </div>
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 bg-white text-red-600 hover:bg-white/90" href="/pricing">
+         Claim Deal
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <header class="border-b sticky top-0 bg-background z-40">
+     <div class="container mx-auto px-4 py-4">
+      <div class="flex items-center justify-between">
+       <a class="flex items-center gap-3" href="/">
+        <div class="relative h-10 w-10">
+         <img alt="VerifyForge" class="object-contain" src="/_next/image?url=%2Flogo%2FVerifyForgeLight.png&amp;w=3840&amp;q=75"/>
+        </div>
+        <span class="text-xl font-bold">
+         VerifyForge
+        </span>
+       </a>
+       <nav class="hidden md:flex items-center gap-6">
+        <a class="text-sm hover:underline" href="/api-docs">
+         Docs
+        </a>
+        <a class="text-sm hover:underline" href="/pricing">
+         Pricing
+        </a>
+        <a class="text-sm hover:underline" href="/login">
+         Sign In
+        </a>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9">
+         <span class="sr-only">
+          Toggle theme
+         </span>
+        </button>
+       </nav>
+      </div>
+     </div>
+    </header>
+    <main class="flex-1">
+     <section class="relative overflow-hidden border-b bg-gradient-to-b from-background via-background to-muted/20">
+      <div class="container relative mx-auto px-4 py-12 sm:py-16 lg:py-20">
+       <div class="mx-auto max-w-4xl text-center">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-1.5 text-sm shadow-sm">
+         <span class="text-muted-foreground">
+          Trusted by 1000+ developers worldwide
+         </span>
+        </div>
+        <h1 class="mb-6 bg-gradient-to-br from-foreground to-foreground/70 bg-clip-text text-5xl font-bold tracking-tight text-transparent sm:text-6xl lg:text-7xl">
+         Stop Losing Revenue to
+         <span class="bg-gradient-to-r from-primary to-primary/60 bg-clip-text">
+          Invalid Emails
+         </span>
+        </h1>
+        <p class="mb-10 text-lg text-muted-foreground sm:text-xl lg:text-2xl">
+         Achieve 99%+ email deliverability with our hybrid Email Validation API.
+         <br class="hidden sm:block"/>
+         Real-time verification in under 2 seconds.
+        </p>
+        <div class="mb-12">
+         <div class="mx-auto max-w-2xl">
+          <div class="relative">
+           <div class="flex gap-2">
+            <div class="relative flex-1">
+             <input class="file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input w-full min-w-0 rounded-md border bg-transparent px-3 py-1 transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-14 pr-4 text-base shadow-lg" placeholder="Enter email to validate (e.g., user@example.com)" type="email" value=""/>
+            </div>
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 rounded-md px-6 has-[&gt;svg]:px-4 h-14 min-w-[120px] shadow-lg">
+             Validate
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mb-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+         <div class="flex items-center gap-2">
+          <span>
+           99%+ Accuracy
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span>
+           &lt; 2s Response
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span>
+           Developer-First API
+          </span>
+         </div>
+        </div>
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[&gt;svg]:px-4 group min-w-[200px]" href="/login">
+          Start Free - 250 Credits
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 min-w-[200px]" href="/api-docs">
+          View Documentation
+         </a>
+        </div>
+        <p class="mt-4 text-xs text-muted-foreground">
+         No credit card required • Start in 10 seconds
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="border-b bg-muted/30">
+      <div class="container mx-auto px-4 py-8">
+       <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12">
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+         <span>
+          Secure &amp; Encrypted
+         </span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+         <span>
+          Sub-2s Response Time
+         </span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+         <span>
+          Developer-First API
+         </span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+         <span>
+          99%+ Accuracy
+         </span>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="border-b bg-background py-20">
+      <div class="container mx-auto px-4">
+       <div class="mx-auto max-w-5xl">
+        <div class="mb-16 text-center">
+         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Start Validating in 10 Seconds
+         </h2>
+         <p class="text-lg text-muted-foreground">
+          Create your account instantly. No complex setup required.
+         </p>
+        </div>
+        <div class="grid gap-8 md:grid-cols-3">
+         <div class="relative">
+          <div class="relative flex flex-col items-center text-center">
+           <div class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+            1
+           </div>
+           <h3 class="mb-2 text-xl font-semibold">
+            Sign Up &amp; Get API Key
+           </h3>
+           <p class="text-muted-foreground">
+            Create your account in 10 seconds. Get 250 free credits and your API key instantly.
+           </p>
+          </div>
+         </div>
+         <div class="relative">
+          <div class="relative flex flex-col items-center text-center">
+           <div class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+            2
+           </div>
+           <h3 class="mb-2 text-xl font-semibold">
+            Integrate in Minutes
+           </h3>
+           <p class="text-muted-foreground">
+            Use our simple REST API or SDKs for Python, TypeScript, and more. One line of code to validate.
+           </p>
+          </div>
+         </div>
+         <div class="relative">
+          <div class="relative flex flex-col items-center text-center">
+           <div class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+            3
+           </div>
+           <h3 class="mb-2 text-xl font-semibold">
+            Get Instant Results
+           </h3>
+           <p class="text-muted-foreground">
+            Receive comprehensive validation data including syntax, MX, SMTP, disposable detection, and more.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="border-b bg-muted/20 py-20">
+      <div class="container mx-auto px-4">
+       <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Everything You Need to Verify Emails
+         </h2>
+         <p class="text-lg text-muted-foreground">
+          Powerful features designed for accuracy, speed, and developer experience.
+         </p>
+        </div>
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Hybrid Validation
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Combines syntax, MX records, SMTP verification, and disposable detection for maximum accuracy.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Blazing Fast
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Average response time under 2 seconds. Validate up to 100 emails in a single bulk request.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Developer-First API
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Simple REST API with comprehensive SDKs for Python, TypeScript, and more. Built by developers, for developers.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Smart Caching
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Intelligent caching reduces costs and improves speed without sacrificing accuracy.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Secure &amp; Private
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Enterprise-grade security with encryption at rest and in transit. Your data is never shared with third parties.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Transparent Results
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Detailed validation reports with reachability scores, MX records, SMTP analysis, and more.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Bulk Validation
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Upload CSV files or use our API to validate up to 100 emails per request with deduplication.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Global Infrastructure
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           99.9% uptime with servers across the globe. Fast validation no matter where you are.
+          </p>
+         </div>
+         <div class="group rounded-lg border bg-card p-6 transition-all hover:shadow-lg">
+          <div class="mb-4 flex items-center gap-3">
+           <h3 class="text-lg font-semibold">
+            Easy Integration
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Works with your favorite platforms: HubSpot, Mailchimp, ActiveCampaign, and 50+ more.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="border-b bg-background py-20">
+      <div class="container mx-auto px-4">
+       <div class="mx-auto max-w-6xl">
+        <div class="mb-12 text-center">
+         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Built for Developers
+         </h2>
+         <p class="text-lg text-muted-foreground">
+          Simple, powerful API with comprehensive SDKs. Start validating in minutes.
+         </p>
+        </div>
+        <div class="rounded-lg border bg-card shadow-lg">
+         <div class="flex flex-col gap-2">
+          <div class="border-b bg-muted/30 px-4">
+           <div class="text-muted-foreground inline-flex items-center h-auto w-full justify-start rounded-none border-0 bg-transparent p-0">
+            <button class="dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 border px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 cursor-pointer rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none" id="radix-«R1arlcdb»-trigger-curl" type="button">
+             cURL
+            </button>
+            <button class="dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 border px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 cursor-pointer rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none" id="radix-«R1arlcdb»-trigger-python" type="button">
+             Python
+            </button>
+            <button class="dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 border px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 cursor-pointer rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none" id="radix-«R1arlcdb»-trigger-typescript" type="button">
+             TypeScript
+            </button>
+            <button class="dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 border px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4 cursor-pointer rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none" id="radix-«R1arlcdb»-trigger-javascript" type="button">
+             JavaScript
+            </button>
+           </div>
+          </div>
+          <div class="flex-1 outline-none m-0 rounded-none border-0" id="radix-«R1arlcdb»-content-curl">
+           <pre class="overflow-x-auto bg-slate-50 p-4 sm:p-6 text-slate-900 dark:bg-slate-950 dark:text-slate-50"><code class="text-xs sm:text-sm font-mono leading-relaxed block"><div><span class="text-green-700 dark:text-green-400"># Validate a single email</span></div><div><span class="text-purple-700 dark:text-purple-400 font-semibold">curl</span><span> -X GET "https://verifyforge.com/api/validate?email=user@example.com" \</span></div><div><span class="text-cyan-700 dark:text-cyan-400">-H</span><span> "X</span><span class="text-cyan-700 dark:text-cyan-400">-API</span><span class="text-cyan-700 dark:text-cyan-400">-Key</span><span>: your_api_key"</span></div><div><span class="text-green-700 dark:text-green-400"># Response</span></div><div><span>{</span></div><div><span class="text-amber-700 dark:text-amber-400">"success"</span><span>: true,</span></div><div><span class="text-amber-700 dark:text-amber-400">"data"</span><span>: {</span></div><div><span class="text-amber-700 dark:text-amber-400">"email"</span><span>: </span><span class="text-amber-700 dark:text-amber-400">"user@example.com"</span><span>,</span></div><div><span class="text-amber-700 dark:text-amber-400">"isValid"</span><span>: true,</span></div><div><span class="text-amber-700 dark:text-amber-400">"reachability"</span><span>: </span><span class="text-amber-700 dark:text-amber-400">"safe"</span><span>,</span></div><div><span class="text-amber-700 dark:text-amber-400">"disposable"</span><span>: false,</span></div><div><span class="text-amber-700 dark:text-amber-400">"roleAccount"</span><span>: false</span></div><div><span>  },</span></div><div><span class="text-amber-700 dark:text-amber-400">"creditsUsed"</span><span>: 1,</span></div><div><span class="text-amber-700 dark:text-amber-400">"remainingCredits"</span><span>: 249</span></div><div><span>}</span></div></code></pre>
+          </div>
+         </div>
+        </div>
+        <div class="mt-12 text-center">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 group" href="/api-docs">
+          View Full Documentation
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="border-b bg-muted/20 py-20">
+      <div class="container mx-auto px-4">
+       <div class="mx-auto max-w-6xl">
+        <div class="mb-16 text-center">
+         <h2 class="mb-4 text-3xl font-bold tracking-tight sm:text-4xl">
+          Simple, Transparent Pricing
+         </h2>
+         <p class="text-lg text-muted-foreground">
+          Pay only for what you use. Credits never expire.
+         </p>
+        </div>
+        <div class="grid gap-8 lg:grid-cols-3">
+         <div class="relative rounded-lg border bg-card p-8 shadow-sm transition-all hover:shadow-md">
+          <div class="mb-6">
+           <h3 class="mb-2 text-xl font-semibold">
+            Free
+           </h3>
+           <div class="mb-2 flex items-baseline">
+            <span class="text-4xl font-bold">
+             $0
+            </span>
+            <span class="ml-1 text-muted-foreground">
+             /month
+            </span>
+           </div>
+           <p class="text-sm text-muted-foreground">
+            Perfect for trying out VerifyForge
+           </p>
+           <div class="mt-2 inline-block rounded-md bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            250 credits/month
+           </div>
+          </div>
+          <ul class="mb-8 space-y-3">
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             250 free validations/month
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Single email validation
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Bulk validation (up to 100)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Basic API access
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Community support
+            </span>
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full variant-outline" href="/login">
+           Start Free
+          </a>
+         </div>
+         <div class="relative rounded-lg border bg-card p-8 shadow-sm transition-all border-primary shadow-lg ring-2 ring-primary/20">
+          <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-primary text-primary-foreground [a&amp;]:hover:bg-primary/90 absolute -top-3 left-1/2 -translate-x-1/2">
+           Most Popular
+          </span>
+          <div class="mb-6">
+           <h3 class="mb-2 text-xl font-semibold">
+            Pro
+           </h3>
+           <div class="mb-2 flex items-baseline">
+            <span class="text-4xl font-bold">
+             $29
+            </span>
+            <span class="ml-1 text-muted-foreground">
+             /month
+            </span>
+           </div>
+           <p class="text-sm text-muted-foreground">
+            For professional developers
+           </p>
+           <div class="mt-2 inline-block rounded-md bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            5K credits/month
+           </div>
+          </div>
+          <ul class="mb-8 space-y-3">
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             5,000 monthly credits
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Real-time email validation
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Bulk validation (100 per request)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Full API access
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Advanced validation checks
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Priority email support
+            </span>
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full" href="/login">
+           Get Started
+          </a>
+         </div>
+         <div class="relative rounded-lg border bg-card p-8 shadow-sm transition-all hover:shadow-md">
+          <div class="mb-6">
+           <h3 class="mb-2 text-xl font-semibold">
+            Premium
+           </h3>
+           <div class="mb-2 flex items-baseline">
+            <span class="text-4xl font-bold">
+             $49
+            </span>
+            <span class="ml-1 text-muted-foreground">
+             /month
+            </span>
+           </div>
+           <p class="text-sm text-muted-foreground">
+            For growing teams
+           </p>
+           <div class="mt-2 inline-block rounded-md bg-primary/10 px-3 py-1 text-sm font-medium text-primary">
+            10K credits/month
+           </div>
+          </div>
+          <ul class="mb-8 space-y-3">
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             10,000 monthly credits
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Everything in Pro
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Bulk validation (100 per request)
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Webhook notifications
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Validation history &amp; exports
+            </span>
+           </li>
+           <li class="flex items-start gap-2">
+            <span class="text-sm text-muted-foreground">
+             Dedicated account manager
+            </span>
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full variant-outline" href="/login">
+           Get Started
+          </a>
+         </div>
+        </div>
+        <div class="mt-12 text-center">
+         <p class="mb-4 text-sm text-muted-foreground">
+          Need more credits? View our full pricing page for all options.
+         </p>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary underline-offset-4 hover:underline h-9 px-4 py-2 has-[&gt;svg]:px-3 group" href="/pricing">
+          View All Pricing Options
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="relative overflow-hidden bg-gradient-to-br from-primary/10 via-primary/5 to-background py-20">
+      <div class="container relative mx-auto px-4">
+       <div class="mx-auto max-w-3xl text-center">
+        <div class="mb-6 inline-flex items-center gap-2 rounded-full border bg-background px-4 py-2 shadow-sm">
+         <span class="text-sm font-medium">
+          Start validating emails today
+         </span>
+        </div>
+        <h2 class="mb-6 text-4xl font-bold tracking-tight sm:text-5xl">
+         Ready to Stop Losing Revenue?
+        </h2>
+        <p class="mb-10 text-lg text-muted-foreground sm:text-xl">
+         Join 1000+ developers who trust VerifyForge to validate their emails and improve deliverability. Create your account in 10 seconds with 250 free credits.
+        </p>
+        <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[&gt;svg]:px-4 group min-w-[200px]" href="/login">
+          Start Free - 250 Credits
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all cursor-pointer disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 min-w-[200px]" href="/api-docs">
+          View Documentation
+         </a>
+        </div>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-muted-foreground">
+         <div class="flex items-center gap-1">
+          <span>
+           ✓
+          </span>
+          <span>
+           No credit card required
+          </span>
+         </div>
+         <div class="flex items-center gap-1">
+          <span>
+           ✓
+          </span>
+          <span>
+           250 free credits
+          </span>
+         </div>
+         <div class="flex items-center gap-1">
+          <span>
+           ✓
+          </span>
+          <span>
+           Cancel anytime
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="border-t mt-12">
+     <div class="container mx-auto px-4 py-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+       <div class="space-y-3">
+        <a class="flex items-center gap-3 mb-2" href="/">
+         <div class="relative h-8 w-8">
+          <img alt="VerifyForge" class="object-contain" src="/_next/image?url=%2Flogo%2FVerifyForgeLight.png&amp;w=3840&amp;q=75"/>
+         </div>
+         <span class="text-base font-bold">
+          VerifyForge
+         </span>
+        </a>
+        <p class="text-sm text-muted-foreground">
+         Professional email verification API with transparent results and 99%+ accuracy. Hybrid validation with detailed breakdowns of every check performed.
+        </p>
+       </div>
+       <div class="space-y-3">
+        <h4 class="font-semibold text-sm">
+         Product
+        </h4>
+        <ul class="space-y-2 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/api">
+           API
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/widget">
+           Widget
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/integrations">
+           Integrations
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/tools">
+           Free Tools
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/about">
+           About
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/blog">
+           Blog
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/changelog">
+           Changelog
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/brand">
+           Brand
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-3">
+        <h4 class="font-semibold text-sm">
+         Resources
+        </h4>
+        <ul class="space-y-2 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/api-docs">
+           API Docs
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/docs">
+           How-to Docs
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-3">
+        <h4 class="font-semibold text-sm">
+         Comparisons
+        </h4>
+        <ul class="space-y-2 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/zerobounce">
+           vs ZeroBounce
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/neverbounce">
+           vs NeverBounce
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/hunter">
+           vs Hunter.io
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/kickbox">
+           vs Kickbox
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/briteverify">
+           vs BriteVerify
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/clearout">
+           vs Clearout
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/verifalia">
+           vs Verifalia
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/emaillistverify">
+           vs EmailListVerify
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/mailfloss">
+           vs Mailfloss
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/compare/bounceless">
+           vs Bounceless
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-3">
+        <h4 class="font-semibold text-sm">
+         Support &amp; Legal
+        </h4>
+        <ul class="space-y-2 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/contact">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/affiliate">
+           Affiliate Program
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/terms">
+           Terms of Service
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/privacy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:underline" href="/payment-terms">
+           Payment Terms
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="mt-8 pt-8 border-t">
+       <div class="flex flex-col items-center gap-4">
+        <h4 class="font-semibold text-sm">
+         Connect With Us
+        </h4>
+       </div>
+      </div>
+      <div class="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
+       <p>
+        © 2025 VerifyForge. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

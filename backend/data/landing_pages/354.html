@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QuizWhizzer</title>
+</head>
+<body>
+  <body>
+   <div class="overflow-x-hidden min-h-screen flex flex-col">
+    <main class="flex-1">
+     <header class="bg-base-200">
+      <nav class="container flex items-center justify-between px-8 py-4 mx-auto">
+       <div class="flex lg:flex-1">
+        <a class="flex items-center gap-2 shrink-0" href="/" title="QuizWhizzer hompage">
+         <img alt="QuizWhizzer logo" class="w-8" height="32" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-light2.6f4cd335.png&amp;w=64&amp;q=75" width="32"/>
+         <span class="font-extrabold text-lg">
+          QuizWhizzer
+         </span>
+        </a>
+       </div>
+       <div class="flex lg:hidden">
+        <button class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5" type="button">
+         <span class="sr-only">
+          Open main menu
+         </span>
+        </button>
+       </div>
+       <div class="hidden lg:flex lg:justify-center lg:gap-12 lg:items-center">
+        <a class="link link-hover" href="/#pricing" title="Pricing">
+         Pricing
+        </a>
+        <a class="link link-hover" href="/#testimonials" title="Reviews">
+         Reviews
+        </a>
+        <a class="link link-hover" href="https://app.quizwhizzer.com/play" title="Student Join">
+         Student Join
+        </a>
+       </div>
+       <div class="hidden lg:flex justify-end flex-1 items-center gap-4">
+        <a class="link link-hover" href="https://app.quizwhizzer.com/login">
+         Login
+        </a>
+        <a class="btn btn-primary rounded-full shrink-button" href="https://app.quizwhizzer.com/register">
+         Get started
+        </a>
+       </div>
+      </nav>
+      <div class="relative z-50 hidden">
+       <div class="fixed inset-y-0 right-0 z-10 w-full px-8 py-4 overflow-y-auto bg-base-200 sm:max-w-sm sm:ring-1 sm:ring-neutral/10 transform origin-right transition ease-in-out duration-300">
+        <div class="flex items-center justify-between">
+         <a class="flex items-center gap-2 shrink-0" href="/" title="QuizWhizzer hompage">
+          <img alt="QuizWhizzer logo" class="w-8" height="32" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-light2.6f4cd335.png&amp;w=64&amp;q=75" width="32"/>
+          <span class="font-extrabold text-lg">
+           QuizWhizzer
+          </span>
+         </a>
+         <button class="-m-2.5 rounded-md p-2.5" type="button">
+          <span class="sr-only">
+           Close menu
+          </span>
+         </button>
+        </div>
+        <div class="flow-root mt-6">
+         <div class="py-4">
+          <div class="flex flex-col gap-y-4 items-start">
+           <a class="link link-hover" href="/#pricing" title="Pricing">
+            Pricing
+           </a>
+           <a class="link link-hover" href="/#testimonials" title="Reviews">
+            Reviews
+           </a>
+           <a class="link link-hover" href="https://app.quizwhizzer.com/play" title="Student Join">
+            Student Join
+           </a>
+          </div>
+         </div>
+         <div class="flex flex-col gap-4">
+          <a class="link link-hover text-center" href="https://app.quizwhizzer.com/login">
+           Login
+          </a>
+          <a class="btn btn-primary rounded-full shrink-button" href="https://app.quizwhizzer.com/register">
+           Get started
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <section class="max-w-7xl mx-auto bg-base-100 flex flex-col items-center justify-center gap-16 lg:gap-20 py-8 lg:py-20">
+      <div class="flex flex-col gap-10 lg:gap-14 px-8 items-center justify-center text-center lg:text-left lg:items-start">
+       <div class="w-full flex flex-col items-center gap-8">
+        <h1 class="font-extrabold text-4xl lg:text-5xl tracking-tight md:-mb-4 text-center max-w-xl animate-throwIn origin-center">
+         Engage your students with real-time quiz
+         <span class="flame text-red-600">
+          races
+         </span>
+        </h1>
+        <div class="opacity-0 animate-slideUp">
+         <p class="text-lg opacity-80 leading-relaxed text-center">
+          Get students excited while you test their knowledge.
+          <br/>
+          Race across custom maps and theme them to any subject!
+         </p>
+        </div>
+        <div class="flex flex-col gap-2 opacity-0 animate-slideUp animation-delay-75">
+         <a class="btn btn-primary btn-wide rounded-full shrink-button" href="https://app.quizwhizzer.com/register">
+          Get started
+         </a>
+        </div>
+        <a class="z-10 opacity-0 animate-slideUp animation-delay-100" href="#testimonials">
+         <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-3">
+          <div class="-space-x-5 avatar-group justy-start">
+           <div class="avatar w-12 h-12">
+            <img alt="Jen Charles" height="50" src="/_next/image?url=%2Ftestimonial-avatars%2FJen%20Charles.jpg&amp;w=128&amp;q=75" width="50"/>
+           </div>
+           <div class="avatar w-12 h-12">
+            <img alt="Ty Legge" height="50" src="/_next/image?url=%2Ftestimonial-avatars%2FTy%20Legge.jpg&amp;w=128&amp;q=75" width="50"/>
+           </div>
+           <div class="avatar w-12 h-12">
+            <img alt="Shannon Dziwanowski" height="50" src="/_next/image?url=%2Ftestimonial-avatars%2Fshannon.jpg&amp;w=128&amp;q=75" width="50"/>
+           </div>
+           <div class="avatar w-12 h-12">
+            <img alt="Heather Reynolds" height="50" src="/_next/image?url=%2Ftestimonial-avatars%2Fheather.jpg&amp;w=128&amp;q=75" width="50"/>
+           </div>
+           <div class="avatar w-12 h-12">
+            <img alt="Graham Davison" height="50" src="/_next/image?url=%2Ftestimonial-avatars%2FGraham%20Davison.jpg&amp;w=128&amp;q=75" width="50"/>
+           </div>
+          </div>
+          <div class="flex flex-col justify-center items-center md:items-start gap-1">
+           <div class="text-base text-base-content/80">
+            <span class="font-semibold text-base-content">
+             200,000
+            </span>
+            teachers quiz race
+           </div>
+          </div>
+         </div>
+        </a>
+       </div>
+      </div>
+      <div class="max-w-4xl flex justify-center relative opacity-0 animate-slideUp animation-delay-300">
+       <div class="w-full absolute top-0 left-0 right-0 bottom-0 z-0">
+        <div class="w-20 h-20 lg:w-[200px] lg:h-[200px] absolute left-3 top-[-119px] lg:left-[-97px] FloatingPowerup-module__7SySHW__parallax">
+         <img alt="Powerup" class="object-contain w-full h-auto" src="/_next/image?url=https%3A%2F%2Fmedia.quizwhizzer.com%2Fpowerups%2Fenergy%20blast.png&amp;w=3840&amp;q=75"/>
+        </div>
+        <div class="w-20 h-20 lg:w-[200px] lg:h-[200px] absolute top-[-80px] lg:top-[-141px] right-3 lg:right-[-126px] -rotate-12 FloatingPowerup-module__7SySHW__parallax">
+         <img alt="Powerup" class="object-contain w-full h-auto" src="/_next/image?url=https%3A%2F%2Fmedia.quizwhizzer.com%2Fpowerups%2Ffull%20cannon.png&amp;w=3840&amp;q=75"/>
+        </div>
+        <div class="w-20 h-20 lg:w-[200px] lg:h-[200px] absolute bottom-[-80px] left-3 lg:bottom-auto lg:top-[200px] lg:left-[-181px] -rotate-12 FloatingPowerup-module__7SySHW__parallax">
+         <img alt="Powerup" class="object-contain w-full h-auto" src="/_next/image?url=https%3A%2F%2Fmedia.quizwhizzer.com%2Fpowerups%2Fspeed%20boost.png&amp;w=3840&amp;q=75"/>
+        </div>
+       </div>
+       <div class="card bg-base-100 shadow-xl rounded-3xl overflow-hidden tilt-card">
+        <div class="min-w-[min(100%,896px)]">
+         <video width="100%">
+          <source src="https://media.quizwhizzer.com/landing/Games demo v4.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+          </source>
+         </video>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="bg-base-200 text-base-content">
+      <div class="max-w-7xl px-8 py-16 md:py-32 mx-auto">
+       <h2 class="max-w-4xl font-extrabold text-4xl md:text-5xl tracking-tight mb-6 md:mb-8">
+        Struggling to keep students engaged?
+       </h2>
+       <div class="text-lg opacity-90 leading-relaxed mb-12 md:mb-20">
+        <div class="flex flex-col gap-8 text-left">
+         <p class="bg-white max-w-xl p-4 rounded-lg">
+          Teaching today's students means competing with endless distractions. Traditional quizzes and lectures struggle to hold students' attention, leading to disengagement, missed learning opportunities, and declining performance.
+         </p>
+         <div class="flex justify-end">
+          <p class="bg-white max-w-xl p-4 rounded-lg">
+           When students lose interest, retaining knowledge becomes an uphill battle – and that affects both their confidence and their results.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col md:flex-row justify-center items-center md:items-start gap-6">
+        <div class="w-full md:w-48 flex flex-col gap-2 items-center justify-center">
+         <span class="text-4xl">
+          🧑‍💻
+         </span>
+         <h3 class="font-bold text-center">
+          Overworked teachers
+         </h3>
+        </div>
+        <div class="w-full md:w-48 flex flex-col gap-2 items-center justify-center">
+         <span class="text-4xl">
+          😮‍💨
+         </span>
+         <h3 class="font-bold text-center">
+          Bored students
+         </h3>
+        </div>
+        <div class="w-full md:w-48 flex flex-col gap-2 items-center justify-center">
+         <span class="text-4xl">
+          😔
+         </span>
+         <h3 class="font-bold text-center">
+          Declining performance
+         </h3>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="flex justify-center items-center w-full bg-base-100 text-base-content py-20 lg:py-32">
+      <div class="flex flex-col max-w-[82rem] gap-16 md:gap-20 px-4">
+       <h2 class="max-w-3xl font-black text-4xl md:text-6xl tracking-[-0.01em]">
+        Empower learning
+        <br/>
+        through
+        <span class="underline decoration-dashed underline-offset-8 decoration-base-300">
+         play
+        </span>
+       </h2>
+       <div class="flex flex-col w-full h-fit gap-4 lg:gap-10 text-text-default max-w-[82rem]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-10">
+         <div class="rounded-3xl flex flex-col gap-6 w-full h-[22rem] lg:h-[25rem] pt-6 overflow-hidden group bg-primary text-primary-content">
+          <div class="px-6 space-y-2">
+           <h3 class="font-bold text-xl lg:text-3xl tracking-tight">
+            Boost Engagement
+           </h3>
+           <p class="opacity-80">
+            Create game-based quizzes so your students stay focused, engaged, and excited to learn.
+           </p>
+          </div>
+         </div>
+         <div class="rounded-3xl flex flex-col gap-6 w-full h-[22rem] lg:h-[25rem] pt-6 overflow-hidden group bg-base-300 text-base-content">
+          <div class="px-6 space-y-2">
+           <h3 class="font-bold text-xl lg:text-3xl tracking-tight">
+            Instant Feedback
+           </h3>
+           <p class="opacity-80">
+            Students receive immediate feedback, so they know where they stand and can improve in real-time.
+           </p>
+          </div>
+         </div>
+         <div class="rounded-3xl flex flex-col gap-6 w-full h-[22rem] lg:h-[25rem] pt-6 overflow-hidden group bg-base-200/50 text-base-content">
+          <div class="px-6 space-y-2">
+           <h3 class="font-bold text-xl lg:text-3xl tracking-tight">
+            Build Confidence
+           </h3>
+           <p class="opacity-80">
+            Gamified quizzes enable students to participate and gain confidence as they see their progress.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="bg-base-200" id="features">
+      <div class="py-24 md:py-32 space-y-24 md:space-y-32 max-w-7xl mx-auto">
+       <div class="px-8">
+        <h2 class="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24 break-words">
+         Check knowledge,
+         <span class="bg-neutral text-neutral-content px-2 md:px-4 ml-1 md:ml-1.5 leading-relaxed break-normal">
+          dump the textbook
+         </span>
+        </h2>
+        <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+         <div class="grid grid-cols-1 items-stretch gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-20">
+          <ul class="w-full">
+           <li>
+            <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+             <span class="flex-1 text-base-content text-primary font-semibold">
+              <h3 class="inline">
+               Question types
+              </h3>
+             </span>
+            </button>
+            <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+             <div class="pb-5 leading-relaxed">
+              We have 10 questions types to support a variety of quizzing formats:
+            multiple choice, multiple response, true/false, numerical answer,
+            short text answer, drag and drop into text, ordering, open-ended,
+            random question and audio answer.
+             </div>
+            </div>
+           </li>
+           <li>
+            <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+             <span class="flex-1 text-base-content">
+              <h3 class="inline">
+               Power-ups
+              </h3>
+             </span>
+            </button>
+            <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+             <div class="pb-5 leading-relaxed">
+              Make the race even more interesting with unique powerups, visually watch the effects on the game screen!
+             </div>
+            </div>
+           </li>
+           <li>
+            <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+             <span class="flex-1 text-base-content">
+              <h3 class="inline">
+               100 Player Capacity
+              </h3>
+             </span>
+            </button>
+            <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+             <div class="pb-5 leading-relaxed">
+              Get ready to host epic quiz battles with a capacity of up to 100
+            players! QuizWhizzer is designed to accommodate large groups, making
+            it perfect for classrooms, corporate training, or large-scale online
+            events.
+             </div>
+            </div>
+           </li>
+           <li>
+            <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+             <span class="flex-1 text-base-content">
+              <h3 class="inline">
+               Custom Avatars
+              </h3>
+             </span>
+            </button>
+            <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+             <div class="pb-5 leading-relaxed">
+              Add your own avatars to players to customize your game further and increase engagement.
+             </div>
+            </div>
+           </li>
+          </ul>
+          <img alt="Question types" class="rounded-2xl aspect-square w-full sm:w-[26rem] object-cover object-center" height="500" src="/_next/image?url=https%3A%2F%2Fmedia.quizwhizzer.com%2Flanding%2FQuestion%20types2.png&amp;w=1080&amp;q=75" width="500"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="bg-base-100 flex flex-col items-center py-24 px-8">
+      <h2 class="font-extrabold text-3xl lg:text-5xl tracking-tight mb-8 text-center">
+       Play from anywhere 🌎
+      </h2>
+      <div class="text-base-content/80 leading-relaxed mb-8 lg:text-lg max-w-2xl text-center">
+       Players get their own view of the map, so you're not limited to the classroom environment to play QuizWhizzer. You can host your quiz from any location and players can join from anywhere in the world!
+      </div>
+      <div class="w-[214px] h-[445px] rounded-[34px] lg:w-[390px] lg:h-[812px] xl:w-[406px] xl:h-[845px] relative overflow-hidden lg:rounded-[71px]">
+       <img alt="Phone" class="z-10" src="/_next/image?url=https%3A%2F%2Fmedia.quizwhizzer.com%2Flanding%2Fphone%20frame.png&amp;w=3840&amp;q=75"/>
+       <video class="w-[calc(100%-18px)] relative left-[9px] top-[1px] h-full object-cover" width="100%">
+        <source src="https://media.quizwhizzer.com/landing/Player demo 390x823.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+        </source>
+       </video>
+      </div>
+     </section>
+     <section class="bg-base-200" id="testimonials">
+      <div class="py-24 px-8 max-w-7xl mx-auto">
+       <div class="flex flex-col text-center w-full mb-20">
+        <div class="mb-8">
+         <h2 class="sm:text-5xl text-4xl font-extrabold text-base-content">
+          Don't take our word for it.
+         </h2>
+        </div>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base text-base-content/80">
+         See what teachers have to say about QuizWhizzer.
+        </p>
+       </div>
+       <ul class="grid max-w-2xl grid-cols-1 gap-6 mx-auto sm:gap-8 md:grid-cols-2 lg:max-w-none lg:grid-cols-4">
+        <li>
+         <ul class="flex flex-col gap-y-6 sm:gap-y-8">
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              Using @QuizWhizzer to review before our post test today! This is a new to us tool and they’re loving it! @southnccs
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <img alt="Heather Reynolds's testimonial for QuizWhizzer" class="w-10 h-10 rounded-full object-cover" height="48" src="/_next/image?url=%2Ftestimonial-avatars%2Fheather.jpg&amp;w=96&amp;q=75" width="48"/>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Heather Reynolds
+               </div>
+               <div class="mt-0.5 text-sm text-base-content/80">
+                @leadingin5th
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              Very very impressed. I teach at a vocational beauty college and I utilize this tool all the time. My adult learning students are so impressed and love how user friendly it is!
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               E
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Emily
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              What an amazing platform for teachers. It allows students to have fun while practicing vocabulary, listening skills and many other assessment standards. My student ask for more homework!
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               M
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Martine Kruss
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+         </ul>
+        </li>
+        <li class="hidden md:grid order-none md:order-first lg:order-none col-span-2 grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+         <ul class="col-span-2">
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative p-4">
+             <p class="text-lg font-medium text-base-content">
+              After embedding QuizWhizzer games into most sessions through the years my A level results have continued to improve. The results of my Physics students have consistently ranked within the top 20% of the country via ALPS and as a result I would strongly recommend QuizWhizzer to any teacher.
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 mt-4 border-t border-base-content/5">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <img alt="Graham Davison's featuredTestimonial for MakeLanding" class="w-12 h-12 rounded-full object-cover" height="48" src="/_next/image?url=%2Ftestimonial-avatars%2FGraham%20Davison.jpg&amp;w=96&amp;q=75" width="48"/>
+             </div>
+             <div>
+              <div class="text-base font-medium text-base-content">
+               Graham Davison
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+         </ul>
+         <ul class="flex flex-col gap-y-6 sm:gap-y-8">
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              This was awesome! My students loved it and played it over and over!
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               C
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Chelsey Culley Love
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              As a teacher with huge experience I can say that QuizWhizzer is a must-have tool to make the education process more simple and fun. This service is 100% adjustable which is very pleasant, you can set up any theme and connect it to the nearest holidays, for example, or to use the different types of questions, etc.
+  Students stress out way less during the tests which are made with QuizWhizzer and...
+             </p>
+            </blockquote>
+            <div class="mt-2">
+             <button class="text-base-content/70 hover:cursor-pointer">
+              Read more
+             </button>
+            </div>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               T
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Tutor
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+         </ul>
+         <ul class="flex flex-col gap-y-6 sm:gap-y-8">
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              Was excited to see my students race around the game board @QuizWhizzer as they reviewed Astronomy concepts! 🚀 Great tool for PRACTICE and ENGAGEMENT 🙌 Nothing like a little friendly competition to start the day @LarsonMS #gamifiction #learning #scienceisfun
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <img alt="Shannon Dziwanowski's testimonial for QuizWhizzer" class="w-10 h-10 rounded-full object-cover" height="48" src="/_next/image?url=%2Ftestimonial-avatars%2Fshannon.jpg&amp;w=96&amp;q=75" width="48"/>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Shannon Dziwanowski
+               </div>
+               <div class="mt-0.5 text-sm text-base-content/80">
+                @SDziwanowski
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              I chose Quizwhizzer because it looked very engaging for students, there are a wide variety of question type options, the option to add so many graphics and mainly because it came with a free two week trial that is fully functional. AND... I didn't have to give my credit card before getting the free trial.
+  Great product. Thank you!
+  BONUS: Near immediate response from the creator when I ran into a...
+             </p>
+            </blockquote>
+            <div class="mt-2">
+             <button class="text-base-content/70 hover:cursor-pointer">
+              Read more
+             </button>
+            </div>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               K
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Karen Jonovski
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+         </ul>
+        </li>
+        <li>
+         <ul class="flex flex-col gap-y-6 sm:gap-y-8">
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              I can't thank you enough for the site - this has been a great addition to my classes.
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <img alt="Jen Charles's testimonial for QuizWhizzer" class="w-10 h-10 rounded-full object-cover" height="48" src="/_next/image?url=%2Ftestimonial-avatars%2FJen%20Charles.jpg&amp;w=96&amp;q=75" width="48"/>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Jen Charles
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              I must say, that I’m fall in love with this tool for gamification..simple, easy and very helpful to make learning into something fun and exciting..thank you very much for creating this awesome platform 🤩
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               A
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Amalina Johari
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+          <li>
+           <figure class="relative h-full p-6 bg-base-100 rounded-lg">
+            <blockquote class="relative">
+             <p class="text-sm text-base-content/80">
+              Excellent platform, I recommend it for your students.
+             </p>
+            </blockquote>
+            <figcaption class="relative flex items-center justify-start gap-4 pt-4 border-t border-base-content/5 mt-4">
+             <div class="overflow-hidden rounded-full bg-base-300 shrink-0">
+              <span class="w-10 h-10 rounded-full flex justify-center items-center text-lg font-medium bg-base-300">
+               R
+              </span>
+             </div>
+             <div class="w-full flex items-end justify-between gap-2">
+              <div>
+               <div class="text-sm font-medium text-base-content">
+                Rocío Calderón García
+               </div>
+              </div>
+             </div>
+            </figcaption>
+           </figure>
+          </li>
+         </ul>
+        </li>
+       </ul>
+      </div>
+     </section>
+     <section class="bg-base-200/60" id="pricing">
+      <div class="py-24 px-8 max-w-5xl mx-auto">
+       <div class="flex flex-col text-center w-full mb-20">
+        <p class="font-medium text-primary mb-8">
+         Pricing
+        </p>
+        <div class="flex flex-col gap-8">
+         <div>
+          <h2 class="font-bold text-3xl lg:text-5xl tracking-tight mb-8">
+           Your lessons taken to the next level
+          </h2>
+         </div>
+         <div class="px-8">
+          <div class="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
+           <div class="relative w-full max-w-lg">
+            <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+             <div class="flex justify-between items-center gap-4">
+              <div>
+               <p class="text-lg lg:text-xl font-bold">
+                Free
+               </p>
+              </div>
+             </div>
+             <div class="flex flex-col items-start gap-1">
+              <div class="flex gap-2">
+               <p class="text-5xl tracking-tight font-extrabold">
+                $0
+               </p>
+               <div class="flex flex-col justify-end mb-[4px]">
+                <p class="text-xs text-base-content/60 uppercase font-semibold">
+                 per month
+                </p>
+               </div>
+              </div>
+             </div>
+             <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+              <li class="flex items-center gap-2">
+               <span>
+                1 quiz
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Unlimited plays
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Unlimited custom maps
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Question Bank
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Custom avatars
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                3 saved reports
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Up to 30 players
+               </span>
+              </li>
+             </ul>
+             <div class="space-y-2">
+              <a class="btn btn-primary w-full" href="https://app.quizwhizzer.com/register">
+               Get Started
+              </a>
+             </div>
+            </div>
+           </div>
+           <div class="relative w-full max-w-lg">
+            <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+             <div class="flex justify-between items-center gap-4">
+              <div>
+               <p class="text-lg lg:text-xl font-bold">
+                Monthly
+               </p>
+              </div>
+             </div>
+             <div class="flex flex-col items-start gap-1">
+              <div class="flex gap-2">
+               <p class="text-5xl tracking-tight font-extrabold">
+                $4
+               </p>
+               <div class="flex flex-col justify-end mb-[4px]">
+                <p class="text-xs text-base-content/60 uppercase font-semibold">
+                 per month
+                </p>
+               </div>
+              </div>
+             </div>
+             <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+              <li class="flex items-center gap-2">
+               <span>
+                All Starter features
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Unlimited quizzes
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Private quizzes
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Practice mode
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                20 saved reports
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Excel reports
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Up to 100 players
+               </span>
+              </li>
+             </ul>
+             <div class="space-y-2">
+              <a class="btn btn-primary w-full" href="https://app.quizwhizzer.com/register">
+               Get Started
+              </a>
+             </div>
+            </div>
+           </div>
+           <div class="relative w-full max-w-lg">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
+             <span class="badge text-xs text-primary-content font-semibold border-0 bg-primary">
+              POPULAR
+             </span>
+            </div>
+            <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+             <div class="flex justify-between items-center gap-4">
+              <div>
+               <p class="text-lg lg:text-xl font-bold">
+                Yearly
+               </p>
+              </div>
+             </div>
+             <div class="flex flex-col items-start gap-1">
+              <div class="flex gap-2">
+               <p class="text-5xl tracking-tight font-extrabold">
+                $3.25
+               </p>
+               <div class="flex flex-col justify-end mb-[4px]">
+                <p class="text-xs text-base-content/60 uppercase font-semibold">
+                 per month
+                </p>
+               </div>
+              </div>
+              <span class="text-base-content/60">
+               billed $39 annually
+              </span>
+             </div>
+             <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+              <li class="flex items-center gap-2">
+               <span>
+                Everything in Monthly
+               </span>
+              </li>
+              <li class="flex items-center gap-2">
+               <span>
+                Pay yearly, save 20%
+               </span>
+              </li>
+             </ul>
+             <div class="space-y-2">
+              <a class="btn btn-primary w-full" href="https://app.quizwhizzer.com/register">
+               Get Started
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="bg-base-100" id="faq">
+      <div class="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+       <div class="flex flex-col text-left basis-1/2">
+        <p class="inline-block font-semibold text-primary mb-4">
+         FAQ
+        </p>
+        <p class="sm:text-4xl text-3xl font-extrabold text-base-content">
+         Frequently Asked Questions
+        </p>
+       </div>
+       <ul class="basis-1/2">
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           How do students join?
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div class="space-y-2 leading-relaxed">
+            Students can join a quiz at
+            <a class="link-primary" href="https://quizwhizzer.com/play" target="_blank">
+             quizwhizzer.com/play
+            </a>
+            . Simply enter the unique code provided by the game host and then enter a nickname. No account required!
+           </div>
+          </div>
+         </div>
+        </li>
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           How many players in a game?
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div>
+            <p>
+             Up to 30 players can join a game on the free plan. If you need to support more than this, the Pro plan allows up to 100 players.
+            </p>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           How easy is it to set up a quiz on QuizWhizzer?
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div>
+            <p>
+             QuizWhizzer is designed to be user-friendly and intuitive. Most teachers can set up a quiz in just a few minutes with our straightforward interface. Plus, you can save questions from ready-made quizzes to your personal question bank, making future quiz creation even faster!
+            </p>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           Can I use QuizWhizzer for any subject?
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div>
+            <p>
+             Absolutely! QuizWhizzer is adaptable for any subject and grade level. Whether you’re teaching math, science, history, or language arts, you can customize quizzes to fit your curriculum needs.
+            </p>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           Is my students' data safe on QuizWhizzer?
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div>
+            <p>
+             Absolutely! Data privacy and security are top priorities for us. With QuizWhizzer, students don't need to sign up or share personal information to join games—just a username. This ensures a safe and anonymous experience, keeping student data secure while they enjoy interactive learning.
+            </p>
+           </div>
+          </div>
+         </div>
+        </li>
+        <li>
+         <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+          <span class="flex-1 text-base-content">
+           I have another question
+          </span>
+         </button>
+         <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+          <div class="pb-5 leading-relaxed">
+           <div class="space-y-2 leading-relaxed">
+            Get in touch at
+            <a class="link-primary" href="mailto:support@quizwhizzer.com">
+             support@quizwhizzer.com
+            </a>
+            . Typical response time 1 working day.
+           </div>
+          </div>
+         </div>
+        </li>
+       </ul>
+      </div>
+     </section>
+     <section class="relative hero overflow-hidden min-h-screen">
+      <video class="object-cover w-full h-full" height="100%" width="100%">
+       <source src="https://media.quizwhizzer.com/landing/classroom.mp4" type="video/mp4"/>
+      </video>
+      <div class="relative hero-content text-center text-neutral-content p-8">
+       <div class="flex flex-col items-center max-w-xl p-8 md:p-0">
+        <h2 class="font-bold text-3xl md:text-5xl tracking-tight mb-8 md:mb-12">
+         Level up your classroom
+        </h2>
+        <p class="text-lg opacity-80 mb-12 md:mb-16">
+         Discover the power of interactive quizzes with QuizWhizzer. Where learning meets excitement and engagement.
+        </p>
+        <a class="btn btn-primary btn-wide" href="https://app.quizwhizzer.com/register">
+         Get QuizWhizzer
+        </a>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="bg-base-200 border-t border-base-content/10">
+     <div class="max-w-7xl mx-auto px-8 py-24">
+      <div class="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+       <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+        <a class="flex gap-2 justify-center md:justify-start items-center" href="/#">
+         <img alt="QuizWhizzer logo" class="w-8" height="32" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo-light2.6f4cd335.png&amp;w=64&amp;q=75" width="32"/>
+         <strong class="font-extrabold tracking-tight text-base md:text-lg">
+          QuizWhizzer
+         </strong>
+        </a>
+        <p class="mt-3 text-sm text-base-content/80">
+         Engage your students with exciting customizable quiz races
+        </p>
+        <p class="mt-3 text-sm text-base-content/60">
+         Copyright © 2025 - All rights reserved
+        </p>
+       </div>
+       <div class="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
+        <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+         <div class="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+          LINKS
+         </div>
+         <div class="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+          <a class="link link-hover" href="mailto:support@quizwhizzer.com" target="_blank">
+           Support
+          </a>
+          <a class="link link-hover" href="https://app.quizwhizzer.com/help">
+           Help Center
+          </a>
+          <a class="link link-hover" href="https://headwayapp.co/quizwhizzer-changelog">
+           Changelog
+          </a>
+          <a class="link link-hover" href="/teacher-resources">
+           Teacher Resources
+          </a>
+         </div>
+        </div>
+        <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+         <div class="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+          LEGAL
+         </div>
+         <div class="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+          <a class="link link-hover" href="/tos">
+           Terms of services
+          </a>
+          <a class="link link-hover" href="/privacy-policy">
+           Privacy policy
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

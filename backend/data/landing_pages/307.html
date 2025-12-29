@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenAssistantGPT - The complete platform to build your AI chatbot</title>
+</head>
+<body>
+  <body>
+   <div class="flex min-h-screen flex-col">
+    <header class="z-40 bg-white/75 backdrop-blur-lg border-b sticky inset-x-0 top-0 w-full transition-all duration-1000">
+     <div class="hidden md:block relative bg-white shadow isolate flex flex-col items-center gap-y-1 px-3 py-1 sm:px-2.5 sm:before:flex-1">
+      <div class="relative flex items-center justify-center w-full overflow-hidden h-24 sm:h-10">
+       <div class="absolute transition-all duration-2000 ease-in-out animate-slide-in-right opacity-100">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+         <p class="text-sm sm:text-xs leading-5 text-gray-900">
+          <strong class="font-semibold">
+           🚀 New feature!
+          </strong>
+          <span>
+           Upgrade from Chatbots to
+           <b>
+            AI Agents
+           </b>
+           with more capabilities and better performance.
+          </span>
+         </p>
+         <a class="flex-none rounded-full bg-gray-900 px-2 py-0.5 text-xs font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900" href="/docs/documentation/ai-agents">
+          Read more
+          <span>
+           →
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="absolute transition-all duration-2000 ease-in-out animate-slide-out-left opacity-0">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+         <p class="text-sm sm:text-xs leading-5 text-gray-900">
+          <strong class="font-semibold">
+           🚀 New feature!
+          </strong>
+          <span>
+           New
+           <b>
+            OpenAI Responses API
+           </b>
+           - Faster, more reliable AI interactions with improved tool calling.
+          </span>
+         </p>
+         <a class="flex-none rounded-full bg-gray-900 px-2 py-0.5 text-xs font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900" href="/docs/documentation/ai-agents">
+          Read more
+          <span>
+           →
+          </span>
+         </a>
+        </div>
+       </div>
+       <div class="absolute transition-all duration-2000 ease-in-out animate-slide-out-left opacity-0">
+        <div class="flex flex-wrap items-center gap-x-2 gap-y-1">
+         <p class="text-sm sm:text-xs leading-5 text-gray-900">
+          <strong class="font-semibold">
+           🚀 New feature!
+          </strong>
+          <span>
+           Introducing
+           <b>
+            xseek
+           </b>
+           - Our new product to help your product get mentions by leading LLMs.
+          </span>
+         </p>
+         <a class="flex-none rounded-full bg-gray-900 px-2 py-0.5 text-xs font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900" href="https://xseek.io/">
+          Read more
+          <span>
+           →
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="absolute top-1/2 right-0 transform -translate-y-1/2">
+       <button class="-m-3 p-3 focus-visible:outline-offset-[-4px]" type="button">
+        <span class="sr-only">
+         Dismiss
+        </span>
+       </button>
+      </div>
+     </div>
+     <div class="container flex h-20 items-center justify-between py-6">
+      <div class="flex gap-6 md:gap-10">
+       <a class="hidden items-center space-x-2 md:flex" href="/">
+        <span class="hidden font-bold sm:inline-block">
+         OpenAssistantGPT
+        </span>
+       </a>
+       <nav class="hidden gap-6 md:flex">
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/#pricing">
+         Pricing
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/changelog">
+         Changelog
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/enterprise">
+         Enterprise
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/agency">
+         Agency
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/docs">
+         Documentation
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/blogs">
+         Blogs
+        </a>
+        <a class="flex items-center text-lg font-medium transition-colors hover:text-foreground/80 sm:text-sm text-foreground/60" href="/integrations">
+         Integrations
+        </a>
+       </nav>
+       <button class="flex items-center space-x-2 md:hidden">
+        <span class="font-bold">
+         Menu
+        </span>
+       </button>
+      </div>
+      <div class="flex flex-row space-x-1">
+       <nav>
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-9 rounded-md px-4 border shadow-md" href="/login">
+         Login
+        </a>
+       </nav>
+       <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-[4.5rem]" id="radix-:R1aafjtqpcq:" type="button">
+        EN
+       </button>
+      </div>
+     </div>
+    </header>
+    <main class="flex-1 z-10">
+     <section class="relative space-y-6 pb-8 pt-6 md:pb-12 md:pt-10 py-12 md:py-24 lg:py-32">
+      <div class="container flex max-w-[80rem] flex-col items-center gap-4 text-center lg:flex-row lg:text-left lg:items-start">
+       <div class="flex flex-col items-center gap-4 lg:items-start lg:w-1/2">
+        <a class="rounded-2xl border shadow-md bg-muted px-4 py-1.5 text-sm font-medium" href="https://twitter.com/oassistantgpt" target="_blank">
+         Find us on 𝕏
+        </a>
+        <h1 class="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+         Build your own AI agent with no code
+        </h1>
+        <p class="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+         Build a smart RAG AI agent for customer support, sales, and more with the OpenAI API. Embed it to your website let it answer your users questions, and more.
+        </p>
+        <div class="space-x-4 space-y-4">
+         <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8" href="/login">
+          Get Started for Free
+         </a>
+         <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 bg-white" href="https://github.com/marcolivierbouch/OpenAssistantGPT" rel="noreferrer" target="_blank">
+          GitHub
+         </a>
+        </div>
+        <p class="text-sm text-muted-foreground">
+         No credit card required
+        </p>
+        <div class="mt-8 space-y-4 sm:space-y-0 flex flex-col sm:flex-row items-center justify-center lg:justify-start space-x-4">
+         <div class="flex -space-x-4">
+          <span class="relative shrink-0 overflow-hidden inline-block shadow-lg h-12 w-12 rounded-full ring-2 ring-gray-200 transition-transform hover:scale-110 hover:z-10">
+           <img alt="User 1" class="aspect-square h-full w-full bg-gradient-to-br from-primary to-secondary" height="40" src="/user1.webp" width="65"/>
+          </span>
+          <span class="relative shrink-0 overflow-hidden inline-block shadow-lg h-12 w-12 rounded-full ring-2 ring-gray-200 transition-transform hover:scale-110 hover:z-10">
+           <img alt="User 2" class="aspect-square h-full w-full bg-gradient-to-br from-primary to-secondary" height="40" src="/user2.webp" width="65"/>
+          </span>
+          <span class="relative shrink-0 overflow-hidden inline-block shadow-lg h-12 w-12 rounded-full ring-2 ring-gray-200 transition-transform hover:scale-110 hover:z-10">
+           <img alt="User 3" class="aspect-square h-full w-full bg-gradient-to-br from-primary to-secondary" height="40" src="/user3.webp" width="65"/>
+          </span>
+          <span class="relative shrink-0 overflow-hidden inline-block shadow-lg h-12 w-12 rounded-full ring-2 ring-gray-200 transition-transform hover:scale-110 hover:z-10">
+           <img alt="User 4" class="aspect-square h-full w-full bg-gradient-to-br from-primary to-secondary" height="40" src="/user4.webp" width="65"/>
+          </span>
+          <span class="relative shrink-0 overflow-hidden inline-block shadow-lg h-12 w-12 rounded-full ring-2 ring-gray-200 transition-transform hover:scale-110 hover:z-10">
+           <img alt="User 5" class="aspect-square h-full w-full bg-gradient-to-br from-primary to-secondary" height="40" src="/user5.webp" width="65"/>
+          </span>
+         </div>
+         <div class="flex flex-col justify-center items-center sm:items-start">
+          <p class="text-sm font-medium text-muted-foreground">
+           Used by over 4000 people
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="w-full lg:w-1/3 mt-8 lg:mt-0 lg:ml-auto lg:mr-8">
+        <div class="relative rounded-2xl bg-white p-4 shadow-2xl">
+         <div class="rounded-xl border border-gray-200 bg-gray-50 p-4 h-[400px] flex flex-col">
+          <div class="flex-1 flex flex-col items-center justify-center">
+           <div class="w-64 text-center">
+            <div class="text-center mb-4 text-sm font-medium text-gray-700">
+             Your chatbot is learning...
+            </div>
+            <div class="mt-3 text-xs text-gray-500">
+             Processing data and training AI model
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mt-4 flex items-center justify-center gap-4 rounded-xl bg-muted p-4">
+          <img alt="WordPress" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="30" src="/wordpress.svg" width="60"/>
+          <img alt="Shopify" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="30" src="/shopify.svg" width="60"/>
+          <img alt="Squarespace" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="30" src="/squarespace.svg" width="60"/>
+          <img alt="Wix" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="30" src="/wix.svg" width="60"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="container py-12 md:py-24 lg:py-32" id="chat">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+       <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+        Test our chatbot assistant
+       </h2>
+       <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        Ask any question about OpenAssistantGPT to our chatbot powered by OpenAI API and see how it responds. You can also try the chatbot buttom right of the window.
+       </p>
+      </div>
+     </section>
+     <section class="container py-12 md:py-24 lg:py-32 relative overflow-hidden" id="business-impact">
+      <div class="mx-auto flex max-w-[68rem] flex-col items-center justify-center gap-6 text-center relative z-10">
+       <div class="space-y-4">
+        <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+         How We Improve Your Business
+        </h2>
+        <p class="max-w-[85%] mx-auto leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+         Our AI-powered chatbots deliver measurable business results by reducing support costs and improving customer satisfaction.
+        </p>
+       </div>
+       <div class="w-full min-h-[15rem] pt-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+         <div class="rounded-lg bg-card text-card-foreground border-2 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col items-center p-8 text-center">
+           <h3 class="mt-2 text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            35%
+           </h3>
+           <p class="text-xl font-semibold mt-2 mb-3">
+            Support Tickets Reduction
+           </p>
+           <p class="text-sm text-muted-foreground text-center">
+            Reduce incoming support tickets by automating answers to common questions
+           </p>
+          </div>
+         </div>
+         <div class="rounded-lg bg-card text-card-foreground border-2 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col items-center p-8 text-center">
+           <h3 class="mt-2 text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            60%
+           </h3>
+           <p class="text-xl font-semibold mt-2 mb-3">
+            Resolution Time Improvement
+           </p>
+           <p class="text-sm text-muted-foreground text-center">
+            Faster resolution of customer inquiries with instant thread history from the GPT chatbot
+           </p>
+          </div>
+         </div>
+         <div class="rounded-lg bg-card text-card-foreground border-2 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <div class="flex flex-col items-center p-8 text-center">
+           <h3 class="mt-2 text-4xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            $25,000
+           </h3>
+           <p class="text-xl font-semibold mt-2 mb-3">
+            Annual Cost Savings
+           </p>
+           <p class="text-sm text-muted-foreground text-center">
+            Average savings for businesses by reducing support staff requirements
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-10">
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8" href="/dashboard">
+         Get Started for Free
+        </a>
+        <p class="text-sm text-muted-foreground mt-2">
+         No credit card required
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="container space-y-6 py-12 md:py-24 lg:py-32" id="features">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
+       <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+        Features
+       </h2>
+       <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        Build your own chatbot with OpenAI's assistant. Give us the URL to crawl and we finish the job.
+       </p>
+      </div>
+      <div class="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 mt-6">
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           OpenAI Assistants
+          </h3>
+          <p class="text-sm">
+           We use OpenAI Assistant to power our chatbots. You can use GPT-4, GTP-3.5 and GPT-4o.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           SAML/SSO Authentication
+          </h3>
+          <p class="text-sm">
+           You can create private chatbot with SAML/SOO authentication to make the chatbot only usable by your employees.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           User Inquiry
+          </h3>
+          <p class="text-sm">
+           User can enter contact information with a question and you can collect leads.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           AI Agent Actions
+          </h3>
+          <p class="text-sm">
+           Utilize AI Agent Actions to query API endpoints with specific URL parameters, enabling dynamic interactions and responses.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           Web Search
+          </h3>
+          <p class="text-sm">
+           Query internet for the newest information. Your chatbot knows the latest information.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="relative overflow-hidden rounded-lg border bg-background p-2">
+        <div class="flex h-[180px] flex-col justify-between rounded-md p-6">
+         <div class="space-y-2">
+          <h3 class="font-bold">
+           File Attachments
+          </h3>
+          <p class="text-sm">
+           You can attach a file CSV, XML, Images etc... in the chat and the chatbot will analyse it.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="container py-12 md:py-24 lg:py-32" id="integrations">
+      <div class="container px-4">
+       <div class="flex flex-col items-center justify-center space-y-4 md:space-y-6">
+        <div class="space-y-3 text-center">
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Compatible with your Platform
+         </h2>
+         <p class="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          Effortlessly integrate with the most popular website platforms.
+         </p>
+        </div>
+        <div class="w-full max-w-4xl">
+         <div class="grid w-full items-center justify-center gap-12 md:grid-cols-4 lg:gap-6">
+          <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
+           <img alt="WordPress" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="60" src="/wordpress.svg" width="120"/>
+          </div>
+          <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
+           <img alt="Shopify" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="60" src="/shopify.svg" width="120"/>
+          </div>
+          <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
+           <img alt="Squarespace" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="60" src="/squarespace.svg" width="120"/>
+          </div>
+          <div class="mx-auto flex w-full items-center justify-center p-4 sm:p-8">
+           <img alt="Wix" class="rounded-lg aspect-[2/1] overflow-hidden object-contain object-center" height="60" src="/wix.svg" width="120"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="container py-12 md:py-24 lg:py-32" id="open-source">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+       <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+        Proudly Open Source
+       </h2>
+       <p class="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
+        OpenAssistantGPT is open source and powered by open source software. The code is available on GitHub.
+       </p>
+      </div>
+      <div class="mt-10 mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-left">
+       <div class="rounded-lg border bg-card text-card-foreground shadow-sm w-full">
+        <div class="flex-col p-6 grid items-start gap-4 space-y-0">
+         <div class="space-y-1">
+          <h3 class="text-lg font-semibold leading-none tracking-tight">
+           <a class="break-all" href="https://github.com/marcolivierbouch/OpenAssistantGPT">
+            OpenAssistantGPT/OpenAssistantGPT
+           </a>
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           An Open-Source SaaS Platform for Crafting Chatbots with OpenAI's Assistant.
+          </p>
+         </div>
+         <div class="flex hidden items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 py-2 px-3 shadow-none">
+           Star
+          </button>
+         </div>
+        </div>
+        <div class="p-6 pt-0">
+         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-4 text-sm text-muted-foreground">
+          <div class="flex items-center">
+           TypeScript
+          </div>
+          <div class="flex items-center">
+           413
+          </div>
+          <div>
+           Updated 2024
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rounded-lg border bg-card text-card-foreground shadow-sm">
+        <div class="flex-col p-6 grid items-start gap-4 space-y-0">
+         <div class="space-y-1">
+          <h3 class="text-lg font-semibold leading-none tracking-tight">
+           <a class="break-all" href="https://github.com/OpenAssistantGPT/chatbot-sdk">
+            OpenAssistantGPT/chatbot-sdk
+           </a>
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           A SDK for building and deploying your own chatbot using NextJS in Vercel. This chatbot SDK helps you to build a gpt chatbot using the OpenAI API, in few clicks you can get a chatbot deployed in Vercel and Iframable in your website for any use case. Created by OpenAssistantGPT.
+          </p>
+         </div>
+         <div class="flex hidden items-center space-x-1 rounded-md bg-secondary text-secondary-foreground">
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-10 py-2 px-3 shadow-none">
+           Star
+          </button>
+         </div>
+        </div>
+        <div class="p-6 pt-0">
+         <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 space-x-4 text-sm text-muted-foreground">
+          <div class="flex items-center">
+           TypeScript
+          </div>
+          <div class="flex items-center">
+           60
+          </div>
+          <div>
+           Updated 2024
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="container py-12 md:py-24 lg:py-32" id="pricing">
+      <div class="container px-4 md:px-6">
+       <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+        <div class="space-y-2">
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+          Pick the perfect plan for you
+         </h2>
+         <p class="max-w-[800px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+          All plans include everything that is required to build a chatbot.
+         </p>
+        </div>
+       </div>
+       <div class="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="tracking-tight text-xl font-bold">
+           Free Plan
+          </h3>
+          <p class="text-muted-foreground text-2xl font-bold">
+           $0
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-2">
+          <p class="text-muted-foreground">
+           Perfect for personal projects, experiments, or simply getting familiar with our powerful tools.
+          </p>
+          <ul class="space-y-1">
+           <li>
+            ✓ 1 Chatbot
+           </li>
+           <li>
+            ✓ 1 Crawler
+           </li>
+           <li>
+            ✓ 3 Files
+           </li>
+           <li>
+            ✓ 1 Action
+           </li>
+           <li>
+            ✓ 500 Messages per Month
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="tracking-tight text-xl font-bold">
+           Basic Plan
+          </h3>
+          <p class="text-muted-foreground text-2xl font-bold flex flex-col items-start">
+           <span class="flex items-baseline">
+            $18
+            <span class="text-sm text-muted-foreground ml-1">
+             /month
+            </span>
+           </span>
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-2">
+          <p class="text-muted-foreground">
+           For organizations that require collaboration and deploy multiple chatbots.
+          </p>
+          <ul class="space-y-1">
+           <li>
+            ✓ 9 Chatbots
+           </li>
+           <li>
+            ✓ 9 Crawlers
+           </li>
+           <li>
+            ✓ 27 Files
+           </li>
+           <li>
+            ✓ 9 Action
+           </li>
+           <li>
+            ✓ Customizations
+           </li>
+           <li>
+            ✓ Unlimited Messages
+           </li>
+           <li>
+            ✓ Client Inquiry / Collect Leads
+           </li>
+           <li>
+            ✓ Chat Disclaimer
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="rounded-lg bg-card text-card-foreground shadow-sm p-6 border-2 border-primary relative">
+         <div class="inline-flex items-center border transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent shadow hover:bg-primary/80 absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-3 py-1 rounded-full text-xs font-medium">
+          Popular
+         </div>
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="tracking-tight text-xl font-bold">
+           Pro Plan
+          </h3>
+          <p class="text-muted-foreground text-2xl font-bold flex flex-col items-start">
+           <span class="flex items-baseline">
+            $54
+            <span class="text-sm text-muted-foreground ml-1">
+             /month
+            </span>
+           </span>
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-2">
+          <p class="text-muted-foreground">
+           Tailored solutions for large-scale operations and advanced requirements. Great whitelabeling options.
+          </p>
+          <ul class="space-y-1">
+           <li>
+            ✓ 27 Chatbots
+           </li>
+           <li>
+            ✓ 27 Crawlers
+           </li>
+           <li>
+            ✓ 81 Files
+           </li>
+           <li>
+            ✓ 27 Actions
+           </li>
+           <li>
+            ✓ 5 Custom Domains
+           </li>
+           <li>
+            ✓ Customizations
+           </li>
+           <li>
+            ✓ Unlimited Messages
+           </li>
+           <li>
+            ✓ Client Inquiry / Collect Leads
+           </li>
+           <li>
+            ✓ Chat Disclaimer
+           </li>
+           <li>
+            ✓ Remove 'Powered by OpenAssistantGPT'
+           </li>
+           <li>
+            ✓ Client File Attachment
+           </li>
+          </ul>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="tracking-tight text-xl font-bold">
+           Enterprise Plan
+          </h3>
+          <p class="text-muted-foreground text-2xl font-bold">
+           $X
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-2">
+          <p class="text-muted-foreground">
+           Custom plan for bigger enterprise. This plan is also used by agencies managing multiple clients. Contact the team for more information.
+          </p>
+          <ul class="space-y-1">
+           <li>
+            ✓ X Chatbots
+           </li>
+           <li>
+            ✓ X Crawlers
+           </li>
+           <li>
+            ✓ X Files
+           </li>
+           <li>
+            ✓ X Actions
+           </li>
+           <li>
+            ✓ X Custom Domains
+           </li>
+           <li>
+            ✓ All Features from other plans.
+           </li>
+           <li>
+            ✓ Chatbot Authentication SAML/SSO.
+           </li>
+           <li>
+            ✓ SLA guarantee
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center mt-10 text-center">
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8" href="/dashboard/billing">
+         Buy our paid plan now quick and easy!
+        </a>
+       </div>
+      </div>
+     </section>
+     <section class="container space-y-6 py-12 md:py-24 lg:py-32" id="faq">
+      <div class="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
+       <h2 class="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
+        FAQ
+       </h2>
+       <div class="w-full text-left">
+        <div class="relative rounded-2xl bg-white p-6 shadow-lg border border-gray-100">
+         <div class="w-full">
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800" id="radix-:Rd2fefjtqpcq:" type="button">
+             What is OpenAssistantGPT?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800" id="radix-:Rl2fefjtqpcq:" type="button">
+             What are OpenAI assistants?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800" id="radix-:Rt2fefjtqpcq:" type="button">
+             How does the chatbot adapt to the website?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800" id="radix-:R152fefjtqpcq:" type="button">
+             Is OpenAssistantGPT always available?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800 text-left" id="radix-:R1d2fefjtqpcq:" type="button">
+             What kind of questions can I ask OpenAssistantGPT?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b border-gray-200 py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800 text-left" id="radix-:R1l2fefjtqpcq:" type="button">
+             Does OpenAssistantGPT replace human customer service?
+            </button>
+           </h3>
+          </div>
+          <div class="border-b py-2">
+           <h3 class="flex">
+            <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 hover:no-underline font-medium text-gray-800" id="radix-:R1t2fefjtqpcq:" type="button">
+             Which model do you support with OpenAssistantGPT?
+            </button>
+           </h3>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="border-t bg-background z-40">
+     <div class="container py-12 px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+       <div class="space-y-4">
+        <h3 class="text-sm font-medium">
+         Products
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/dashboard">
+           Dashboard
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/dashboard/chatbots">
+           Chatbots
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/dashboard/files">
+           Files
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/dashboard/actions">
+           Actions
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/dashboard/domains">
+           Custom Domains
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-4">
+        <h3 class="text-sm font-medium">
+         Resources
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs">
+           Documentation
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/blogs">
+           Blogs
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/blogs/category/ai-solutions">
+           AI Solutions
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/blogs/tag/chatbots">
+           Chatbot Resources
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/#pricing">
+           Pricing
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-4">
+        <h3 class="text-sm font-medium">
+         Company
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/about">
+           About
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/changelog">
+           Changelog
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/enterprise">
+           Enterprise
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/agency">
+           Agency
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs/legal/privacy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs/legal/terms">
+           Terms of Service
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="space-y-4">
+        <h3 class="text-sm font-medium">
+         Social
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center" href="https://github.com/marcolivierbouch/OpenAssistantGPT" rel="noreferrer" target="_blank">
+           <span>
+            GitHub
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center" href="https://twitter.com/oassistantgpt" rel="noreferrer" target="_blank">
+           <div class="w-4 h-4 flex items-center justify-center mr-2">
+            <span class="text-sm font-medium">
+             𝕏
+            </span>
+           </div>
+           <span>
+            X.com
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center" href="https://www.producthunt.com/posts/openassistantgpt" rel="noreferrer" target="_blank">
+           <span>
+            ProductHunt
+           </span>
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center" href="/blogs/tag/ai-technology" rel="noreferrer">
+           <span>
+            AI Technology
+           </span>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="flex flex-col sm:flex-row justify-between items-center border-t border-border mt-8 pt-8">
+       <div class="flex items-center gap-2 text-sm text-muted-foreground">
+        <span>
+         © 2025 OpenAssistantGPT. All rights reserved.
+        </span>
+       </div>
+       <div class="flex items-center mt-4 sm:mt-0">
+        <span class="text-sm text-muted-foreground flex items-center gap-1">
+         All systems normal
+        </span>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <div>
+    <div class="hidden md:flex fixed bottom-24 right-4 flex-col items-end space-y-4 z-50">
+     <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 relative bg-white animate-slide-in-bottom">
+      Try me now!
+     </button>
+     <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 relative bg-white animate-slide-in-bottom">
+      Ask me anything about this app!
+     </button>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

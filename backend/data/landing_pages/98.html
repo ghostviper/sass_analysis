@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Claude Code Assist - VS Code Extension for Claude History</title>
+</head>
+<body>
+  <html>
+   <head>
+    <main class="min-h-screen">
+     <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-lg border-b border-border shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+         <img alt="Claude Code Assist" class="w-8 h-8" height="32" src="/images/icon.png" width="32"/>
+         <span class="text-lg font-semibold">
+          Claude Code Assist
+         </span>
+        </div>
+        <nav class="hidden md:flex items-center space-x-8">
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Features
+         </button>
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Demo
+         </button>
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Analytics
+         </button>
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Pricing
+         </button>
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          FAQ
+         </button>
+         <button class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+          Download
+         </button>
+        </nav>
+        <div class="hidden md:flex items-center space-x-4">
+         <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground w-9 h-9">
+          <span class="sr-only">
+           Toggle theme
+          </span>
+         </button>
+         <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" href="/login">
+          Login
+         </a>
+        </div>
+        <div class="md:hidden flex items-center space-x-2">
+         <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground w-9 h-9">
+          <span class="sr-only">
+           Toggle theme
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </header>
+     <section class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-8">
+         <div class="flex flex-wrap gap-2">
+          <div class="inline-flex items-center rounded-full border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-3 py-1">
+           Cross-Platform
+          </div>
+          <div class="inline-flex items-center rounded-full border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-3 py-1">
+           Privacy-First
+          </div>
+         </div>
+         <div class="space-y-4">
+          <h1 class="text-5xl lg:text-6xl font-bold leading-tight">
+           Complete Analytics &amp;
+           <span class="text-gradient">
+            File Management
+           </span>
+           for Claude Code
+          </h1>
+          <p class="text-xl text-muted-foreground leading-relaxed">
+           Browse, search, and apply changes from Claude Code conversations directly in VS Code. With advanced analytics, cost tracking, and community features.
+          </p>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-4">
+          <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 text-base" href="#download">
+           Download Now
+          </a>
+          <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-11 rounded-md px-8 text-base" href="#demo">
+           Watch Demo
+          </a>
+         </div>
+         <div class="flex items-center gap-4 pt-4">
+          <div class="flex -space-x-2">
+           <div class="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-semibold">
+            A
+           </div>
+           <div class="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-semibold">
+            B
+           </div>
+           <div class="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-semibold">
+            C
+           </div>
+           <div class="w-10 h-10 rounded-full border-2 border-background bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white text-sm font-semibold">
+            D
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Join
+           <span class="font-semibold text-foreground">
+            2,672+
+           </span>
+           developers from
+           <span class="font-semibold text-foreground">
+            20
+           </span>
+           countries
+          </p>
+         </div>
+         <div class="grid grid-cols-2 gap-4 pt-4">
+          <div class="text-center p-4 rounded-lg bg-secondary/50">
+           <div class="text-2xl font-bold text-primary">
+            25K+
+           </div>
+           <div class="text-xs text-muted-foreground">
+            Lines of Code
+           </div>
+          </div>
+          <div class="text-center p-4 rounded-lg bg-secondary/50">
+           <div class="text-2xl font-bold text-primary">
+            3
+           </div>
+           <div class="text-xs text-muted-foreground">
+            Platforms
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="relative lg:h-[600px] flex items-center justify-center">
+         <div class="relative w-full h-full rounded-2xl border border-border bg-card/50 backdrop-blur-sm p-4 shadow-2xl group">
+          <div class="w-full h-full rounded-lg overflow-hidden bg-black relative">
+           <div class="w-full h-full bg-gradient-to-br from-primary/10 to-accent/10 flex items-center justify-center">
+            <div class="text-center space-y-6">
+             <div class="space-y-2">
+              <p class="text-2xl font-bold text-foreground">
+               Watch Full Demo
+              </p>
+              <p class="text-sm text-muted-foreground">
+               See all features in action
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 bg-secondary/30" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl font-bold">
+         Everything You Need to
+         <span class="text-gradient">
+          Stay Organized
+         </span>
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+         Powerful features designed to enhance your Claude Code workflow without getting in your way
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Smart Session Organization
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Browse chat sessions organized by project with auto-refresh and smart filtering
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Advanced File Change Tracking
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           GitHub-style diffs showing exactly what changed with one-click application to workspace
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Powerful Search Engine
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Full-text search across all conversations powered by SQLite FTS5
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Cost &amp; Usage Analytics
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Track tokens, costs, and patterns with comprehensive analytics dashboard
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           File History Timeline
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           See complete modification history for any file across all sessions
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Status Bar Navigation
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Quick navigation between file changes with keyboard shortcuts
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Cross-Platform Compatible
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           WebAssembly-based architecture works perfectly on all platforms including Apple Silicon
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm group hover:shadow-lg hover:-translate-y-1 transition-all duration-300 border-border/50 hover:border-primary/50 bg-card/50 backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-lg">
+           Privacy-First Design
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           All processing is local. Community features are completely optional and opt-in
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20" id="demo">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl font-bold">
+         See It in
+         <span class="text-gradient">
+          Action
+         </span>
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+         Explore the powerful features that make Claude Code Assist indispensable
+        </p>
+       </div>
+       <div class="space-y-8">
+        <div class="items-center justify-center rounded-md p-1 text-muted-foreground grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 h-auto gap-2 bg-transparent">
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-browser" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            Chat History &amp; Diff Viewer
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Browse sessions with GitHub-style diffs and one-click file changes
+           </div>
+          </div>
+         </button>
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-search" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            Full-Text Search
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Search across all conversations with instant results
+           </div>
+          </div>
+         </button>
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-analytics" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            Usage Analytics
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Track costs, tokens, and usage patterns over time
+           </div>
+          </div>
+         </button>
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-timeline" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            File History Timeline
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Complete modification history for every file
+           </div>
+          </div>
+         </button>
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-export" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            Export to Markdown
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Export conversations to beautifully formatted Markdown
+           </div>
+          </div>
+         </button>
+         <button class="inline-flex items-center justify-center text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm data-[state=active]:bg-primary data-[state=active]:text-primary-foreground p-4 rounded-lg h-auto whitespace-normal" id="radix-:Riaqla:-trigger-fork" type="button">
+          <div class="text-left w-full">
+           <div class="font-semibold">
+            Session Fork &amp; Resume
+           </div>
+           <div class="text-xs opacity-70 hidden lg:block">
+            Branch conversations and resume from any point
+           </div>
+          </div>
+         </button>
+        </div>
+        <div class="mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" id="radix-:Riaqla:-content-browser">
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm overflow-hidden border-border/50">
+          <div class="aspect-video bg-black relative group">
+           <div class="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
+            <div class="text-center space-y-4">
+             <p class="text-muted-foreground font-medium">
+              Click to play demo
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="p-4 bg-card">
+           <h3 class="text-xl font-semibold mb-2">
+            Chat History &amp; Diff Viewer
+           </h3>
+           <p class="text-muted-foreground">
+            Browse sessions with GitHub-style diffs and one-click file changes
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 bg-secondary/30" id="analytics">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+         <div class="space-y-4">
+          <h2 class="text-4xl font-bold leading-tight">
+           Complete Visibility Into Your
+           <span class="text-gradient">
+            Claude Usage
+           </span>
+          </h2>
+          <p class="text-xl text-muted-foreground">
+           Never wonder about costs again. Track every token, session, and dollar spent.
+          </p>
+         </div>
+         <div class="space-y-3">
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Real-time cost tracking with current 2025 pricing
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Token breakdown (input, output, cache read, cache creation)
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Activity heatmaps by day and time
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Model-specific analytics
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Daily/weekly/monthly trends
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            Project-level cost breakdown
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-muted-foreground">
+            3-hour billing window tracking
+           </span>
+          </div>
+         </div>
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20">
+          <div class="flex items-start gap-4">
+           <div>
+            <p class="font-semibold mb-1">
+             Save 20-30% on Average
+            </p>
+            <p class="text-sm text-muted-foreground">
+             Identify expensive patterns and optimize your Claude usage. Some users save 20-30% after seeing their analytics.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-4">
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 border-border/50">
+          <div class="space-y-6">
+           <div class="grid grid-cols-3 gap-4">
+            <div class="text-center p-4 rounded-lg bg-primary/5">
+             <div class="text-2xl font-bold">
+              $124.50
+             </div>
+             <div class="text-xs text-muted-foreground">
+              Total Cost
+             </div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-accent/5">
+             <div class="text-2xl font-bold">
+              2.4M
+             </div>
+             <div class="text-xs text-muted-foreground">
+              Tokens
+             </div>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-primary/5">
+             <div class="text-2xl font-bold">
+              156
+             </div>
+             <div class="text-xs text-muted-foreground">
+              Sessions
+             </div>
+            </div>
+           </div>
+           <div class="space-y-3">
+            <div class="flex items-center justify-between text-sm">
+             <span class="text-muted-foreground">
+              Input Tokens
+             </span>
+             <span class="font-semibold">
+              1.2M
+             </span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+             <span class="text-muted-foreground">
+              Output Tokens
+             </span>
+             <span class="font-semibold">
+              800K
+             </span>
+            </div>
+            <div class="flex items-center justify-between text-sm">
+             <span class="text-muted-foreground">
+              Cache Read
+             </span>
+             <span class="font-semibold">
+              400K
+             </span>
+            </div>
+           </div>
+           <div class="pt-4 border-t border-border">
+            <p class="text-sm text-muted-foreground text-center">
+             Activity Heatmap &amp; Detailed Charts
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl font-bold">
+         <span class="text-gradient">
+          Transform
+         </span>
+         Your Workflow
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+         See how Claude Code Assist improves every aspect of your development process
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 gap-8">
+        <div class="rounded-lg border text-card-foreground shadow-sm border-destructive/20 bg-destructive/5">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+           Without Claude Code Assist
+          </h3>
+         </div>
+         <div class="p-6 pt-0 space-y-4">
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            Manually search through chat logs
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            Copy-paste code changes
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            No visibility into costs
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            Lose track of previous solutions
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            Switch between web and IDE
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="text-muted-foreground">
+            No community insights
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm border-primary/20 bg-primary/5">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+           With Claude Code Assist
+          </h3>
+         </div>
+         <div class="p-6 pt-0 space-y-4">
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            Full-text search across all conversations
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            One-click apply changes
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            Complete cost tracking dashboard
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            Complete searchable history
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            Stay in VS Code
+           </span>
+          </div>
+          <div class="flex items-start gap-3 p-3 rounded-lg bg-background/50">
+           <span class="font-medium">
+            Optional leaderboard and rankings
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 bg-secondary/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 px-4 py-1 text-base">
+         100% Optional
+        </div>
+        <h2 class="text-4xl font-bold">
+         Join the
+         <span class="text-gradient">
+          Community
+         </span>
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+         Compare your productivity with other developers. Always opt-in, always anonymous.
+        </p>
+       </div>
+       <div class="grid lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2 space-y-6">
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-border/50">
+          <div class="flex flex-col space-y-1.5 p-6">
+           <h3 class="text-2xl font-semibold leading-none tracking-tight flex items-center gap-2">
+            Leaderboard Rankings
+           </h3>
+          </div>
+          <div class="p-6 pt-0 space-y-3">
+           <div class="flex items-center gap-3">
+            <span class="text-muted-foreground">
+             Global, daily, weekly, monthly rankings
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span class="text-muted-foreground">
+             Categories: tokens, sessions, streaks, costs
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span class="text-muted-foreground">
+             Achievement system (bronze, silver, gold, platinum)
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span class="text-muted-foreground">
+             User profiles with optional Twitter/bio
+            </span>
+           </div>
+           <div class="flex items-center gap-3">
+            <span class="text-muted-foreground">
+             Privacy controls (Public, Friends-only, Private)
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-border/50">
+          <div class="p-6 pt-6">
+           <div class="space-y-3">
+            <div class="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
+             <div class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">
+               1
+              </div>
+              <div>
+               <div class="font-semibold">
+                Developer 1
+               </div>
+               <div class="text-sm text-muted-foreground">
+                2.5M tokens
+               </div>
+              </div>
+             </div>
+             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+              Platinum
+             </div>
+            </div>
+            <div class="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
+             <div class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">
+               2
+              </div>
+              <div>
+               <div class="font-semibold">
+                Developer 2
+               </div>
+               <div class="text-sm text-muted-foreground">
+                2.1M tokens
+               </div>
+              </div>
+             </div>
+             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+              Gold
+             </div>
+            </div>
+            <div class="flex items-center justify-between p-4 rounded-lg bg-secondary/50">
+             <div class="flex items-center gap-4">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold">
+               3
+              </div>
+              <div>
+               <div class="font-semibold">
+                Developer 3
+               </div>
+               <div class="text-sm text-muted-foreground">
+                1.8M tokens
+               </div>
+              </div>
+             </div>
+             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80">
+              Silver
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="space-y-6">
+         <div class="rounded-lg border text-card-foreground shadow-sm border-primary/20 bg-primary/5">
+          <div class="flex flex-col space-y-1.5 p-6">
+           <h3 class="font-semibold tracking-tight flex items-center gap-2 text-lg">
+            Privacy First
+           </h3>
+          </div>
+          <div class="p-6 pt-0 space-y-4">
+           <div class="space-y-3">
+            <div class="flex items-start gap-3">
+             <div>
+              <div class="font-semibold text-sm mb-1">
+               Anonymous by Default
+              </div>
+              <div class="text-xs text-muted-foreground">
+               No personal data shared unless you opt-in
+              </div>
+             </div>
+            </div>
+            <div class="flex items-start gap-3">
+             <div>
+              <div class="font-semibold text-sm mb-1">
+               Disabled by Default
+              </div>
+              <div class="text-xs text-muted-foreground">
+               You must explicitly opt-in to participate
+              </div>
+             </div>
+            </div>
+            <div class="flex items-start gap-3">
+             <div>
+              <div class="font-semibold text-sm mb-1">
+               Easy to Disable
+              </div>
+              <div class="text-xs text-muted-foreground">
+               Can be turned off anytime in settings
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-lg border text-card-foreground shadow-sm border-accent/20 bg-accent/5">
+          <div class="flex flex-col space-y-1.5 p-6">
+           <h3 class="font-semibold tracking-tight flex items-center gap-2 text-lg">
+            All Features Work Without It
+           </h3>
+          </div>
+          <div class="p-6 pt-0">
+           <p class="text-sm text-muted-foreground">
+            Every core feature works perfectly without the leaderboard. It's purely optional for those who enjoy friendly competition.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20" id="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl font-bold">
+         <span class="text-gradient">
+          Simple
+         </span>
+         , Transparent Pricing
+        </h2>
+        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+         All essential features are free forever. Upgrade to unlock unlimited history and up to 5 devices.
+        </p>
+       </div>
+       <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative border-border/50">
+         <div class="flex flex-col space-y-1.5 p-6 text-center pb-8">
+          <div class="space-y-1">
+           <h3 class="font-semibold tracking-tight text-2xl">
+            Free
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Core Features
+           </p>
+          </div>
+          <div class="pt-4">
+           <div class="text-4xl font-bold">
+            $0
+           </div>
+           <div class="text-sm text-muted-foreground">
+            forever
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground pt-2">
+           All essential features at no cost
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-6">
+          <ul class="space-y-3">
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Browse all sessions (upto 7 days)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Full-text search across conversations
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             File change tracking
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Same-day diff viewing
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Same-day undo/redo (24 hours)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Basic analytics (7-day data)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Search access (3-day limit)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             File timeline (3-day sessions)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             7-day history access
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             2 devices maximum
+            </span>
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full" href="/login">
+           Get Started Free
+          </a>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative border-border/50">
+         <div class="flex flex-col space-y-1.5 p-6 text-center pb-8">
+          <div class="space-y-1">
+           <h3 class="font-semibold tracking-tight text-2xl">
+            Premium Monthly
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Unlimited Access
+           </p>
+          </div>
+          <div class="pt-4">
+           <div class="text-4xl font-bold">
+            $3.99
+           </div>
+           <div class="text-sm text-muted-foreground">
+            per month
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground pt-2">
+           Unlock unlimited history and up to 5 devices
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-6">
+          <ul class="space-y-3">
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Everything in Free, plus:
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Unlimited diff viewing (all sessions)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Unlimited undo/redo (any session)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Session forking
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Pin &amp; rename sessions
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Context window optimizer (Experimental)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Full file timeline (all sessions)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Advanced search (all results)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Complete chat history access
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Full analytics &amp; dashboard
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Export sessions to markdown
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Up to 5 devices
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Priority support
+            </span>
+           </li>
+          </ul>
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
+           Upgrade to Premium
+          </button>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground relative border-primary shadow-xl scale-105">
+         <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <div class="inline-flex items-center rounded-full border text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary text-primary-foreground hover:bg-primary/80 px-4 py-1">
+           Most Popular
+          </div>
+         </div>
+         <div class="flex flex-col space-y-1.5 p-6 text-center pb-8">
+          <div class="space-y-1">
+           <h3 class="font-semibold tracking-tight text-2xl">
+            Premium Lifetime
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Best Value
+           </p>
+          </div>
+          <div class="pt-4">
+           <div class="text-4xl font-bold">
+            $29.99
+           </div>
+           <div class="text-sm text-muted-foreground">
+            one-time payment
+           </div>
+           <div class="mt-2 px-3 py-1.5 bg-green-500/10 border border-green-500/20 rounded-lg">
+            <p class="text-xs font-medium text-green-600 dark:text-green-400">
+             First 50 users: Use code CCASSIST for $5 off!
+            </p>
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground pt-2">
+           All premium features, forever
+          </p>
+         </div>
+         <div class="p-6 pt-0 space-y-6">
+          <ul class="space-y-3">
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Everything in Free, plus:
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Unlimited diff viewing (all sessions)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Unlimited undo/redo (any session)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Session forking
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Pin &amp; rename sessions
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Context window optimizer (Experimental)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Full file timeline (all sessions)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Advanced search (all results)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Complete chat history access
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Full analytics &amp; dashboard
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Export sessions to markdown
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Up to 5 devices
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Priority support
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-sm text-muted-foreground">
+             Lifetime updates
+            </span>
+           </li>
+          </ul>
+          <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+           Get Lifetime Access
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="text-center mt-12">
+        <p class="text-sm text-muted-foreground max-w-2xl mx-auto">
+         All essential features are free forever. Support is 100% optional and helps fund development, hosting, and new features.
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 bg-secondary/30" id="faq">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl font-bold">
+         Frequently Asked
+         <span class="text-gradient">
+          Questions
+         </span>
+        </h2>
+        <p class="text-xl text-muted-foreground">
+         Everything you need to know about Claude Code Assist
+        </p>
+       </div>
+       <div class="space-y-4">
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R1kqqla:" type="button">
+           <span class="font-semibold">
+            Is this an official Claude product?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R2kqqla:" type="button">
+           <span class="font-semibold">
+            What data is collected?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R3kqqla:" type="button">
+           <span class="font-semibold">
+            Does it work on Apple Silicon Macs?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R4kqqla:" type="button">
+           <span class="font-semibold">
+            How much does it cost?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R5kqqla:" type="button">
+           <span class="font-semibold">
+            Where does it get my chat history?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R6kqqla:" type="button">
+           <span class="font-semibold">
+            Can I use this without the leaderboard?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R7kqqla:" type="button">
+           <span class="font-semibold">
+            How does cost tracking work?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R8kqqla:" type="button">
+           <span class="font-semibold">
+            Can I customize keyboard shortcuts?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:R9kqqla:" type="button">
+           <span class="font-semibold">
+            Will this work with Claude Code Pro/Max?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="bg-card border border-border/50 rounded-lg px-6">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left hover:no-underline" id="radix-:Rakqqla:" type="button">
+           <span class="font-semibold">
+            How do I report bugs or request features?
+           </span>
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20" id="download">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="relative rounded-3xl overflow-hidden">
+        <div class="relative text-center space-y-8 py-20 px-8">
+         <div class="space-y-4">
+          <h2 class="text-4xl md:text-5xl font-bold text-white">
+           Ready to Master Your Claude Workflow?
+          </h2>
+          <p class="text-xl text-white/90 max-w-2xl mx-auto">
+           Join thousands of developers using Claude Code Assist to save time and stay organized.
+          </p>
+          <p class="text-lg text-white/80 max-w-2xl mx-auto">
+           To download, just search for
+           <span class="font-semibold">
+            Claude Code Assist
+           </span>
+           in VS Code extensions
+          </p>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8 text-base" href="https://marketplace.visualstudio.com/items?itemName=agsoft.claude-history-viewer" rel="noopener noreferrer" target="_blank">
+           VS Code Marketplace
+          </a>
+          <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-secondary text-secondary-foreground hover:bg-secondary/80 h-11 rounded-md px-8 text-base" href="https://open-vsx.org/extension/agsoft/claude-history-viewer" rel="noopener noreferrer" target="_blank">
+           Open VSX Registry
+          </a>
+         </div>
+         <div class="flex flex-wrap justify-center gap-6 text-white/80 text-sm border-t border-white/10 pt-8">
+          <a class="hover:text-white transition-colors" href="#features">
+           Features
+          </a>
+          <a class="hover:text-white transition-colors" href="#pricing">
+           Pricing
+          </a>
+          <a class="hover:text-white transition-colors" href="#faq">
+           FAQ
+          </a>
+          <a class="hover:text-white transition-colors" href="https://github.com/yashagldit/Claude-Code-History-VSCode" rel="noopener noreferrer" target="_blank">
+           GitHub
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <footer class="bg-secondary/30 border-t border-border">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+        <div class="col-span-2 md:col-span-3 lg:col-span-1 space-y-4">
+         <div class="flex items-center space-x-2">
+          <img alt="Claude Code Assist" class="w-8 h-8" height="32" src="/images/icon.png" width="32"/>
+          <span class="text-lg font-semibold">
+           Claude Code Assist
+          </span>
+         </div>
+         <p class="text-sm text-muted-foreground">
+          Master your Claude Code history with advanced search, analytics, and workflow tools.
+         </p>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-4">
+          Product
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#features">
+            Features
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#demo">
+            Demo
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#pricing">
+            Pricing
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#faq">
+            FAQ
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-4">
+          Resources
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://marketplace.visualstudio.com/items?itemName=agsoft.claude-history-viewer" rel="noopener noreferrer" target="_blank">
+            VS Code Marketplace
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://open-vsx.org/extension/agsoft/claude-history-viewer" rel="noopener noreferrer" target="_blank">
+            Open VSX Registry
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/support">
+            Support Development
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-4">
+          Community
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://github.com/yashagldit/Claude-Code-History-VSCode" rel="noopener noreferrer" target="_blank">
+            GitHub
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://twitter.com/yashagl" rel="noopener noreferrer" target="_blank">
+            Twitter
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://github.com/yashagldit/Claude-Code-History-VSCode/issues" rel="noopener noreferrer" target="_blank">
+            Report Issues
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-semibold mb-4">
+          Legal
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/privacy">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="https://github.com/yashagldit/Claude-Code-History-VSCode/blob/main/LICENSE" rel="noopener noreferrer" target="_blank">
+            MIT License
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center gap-2 text-sm text-muted-foreground">
+         <p>
+          © 2025 Claude Code Assist. Unofficial community project.
+         </p>
+         <span class="hidden sm:inline">
+          •
+         </span>
+         <a class="hover:text-foreground transition-colors" href="/privacy">
+          Privacy Policy
+         </a>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </main>
+   </head>
+  </html>
+
+</body>
+</html>

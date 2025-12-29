@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build forms, collect responses & analyze data effortlessly. — Ikiform</title>
+</head>
+<body>
+  <body>
+   <div class="z-10 flex min-h-screen flex-col gap-12 px-4 md:px-8 justify-between">
+    <nav class="mx-auto mt-12 flex w-full max-w-7xl items-center justify-between gap-8 font-inter text-sm">
+     <a class="sr-only rounded-md bg-background px-3 py-2 shadow-md focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring" href="#main-content">
+      Skip to content
+     </a>
+     <div class="flex shrink-0 items-center">
+      <a class="flex items-center gap-2 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2" href="/">
+       <img alt="" class="size-8" height="32" src="/_next/image?url=%2Ffavicon.ico&amp;w=64&amp;q=75" width="32"/>
+       <span class="font-semibold text-2xl tracking-tight">
+        Ikiform
+       </span>
+      </a>
+     </div>
+     <div class="hidden flex-1 items-center justify-center md:flex">
+      <nav class="flex items-center">
+       <a class="min-h-[32px] min-w-[32px] rounded-full px-4 py-1.5 text-sm opacity-70 transition-all duration-200 hover:bg-accent hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]" href="/">
+        Home
+       </a>
+       <a class="min-h-[32px] min-w-[32px] rounded-full px-4 py-1.5 text-sm opacity-70 transition-all duration-200 hover:bg-accent hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]" href="/#features">
+        Features
+       </a>
+       <a class="min-h-[32px] min-w-[32px] rounded-full px-4 py-1.5 text-sm opacity-70 transition-all duration-200 hover:bg-accent hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]" href="/feedback">
+        Feedback
+       </a>
+       <a class="min-h-[32px] min-w-[32px] rounded-full px-4 py-1.5 text-sm opacity-70 transition-all duration-200 hover:bg-accent hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]" href="/#pricing">
+        Pricing
+       </a>
+       <a class="min-h-[32px] min-w-[32px] rounded-full px-4 py-1.5 text-sm opacity-70 transition-all duration-200 hover:bg-accent hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 active:scale-[0.98]" href="/changelog">
+        Changelog
+       </a>
+      </nav>
+     </div>
+     <div class="flex shrink-0 items-center">
+      <div class="hidden items-center gap-2 md:flex">
+       <a class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 border bg-background shadow-none hover:bg-accent hover:text-accent-foreground dark:border-border dark:bg-input/30 dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 rounded-md flex min-h-[36px] items-center gap-1" href="/login">
+        Login
+       </a>
+      </div>
+      <div class="flex items-center md:hidden">
+       <button class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 min-h-[44px] min-w-[44px] touch-manipulation" type="button">
+        <span>
+         Open menu
+        </span>
+       </button>
+      </div>
+     </div>
+    </nav>
+    <main class="flex flex-col items-center">
+     <section class="mx-auto flex w-full max-w-7xl flex-col bg-linear-to-t from-10% from-background to-85% to-card">
+      <div class="relative z-20 flex h-full grow flex-col items-center gap-8 overflow-hidden border border-b-0 px-4 py-28 text-center md:px-6">
+       <span class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap border font-medium transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;&gt;svg]:pointer-events-none [&amp;&gt;svg]:size-3 border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 rounded-full px-3 py-0.5 text-sm">
+        <a class="flex items-center justify-center gap-1" href="https://vercel.com/open-source-program?utm_source=ikiform" rel="noopener noreferrer" target="_blank">
+         Sponsored by
+        </a>
+       </span>
+       <h1 class="text-center font-semibold text-4xl leading-tighter tracking-[-2px] md:text-5xl" id="home-hero-title">
+        Build Forms, Collect Responses &amp; Analyze.
+       </h1>
+       <p class="mx-auto max-w-2xl font-normal text-base leading-loose opacity-70 md:text-lg" id="home-hero-desc">
+        The open-source forms platform for effortless data collection and analysis.
+       </p>
+       <div class="flex w-fit flex-wrap items-center justify-center gap-3">
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 rounded-full min-h-[44px] md:min-h-[44px] flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap font-medium md:w-auto md:min-w-[240px]" href="/login">
+         <span>
+          Create Your First Form
+         </span>
+        </a>
+        <a class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 border bg-background shadow-none hover:bg-accent hover:text-accent-foreground dark:border-border dark:bg-input/30 dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 rounded-full min-h-[44px] md:min-h-[44px] flex h-11 w-full items-center justify-center gap-2 whitespace-nowrap font-medium md:w-auto md:min-w-[160px]" href="/#form-builder-demo">
+         <span>
+          Try a Demo
+         </span>
+        </a>
+       </div>
+       <div class="flex items-center justify-center flex-wrap gap-3">
+        <div class="flex -space-x-2">
+         <span class="relative flex shrink-0 overflow-hidden rounded-full size-9 border-2 border-background">
+          <img alt="Yes Money!" class="aspect-square size-full" src="https://www.gravatar.com/avatar/820117d4b7a01756fc47e0075f0cb6c01a82691ad3ec3ce9a1f49235d0c672ed?d=404"/>
+         </span>
+         <span class="relative flex shrink-0 overflow-hidden rounded-full size-9 border-2 border-background -ml-2">
+          <img alt="Avi Kay" class="aspect-square size-full" src="https://www.gravatar.com/avatar/cb0434f4899c68c4bd364f67403cfba7336d1fd1b8a83e15b529b69c91296248?d=404"/>
+         </span>
+         <span class="relative flex shrink-0 overflow-hidden rounded-full size-9 border-2 border-background -ml-2">
+          <img alt="Tony Cruz" class="aspect-square size-full" src="https://www.gravatar.com/avatar/529f268c1c943e596df18bc22e4f42af5a2cf69e4f0a411d9412847a10aa8a45?d=404"/>
+         </span>
+         <span class="relative flex shrink-0 overflow-hidden rounded-full size-9 border-2 border-background -ml-2">
+          <img alt="Gabriela Flores" class="aspect-square size-full" src="https://www.gravatar.com/avatar/3a5180d835aca06fe8782f611176f1d6064d8ce7852b1e2844be833e03df4cb9?d=404"/>
+         </span>
+        </div>
+        <div class="flex flex-col items-center sm:items-start gap-1">
+         <span class="text-muted-foreground text-sm font-medium tabular-nums">
+          <span class="sr-only">
+           Total users:
+          </span>
+          Loved by 669+ users
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="card flex flex-col gap-6 border py-6 text-card-foreground w-full max-w-7xl rounded-none border-b-0 bg-card shadow-none">
+       <div class="flex flex-col gap-2 w-full">
+        <div class="flex items-center justify-start border-b border-border px-4 py-4 md:px-6">
+         <div class="inline-flex h-9 w-fit items-center justify-center rounded-lg bg-muted p-[3px] text-muted-foreground">
+          <button class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-transparent px-2 py-1 font-medium text-foreground text-sm transition-[color,box-shadow] focus-visible:border-ring focus-visible:outline-1 focus-visible:outline-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:shadow-sm dark:text-muted-foreground dark:data-[state=active]:border-border dark:data-[state=active]:bg-input/30 dark:data-[state=active]:text-foreground [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0" id="radix-_R_95bsnmnb_-trigger-form-demo" type="button">
+           Form Demo
+          </button>
+          <button class="inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 whitespace-nowrap rounded-md border border-transparent px-2 py-1 font-medium text-foreground text-sm transition-[color,box-shadow] focus-visible:border-ring focus-visible:outline-1 focus-visible:outline-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:shadow-sm dark:text-muted-foreground dark:data-[state=active]:border-border dark:data-[state=active]:bg-input/30 dark:data-[state=active]:text-foreground [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0" id="radix-_R_95bsnmnb_-trigger-form-builder-demo" type="button">
+           Form Builder Demo
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="mx-auto w-full max-w-7xl bg-background">
+      <div class="mx-auto flex w-full max-w-7xl flex-col">
+       <div class="grid grid-cols-1 gap-px bg-border p-px lg:grid-cols-4">
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 bg-background p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-2 row-span-2 w-full">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             AI Form Builder
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="font-medium opacity-100">
+              Instant form creation
+             </span>
+             <span class="opacity-50">
+              —just describe it and launch. Convert visitors in seconds.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border/60 bg-gradient-to-br from-primary/1 to-accent/20 p-0 shadow-inner">
+             <div class="flex flex-col gap-3 px-6 py-5">
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground text-sm">
+                AI is building your form…
+               </span>
+              </div>
+              <div class="flex flex-col gap-3 rounded-xl border border-border bg-background/80 p-3">
+               <div class="flex flex-col gap-1">
+                <label class="flex select-none items-center gap-2 peer-disabled:cursor-not-allowed peer-disabled:opacity-50 group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 mb-0.5 font-medium text-muted-foreground text-xs" for="aiform-demo-input">
+                 What would you like to create?
+                </label>
+                <input class="h-9 rounded-md border border-border bg-transparent px-3 text-foreground text-xs" id="aiform-demo-input" placeholder="Eg. Contact Form…" value="could you create a simple contact form?"/>
+               </div>
+               <div class="relative mt-2 flex flex-col gap-2 rounded-m">
+                <div class="flex flex-col gap-0.5 rounded-md transition-all">
+                 <span class="pl-1 font-medium text-muted-foreground text-xs">
+                  Collect name
+                 </span>
+                </div>
+                <div class="flex flex-col gap-0.5 rounded-md transition-all">
+                 <span class="pl-1 font-medium text-muted-foreground text-xs">
+                  Collect email
+                 </span>
+                </div>
+                <div class="flex flex-col gap-0.5 rounded-md transition-all">
+                 <span class="pl-1 font-medium text-muted-foreground text-xs">
+                  Message
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="mt-auto flex items-center justify-between border-border/50 border-t px-6 py-3">
+              <span class="text-muted-foreground text-xs">
+               Generated in 2.3s
+              </span>
+              <button class="rounded-full bg-primary px-3 py-1 font-semibold text-primary-foreground text-xs shadow transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/80 disabled:opacity-60" type="button">
+               Use this form
+              </button>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-1 bg-card">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             Unlimited Everything
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             Truly
+             <span class="font-medium opacity-100">
+              unlimited forms and responses
+             </span>
+             .
+             <span class="opacity-50">
+              Grow without limits.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="relative flex h-full flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/1 to-accent/20 p-4 shadow-inner">
+             <div class="relative z-10 flex flex-col items-center gap-4 px-2 py-4">
+              <div class="mb-1 flex items-center justify-center">
+               <span class="font-bold text-5xl text-primary">
+                ∞
+               </span>
+              </div>
+              <div class="flex flex-col items-center gap-2">
+               <div class="flex items-center gap-2 text-center font-medium text-foreground text-sm">
+                Unlimited Forms, Fields, Users and Responses.
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 bg-background p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-1">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             AI Analytics
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="opacity-50">
+              See who converts and why—
+             </span>
+             <span class="font-medium opacity-100">
+              get clear, actionable insights
+             </span>
+             <span class="opacity-50">
+              .
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="h-full overflow-hidden rounded-2xl bg-gradient-to-br from-primary/1 to-accent/20 p-5 shadow-inner">
+             <div class="flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+               <span class="font-medium text-foreground text-xs">
+                Weekly Responses
+               </span>
+               <span class="font-semibold text-green-500 text-xs">
+                ↗ +34%
+               </span>
+              </div>
+              <div class="text-muted-foreground text-xs">
+               1.2k responses this week
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 bg-background p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-2">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             Smart Notifications
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="opacity-50">
+              Never miss a lead—
+             </span>
+             <span class="font-medium opacity-100">
+              get instant alerts and automate follow-ups.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="relative h-full overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-primary/2 to-accent/20 p-0 shadow-inner">
+             <div class="sticky top-0 z-[999] flex items-center gap-3 rounded-t-2xl border-border border-b bg-card px-5 pt-5 pb-3">
+              <div>
+               <div class="font-medium text-foreground text-sm leading-tight">
+                Email Notification
+               </div>
+               <div class="text-muted-foreground text-xs">
+                You have 1 new notification
+               </div>
+              </div>
+             </div>
+             <div class="relative flex h-40 flex-col px-3 pt-2 pb-3">
+              <div class="ease relative mb-1.5 flex items-center gap-3 rounded-xl border border-border bg-background p-3 shadow-none outline-none transition-all last:mb-0 focus-within:ring-2 focus-within:ring-primary">
+               <div class="min-w-0 flex-1">
+                <div class="flex items-center">
+                 <span class="truncate font-semibold text-foreground text-xs">
+                  Feedback Form
+                 </span>
+                </div>
+                <div class="truncate text-muted-foreground text-xs" title="lisa@startup.io">
+                 <span class="sr-only">
+                  From:
+                 </span>
+                 lisa@startup.io
+                </div>
+               </div>
+               <div class="ml-2 flex-none text-[10px] text-muted-foreground">
+                Just now
+               </div>
+              </div>
+             </div>
+             <span class="sr-only">
+              New email notification: Feedback Form from lisa@startup.io, Just now
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-1 bg-card">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             API &amp; Webhooks
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="font-medium opacity-100">
+              Sync leads anywhere
+             </span>
+             <span class="opacity-50">
+              —connect with any service or workflow.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="relative flex h-fit flex-col justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/2 to-accent/20 p-6 shadow-inner">
+             <div class="mb-3 flex items-center gap-3">
+              <div class="flex items-center gap-1 rounded-full border border-border bg-card/80 px-2 py-1.5 shadow">
+               <span class="font-medium text-muted-foreground text-xs tracking-tight">
+                acme.com/data
+               </span>
+              </div>
+              <span class="text-xs text-blue-500 dark:text-blue-300">
+               Fetching...
+              </span>
+             </div>
+             <span class="sr-only">
+              Contacting Stripe API, loading data...
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 bg-background p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-1">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             Form Signatures
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="opacity-50">
+              Add signature fields to
+             </span>
+             <span class="font-medium opacity-100">
+              collect e-signatures
+             </span>
+             <span class="opacity-50">
+              in any form.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="relative flex h-fit flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/1 to-accent/20 p-4 shadow-inner">
+             <div class="relative mx-auto flex min-h-[88px] w-full max-w-[290px] flex-col items-center rounded-lg border border-border bg-background/95 p-3 shadow">
+              <div class="mb-0.5 flex w-full items-center justify-between text-muted-foreground text-xs">
+               <span>
+                Sign Agreement
+               </span>
+               <span class="text-primary">
+                —
+               </span>
+              </div>
+              <div class="mt-2 flex items-center justify-center gap-2 font-medium text-foreground text-xs">
+               Signing in progress
+              </div>
+             </div>
+             <span class="absolute right-2 bottom-2 rounded-full border-[1.8px] border-background bg-primary/90 px-2 py-0.5 font-medium text-[10px] text-white shadow-sm">
+              Verified
+             </span>
+             <span class="sr-only">
+              Signature is being written.
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="card flex flex-col gap-6 text-card-foreground overflow-hidden rounded-none border-0 bg-background p-4 shadow-none transition-all duration-300 ease-out md:p-6 col-span-2">
+         <div class="flex h-fit w-full flex-col gap-8 p-6 md:h-full">
+          <div class="flex flex-col items-start gap-4 text-left">
+           <div class="flex min-w-0 flex-1 flex-col gap-3">
+            <h3 class="flex items-center gap-2 font-medium text-sm opacity-60">
+             Visual Logic Builder
+            </h3>
+            <p class="font-medium text-lg leading-relaxed tracking-tight md:text-xl">
+             <span class="font-medium opacity-100">
+              Personalize every journey
+             </span>
+             <span class="opacity-50">
+              —show or hide questions based on answers.
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="relative overflow-hidden">
+           <div class="fade-bottom h-fit md:h-full">
+            <div class="flex h-full flex-col justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-primary/1 to-accent/20 p-5 shadow-inner">
+             <div class="relative z-10 mx-auto flex w-full max-w-xs flex-col items-center gap-0">
+              <ol class="flex w-full flex-col items-start gap-0 md:gap-2">
+               <li class="relative flex w-full flex-row items-center px-0 py-2">
+                <span class="mr-3 min-w-[2.5rem] select-none text-xs">
+                 <span class="rounded bg-primary/80 px-1 py-0.5 font-bold text-white text-xs">
+                  IF
+                 </span>
+                </span>
+                <div class="relative mb-0.5 flex items-center gap-3 outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-primary">
+                 <div class="flex size-10 items-center justify-center rounded-full border-4 border-primary/20 bg-primary/90 shadow">
+                  <span class="font-bold text-white text-xs">
+                   IF
+                  </span>
+                 </div>
+                 <span class="relative whitespace-nowrap text-left font-medium text-[14px] text-foreground">
+                  <span class="font-semibold text-primary">
+                   User responds
+                  </span>
+                  <span class="italic">
+                   “Yes”
+                  </span>
+                 </span>
+                </div>
+               </li>
+               <li class="relative flex w-full flex-row items-center px-0 py-2">
+                <span class="mr-3 min-w-[2.5rem] select-none text-xs">
+                 <span class="rounded bg-blue-400/80 px-1 py-0.5 font-bold text-white text-xs">
+                  THEN
+                 </span>
+                </span>
+                <div class="relative mb-0.5 flex items-center gap-3 outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-primary">
+                 <span class="relative whitespace-nowrap text-left font-medium text-[14px] text-foreground">
+                  <span class="font-semibold text-primary">
+                   Show email field
+                  </span>
+                 </span>
+                </div>
+               </li>
+               <li class="relative flex w-full flex-row items-center px-0 py-2">
+                <span class="mr-3 min-w-[2.5rem] select-none text-xs">
+                 <span class="rounded bg-muted-foreground/80 px-1 py-0.5 font-bold text-white text-xs">
+                  ELSE
+                 </span>
+                </span>
+                <div class="relative mb-0.5 flex items-center gap-3 outline-none ring-offset-2 transition focus-visible:ring-2 focus-visible:ring-primary">
+                 <span class="relative whitespace-nowrap text-left font-medium text-[14px] text-foreground">
+                  <span class="font-semibold text-muted-foreground">
+                   Skip
+                  </span>
+                 </span>
+                </div>
+               </li>
+              </ol>
+             </div>
+             <span class="sr-only">
+              Preview of a simple conditional logic: if user responds "Yes", then show the email field; otherwise, skip it.
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="mx-auto w-full max-w-7xl bg-background" id="pricing">
+      <div class="mx-auto flex w-full flex-col">
+       <div class="mx-auto flex w-full flex-col gap-22 border border-t-0 border-b-0 py-22">
+        <div class="flex flex-col gap-4 px-8 text-center md:px-12">
+         <h2 class="text-center font-medium text-3xl leading-tight tracking-[-2px] md:text-4xl" id="pricing-title">
+          Simple, Transparent Pricing for Everything You Need.
+         </h2>
+         <p class="text-center text-base text-muted-foreground md:text-lg">
+          Choose the plan that best fits your needs and start collecting responses.
+         </p>
+        </div>
+        <div>
+         <div class="grid grid-cols-1 lg:grid-cols-3">
+          <article class="bg-transparent border p-6 md:p-8 border-l-0 border-r-0">
+           <header class="mb-6 flex items-center justify-between">
+            <div class="flex flex-col gap-2">
+             <h3 class="font-medium text-2xl text-foreground tracking-tight">
+              Monthly Plan
+             </h3>
+             <p class="max-w-md text-muted-foreground text-sm">
+              Billed monthly • Cancel anytime
+             </p>
+            </div>
+           </header>
+           <div class="mb-6 flex flex-col gap-2">
+            <div class="flex items-baseline gap-2">
+             <span class="font-semibold text-3xl text-foreground tracking-tighter">
+              $19
+             </span>
+             <span class="text-muted-foreground">
+              /Mo
+             </span>
+            </div>
+           </div>
+           <ul class="mb-8 flex list-none flex-col gap-3 p-0">
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Unlimited forms &amp; responses
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              API &amp; webhooks for automation
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Control response limits &amp; rate
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Build quizzes with scoring
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Access form data via API
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Custom branding &amp; embed anywhere
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Block spam &amp; bots automatically
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Filter profanity &amp; require passwords
+             </span>
+            </li>
+           </ul>
+           <div class="flex flex-col gap-2">
+            <a class="block w-full" href="/login">
+             <button class="shrink-0 cursor-pointer whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 border bg-background shadow-none hover:bg-accent hover:text-accent-foreground dark:border-border dark:bg-input/30 dark:hover:bg-input/50 px-4 py-2 has-[&gt;svg]:px-3 flex h-11 w-full items-center justify-between gap-2 rounded-full">
+              <span class="flex w-full items-center justify-between px-2">
+               Start your 14-day free trial
+              </span>
+             </button>
+            </a>
+            <span class="flex items-center justify-center text-center text-muted-foreground text-sm">
+             No credit card required
+            </span>
+           </div>
+          </article>
+          <article class="bg-card border p-6 md:p-8 border-r">
+           <header class="mb-6 flex items-center justify-between">
+            <div class="flex flex-col gap-2">
+             <h3 class="font-medium text-2xl text-foreground tracking-tight">
+              Lifetime Access
+             </h3>
+             <p class="max-w-md text-muted-foreground text-sm">
+              One-time payment • Lifetime access
+             </p>
+            </div>
+            <span class="inline-flex w-fit shrink-0 items-center justify-center gap-1 overflow-hidden whitespace-nowrap font-medium transition-[color,box-shadow] focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;&gt;svg]:pointer-events-none [&amp;&gt;svg]:size-3 border-transparent bg-primary text-primary-foreground [a&amp;]:hover:bg-primary/90 rounded-full border px-3 py-1 text-xs">
+             Popular
+            </span>
+           </header>
+           <div class="mb-6 flex flex-col gap-2">
+            <div class="flex items-baseline gap-2">
+             <span class="font-semibold text-4xl tracking-tighter">
+              $99
+             </span>
+            </div>
+           </div>
+           <ul class="mb-8 flex list-none flex-col gap-3 p-0">
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Unlimited forms &amp; responses
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              API &amp; webhooks for automation
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Control response limits &amp; rate
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Build quizzes with scoring
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Access form data via API
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Custom branding &amp; embed anywhere
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Block spam &amp; bots automatically
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Filter profanity &amp; require passwords
+             </span>
+            </li>
+           </ul>
+           <div class="flex flex-col gap-2">
+            <a class="block w-full" href="/login">
+             <button class="shrink-0 cursor-pointer whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 has-[&gt;svg]:px-3 flex h-11 w-full items-center justify-between gap-2 rounded-full">
+              <span class="flex w-full items-center justify-between px-2">
+               Get Lifetime Access
+              </span>
+             </button>
+            </a>
+           </div>
+          </article>
+          <article class="bg-transparent border p-6 md:p-8 border-l-0 border-r-0">
+           <header class="mb-6 flex items-center justify-between">
+            <div class="flex flex-col gap-2">
+             <h3 class="font-medium text-2xl text-foreground tracking-tight">
+              Annual Plan
+             </h3>
+             <p class="max-w-md text-muted-foreground text-sm">
+              Billed annually ($192/yr) • Cancel anytime
+             </p>
+            </div>
+           </header>
+           <div class="mb-6 flex flex-col gap-2">
+            <div class="flex items-baseline gap-2">
+             <span class="font-semibold text-3xl text-foreground tracking-tighter">
+              $16
+             </span>
+             <span class="text-muted-foreground">
+              /Mo
+             </span>
+            </div>
+           </div>
+           <ul class="mb-8 flex list-none flex-col gap-3 p-0">
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Unlimited forms &amp; responses
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              API &amp; webhooks for automation
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Control response limits &amp; rate
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Build quizzes with scoring
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Access form data via API
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Custom branding &amp; embed anywhere
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Block spam &amp; bots automatically
+             </span>
+            </li>
+            <li class="flex items-center gap-3">
+             <span class="text-foreground text-sm opacity-80">
+              Filter profanity &amp; require passwords
+             </span>
+            </li>
+           </ul>
+           <div class="flex flex-col gap-2">
+            <a class="block w-full" href="/login">
+             <button class="shrink-0 cursor-pointer whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 border bg-background shadow-none hover:bg-accent hover:text-accent-foreground dark:border-border dark:bg-input/30 dark:hover:bg-input/50 px-4 py-2 has-[&gt;svg]:px-3 flex h-11 w-full items-center justify-between gap-2 rounded-full">
+              <span class="flex w-full items-center justify-between px-2">
+               Start your 14-day free trial
+              </span>
+             </button>
+            </a>
+            <span class="flex items-center justify-center text-center text-muted-foreground text-sm">
+             No credit card required
+            </span>
+           </div>
+          </article>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="mx-auto w-full max-w-7xl">
+      <div class="mx-auto flex w-full flex-col">
+       <div class="mx-auto flex w-full border border-t-0 max-md:flex-col">
+        <div class="flex flex-col gap-4 border-t border-r px-8 py-16 text-left md:px-12">
+         <h2 class="text-left font-medium text-3xl leading-tight tracking-[-2px] md:text-4xl" id="faq-title">
+          Frequently Asked Questions
+         </h2>
+        </div>
+        <div class="grid w-full grid-cols-1">
+         <div class="flex flex-col gap-0">
+          <div class="w-full">
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_mhbsnmnb_" type="button">
+              What is Ikiform?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_16hbsnmnb_" type="button">
+              Is there a free trial?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_1mhbsnmnb_" type="button">
+              Why use Ikiform instead of google form or typeform?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_26hbsnmnb_" type="button">
+              What types of forms can I create?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_2mhbsnmnb_" type="button">
+              What fields are supported?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_36hbsnmnb_" type="button">
+              How is my data protected?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_3mhbsnmnb_" type="button">
+              Is the data I submit shared with anyone?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_46hbsnmnb_" type="button">
+              Can I customize my forms?
+             </button>
+            </h3>
+           </div>
+          </div>
+         </div>
+         <div class="flex flex-col gap-0">
+          <div class="w-full">
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_qhbsnmnb_" type="button">
+              Where can I suggest new features?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_1ahbsnmnb_" type="button">
+              Where is my data stored?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_1qhbsnmnb_" type="button">
+              How is my data kept safe?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_2ahbsnmnb_" type="button">
+              Will my data be deleted if I cancel my account?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_2qhbsnmnb_" type="button">
+              Can I delete my data?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_3ahbsnmnb_" type="button">
+              Who owns my form submission data?
+             </button>
+            </h3>
+           </div>
+           <div class="last:border-b-0 w-full border-t border-b-0 py-2">
+            <h3 class="flex">
+             <button class="flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4 text-left font-medium hover:no-underline md:px-6" id="radix-_R_3qhbsnmnb_" type="button">
+              Is Ikiform open-source?
+             </button>
+            </h3>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="mx-auto w-full max-w-7xl bg-background">
+      <div class="mx-auto flex w-full flex-col">
+       <div class="card flex flex-col gap-6 border text-card-foreground relative overflow-hidden rounded-none border-t-0 bg-card p-8 py-12 shadow-none md:p-12 md:py-16">
+        <div class="flex flex-col items-center gap-8 px-0 py-24 text-center">
+         <div class="flex flex-col gap-6">
+          <h2 class="text-center font-semibold text-4xl leading-tighter tracking-[-2px] md:text-5xl" id="cta-title">
+           Create Your First Form in No Time.
+          </h2>
+          <p class="text-center text-base text-muted-foreground md:text-lg">
+           Get started with Ikiform to build forms, surveys, collect responses, and more in seconds!
+          </p>
+         </div>
+         <div class="flex w-fit flex-wrap items-center justify-center gap-3">
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 rounded-full flex h-11 w-full items-center gap-2 font-medium md:w-62" href="/login">
+           <span>
+            Create Your First Form
+           </span>
+          </a>
+          <a class="inline-flex shrink-0 cursor-pointer items-center justify-center gap-2 whitespace-nowrap font-medium text-sm outline-none transition-all focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0transition-transform will-change-transform active:scale-97 border bg-background shadow-none hover:bg-accent hover:text-accent-foreground dark:border-border dark:bg-input/30 dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 rounded-full flex h-11 w-full items-center gap-2 font-medium md:w-32" href="/#form-builder-demo">
+           <span>
+            Try a Demo
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="mx-auto my-12 w-full max-w-7xl bg-background">
+     <div class="mx-auto flex w-full flex-col">
+      <div>
+       <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-8 lg:flex-row lg:justify-between">
+         <div class="flex flex-shrink-0 flex-col gap-8">
+          <div class="flex flex-shrink-0 flex-col gap-4">
+           <a class="inline-flex" href="/">
+            <span class="flex items-center gap-3 text-3xl tracking-tight">
+             <img alt="Ikiform Logo" class="size-10 rounded-lg" height="40" src="/_next/image?url=%2Ffavicon.ico&amp;w=96&amp;q=75" width="40"/>
+             <span class="font-dm-sans font-semibold text-foreground">
+              Ikiform
+             </span>
+            </span>
+           </a>
+           <p class="max-w-sm text-muted-foreground text-sm">
+            © 2025 Made by —
+            <a class="font-medium text-foreground transition-colors hover:underline" href="https://x.com/preetsuthar17" rel="noopener noreferrer" target="_blank">
+             @preetsuthar17
+            </a>
+           </p>
+          </div>
+          <div class="flex flex-col gap-4">
+           <a href="https://vercel.com/open-source-program?utm_source=ikiform" rel="noopener noreferrer" target="_blank">
+            <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg"/>
+           </a>
+           <div class="sr-only flex flex-wrap items-center justify-start gap-3">
+            <a class="rounded transition-transform hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary" href="https://www.producthunt.com/products/ikiform?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-ikiform-2" rel="noopener noreferrer" target="_blank">
+             <img alt="Ikiform - An open-source alternative to Google Forms and Typeform | Product Hunt" class="h-8 w-auto object-contain" height="32" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1003917&amp;theme=light&amp;t=1754896632153" width="120"/>
+            </a>
+            <a class="rounded transition-transform hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary" href="https://startupfa.me/s/ikiform.com?utm_source=www.ikiform.com" rel="noopener noreferrer" target="_blank">
+             <img alt="Featured on Startup Fame" class="h-8 w-auto object-contain" height="32" src="https://startupfa.me/badges/featured/default.webp" width="120"/>
+            </a>
+            <a class="rounded transition-transform hover:scale-105 focus-visible:ring-2 focus-visible:ring-primary" href="https://twelve.tools" rel="noopener noreferrer" target="_blank">
+             <img alt="Featured on Twelve Tools" class="h-8 w-auto object-contain" height="32" src="https://twelve.tools/badge3-light.svg" width="120"/>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="flex flex-wrap gap-8 md:grid md:grid-cols-4 md:gap-10">
+          <div class="flex flex-col gap-4">
+           <h3 class="font-dm-sans font-medium text-foreground">
+            Navigation
+           </h3>
+           <ul class="flex flex-col gap-2">
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/">
+              Home
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/#features">
+              Features
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/#pricing">
+              Pricing
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/login">
+              Login
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/ai-builder">
+              AI Builder
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/dashboard">
+              Dashboard
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+           <h3 class="font-dm-sans font-medium text-foreground">
+            Legal
+           </h3>
+           <ul class="flex flex-col gap-2">
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/legal/privacy">
+              Privacy Policy
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/legal/terms">
+              Terms &amp; Condition
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/legal/gdpr">
+              GDPR
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="/legal/dpa">
+              DPA
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+           <h3 class="font-dm-sans font-medium text-foreground">
+            Resources
+           </h3>
+           <ul class="flex flex-col gap-2">
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://www.ikiform.com/feature-request" rel="noopener noreferrer" target="_blank">
+              Feature Request
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://www.ikiform.com/feedback" rel="noopener noreferrer" target="_blank">
+              Feedback
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://www.ikiform.com/bug-report" rel="noopener noreferrer" target="_blank">
+              Bug Report
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://www.ikiform.com/github" rel="noopener noreferrer" target="_blank">
+              GitHub Repository
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div class="flex flex-col gap-4">
+           <h3 class="font-dm-sans font-medium text-foreground">
+            Products
+           </h3>
+           <ul class="flex flex-col gap-2">
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://hextaui.com?ref=ikiform" rel="noopener noreferrer" target="_blank">
+              HextaUI
+             </a>
+            </li>
+            <li>
+             <a class="text-muted-foreground text-sm transition-colors hover:text-foreground" href="https://hextaui.com/blocks?ref=ikiform" rel="noopener noreferrer" target="_blank">
+              HextaUI Blocks
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="flex w-full flex-col items-end justify-center gap-6">
+         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div class="flex flex-wrap items-center gap-4 text-muted-foreground text-sm">
+           <a class="flex items-center gap-2 transition-colors hover:text-foreground" href="/email" rel="noopener noreferrer" target="_blank">
+            hi@ikiform.com
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <div class="ticketping-widget">
+    <div class="ticketping-chat-window">
+     <div class="ticketping-chat-content">
+      <div class="ticketping-tab-content active" id="homeTab">
+       <div class="ticketping-chat-header">
+        <div class="ticketping-workspace-logo">
+         <img alt="logo" src="https://www.ikiform.com/favicon.ico"/>
+        </div>
+       </div>
+       <div class="ticketping-home-container">
+        <div class="ticketping-home-content">
+         <h4>
+          Hi there 👋
+         </h4>
+         <p>
+          How can we help you?
+         </p>
+        </div>
+        <div class="ticketping-actions-container">
+         <button class="ticketping-start-conversation-btn">
+          <div class="ticketping-start-conversation-btn-content">
+           <span class="ticketping-start-conversation-btn-text">
+            Send us a message
+           </span>
+           <span class="ticketping-start-conversation-btn-subtext">
+            Typically respond within minutes
+           </span>
+          </div>
+         </button>
+        </div>
+       </div>
+       <div class="ticketping-plug">
+        <a href="https://ticketping.com" rel="noopener noreferrer" target="_blank">
+         Powered by Ticketping
+        </a>
+       </div>
+      </div>
+      <div class="ticketping-tab-content" id="messagesTab">
+       <div class="ticketping-messages-header">
+        <div class="ticketping-tab-heading">
+         <span>
+          Messages
+         </span>
+        </div>
+       </div>
+       <div class="ticketping-messages-content">
+        <div class="ticketping-conversation-container">
+         <div class="ticketping-conversation-list ticketping-thin-scrollbar" id="conversationList">
+          <div class="empty-state">
+           <div class="empty-state-content">
+            <p>
+             No conversations yet
+            </p>
+            <p class="empty-state-subtext">
+             Send us a message to get help
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="ticketping-send-a-message-container" id="sendMessageBtnContainer">
+          <button class="ticketping-send-message-btn">
+           <span class="ticketping-send-message-btn-text">
+            Send us a message
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="ticketping-chat-tabs" id="ticketpingChatTabs">
+      <button class="ticketping-tab active">
+       <span>
+        Home
+       </span>
+      </button>
+      <button class="ticketping-tab">
+       <span>
+        Messages
+       </span>
+      </button>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

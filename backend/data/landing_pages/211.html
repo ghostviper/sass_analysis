@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>incb - BMW M Finder</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="min-h-screen bg-white dark:bg-gray-950 transition-colors overflow-x-hidden">
+     <header class="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-40 backdrop-blur-sm bg-white/95 dark:bg-gray-950/95">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8">
+       <div class="flex justify-between items-center h-16">
+        <div class="flex items-center space-x-2 sm:space-x-4 md:space-x-8">
+         <a class="flex items-center space-x-2 sm:space-x-4" href="/">
+          <h1 class="text-base sm:text-xl md:text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+           <span class="hidden sm:inline">
+            ineedcarbonbuckets
+           </span>
+           <span class="sm:hidden">
+            incb
+           </span>
+          </h1>
+          <div class="hidden md:flex items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
+           <span>
+            Live inventory
+           </span>
+          </div>
+         </a>
+         <nav class="hidden md:flex items-center space-x-6">
+          <a class="text-sm font-medium transition-colors text-primary-600 dark:text-primary-400" href="/">
+           All Models
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/m2">
+           M2
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/m3">
+           M3
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/m4">
+           M4
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/m8">
+           M8
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/contact">
+           Contact
+          </a>
+          <a class="text-sm font-medium transition-colors text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white" href="/terms">
+           Terms
+          </a>
+         </nav>
+        </div>
+        <div class="flex items-center space-x-1 sm:space-x-2 md:space-x-4 flex-shrink-0">
+         <button class="px-2 py-1.5 sm:px-3 sm:py-2 text-xs sm:text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-950 flex items-center justify-center whitespace-nowrap">
+          Sign In
+         </button>
+         <div class="md:hidden">
+          <div class="relative">
+           <select class="appearance-none bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white px-2 py-2 pr-6 rounded text-xs border border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent w-20 truncate">
+            <option value="/">
+             All Models
+            </option>
+            <option value="/m2">
+             M2
+            </option>
+            <option value="/m3">
+             M3
+            </option>
+            <option value="/m4">
+             M4
+            </option>
+            <option value="/m4">
+             M8
+            </option>
+            <option value="/contact">
+             Contact
+            </option>
+            <option value="/terms">
+             Terms
+            </option>
+           </select>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <main class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-8 overflow-x-hidden">
+      <div class="mb-8 sm:mb-12 text-center space-y-6 sm:space-y-8 py-6 sm:py-8 md:py-12 px-4">
+       <div class="space-y-3 sm:space-y-4 md:space-y-5">
+        <div class="inline-block mb-2 px-4 py-1.5 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+         <span class="text-xs sm:text-sm font-semibold text-blue-700 dark:text-blue-300 uppercase tracking-wider">
+          🎉 Happy Holidays, plans are 10% off!
+         </span>
+        </div>
+        <h1 class="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight px-2">
+         Secure your dream BMW M car.
+         <br/>
+        </h1>
+        <p class="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light max-w-3xl mx-auto px-4 sm:px-2 leading-relaxed">
+         Stop endlessly searching dealer websites.
+        </p>
+        <p class="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light max-w-3xl mx-auto px-4 sm:px-2 leading-relaxed">
+         We track every BMW M2, M3, M4, and M8 with
+         <br/>
+         Carbon Fiber Bucket Seats,
+         <span class="font-semibold text-gray-900 dark:text-white">
+          Competition Package
+         </span>
+         ,
+         <br/>
+         or
+         <span class="font-semibold text-gray-900 dark:text-white">
+          Individual Paint
+         </span>
+         so you don't have to.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-500 dark:text-gray-400 pt-2">
+         <div class="flex items-center gap-2">
+          <span>
+           Instant Updates
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span>
+           US Nationwide Coverage
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span>
+           Advanced Filtering
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="max-w-2xl mx-auto">
+        <h3 class="text-sm sm:text-base font-semibold text-gray-700 dark:text-gray-300 mb-4 sm:mb-6">
+         Supported BMW Generations
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
+         <div class="text-center space-y-1 sm:space-y-2 p-4 sm:p-0">
+          <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">
+           M2
+          </div>
+          <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+           G87
+          </div>
+         </div>
+         <div class="text-center space-y-1 sm:space-y-2 p-4 sm:p-0">
+          <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">
+           M3
+          </div>
+          <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+           F/G80
+          </div>
+         </div>
+         <div class="text-center space-y-1 sm:space-y-2 p-4 sm:p-0">
+          <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">
+           M4
+          </div>
+          <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+           G82
+          </div>
+         </div>
+         <div class="text-center space-y-1 sm:space-y-2 p-4 sm:p-0">
+          <div class="text-2xl sm:text-3xl font-bold text-blue-600 dark:text-blue-400">
+           M8
+          </div>
+          <div class="text-xs sm:text-sm text-gray-600 dark:text-gray-400">
+           F91/F92
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-6">
+       <div class="hidden xl:block">
+        <div class="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 overflow-x-auto shadow-sm rounded-t-lg border-b-0">
+         <table class="w-full table-fixed min-w-[1024px]">
+          <colgroup>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+          </colgroup>
+          <thead class="bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+           <tr>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Vehicle
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Image
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Miles
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Trans
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Color
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Location
+            </th>
+            <th class="px-4 py-3 text-left text-xs font-semibold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+             Price
+            </th>
+           </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+           <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="font-semibold text-gray-900 dark:text-white">
+               2023 M2
+              </div>
+              <div class="inline-flex items-center px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+               ✓ Carbon Buckets
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400 font-mono">
+               3MF13DM04P8D40729
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <img alt="2023 M2" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:opacity-80 transition-opacity shadow-sm" src="/assets/cars/m2-red.jpeg"/>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm font-medium text-gray-900 dark:text-white">
+              17,347
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm text-gray-900 dark:text-white">
+              Auto
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Red
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               Black
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Federal Way, WA
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               98003
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[8rem]" title="West State Motorsport">
+               West State Motorsport
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-lg font-bold text-gray-900 dark:text-white">
+              $78,000
+             </div>
+            </td>
+           </tr>
+           <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="font-semibold text-gray-900 dark:text-white">
+               2022 M3
+              </div>
+              <div class="inline-flex items-center px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+               ✓ Carbon Buckets
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400 font-mono">
+               WBS33AY05NFL71716
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <img alt="2022 M3" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:opacity-80 transition-opacity shadow-sm" src="/assets/cars/m3-brooklyn-gray.jpeg"/>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm font-medium text-gray-900 dark:text-white">
+              5,362
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm text-gray-900 dark:text-white">
+              Auto
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Frozen Brilliant White Metallic
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               Kyalami Orange/Black
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Glendale, CA
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               91204
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[8rem]" title="Pacific BMW">
+               Pacific BMW
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-lg font-bold text-gray-900 dark:text-white">
+              $82,881
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="xl:hidden space-y-4">
+        <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+         <div class="flex justify-between items-start mb-4">
+          <div class="flex-1 min-w-0 mr-4">
+           <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            2023 M2
+           </h3>
+           <div class="inline-flex items-center px-2 py-1 mt-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+            ✓ Carbon Buckets
+           </div>
+          </div>
+          <div class="flex flex-col items-end space-y-2">
+           <div class="text-xl font-bold text-gray-900 dark:text-white">
+            $78,000
+           </div>
+           <img alt="2023 M2" class="w-24 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:opacity-80 transition-opacity shadow-sm" src="/assets/cars/m2-red.jpeg"/>
+          </div>
+         </div>
+         <div class="grid grid-cols-2 gap-4 text-sm">
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Miles
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            17,347
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Transmission
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            8-Speed Automatic
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Location
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            Federal Way, WA
+           </div>
+           <div class="text-xs text-gray-500 dark:text-gray-400">
+            98003
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Colors
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            Red
+           </div>
+           <div class="text-xs text-gray-500 dark:text-gray-400">
+            Black
+           </div>
+          </div>
+         </div>
+         <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div class="text-sm">
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Dealer
+           </span>
+           <div class="font-medium text-gray-900 dark:text-white">
+            West State Motorsport
+           </div>
+          </div>
+          <div class="mt-2 text-xs">
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            VIN
+           </span>
+           <div class="font-mono text-gray-700 dark:text-gray-300">
+            3MF13DM04P8D40729
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
+         <div class="flex justify-between items-start mb-4">
+          <div class="flex-1 min-w-0 mr-4">
+           <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+            2022 M3
+           </h3>
+           <div class="inline-flex items-center px-2 py-1 mt-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+            ✓ Carbon Buckets
+           </div>
+          </div>
+          <div class="flex flex-col items-end space-y-2">
+           <div class="text-xl font-bold text-gray-900 dark:text-white">
+            $82,881
+           </div>
+           <img alt="2022 M3" class="w-24 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-700 cursor-pointer hover:opacity-80 transition-opacity shadow-sm" src="/assets/cars/m3-brooklyn-gray.jpeg"/>
+          </div>
+         </div>
+         <div class="grid grid-cols-2 gap-4 text-sm">
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Miles
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            5,362
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Transmission
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            8-Speed Automatic
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Location
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            Glendale, CA
+           </div>
+           <div class="text-xs text-gray-500 dark:text-gray-400">
+            91204
+           </div>
+          </div>
+          <div>
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Colors
+           </span>
+           <div class="font-semibold text-gray-900 dark:text-white">
+            Frozen Brilliant White Metallic
+           </div>
+           <div class="text-xs text-gray-500 dark:text-gray-400">
+            Kyalami Orange/Black
+           </div>
+          </div>
+         </div>
+         <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+          <div class="text-sm">
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            Dealer
+           </span>
+           <div class="font-medium text-gray-900 dark:text-white">
+            Pacific BMW
+           </div>
+          </div>
+          <div class="mt-2 text-xs">
+           <span class="text-gray-500 dark:text-gray-400 block mb-1">
+            VIN
+           </span>
+           <div class="font-mono text-gray-700 dark:text-gray-300">
+            WBS33AY05NFL71716
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="relative isolate">
+       <div class="hidden xl:block bg-white dark:bg-gray-900 border-l border-r border-b border-gray-200 dark:border-gray-800 overflow-x-auto shadow-sm rounded-b-lg">
+        <div class="relative overflow-hidden">
+         <div class="absolute inset-0 z-20 flex items-center justify-center">
+          <div class="text-center space-y-4">
+           <button class="px-10 py-5 bg-blue-600 hover:bg-blue-700 text-white text-lg font-bold rounded-lg shadow-2xl transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+            <div class="flex items-center space-x-3">
+             <span>
+              View All Listings
+             </span>
+            </div>
+           </button>
+          </div>
+         </div>
+         <table class="w-full table-fixed min-w-[1024px] blur-sm">
+          <colgroup>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+           <col/>
+          </colgroup>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+           <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="font-semibold text-gray-900 dark:text-white">
+               2023 M3
+              </div>
+              <div class="inline-flex items-center px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+               ✓ Carbon Buckets
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400 font-mono">
+               WBS43AY01PFN42520
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <img alt="2023 M3" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m3-tanzanite-blue.jpeg"/>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm font-medium text-gray-900 dark:text-white">
+              10,442
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm text-gray-900 dark:text-white">
+              Auto
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Tanzanite Blue II Metallic
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               Special Order Upholstery
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Reno, NV
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               89502
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[8rem]" title="Corwin Buick GMC">
+               Corwin Buick GMC
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-lg font-bold text-gray-900 dark:text-white">
+              $88,995
+             </div>
+            </td>
+           </tr>
+           <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="font-semibold text-gray-900 dark:text-white">
+               2024 M2
+              </div>
+              <div class="inline-flex items-center px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+               ✓ Carbon Buckets
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400 font-mono">
+               3MF13DM04R8E77401
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <img alt="2024 M2" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m2-black-sapphire.jpeg"/>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm font-medium text-gray-900 dark:text-white">
+              4,679
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm text-gray-900 dark:text-white">
+              Auto
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Black Sapphire Metallic
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               Black W/M Color Highlight
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Fort Lauderdale, FL
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               33323
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[8rem]" title="Ed Morse Sawgrass Auto Mall">
+               Ed Morse Sawgrass Auto Mall
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-lg font-bold text-gray-900 dark:text-white">
+              $65,395
+             </div>
+            </td>
+           </tr>
+           <tr class="hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer">
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="font-semibold text-gray-900 dark:text-white">
+               2023 M4
+              </div>
+              <div class="inline-flex items-center px-2 py-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+               ✓ Carbon Buckets
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400 font-mono">
+               WBS33AZ0XPCM21366
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <img alt="2023 M4" class="w-20 h-14 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m4-sao-paulo-yellow.jpeg"/>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm font-medium text-gray-900 dark:text-white">
+              14,920
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-sm text-gray-900 dark:text-white">
+              Auto
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Sao Paulo Yellow
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               Black
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="space-y-1">
+              <div class="text-sm font-medium text-gray-900 dark:text-white">
+               Henderson, NV
+              </div>
+              <div class="text-xs text-gray-500 dark:text-gray-400">
+               89014
+              </div>
+              <div class="text-xs text-gray-600 dark:text-gray-400 truncate max-w-[8rem]" title="Towbin Dodge RAM">
+               Towbin Dodge RAM
+              </div>
+             </div>
+            </td>
+            <td class="px-4 py-4">
+             <div class="text-lg font-bold text-gray-900 dark:text-white">
+              $76,990
+             </div>
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+       </div>
+       <div class="xl:hidden mt-4">
+        <div class="relative overflow-hidden">
+         <div class="absolute inset-0 z-20 flex items-center justify-center px-4">
+          <div class="text-center space-y-3">
+           <button class="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-lg shadow-2xl transition-all transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-blue-500 focus:ring-offset-2">
+            <div class="flex items-center space-x-2">
+             <span>
+              View All
+             </span>
+            </div>
+           </button>
+          </div>
+         </div>
+         <div class="blur-sm space-y-4">
+          <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6 shadow-sm cursor-pointer">
+           <div class="flex justify-between items-start mb-4">
+            <div class="flex-1 min-w-0 mr-4">
+             <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+              2023 M3
+             </h3>
+             <div class="inline-flex items-center px-2 py-1 mt-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+              ✓ Carbon Buckets
+             </div>
+            </div>
+            <div class="flex flex-col items-end space-y-2">
+             <div class="text-xl font-bold text-gray-900 dark:text-white">
+              $88,995
+             </div>
+             <img alt="2023 M3" class="w-24 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m3-tanzanite-blue.jpeg"/>
+            </div>
+           </div>
+           <div class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Miles
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              10,442
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Transmission
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              8-Speed Automatic
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Location
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Reno, NV
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              89502
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Colors
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Tanzanite Blue II Metallic
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              Special Order Upholstery
+             </div>
+            </div>
+           </div>
+           <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div class="text-sm">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Dealer
+             </span>
+             <div class="font-medium text-gray-900 dark:text-white">
+              Corwin Buick GMC
+             </div>
+            </div>
+            <div class="mt-2 text-xs">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              VIN
+             </span>
+             <div class="font-mono text-gray-700 dark:text-gray-300">
+              WBS43AY01PFN42520
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6 shadow-sm cursor-pointer">
+           <div class="flex justify-between items-start mb-4">
+            <div class="flex-1 min-w-0 mr-4">
+             <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+              2024 M2
+             </h3>
+             <div class="inline-flex items-center px-2 py-1 mt-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+              ✓ Carbon Buckets
+             </div>
+            </div>
+            <div class="flex flex-col items-end space-y-2">
+             <div class="text-xl font-bold text-gray-900 dark:text-white">
+              $65,395
+             </div>
+             <img alt="2024 M2" class="w-24 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m2-black-sapphire.jpeg"/>
+            </div>
+           </div>
+           <div class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Miles
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              4,679
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Transmission
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              6-Speed Manual
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Location
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Fort Lauderdale, FL
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              33323
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Colors
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Black Sapphire Metallic
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              Black W/M Color Highlight
+             </div>
+            </div>
+           </div>
+           <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div class="text-sm">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Dealer
+             </span>
+             <div class="font-medium text-gray-900 dark:text-white">
+              Ed Morse Sawgrass Auto Mall
+             </div>
+            </div>
+            <div class="mt-2 text-xs">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              VIN
+             </span>
+             <div class="font-mono text-gray-700 dark:text-gray-300">
+              3MF13DM04R8E77401
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-white dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800 p-6 shadow-sm cursor-pointer">
+           <div class="flex justify-between items-start mb-4">
+            <div class="flex-1 min-w-0 mr-4">
+             <h3 class="text-lg font-bold text-gray-900 dark:text-white">
+              2023 M4
+             </h3>
+             <div class="inline-flex items-center px-2 py-1 mt-1 text-xs font-medium bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 rounded-full">
+              ✓ Carbon Buckets
+             </div>
+            </div>
+            <div class="flex flex-col items-end space-y-2">
+             <div class="text-xl font-bold text-gray-900 dark:text-white">
+              $76,990
+             </div>
+             <img alt="2023 M4" class="w-24 h-16 object-cover rounded-lg border border-gray-200 dark:border-gray-700 shadow-sm" src="/assets/cars/m4-sao-paulo-yellow.jpeg"/>
+            </div>
+           </div>
+           <div class="grid grid-cols-2 gap-4 text-sm">
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Miles
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              14,920
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Transmission
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              8-Speed Automatic
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Location
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Henderson, NV
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              89014
+             </div>
+            </div>
+            <div>
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Colors
+             </span>
+             <div class="font-semibold text-gray-900 dark:text-white">
+              Sao Paulo Yellow
+             </div>
+             <div class="text-xs text-gray-500 dark:text-gray-400">
+              Black
+             </div>
+            </div>
+           </div>
+           <div class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <div class="text-sm">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              Dealer
+             </span>
+             <div class="font-medium text-gray-900 dark:text-white">
+              Towbin Dodge RAM
+             </div>
+            </div>
+            <div class="mt-2 text-xs">
+             <span class="text-gray-500 dark:text-gray-400 block mb-1">
+              VIN
+             </span>
+             <div class="font-mono text-gray-700 dark:text-gray-300">
+              WBS33AZ0XPCM21366
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </main>
+     <footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-16">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 lg:px-8 py-8">
+       <div class="text-center space-y-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6">
+         <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" href="/contact">
+          Contact
+         </a>
+         <a class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors" href="/terms">
+          Terms of Service
+         </a>
+        </div>
+        <div class="space-y-2">
+         <p class="text-sm text-gray-600 dark:text-gray-400">
+          We are not associated with any dealership. All trademarks are property of their respective owners.
+         </p>
+         <p class="text-xs text-gray-500 dark:text-gray-500">
+          Data refreshed every hour • Built for BMW enthusiasts
+         </p>
+         <p class="text-xs text-gray-500 dark:text-gray-500">
+          © 2025 Lunarware Software. All rights reserved.
+         </p>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Humanize AI Text: Free AI Humanizer Tool</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col min-h-screen">
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-border">
+     <div class="max-w-[1200px] mx-auto px-6 md:px-12">
+      <div class="flex items-center justify-between h-16">
+       <div class="flex items-center gap-6">
+        <a class="flex items-center gap-2 text-2xl font-heading font-bold text-text-primary hover:text-accent transition-colors" href="/">
+         <img alt="humifi" class="h-8 w-8" height="32" src="/images/humifi logo new.svg" width="32"/>
+         humifi
+        </a>
+        <div class="hidden md:flex items-center gap-6">
+         <a class="text-sm font-medium transition-colors text-text-secondary hover:text-text-primary" href="/pricing">
+          Pricing
+         </a>
+         <a class="text-sm font-medium transition-colors text-text-secondary hover:text-text-primary" href="mailto:humifiapp@gmail.com">
+          Contact
+         </a>
+        </div>
+       </div>
+       <div class="flex items-center gap-3">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-surface text-accent border border-primary-border hover:bg-primary-light h-11 text-base px-4 py-2">
+         Login
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-white hover:bg-accent-hover shadow-sm h-11 text-base px-4 py-2">
+         Try for free
+        </button>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <div class="flex-1">
+     <main class="max-w-[1100px] mx-auto px-6 md:px-12 py-16 pt-24">
+      <div class="text-center mb-12 md:mb-4 bg-gradient-to-br from-highlight/60 via-highlight/30 to-background rounded-2xl py-8 md:py-12 px-4 md:px-8">
+       <h1 class="text-[36px] md:text-[3.75rem] font-heading font-semibold text-text-primary mb-4">
+        Humanize your writing.
+       </h1>
+       <h2 class="text-base md:text-[1rem] font-heading font-semibold text-text-secondary mb-6 max-w-2xl mx-auto">
+        Humifi transforms any AI-generated text into undetectable, natural, authentic human content.
+       </h2>
+       <div class="flex items-center justify-center mb-6">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-white hover:bg-accent-hover shadow-sm h-12 px-8 text-lg">
+         Start for Free
+        </button>
+       </div>
+      </div>
+      <div class="space-y-6">
+       <div class="rounded-2xl text-text-primary transition-all duration-200 border-border shadow-md hover:shadow-lg bg-white border-0">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <div class="flex items-center justify-end">
+          <button class="flex items-center justify-between rounded-md border px-3 py-2 text-sm ring-offset-background data-[placeholder]:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&amp;&gt;span]:line-clamp-1 w-[180px] h-9 bg-white hover:bg-gray-50 border-gray-200" type="button">
+           <span>
+            <span class="flex items-center gap-2">
+             <span>
+              ⚖️
+             </span>
+             <span class="text-sm">
+              Default
+             </span>
+            </span>
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="p-6 pt-0">
+         <div class="relative">
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+           <button class="inline-flex items-center gap-2 px-3 py-1.5 text-sm font-medium text-green-600 bg-white border border-green-200 rounded-full hover:bg-green-50 hover:border-green-300 transition-colors disabled:opacity-50 disabled:cursor-not-allowed pointer-events-auto">
+            Paste Text
+           </button>
+          </div>
+         </div>
+         <div class="mt-4 flex items-center gap-2">
+          <span class="text-sm font-medium text-gray-500">
+           0 / 500 words
+          </span>
+         </div>
+         <div class="flex flex-row gap-4 mt-6 justify-end">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-surface text-accent border border-primary-border hover:bg-primary-light h-11 px-6 text-base w-full">
+           Scan
+          </button>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-white hover:bg-accent-hover shadow-sm h-11 px-6 text-base w-full">
+           <span class="mr-1">
+            ✨
+           </span>
+           Humanize
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <section class="py-12 md:py-16">
+       <div class="text-center mb-8 md:mb-12">
+        <h2 class="text-sm md:text-base uppercase font-semibold text-text-secondary tracking-wider">
+         Powered by
+        </h2>
+       </div>
+       <div class="marquee-container">
+        <div class="marquee-content">
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Vercel" class="object-contain h-full w-auto" height="40" src="/logos/Vercel_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Supabase" class="object-contain h-full w-auto" height="40" src="/logos/Supabase_id9q7Wa4Ba_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Cursor" class="object-contain h-full w-auto" height="40" src="/logos/Cursor_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Claude" class="object-contain h-full w-auto" height="40" src="/logos/Claude_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="OpenAI" class="object-contain h-full w-auto" height="40" src="/logos/OpenAI_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Resend" class="object-contain h-full w-auto" height="40" src="/logos/Resend_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Stripe" class="object-contain h-full w-auto" height="40" src="/logos/Stripe_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Vercel" class="object-contain h-full w-auto" height="40" src="/logos/Vercel_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Supabase" class="object-contain h-full w-auto" height="40" src="/logos/Supabase_id9q7Wa4Ba_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Cursor" class="object-contain h-full w-auto" height="40" src="/logos/Cursor_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Claude" class="object-contain h-full w-auto" height="40" src="/logos/Claude_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="OpenAI" class="object-contain h-full w-auto" height="40" src="/logos/OpenAI_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Resend" class="object-contain h-full w-auto" height="40" src="/logos/Resend_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+         <div class="flex items-center justify-center opacity-60 hover:opacity-80 transition-opacity duration-200 flex-shrink-0 px-6 sm:px-8 md:px-12">
+          <div class="relative w-auto h-8 md:h-10 max-w-[120px] md:max-w-[150px]">
+           <img alt="Stripe" class="object-contain h-full w-auto" height="40" src="/logos/Stripe_Logo_0.svg" width="150"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         Why humifi?
+        </h2>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+         The most advanced AI technology for text humanization and AI detection
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 md:grid-rows-[auto_250px] gap-6">
+        <div class="bg-white rounded-lg p-6 md:col-start-1 md:row-start-1 shadow-md">
+         <h3 class="text-xl font-semibold text-accent mb-2">
+          Built on Science, Powered by Precision
+         </h3>
+         <p class="text-sm text-text-secondary mb-4">
+          The most advanced, consistent, and effective humanizer on the market.
+         </p>
+         <div class="mt-4 rounded-2xl overflow-hidden">
+          <img alt="Advanced AI Humanizer demo" class="w-full h-auto rounded-2xl" height="400" src="/images/scan.png" width="600"/>
+         </div>
+        </div>
+        <div class="bg-white rounded-lg p-6 md:col-start-2 md:row-start-1 flex flex-col shadow-md">
+         <h3 class="text-xl font-semibold text-accent mb-2">
+          6 Humanize Modes
+         </h3>
+         <p class="text-sm text-text-secondary mb-6">
+          From Academic to Marketing - choose the perfect style for your text. Trained on 20+ years of expert knowledge.
+         </p>
+         <div class="grid grid-cols-3 gap-3 flex-grow items-center">
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            ⚖️
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            Default
+           </span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            👔
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            Formal
+           </span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            🎓
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            Academic
+           </span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            😊
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            Casual
+           </span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            📢
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            Marketing
+           </span>
+          </div>
+          <div class="flex flex-col items-center justify-center p-4 bg-surface rounded-lg h-full">
+           <span class="text-3xl mb-2">
+            📚
+           </span>
+           <span class="text-sm font-medium text-text-primary text-center">
+            HighSchool
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="bg-white rounded-lg p-4 md:col-start-1 md:col-span-2 md:row-start-2 md:h-[250px] shadow-md flex flex-col">
+         <h3 class="text-xl font-semibold text-accent mb-2">
+          Beat any AI Detector
+         </h3>
+         <p class="text-sm text-text-secondary mb-4">
+          Beat GPTZero, ZeroGPT, Copyleaks, Quillbot, Turnitin, Writer, Grammarly, and more.
+         </p>
+         <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 flex-grow">
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="ZeroGPT" class="h-12 w-auto object-contain" height="40" src="/images/zerogpt.png" width="120"/>
+          </div>
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="GPTZero" class="h-8 w-auto object-contain" height="40" src="/images/gptzero.png" width="120"/>
+          </div>
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="QuillBot" class="h-8 w-auto object-contain" height="40" src="/images/quillbot.jpg" width="120"/>
+          </div>
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="Copyleaks" class="h-8 w-auto object-contain" height="40" src="/images/copyleaks.png" width="120"/>
+          </div>
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="Turnitin" class="h-8 w-auto object-contain" height="40" src="/images/turnitin.png" width="120"/>
+          </div>
+          <div class="flex items-center justify-center p-3 bg-surface rounded-lg">
+           <img alt="Writer" class="h-8 w-auto object-contain" height="40" src="/images/writer.png" width="120"/>
+          </div>
+         </div>
+        </div>
+        <div class="bg-white rounded-lg p-6 md:col-start-3 md:row-span-2 md:h-full flex flex-col shadow-md">
+         <h3 class="text-xl font-semibold text-accent mb-2">
+          Built for everyone
+         </h3>
+         <div class="space-y-4 mt-6 flex-shrink-0">
+          <div class="flex items-start gap-3">
+           <p class="text-sm font-medium text-text-primary pt-1">
+            Students make essays sound natural.
+           </p>
+          </div>
+          <div class="flex items-start gap-3">
+           <p class="text-sm font-medium text-text-primary pt-1">
+            Marketers write content that connects.
+           </p>
+          </div>
+          <div class="flex items-start gap-3">
+           <p class="text-sm font-medium text-text-primary pt-1">
+            Businesses send emails people actually want to read.
+           </p>
+          </div>
+         </div>
+         <p class="text-sm text-text-secondary mt-6 mb-4 flex-shrink-0">
+          Humifi understands your intent and rewrites AI text into clear, natural language — as if you wrote it yourself.
+         </p>
+         <div class="mt-auto rounded-lg overflow-hidden flex-shrink-0">
+          <img alt="Built for everyone" class="w-full h-auto rounded-lg object-cover max-h-[200px]" height="300" src="/images/priscilla-du-preez-XkKCui44iM0-unsplash.jpg" width="400"/>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         Finally sound human again
+        </h2>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+         From robotic to real in just 3 steps
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="rounded-lg p-[2px] bg-gradient-to-br from-highlight/40 via-highlight/20 to-highlight/10 shadow-md">
+         <div class="bg-white rounded-lg p-8 h-full flex flex-col relative">
+          <div class="bg-surface rounded-lg p-4 pb-0 mb-4 min-h-[220px] flex items-end justify-center overflow-hidden">
+           <img alt="Paste your text" class="w-full h-auto rounded-lg" height="400" src="/images/paste text.png" width="500"/>
+          </div>
+          <span class="inline-block bg-green-100 text-accent px-4 py-1.5 rounded-full text-sm font-bold uppercase mb-3 w-fit">
+           STEP 1
+          </span>
+          <h3 class="text-xl font-bold text-accent mb-2">
+           Paste Your Text
+          </h3>
+          <p class="text-sm text-text-secondary">
+           Paste any content, essay, or draft. Humifi instantly analyzes it for tone and authenticity.
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg p-[2px] bg-gradient-to-br from-highlight/40 via-highlight/20 to-highlight/10 shadow-md">
+         <div class="bg-white rounded-lg p-8 h-full flex flex-col relative">
+          <div class="bg-surface rounded-lg p-4 pb-0 mb-4 min-h-[220px] flex items-end justify-center overflow-hidden">
+           <img alt="Check AI score" class="w-full h-auto rounded-lg" height="400" src="/images/zero human written.png" width="500"/>
+          </div>
+          <span class="inline-block bg-green-100 text-accent px-4 py-1.5 rounded-full text-sm font-bold uppercase mb-3 w-fit">
+           STEP 2
+          </span>
+          <h3 class="text-xl font-bold text-accent mb-2">
+           Check your AI Score
+          </h3>
+          <p class="text-sm text-text-secondary">
+           Get instant feedback and see how well your text passes top AI detectors.
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg p-[2px] bg-gradient-to-br from-highlight/40 via-highlight/20 to-highlight/10 shadow-md">
+         <div class="bg-white rounded-lg p-8 h-full flex flex-col relative">
+          <div class="bg-surface rounded-lg p-6 mb-4 min-h-[220px] flex items-center justify-center">
+           <img alt="Humanize button" class="w-full h-auto rounded-lg" height="300" src="/images/button.png" width="400"/>
+          </div>
+          <span class="inline-block bg-green-100 text-accent px-4 py-1.5 rounded-full text-sm font-bold uppercase mb-3 w-fit">
+           STEP 3
+          </span>
+          <h3 class="text-xl font-bold text-accent mb-2">
+           Humanize
+          </h3>
+          <p class="text-sm text-text-secondary">
+           Turn your AI draft into real, natural writing and bypass AI Detectors
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20" id="pricing">
+       <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         Simple Pricing
+        </h2>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+         Words that matter start with the right plan
+        </p>
+       </div>
+       <div class="flex justify-center mb-10">
+        <div class="inline-flex rounded-lg border border-border bg-surface p-1">
+         <button class="px-4 py-2.5 min-h-[44px] rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 text-text-secondary hover:text-text-primary focus-visible:bg-surface">
+          Monthly
+         </button>
+         <button class="px-4 py-2.5 min-h-[44px] rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 bg-white text-text-primary shadow-sm">
+          Annual
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-medium">
+           Save 50%
+          </span>
+         </button>
+        </div>
+       </div>
+       <section class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" id="pricing-cards">
+        <article class="relative bg-white border border-border rounded-lg p-6 md:p-8 flex flex-col focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-shadow hover:shadow-lg">
+         <h2 class="text-2xl font-semibold text-text-primary mb-2 flex items-center gap-2" id="plan-starter-title">
+          Starter
+         </h2>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-2xl font-semibold text-gray-400 line-through">
+           $3.99
+          </span>
+          <span class="sr-only">
+           Original price $3.99, now
+          </span>
+          <span class="text-4xl font-bold text-text-primary">
+           $1.99
+          </span>
+         </div>
+         <div class="text-sm text-text-secondary mb-6">
+          per month, billed annually
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-medium">
+           Save 50%
+          </span>
+         </div>
+         <ul class="space-y-3 text-text-primary mb-8 flex-grow">
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            5,000 words/month
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Up to 500 words per request
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Default Humanize Mode
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Basic AI Humanizer
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Unlimited AI Detection checks
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Perfect for occasional rewriting &amp; checking
+           </span>
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-surface text-accent border border-primary-border hover:bg-primary-light h-11 px-6 text-base mt-auto min-h-[44px]">
+          Get started
+         </button>
+        </article>
+        <article class="relative bg-white border border-2 border-primary rounded-lg p-6 md:p-8 flex flex-col focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-shadow hover:shadow-lg">
+         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <span class="bg-primary text-white px-3 py-1 rounded-full text-xs font-semibold">
+           Most popular
+          </span>
+         </div>
+         <h2 class="text-2xl font-semibold text-text-primary mb-2 flex items-center gap-2" id="plan-pro-title">
+          Pro
+         </h2>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-2xl font-semibold text-gray-400 line-through">
+           $9.99
+          </span>
+          <span class="sr-only">
+           Original price $9.99, now
+          </span>
+          <span class="text-4xl font-bold text-text-primary">
+           $4.99
+          </span>
+         </div>
+         <div class="text-sm text-text-secondary mb-6">
+          per month, billed annually
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-medium">
+           Save 50%
+          </span>
+         </div>
+         <ul class="space-y-3 text-text-primary mb-8 flex-grow">
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            15,000 words/month
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Up to 1,500 words per request
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Advanced AI Humanizer
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Access to all 6 Humanize Modes
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Unlimited AI Detection checks
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Priority Support
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            More natural, higher-quality humanization
+           </span>
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-white hover:bg-accent-hover shadow-sm h-11 px-6 text-base mt-auto min-h-[44px]">
+          Get started
+         </button>
+        </article>
+        <article class="relative bg-white border border-border rounded-lg p-6 md:p-8 flex flex-col focus-within:ring-2 focus-within:ring-primary focus-within:ring-offset-2 transition-shadow hover:shadow-lg">
+         <h2 class="text-2xl font-semibold text-text-primary mb-2 flex items-center gap-2" id="plan-max-title">
+          Max
+         </h2>
+         <div class="flex items-baseline gap-2 mb-1">
+          <span class="text-2xl font-semibold text-gray-400 line-through">
+           $19.99
+          </span>
+          <span class="sr-only">
+           Original price $19.99, now
+          </span>
+          <span class="text-4xl font-bold text-text-primary">
+           $9.99
+          </span>
+         </div>
+         <div class="text-sm text-text-secondary mb-6">
+          per month, billed annually
+          <span class="ml-2 inline-flex items-center rounded-full bg-green-100 text-green-700 px-2 py-0.5 text-xs font-medium">
+           Save 50%
+          </span>
+         </div>
+         <ul class="space-y-3 text-text-primary mb-8 flex-grow">
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Unlimited words
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Up to 3,000 words per request
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Advanced AI Humanizer
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Access to all 6 Humanize Modes
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Unlimited AI Detection checks
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Priority Support
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Fast Processing (priority queue for generation)
+           </span>
+          </li>
+          <li class="flex items-start">
+           <span class="text-green-600 mr-2 mt-0.5 flex-shrink-0">
+            ✓
+           </span>
+           <span>
+            Best output quality + maximum speed
+           </span>
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-surface text-accent border border-primary-border hover:bg-primary-light h-11 px-6 text-base mt-auto min-h-[44px]">
+          Get started
+         </button>
+        </article>
+       </section>
+      </section>
+      <section class="py-20">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         What our users say
+        </h2>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white border border-border rounded-lg p-6 shadow-lg">
+         <div class="flex items-center mb-4">
+          <div class="relative w-12 h-12 mr-3 flex-shrink-0">
+           <img alt="TikTok" class="object-contain" height="48" src="/logos/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.png" width="48"/>
+          </div>
+          <h4 class="font-semibold text-text-primary">
+           Fiona K.
+          </h4>
+         </div>
+         <p class="text-text-primary">
+          "Humifi became part of my daily workflow within the first week. It keeps the strategic meaning of my copy intact but adds the human warmth that AI tools usually kill."
+         </p>
+        </div>
+        <div class="bg-white border border-border rounded-lg p-6 shadow-lg">
+         <div class="flex items-center mb-4">
+          <div class="relative w-8 h-8 mr-3 flex-shrink-0">
+           <img alt="Instagram" class="object-contain" height="32" src="/logos/Instagram_logo_2022.svg.webp" width="32"/>
+          </div>
+          <h4 class="font-semibold text-text-primary">
+           Thomas R.
+          </h4>
+         </div>
+         <p class="text-text-primary">
+          "As a freelancer, I use humifi daily. The different modes help me adapt texts for different clients."
+         </p>
+        </div>
+        <div class="bg-white border border-border rounded-lg p-6 shadow-lg">
+         <div class="flex items-center mb-4">
+          <div class="relative w-12 h-12 mr-3 flex-shrink-0">
+           <img alt="TikTok" class="object-contain" height="48" src="/logos/tiktok-logo-tikok-icon-transparent-tikok-app-logo-free-png.png" width="48"/>
+          </div>
+          <h4 class="font-semibold text-text-primary">
+           Sarah L.
+          </h4>
+         </div>
+         <p class="text-text-primary">
+          "its the only reason my text didn't get detected. THANK YOU!!! After GPTzero updated their ai detector, other ai humanizers stopped working."
+         </p>
+        </div>
+       </div>
+      </section>
+      <section class="py-20">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-text-secondary max-w-2xl mx-auto">
+         Everything you need to know about humifi
+        </p>
+       </div>
+       <div class="max-w-3xl mx-auto">
+        <div class="space-y-6">
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_1_" type="button">
+            How does humifi work?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_3_" type="button">
+            Does humifi work against AI Detectors?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_5_" type="button">
+            How much does humifi cost?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_7_" type="button">
+            I want to humanize a long essay. Is it possible?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_9_" type="button">
+            Can I see previous humanizations?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_b_" type="button">
+            Where should I reach out if I run into an issue?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_d_" type="button">
+            Is humifi ethical to use?
+           </button>
+          </h3>
+         </div>
+         <div class="bg-white border border-border rounded-lg px-6 border-b-0">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold text-text-primary hover:no-underline" id="radix-_r_f_" type="button">
+            Does Google penalize AI-generated content?
+           </button>
+          </h3>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20">
+       <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold text-text-primary mb-4">
+         Ready to get started?
+        </h2>
+        <p class="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
+         Start now for free with AI detection or try the humanize function
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-accent text-white hover:bg-accent-hover shadow-sm h-12 px-8 text-lg">
+          Sign up for free
+         </button>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg font-medium ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-surface text-accent border border-primary-border hover:bg-primary-light h-12 px-8 text-lg">
+          Try demo
+         </button>
+        </div>
+       </div>
+      </section>
+     </main>
+    </div>
+    <footer class="w-full bg-white border-t border-border mt-auto">
+     <div class="max-w-[1200px] mx-auto px-6 md:px-12 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+       <div>
+        <h3 class="text-sm font-semibold text-text-primary mb-4">
+         Legal
+        </h3>
+        <nav class="flex flex-col gap-3">
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="mailto:humifiapp@gmail.com">
+          Contact
+         </a>
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/imprint">
+          Imprint
+         </a>
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/terms">
+          Terms of Service
+         </a>
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/privacy">
+          Privacy Policy
+         </a>
+        </nav>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-text-primary mb-4">
+         Navigation
+        </h3>
+        <nav class="flex flex-col gap-3">
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/app">
+          AI Humanizer
+         </a>
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/pricing">
+          Pricing
+         </a>
+         <a class="text-sm text-text-secondary hover:text-accent transition-colors" href="/#faq">
+          FAQ
+         </a>
+        </nav>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-text-primary mb-4">
+         Important
+        </h3>
+        <p class="text-sm text-text-secondary leading-relaxed">
+         humifi is not a tool for academic dishonesty or cheating.
+         <a class="text-accent hover:text-accent-hover underline transition-colors" href="/terms">
+          Read more
+         </a>
+        </p>
+       </div>
+      </div>
+      <div class="pt-8 border-t border-border">
+       <p class="text-xs text-text-secondary text-center">
+        © 2025 humifi. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

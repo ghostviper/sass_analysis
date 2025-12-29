@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Laxi.ai – AI Shopping Assistant for E-Commerce | Sell More, Support Smarter</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col min-h-screen">
+    <section class="fixed w-full z-50 transition-transform duration-300 -translate-y-full">
+     <div class="bg-white px-4 md:px-8 lg:px-16 relative border-b border-primary/10 shadow-md">
+      <div class="max-w-7xl mx-auto">
+       <div class="flex items-center justify-between h-16">
+        <div class="flex-shrink-0">
+         <a class="block" href="/">
+          <img alt="Logo" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/laxi-website-static/home/logo.svg" width="140"/>
+         </a>
+        </div>
+        <nav class="hidden lg:flex items-center space-x-8">
+         <div class="flex space-x-6">
+          <a class="text-sm font-medium text-gray-900 hover:text-primary transition-colors" href="/blog">
+           Blog
+          </a>
+          <a class="text-sm font-medium text-gray-900 hover:text-primary transition-colors" href="/pricing">
+           Pricing
+          </a>
+          <a class="text-sm font-medium text-gray-900 hover:text-primary transition-colors" href="/contact">
+           Contact
+          </a>
+          <a class="text-sm font-medium text-gray-900 hover:text-primary transition-colors" href="https://docs.laxi.ai" rel="noopener noreferrer" target="_blank">
+           Docs
+          </a>
+          <a class="text-sm font-medium text-gray-900 hover:text-primary transition-colors" href="/affiliate" rel="noopener noreferrer" target="_blank">
+           Affiliate
+          </a>
+         </div>
+         <div class="flex items-center space-x-4">
+          <div>
+           <button class="border hover:shadow-sm active:shadow-sm bg-transparent text-gray-800 shadow dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-1 hover:ring-gray-800 hover:ring-offset-1 h-10 text-md">
+            Log in
+           </button>
+          </div>
+          <div>
+           <button class="border hover:shadow-sm active:shadow-sm bg-primary text-white shadow hover:bg-primary-darker/90 dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 h-10 text-md">
+            <span class="font-semibold">
+             Get Started
+            </span>
+            <span class="font-normal">
+             —  It's free
+            </span>
+           </button>
+          </div>
+         </div>
+        </nav>
+       </div>
+       <div class="lg:hidden overflow-hidden transition-all duration-200 ease-in-out max-h-0 opacity-0">
+        <div class="py-4 space-y-4">
+         <a class="block px-4 py-2 text-base font-medium text-gray-900 hover:text-primary transition-colors" href="/blog">
+          Blog
+         </a>
+         <a class="block px-4 py-2 text-base font-medium text-gray-900 hover:text-primary transition-colors" href="/pricing">
+          Pricing
+         </a>
+         <a class="block px-4 py-2 text-base font-medium text-gray-900 hover:text-primary transition-colors" href="/contact">
+          Contact
+         </a>
+         <a class="block px-4 py-2 text-base font-medium text-gray-900 hover:text-primary transition-colors" href="https://docs.laxi.ai" rel="noopener noreferrer" target="_blank">
+          Docs
+         </a>
+         <a class="block px-4 py-2 text-base font-medium text-gray-900 hover:text-primary transition-colors" href="/affiliate" rel="noopener noreferrer" target="_blank">
+          Affiliate
+         </a>
+         <div class="px-4">
+          <button class="border hover:shadow-sm active:shadow-sm bg-transparent text-gray-800 shadow dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex items-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-1 hover:ring-gray-800 hover:ring-offset-1 h-10 text-sm w-full justify-center">
+           Log in
+          </button>
+          <button class="border hover:shadow-sm active:shadow-sm bg-primary text-white shadow hover:bg-primary-darker/90 dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex items-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 h-10 text-sm w-full justify-center mt-2">
+           Sign up
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <main class="flex-1 relative">
+     <div class="relative">
+      <main class="min-h-screen text-black">
+       <div class="relative h-full overflow-hidden py-12">
+        <div class="container z-10 flex flex-col">
+         <div class="sm:mt-8 md:mt-16 lg:mt-20 grid grid-cols-1">
+          <div class="flex flex-col items-center gap-8 pb-8 text-center">
+           <p class="text-lg tracking-tight text-primary md:text-lg">
+            ✨ With a product recommendation engine
+           </p>
+           <h1 class="bg-gradient-to-br from-black from-30% to-black/60 bg-clip-text py-2 text-5xl font-medium leading-none tracking-tighter text-transparent dark:from-white dark:to-white/40 sm:text-6xl md:text-7xl lg:text-8xl">
+            Smart AI assistant
+            <br/>
+            for your ecommerce
+            <br/>
+           </h1>
+           <p class="text-lg tracking-tight text-gray-400 md:text-xl">
+            Automate support, boost sales, and delight customers 24/7
+           </p>
+           <div class="flex flex-col items-center justify-center gap-2">
+            <div class="flex flex-row items-center justify-center w-full">
+             <div class="relative -mr-4">
+              <img alt="John Doe" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=3387&amp;q=80" width="100"/>
+             </div>
+             <div class="relative -mr-4">
+              <img alt="Robert Johnson" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" width="100"/>
+             </div>
+             <div class="relative -mr-4">
+              <img alt="Jane Smith" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" width="100"/>
+             </div>
+             <div class="relative -mr-4">
+              <img alt="Emily Davis" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60" width="100"/>
+             </div>
+             <div class="relative -mr-4">
+              <img alt="Tyler Durden" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=3540&amp;q=80" width="100"/>
+             </div>
+             <div class="relative -mr-4">
+              <img alt="Dora" class="relative !m-0 h-10 w-10 rounded-full border-2 border-white object-cover object-top !p-0 transition duration-500 hover:z-30 hover:scale-105" height="100" src="https://images.unsplash.com/photo-1544725176-7c40e5a71c5e?ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&amp;auto=format&amp;fit=crop&amp;w=3534&amp;q=80" width="100"/>
+             </div>
+            </div>
+            <p class="text-sm text-gray-500 text-center">
+             Join 1,000+ businesses using Laxi.ai
+            </p>
+           </div>
+           <div class="flex flex-col gap-4 lg:flex-row">
+            <a href="/studio">
+             <button class="border hover:shadow-sm active:shadow-sm bg-primary text-white shadow hover:bg-primary-darker/90 dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex w-full items-center justify-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 h-10 text-md">
+              <span class="font-semibold">
+               Get Started
+              </span>
+             </button>
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="sm:hidden md:block relative flex justify-center w-full">
+          <div class="relative w-full max-w-6xl mx-auto">
+           <div class="relative rounded-xl after:absolute after:inset-0 after:pointer-events-none">
+            <div class="hidden">
+             <img alt="" height="1080" src="/_next/image?url=%2Fimages%2Fhome.png&amp;w=1920&amp;q=75" width="1920"/>
+             <img alt="" height="1080" src="/_next/image?url=%2Fimages%2Fdesign.png&amp;w=1920&amp;q=75" width="1920"/>
+             <img alt="" height="1080" src="/_next/image?url=%2Fimages%2Fknowledge.png&amp;w=1920&amp;q=75" width="1920"/>
+             <img alt="" height="1080" src="/_next/image?url=%2Fimages%2Fdashboard.png&amp;w=1920&amp;q=75" width="1920"/>
+            </div>
+            <div class="hidden md:block relative px-6 pt-8">
+             <div class="relative size-full shadow-xl rounded-2xl overflow-hidden">
+              <div class="h-[20rem] md:h-[46rem] [perspective:1000px] relative">
+               <div class="flex flex-row items-center relative overflow-visible no-visible-scrollbar max-w-full mb-4 w-full justify-center text-black">
+                <button class="relative py-2 z-20 select-none text-white px-4 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer">
+                 Home
+                </button>
+                <button class="relative py-2 z-20 select-none text-gray-300 hover:text-white px-4 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer">
+                 Design
+                </button>
+                <button class="relative py-2 z-20 select-none text-gray-300 hover:text-white px-4 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer">
+                 Knowledge
+                </button>
+                <button class="relative py-2 z-20 select-none text-gray-300 hover:text-white px-4 rounded-full text-sm font-medium transition-all duration-300 cursor-pointer">
+                 Analytics
+                </button>
+               </div>
+               <div class="relative w-full h-[calc(100%-44px)] mt-0">
+                <div class="absolute inset-0 w-full h-full opacity-100 z-10">
+                 <div class="w-full h-full">
+                  <div class="w-full overflow-hidden relative h-full rounded-2xl shadow-2xl bg-background">
+                   <img alt="Monitor laxi.ai" class="object-cover w-full h-full rounded-2xl" height="1080" src="/_next/image?url=%2Fimages%2Fhome.png&amp;w=1920&amp;q=75" width="1920"/>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <section class="py-16 container">
+        <div class="mb-14">
+         <div>
+          <div class="flex justify-center text-primary">
+           Performance Metrics
+          </div>
+         </div>
+         <div>
+          <h2 class="sm:mx-4 mt-8 mb-20 text-3xl md:text-5xl lg:text-5xl font-semibold text-center max-w-4xl md:mx-auto tracking-tight">
+           Engineered to bring business results
+          </h2>
+         </div>
+         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="flex flex-col items-center">
+           <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-center">
+            <span>
+             0%
+            </span>
+           </h3>
+           <p class="text-lg text-muted-foreground text-center">
+            Revenue Growth
+           </p>
+          </div>
+          <div class="flex flex-col items-center">
+           <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-center">
+            <span>
+             0%
+            </span>
+           </h3>
+           <p class="text-lg text-muted-foreground text-center">
+            Support Cost Reduction
+           </p>
+          </div>
+          <div class="flex flex-col items-center">
+           <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-center">
+            <span>
+             0%
+            </span>
+           </h3>
+           <p class="text-lg text-muted-foreground text-center">
+            AI Resolution Rate
+           </p>
+          </div>
+          <div class="flex flex-col items-center">
+           <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-2 text-center">
+            <span>
+             0 min
+            </span>
+           </h3>
+           <p class="text-lg text-muted-foreground text-center">
+            Average Resolution Time
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16 bg-neutral-100 dark:bg-neutral-900">
+        <div class="mb-14">
+         <div>
+          <div class="flex justify-center text-primary">
+           Laxi.ai Solution
+          </div>
+         </div>
+         <div>
+          <h2 class="sm:mx-4 mt-8 mb-20 text-3xl md:text-5xl lg:text-5xl font-semibold text-center max-w-4xl md:mx-auto tracking-tight">
+           Provide instant 24/7 support to your clients
+          </h2>
+         </div>
+         <div class="flex justify-center w-full">
+          <div class="sm:mx-2 md:mx-auto mt-16 grid max-w-sm grid-cols-1 gap-6 text-gray-500 md:max-w-3xl md:grid-cols-2 lg:grid-rows-2 md:grid-rows-3 lg:max-w-6xl lg:auto-rows-fr lg:grid-cols-3">
+           <div class="group relative items-start overflow-hidden bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl hover:scale-105 hover:bg-white transition-all duration-500 ease-out">
+            <div>
+             <h3 class="font-semibold mb-2 text-primary">
+              Never Miss a Sale with Perfect Product Matches
+             </h3>
+             <p class="text-foreground">
+              Turn every conversation into revenue - our AI instantly recommends the exact products your customers want, increasing conversion rates by 40%
+             </p>
+            </div>
+            <div class="h-72">
+             <div class="w-full h-full p-4 mt-4 rounded-xl overflow-hidden">
+              <div class="mb-4">
+               <p class="text-[12px] font-normal text-gray-600">
+                Based on your needs, here are my top recommendations:
+               </p>
+              </div>
+              <div class="flex gap-2 relative">
+               <div class="w-1/2 flex-shrink-0">
+                <div class="border border-gray-200 rounded-xl p-2 bg-white shadow-sm">
+                 <div class="flex flex-col items-center gap-2">
+                  <div class="relative w-28 h-28 rounded-md">
+                   <div class="absolute inset-0 rounded-lg overflow-hidden">
+                    <img alt="Hydrating Essence Toner" class="object-cover" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Fhome%2Fskin1.webp&amp;w=1920&amp;q=75"/>
+                   </div>
+                  </div>
+                  <div class="text-center">
+                   <p class="text-[10px] font-medium text-gray-700">
+                    Hydrating Essence Toner
+                   </p>
+                  </div>
+                  <button class="w-full bg-primary text-white text-[12px] py-2 px-4 rounded-full font-medium">
+                   View Details
+                  </button>
+                 </div>
+                </div>
+               </div>
+               <div class="w-1/2 flex-shrink-0">
+                <div class="border border-gray-200 rounded-xl p-2 bg-white shadow-sm">
+                 <div class="flex flex-col items-center gap-2">
+                  <div class="relative w-28 h-28 rounded-md">
+                   <div class="absolute inset-0 rounded-lg overflow-hidden">
+                    <img alt="Vitamin C Serum" class="object-cover" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Fhome%2Fskin2.webp&amp;w=1920&amp;q=75"/>
+                   </div>
+                  </div>
+                  <div class="text-center">
+                   <p class="text-[10px] font-medium text-gray-700">
+                    Vitamin C Serum
+                   </p>
+                  </div>
+                  <button class="w-full bg-primary text-white text-[12px] py-2 px-4 rounded-full font-medium">
+                   View Details
+                  </button>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative items-start overflow-hidden bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl hover:scale-105 order-3 lg:order-none hover:bg-white transition-all duration-500 ease-out">
+            <div>
+             <h3 class="font-semibold mb-2 text-primary">
+              Reach Global Markets Without Language Barriers
+             </h3>
+             <p class="text-foreground">
+              Sell to customers worldwide 24/7 - provide instant, natural support in any language while maintaining your brand's personality
+             </p>
+            </div>
+           </div>
+           <div class="group relative items-start overflow-hidden bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl hover:scale-105 md:row-span-2 hover:bg-white transition-all duration-500 ease-out">
+            <div>
+             <h3 class="font-semibold mb-2 text-primary">
+              Turn Customer Conversations into Growth Insights
+             </h3>
+             <p class="text-foreground">
+              Spot trends before they happen - get real-time insights into customer needs, pain points, and buying patterns to boost satisfaction and sales
+             </p>
+            </div>
+            <div class="min-h-72">
+             <div class="relative w-full h-full flex items-start justify-center">
+              <div class="absolute transform -translate-x-4 translate-y-64">
+               <div class="w-full max-w-md rounded-lg border border-gray-100 bg-white shadow-md">
+                <div class="p-1">
+                 <div class="p-3">
+                  <h2 class="text-sm font-medium text-gray-900">
+                   Conversation categories
+                  </h2>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="absolute transform translate-x-4 translate-y-12">
+               <div class="w-64 max-w-md rounded-lg border border-gray-100 bg-white shadow-md">
+                <div class="p-4">
+                 <h2 class="text-sm font-medium text-gray-900">
+                  Product Suggestions
+                 </h2>
+                </div>
+               </div>
+              </div>
+              <div class="absolute transform translate-x-8 translate-y-[480px]">
+               <div class="w-full max-w-md rounded-lg border border-gray-100 bg-white shadow-md">
+                <div class="p-4">
+                 <h2 class="text-sm font-medium text-gray-900 mb-4">
+                  Most recommended products
+                 </h2>
+                 <div class="overflow-hidden">
+                  <table class="min-w-full">
+                   <thead>
+                    <tr class="border-b border-gray-100">
+                     <th class="text-left text-[10px] font-medium text-gray-500 uppercase tracking-wider pb-3">
+                      Product
+                     </th>
+                     <th class="text-right text-[10px] font-medium text-gray-500 uppercase tracking-wider pb-3">
+                      Chats
+                     </th>
+                     <th class="text-right text-[10px] font-medium text-gray-500 uppercase tracking-wider pb-3">
+                      Clicks
+                     </th>
+                    </tr>
+                   </thead>
+                   <tbody>
+                    <tr class="border-b border-gray-50 last:border-0">
+                     <td class="py-3 whitespace-nowrap">
+                      <div class="flex items-center">
+                       <img alt="Hydrating Essence Toner" class="rounded-full object-cover" height="24" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Fhome%2Fskin1.jpg&amp;w=48&amp;q=75" width="24"/>
+                       <span class="ml-2 text-[12px] text-gray-800">
+                        Hydrating Essence Toner
+                       </span>
+                      </div>
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      245
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      189
+                     </td>
+                    </tr>
+                    <tr class="border-b border-gray-50 last:border-0">
+                     <td class="py-3 whitespace-nowrap">
+                      <div class="flex items-center">
+                       <img alt="Vitamin C Serum" class="rounded-full object-cover" height="24" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Fhome%2Fskin2.jpg&amp;w=48&amp;q=75" width="24"/>
+                       <span class="ml-2 text-[12px] text-gray-800">
+                        Vitamin C Serum
+                       </span>
+                      </div>
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      198
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      156
+                     </td>
+                    </tr>
+                    <tr class="border-b border-gray-50 last:border-0">
+                     <td class="py-3 whitespace-nowrap">
+                      <div class="flex items-center">
+                       <img alt="Retinol Night Cream" class="rounded-full object-cover" height="24" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Fhome%2Fskin3.jpg&amp;w=48&amp;q=75" width="24"/>
+                       <span class="ml-2 text-[12px] text-gray-800">
+                        Retinol Night Cream
+                       </span>
+                      </div>
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      167
+                     </td>
+                     <td class="py-3 text-right text-[10px] text-gray-500">
+                      134
+                     </td>
+                    </tr>
+                   </tbody>
+                  </table>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative items-start overflow-hidden bg-neutral-50 dark:bg-neutral-800 p-6 rounded-2xl hover:scale-105 flex-row order-4 md:col-span-2 md:flex-row lg:order-none hover:bg-white transition-all duration-500 ease-out">
+            <div>
+             <h3 class="font-semibold mb-2 text-primary">
+              Answer Every Question Instantly, Every Time
+             </h3>
+             <p class="text-foreground">
+              Never leave a customer waiting - our AI learns from all your business knowledge to give accurate, instant responses that drive sales
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16">
+        <div class="mb-14">
+         <div>
+          <div class="flex justify-center text-primary">
+           How it works
+          </div>
+         </div>
+         <div>
+          <h2 class="sm:mx-4 mt-8 mb-20 text-3xl md:text-5xl lg:text-5xl font-semibold text-center max-w-4xl md:mx-auto tracking-tight">
+           No coding. No hassle. Just results.
+          </h2>
+         </div>
+         <div class="block">
+          <section id="features">
+           <div class="container">
+            <div class="max-w-6xl mx-auto">
+             <div class="mx-auto my-12 h-full grid lg:grid-cols-2 gap-10 items-center">
+              <div class="hidden lg:flex order-1 lg:order-[0] justify-start">
+               <div class="">
+                <div class="mt-px overflow-hidden focus-within:relative focus-within:z-10 relative mb-8 last:mb-0">
+                 <div class="flex items-center relative">
+                  <div>
+                   <h3 class="flex">
+                    <button class="group flex flex-1 cursor-pointer items-center justify-between px-5 outline-none text-xl font-bold pl-0" id="radix-_R_bolul5b_" type="button">
+                     1. Set Up in 1 Minute
+                    </button>
+                   </h3>
+                  </div>
+                 </div>
+                </div>
+                <div class="mt-px overflow-hidden focus-within:relative focus-within:z-10 relative mb-8 last:mb-0">
+                 <div class="flex items-center relative">
+                  <div>
+                   <h3 class="flex">
+                    <button class="group flex flex-1 cursor-pointer items-center justify-between px-5 outline-none text-xl font-bold pl-0" id="radix-_R_jolul5b_" type="button">
+                     2. Sync Instantly
+                    </button>
+                   </h3>
+                   <h3 class="flex">
+                    <button class="group flex flex-1 cursor-pointer items-center px-5 outline-none justify-start text-left text-gray-600 text-[16px] pl-0" id="radix-_R_jolul5b_" type="button">
+                     <div class="overflow-hidden text-[15px] font-medium data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down" id="radix-_R_1jolul5b_">
+                      <div class="px-5 py-2">
+                       Simply connect your product catalog, FAQs, and support docs. Our AI automatically learns your business knowledge and starts providing accurate, personalized responses to customer queries instantly.
+                      </div>
+                     </div>
+                    </button>
+                   </h3>
+                  </div>
+                 </div>
+                </div>
+                <div class="mt-px overflow-hidden focus-within:relative focus-within:z-10 relative mb-8 last:mb-0">
+                 <div class="flex items-center relative">
+                  <div>
+                   <h3 class="flex">
+                    <button class="group flex flex-1 cursor-pointer items-center justify-between px-5 outline-none text-xl font-bold pl-0" id="radix-_R_rolul5b_" type="button">
+                     3. Go Live and Start Selling Smarter
+                    </button>
+                   </h3>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="w-auto h-[450px] flex items-center justify-center false">
+               <div class="w-full h-full relative flex items-center justify-center">
+                <img alt="feature" class="aspect-auto h-full w-auto max-h-[450px] rounded-xl object-contain object-left-top" height="450" src="https://storage.googleapis.com/laxi-website-static/home/step2.webp" width="450"/>
+               </div>
+              </div>
+              <ul class="flex h-full snap-x flex-nowrap overflow-x-auto py-4 [-ms-overflow-style:none] [-webkit-mask-image:linear-gradient(90deg,transparent,black_20%,white_80%,transparent)] [mask-image:linear-gradient(90deg,transparent,black_20%,white_80%,transparent)] [scrollbar-width:none] lg:hidden [&amp;::-webkit-scrollbar]:hidden snap-mandatory">
+               <div class="card relative mr-8 grid h-full max-w-60 shrink-0 items-start justify-center py-4 last:mr-0">
+                <h2 class="text-xl font-bold">
+                 1. Set Up in 1 Minute
+                </h2>
+                <p class="mx-0 max-w-sm text-balance text-sm">
+                 Customize your AI's personality, branding, and tone of voice in minutes through our self-service platform. No technical skills needed - just tell us about your brand, and we'll handle the rest.
+                </p>
+               </div>
+               <div class="card relative mr-8 grid h-full max-w-60 shrink-0 items-start justify-center py-4 last:mr-0">
+                <h2 class="text-xl font-bold">
+                 2. Sync Instantly
+                </h2>
+                <p class="mx-0 max-w-sm text-balance text-sm">
+                 Simply connect your product catalog, FAQs, and support docs. Our AI automatically learns your business knowledge and starts providing accurate, personalized responses to customer queries instantly.
+                </p>
+               </div>
+               <div class="card relative mr-8 grid h-full max-w-60 shrink-0 items-start justify-center py-4 last:mr-0">
+                <h2 class="text-xl font-bold">
+                 3. Go Live and Start Selling Smarter
+                </h2>
+                <p class="mx-0 max-w-sm text-balance text-sm">
+                 Watch your customer satisfaction soar with our real-time analytics dashboard. Track key metrics like response times, satisfaction rates, and revenue impact while your AI handles support 24/7.
+                </p>
+               </div>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </section>
+         </div>
+        </div>
+       </section>
+       <section class="py-24 overflow-hidden">
+        <div class="container grid grid-cols-1 md:grid-cols-2 gap-8">
+         <div class="flex flex-col justify-center">
+          <h3 class="sm:text-md md:text-xl text-black/50 text-center md:text-left">
+           Trusted to power innovation for market leaders
+          </h3>
+         </div>
+         <div class="flex flex-col justify-center">
+          <div class="relative w-full overflow-hidden">
+           <div class="flex logo-ticker animate-logo-scroll">
+            <div class="flex-shrink-0 mx-8">
+             <img alt="beeit logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/beeit.png" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="mai logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/mai.webp" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="routify logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/routify.webp" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="sbc logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/sbc.png" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="tanit logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/tanit.png" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="apteka logo" class="h-10 w-auto object-contain" height="50" src="https://storage.googleapis.com/laxi-website-static/logos/apteka.png" width="200"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="beeit logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Fbeeit.png&amp;w=640&amp;q=75" width="150"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="mai logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Fmai.webp&amp;w=640&amp;q=75" width="150"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="routify logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Froutify.webp&amp;w=640&amp;q=75" width="150"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="sbc logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Fsbc.png&amp;w=640&amp;q=75" width="150"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="tanit logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Ftanit.png&amp;w=640&amp;q=75" width="150"/>
+            </div>
+            <div class="flex-shrink-0 mx-8">
+             <img alt="apteka logo" class="h-10 w-auto object-contain" height="40" src="/_next/image?url=https%3A%2F%2Fstorage.googleapis.com%2Flaxi-website-static%2Flogos%2Fapteka.png&amp;w=640&amp;q=75" width="150"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="w-full py-12 md:py-16 lg:py-20">
+        <div class="container">
+         <div>
+          <div class="bg-primary rounded-3xl p-6 md:p-10 lg:p-24 shadow-2xl shadow-gray-400 will-change-transform">
+           <div class="flex flex-col justify-center sm:items-center md:items-center lg:items-start lg:flex-row gap-8 lg:gap-12">
+            <div class="flex-1 space-y-4">
+             <div>
+              <div class="text-white sm:text-center lg:text-start">
+               Start building today!
+              </div>
+              <h2 class="text-3xl md:text-4xl lg:text-5xl font-semibold text-white sm:text-center lg:text-start tracking-tighter">
+               Take the Next Step
+              </h2>
+             </div>
+             <div>
+              <p class="text-white/90 max-w-2xl sm:text-center lg:text-start">
+               An AI Assistant That Works Like a Team Member.
+              </p>
+              <p class="text-white/90 max-w-2xl sm:text-center lg:text-start">
+               More helpful. More human. More intuitive.
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col items-center lg:items-start justify-center space-y-4">
+             <div>
+              <a href="/studio">
+               <button class="border hover:shadow-sm active:shadow-sm bg-primary text-white shadow hover:bg-primary-dark/90 dark:bg-white dark:text-black dark:hover:bg-white/90 group relative inline-flex items-center justify-center gap-2 overflow-hidden whitespace-pre rounded-md px-4 py-2 font-semibold tracking-tighter focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 md:flex transform-gpu ring-offset-current transition-all duration-300 ease-out hover:ring-2 hover:ring-primary hover:ring-offset-2 h-10 text-sm w-full md:w-auto">
+                Get Started for Free
+               </button>
+              </a>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-16">
+        <div class="mb-14">
+         <div>
+          <div class="flex justify-center text-primary">
+           FAQ
+          </div>
+         </div>
+         <div>
+          <h2 class="sm:mx-4 mt-8 mb-20 text-3xl md:text-5xl lg:text-5xl font-semibold text-center max-w-4xl md:mx-auto tracking-tight">
+           Questions,answered
+          </h2>
+         </div>
+         <div>
+          <div class="container mt-12 max-w-3xl mx-auto">
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              What plans do you offer?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              We offer a completely free plan to get you started with no time limitations. For businesses needing more advanced features, we have paid plans starting at €29/month. All plans come with our 2-month money-back guarantee, ensuring you can try our full feature set with confidence.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              Which e-commerce platforms can I integrate with?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Laxi.AI integrates seamlessly with all major e-commerce platforms including Shopify, WooCommerce, Magento, PrestaShop, and more. Our universal website integration also allows you to add Laxi.AI to any custom-built website, ensuring compatibility regardless of your technology stack.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              How long does it take to set up Laxi.AI?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              With our self-service platform, you can have your AI assistant up and running in less than 5 minutes. The process is straightforward: connect your product catalog, customize your AI's settings, and integrate with your chosen platform. Our step-by-step guide ensures a smooth setup process.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              How does Laxi.AI increase sales?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Laxi.AI combines 24/7 customer support with intelligent product recommendations. Our AI analyzes customer interactions to suggest relevant products, understand purchase intent, and guide customers through the buying process. This dual approach of support and sales assistance has helped businesses increase their conversion rates and average order value.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              What languages does Laxi.AI support?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Our AI provides multilingual support, enabling you to serve customers globally without language barriers. The AI maintains consistent brand voice and personality across all languages, automatically detecting and responding in the customer's preferred language.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              How does the product recommendation system work?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Our advanced recommendation system analyzes your product catalog, customer interactions, and purchase patterns to suggest the most relevant items. It considers factors like customer preferences, browsing history, and similar product purchases to make personalized recommendations that drive sales.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              What kind of analytics and insights are provided?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Our comprehensive analytics dashboard shows real-time metrics on customer interactions, sales impact, and support performance. Track conversation trends, revenue attribution, popular products, common customer queries, and AI performance. These insights help optimize both your customer service and sales strategies.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              How does Laxi.AI handle complex customer queries?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              While our AI handles most e-commerce queries automatically, it's designed to recognize when human intervention might be needed. For complex cases, it can seamlessly transfer the conversation to your support team while preserving the full context and conversation history.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              Is my data secure?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Absolutely. We prioritize security with enterprise-grade encryption and full compliance with data protection regulations. Your business and customer data are protected using industry-leading security practices, and we regularly update our security measures to maintain the highest standards.
+             </div>
+            </div>
+           </div>
+           <div class="bg-neutral-900 border border-white/10 rounded-2xl overflow-hidden mb-2">
+            <div class="p-6 flex justify-between items-center cursor-pointer">
+             <h3 class="font-medium">
+              Can I customize the AI's behavior and responses?
+             </h3>
+            </div>
+            <div class="overflow-hidden transition-all duration-300 ease-in-out">
+             <div class="p-6 pt-0 text-black/50">
+              Yes! You have full control over your AI assistant's personality, tone, and responses. Our user-friendly customization interface lets you adjust everything from response style to product recommendation strategies – no technical expertise required. You can also set specific business rules and promotional strategies.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </main>
+     </div>
+    </main>
+    <footer class="w-full bg-white border-t border-gray-200">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="py-12">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="flex flex-col space-y-4">
+         <a class="flex" href="/">
+          <img alt="laxi.ai logo" class="h-8 w-auto" height="40" src="https://storage.googleapis.com/laxi-website-static/home/logo.svg" width="140"/>
+         </a>
+         <p class="text-gray-500 text-sm">
+          Transforming e-commerce with AI-powered customer support and sales automation.
+         </p>
+        </div>
+        <div class="md:col-span-2 grid grid-cols-2 gap-8">
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">
+           Company
+          </h3>
+          <div class="mt-4 space-y-4">
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/pricing">
+            Pricing
+           </a>
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="https://docs.laxi.ai" rel="noopener noreferrer" target="_blank">
+            Documentation
+           </a>
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/contact">
+            Contact us
+           </a>
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/affiliate">
+            Affiliate Program
+           </a>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase">
+           Legal
+          </h3>
+          <div class="mt-4 space-y-4">
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/legal/privacy">
+            Privacy Policy
+           </a>
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/legal/app-privacy-policy">
+            Privacy Policy for Shopify App
+           </a>
+           <a class="text-gray-500 hover:text-gray-900 block text-sm" href="/legal/terms">
+            Terms of Service
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-8 pt-8 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row justify-between items-center">
+         <p class="text-gray-500 text-sm">
+          © 2025 laxi.ai. All rights reserved.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <span id="recharts_measurement_span">
+    Feb
+   </span>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spacemint AI - AI-Powered Floor Plan Staging</title>
+</head>
+<body>
+  <body>
+   <div class="relative min-h-screen">
+    <nav class="border-b border-border/40 sticky top-0 z-50 bg-background/80 backdrop-blur-xl">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative">
+      <div class="flex-1">
+       <a class="flex items-center gap-2.5 w-fit group" href="/">
+        <div class="relative">
+         <img alt="Spacemint AI Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" height="32" src="/logo.svg" width="32"/>
+        </div>
+        <span class="font-semibold text-sm tracking-tight">
+         Spacemint
+         <span class="text-primary">
+          _
+         </span>
+         AI
+        </span>
+       </a>
+      </div>
+      <div class="hidden md:flex items-center gap-1 absolute left-1/2 -translate-x-1/2">
+       <a class="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap rounded-md hover:bg-primary/5 font-mono" href="/#how-it-works">
+        [Process]
+       </a>
+       <a class="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap rounded-md hover:bg-primary/5 font-mono" href="/#who-its-for">
+        [Users]
+       </a>
+       <a class="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap rounded-md hover:bg-primary/5 font-mono" href="/#pricing">
+        [Pricing]
+       </a>
+       <a class="px-3 py-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap rounded-md hover:bg-primary/5 font-mono" href="/#faq">
+        [FAQ]
+       </a>
+      </div>
+      <div class="flex-1 flex justify-end">
+       <div class="flex flex-row gap-2 items-center">
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 h-9 font-mono" href="/login">
+         Login_
+        </a>
+        <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 h-9 bg-primary hover:bg-primary/90 font-mono" href="/register">
+         Start_
+        </a>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <main class="relative">
+     <section class="relative min-h-screen flex flex-col justify-center items-center px-6 py-12 overflow-hidden">
+      <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+       <div class="lg:col-span-6 text-left">
+        <a href="https://www.producthunt.com/products/spacemint-ai?launch=spacemint-ai" rel="noopener noreferrer" target="_blank">
+         <div class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 mb-6 cursor-pointer hover:bg-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-105">
+          <span class="text-[10px] font-bold tracking-widest uppercase text-primary">
+           Upvote us on Product Hunt
+          </span>
+         </div>
+        </a>
+        <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight tracking-tight">
+         AI Powered
+         <br/>
+         <span class="text-primary">
+          Interior Staging
+         </span>
+        </h1>
+        <p class="text-sm md:text-base text-muted-foreground mb-8 leading-relaxed max-w-lg border-l-2 border-primary/30 pl-4">
+         Turn any floor plan into a beautifully staged interior. Upload your blueprint, choose a style, and let AI transform it into a fully furnished visualization in under a minute.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md px-6 has-[&gt;svg]:px-4 uppercase tracking-wider" href="/register">
+          Start Staging_
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 uppercase tracking-wider" href="https://www.youtube.com/watch?v=pxNxSyL9540" rel="noopener noreferrer" target="_blank">
+          View Demo
+         </a>
+        </div>
+        <div class="mt-12 flex items-center gap-4 text-[10px] text-muted-foreground">
+         <span class="flex items-center gap-2">
+          Accurate Realism
+         </span>
+         <span class="flex items-center gap-2">
+          &lt; 60s
+         </span>
+        </div>
+       </div>
+       <div class="lg:col-span-6 w-full">
+        <div class="relative w-full aspect-video border rounded-lg overflow-hidden group bg-card/50 backdrop-blur">
+         <div class="absolute top-0 left-0 right-0 h-8 bg-background/80 border-b flex items-center px-3 justify-between z-20">
+          <div class="text-[9px] text-muted-foreground uppercase font-mono">
+           demo_render.mp4
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="relative py-20 px-6 overflow-hidden border-b bg-muted/20">
+      <div class="max-w-7xl mx-auto">
+       <div class="text-center mb-16">
+        <div class="inline-block px-4 py-1.5 mb-4 text-xs font-mono border border-primary/30 rounded-full bg-primary/5">
+         TRANSFORMATION.SHOWCASE
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+         Blueprint to
+         <span class="text-primary">
+          Reality_
+         </span>
+        </h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+         See how our AI transforms empty floor plans into fully staged interiors
+        </p>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+        <div>
+         <div class="relative border rounded-lg overflow-hidden bg-card/50 backdrop-blur">
+          <div class="absolute top-0 left-0 right-0 h-8 bg-background/80 border-b flex items-center px-3 justify-between z-20">
+           <div class="text-[9px] text-muted-foreground uppercase font-mono">
+            input_blueprint.dwg
+           </div>
+          </div>
+          <div class="relative pt-8 aspect-736/640">
+           <img alt="Floor plan before staging" class="object-cover" src="/_next/image?url=https%3A%2F%2Fph-files.imgix.net%2F4c908fb5-543f-40c3-91c9-1cfe3ad8f299.png%3Fauto%3Dcompress%26codec%3Dmozjpeg%26cs%3Dstrip%26auto%3Dformat%26w%3D736%26h%3D640%26fit%3Dmax%26frame%3D1%26dpr%3D2&amp;w=3840&amp;q=75"/>
+           <div class="absolute bottom-4 right-4 px-3 py-1.5 bg-background/90 border rounded backdrop-blur">
+            <span class="text-xs font-mono text-muted-foreground">
+             BEFORE
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div>
+         <div class="relative border border-primary/50 rounded-lg overflow-hidden bg-card/50 backdrop-blur">
+          <div class="absolute top-0 left-0 right-0 h-8 bg-background/80 border-b flex items-center px-3 justify-between z-20">
+           <div class="text-[9px] text-muted-foreground uppercase font-mono">
+            output_staged.png
+           </div>
+          </div>
+          <div class="relative pt-8 aspect-square">
+           <img alt="Floor plan after AI staging" class="object-cover" src="/_next/image?url=https%3A%2F%2Fph-files.imgix.net%2Fb2f7dedb-7838-4b54-8661-b80b0fd487ab.png%3Fauto%3Dcompress%26codec%3Dmozjpeg%26cs%3Dstrip%26auto%3Dformat%26w%3D640%26h%3D640%26fit%3Dmax%26frame%3D1%26dpr%3D2&amp;w=3840&amp;q=75"/>
+           <div class="absolute top-12 right-4 px-3 py-1.5 bg-primary/90 border border-primary/30 rounded backdrop-blur">
+            <span class="text-xs font-mono text-primary-foreground flex items-center gap-2">
+             AI STAGED
+            </span>
+           </div>
+           <div class="absolute bottom-4 right-4 px-3 py-1.5 bg-primary/90 border border-primary/30 rounded backdrop-blur">
+            <span class="text-xs font-mono text-primary-foreground">
+             AFTER
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 border-y bg-muted/30 backdrop-blur" id="how-it-works">
+      <div class="max-w-7xl mx-auto px-6">
+       <div class="mb-16 md:flex md:justify-between md:items-end">
+        <div>
+         <h2 class="text-2xl font-bold mb-2">
+          How does it work?
+         </h2>
+         <p class="text-sm text-muted-foreground uppercase tracking-widest">
+          Three steps to visualization
+         </p>
+        </div>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm group relative p-6 bg-card/50 hover:bg-card transition-all duration-500 border-t border-t-primary/50">
+          <div class="text-5xl font-bold group-hover:text-primary/20 transition-colors mb-6 select-none">
+           01
+          </div>
+          <h3 class="text-lg font-bold mb-2">
+           Upload Floor Plan
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Paste a link to any floor plan image. We support PNG, JPG, and JPEG formats. System auto-detects dimensions.
+          </p>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm group relative p-6 bg-card/50 hover:bg-card transition-all duration-500 border-t border-t-primary/50">
+          <div class="text-5xl font-bold group-hover:text-primary/20 transition-colors mb-6 select-none">
+           02
+          </div>
+          <h3 class="text-lg font-bold mb-2">
+           Choose Your Style
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Select from styles like Modern Minimalist, Cozy Scandinavian, Luxury Contemporary, and many more.
+          </p>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl border shadow-sm group relative p-6 bg-card/50 hover:bg-card transition-all duration-500 border-t border-t-primary/50">
+          <div class="text-5xl font-bold group-hover:text-primary/20 transition-colors mb-6 select-none">
+           03
+          </div>
+          <h3 class="text-lg font-bold mb-2">
+           Download Design
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Get your AI-staged interior in under a minute. High resolution outputs ready to share with clients.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 relative overflow-hidden" id="who-its-for">
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4">
+         Target Architectures
+        </h2>
+        <p class="text-muted-foreground max-w-2xl mx-auto">
+         Built for professionals who need to visualize spaces quickly.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl shadow-sm group p-8 bg-card border hover:border-primary/50 transition-all duration-300">
+          <div class="flex items-start justify-between mb-6">
+           <span class="text-[10px] uppercase font-bold text-muted-foreground">
+            Sector: Real Estate
+           </span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+           Real Estate Agents
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           Create compelling property visualizations that help buyers imagine the potential of empty spaces. Increase listing engagement.
+          </p>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl shadow-sm group p-8 bg-card border hover:border-primary/50 transition-all duration-300">
+          <div class="flex items-start justify-between mb-6">
+           <span class="text-[10px] uppercase font-bold text-muted-foreground">
+            Sector: Design
+           </span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+           Interior Designers
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           Quickly generate multiple design concepts from floor plans to present to clients. Rapid ideation prototyping based on exactly what your client needs.
+          </p>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl shadow-sm group p-8 bg-card border hover:border-primary/50 transition-all duration-300">
+          <div class="flex items-start justify-between mb-6">
+           <span class="text-[10px] uppercase font-bold text-muted-foreground">
+            Sector: Construction
+           </span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+           Property Developers
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           Showcase pre-construction units with realistic interior staging before they're built. Drive pre-sales.
+          </p>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground flex flex-col gap-6 rounded-xl shadow-sm group p-8 bg-card border hover:border-primary/50 transition-all duration-300">
+          <div class="flex items-start justify-between mb-6">
+           <span class="text-[10px] uppercase font-bold text-muted-foreground">
+            Sector: Staging
+           </span>
+          </div>
+          <h3 class="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+           Home Stagers
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           Offer virtual staging services to clients without the cost of physical furniture logistics. Expand service capability.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 border-t bg-muted/30" id="pricing">
+      <div class="max-w-7xl mx-auto px-6">
+       <div class="text-center mb-20">
+        <h2 class="text-3xl font-bold mb-4">
+         Pricing
+        </h2>
+        <p class="text-muted-foreground">
+         Simple, transparent pricing. Start free, pay only for what you use.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+        <div>
+         <div class="text-card-foreground gap-6 rounded-xl border shadow-sm p-8 bg-card/50 flex flex-col h-full">
+          <h3 class="text-xl font-bold mb-2">
+           Free
+          </h3>
+          <p class="text-xs text-muted-foreground mb-6 uppercase tracking-wider">
+           Evaluation Mode
+          </p>
+          <div class="text-4xl font-bold mb-6">
+           $0
+           <span class="text-sm text-muted-foreground">
+            /forever
+           </span>
+          </div>
+          <ul class="space-y-4 mb-8 text-sm flex-1">
+           <li class="flex items-center gap-3">
+            5 generations per month
+           </li>
+           <li class="flex items-center gap-3">
+            6 interior styles
+           </li>
+           <li class="flex items-center gap-3">
+            Storage Library
+           </li>
+           <li class="flex items-center gap-3 text-muted-foreground">
+            Watermarked results
+           </li>
+           <li class="flex items-center gap-3 text-muted-foreground">
+            Standard processing
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full uppercase tracking-wider" href="/register">
+           Get Started
+          </a>
+         </div>
+        </div>
+        <div class="transform md:-translate-y-4">
+         <div class="text-card-foreground gap-6 rounded-xl relative border-2 border-primary bg-card p-8 shadow-lg shadow-primary/10 flex flex-col h-full">
+          <div class="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold px-2 py-1 uppercase">
+           Popular
+          </div>
+          <h3 class="text-xl font-bold mb-2">
+           Pro Plan
+          </h3>
+          <p class="text-xs text-muted-foreground mb-6 uppercase tracking-wider">
+           Professional Access
+          </p>
+          <div class="text-4xl font-bold mb-6">
+           $12
+           <span class="text-sm text-muted-foreground">
+            /month
+           </span>
+          </div>
+          <ul class="space-y-4 mb-8 text-sm flex-1">
+           <li class="flex items-center gap-3">
+            <span class="font-medium">
+             20 credits/month
+            </span>
+           </li>
+           <li class="flex items-center gap-3">
+            Faster staging &amp; priority queue
+           </li>
+           <li class="flex items-center gap-3">
+            20+ style packs unlocked
+           </li>
+           <li class="flex items-center gap-3">
+            Storage Library
+           </li>
+           <li class="flex items-center gap-3">
+            No watermark
+           </li>
+           <li class="flex items-center gap-3">
+            Priority Support
+           </li>
+           <li class="flex items-center gap-3 text-xs text-primary pl-7">
+            $0.50 per extra credit
+           </li>
+          </ul>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full uppercase tracking-wider" href="/register">
+           Upgrade Now
+          </a>
+         </div>
+        </div>
+        <div>
+         <div class="text-card-foreground gap-6 rounded-xl border shadow-sm p-8 bg-card/30 flex flex-col h-full opacity-75">
+          <div class="flex justify-between items-start">
+           <h3 class="text-xl font-bold mb-2">
+            Team
+           </h3>
+           <span class="text-[9px] border border-border text-muted-foreground px-1.5 py-0.5 rounded">
+            SOON
+           </span>
+          </div>
+          <p class="text-xs text-muted-foreground mb-6 uppercase tracking-wider">
+           Enterprise Scale
+          </p>
+          <div class="text-4xl font-bold text-muted-foreground mb-6">
+           $79
+           <span class="text-sm">
+            /month
+           </span>
+          </div>
+          <ul class="space-y-4 mb-8 text-sm text-muted-foreground flex-1">
+           <li class="flex items-center gap-3">
+            Multi-user access
+           </li>
+           <li class="flex items-center gap-3">
+            Shared credits pool
+           </li>
+           <li class="flex items-center gap-3">
+            Priority support (24/7)
+           </li>
+          </ul>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 w-full uppercase tracking-wider">
+           Coming Soon
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 relative max-w-4xl mx-auto px-6" id="faq">
+      <div class="mb-12 border-b pb-4">
+       <h2 class="text-2xl font-bold">
+        FAQ
+       </h2>
+      </div>
+      <div>
+       <div class="space-y-4">
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_6minn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            What file formats are supported?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_aminn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            Is the generated furniture real?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_eminn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            How long does it take to generate a staged image?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_iminn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            Can I customize the furniture and decor?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_mminn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            Can I use the generated images commercially?
+           </span>
+          </button>
+         </h3>
+        </div>
+        <div class="last:border-b-0 border bg-card/50">
+         <h3 class="flex">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-4" id="radix-_R_qminn5tlb_" type="button">
+           <span class="text-sm font-bold">
+            Can I add my own custom furniture?
+           </span>
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="relative border-t border-border/40 bg-background/50 backdrop-blur-sm">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-8 pb-12 border-b border-border/20">
+       <div class="md:col-span-4">
+        <a class="flex items-center gap-2.5 mb-4 w-fit group" href="/">
+         <div class="relative">
+          <img alt="Spacemint AI Logo" class="w-8 h-8 transition-transform duration-300 group-hover:scale-110" height="32" src="/logo.svg" width="32"/>
+         </div>
+         <span class="font-semibold text-sm tracking-tight">
+          Spacemint
+          <span class="text-primary">
+           _
+          </span>
+          AI
+         </span>
+        </a>
+        <p class="text-sm text-muted-foreground max-w-xs leading-relaxed font-mono">
+         // Transform floor plans into beautifully staged interiors with the power of AI.
+        </p>
+        <div class="mt-4 flex items-center gap-2 text-xs text-muted-foreground font-mono">
+         <span>
+          System Online
+         </span>
+        </div>
+       </div>
+       <div class="md:col-span-8 grid grid-cols-2 sm:grid-cols-3 gap-8">
+        <div>
+         <h4 class="text-xs font-semibold mb-4 uppercase tracking-wider text-foreground/80 font-mono">
+          [Product]
+         </h4>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/#how-it-works">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Process
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/#who-its-for">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Users
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/#pricing">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Pricing
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/#faq">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             FAQ
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="text-xs font-semibold mb-4 uppercase tracking-wider text-foreground/80 font-mono">
+          [Legal]
+         </h4>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/privacy">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Privacy
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/terms">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Terms
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h4 class="text-xs font-semibold mb-4 uppercase tracking-wider text-foreground/80 font-mono">
+          [Resources]
+         </h4>
+         <ul class="space-y-3">
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/register">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Get Started
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-muted-foreground hover:text-primary transition-colors font-mono inline-flex items-center gap-1 group" href="/login">
+            <span class="opacity-0 group-hover:opacity-100 transition-opacity">
+             →
+            </span>
+            <span>
+             Login
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+       <p class="text-xs text-muted-foreground font-mono">
+        © 2025 Spacemint AI
+        <span class="text-primary">
+         _
+        </span>
+        All rights reserved.
+       </p>
+       <div class="flex items-center gap-4 text-xs text-muted-foreground font-mono">
+        <span class="hidden sm:inline">
+         v2.0.0
+        </span>
+        <span class="hidden sm:inline">
+         •
+        </span>
+        <span>
+         Virginia, USA
+        </span>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

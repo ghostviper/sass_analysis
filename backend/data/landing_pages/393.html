@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SFX Engine - Free AI sound effect generator</title>
+</head>
+<body>
+  <body>
+   <header class="hidden md:block md:fixed top-4 left-1/2 transform -translate-x-1/2 z-50 rounded-full transition-all duration-500 w-[70vw] bg-white shadow-xl border h-16 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
+     <div class="flex-1 flex justify-start">
+      <a href="/">
+       <div class="flex items-center gap-1 cursor-pointer">
+        <img alt="logo" height="40" src="/logo-black-256.webp" width="40"/>
+        <h2 class="text-primary font-bold md:text-2xl">
+         SFX Engine
+        </h2>
+       </div>
+      </a>
+     </div>
+     <nav class="hidden md:inline-flex space-x-4">
+      <a href="/sound-effects">
+       <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 shadow-none border-transparent text-gray-900 dark:text-gray-50 hover:bg-gray-100/90 dark:hover:bg-gray-800/80 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5">
+        Search sounds
+       </button>
+      </a>
+      <nav class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+       <div>
+        <ul class="group flex flex-1 list-none items-center justify-center space-x-1">
+         <li>
+          <button class="group w-max hover:text-accent-foreground focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 group h-fit bg-transparent relative inline-flex items-center justify-center rounded-md border-none px-3 py-1.5 text-center text-sm font-medium transition-all duration-100 ease-in-out text-gray-900 focus:bg-gray-100/90 hover:bg-gray-100/90 data-[active]:bg-gray-100/90 data-[state=open]:bg-gray-100/90" id="radix-_R_kl5ulb_-trigger-radix-_R_6kl5ulb_">
+           Use cases
+          </button>
+         </li>
+        </ul>
+       </div>
+      </nav>
+      <a href="/pricing">
+       <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 shadow-none border-transparent text-gray-900 dark:text-gray-50 hover:bg-gray-100/90 dark:hover:bg-gray-800/80 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5">
+        Pricing
+       </button>
+      </a>
+      <nav class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+       <div>
+        <ul class="group flex flex-1 list-none items-center justify-center space-x-1">
+         <li>
+          <button class="group w-max hover:text-accent-foreground focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 group h-fit bg-transparent relative inline-flex items-center justify-center rounded-md border-none px-3 py-1.5 text-center text-sm font-medium transition-all duration-100 ease-in-out text-gray-900 focus:bg-gray-100/90 hover:bg-gray-100/90 data-[active]:bg-gray-100/90 data-[state=open]:bg-gray-100/90" id="radix-_R_14l5ulb_-trigger-radix-_R_74l5ulb_">
+           Language
+          </button>
+         </li>
+        </ul>
+       </div>
+      </nav>
+      <div class="hidden md:flex flex-row justify-end space-x-4">
+       <a class="hidden md:inline-flex" href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-transparent text-white dark:text-gray-900 bg-primary dark:bg-gray-50 hover:bg-primary/70 dark:hover:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5">
+         Signup
+        </button>
+       </a>
+       <a class="hidden md:inline-flex" href="/login">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5">
+         Login
+        </button>
+       </a>
+      </div>
+      <div class="md:hidden">
+       <div class="w-full border-b-2 border-solid absolute left-0 top-[95%] bg-white z-100 py-6 px-8 hidden">
+        <div>
+         <div class="p-2">
+          <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/">
+           Home
+          </a>
+         </div>
+         <div class="p-2">
+          <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/sound-effects">
+           Search sounds
+          </a>
+         </div>
+         <div class="p-2">
+          <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/pricing">
+           Pricing
+          </a>
+         </div>
+        </div>
+        <div class="flex justify-between items-start gap-4">
+         <div class="w-1/2 p-2 border rounded-lg">
+          <a class="w-full flex justify-center items-center gap-x-2.5 text-lg text-center" href="/login">
+           Login
+          </a>
+         </div>
+         <div class="w-1/2 p-2 bg-primary text-white rounded-lg">
+          <a class="w-full flex justify-center items-center gap-x-2.5 text-lg text-center" href="/signup">
+           Signup
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </nav>
+    </div>
+   </header>
+   <header class="md:hidden absolute top-0 z-20 w-full">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between py-6 px-8 gap-8">
+     <div class="flex-1 flex justify-start">
+      <a href="/">
+       <div class="flex items-center gap-1 cursor-pointer">
+        <img alt="logo" height="50" src="/logo-black-256.webp" width="50"/>
+        <h2 class="text-primary font-extrabold text-2xl md:text-4xl">
+         SFX Engine
+        </h2>
+       </div>
+      </a>
+     </div>
+     <div class="md:hidden">
+      <div class="w-full border-b-2 border-solid absolute left-0 top-[95%] bg-white z-100 py-6 px-8 hidden">
+       <div>
+        <div class="p-2">
+         <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/">
+          Home
+         </a>
+        </div>
+        <div class="p-2">
+         <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/sound-effects">
+          Search sounds
+         </a>
+        </div>
+        <div class="p-2">
+         <span class="w-full flex justify-normal items-center gap-x-2.5 text-lg">
+          Use cases
+         </span>
+         <div class="grid grid-cols-2 gap-3 mt-2">
+          <a class="flex items-center gap-4" href="/solutions/video-editors">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/audio-producers">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/film-makers">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/podcasters">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/game-developers">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/app-developers">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/social-media-creators">
+           Use cases
+          </a>
+          <a class="flex items-center gap-4" href="/solutions/advertisers">
+           Use cases
+          </a>
+         </div>
+        </div>
+        <div class="p-2">
+         <a class="w-full flex justify-normal items-center gap-x-2.5 text-lg" href="/pricing">
+          Pricing
+         </a>
+        </div>
+        <div class="p-2">
+         <button class="w-full flex justify-normal items-center gap-x-2.5 text-lg">
+          Language
+         </button>
+        </div>
+       </div>
+       <div class="flex justify-between items-start gap-4">
+        <div class="w-1/2 p-2 border rounded-lg">
+         <a class="w-full flex justify-center items-center gap-x-2.5 text-lg text-center" href="/login">
+          Login
+         </a>
+        </div>
+        <div class="w-1/2 p-2 bg-primary text-white rounded-lg">
+         <a class="w-full flex justify-center items-center gap-x-2.5 text-lg text-center" href="/signup">
+          Signup
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </nav>
+   </header>
+   <div class="w-full flex flex-col items-center relative bg-background">
+    <div class="min-h-[45vh] md:min-h-[60vh] w-full flex flex-col items-center justify-between md:space-x-12 overflow-x-hidden bg-white" id="hero">
+     <div class="w-[160vw] md:w-full xl:-top-[25rem] z-0 md:-mt-[10rem] xl:-mt-[25rem]">
+      <img alt="Guitar" class="h-full w-full object-cover" src="https://photos.sfxengine.com/hero-bg.webp"/>
+     </div>
+     <div class="absolute w-full md:w-[50rem] flex flex-col items-center space-y-4 z-10 text-black mt-24 md:mt-32 px-8">
+      <div class="py-2 px-4 rounded-2xl bg-background/50 flex flex-col items-center border border-white/75 text-center">
+       Get 35% off your purchase with code FIRST35
+      </div>
+      <h1 class="font-bold text-4xl lg:text-7xl text-center flex flex-col items-center text-primary drop-shadow-xl">
+       AI Sound Effects For Professionals
+      </h1>
+      <div class="tracking-wide text-sm md:text-lg text-center text-neutral-800">
+       Discover the power of our AI sound effect generator, designed specifically for audio producers, video editors, and game developers.
+      </div>
+      <div class="flex gap-2">
+       <a href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-transparent text-white dark:text-gray-900 bg-primary dark:bg-gray-50 hover:bg-primary/70 dark:hover:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5 text-xs md:text-xl md:px-4 md:py-2">
+         Generate sounds
+        </button>
+       </a>
+       <a href="/sound-effects">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 text-xs md:text-xl md:px-4 md:py-2">
+         Explore sounds
+        </button>
+       </a>
+      </div>
+      <div class="hidden md:flex flex-col md:flex-row gap-2">
+       <div class="md:text-sm tracking-wide text-sm text-neutral-700">
+        3 free credits
+       </div>
+       <div class="md:text-sm tracking-wide text-sm text-neutral-700">
+        No credit-card required
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="w-4/5 flex flex-col items-center mt-16 mb-24 bg-background">
+     <h2 class="text-4xl font-semibold text-center">
+      Can never find the right sound?
+     </h2>
+     <div class="text-base text-muted-foreground tracking-wide text-center md:text-lg mt-2">
+      Our AI sound effect generator empowers you to craft custom audio experiences that resonate with your audience. With endless possibilities, you can easily design the perfect sound for any project, whether it's for film, gaming, or music production.
+     </div>
+     <div class="md:w-1/2 lg:w-full grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="col-span-1 mt-12 cursor-pointer hover:transform hover:scale-105 transition-transform flex flex-col justify-between">
+       <div class="relative overflow-hidden">
+        <img alt="Thunderstorm with rolling thunder and heavy rain" class="w-full h-full object-cover" src="/lightning.webp"/>
+       </div>
+       <p class="text-center mt-2 text-primary">
+        Thunderstorm with rolling thunder and heavy rain
+       </p>
+      </div>
+      <div class="col-span-1 mt-12 cursor-pointer hover:transform hover:scale-105 transition-transform flex flex-col justify-between">
+       <div class="relative overflow-hidden">
+        <img alt="Rooster crowing in morning on rustic farm" class="w-full h-full object-cover" src="/rooster.webp"/>
+       </div>
+       <p class="text-center mt-2 text-primary">
+        Rooster crowing in morning on rustic farm
+       </p>
+      </div>
+      <div class="col-span-1 mt-12 cursor-pointer hover:transform hover:scale-105 transition-transform flex flex-col justify-between">
+       <div class="relative overflow-hidden">
+        <img alt="Large wave crashing on a beach" class="w-full h-full object-cover" src="/wave.webp"/>
+       </div>
+       <p class="text-center mt-2 text-primary">
+        Large wave crashing on a beach
+       </p>
+      </div>
+     </div>
+     <div class="flex flex-col items-center">
+      <h3 class="text-lg font-medium text-center mt-12">
+       Explore more sound effects
+      </h3>
+      <a class="mt-4" href="/sound-effects">
+       <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-transparent text-white dark:text-gray-900 bg-primary dark:bg-gray-50 hover:bg-primary/70 dark:hover:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5">
+        View more
+       </button>
+      </a>
+     </div>
+    </div>
+    <div class="w-4/5 flex flex-col items-center mb-24 bg-background">
+     <h2 class="text-3xl font-medium text-center">
+      Trusted by leading companies and creative studios worldwide
+     </h2>
+     <div class="mt-8 flex flex-col md:flex-row flex-wrap items-center justify-between gap-8">
+      <a class="flex flex-col items-center transition-transform duration-200 hover:scale-105" href="https://wildlifestudios.com/" target="_blank">
+       <img alt="Wildlife Logo" class="h-12" src="/wildlife-logo.svg"/>
+       <span class="mt-2 font-medium">
+        Wildlife Studios
+       </span>
+       <span class="mt-1 text-sm text-muted-foreground text-center max-w-[200px]">
+        One of the 10 largest mobile gaming companies in the world
+       </span>
+      </a>
+      <a class="flex flex-col items-center transition-transform duration-200 hover:scale-105" href="https://www.ringcentral.com/" target="_blank">
+       <img alt="RingCentral Logo" class="h-20" src="/ringcentral-logo.png"/>
+       <span class="mt-2 font-medium">
+        RingCentral
+       </span>
+       <span class="mt-1 text-sm text-muted-foreground text-center max-w-[200px]">
+        NYSE-listed communications company
+       </span>
+      </a>
+      <a class="flex flex-col items-center transition-transform duration-200 hover:scale-105" href="https://play.co/" target="_blank">
+       <img alt="Play Logo" class="h-16" src="/play-logo.svg"/>
+       <span class="mt-2 font-medium">
+        Play
+       </span>
+       <span class="mt-1 text-sm text-muted-foreground text-center max-w-[200px]">
+        Game studio with 100M+ players
+       </span>
+      </a>
+      <a class="flex flex-col items-center transition-transform duration-200 hover:scale-105" href="https://artic.edu/" target="_blank">
+       <img alt="Art Institute of Chicago Logo" class="h-14" src="/artic-logo.png"/>
+       <span class="mt-2 font-medium">
+        Art Institute of Chicago
+       </span>
+       <span class="mt-1 text-sm text-muted-foreground text-center max-w-[200px]">
+        World-renowned art museum and research institution
+       </span>
+      </a>
+      <a class="flex flex-col items-center transition-transform duration-200 hover:scale-105" href="https://heatherglade.com/" target="_blank">
+       <img alt="Heatherglade Logo" class="h-16" src="/heatherglade-logo.webp"/>
+       <span class="mt-2 font-medium">
+        Heatherglade
+       </span>
+       <span class="mt-1 text-sm text-muted-foreground text-center max-w-[200px]">
+        Mobile game studio with 20M+ users
+       </span>
+      </a>
+     </div>
+    </div>
+    <div class="w-full bg-primary text-white pb-16 pt-16 md:pt-32 px-8 md:px-24 space-y-24">
+     <div class="w-full grid grid-cols-6 gap-16">
+      <div class="col-span-6 md:col-span-2 xl:col-span-3 h-full flex flex-col justify-between space-y-12">
+       <h2 class="font-medium text-white text-5xl">
+        Unlock new creativity
+       </h2>
+       <div class="h-full flex flex-col items-center justify-between space-y-8">
+        <div class="cursor-pointer pt-8 border-t transition-opacity duration-300 opacity-100 hover:opacity-100">
+         <div class="flex items-center gap-2">
+          <h3 class="text-lg font-medium text-white my-2">
+           Infinite Options
+          </h3>
+         </div>
+         <h2 class="text-2xl font-semibold flex items-center gap-1">
+          Generate any sound effect with infinite variations
+         </h2>
+         <div class="md:text-sm tracking-wide text-neutral-300 text-lg mt-2">
+          Fine-tune every sound effect with detailed text descriptions, allowing for precise customization to suit your needs
+         </div>
+        </div>
+        <div class="cursor-pointer pt-8 border-t transition-opacity duration-300 opacity-60 hover:opacity-80">
+         <div class="flex items-center gap-2">
+          <h3 class="text-lg font-medium text-white my-2">
+           Clear Pricing
+          </h3>
+         </div>
+         <h2 class="text-2xl font-semibold flex items-center gap-1">
+          Pay only for the sound effects you need
+         </h2>
+         <div class="md:text-sm tracking-wide text-neutral-300 text-lg mt-2">
+          Our pricing is simple and transparent, with no hidden fees or charges. Purchase as many credits as you need, no subscription necessary
+         </div>
+        </div>
+        <div class="cursor-pointer pt-8 border-t transition-opacity duration-300 opacity-60 hover:opacity-80">
+         <div class="flex items-center gap-2">
+          <h3 class="text-lg font-medium text-white my-2">
+           Licensing
+          </h3>
+         </div>
+         <h2 class="text-2xl font-semibold flex items-center gap-1">
+          All commercial use included by default
+         </h2>
+         <div class="md:text-sm tracking-wide text-neutral-300 text-lg mt-2">
+          Every sound effect you generated is licensed for commercial use, with no additional fees or royalties. Use them in your projects without worry
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="hidden md:block md:col-span-4 xl:col-span-3 h-full w-full relative overflow-hidden rounded-[2rem]">
+       <div>
+        <img class="w-full h-full object-cover absolute top-0 transition-opacity duration-700 opacity-100 z-10" src="/fisherman.webp"/>
+        <div class="text-black absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5/6 w-3/4 bg-background rounded-3xl border-[0.5rem] border-neutral-200 p-6 transition-opacity duration-700 opacity-100 z-10">
+         <div class="flex flex-col justify-between z-20">
+          <div class="flex flex-col space-y-4">
+           <div>
+            <label class="text-sm leading-none text-gray-900 dark:text-gray-50">
+             Prompt
+            </label>
+            <div class="bg-white mt-1 border rounded-lg py-2 px-2 flex flex-wrap">
+             The sound of a dripping faucet echoing in an empty room.
+            </div>
+           </div>
+           <div>
+            <label class="text-sm leading-none text-gray-900 dark:text-gray-50 mt-4">
+             Sound effect length
+            </label>
+            <div class="flex items-center gap-2">
+             <div class="relative w-full max-w-32">
+              <input class="relative block w-full appearance-none rounded-md border px-2.5 py-1.5 shadow-sm outline-none transition sm:text-sm border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-950 disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500 file:-my-1.5 file:-ml-2.5 file:h-[36px] file:cursor-pointer file:rounded-l-md file:rounded-r-none file:border-0 file:px-3 file:py-1.5 file:outline-none focus:outline-none disabled:pointer-events-none file:disabled:pointer-events-none file:border-solid file:border-gray-300 file:bg-gray-50 file:text-gray-500 file:hover:bg-gray-100 file:dark:border-gray-800 file:dark:bg-gray-950 file:hover:dark:bg-gray-900/20 file:disabled:dark:border-gray-700 file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] file:disabled:bg-gray-100 file:disabled:text-gray-500 file:disabled:dark:bg-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700 [&amp;::--webkit-search-cancel-button]:hidden [&amp;::-webkit-search-cancel-button]:hidden [&amp;::-webkit-search-decoration]:hidden" type="number" value="9"/>
+             </div>
+            </div>
+           </div>
+           <div>
+            <label class="text-sm leading-none text-gray-900 dark:text-gray-50 mt-4">
+             Time to start
+            </label>
+            <div class="flex items-center gap-2">
+             <div class="relative w-full max-w-32">
+              <input class="relative block w-full appearance-none rounded-md border px-2.5 py-1.5 shadow-sm outline-none transition sm:text-sm border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 placeholder-gray-400 dark:placeholder-gray-500 bg-white dark:bg-gray-950 disabled:border-gray-300 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:border-gray-700 disabled:dark:bg-gray-800 disabled:dark:text-gray-500 file:-my-1.5 file:-ml-2.5 file:h-[36px] file:cursor-pointer file:rounded-l-md file:rounded-r-none file:border-0 file:px-3 file:py-1.5 file:outline-none focus:outline-none disabled:pointer-events-none file:disabled:pointer-events-none file:border-solid file:border-gray-300 file:bg-gray-50 file:text-gray-500 file:hover:bg-gray-100 file:dark:border-gray-800 file:dark:bg-gray-950 file:hover:dark:bg-gray-900/20 file:disabled:dark:border-gray-700 file:[border-inline-end-width:1px] file:[margin-inline-end:0.75rem] file:disabled:bg-gray-100 file:disabled:text-gray-500 file:disabled:dark:bg-gray-800 focus:ring-2 focus:ring-blue-200 focus:dark:ring-blue-700/30 focus:border-blue-500 focus:dark:border-blue-700 [&amp;::--webkit-search-cancel-button]:hidden [&amp;::-webkit-search-cancel-button]:hidden [&amp;::-webkit-search-decoration]:hidden" type="number" value="0"/>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div>
+           <label class="text-sm leading-none text-gray-900 dark:text-gray-50">
+            Result
+           </label>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div>
+        <img class="w-full h-full object-cover absolute top-0 transition-opacity duration-700 opacity-0" src="/dessert.webp"/>
+        <div class="text-black absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5/6 w-3/4 bg-background rounded-3xl border-[0.5rem] border-neutral-200 p-6 transition-opacity duration-700 opacity-0">
+         <div class="h-full overflow-y-hidden">
+          <div class="flex items-center justify-between">
+           <div>
+            <label class="text-gray-900 dark:text-gray-50 text-lg">
+             Credit balance
+            </label>
+            <h2 class="text-2xl font-medium">
+             73
+            </h2>
+           </div>
+           <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center text-sm font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-transparent text-white dark:text-gray-900 bg-primary dark:bg-gray-50 hover:bg-primary/70 dark:hover:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5">
+            Add credits
+           </button>
+          </div>
+          <div class="flex flex-col items-center gap-4 overflow-y-hidden">
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-green-100">
+            <span class="text-muted-foreground">
+             Spent 40 credits
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-green-100">
+            <span class="text-muted-foreground">
+             Spent 25 credits
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+           <div class="flex items-center py-2 px-4 rounded-lg space-x-2 bg-red-100">
+            <span class="text-muted-foreground">
+             Added 1 credit
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div>
+        <img class="w-full h-full object-cover absolute top-0 transition-opacity duration-700 opacity-0" src="/mountain.webp"/>
+        <div class="text-black absolute inset-1/2 transform -translate-x-1/2 -translate-y-1/2 h-5/6 w-3/4 bg-background rounded-3xl border-[0.5rem] border-neutral-200 p-6 transition-opacity duration-700 opacity-0">
+         <div class="h-full flex flex-col justify-between">
+          <h3 class="text-lg font-medium">
+           Use your generated sound effects in:
+          </h3>
+          <div class="mt-4">
+           <ul class="grid grid-cols-2 gap-4">
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Movies
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Songs
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Videos
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Podcasts
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Games
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Apps
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Social media
+             </span>
+            </li>
+            <li class="col-span-1 flex items-center justify-center gap-2 border rounded-lg p-4 bg-white">
+             <span>
+              Ads
+             </span>
+            </li>
+           </ul>
+          </div>
+          <div class="w-full flex justify-center bg-primary border px-2 py-4 rounded-lg">
+           <h2 class="text-2xl font-medium text-white flex gap-2">
+            100% Royalty Free
+           </h2>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="w-full space-y-8 py-12 sm:py-16 md:py-24 px-4 sm:px-8 md:px-16 lg:px-32">
+     <div class="w-full flex flex-col items-center">
+      <h1 class="text-3xl sm:text-4xl text-center">
+       Available Plans
+      </h1>
+      <div class="flex flex-col items-center">
+       <div class="mt-4 flex items-center gap-3">
+        <span class="text-sm">
+         Monthly
+        </span>
+        <span class="text-sm text-primary font-medium">
+         Yearly
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+      <div class="rounded-lg bg-card text-card-foreground border border-gray-200 shadow-sm p-4 sm:p-6 relative flex flex-col h-full">
+       <div class="flex flex-col flex-grow">
+        <h2 class="text-2xl font-medium">
+         Basic
+        </h2>
+        <div class="mt-4">
+         <div class="flex items-center gap-2">
+          <h2 class="text-3xl sm:text-4xl font-bold">
+           $0
+          </h2>
+          <div class="md:text-sm text-muted-foreground tracking-wide text-sm sm:text-base">
+           /per month
+          </div>
+         </div>
+        </div>
+        <div class="mt-6 space-y-3">
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           30 credits per month
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Sound effect generation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Background music creation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Studio quality output
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Basic community support
+          </span>
+         </div>
+        </div>
+       </div>
+       <a href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 w-full mt-6 text-sm">
+         Choose Plan
+        </button>
+       </a>
+      </div>
+      <div class="rounded-lg bg-card text-card-foreground border border-gray-200 shadow-sm p-4 sm:p-6 relative flex flex-col h-full">
+       <div class="flex flex-col flex-grow">
+        <h2 class="text-2xl font-bold">
+         Starter
+        </h2>
+        <div class="mt-4">
+         <div class="flex items-center gap-2">
+          <h3 class="font-medium line-through text-xl text-gray-700">
+           $10
+          </h3>
+          <h2 class="text-3xl sm:text-4xl font-bold">
+           $8
+          </h2>
+          <div class="md:text-sm text-muted-foreground tracking-wide text-sm sm:text-base">
+           /per month
+          </div>
+         </div>
+         <div class="flex flex-col">
+          <div class="md:text-sm tracking-wide text-xs text-primary">
+           $96 billed yearly
+          </div>
+         </div>
+        </div>
+        <div class="mt-6 space-y-3">
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           6000 credits per year
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Sound effect generation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Background music creation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Studio quality output
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Priority email support
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           API access
+          </span>
+         </div>
+        </div>
+       </div>
+       <a href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 w-full mt-6 text-sm">
+         Choose Plan
+        </button>
+       </a>
+      </div>
+      <div class="rounded-lg bg-card text-card-foreground shadow-sm p-4 sm:p-6 relative flex flex-col h-full border-2 border-primary">
+       <div class="absolute top-0 right-0 -mt-2 -mr-2">
+        <div class="flex items-center gap-1 bg-primary text-white text-xs sm:text-sm font-bold px-2 py-1 rounded-full">
+         Most Popular
+        </div>
+       </div>
+       <div class="flex flex-col flex-grow">
+        <h2 class="text-2xl font-bold text-primary">
+         Creator
+        </h2>
+        <div class="mt-4">
+         <div class="flex items-center gap-2">
+          <h3 class="font-medium line-through text-xl text-gray-700">
+           $25
+          </h3>
+          <h2 class="text-3xl sm:text-4xl font-bold">
+           $20
+          </h2>
+          <div class="md:text-sm text-muted-foreground tracking-wide text-sm sm:text-base">
+           /per month
+          </div>
+         </div>
+         <div class="flex flex-col">
+          <div class="md:text-sm tracking-wide text-xs text-primary">
+           $240 billed yearly
+          </div>
+         </div>
+        </div>
+        <div class="mt-6 space-y-3">
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           48000 credits per year
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Sound effect generation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Background music creation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Studio quality output
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Priority support
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Full API access
+          </span>
+         </div>
+        </div>
+       </div>
+       <a href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-transparent text-white dark:text-gray-900 bg-primary dark:bg-gray-50 hover:bg-primary/70 dark:hover:bg-gray-200 disabled:bg-gray-100 disabled:text-gray-400 disabled:dark:bg-gray-800 disabled:dark:text-gray-600 gap-1.5 w-full mt-6 text-sm">
+         Choose Plan
+        </button>
+       </a>
+      </div>
+      <div class="rounded-lg bg-card text-card-foreground border border-gray-200 shadow-sm p-4 sm:p-6 relative flex flex-col h-full">
+       <div class="flex flex-col flex-grow">
+        <h2 class="text-2xl font-bold">
+         Pro
+        </h2>
+        <div class="mt-4">
+         <div class="flex items-center gap-2">
+          <h3 class="font-medium line-through text-xl text-gray-700">
+           $90
+          </h3>
+          <h2 class="text-3xl sm:text-4xl font-bold">
+           $72
+          </h2>
+          <div class="md:text-sm text-muted-foreground tracking-wide text-sm sm:text-base">
+           /per month
+          </div>
+         </div>
+         <div class="flex flex-col">
+          <div class="md:text-sm tracking-wide text-xs text-primary">
+           $864 billed yearly
+          </div>
+         </div>
+        </div>
+        <div class="mt-6 space-y-3">
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           180000 credits per year
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Sound effect generation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Background music creation
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Studio quality output
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Priority support
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Full API access
+          </span>
+         </div>
+         <div class="flex items-center gap-2 text-sm">
+          <span>
+           Priority feature requests
+          </span>
+         </div>
+        </div>
+       </div>
+       <a href="/signup">
+        <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 w-full mt-6 text-sm">
+         Choose Plan
+        </button>
+       </a>
+      </div>
+     </div>
+     <div class="w-full flex flex-col items-center mt-12 sm:mt-16 space-y-4">
+      <div class="flex flex-col items-center">
+       <h2 class="font-medium text-xl sm:text-2xl text-center">
+        Need a custom plan?
+       </h2>
+       <div class="md:text-sm text-muted-foreground tracking-wide text-sm sm:text-base text-center max-w-2xl">
+        Need a custom plan? Contact us for custom pricing and features tailored to your needs
+       </div>
+      </div>
+      <a href="mailto:support@sfxengine.com">
+       <button class="relative inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 text-sm sm:text-base">
+        Contact Sales
+       </button>
+      </a>
+     </div>
+    </div>
+    <div class="w-full h-full flex flex-col items-center bg-background py-16">
+     <h2 class="text-4xl font-semibold text-center">
+      Frequently Asked Questions
+     </h2>
+     <div class="text-base text-muted-foreground tracking-wide text-center mt-2 md:text-base">
+      Have a question? We have answers. Check out our FAQs below.
+     </div>
+     <div class="w-4/5 md:w-3/5 justify-center mt-4">
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_bpbsnn5ulb_" type="button">
+         Can I use the generated sound effects in commercial projects?
+        </button>
+       </h3>
+      </div>
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_jpbsnn5ulb_" type="button">
+         How many sound effects can I generate?
+        </button>
+       </h3>
+      </div>
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_rpbsnn5ulb_" type="button">
+         How long does it take to generate a sound effect?
+        </button>
+       </h3>
+      </div>
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_13pbsnn5ulb_" type="button">
+         Can I generate AI sound effects for free?
+        </button>
+       </h3>
+      </div>
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_1bpbsnn5ulb_" type="button">
+         What sounds does the AI "know"?
+        </button>
+       </h3>
+      </div>
+      <div class="overflow-hidden border-b first:mt-0 border-gray-200 dark:border-gray-800">
+       <h3 class="flex">
+        <button class="group flex flex-1 cursor-pointer items-center justify-between text-left font-medium dark:text-gray-50 data-[disabled]:cursor-default data-[disabled]:text-gray-400 dark:data-[disabled]:text-gray-600 focus-visible:z-10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-blue-500 text-lg text-dark py-6" id="radix-_R_1jpbsnn5ulb_" type="button">
+         What are the limits of the sounds I can generate?
+        </button>
+       </h3>
+      </div>
+     </div>
+     <div class="mt-8 flex flex-col items-center">
+      <h3 class="text-lg font-medium">
+       Cant find the answer to your question?
+      </h3>
+      <div class="text-base md:text-sm text-muted-foreground tracking-wide">
+       Contact us at
+       <a class="text-primary underline" href="mailto:support@sfxengine.com">
+        support@sfxengine.com
+       </a>
+      </div>
+     </div>
+    </div>
+    <div class="w-full bg-primary py-32 px-8 md:px-0">
+     <div class="col-span-1 flex flex-col items-center justify-center">
+      <h2 class="text-center text-6xl text-white font-bold max-w-7xl">
+       Ready to create your own sound effects?
+      </h2>
+      <div class="text-base tracking-wide text-neutral-300 md:w-3/4 text-center md:text-base mt-2">
+       Sign up now and start generating your own sound effects in minutes.
+      </div>
+      <a href="/signup">
+       <button class="relative inline-flex items-center justify-center border text-center font-medium shadow-sm transition-all duration-100 ease-in-out disabled:pointer-events-none disabled:shadow-none outline outline-offset-2 outline-0 focus-visible:outline-2 outline-blue-500 dark:outline-blue-500 border-gray-300 dark:border-gray-800 text-gray-900 dark:text-gray-50 bg-white dark:bg-gray-950 hover:bg-gray-50 dark:hover:bg-gray-900/60 disabled:text-gray-400 disabled:dark:text-gray-600 gap-1.5 mt-4 text-lg rounded-lg md:text-lg px-4 py-2">
+        Get started
+       </button>
+      </a>
+     </div>
+    </div>
+   </div>
+   <footer class="bg-primary text-white pt-12 pb-24 px-16">
+    <div class="flex flex-col md:flex-row justify-between gap-8 md:gap-16">
+     <div class="flex flex-col justify-between">
+      <a class="flex items-center gap-1 cursor-pointer" href="/">
+       <h2 class="text-white font-extrabold text-2xl">
+        SFX Engine
+       </h2>
+      </a>
+      <a class="flex items-center gap-2 cursor-pointer" href="https://climate.stripe.com/LmGONO">
+       <img alt="Climate Pledge" height="50" src="/stripe-climate-badge.svg" width="50"/>
+       Our climate pledge
+      </a>
+      <a class="flex items-center gap-2 cursor-pointer" href="https://sparkpod.ai?ref=sfxengine">
+       <img alt="SparkPod.ai" class="rounded-md" height="25" src="/sparkpod-logo.png" width="25"/>
+       SparkPod.ai
+      </a>
+      <a class="flex items-center gap-2 cursor-pointer" href="https://aidisstrackgenerator.com?ref=sfxengine">
+       Disstrack AI
+      </a>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-24">
+      <div class="flex flex-col">
+       <h3 class="text-lg font-medium">
+        Company
+       </h3>
+       <a class="text-sm text-white mt-2" href="/sound-effects/categories">
+        All categories and tags
+       </a>
+       <a class="text-sm text-white mt-2" href="/pricing">
+        Pricing
+       </a>
+       <a class="text-sm text-white mt-2" href="/blog">
+        Blog
+       </a>
+       <a class="text-sm text-white mt-2" href="/terms-of-service">
+        Terms of Service
+       </a>
+      </div>
+      <div class="flex flex-col">
+       <h3 class="text-lg font-medium">
+        Socials
+       </h3>
+       <a class="text-sm text-white mt-2" href="https://twitter.com" target="_blank">
+        Twitter / X
+       </a>
+       <a class="text-sm text-white mt-2" href="https://linkedin.com" target="_blank">
+        LinkedIn
+       </a>
+      </div>
+      <div class="flex flex-col">
+       <h3 class="text-lg font-medium">
+        Features
+       </h3>
+       <a class="text-sm text-white mt-2" href="/feature/background-music">
+        Background music
+       </a>
+       <a class="text-sm text-white mt-2" href="/feature/dj-transition">
+        AI Music Transitions
+       </a>
+       <a class="text-sm text-white mt-2" href="/feature/ai-sound-generator">
+        AI Sound Generator
+       </a>
+      </div>
+      <div class="flex flex-col">
+       <h3 class="text-lg font-medium">
+        Alternatives
+       </h3>
+       <a class="text-sm text-white mt-2" href="/alternative/eleven-labs">
+        ElevenLabs
+       </a>
+      </div>
+      <div class="flex flex-col">
+       <h3 class="text-lg font-medium">
+        Solutions
+       </h3>
+       <a class="text-sm text-white mt-2" href="/solutions/audio-producers">
+        For audio producers
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/video-editors">
+        For video editors
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/game-developers">
+        For game developers
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/film-makers">
+        For filmmakers
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/podcasters">
+        For podcasters
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/advertisers">
+        For advertisers
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/social-media-creators">
+        For social media creators
+       </a>
+       <a class="text-sm text-white mt-2" href="/solutions/app-developers">
+        For app developers
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

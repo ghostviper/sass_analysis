@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AiMyTrade - AI Trading Platform | Algorithmic Stock Analysis</title>
+</head>
+<body>
+  <body>
+   <div class="fixed top-0 left-0 right-0 z-[60]">
+    <div class="relative flex h-14 w-full items-center overflow-hidden border-b border-emerald-400/40 bg-black/80 px-6 backdrop-blur-xl ticker-gradient">
+     <div class="flex items-center gap-10 whitespace-nowrap">
+      <div class="flex animate-marquee gap-10">
+       <span class="flex items-center gap-2 text-xs sm:text-sm text-emerald-100 uppercase tracking-[0.3em] select-none">
+        ⚠️
+        <span class="whitespace-nowrap text-white/80 tracking-[0.15em] normal-case">
+         AiMyTrade provides educational analytics only. No automated trading.
+        </span>
+       </span>
+       <span class="flex items-center gap-2 text-xs sm:text-sm text-emerald-100 uppercase tracking-[0.3em] select-none">
+        ⚠️
+        <span class="whitespace-nowrap text-white/80 tracking-[0.15em] normal-case">
+         Consult a licensed financial professional before investing.
+        </span>
+       </span>
+      </div>
+      <div class="flex animate-marquee2 gap-10">
+       <span class="flex items-center gap-2 text-xs sm:text-sm text-emerald-100 uppercase tracking-[0.3em] select-none">
+        ⚠️
+        <span class="whitespace-nowrap text-white/80 tracking-[0.15em] normal-case">
+         AiMyTrade provides educational analytics only. No automated trading.
+        </span>
+       </span>
+       <span class="flex items-center gap-2 text-xs sm:text-sm text-emerald-100 uppercase tracking-[0.3em] select-none">
+        ⚠️
+        <span class="whitespace-nowrap text-white/80 tracking-[0.15em] normal-case">
+         Consult a licensed financial professional before investing.
+        </span>
+       </span>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="min-h-screen bg-[#0A0E1A] overflow-x-hidden">
+    <header class="sticky top-14 z-50 bg-[#0A0E1A] border-b border-[#1a1f2e]">
+     <div class="max-w-[1920px] mx-auto px-4 sm:px-6">
+      <div class="flex items-center justify-between h-14">
+       <a class="flex items-center space-x-2.5" href="/">
+        <span class="text-base sm:text-lg font-bold text-white font-mono tracking-tight">
+         AiMyTrade
+        </span>
+       </a>
+       <nav class="hidden lg:flex items-center space-x-1">
+        <a class="px-3 py-1.5 text-xs text-white/70 hover:text-white hover:bg-white/5 transition-colors uppercase tracking-wider font-mono" href="/#analyze">
+         Analysis
+        </a>
+        <a class="px-3 py-1.5 text-xs text-emerald-400/90 hover:text-emerald-300 hover:bg-emerald-500/10 transition-colors uppercase tracking-wider font-mono font-semibold flex items-center gap-1.5" href="/results">
+         Live Results
+        </a>
+        <a class="px-3 py-1.5 text-xs text-yellow-400/90 hover:text-yellow-300 hover:bg-yellow-500/10 transition-colors uppercase tracking-wider font-mono font-semibold" href="/smart-money">
+         Smart Money
+        </a>
+        <a class="px-3 py-1.5 text-xs text-white/70 hover:text-white hover:bg-white/5 transition-colors uppercase tracking-wider font-mono" href="/pricing">
+         Pricing
+        </a>
+       </nav>
+       <div class="hidden lg:flex items-center space-x-2">
+        <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:text-accent-foreground rounded-md border-[#FF8C00]/30 text-[#FF8C00] hover:bg-[#FF8C00]/10 hover:border-[#FF8C00]/50 text-xs font-mono uppercase tracking-wider h-8 px-3" href="/pricing?intent=header_unlock_button&amp;reason=header_button">
+         See Plans
+        </a>
+        <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 bg-white/10 hover:bg-white/20 text-white border-white/20 hover:text-white">
+         Sign In
+        </button>
+       </div>
+       <div class="lg:hidden flex items-center space-x-2">
+        <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-9 rounded-md px-3 bg-white/10 hover:bg-white/20 text-white border-white/20 hover:text-white">
+         Sign In
+        </button>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="max-w-[1920px] mx-auto px-3 sm:px-4 md:px-6 py-4 sm:py-5 md:py-6">
+     <div class="space-y-4 sm:space-y-5 md:space-y-6">
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <h1 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono mt-8">
+         AI Trading Analysis Platform
+        </h1>
+       </div>
+       <div class="p-4 sm:p-6 md:p-8">
+        <div class="flex flex-col items-center justify-center gap-3 sm:gap-4 mb-6 sm:mb-8 text-xs font-mono">
+         <div class="inline-flex items-center gap-2 rounded-full border border-[#FF8C00]/40 bg-[#FF8C00]/10 px-3 sm:px-4 py-1.5 sm:py-2 uppercase tracking-[0.25em] text-[#FF8C00]">
+          <span>
+           Starter from $9/mo • Full Access • Cancel Anytime
+          </span>
+         </div>
+         <div class="flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-[#0A0E1A] border border-[#1a1f2e] text-white/70">
+          <span class="text-xs">
+           Institutional-grade analysis platform
+          </span>
+         </div>
+        </div>
+        <div class="text-center mb-6 sm:mb-8">
+         <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-tight leading-tight mb-3 sm:mb-4">
+          AI Trading Signals Backed by Real Money
+         </h2>
+         <p class="text-sm sm:text-base md:text-lg text-white/70 max-w-3xl mx-auto font-light leading-relaxed mb-6 sm:mb-8">
+          Track our live performance. Every trade. Every win. Every loss.
+          <span class="block mt-2 text-white/60 text-xs sm:text-sm md:text-base">
+           Get exact entry prices, stop-loss levels, and take-profit targets for any stock in under 60 seconds.
+          </span>
+         </p>
+         <div class="max-w-2xl mx-auto mb-8">
+          <div class="liquid-glass-card rounded-xl p-4 border border-emerald-500/20 bg-gradient-to-br from-emerald-500/5 to-teal-500/5">
+           <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center gap-2">
+             <span class="text-sm font-medium text-white/90">
+              Live Trading
+             </span>
+            </div>
+           </div>
+           <div>
+            <div class="text-xs text-white/50 mb-1 text-center">
+             Account Value
+            </div>
+            <div class="text-2xl font-bold text-white mb-3 text-center">
+             $1,377,960.31
+            </div>
+            <div class="text-xs text-white/50 mb-1 text-center">
+             Today
+            </div>
+            <div class="flex items-baseline justify-center gap-2 text-green-400">
+             <span class="text-lg font-semibold">
+              +$4,299.29
+             </span>
+             <span class="text-sm">
+              (+0.31%)
+             </span>
+            </div>
+           </div>
+           <div class="mt-4">
+            <div class="text-xs text-white/60 mb-2 text-center font-mono">
+             Today's Account Value (Max Position: $10k)
+            </div>
+            <div class="text-xs text-green-400 text-center mt-2 font-mono">
+             Total Profit: +$877,960.31
+            </div>
+           </div>
+           <div class="text-xs text-white/40 text-center mt-4">
+            Updated just now
+           </div>
+          </div>
+         </div>
+         <div class="w-full max-w-3xl mx-auto mb-8">
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 text-center text-xs sm:text-sm font-mono">
+           <div class="bg-white/5 border border-white/10 rounded-lg px-3 py-3">
+            <div class="text-white/60 mb-1 uppercase tracking-wider">
+             Platform Win Rate (Last 30 days)
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-green-400">
+             0%
+            </div>
+            <div class="text-white/40 mt-1">
+             Across 0 completed trades
+            </div>
+           </div>
+           <div class="bg-white/5 border border-white/10 rounded-lg px-3 py-3">
+            <div class="text-white/60 mb-1 uppercase tracking-wider">
+             Avg Winner / Avg Loser
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-white">
+             +0% / -0%
+            </div>
+            <div class="text-white/40 mt-1">
+             Based on closed trades
+            </div>
+           </div>
+           <div class="bg-white/5 border border-white/10 rounded-lg px-3 py-3">
+            <div class="text-white/60 mb-1 uppercase tracking-wider">
+             Profit Factor
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-blue-400">
+             0x
+            </div>
+            <div class="text-white/40 mt-1">
+             Total profits vs losses
+            </div>
+           </div>
+           <div class="bg-white/5 border border-white/10 rounded-lg px-3 py-3">
+            <div class="text-white/60 mb-1 uppercase tracking-wider">
+             Compounded Return (30d)
+            </div>
+            <div class="text-2xl sm:text-3xl font-bold text-white">
+             0.0%
+            </div>
+            <div class="text-white/40 mt-1">
+             Total return over last 30 days
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="max-w-2xl mx-auto mb-8 px-4">
+          <div class="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/30 rounded-lg p-4 sm:p-6">
+           <div class="text-center space-y-2">
+            <div class="text-green-400 font-semibold text-lg sm:text-xl">
+             One profitable trade pays for 5+ months
+            </div>
+            <div class="text-white/70 text-sm sm:text-base">
+             Average users recover their subscription cost in the first 2 weeks
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mb-6 sm:mb-8 space-y-4 sm:space-y-6">
+          <p class="text-white/60 text-sm sm:text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
+           Join 220+ traders who use AI to find better entries, protect their capital, and trade with confidence.
+          </p>
+          <div class="flex flex-col items-center space-y-2">
+           <div class="text-blue-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">
+            Starter Plan - Best for Beginners
+           </div>
+           <div class="flex items-baseline gap-2">
+            <span class="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+             $9
+            </span>
+            <span class="text-white/70 text-base">
+             /month
+            </span>
+           </div>
+           <div class="text-[#FF8C00] text-sm sm:text-base font-medium mb-2">
+            $0.30/day - Less than a coffee
+           </div>
+           <div class="text-white/70 text-xs sm:text-sm uppercase tracking-wider font-mono">
+            Instant unlock • Cancel anytime • 14-day money-back guarantee
+           </div>
+           <div class="text-green-400 text-xs sm:text-sm font-medium mt-2">
+            One profitable trade pays for 5+ months
+           </div>
+           <div class="text-white/50 text-xs mt-4 max-w-md">
+            Need unlimited analyses &amp; advanced features? Check out
+            <a class="text-purple-400 hover:text-purple-300 underline" href="/pricing">
+             Pro ($29/mo)
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="flex flex-col items-center justify-center gap-3 sm:gap-4 px-4">
+          <button class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 w-full max-w-sm sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base md:text-lg rounded-xl sm:rounded-2xl bg-[#FF8C00] hover:bg-[#FF8C00]/80 text-black font-semibold shadow-[0_8px_30px_rgba(255,140,0,0.25)]">
+           <span class="flex items-center justify-center gap-2">
+            <span>
+             Unlock Starter for $9
+            </span>
+            <span>
+             →
+            </span>
+           </span>
+          </button>
+          <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-full max-w-sm sm:w-auto px-6 sm:px-8 py-4 sm:py-6 text-sm sm:text-base md:text-lg rounded-xl sm:rounded-2xl border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 hover:bg-[#1a1f2e]">
+           <span class="flex items-center justify-center gap-2">
+            <span>
+             See Live Analysis
+            </span>
+            <span>
+             →
+            </span>
+           </span>
+          </button>
+         </div>
+         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 max-w-lg sm:max-w-xl mx-auto text-white/70 text-xs sm:text-sm px-4">
+          <div class="flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl border border-[#1a1f2e] bg-[#0A0E1A] px-3 sm:px-4 py-2 sm:py-3">
+           <span class="text-base sm:text-lg">
+            ✓
+           </span>
+           <span class="text-center">
+            Cancel anytime
+           </span>
+          </div>
+          <div class="flex items-center justify-center gap-1.5 sm:gap-2 rounded-lg sm:rounded-xl border border-[#1a1f2e] bg-[#0A0E1A] px-3 sm:px-4 py-2 sm:py-3">
+           <span class="text-base sm:text-lg">
+            🔒
+           </span>
+           <span class="text-center">
+            Secure payment
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="mb-6 sm:mb-8">
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex flex-col items-center text-center p-4 liquid-glass-card rounded-xl">
+           <div class="text-xs text-white/80 font-medium mb-1">
+            Powered by
+           </div>
+           <div class="text-xs text-white/60">
+            e.g. OpenAI GPT-5+
+           </div>
+          </div>
+          <div class="flex flex-col items-center text-center p-4 liquid-glass-card rounded-xl">
+           <div class="text-xs text-white/80 font-medium mb-1">
+            Secured by
+           </div>
+           <div class="text-xs text-white/60">
+            Stripe Payments
+           </div>
+          </div>
+          <div class="flex flex-col items-center text-center p-4 liquid-glass-card rounded-xl">
+           <div class="text-xs text-white/80 font-medium mb-1">
+            GDPR
+           </div>
+           <div class="text-xs text-white/60">
+            Compliant
+           </div>
+          </div>
+          <div class="flex flex-col items-center text-center p-4 liquid-glass-card rounded-xl">
+           <div class="text-xs text-white/80 font-medium mb-1">
+            SSL
+           </div>
+           <div class="text-xs text-white/60">
+            Encrypted
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 mb-8 sm:mb-12">
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 text-center">
+          <div>
+           <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">
+            220+
+           </div>
+           <div class="text-white/60 text-xs sm:text-sm">
+            Active Traders
+           </div>
+          </div>
+          <div>
+           <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-green-400 mb-1 sm:mb-2">
+            65%
+           </div>
+           <div class="text-white/60 text-xs sm:text-sm">
+            Avg Confidence
+           </div>
+          </div>
+          <div>
+           <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">
+            2.2K+
+           </div>
+           <div class="text-white/60 text-xs sm:text-sm">
+            Analyses Run
+           </div>
+          </div>
+          <div>
+           <div class="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 sm:mb-2">
+            0%
+           </div>
+           <div class="text-white/60 text-xs sm:text-sm text-center">
+            Platform Win Rate (Last 30 days)
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="mb-12 sm:mb-16">
+         <h2 class="text-2xl sm:text-3xl md:text-4xl font-light text-white text-center mb-2 sm:mb-3 px-4">
+          Everything You Need to Trade Confidently
+         </h2>
+         <p class="text-white/60 text-center mb-6 sm:mb-10 max-w-2xl mx-auto text-sm sm:text-base px-4">
+          Professional-grade analysis for every trade. No manual charting required.
+         </p>
+         <div class="space-y-4 sm:space-y-6 md:grid md:grid-cols-3 md:gap-6 md:space-y-0">
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#FF8C00]/40 transition-colors">
+           <h3 class="text-lg sm:text-xl font-medium text-white mb-2 sm:mb-3">
+            Exact Price Targets
+           </h3>
+           <p class="text-white/70 leading-relaxed text-sm sm:text-base">
+            Get precise entry prices, take-profit targets, and stop-loss levels calculated from technical analysis and market data.
+           </p>
+           <div class="mt-3 sm:mt-4 text-xs sm:text-sm text-blue-400 font-medium">
+            ✓ Entry Price • ✓ Take Profit • ✓ Stop Loss
+           </div>
+          </div>
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#FF8C00]/40 transition-colors">
+           <div class="w-12 h-12 sm:w-14 sm:h-14 bg-green-500/20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6">
+            ⚡
+           </div>
+           <h3 class="text-lg sm:text-xl font-medium text-white mb-2 sm:mb-3">
+            Risk Management
+           </h3>
+           <p class="text-white/70 leading-relaxed text-sm sm:text-base">
+            Know your risk/reward ratio before you trade. Get position sizing recommendations and risk assessment for every analysis.
+           </p>
+           <div class="mt-3 sm:mt-4 text-xs sm:text-sm text-green-400 font-medium">
+            ✓ R/R Ratios • ✓ Position Sizing • ✓ Risk Levels
+           </div>
+          </div>
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover:border-[#FF8C00]/40 transition-colors">
+           <h3 class="text-lg sm:text-xl font-medium text-white mb-2 sm:mb-3">
+            Analysis History
+           </h3>
+           <p class="text-white/70 leading-relaxed text-sm sm:text-base">
+            Track all your analyses in one place. Monitor performance, review past insights, and learn from your trading patterns.
+           </p>
+           <div class="mt-3 sm:mt-4 text-xs sm:text-sm text-purple-400 font-medium">
+            ✓ Full History • ✓ Performance Tracking • ✓ Pattern Insights
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border rounded-lg overflow-hidden transition-all border-[#1a1f2e]" id="analyze">
+       <div class="border-b border-[#FF8C00]/30 px-4 sm:px-6 py-3 sm:py-4 bg-[#FF8C00]/5">
+        <div class="flex items-center justify-between">
+         <h2 class="text-sm sm:text-base font-semibold text-white uppercase tracking-wider font-mono">
+          Live AI Terminal
+         </h2>
+         <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 text-[10px] sm:text-xs font-mono font-semibold bg-white/10 text-white/70 border-white/20">
+          <span class="flex items-center gap-1">
+           3 Free Analyses Left
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="p-6 sm:p-8 md:p-10">
+        <div class="text-center mb-6 space-y-2">
+         <h3 class="text-xl sm:text-2xl font-light text-white">
+          Analyze Any Stock Instantly
+         </h3>
+         <p class="text-white/60 text-sm sm:text-base max-w-2xl mx-auto">
+          Premium AI analysis is locked - unlock Starter for $9 to run full trade breakdowns.
+         </p>
+        </div>
+        <div class="space-y-6">
+         <form class="text-center">
+          <div class="mb-8 sm:mb-10">
+           <h3 class="text-2xl sm:text-3xl md:text-4xl font-semibold text-white mb-3 sm:mb-4 font-mono tracking-tight">
+            Analyze Any Stock
+           </h3>
+           <p class="text-white/70 max-w-2xl mx-auto text-sm sm:text-base font-mono">
+            Terminal-grade analysis with real-time market data, institutional flow, and AI-generated price targets.
+           </p>
+          </div>
+          <div class="max-w-lg mx-auto mb-6 sm:mb-8">
+           <div class="relative">
+            <input class="w-full bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg px-5 sm:px-6 py-4 sm:py-5 text-white font-mono tracking-wider text-base sm:text-lg focus:outline-none focus:border-[#FF8C00] focus:ring-2 focus:ring-[#FF8C00]/40 transition-all" placeholder="e.g., AAPL, TSLA, SPY" type="text" value=""/>
+           </div>
+          </div>
+          <div class="flex flex-col items-center space-y-4">
+           <button class="px-8 sm:px-10 py-3 sm:py-4 rounded-lg text-sm sm:text-base font-semibold font-mono tracking-wide uppercase bg-[#FF8C00] text-black transition-all relative opacity-40 cursor-not-allowed" type="submit">
+            <span class="flex items-center gap-2">
+             Run Analysis
+            </span>
+           </button>
+          </div>
+          <div class="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-[#1a1f2e]">
+           <p class="text-white/60 text-xs sm:text-sm font-mono mb-4 text-left sm:text-center uppercase tracking-wider">
+            Popular Tickers
+           </p>
+           <div class="flex flex-wrap gap-2 sm:gap-3 justify-center">
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             SPY
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             QQQ
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             AAPL
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             TSLA
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             NVDA
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             MSFT
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             AMZN
+            </button>
+            <button class="px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 text-xs sm:text-sm font-mono hover:text-white hover:border-[#FF8C00]/40 hover:bg-[#1a1f2e] transition-colors disabled:opacity-40 disabled:cursor-not-allowed" type="button">
+             META
+            </button>
+           </div>
+          </div>
+          <div class="mt-8 sm:mt-10 bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-5 sm:p-6 md:p-8 max-w-4xl mx-auto text-left">
+           <h4 class="text-white font-semibold text-sm sm:text-base font-mono mb-4 sm:mb-6 uppercase tracking-wider">
+            Analysis Includes
+           </h4>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 text-xs sm:text-sm text-white/70 font-mono">
+            <div>
+             <span class="text-green-400 font-semibold">
+              • Technical Indicators:
+             </span>
+             RSI, MACD, Moving Averages (20/50/200), Bollinger Bands, Volume Analysis, Multi-timeframe Trends
+            </div>
+            <div>
+             <span class="text-blue-400 font-semibold">
+              • Price Levels:
+             </span>
+             Support &amp; Resistance, Entry/Exit Points, Pivot Points, Trendline Analysis
+            </div>
+            <div>
+             <span class="text-yellow-400 font-semibold">
+              • Market Data:
+             </span>
+             Real-time Prices, Premarket Data, Volume Analysis, 52W High/Low, Market Cap
+            </div>
+            <div>
+             <span class="text-purple-400 font-semibold">
+              • Fundamentals:
+             </span>
+             P/E (Trailing/Forward), EPS, Revenue &amp; Growth, Profit/Operating Margins, ROE, ROA, Debt/Equity, Current/Quick Ratio
+            </div>
+            <div>
+             <span class="text-cyan-400 font-semibold">
+              • Cash Flow &amp; Growth:
+             </span>
+             Free Cash Flow, Operating Cash Flow, Revenue Growth, Beta
+            </div>
+            <div>
+             <span class="text-orange-400 font-semibold">
+              • Ownership &amp; Shares:
+             </span>
+             Institutional/Insider Ownership, Short Interest, Short Ratio, Shares Outstanding, Float
+            </div>
+            <div>
+             <span class="text-pink-400 font-semibold">
+              • Dividends:
+             </span>
+             Dividend Yield, Payout Ratio, Next Dividend Date
+            </div>
+            <div>
+             <span class="text-indigo-400 font-semibold">
+              • Analyst Data:
+             </span>
+             Target Price, Analyst Rating, Earnings Calendar
+            </div>
+            <div>
+             <span class="text-red-400 font-semibold">
+              • News &amp; Sentiment:
+             </span>
+             Real-time News Feed, Sentiment Analysis, Breaking Headlines
+            </div>
+            <div>
+             <span class="text-emerald-400 font-semibold">
+              • Options Flow:
+             </span>
+             Put/Call Ratios, Implied Volatility, Options Sentiment, Expected Moves
+            </div>
+            <div>
+             <span class="text-violet-400 font-semibold">
+              • Macro Context:
+             </span>
+             Market Regime, VIX, 10Y Yield, Dollar Index, Relative Strength
+            </div>
+            <div>
+             <span class="text-amber-400 font-semibold">
+              • AI Insights:
+             </span>
+             Trading Signals, Risk Assessment, Multi-horizon Strategies, Confidence Scores
+            </div>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <div class="flex items-center justify-between">
+         <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono">
+          Verified Trading Results
+         </h2>
+         <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-green-500/20 text-green-300 border-green-500/30 text-[10px] sm:text-xs font-mono">
+          ✓ Live Updates
+         </div>
+        </div>
+       </div>
+       <div class="p-4 sm:p-6">
+        <div class="max-w-6xl mx-auto">
+         <div class="text-center mb-6 sm:mb-8">
+          <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-white mb-2 sm:mb-3">
+           Real Traders. Real Results.
+          </h3>
+          <p class="text-white/60 text-xs sm:text-sm max-w-2xl mx-auto">
+           These trades started with the same analysis you'll get. Past performance doesn't guarantee future results, but these are real outcomes from our members.
+          </p>
+         </div>
+         <div class="relative max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mb-6 sm:mb-8 justify-items-center transition-opacity duration-300 opacity-100">
+           <div class="relative">
+            <div class="absolute top-3 right-3 z-10 text-sm">
+             🔒
+            </div>
+            <button class="liquid-glass-card rounded-3xl p-5 sm:p-6 text-left hover:border-emerald-400/40 transition-all hover:-translate-y-1 group border border-white/10 bg-white/5" type="button">
+             <div class="flex items-start justify-between mb-5 sm:mb-6">
+              <div>
+               <div class="flex items-center gap-2 mb-1">
+                <span class="text-[11px] sm:text-xs font-mono text-white/60">
+                 AI TRADE SIGNAL
+                </span>
+               </div>
+               <h3 class="text-lg sm:text-2xl font-semibold text-white mb-1">
+                RR
+               </h3>
+               <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-red-500/20 text-red-300 border-red-500/30">
+                Bearish Pattern Detected
+               </div>
+              </div>
+              <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-green-500/20 text-green-300 border-green-500/30">
+               ✓ Hit Target
+              </div>
+             </div>
+             <div class="flex items-center gap-2 mb-4">
+              <span class="text-3xl sm:text-4xl font-bold text-green-400">
+               +34.80%
+              </span>
+             </div>
+             <div class="space-y-2 text-xs sm:text-sm mb-4">
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Entry:
+               </span>
+               <span class="text-white font-medium">
+                $6.58
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Current:
+               </span>
+               <span class="text-green-400">
+                $3.38
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Confidence:
+               </span>
+               <span class="text-white">
+                85%
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Risk/Reward:
+               </span>
+              </div>
+             </div>
+             <div class="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs">
+              <div class="flex items-center gap-2 text-white/50">
+               <span>
+                Oct 7, 2025
+               </span>
+              </div>
+              <span class="text-emerald-400 group-hover:translate-x-1 transition-transform">
+               View Analysis →
+              </span>
+             </div>
+            </button>
+           </div>
+           <div class="relative">
+            <div class="absolute top-3 right-3 z-10 text-sm">
+             🔒
+            </div>
+            <button class="liquid-glass-card rounded-3xl p-5 sm:p-6 text-left hover:border-emerald-400/40 transition-all hover:-translate-y-1 group border border-white/10 bg-white/5" type="button">
+             <div class="flex items-start justify-between mb-5 sm:mb-6">
+              <div>
+               <div class="flex items-center gap-2 mb-1">
+                <span class="text-[11px] sm:text-xs font-mono text-white/60">
+                 AI TRADE SIGNAL
+                </span>
+               </div>
+               <h3 class="text-lg sm:text-2xl font-semibold text-white mb-1">
+                RR
+               </h3>
+               <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-red-500/20 text-red-300 border-red-500/30">
+                Bearish Pattern Detected
+               </div>
+              </div>
+              <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-green-500/20 text-green-300 border-green-500/30">
+               ✓ Hit Target
+              </div>
+             </div>
+             <div class="flex items-center gap-2 mb-4">
+              <span class="text-3xl sm:text-4xl font-bold text-green-400">
+               +34.80%
+              </span>
+             </div>
+             <div class="space-y-2 text-xs sm:text-sm mb-4">
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Entry:
+               </span>
+               <span class="text-white font-medium">
+                $6.58
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Current:
+               </span>
+               <span class="text-green-400">
+                $3.38
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Confidence:
+               </span>
+               <span class="text-white">
+                84%
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Risk/Reward:
+               </span>
+              </div>
+             </div>
+             <div class="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs">
+              <div class="flex items-center gap-2 text-white/50">
+               <span>
+                Oct 7, 2025
+               </span>
+              </div>
+              <span class="text-emerald-400 group-hover:translate-x-1 transition-transform">
+               View Analysis →
+              </span>
+             </div>
+            </button>
+           </div>
+           <div class="relative">
+            <div class="absolute top-3 right-3 z-10 text-sm">
+             🔒
+            </div>
+            <button class="liquid-glass-card rounded-3xl p-5 sm:p-6 text-left hover:border-emerald-400/40 transition-all hover:-translate-y-1 group border border-white/10 bg-white/5" type="button">
+             <div class="flex items-start justify-between mb-5 sm:mb-6">
+              <div>
+               <div class="flex items-center gap-2 mb-1">
+                <span class="text-[11px] sm:text-xs font-mono text-white/60">
+                 AI TRADE SIGNAL
+                </span>
+               </div>
+               <h3 class="text-lg sm:text-2xl font-semibold text-white mb-1">
+                RR
+               </h3>
+               <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-red-500/20 text-red-300 border-red-500/30">
+                Bearish Pattern Detected
+               </div>
+              </div>
+              <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-green-500/20 text-green-300 border-green-500/30">
+               ✓ Hit Target
+              </div>
+             </div>
+             <div class="flex items-center gap-2 mb-4">
+              <span class="text-3xl sm:text-4xl font-bold text-green-400">
+               +34.45%
+              </span>
+             </div>
+             <div class="space-y-2 text-xs sm:text-sm mb-4">
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Entry:
+               </span>
+               <span class="text-white font-medium">
+                $6.54
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Current:
+               </span>
+               <span class="text-green-400">
+                $3.38
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Confidence:
+               </span>
+               <span class="text-white">
+                83%
+               </span>
+              </div>
+              <div class="flex justify-between">
+               <span class="text-white/60">
+                Risk/Reward:
+               </span>
+              </div>
+             </div>
+             <div class="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] sm:text-xs">
+              <div class="flex items-center gap-2 text-white/50">
+               <span>
+                Oct 7, 2025
+               </span>
+              </div>
+              <span class="text-emerald-400 group-hover:translate-x-1 transition-transform">
+               View Analysis →
+              </span>
+             </div>
+            </button>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-center justify-center gap-4 mb-6">
+          <span class="text-white/40 text-xs font-mono">
+           4 / 5
+          </span>
+         </div>
+         <div class="text-center">
+          <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground h-10 w-full sm:w-auto px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm rounded-lg border border-[#1a1f2e] bg-[#0A0E1A] text-white/80 hover:bg-[#1a1f2e] font-mono">
+           <span class="flex items-center gap-2">
+            <span>
+             Unlock Starter for $9
+            </span>
+            <span>
+             →
+            </span>
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono">
+         Trader Testimonials
+        </h2>
+       </div>
+       <div class="p-4 sm:p-6">
+        <div class="text-center mb-6 sm:mb-8">
+         <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-white mb-2 sm:mb-3">
+          Join 220+ Traders Who Trust AiMyTrade
+         </h3>
+         <p class="text-white/60 text-xs sm:text-sm font-mono">
+          Real feedback from real traders
+         </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4 sm:p-5">
+          <p class="text-white/80 leading-relaxed mb-3 text-xs sm:text-sm">
+           "Made 8.5% on TSLA following the AI entry and exit prices. That one trade covered my subscription for 9 months."
+          </p>
+          <div>
+           <div class="text-white font-medium text-xs sm:text-sm font-mono">
+            Alex M.
+           </div>
+           <div class="text-white/50 text-[10px] sm:text-xs font-mono">
+            Day Trader
+           </div>
+          </div>
+         </div>
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4 sm:p-5">
+          <p class="text-white/80 leading-relaxed mb-3 text-xs sm:text-sm">
+           "Caught a 15% move on AMD with the bullish pattern alert. The exact stop-loss saved me from a false breakout the week before. Already up 200% ROI on my subscription."
+          </p>
+          <div>
+           <div class="text-white font-medium text-xs sm:text-sm font-mono">
+            Lena R.
+           </div>
+           <div class="text-white/50 text-[10px] sm:text-xs font-mono">
+            Swing Trader
+           </div>
+          </div>
+         </div>
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4 sm:p-5">
+          <p class="text-white/80 leading-relaxed mb-3 text-xs sm:text-sm">
+           "Used the AI targets on NVDA and made 12% in two weeks. Paid for 6 months of subscription in one trade. The risk management alone is worth it."
+          </p>
+          <div>
+           <div class="text-white font-medium text-xs sm:text-sm font-mono">
+            Marcus D.
+           </div>
+           <div class="text-white/50 text-[10px] sm:text-xs font-mono">
+            Retail Trader
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <div class="flex items-center justify-between">
+         <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono">
+          Smart Money Dashboard
+         </h2>
+         <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-[10px] sm:text-xs font-mono">
+          New Feature
+         </div>
+        </div>
+       </div>
+       <div class="p-4 sm:p-6">
+        <div class="text-center mb-6 sm:mb-8">
+         <h3 class="text-xl sm:text-2xl md:text-3xl font-light text-white mb-2 sm:mb-3">
+          Follow the Smart Money
+         </h3>
+         <p class="text-white/60 text-xs sm:text-sm max-w-2xl mx-auto">
+          See what billionaire hedge funds and company insiders are buying before the crowd catches on.
+         </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4">
+          <div class="text-white/60 text-xs mb-1 font-mono uppercase tracking-wider">
+           Power Combos
+          </div>
+          <div class="text-white text-sm font-mono leading-relaxed">
+           When BOTH insiders AND institutions buy the same stock
+          </div>
+         </div>
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4">
+          <div class="text-white/60 text-xs mb-1 font-mono uppercase tracking-wider">
+           Hedge Fund Moves
+          </div>
+          <div class="text-white text-sm font-mono leading-relaxed">
+           Track Berkshire, Citadel, BlackRock and 100+ institutions
+          </div>
+         </div>
+         <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4">
+          <div class="text-white/60 text-xs mb-1 font-mono uppercase tracking-wider">
+           Insider Clusters
+          </div>
+          <div class="text-white text-sm font-mono leading-relaxed">
+           When multiple executives buy their own stock at once
+          </div>
+         </div>
+        </div>
+        <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-4 sm:p-6 mb-6">
+         <div class="flex items-start justify-between mb-4">
+          <div>
+           <h4 class="text-sm font-semibold text-white mb-1 font-mono uppercase tracking-wider">
+            Recent Activity
+           </h4>
+           <p class="text-white/60 text-xs font-mono">
+            Last 7 days
+           </p>
+          </div>
+          <div class="text-right">
+           <div class="text-xs text-white/50 font-mono mb-1">
+            Total Value
+           </div>
+           <div class="text-xl font-bold text-white font-mono">
+            $362.04B
+           </div>
+          </div>
+         </div>
+         <div class="space-y-2">
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-3 flex items-center justify-between relative overflow-hidden">
+           <div class="flex items-center space-x-3 relative z-20">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-[10px] font-mono">
+             COMBO
+            </div>
+            <div class="text-white font-mono font-bold text-sm">
+             $XXXX
+            </div>
+           </div>
+           <div class="text-white/60 font-mono text-xs relative z-20">
+            XX insiders + XX institutions
+           </div>
+          </div>
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-3 flex items-center justify-between relative overflow-hidden">
+           <div class="flex items-center space-x-3 relative z-20">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-[10px] font-mono">
+             COMBO
+            </div>
+            <div class="text-white font-mono font-bold text-sm">
+             $XXXX
+            </div>
+           </div>
+           <div class="text-white/60 font-mono text-xs relative z-20">
+            XX insiders + XX institutions
+           </div>
+          </div>
+          <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg p-3 flex items-center justify-between relative overflow-hidden">
+           <div class="flex items-center space-x-3 relative z-20">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-yellow-500/20 text-yellow-300 border-yellow-500/30 text-[10px] font-mono">
+             COMBO
+            </div>
+            <div class="text-white font-mono font-bold text-sm">
+             $XXXX
+            </div>
+           </div>
+           <div class="text-white/60 font-mono text-xs relative z-20">
+            XX insiders + XX institutions
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="text-center">
+         <a class="inline-flex items-center space-x-2 rounded-lg bg-[#FF8C00] hover:bg-[#FF8C00]/80 transition px-6 py-3 text-sm font-bold text-black shadow-lg font-mono uppercase tracking-wider" href="/smart-money">
+          <span>
+           View Dashboard
+          </span>
+         </a>
+         <p class="text-white/50 text-xs mt-3 font-mono">
+          Free preview • Upgrade for unlimited access
+         </p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-[#1a1f2e]">
+         <div class="text-center">
+          <div class="text-2xl font-bold text-white mb-1 font-mono">
+           202+
+          </div>
+          <div class="text-white/60 font-mono text-xs">
+           Insider Buys
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-2xl font-bold text-white mb-1 font-mono">
+           154+
+          </div>
+          <div class="text-white/60 font-mono text-xs">
+           Institutions
+          </div>
+         </div>
+         <div class="text-center">
+          <div class="text-2xl font-bold text-white mb-1 font-mono">
+           24/7
+          </div>
+          <div class="text-white/60 font-mono text-xs">
+           Monitoring
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono">
+         Detailed Feature Comparison
+        </h2>
+       </div>
+       <div class="p-4 sm:p-6">
+        <div class="text-center mb-4 sm:mb-6">
+         <p class="text-white/60 text-xs sm:text-sm font-mono">
+          Choose the plan that fits your trading style
+         </p>
+        </div>
+        <div class="overflow-x-auto">
+         <table class="w-full min-w-[700px]">
+          <thead>
+           <tr class="border-b border-white/10">
+            <th class="text-left py-3 px-2 sm:px-4 text-white/80 font-medium text-xs sm:text-sm font-mono">
+             Feature
+            </th>
+            <th class="text-center py-3 px-2 sm:px-4 text-white/80 font-medium text-xs sm:text-sm font-mono">
+             <div>
+              Free
+             </div>
+             <div class="text-[10px] sm:text-xs text-white/40 font-normal mt-1">
+              $0
+             </div>
+            </th>
+            <th class="text-center py-3 px-2 sm:px-4 text-white/80 font-medium text-xs sm:text-sm font-mono bg-blue-500/10">
+             <div>
+              Starter
+             </div>
+             <div class="text-[10px] sm:text-xs text-blue-400 font-normal mt-1">
+              $9/mo
+             </div>
+            </th>
+            <th class="text-center py-3 px-2 sm:px-4 text-white/80 font-medium text-xs sm:text-sm font-mono bg-purple-500/10">
+             <div>
+              Pro
+             </div>
+             <div class="text-[10px] sm:text-xs text-purple-400 font-normal mt-1">
+              $29/mo
+             </div>
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Analyses per month
+            </td>
+            <td class="py-3 px-2 sm:px-4 text-center">
+             <span class="text-white/80 text-xs sm:text-sm font-mono">
+              0
+             </span>
+            </td>
+            <td class="py-3 px-2 sm:px-4 text-center bg-blue-500/5">
+             <span class="text-white/80 text-xs sm:text-sm font-mono">
+              30
+             </span>
+            </td>
+            <td class="py-3 px-2 sm:px-4 text-center bg-purple-500/5">
+             <span class="text-white/80 text-xs sm:text-sm font-mono">
+              Unlimited
+             </span>
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             AI Analysis &amp; Signals
+            </td>
+            <td class="py-3 px-2 sm:px-4 text-center">
+             <span class="text-amber-400 text-xs font-mono">
+              Preview only
+             </span>
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Entry &amp; Exit Prices
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Take Profit &amp; Stop Loss
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Risk Management
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Score Breakdown
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Institutional Holdings
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Short Interest Tracker
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Options Order Flow
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Reddit Sentiment
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Real-time Alerts
+            </td>
+           </tr>
+           <tr class="border-b border-white/5">
+            <td class="py-3 px-2 sm:px-4 text-white/80 text-xs sm:text-sm font-mono">
+             Smart Money Dashboard
+            </td>
+           </tr>
+          </tbody>
+         </table>
+        </div>
+        <div class="grid grid-cols-3 gap-2 sm:gap-4 mt-6">
+         <div class="text-center">
+          <div class="text-white/40 text-xs font-mono">
+           Current Plan
+          </div>
+         </div>
+         <div class="text-center">
+          <a class="inline-block bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg transition-colors" href="/auth/signup">
+           Get Started
+          </a>
+          <div class="text-blue-400 text-[10px] sm:text-xs font-medium mt-2">
+           Best for Beginners
+          </div>
+         </div>
+         <div class="text-center">
+          <a class="inline-block bg-purple-600 hover:bg-purple-700 text-white text-xs sm:text-sm font-semibold px-3 sm:px-4 py-2 rounded-lg transition-colors" href="/pricing">
+           Upgrade to Pro
+          </a>
+          <div class="text-green-400 text-[10px] sm:text-xs font-medium mt-2">
+           Most Popular
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-[#FF8C00]/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-[#FF8C00]/5">
+        <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono">
+         Get Started Today
+        </h2>
+       </div>
+       <div class="p-4 sm:p-6 md:p-8 text-center">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-light text-white mb-3 sm:mb-4">
+         Start Trading Smarter Today
+        </h3>
+        <p class="text-white/70 text-xs sm:text-sm md:text-base mb-6 sm:mb-8 max-w-2xl mx-auto">
+         Join 220+ traders who use AI to find better entries, protect their capital, and trade with confidence.
+        </p>
+        <div class="mb-6 sm:mb-8">
+         <div class="flex items-center justify-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <span class="text-4xl sm:text-5xl font-bold text-white font-mono">
+           $9
+          </span>
+          <div class="text-left">
+           <div class="text-white/70 text-xs sm:text-sm font-mono">
+            Starter plan • billed monthly
+           </div>
+           <div class="text-white/50 text-[10px] sm:text-xs font-mono">
+            Cancel anytime • 14-day money-back guarantee
+           </div>
+          </div>
+         </div>
+        </div>
+        <button class="inline-flex items-center justify-center whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 px-4 sm:px-6 py-2.5 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base rounded-lg bg-[#FF8C00] hover:bg-[#FF8C00]/80 text-black font-semibold font-mono w-full sm:w-auto">
+         Unlock Starter for $9 →
+        </button>
+        <div class="mt-4 sm:mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-[10px] sm:text-xs text-white/60 font-mono">
+         <div class="flex items-center gap-1.5">
+          ✓
+          <span>
+           Cancel anytime
+          </span>
+         </div>
+         <div class="flex items-center gap-1.5">
+          🔒
+          <span>
+           Secure payment
+          </span>
+         </div>
+         <div class="flex items-center gap-1.5">
+          💰
+          <span>
+           14-day money-back guarantee
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-[#0A0E1A] border border-[#1a1f2e] rounded-lg overflow-hidden">
+       <div class="border-b border-amber-500/30 px-3 sm:px-4 py-2.5 sm:py-3 bg-amber-500/5">
+        <h2 class="text-xs sm:text-sm font-semibold text-white uppercase tracking-wider font-mono flex items-center gap-2">
+         Disclaimer
+        </h2>
+       </div>
+       <div class="p-4 sm:p-6">
+        <div class="flex items-start gap-2 sm:gap-3">
+         <div class="text-[10px] sm:text-xs text-white/70 leading-relaxed font-mono">
+          <strong class="text-amber-300">
+           Educational Purposes Only:
+          </strong>
+          This analysis is generated algorithmically based on technical indicators and market data. It is NOT personalized investment advice or a recommendation to buy, sell, or hold any security. You are solely responsible for your own investment decisions. Always conduct your own research and consult a licensed financial advisor before making investment decisions.
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <footer class="bg-[#0A0E1A] border-t border-[#1a1f2e]">
+     <div class="max-w-[1920px] mx-auto px-4 sm:px-6 py-6">
+      <div class="flex flex-col gap-6">
+       <nav class="flex items-center justify-center sm:justify-start gap-3 text-xs flex-wrap">
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/about">
+         About
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/how-it-works">
+         How It Works
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/terms">
+         Terms
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/privacy">
+         Privacy
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/disclaimer">
+         Disclaimer
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/cookie-policy">
+         Cookies
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/refund-policy">
+         Refunds
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/data-access">
+         Data Access
+        </a>
+        <span class="text-white/20">
+         •
+        </span>
+        <a class="text-white/60 hover:text-white transition-colors uppercase tracking-wider font-mono" href="/contact">
+         Contact
+        </a>
+       </nav>
+       <div class="border-t border-[#1a1f2e] pt-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+         <div>
+          <p class="font-semibold text-white/80 mb-1.5 font-mono uppercase tracking-wider text-[10px]">
+           AimyTrade
+          </p>
+          <p class="text-white/50 font-mono">
+           <span class="text-white/40">
+            Email:
+           </span>
+           <a class="text-white/60 hover:text-white transition-colors" href="mailto:support@aimytrade.io">
+            support@aimytrade.io
+           </a>
+          </p>
+         </div>
+         <div class="text-left sm:text-right">
+          <p class="text-white/40 font-mono text-[10px] leading-relaxed">
+           Not a licensed financial advisor.
+           <br/>
+           No investment advice provided.
+          </p>
+          <p class="text-white/40 mt-2 font-mono text-[10px] leading-relaxed">
+           All analysis is algorithmic and educational.
+           <br/>
+           Users are solely responsible for investment decisions.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="border-t border-[#1a1f2e] pt-4">
+        <p class="text-white/40 text-[10px] font-mono uppercase tracking-wider text-center">
+         AI-powered market analytics for educational purposes only
+        </p>
+       </div>
+       <div class="border-t border-[#1a1f2e] pt-4">
+        <p class="text-[10px] text-white/30 font-mono text-center uppercase tracking-wider">
+         © 2025 AiMyTrade. All rights reserved. Educational and informational use only.
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <div class="fixed bottom-0 left-0 right-0 z-50 p-2 sm:p-3 animate-slide-up">
+    <div class="max-w-4xl mx-auto">
+     <div class="liquid-glass-card rounded-lg p-3 sm:p-4 border border-white/20 bg-black/90 backdrop-blur-xl shadow-lg">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-3">
+       <div class="flex-1">
+        <p class="text-white/80 text-xs sm:text-sm leading-tight">
+         We use cookies to enhance your experience.
+         <a class="text-emerald-400 hover:text-emerald-300 underline" href="/cookie-policy">
+          Learn more
+         </a>
+        </p>
+       </div>
+       <div class="flex items-center gap-2 w-full sm:w-auto">
+        <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border bg-background hover:text-accent-foreground rounded-md flex-1 sm:flex-none border-white/20 text-white/80 hover:bg-white/10 text-xs px-3 py-1.5 h-auto">
+         Decline
+        </button>
+        <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-primary/90 rounded-md flex-1 sm:flex-none bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white text-xs px-3 py-1.5 h-auto">
+         Accept
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <span id="recharts_measurement_span">
+    $1.35M
+   </span>
+  </body>
+
+</body>
+</html>

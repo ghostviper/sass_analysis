@@ -1,0 +1,93 @@
+{
+  "common": {
+    "appName": "SaaS Analytics",
+    "appSlogan": "Product Opportunity Insights",
+    "dataSource": "Data Source: TrustMRR | For Reference Only",
+    "builtFor": "Built for Indie Hackers",
+    "search": "Search products...",
+    "dataUpdate": "Data Updates",
+    "dataUpdateDesc": "Analytics data updated daily",
+    "total": "Total",
+    "items": "",
+    "copied": "Copied",
+    "share": "Share"
+  },
+  "nav": {
+    "analysisModules": "Analytics",
+    "dashboard": "Dashboard",
+    "dashboardDesc": "Key metrics & rankings",
+    "categories": "Categories",
+    "categoriesDesc": "Market opportunities",
+    "products": "Products",
+    "productsDesc": "All analyzed products",
+    "leaderboard": "Leaderboard",
+    "leaderboardDesc": "Indie Hacker rankings",
+    "assistant": "AI Assistant",
+    "assistantDesc": "Intelligent analysis chat",
+    "about": "About",
+    "new": "NEW"
+  },
+  "sidebar": {
+    "collapse": "Collapse sidebar",
+    "expand": "Expand sidebar"
+  },
+  "theme": {
+    "light": "Light Mode",
+    "dark": "Dark Mode"
+  },
+  "language": {
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "dashboard": {
+    "title": "Market Overview",
+    "subtitle": "Discover blue ocean opportunities for indie hackers",
+    "totalProducts": "Total Products",
+    "analyzedProducts": "Analyzed",
+    "categories": "Categories",
+    "avgMrr": "Avg MRR"
+  },
+  "leaderboard": {
+    "title": "Indie Hacker Leaderboard",
+    "stats": "{founders} founders, total MRR {revenue}",
+    "shareTitle": "Indie Hacker Leaderboard",
+    "shareText": "Discover the top indie hackers!",
+    "shareList": "Share",
+    "sort": "Sort by",
+    "noData": "No leaderboard data available",
+    "dimensions": {
+      "total_revenue": "Total Revenue",
+      "product_count": "Products",
+      "avg_revenue": "Avg Revenue",
+      "max_growth": "Growth Rate",
+      "followers": "Followers"
+    },
+    "metrics": {
+      "products": "products",
+      "monthlyRevenue": "MRR"
+    },
+    "units": {
+      "count": "{count}"
+    }
+  },
+  "assistant": {
+    "title": "AI Analysis Assistant",
+    "subtitle": "Explore SaaS products and market insights through intelligent conversation",
+    "inputPlaceholder": "Type your question...",
+    "analysisMode": "Analysis Mode",
+    "linkedProduct": "Linked Product",
+    "modes": {
+      "general": "General Analysis",
+      "generalDesc": "Comprehensive Q&A and analysis",
+      "product": "Product Analysis",
+      "productDesc": "Deep product analysis and comparison",
+      "market": "Market Analysis",
+      "marketDesc": "Industry trends and opportunities"
+    },
+    "suggestedQuestions": {
+      "trends": "Analyze current SaaS market trends",
+      "opportunity": "Which niches suit indie hackers",
+      "topProducts": "Top growing products recently"
+    }
+  }
+}

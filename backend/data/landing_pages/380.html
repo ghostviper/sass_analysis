@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMNR Treasury Dashboard | BitMine Immersion Technologies Analytics</title>
+</head>
+<body>
+  <body>
+   <section>
+   </section>
+   <div class="min-h-screen bg-gradient-to-br from-white via-purple-50 to-sky-100 dark:from-blue-950/25 dark:via-gray-950 dark:to-purple-950/50 dark:bg-black">
+    <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+     <div class="flex h-14 items-center px-6">
+      <div class="mr-4 flex items-center gap-4">
+       <a class="flex items-center space-x-2" href="/">
+        <img alt="BMNR Logo" class="rounded-full block dark:hidden" height="80" src="/logo.svg" width="80"/>
+        <img alt="BMNR Logo" class="rounded-full hidden dark:block" height="80" src="/logo-dark.svg" width="80"/>
+       </a>
+       <div class="hidden sm:block">
+        <span class="text-sm text-muted-foreground">
+         Updates in 10 minutes
+        </span>
+       </div>
+      </div>
+      <div class="flex flex-1 items-center justify-between gap-4 md:justify-end">
+       <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+        <a class="transition-colors text-foreground/60 hover:text-foreground/80 flex items-center gap-2" href="/">
+         <span class="hidden xl:block">
+          Dashboard
+         </span>
+        </a>
+        <a class="transition-colors text-foreground/60 hover:text-foreground/80 flex items-center gap-2" href="/daily-polls">
+         <span class="hidden xl:block">
+          Daily Poll
+         </span>
+        </a>
+        <a class="transition-colors text-foreground/60 hover:text-foreground/80 flex items-center gap-2" href="/leaderboards">
+         <span class="hidden xl:block">
+          Leaderboards
+         </span>
+        </a>
+        <a class="transition-colors text-foreground/60 hover:text-foreground/80 flex items-center gap-2" href="/nav-playground">
+         <span class="hidden xl:block">
+          NAV Playground
+         </span>
+        </a>
+        <a class="transition-colors text-foreground/60 hover:text-foreground/80 flex items-center gap-2" href="/blog">
+         <span class="hidden xl:block">
+          Blog
+         </span>
+        </a>
+        <button class="cursor-pointer justify-center whitespace-nowrap rounded-md disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent dark:hover:bg-accent/50 has-[&gt;svg]:px-3 flex items-center gap-1 px-2 py-1 h-auto text-sm font-medium transition-colors hover:text-foreground/80" id="radix-_r_0_" type="button">
+         More
+        </button>
+       </nav>
+       <div class="hidden md:flex items-center gap-4">
+        <a class="transition-colors hover:text-foreground/80 p-2" href="https://x.com/moonfarm_eth" rel="noopener noreferrer" target="_blank">
+         <span class="sr-only">
+          Follow on X (Twitter)
+         </span>
+        </a>
+        <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9" id="radix-_r_2_" type="button">
+         <span class="sr-only">
+          Toggle theme
+         </span>
+        </button>
+        <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5" type="button">
+         Sign In
+        </button>
+       </div>
+       <div class="md:hidden flex items-center space-x-2 w-full justify-end">
+        <a class="transition-colors hover:text-foreground/80 p-2" href="https://x.com/moonfarm_eth" rel="noopener noreferrer" target="_blank">
+         <span class="sr-only">
+          Follow on X (Twitter)
+         </span>
+        </a>
+        <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9" id="radix-_r_7_" type="button">
+         <span class="sr-only">
+          Toggle theme
+         </span>
+        </button>
+        <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5" type="button">
+         Sign In
+        </button>
+        <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 size-9 relative z-10">
+         <span class="sr-only">
+          Toggle navigation menu
+         </span>
+        </button>
+        <div class="absolute h-svh inset-0 flex items-center justify-center bg-background transition-all duration-300 opacity-0 pointer-events-none">
+         <div class="flex flex-col gap-8">
+          <span class="text-sm text-muted-foreground">
+           Updates in 10 minutes
+          </span>
+          <div class="flex flex-col gap-4">
+           <a class="flex items-center gap-4 w-full text-2xl relative font-bold" href="/">
+            Dashboard
+           </a>
+           <a class="flex items-center gap-4 w-full text-2xl relative" href="/daily-polls">
+            Daily Poll
+           </a>
+           <a class="flex items-center gap-4 w-full text-2xl relative" href="/leaderboards">
+            Leaderboards
+           </a>
+           <a class="flex items-center gap-4 w-full text-2xl relative" href="/nav-playground">
+            NAV Playground
+           </a>
+           <a class="flex items-center gap-4 w-full text-2xl relative" href="/blog">
+            Blog
+           </a>
+           <div class="border-t pt-4">
+            <h3 class="text-lg font-medium text-muted-foreground mb-3">
+             External Links
+            </h3>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://sbet.rocks/" rel="noopener noreferrer" target="_blank">
+             sbet.rocks
+            </a>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://btbt.rocks/" rel="noopener noreferrer" target="_blank">
+             btbt.rocks
+            </a>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://ethz.rocks/" rel="noopener noreferrer" target="_blank">
+             ethz.rocks
+            </a>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://www.bitminetech.io/" rel="noopener noreferrer" target="_blank">
+             BitMine
+            </a>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://accelereth.com/" rel="noopener noreferrer" target="_blank">
+             Accelereth
+            </a>
+            <a class="flex items-center gap-4 w-full text-xl mb-3" href="https://www.bitminetracker.io/" rel="noopener noreferrer" target="_blank">
+             Bitmine Tracker
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="min-h-screen">
+     <main class="mx-auto p-6 flex flex-col gap-4 relative w-full">
+      <div class="grid grid-cols-1 lg:grid-cols-4 items-start grow gap-4 w-full">
+       <div class="col-span-4">
+        <div class="space-y-6">
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              Price per Share
+              <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-primary/90 text-xs ml-2 text-orange-500 bg-orange-500/10">
+               PRE
+              </span>
+             </div>
+             <span class="text-red-600">
+              -2.31%
+             </span>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $29.12
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              ETH Price
+             </div>
+             0
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $2,925
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              NAV per Share *
+             </div>
+             <span class="text-red-600">
+              -2.49%
+             </span>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $29.13
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              MNAV *
+             </div>
+             <span class="text-green-600">
+              +0.28%
+             </span>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              1.00x
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4">
+        <div class="flex items-center justify-center gap-2 text-sm opacity-50 hover:opacity-100 transition-opacity">
+         <a class="mt-1 inline-flex items-start gap-2" href="https://bldbl.dev" target="_blank">
+          <span>
+           built with
+          </span>
+          <img alt="BLDBL" class="h-4 w-auto" height="24" src="/bldbl-logo.svg" width="80"/>
+         </a>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-2">
+        <div class="bg-card text-card-foreground gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 flex flex-col">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="flex items-center justify-between gap-2">
+           <div class="font-semibold text-xl flex items-start md:items-center gap-2 justify-between w-full">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
+             Stock Price
+            </div>
+            <div class="font-semibold text-chart-primary">
+             $29.12
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-2">
+        <div class="bg-card text-card-foreground gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 flex flex-col">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="flex items-center justify-between gap-2">
+           <div class="font-semibold text-xl flex items-start md:items-center gap-2 justify-between w-full">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
+             Market Cap &amp; ETH Value
+            </div>
+            <div class="font-semibold text-chart-primary">
+             $12.9B
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4">
+        <div class="text-card-foreground flex flex-col gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 w-full bg-gradient-to-br from-primary/5 via-primary/10 to-primary/5 border-primary/20 relative overflow-hidden">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 pb-4">
+          <div class="font-semibold text-xl flex items-center gap-3">
+           <div class="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
+            Pro Analytics &amp; Realtime Data
+            <div class="text-xs font-medium text-primary bg-primary/10 px-2 py-1 rounded-full">
+             💎 Pro Features
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="px-6 space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+           <div class="flex items-start gap-3 p-3 rounded-lg bg-primary/10 border border-primary/30">
+            <div class="min-w-0 flex-1">
+             <h4 class="font-medium text-sm">
+              NAV &amp; Staking Analysis
+             </h4>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              Market-to-NAV ratio tracking, analysis and staking profit tracking
+             </p>
+            </div>
+           </div>
+           <div class="flex items-start gap-3 p-3 rounded-lg bg-primary/10 border border-primary/30">
+            <div class="min-w-0 flex-1">
+             <h4 class="font-medium text-sm">
+              Realtime Stock Prices
+             </h4>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              Real-time stock prices for all companies
+             </p>
+            </div>
+           </div>
+          </div>
+          <div>
+           <button class="cursor-pointer inline-flex items-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5 w-full justify-between text-sm h-8" type="button">
+            <span>
+             See all features (4 total)
+            </span>
+           </button>
+          </div>
+          <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-4 border-t">
+           <div class="text-center md:text-left">
+            <div class="flex items-baseline gap-2 justify-center md:justify-start mb-1">
+             <div class="text-2xl font-bold text-primary">
+              $4.99
+             </div>
+             <div class="text-lg font-medium text-muted-foreground line-through">
+              $9.99
+             </div>
+             <div class="text-sm text-muted-foreground">
+              per month
+             </div>
+            </div>
+            <div class="text-sm text-primary font-medium">
+             50% off first month
+            </div>
+           </div>
+           <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+            <button class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground shadow-xs hover:bg-primary/90 h-10 rounded-md px-6 has-[&gt;svg]:px-4 group" type="button">
+             Sign in &amp; Upgrade
+            </button>
+           </div>
+          </div>
+          <div class="flex items-center justify-center gap-4 text-xs text-muted-foreground pt-3 border-t">
+           <div class="flex items-center gap-1">
+            Cancel anytime
+           </div>
+           <div class="flex items-center gap-1">
+            Secure by Stripe
+           </div>
+           <div class="flex items-center gap-1">
+            Realtime Data
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-3">
+        <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+         <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+          <div class="text-sm font-medium">
+           <div>
+            Current accumulation goal
+           </div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+            <span class="sr-only">
+             View detailed chart
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="px-2">
+          <div class="flex items-center justify-between gap-4">
+           <div class="text-2xl font-bold whitespace-nowrap">
+            4066K / 6M ETH
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-1">
+        <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+         <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+          <div class="text-sm font-medium">
+           <div>
+            Total USD Holdings
+           </div>
+          </div>
+          <div class="flex items-center gap-2">
+           <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+            <span class="sr-only">
+             View detailed chart
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="px-2">
+          <div class="flex items-center justify-between gap-4">
+           <div class="text-2xl font-bold whitespace-nowrap">
+            $1.0B
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4">
+        <div class="space-y-6">
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              Average ETH Buy Price
+             </div>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $3,964
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              Unrealized Profit
+             </div>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $-4.2B
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              ETH / 1K Shares *
+             </div>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              9.15
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-card text-card-foreground flex flex-col rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 gap-2">
+           <div class="@container/card-header auto-rows-min grid-rows-[auto_auto] gap-1.5 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 flex flex-row items-center justify-between px-2">
+            <div class="text-sm font-medium">
+             <div>
+              Total ETH Value
+             </div>
+            </div>
+            <div class="flex items-center gap-2">
+             <button class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 w-8 p-0" type="button">
+              <span class="sr-only">
+               View detailed chart
+              </span>
+             </button>
+            </div>
+           </div>
+           <div class="px-2">
+            <div class="flex items-center justify-between gap-4">
+             <div class="text-2xl font-bold whitespace-nowrap">
+              $11.9B
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4">
+        <div class="bg-card text-card-foreground gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 flex flex-col">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="flex items-center justify-between gap-2">
+           <div class="font-semibold text-xl flex items-start md:items-center gap-2 justify-between w-full">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
+             Alternative Assets
+            </div>
+            <div class="font-semibold text-chart-primary">
+             2 assets
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex-1 flex flex-col p-0 -ml-4 md:ml-0">
+          <div class="space-y-6 p-4">
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="space-y-1">
+             <div class="text-xs text-muted-foreground">
+              Total Value
+             </div>
+             <div class="text-lg font-semibold">
+              $43.7M
+             </div>
+            </div>
+            <div class="space-y-1">
+             <div class="text-xs text-muted-foreground">
+              Cost Basis
+             </div>
+             <div class="text-lg font-semibold">
+              $42.7M
+             </div>
+            </div>
+            <div class="space-y-1">
+             <div class="text-xs text-muted-foreground">
+              Unrealized P&amp;L
+             </div>
+             <div class="text-lg font-semibold flex items-center gap-1 text-green-600">
+              $1.1M
+             </div>
+            </div>
+            <div class="space-y-1">
+             <div class="text-xs text-muted-foreground">
+              % Return
+             </div>
+             <div class="text-lg font-semibold text-green-600">
+              +2.51%
+             </div>
+            </div>
+           </div>
+           <div class="space-y-3 pt-2 border-t">
+            <h4 class="text-sm font-medium text-muted-foreground">
+             Individual Assets (2)
+            </h4>
+            <div class="space-y-2 max-h-96 overflow-y-auto">
+             <div class="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+              <div class="space-y-1">
+               <div class="flex items-center gap-2">
+                <span class="font-medium">
+                 Eightco Holdings Inc.
+                </span>
+                <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground text-xs">
+                 ORBS
+                </span>
+               </div>
+               <div class="flex items-center gap-2">
+                <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-primary/90 text-xs bg-purple-100 text-purple-800">
+                 moonshot
+                </span>
+                <span class="text-xs text-muted-foreground capitalize">
+                 equity
+                </span>
+                <span class="text-xs text-muted-foreground">
+                 13.7M units
+                </span>
+               </div>
+              </div>
+              <div class="text-right space-y-1">
+               <div class="font-medium">
+                $26.3M
+               </div>
+               <div class="text-xs text-green-600">
+                $6.3M (+31.5%)
+               </div>
+              </div>
+             </div>
+             <div class="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
+              <div class="space-y-1">
+               <div class="flex items-center gap-2">
+                <span class="font-medium">
+                 Bitcoin
+                </span>
+                <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground text-xs">
+                 BTCUSD
+                </span>
+               </div>
+               <div class="flex items-center gap-2">
+                <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-primary/90 text-xs bg-blue-100 text-blue-800">
+                 strategic
+                </span>
+                <span class="text-xs text-muted-foreground capitalize">
+                 crypto
+                </span>
+                <span class="text-xs text-muted-foreground">
+                 192.00 units
+                </span>
+               </div>
+              </div>
+              <div class="text-right space-y-1">
+               <div class="font-medium">
+                $17.4M
+               </div>
+               <div class="text-xs text-red-600">
+                $-5.2M (-23.1%)
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-2">
+        <div class="bg-card text-card-foreground gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10 flex flex-col">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="flex items-center justify-between gap-2">
+           <div class="font-semibold text-xl flex items-start md:items-center gap-2 justify-between w-full">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
+             ETH &amp; USD Holdings
+            </div>
+            <div class="font-semibold text-chart-primary">
+             4,066,062 ETH
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="col-span-4 lg:col-span-2">
+        <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl flex items-center justify-between">
+           <div class="flex items-center gap-2">
+            Recent Events
+           </div>
+           <a class="cursor-pointer inline-flex items-center justify-center whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md gap-1.5 has-[&gt;svg]:px-2.5 h-8 px-3 text-xs flex items-center gap-1" href="https://www.bitminetech.io/investor-relations" rel="noopener noreferrer" target="_blank">
+            View All
+           </a>
+          </div>
+         </div>
+         <div class="px-6 space-y-4">
+          <div class="border-b border-border/50 pb-4 last:border-b-0 last:pb-0">
+           <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+             <div class="flex items-center gap-1 text-muted-foreground text-xs">
+              <span>
+               3 days ago
+              </span>
+             </div>
+            </div>
+            <h4 class="font-semibold text-sm leading-tight">
+             08:30 ET
+  Bitmine Immersion (BMNR) Announces ETH Holdings Reach 4.066 Million Tokens, and Total Crypto and Total Cash Holdings of $13.2 Billion
+
+  Bitmine now owns 3.37% of the ETH token supply, two-thirds of the way to the 'Alchemy of 5%' Bitmine Crypto + Total Cash Holdings + "Moonshots" total ...
+            </h4>
+            <div class="flex justify-start">
+             <a class="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-medium" href="https://www.prnewswire.com/news-releases/bitmine-immersion-bmnr-announces-eth-holdings-reach-4-066-million-tokens-and-total-crypto-and-total-cash-holdings-of-13-2-billion-302647727.html" rel="noopener noreferrer" target="_blank">
+              <span>
+               Read more
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="border-b border-border/50 pb-4 last:border-b-0 last:pb-0">
+           <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+             <div class="flex items-center gap-1 text-muted-foreground text-xs">
+              <span>
+               1 week ago
+              </span>
+             </div>
+            </div>
+            <h4 class="font-semibold text-sm leading-tight">
+             08:30 ET
+  BitMine Immersion (BMNR) Announces ETH Holdings Reach 3.97 Million Tokens, and Total Crypto and Total Cash Holdings of $13.3 Billion
+
+  BitMine now owns more than 3.2% of the ETH token supply, two-thirds of the way to the 'Alchemy of 5%' BitMine Crypto + Total Cash Holdings +...
+            </h4>
+            <div class="flex justify-start">
+             <a class="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-medium" href="https://www.prnewswire.com/news-releases/bitmine-immersion-bmnr-announces-eth-holdings-reach-3-97-million-tokens-and-total-crypto-and-total-cash-holdings-of-13-3-billion-302641888.html" rel="noopener noreferrer" target="_blank">
+              <span>
+               Read more
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="border-b border-border/50 pb-4 last:border-b-0 last:pb-0">
+           <div class="space-y-2">
+            <div class="flex items-center justify-between gap-2">
+             <div class="flex items-center gap-1 text-muted-foreground text-xs">
+              <span>
+               2 week ago
+              </span>
+             </div>
+            </div>
+            <h4 class="font-semibold text-sm leading-tight">
+             08:30 ET
+  BitMine Immersion (BMNR) Announces ETH Holdings Exceed 3.86 Million Tokens, and Total Crypto and Total Cash Holdings of $13.2 Billion
+
+  BitMine now owns more than 3.2% of the ETH token supply, two-thirds of the way to the 'Alchemy of 5%' BitMine Crypto + Total Cash Holdings +...
+            </h4>
+            <div class="flex justify-start">
+             <a class="flex items-center gap-1 text-xs text-blue-600 hover:text-blue-800 font-medium" href="https://www.prnewswire.com/news-releases/bitmine-immersion-bmnr-announces-eth-holdings-exceed-3-86-million-tokens-and-total-crypto-and-total-cash-holdings-of-13-2-billion-302635031.html" rel="noopener noreferrer" target="_blank">
+              <span>
+               Read more
+              </span>
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="my-8 pt-8 border-t">
+       <div class="space-y-6">
+        <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="leading-none font-semibold flex items-center gap-2">
+           Data Sources &amp; Methodology
+          </div>
+         </div>
+         <div class="px-6 space-y-4">
+          <p class="text-sm text-muted-foreground">
+           Our dashboard aggregates financial data from multiple sources to provide comprehensive insights. Understanding these sources helps interpret the data accurately.
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+           <div class="py-4 px-0">
+            <div class="space-y-3">
+             <div class="flex items-start justify-between">
+              <div class="flex items-center gap-2">
+               <h4 class="font-medium text-sm flex items-center gap-2">
+                Yahoo Finance API
+               </h4>
+              </div>
+              <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+               external
+              </span>
+             </div>
+             <p class="text-xs text-muted-foreground">
+              Real-time and historical stock prices, market data, and options information
+             </p>
+             <div class="text-xs">
+              <span class="font-medium">
+               Update Frequency:
+              </span>
+              <span class="text-muted-foreground">
+               Real-time during market hours
+              </span>
+             </div>
+             <div class="space-y-1">
+              <div class="flex items-center gap-1">
+               <span class="text-xs font-medium">
+                Limitations:
+               </span>
+              </div>
+              <ul class="text-xs text-muted-foreground space-y-1">
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 15-20 minute delays for some data feeds
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Options data availability varies by symbol
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Market closure affects real-time updates
+                </span>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+           <div class="py-4 px-0">
+            <div class="space-y-3">
+             <div class="flex items-start justify-between">
+              <div class="flex items-center gap-2">
+               <h4 class="font-medium text-sm flex items-center gap-2">
+                Supabase Database
+               </h4>
+              </div>
+              <span class="px-2 py-1 text-xs rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+               primary
+              </span>
+             </div>
+             <p class="text-xs text-muted-foreground">
+              Primary data storage for company metrics, historical data, and user information
+             </p>
+             <div class="text-xs">
+              <span class="font-medium">
+               Update Frequency:
+              </span>
+              <span class="text-muted-foreground">
+               Real-time
+              </span>
+             </div>
+             <div class="space-y-1">
+              <div class="flex items-center gap-1">
+               <span class="text-xs font-medium">
+                Limitations:
+               </span>
+              </div>
+              <ul class="text-xs text-muted-foreground space-y-1">
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Data accuracy depends on source feeds
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Historical data limited to collection start date
+                </span>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+           <div class="py-4 px-0">
+            <div class="space-y-3">
+             <div class="flex items-start justify-between">
+              <div class="flex items-center gap-2">
+               <h4 class="font-medium text-sm flex items-center gap-2">
+                Calculated Metrics
+               </h4>
+              </div>
+              <span class="px-2 py-1 text-xs rounded-full bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200">
+               calculated
+              </span>
+             </div>
+             <p class="text-xs text-muted-foreground">
+              Derived analytics including NAV, ETH concentration, and prediction models
+             </p>
+             <div class="text-xs">
+              <span class="font-medium">
+               Update Frequency:
+              </span>
+              <span class="text-muted-foreground">
+               Updated with source data
+              </span>
+             </div>
+             <div class="space-y-1">
+              <div class="flex items-center gap-1">
+               <span class="text-xs font-medium">
+                Limitations:
+               </span>
+              </div>
+              <ul class="text-xs text-muted-foreground space-y-1">
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Accuracy depends on underlying data quality
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Predictions are estimates based on historical trends
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Market conditions can affect calculation validity
+                </span>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+           <div class="py-4 px-0">
+            <div class="space-y-3">
+             <div class="flex items-start justify-between">
+              <div class="flex items-center gap-2">
+               <h4 class="font-medium text-sm flex items-center gap-2">
+                Public Filings &amp; Reports
+               </h4>
+              </div>
+              <span class="px-2 py-1 text-xs rounded-full bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+               external
+              </span>
+             </div>
+             <p class="text-xs text-muted-foreground">
+              Company financial data and regulatory disclosures
+             </p>
+             <div class="text-xs">
+              <span class="font-medium">
+               Update Frequency:
+              </span>
+              <span class="text-muted-foreground">
+               As filed with regulators
+              </span>
+             </div>
+             <div class="space-y-1">
+              <div class="flex items-center gap-1">
+               <span class="text-xs font-medium">
+                Limitations:
+               </span>
+              </div>
+              <ul class="text-xs text-muted-foreground space-y-1">
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Reporting delays vary by jurisdiction
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Data may be outdated between filing periods
+                </span>
+               </li>
+               <li class="flex items-start gap-1">
+                <span class="text-amber-600 mt-0.5">
+                 •
+                </span>
+                <span>
+                 Subject to company reporting accuracy
+                </span>
+               </li>
+              </ul>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="pt-4 border-t">
+           <h3 class="font-medium text-sm mb-3 flex items-center gap-2">
+            Data Processing Notes
+           </h3>
+           <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs text-muted-foreground">
+            <div>
+             <strong>
+              Update Cycle:
+             </strong>
+             Real-time data is fetched every 10 seconds during market hours. Historical data is processed and cached for performance.
+            </div>
+            <div>
+             <strong>
+              Calculations:
+             </strong>
+             All derived metrics use standardized financial formulas. ETH predictions use linear regression on meaningful price changes (≥$1000 threshold).
+            </div>
+            <div>
+             <strong>
+              Data Quality:
+             </strong>
+             We filter out incomplete records and apply post-processing to fill gaps in historical data using interpolation methods.
+            </div>
+            <div>
+             <strong>
+              Time Zones:
+             </strong>
+             All timestamps are stored in UTC and displayed in your local timezone. Market hours consider the primary exchange's operating schedule.
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl px-2 py-4 md:px-4 md:py-6 dark:shadow-xs shadow-md shadow-foreground/10">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-2 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="leading-none font-semibold flex items-center gap-2">
+           Important Disclaimers
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+           <div class="py-4">
+            <div class="space-y-2">
+             <div class="flex items-center gap-2">
+              <h4 class="font-medium text-sm">
+               Investment Disclaimer
+              </h4>
+             </div>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              This dashboard is for informational purposes only and does not constitute investment advice. All data visualizations are based on publicly available information and should not be relied upon for investment decisions. Past performance does not guarantee future results.
+             </p>
+            </div>
+           </div>
+           <div class="py-4">
+            <div class="space-y-2">
+             <div class="flex items-center gap-2">
+              <h4 class="font-medium text-sm">
+               Data Accuracy
+              </h4>
+             </div>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              While we strive for accuracy, financial data can be subject to delays, errors, or revisions. Users should verify critical information through official sources before making any decisions.
+             </p>
+            </div>
+           </div>
+           <div class="py-4">
+            <div class="space-y-2">
+             <div class="flex items-center gap-2">
+              <h4 class="font-medium text-sm">
+               Speculative Data Elements
+              </h4>
+             </div>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              Some metrics marked with ⚠️ contain estimated or speculative data (e.g., shares outstanding estimates). These should be interpreted with additional caution.
+             </p>
+            </div>
+           </div>
+           <div class="py-4">
+            <div class="space-y-2">
+             <div class="flex items-center gap-2">
+              <h4 class="font-medium text-sm">
+               Market Volatility
+              </h4>
+             </div>
+             <p class="text-xs text-muted-foreground leading-relaxed">
+              Cryptocurrency and stock markets are highly volatile. Real-time data may change rapidly, and predictions are inherently uncertain. Options data is particularly complex and subject to rapid changes.
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="mt-6 pt-4 border-t">
+           <div class="text-xs text-muted-foreground space-y-2">
+            <p>
+             <strong>
+              Last Updated:
+             </strong>
+             12/24/2025 •
+             <strong>
+              Dashboard Version:
+             </strong>
+             2.1.0 •
+             <strong>
+              Data Retention:
+             </strong>
+             Historical data from June 2025 onwards
+            </p>
+            <p>
+             For questions about data sources or methodology, please contact us at
+             <a class="text-foreground hover:underline" href="mailto:hello@sbet.rocks">
+              hello@sbet.rocks
+             </a>
+             . We are committed to transparency in our data visualization practices.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <a class="text-sm text-muted-foreground mx-auto mb-24" href="https://x.com/moonfarm_eth">
+       Built by moonfarm.eth
+      </a>
+     </main>
+    </div>
+   </div>
+   <title>
+    BMNR Treasury Dashboard | BitMine Immersion Technologies Analytics
+   </title>
+   <span id="recharts_measurement_span">
+    $0.00
+   </span>
+  </body>
+
+</body>
+</html>

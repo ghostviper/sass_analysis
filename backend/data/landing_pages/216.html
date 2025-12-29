@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>InterviewLab - AI-Powered Interview Practice</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-white">
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+       <div class="flex items-center">
+        <a class="flex items-center space-x-2" href="/">
+         <span class="text-2xl font-bold text-red-600">
+          InterviewLab
+         </span>
+        </a>
+       </div>
+       <div class="hidden md:block">
+        <div class="ml-10 flex items-baseline space-x-4">
+         <a class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium" href="/">
+          Home
+         </a>
+         <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
+          Features
+         </button>
+         <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
+          How It Works
+         </button>
+         <button class="text-gray-700 hover:text-red-600 px-3 py-2 rounded-md text-sm font-medium">
+          Testimonials
+         </button>
+        </div>
+       </div>
+       <div class="hidden md:block">
+        <a href="/dashboard">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 bg-red-600 hover:bg-red-700 text-white">
+          Go to Dashboard
+         </button>
+        </a>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <section class="relative py-20 lg:py-32 bg-white">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+       <h1 class="text-4xl md:text-6xl font-bold text-black mb-6">
+        Master Your Interview Skills with
+        <span class="text-red-600">
+         AI-Powered Practice
+        </span>
+       </h1>
+       <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Practice interviews through voice calls and chat conversations with our advanced AI. Get real-time feedback, improve your responses, and land your dream job.
+       </p>
+       <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a href="/auth">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md text-lg px-8 py-3 bg-red-600 hover:bg-red-700 text-white">
+          Start Practicing Now
+         </button>
+        </a>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border hover:text-accent-foreground h-11 rounded-md text-lg px-8 py-3 border-gray-300 text-black hover:bg-gray-50 bg-transparent">
+         Watch Demo
+        </button>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24">
+     <div class="max-w-6xl mx-auto px-4">
+      <div class="mb-12">
+       <h2 class="text-3xl font-bold text-center mb-2 text-black">
+        Why Choose InterviewLab?
+       </h2>
+      </div>
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Voice Practice
+        </h3>
+        <p class="text-gray-600 text-base">
+         Practice real interview questions with AI-powered voice calls.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Chat Practice
+        </h3>
+        <p class="text-gray-600 text-base">
+         Get instant feedback and tips with our AI chat interviewer.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Progress Tracking
+        </h3>
+        <p class="text-gray-600 text-base">
+         See your improvement over time with detailed analytics.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Privacy &amp; Security
+        </h3>
+        <p class="text-gray-600 text-base">
+         Your practice sessions are private and secure.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         24/7 Access
+        </h3>
+        <p class="text-gray-600 text-base">
+         Practice anytime, anywhere, on your schedule.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white">
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Instant Results
+        </h3>
+        <p class="text-gray-600 text-base">
+         Get actionable feedback right after each session.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24">
+     <div class="max-w-4xl mx-auto px-4">
+      <div class="mb-12">
+       <h2 class="text-3xl font-bold text-center mb-2 text-black">
+        How It Works
+       </h2>
+      </div>
+      <div class="grid gap-10 md:grid-cols-3">
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white relative">
+        <div class="mb-2 text-sm font-semibold text-gray-400">
+         Step 1
+        </div>
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Sign Up
+        </h3>
+        <p class="text-gray-600 text-base">
+         Create your free InterviewLab account in seconds.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white relative">
+        <div class="mb-2 text-sm font-semibold text-gray-400">
+         Step 2
+        </div>
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Practice
+        </h3>
+        <p class="text-gray-600 text-base">
+         Start a mock interview with voice or chat instantly.
+        </p>
+       </div>
+       <div class="flex flex-col items-center text-center p-8 border border-gray-200 rounded-2xl bg-white relative">
+        <div class="mb-2 text-sm font-semibold text-gray-400">
+         Step 3
+        </div>
+        <h3 class="mb-2 text-xl font-semibold text-black">
+         Improve
+        </h3>
+        <p class="text-gray-600 text-base">
+         Get feedback, track your progress, and grow your skills.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-32 bg-white">
+     <div class="container px-2">
+      <div class="mx-auto flex max-w-5xl flex-col items-center gap-6 text-center">
+       <h2 class="text-4xl font-semibold text-pretty lg:text-6xl text-red-700">
+        Pricing
+       </h2>
+       <p class="text-muted-foreground lg:text-xl">
+        Check out our affordable pricing plans
+       </p>
+       <div class="flex items-center gap-3 text-lg">
+        MonthlyYearly
+       </div>
+       <div class="flex flex-col items-stretch gap-8 md:flex-row md:justify-center md:flex-wrap">
+        <div class="text-card-foreground shadow-sm flex w-full max-w-none flex-col justify-between text-left rounded-2xl border border-gray-200 bg-white md:w-[380px] lg:w-[400px]">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <div class="text-2xl font-semibold leading-none tracking-tight">
+           <p class="text-red-700">
+            Plus
+           </p>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           For personal use
+          </p>
+          <div class="flex items-end">
+           <span class="text-4xl font-semibold text-red-700">
+            $19
+           </span>
+           <span class="text-2xl font-semibold text-muted-foreground">
+            /mo
+           </span>
+          </div>
+         </div>
+         <div class="p-6 pt-0">
+          <ul class="space-y-4">
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Up to 5 team members
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Basic components library
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Community support
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             1GB storage space
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="flex items-center p-6 pt-0 mt-auto">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 w-full bg-red-600 hover:bg-red-700 text-white rounded-xl" href="https://shadcnblocks.com" target="_blank">
+           Purchase
+          </a>
+         </div>
+        </div>
+        <div class="text-card-foreground shadow-sm flex w-full max-w-none flex-col justify-between text-left rounded-2xl border border-gray-200 bg-white md:w-[380px] lg:w-[400px]">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <div class="text-2xl font-semibold leading-none tracking-tight">
+           <p class="text-red-700">
+            Pro
+           </p>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           For professionals
+          </p>
+          <div class="flex items-end">
+           <span class="text-4xl font-semibold text-red-700">
+            $49
+           </span>
+           <span class="text-2xl font-semibold text-muted-foreground">
+            /mo
+           </span>
+          </div>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="mb-3 font-semibold text-red-700">
+           Everything in Plus, and:
+          </p>
+          <ul class="space-y-4">
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Unlimited team members
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Advanced components
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Priority support
+            </span>
+           </li>
+           <li class="flex items-center gap-2 text-sm">
+            <span>
+             Unlimited storage
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="flex items-center p-6 pt-0 mt-auto">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 w-full bg-red-600 hover:bg-red-700 text-white rounded-xl" href="https://shadcnblocks.com" target="_blank">
+           Purchase
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 bg-white overflow-hidden" id="testimonials">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h2 class="text-3xl md:text-4xl font-bold text-black mb-4">
+        Success Stories
+       </h2>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Join thousands of professionals who have improved their interview skills with InterviewLab.
+       </p>
+      </div>
+      <div class="relative">
+       <div class="flex animate-marquee-slow space-x-8">
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "InterviewLab helped me land my dream job at Google. The AI feedback was incredibly detailed and helped me improve my technical communication skills."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Sarah Johnson
+          </p>
+          <p class="text-sm text-gray-500">
+           Software Engineer at Google
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The voice interview practice was game-changing. I felt so much more confident during my actual interviews after practicing with the AI."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Michael Chen
+          </p>
+          <p class="text-sm text-gray-500">
+           Product Manager at Microsoft
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The analytics and progress tracking features are amazing. I could see exactly where I needed to improve and track my progress over time."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Emily Rodriguez
+          </p>
+          <p class="text-sm text-gray-500">
+           Data Scientist at Netflix
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The behavioral interview practice helped me structure my answers better. I got offers from 3 different companies!"
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           David Kim
+          </p>
+          <p class="text-sm text-gray-500">
+           Frontend Developer at Meta
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "Amazing platform! The AI interviewer asks really relevant questions and the feedback is spot-on. Highly recommended!"
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Lisa Wang
+          </p>
+          <p class="text-sm text-gray-500">
+           UX Designer at Apple
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "Used this for 2 weeks before my interviews. The confidence boost was incredible and I aced all my technical rounds."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           James Wilson
+          </p>
+          <p class="text-sm text-gray-500">
+           DevOps Engineer at Amazon
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "InterviewLab helped me land my dream job at Google. The AI feedback was incredibly detailed and helped me improve my technical communication skills."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Sarah Johnson
+          </p>
+          <p class="text-sm text-gray-500">
+           Software Engineer at Google
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The voice interview practice was game-changing. I felt so much more confident during my actual interviews after practicing with the AI."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Michael Chen
+          </p>
+          <p class="text-sm text-gray-500">
+           Product Manager at Microsoft
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The analytics and progress tracking features are amazing. I could see exactly where I needed to improve and track my progress over time."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Emily Rodriguez
+          </p>
+          <p class="text-sm text-gray-500">
+           Data Scientist at Netflix
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "The behavioral interview practice helped me structure my answers better. I got offers from 3 different companies!"
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           David Kim
+          </p>
+          <p class="text-sm text-gray-500">
+           Frontend Developer at Meta
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "Amazing platform! The AI interviewer asks really relevant questions and the feedback is spot-on. Highly recommended!"
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           Lisa Wang
+          </p>
+          <p class="text-sm text-gray-500">
+           UX Designer at Apple
+          </p>
+         </div>
+        </div>
+        <div class="flex-shrink-0 w-80 bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+         <p class="text-gray-600 mb-6 italic">
+          "Used this for 2 weeks before my interviews. The confidence boost was incredible and I aced all my technical rounds."
+         </p>
+         <div>
+          <p class="font-semibold text-black">
+           James Wilson
+          </p>
+          <p class="text-sm text-gray-500">
+           DevOps Engineer at Amazon
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-32 bg-white">
+     <div class="flex flex-col items-center justify-center">
+      <h1 class="mb-8 text-3xl font-semibold md:text-4xl text-center">
+       Frequently asked questions
+      </h1>
+      <div class="w-full max-w-lg mx-auto">
+       <div class="w-full">
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«R6efb»" type="button">
+           What is a FAQ?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Raefb»" type="button">
+           What is the purpose of a FAQ?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Reefb»" type="button">
+           How do I create a FAQ?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Riefb»" type="button">
+           What are the benefits of a FAQ?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Rmefb»" type="button">
+           How should I organize my FAQ?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Rqefb»" type="button">
+           How long should FAQ answers be?
+          </button>
+         </h3>
+        </div>
+        <div class="border-b">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 font-semibold hover:no-underline text-left" id="radix-«Ruefb»" type="button">
+           Should I include links in my FAQ?
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 bg-red-600 text-center" id="cta">
+     <div class="max-w-xl mx-auto px-4">
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+       Start Practicing for Your Next Interview
+      </h2>
+      <p class="text-lg text-red-100 mb-8">
+       Join InterviewLab and get instant feedback to boost your confidence.
+      </p>
+      <a href="/auth">
+       <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-white text-red-600 hover:bg-gray-100 text-lg px-8 py-3 shadow">
+        Start Your Free Trial
+       </button>
+      </a>
+     </div>
+    </section>
+    <footer class="bg-white text-gray-800 py-12 border-t border-gray-200">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+       <div>
+        <div class="flex items-center mb-4">
+         <h3 class="text-2xl font-bold ml-3">
+          InterviewLab
+         </h3>
+        </div>
+        <p class="text-gray-500">
+         AI-powered interview practice platform helping professionals land their dream jobs.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-lg font-semibold mb-4">
+         Product
+        </h4>
+        <ul class="space-y-2 text-gray-600">
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Voice Practice
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Chat Practice
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Analytics
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Feedback
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-lg font-semibold mb-4">
+         Company
+        </h4>
+        <ul class="space-y-2 text-gray-600">
+         <li>
+          <a class="hover:text-red-600" href="#">
+           About
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Careers
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Contact
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Blog
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-lg font-semibold mb-4">
+         Support
+        </h4>
+        <ul class="space-y-2 text-gray-600">
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Help Center
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Terms of Service
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-red-600" href="#">
+           Status
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="border-t border-gray-200 mt-8 pt-8 text-center text-gray-500">
+       <p>
+        © 2024 InterviewLab. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

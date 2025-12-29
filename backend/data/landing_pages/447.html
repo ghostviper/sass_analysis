@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TestWhiz</title>
+</head>
+<body>
+  <body>
+   <header class="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div class="container px-4 md:px-6 flex h-16 items-center justify-between">
+     <a class="flex items-center space-x-2" href="/">
+      <img alt="TestWhiz Logo" height="140" src="/logo.svg" width="140"/>
+     </a>
+     <div class="flex-1 flex justify-center">
+      <nav class="relative z-10 flex max-w-max flex-1 items-center justify-center">
+       <div>
+        <ul class="group flex-1 list-none items-center justify-center space-x-1 hidden md:flex gap-2">
+         <li>
+          <a class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 bg-transparent hover:bg-accent" href="/#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 bg-transparent hover:bg-accent" href="/#ai-solver">
+           AI Solver
+          </a>
+         </li>
+         <li>
+          <button class="group inline-flex h-9 w-max items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50 group bg-transparent hover:bg-accent" id="radix-:R2culkq:-trigger-radix-:R2eculkq:">
+           Resources
+          </button>
+         </li>
+        </ul>
+       </div>
+      </nav>
+     </div>
+     <div class="flex items-center space-x-4">
+      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background shadow-sm hover:text-accent-foreground h-9 px-4 py-2 hover:bg-accent flex items-center gap-2" href="/sign-in">
+       <span>
+        Login
+       </span>
+      </a>
+      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2" href="/sign-up">
+       Join Now
+      </a>
+     </div>
+    </div>
+   </header>
+   <div class="relative min-h-screen">
+    <div class="absolute sm:block hidden left-0 top-0 z-10 pointer-events-none">
+     <img alt="" src="/bg/tools-bg-left.svg"/>
+    </div>
+    <div class="absolute sm:block hidden right-0 top-0 z-10 pointer-events-none">
+     <img alt="" src="/bg/tools-bg-right.svg"/>
+    </div>
+    <div class="relative z-10">
+     <main class="max-w-5xl mx-auto">
+      <section class="relative py-20 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center space-y-4 md:space-y-12 text-center">
+         <div class="space-y-4 md:space-y-8">
+          <h1 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-gradient-to-br from-gray-900 to-gray-600 dark:from-white dark:to-gray-400 bg-clip-text text-transparent">
+           The Everything AI to Get
+           <br/>
+           <span class="text-emerald-600 dark:text-emerald-400">
+            Straight A's in 2025
+           </span>
+          </h1>
+          <p class="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400">
+           AI Solver, Chrome Extension, Quiz, Flash Card, Notes, Worksheet, AI Chat - all in one place.
+          </p>
+         </div>
+         <div class="flex items-center justify-center gap-4">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 rounded-xl" href="/sign-up">
+           Try for Free
+          </a>
+         </div>
+         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 py-8">
+          <div class="flex flex-col items-center">
+           <div class="text-2xl sm:text-3xl font-bold text-emerald-600">
+            570,000+
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Problems Solved
+           </div>
+          </div>
+          <div class="flex flex-col items-center">
+           <div class="text-2xl sm:text-3xl font-bold text-emerald-600">
+            1,150,000+
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Flashcards Generated
+           </div>
+          </div>
+          <div class="flex flex-col items-center">
+           <div class="text-2xl sm:text-3xl font-bold text-emerald-600">
+            220,000+
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Notes Generated
+           </div>
+          </div>
+          <div class="flex flex-col items-center">
+           <div class="text-2xl sm:text-3xl font-bold text-emerald-600">
+            140,000+
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Worksheets Generated
+           </div>
+          </div>
+         </div>
+         <div class="w-full mt-16">
+          <p class="text-center text-lg font-medium mb-8">
+           Used by Students from
+          </p>
+          <div class="relative w-full overflow-hidden">
+           <div class="flex items-center justify-center">
+            <div class="relative w-full overflow-hidden">
+             <div class="flex items-center animate-marquee whitespace-nowrap">
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="USC" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/usc-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Northeastern" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/northeastern-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Johns Hopkins" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/johns-hopkins-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Wisconsin" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/wisconsin-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Michigan" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/michigan-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="MIT" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/mit-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Harvard" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/harvard-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Stanford" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/stanford-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="Chicago" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/chicago-w.svg" width="120"/>
+              </div>
+              <div class="mx-4 md:mx-8 flex-shrink-0">
+               <img alt="NYU" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/nyu-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="USC" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/usc-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Northeastern" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/northeastern-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Johns Hopkins" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/johns-hopkins-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Wisconsin" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/wisconsin-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Michigan" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/michigan-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="MIT" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/mit-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Harvard" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/harvard-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Stanford" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/stanford-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="Chicago" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/chicago-w.svg" width="120"/>
+              </div>
+              <div class="mx-8 flex-shrink-0">
+               <img alt="NYU" class="w-20 md:w-28 object-contain transition-opacity" height="60" src="/logos/nyu-w.svg" width="120"/>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 dark:bg-gray-900/50" id="features">
+       <div class="container px-4 md:px-6">
+        <div class="text-center space-y-4 mb-12">
+         <h3 class="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5">
+          <span class="font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+           Features
+          </span>
+         </h3>
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Built Exclusively For Students
+         </h2>
+         <p class="mx-auto max-w-[700px] text-gray-500 md:text-lg dark:text-gray-400">
+          All features are AI powered with simple and intuitive interface
+         </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-emerald-50 dark:from-transparent dark:to-emerald-900/20">
+          <h3 class="font-semibold text-xl">
+           Quizzes
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Use AI to create and solve engaging quizzes with instant feedback to boost learning and knowledge retention.
+          </p>
+          <img alt="Quizzes" class="rounded-lg" height="300" src="/features/quizzes.png" width="300"/>
+         </div>
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-violet-50 dark:from-transparent dark:to-violet-900/20">
+          <h3 class="font-semibold text-xl">
+           Worksheets &amp; Notes
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Create customized worksheets and notes with AI to study any topic, enhance practice, and reinforce learning.
+          </p>
+          <img alt="Worksheets &amp; Notes" class="rounded-lg" height="300" src="/features/worksheet_notes.png" width="300"/>
+         </div>
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-amber-50 dark:from-transparent dark:to-amber-900/20">
+          <h3 class="font-semibold text-xl">
+           Flashcards
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Use AI to generate dynamic flashcards for quick learning, boosting memory, and mastering hard topics easily.
+          </p>
+          <img alt="Flashcards" class="rounded-lg" height="300" src="/features/flashcard.png" width="300"/>
+         </div>
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-pink-50 dark:from-transparent dark:to-pink-900/20">
+          <h3 class="font-semibold text-xl">
+           Chat with PDF
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Interact with PDFs for quick insights, answering queries, and extracting exactly what you want just by asking.
+          </p>
+          <img alt="Chat with PDF" class="rounded-lg" height="300" src="/features/pdf_chat.png" width="300"/>
+         </div>
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-red-50 dark:from-transparent dark:to-red-900/20">
+          <h3 class="font-semibold text-xl">
+           Chat with YouTube
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Engage with YouTube videos, summarize content, and extract key information via simple chat interface.
+          </p>
+          <img alt="Chat with YouTube" class="rounded-lg" height="300" src="/features/youtube_chat.png" width="300"/>
+         </div>
+         <div class="rounded-xl border bg-card text-card-foreground shadow p-6 space-y-4 hover:border-emerald-500/50 transition-colors bg-gradient-to-b from-transparent to-indigo-50 dark:from-transparent dark:to-indigo-900/20">
+          <h3 class="font-semibold text-xl">
+           AI Solver
+          </h3>
+          <p class="text-sm text-muted-foreground line-clamp-3">
+           Solve complex problems instantly with step-by-step AI-powered solutions. The extension works on any online platform &amp; website.
+          </p>
+          <img alt="AI Solver" class="rounded-lg" height="300" src="/features/solver.png" width="300"/>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20 dark:bg-gray-900/50" id="ai-solver">
+       <div class="container px-4 md:px-6">
+        <div class="text-center space-y-4 mb-12">
+         <h3 class="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5">
+          <span class="font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+           New Feature Alert
+          </span>
+         </h3>
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          We replaced our old AI solver extension with a new one!
+         </h2>
+         <p class="mx-auto max-w-[700px] text-gray-500 md:text-lg dark:text-gray-400">
+          Only extension to work with any online class, website or portal.
+         </p>
+        </div>
+        <img alt="New Feature" height="1000" src="/features/new-feature.png" width="1000"/>
+       </div>
+      </section>
+      <section class="py-20">
+       <div class="container px-4 md:px-6">
+        <div class="border bg-card text-card-foreground shadow max-w-2xl mx-auto p-6 md:p-8 rounded-[30px]">
+         <div class="text-center space-y-2">
+          <h2 class="text-2xl font-bold">
+           Try Full Capabilities of Testwhiz AI
+          </h2>
+         </div>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 sm:h-14 sm:text-lg bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 px-4 py-2 w-full mt-6 h-14 text-xl font-bold rounded-xl text-white" href="/sign-up">
+          Try for Free
+         </a>
+         <div class="sm:divide-y divide-gray-200 mt-8">
+          <div class="grid sm:grid-cols-2 gap-4 sm:py-4">
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Solve Any Type of Questions" height="20" src="/icons/tick.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Solve Any Type of Questions
+             </p>
+            </div>
+           </div>
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Works Right on Any Online Platform" height="20" src="/icons/book.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Works Right on Any Online Platform
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4 py-4">
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Chat with PDF You Provide" height="20" src="/icons/message.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Chat with PDF You Provide
+             </p>
+            </div>
+           </div>
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Chat with YouTube Video You Provide" height="20" src="/icons/clipboard.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Chat with YouTube Video You Provide
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4 sm:py-4">
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Generate Flashcards and Worksheets" height="20" src="/icons/clipboard.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Generate Flashcards and Worksheets
+             </p>
+            </div>
+           </div>
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Generate Quizzes and Notes" height="20" src="/icons/clipboard.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Generate Quizzes and Notes
+             </p>
+            </div>
+           </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4 py-4">
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Undetectable &amp; Plagiarism-Free" height="20" src="/icons/clipboard.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Undetectable &amp; Plagiarism-Free
+             </p>
+            </div>
+           </div>
+           <div class="flex items-center gap-3">
+            <div class="p-2 rounded-lg bg-emerald-100">
+             <img alt="Instant Answers with Explanations" height="20" src="/icons/clipboard.svg" width="20"/>
+            </div>
+            <div class="space-y-1">
+             <p class="text-sm font-medium">
+              Instant Answers with Explanations
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mt-8 pt-6">
+          <img alt="Payment method" class="h-6 w-auto mx-auto opacity-70" height="48" src="/pricing/secured-payment.svg" width="500"/>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20" id="reviews">
+       <div class="container px-4 md:px-6">
+        <div class="text-center space-y-4 mb-12">
+         <h3 class="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5">
+          <span class="font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+           Reviews
+          </span>
+         </h3>
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Students Love Us
+         </h2>
+         <p class="mx-auto max-w-[700px] text-gray-500 md:text-lg dark:text-gray-400">
+          See what students from different institutions think about us.
+         </p>
+        </div>
+        <div class="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute bottom-4 right-4">
+            <img alt="X" height="20" src="/icons/x_icon.svg" width="20"/>
+           </div>
+           <p class="text-gray-600">
+            I dread history exams, but you guys have made it a bit less stressful ngl. Generating flashcards to memorize places and dates has been a game changer for me 🙌
+           </p>
+           <div class="flex items-center gap-4">
+            <img alt="Client" class="rounded-full" height="40" src="/testimonials/clientB.jpg" width="40"/>
+            <p class="text-gray-900 font-semibold">
+             Elara Hayes
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <p class="text-gray-600">
+            The best part is still that it’s undetectable, other than that chat with YouTube is another feature I use a lot. It’s my secret weapon kinda for quizzes. Will stop… might’ve said too much xD
+           </p>
+           <p class="text-gray-900 font-semibold">
+            TestWhiz User
+           </p>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute top-4 right-4">
+            <img alt="TrustPilot" height="24" src="/icons/trustpilot_icon.svg" width="24"/>
+           </div>
+           <div class="flex items-center gap-1 text-green-500">
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+           </div>
+           <p class="text-gray-600">
+            This tool is totally worth the money. The free trial is generous enough to test it out. Kinda cool that they put many things in here so I don’t have to buy dozen different subs lol.
+           </p>
+           <div class="flex items-center gap-4">
+            <p class="text-gray-900 font-semibold">
+             Ethan Mitchell
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute top-4 right-4">
+            <img alt="TrustPilot" height="24" src="/icons/trustpilot_icon.svg" width="24"/>
+           </div>
+           <div class="flex items-center gap-1 text-green-500">
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+            <img alt="TrustPilot Star" height="20" src="/icons/trustpilot_icon.svg" width="20"/>
+           </div>
+           <p class="text-gray-600">
+            Testwhiz works on literally every website and online platforms, not just multiple choice. I’ve also used it to generate notes for my anthropology class. It just works!
+           </p>
+           <div class="flex items-center gap-4">
+            <p class="text-gray-900 font-semibold">
+             Noah Clark
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute bottom-4 right-4">
+            <img alt="X" height="20" src="/icons/x_icon.svg" width="20"/>
+           </div>
+           <p class="text-gray-600">
+            Testwhiz is low key carrying me through organic chem. Being able to chat with my lectures and notes is pretty neat. And the explanations of chemical reactions have been a great help so far.
+           </p>
+           <div class="flex items-center gap-4">
+            <img alt="Client" class="rounded-full" height="40" src="/testimonials/clientA.jpg" width="40"/>
+            <p class="text-gray-900 font-semibold">
+             Liam Walker
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute top-4 right-4">
+            <img alt="Google" height="24" src="/icons/google_icon.svg" width="24"/>
+           </div>
+           <p class="text-gray-600">
+            I was hesitant to try Testwhiz but I’m glad I did. The solver works right on my online class and I can also generate worksheets for extra practice. It’s overall a great tool.
+           </p>
+           <p class="text-gray-900 font-semibold">
+            Owen Reed
+           </p>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute top-4 right-4">
+            <img alt="Google" height="24" src="/icons/google_icon.svg" width="24"/>
+           </div>
+           <p class="text-gray-600">
+            I’m not a huge fan of study tools but this one is different. Studying flashcards right after chatting with my notes is actually kinda fun. It’s been saving me a good amount of time. The customer support is also very responsive.
+           </p>
+           <p class="text-gray-900 font-semibold">
+            Ava Carter
+           </p>
+          </div>
+         </div>
+         <div class="break-inside-avoid">
+          <div class="bg-white border border-gray-200 rounded-xl p-6 shadow-sm flex flex-col gap-4 relative">
+           <div class="absolute top-4 right-4">
+            <img alt="Facebook" height="24" src="/icons/facebook_icon.svg" width="24"/>
+           </div>
+           <p class="text-gray-600">
+            I’m pretty sure this tool is the only reason I’m not failing calculus. The AI extension solves the hard integral problems and the chat with YouTube feature helped me summarize a 2-hour lecture. Clutch 💯
+           </p>
+           <div class="flex items-center gap-4">
+            <img alt="Client" class="rounded-full" height="40" src="/testimonials/clientC.jpg" width="40"/>
+            <p class="text-gray-900 font-semibold">
+             Calla Price
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-20" id="faq">
+       <div class="container px-4 md:px-6">
+        <div class="text-center space-y-4 mb-12">
+         <h3 class="inline-flex items-center justify-center rounded-full bg-white px-4 py-1.5">
+          <span class="font-bold bg-gradient-to-r from-teal-400 to-blue-500 bg-clip-text text-transparent">
+           FAQ’s
+          </span>
+         </h3>
+         <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+          Frequently Asked Questions
+         </h2>
+         <p class="mx-auto max-w-[700px] text-gray-500 md:text-lg dark:text-gray-400">
+          Have queries? Find your solution here or contact us via email
+         </p>
+        </div>
+        <div class="space-y-4">
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R1mifkulkq:" type="button">
+            What does the Chrome Extension do?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R2mifkulkq:" type="button">
+            Which learning platforms are supported?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R3mifkulkq:" type="button">
+            How accurate are the solutions?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R4mifkulkq:" type="button">
+            Can I generate study materials from any content?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R5mifkulkq:" type="button">
+            Is there a free trial period?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R6mifkulkq:" type="button">
+            Is there a limit to how many questions I can solve?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R7mifkulkq:" type="button">
+            Is there a limit on how many study materials I can generate?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R8mifkulkq:" type="button">
+            How does the incognito mode work?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:R9mifkulkq:" type="button">
+            Are the generated materials plagiarism-free?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:Ramifkulkq:" type="button">
+            How can I get support if I need help?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:Rbmifkulkq:" type="button">
+            Will TestWhiz store or share my data?
+           </button>
+          </h3>
+         </div>
+         <div class="border rounded-xl px-4">
+          <h3 class="flex">
+           <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all text-left [&amp;[data-state=open]&gt;svg]:rotate-180 text-base hover:no-underline" id="radix-:Rcmifkulkq:" type="button">
+            How do I use the Chat with PDF or Chat with Youtube feature?
+           </button>
+          </h3>
+         </div>
+        </div>
+       </div>
+      </section>
+     </main>
+    </div>
+   </div>
+   <footer class="border-t bg-background">
+    <div class="container px-4 md:px-6 py-16">
+     <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+      <div class="space-y-4">
+       <h3 class="text-lg font-semibold">
+        <img alt="TestWhiz" class="h-10 w-auto" height="100" src="/logo.svg" width="100"/>
+       </h3>
+       <p class="text-sm text-muted-foreground max-w-[250px]">
+        Empowering students with AI-powered study tools for better learning outcomes.
+       </p>
+       <div class="mt-4">
+        <p class="text-sm font-semibold">
+         follow us on:
+        </p>
+        <div class="flex space-x-4 mt-2">
+         <a class="" href="https://www.tiktok.com/@testwhiz.co" target="_blank">
+          <img alt="Tiktok" height="32" src="/icons/tiktok.svg" width="32"/>
+         </a>
+         <a class="" href="https://www.instagram.com/trytestwhizai" target="_blank">
+          <img alt="Instagram" height="32" src="/icons/instagram.svg" width="32"/>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="space-y-4">
+       <h3 class="text-lg font-semibold">
+        Resources
+       </h3>
+       <ul class="space-y-2">
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/worksheet">
+          Worksheets
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/free-tools">
+          Free Tools
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/flash-card">
+          Flashcards
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="space-y-4">
+       <h3 class="text-lg font-semibold">
+        Product
+       </h3>
+       <ul class="space-y-2">
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/#features">
+          Features
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/#ai-solver">
+          AI Solver
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/pricing">
+          Pricing
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/#reviews">
+          Reviews
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="space-y-4">
+       <h3 class="text-lg font-semibold">
+        Alternatives
+       </h3>
+       <ul class="space-y-2">
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/alternative/homeworkify">
+          Homeworkify Alternative
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/alternative/photomath">
+          Photomath Alternative
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/alternative/gauthmath">
+          Gauthmath Alternative
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/alternative/quizlet">
+          Quizlet Alternative
+         </a>
+        </li>
+        <li>
+         <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/alternative/anki-web">
+          Anki Web Alternative
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="mt-12 pt-8 border-t">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+       <div class="flex flex-col items-center sm:items-start gap-2">
+        <p class="text-sm text-muted-foreground">
+         © 2025
+         <span class="font-semibold text-primary">
+          TestWhiz.co
+         </span>
+         All rights reserved.
+        </p>
+        <a class="text-gray-600 underline hover:text-black dark:text-gray-300 dark:hover:text-white transition-colors text-xs" href="https://21st.tools/?ref=opensourceboilerplates.com" target="_blank">
+         21st Tools - The best platform for launching your next project.
+        </a>
+       </div>
+       <div class="flex items-center space-x-4">
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/support">
+         Support
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/privacy-policy">
+         Privacy
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/terms">
+         Terms
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

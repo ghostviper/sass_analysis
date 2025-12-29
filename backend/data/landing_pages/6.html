@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ATC - The AI Product Catalog Platform</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-background text-foreground flex flex-col">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+     <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+      <a class="flex items-center gap-2 group" href="/">
+       <img alt="ATC Logo" class="dark:invert object-contain" height="44" src="/logo.svg" width="200"/>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+       <a class="text-sm font-medium transition-colors text-foreground" href="/#features">
+        Features
+       </a>
+       <a class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors" href="/#how-it-works">
+        How it Works
+       </a>
+       <a class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground" href="/samples">
+        Samples
+       </a>
+       <a class="text-sm font-medium transition-colors text-muted-foreground hover:text-foreground" href="/pricing">
+        Pricing
+       </a>
+      </nav>
+      <div class="flex items-center gap-4">
+       <a class="items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 h-9 px-4 py-2 has-[&gt;svg]:px-3 hidden sm:inline-flex" href="/login">
+        Login
+       </a>
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-4 py-2 has-[&gt;svg]:px-3" href="/signup">
+        Add Products
+       </a>
+      </div>
+     </div>
+    </header>
+    <main class="flex-1 pt-16">
+     <section class="container mx-auto px-4 py-20 md:py-32 relative overflow-hidden">
+      <div class="max-w-4xl mx-auto text-center">
+       <span class="inline-flex items-center justify-center rounded-full border text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 mb-8 gap-1 py-1.5 px-3">
+        <span>
+         AI-Powered Product Catalogs
+        </span>
+       </span>
+       <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-tight mb-8">
+        Your entire product catalog,
+        <br class="hidden md:block"/>
+        <span class="text-primary">
+         automated by AI.
+        </span>
+       </h1>
+       <p class="text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
+        Upload raw warehouse photos. Get professional e-commerce images, descriptions, and titles instantly.
+       </p>
+       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+        <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 rounded-md has-[&gt;svg]:px-4 w-full sm:w-auto h-12 px-8 text-base" href="/signup">
+         Add Products
+        </a>
+        <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md has-[&gt;svg]:px-4 w-full sm:w-auto h-12 px-8 text-base" href="/samples">
+         See Samples
+        </a>
+       </div>
+       <div class="relative max-w-4xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-6">
+         <div class="relative group">
+          <div class="relative rounded-xl border border-border bg-card overflow-hidden">
+           <div class="absolute top-4 left-4 z-10">
+            <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden [a&amp;]:hover:bg-secondary/90 backdrop-blur-md bg-background/90 text-red-600 border-red-200 dark:border-red-900/50">
+             Before
+            </span>
+           </div>
+           <div class="aspect-square relative">
+            <img alt="Raw warehouse photo" class="object-cover" src="/_next/image?url=https%3A%2F%2F8rrpbgrm2fkkqpzr.public.blob.vercel-storage.com%2F975f06e1-b2c7-4c45-9f5f-fb9ae2d9da01%2Fcatalog%2Fraw-1764415635756-hd5ksq.jpg&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="p-4 bg-muted/50 border-t border-border">
+            <p class="text-sm font-medium text-muted-foreground text-center">
+             Raw warehouse photo
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="relative group">
+          <div class="relative rounded-xl border border-primary/50 bg-card overflow-hidden ring-2 ring-primary/20">
+           <div class="absolute top-4 left-4 z-10">
+            <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-primary/90 backdrop-blur-md bg-primary text-primary-foreground">
+             After
+            </span>
+           </div>
+           <div class="aspect-square relative">
+            <img alt="AI enhanced product photo" class="object-cover" src="/_next/image?url=https%3A%2F%2F8rrpbgrm2fkkqpzr.public.blob.vercel-storage.com%2F975f06e1-b2c7-4c45-9f5f-fb9ae2d9da01%2Fcatalog%2Fc2f80c61-8f9c-45cd-ac6a-5b5a454d02cd%2Fenhanced-1764415648662.png&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="p-4 bg-primary/5 border-t border-primary/20">
+            <p class="text-sm font-medium text-primary text-center">
+             AI enhanced in seconds
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-12 border-y border-border bg-muted/30">
+      <div class="container mx-auto px-4 text-center">
+       <p class="text-sm text-muted-foreground font-medium mb-8 uppercase tracking-wider">
+        Trusted by modern e-commerce brands
+       </p>
+       <div class="flex flex-wrap items-center justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div class="text-xl font-bold text-foreground">
+         Acme Corp
+        </div>
+        <div class="text-xl font-bold text-foreground">
+         Global Goods
+        </div>
+        <div class="text-xl font-bold text-foreground">
+         FastShip
+        </div>
+        <div class="text-xl font-bold text-foreground">
+         DropStore
+        </div>
+        <div class="text-xl font-bold text-foreground">
+         RetailAI
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-background" id="features">
+      <div class="container mx-auto px-4">
+       <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+         Everything you need to sell online
+        </h2>
+        <p class="text-lg text-muted-foreground">
+         Stop spending hours on photography and copywriting. ATC handles the heavy lifting so you can focus on scaling.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           AI Photography
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Automatically remove backgrounds and enhance lighting. Turn amateur warehouse shots into studio-grade product photos.
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           AI Copywriting
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Generate SEO-optimized titles, compelling descriptions, and practical use cases tailored to your brand voice.
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           Image Enhancement
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Remove backgrounds, improve lighting, and transform amateur shots into studio-quality product photos.
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           Instant Storefront
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Get a beautiful, shareable public catalog page hosted at atc.ai/yourname. Password protection included.
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           Inventory Management
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Organize products by category, manage SKUs, and track pricing in one centralized dashboard.
+          </div>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border hover:border-primary/50 transition-colors shadow-none hover:shadow-md">
+         <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-2 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6">
+          <div class="font-semibold text-xl">
+           Bulk Processing
+          </div>
+         </div>
+         <div class="px-6">
+          <div class="text-muted-foreground text-base">
+           Upload hundreds of images at once via Excel or bulk drop. Let our AI process them in the background.
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-muted/30 overflow-hidden scroll-mt-20" id="how-it-works">
+      <div class="container mx-auto px-4">
+       <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+        <div class="w-full lg:w-1/2">
+         <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground mb-6 bg-background">
+          Powered by Gemini 2.0
+         </span>
+         <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+          Smart enough to understand your products.
+         </h2>
+         <div class="space-y-8">
+          <div class="flex gap-4">
+           <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold">
+            1
+           </div>
+           <div>
+            <h3 class="text-xl font-bold mb-2">
+             Visual Analysis
+            </h3>
+            <p class="text-muted-foreground">
+             The AI "sees" your image, identifying materials, colors, and features to write accurate descriptions.
+            </p>
+           </div>
+          </div>
+          <div class="flex gap-4">
+           <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold">
+            2
+           </div>
+           <div>
+            <h3 class="text-xl font-bold mb-2">
+             Brand Voice Control
+            </h3>
+            <p class="text-muted-foreground">
+             Customize prompts to match your tone. Short &amp; punchy? Professional &amp; detailed? You decide.
+            </p>
+           </div>
+          </div>
+          <div class="flex gap-4">
+           <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 text-primary font-bold">
+            3
+           </div>
+           <div>
+            <h3 class="text-xl font-bold mb-2">
+             Multi-Format Output
+            </h3>
+            <p class="text-muted-foreground">
+             Get titles, descriptions, use cases, and social media captions from a single image upload.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="lg:w-1/2 w-full">
+         <div class="relative rounded-2xl bg-card border border-border p-6 shadow-2xl">
+          <div class="flex items-center gap-4 mb-6 border-b border-border pb-4">
+           <div class="w-16 h-16 bg-muted rounded-lg shrink-0 overflow-hidden relative">
+            <img alt="Watch" class="object-cover" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1523275335684-37898b6baf30%3Fw%3D200%26h%3D200%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="ml-auto">
+            <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-primary text-primary-foreground [a&amp;]:hover:bg-primary/90 animate-pulse">
+             Generating...
+            </span>
+           </div>
+          </div>
+          <div class="space-y-4">
+           <div class="p-4 bg-muted/30 rounded-lg border border-border">
+            <div class="text-xs font-bold text-primary mb-2">
+             GENERATED TITLE
+            </div>
+            <p class="text-sm font-medium">
+             Minimalist Analog Wristwatch with White Face and Leather Strap
+            </p>
+           </div>
+           <div class="p-4 bg-muted/30 rounded-lg border border-border">
+            <div class="text-xs font-bold text-primary mb-2">
+             GENERATED DESCRIPTION
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Elevate your everyday style with this timeless minimalist watch. Featuring a clean white dial, sleek silver markers, and a premium genuine leather strap, it's the perfect accessory for both casual and formal occasions.
+            </p>
+           </div>
+           <div class="p-4 bg-muted/30 rounded-lg border border-border">
+            <div class="text-xs font-bold text-primary mb-2">
+             SUGGESTED USE CASES
+            </div>
+            <div class="flex flex-wrap gap-2">
+             <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground bg-background">
+              Office Wear
+             </span>
+             <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground bg-background">
+              Daily Commute
+             </span>
+             <span class="inline-flex items-center justify-center rounded-full border px-2 py-0.5 text-xs font-medium w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden text-foreground [a&amp;]:hover:bg-accent [a&amp;]:hover:text-accent-foreground bg-background">
+              Gift for Him
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-background">
+      <div class="container mx-auto px-4">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold mb-4 tracking-tight">
+         Built for your business
+        </h2>
+        <p class="text-lg text-muted-foreground">
+         Whether you're dropshipping or running a wholesale empire.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border shadow-sm">
+         <div class="px-6 pt-6">
+          <h3 class="text-xl font-bold mb-2">
+           Wholesalers
+          </h3>
+          <p class="text-muted-foreground">
+           Digitize thousands of SKUs from your warehouse floor. Share password-protected catalogs with retail buyers instantly.
+          </p>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border shadow-sm">
+         <div class="px-6 pt-6">
+          <h3 class="text-xl font-bold mb-2">
+           Boutiques
+          </h3>
+          <p class="text-muted-foreground">
+           Create a stunning online presence without hiring a photographer. Generate social media content daily.
+          </p>
+         </div>
+        </div>
+        <div class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 border-border shadow-sm">
+         <div class="px-6 pt-6">
+          <h3 class="text-xl font-bold mb-2">
+           Dropshippers
+          </h3>
+          <p class="text-muted-foreground">
+           Test products faster. Grab supplier photos, enhance them with AI, and launch your product page in minutes.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-muted/30">
+      <div class="container mx-auto px-4">
+       <div class="max-w-4xl mx-auto bg-primary text-primary-foreground rounded-3xl p-8 md:p-16 text-center shadow-2xl relative overflow-hidden">
+        <div class="relative z-10">
+         <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
+          Ready to upgrade your catalog?
+         </h2>
+         <p class="text-primary-foreground/90 text-lg mb-10 max-w-xl mx-auto">
+          Join thousands of businesses saving time and money with ATC. Start with 20 free products per month.
+         </p>
+         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-md has-[&gt;svg]:px-4 w-full sm:w-auto h-12 px-8 text-base font-bold" href="/signup">
+           Add Products Free
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md has-[&gt;svg]:px-4 w-full sm:w-auto h-12 px-8 text-base font-bold bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground" href="/pricing">
+           View Pricing
+          </a>
+         </div>
+         <p class="mt-8 text-sm text-primary-foreground/80 flex items-center justify-center gap-2">
+          No credit card required for Starter plan
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="bg-background border-t border-border">
+     <div class="container mx-auto px-4 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+       <div class="lg:col-span-1">
+        <a class="inline-block mb-4" href="/">
+         <img alt="ATC Logo" class="dark:invert" height="32" src="/logo.svg" width="140"/>
+        </a>
+        <p class="text-sm text-muted-foreground leading-relaxed mb-6">
+         The AI-powered platform for product photography, catalog management, and e-commerce content generation.
+        </p>
+       </div>
+       <div>
+        <h4 class="font-semibold text-foreground mb-4">
+         Product
+        </h4>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/samples">
+           Samples
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/dashboard">
+           Dashboard
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-semibold text-foreground mb-4">
+         Legal
+        </h4>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/terms">
+           Terms of Service
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/privacy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors" href="/refund">
+           Refund Policy
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-semibold text-foreground mb-4">
+         Contact
+        </h4>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2" href="mailto:pay@gridlabs.org">
+           pay@gridlabs.org
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-foreground transition-colors flex items-center gap-2" href="tel:+1(628)251-1367">
+           +1 (628) 251-1367
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-border bg-muted/30">
+      <div class="container mx-auto px-4 py-8">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="flex gap-3">
+         <div class="text-sm">
+          <p class="font-semibold text-foreground mb-1">
+           GRID Labs LLC
+          </p>
+          <p class="text-muted-foreground">
+           16192 Coastal Highway
+          </p>
+          <p class="text-muted-foreground">
+           Lewes, DE 19958, United States
+          </p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-muted-foreground">
+           <a class="hover:text-foreground transition-colors" href="tel:+1(628)251-1367">
+            +1 (628) 251-1367
+           </a>
+           <a class="hover:text-foreground transition-colors" href="mailto:pay@gridlabs.org">
+            pay@gridlabs.org
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="flex gap-3">
+         <div class="text-sm">
+          <p class="font-semibold text-foreground mb-1">
+           CodeSteak LLP
+          </p>
+          <p class="text-muted-foreground">
+           56/3112, Dotspace Business Center, Cloud 9, 9th Cross Road Intersection, Avenue Road
+          </p>
+          <p class="text-muted-foreground">
+           Ernakulam, Kerala 682036, India
+          </p>
+          <div class="flex flex-wrap gap-x-4 gap-y-1 mt-2 text-muted-foreground">
+           <a class="hover:text-foreground transition-colors" href="tel:+918606536820">
+            +91 8606536820
+           </a>
+           <a class="hover:text-foreground transition-colors" href="mailto:ceo@codesteak.com">
+            ceo@codesteak.com
+           </a>
+          </div>
+          <p class="text-xs text-muted-foreground mt-1">
+           GSTIN: 32AAOFC0538M1ZD
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-border">
+      <div class="container mx-auto px-4 py-4">
+       <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+        <p>
+         © 2025 ATC. All rights reserved.
+        </p>
+        <p class="text-xs">
+         A product by
+         <span class="font-medium">
+          CodeSteak LLP
+         </span>
+         &amp;
+         <span class="font-medium">
+          GRID Labs LLC
+         </span>
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <section>
+   </section>
+   <title>
+    ATC - The AI Product Catalog Platform
+   </title>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz API - A JSON API for Technical Quizzes</title>
+</head>
+<body>
+  <body>
+   <nav class="navbar navbar-expand-lg navbar-light navbar-stick-dark stick">
+    <div class="container">
+     <div class="navbar-left">
+      <a class="navbar-brand" href="/">
+       <img alt="Quiz API Dark Logo" class="logo-dark" src="https://quizapi.io/storage/QuziApi_Logo_Dark.png"/>
+       <img alt="Quiz API White Logo" class="logo-light" src="https://quizapi.io/storage/QuizApi_Logo_White.png"/>
+      </a>
+     </div>
+     <section class="navbar-mobile">
+      <nav class="nav nav-navbar ml-auto">
+       <a class="nav-link" href="https://quizapi.io/features">
+        Features
+       </a>
+       <li class="nav-item">
+        <a class="nav-link" href="#">
+         API
+        </a>
+        <ul class="nav">
+         <li class="nav-item">
+          <a class="nav-link" href="/docs">
+           Get started
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="#">
+           Demo
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://quizapi.io/categories">
+           Categories
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="/docs">
+           Documentation
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://quizapi.io/api-config">
+           API URL Generator
+          </a>
+         </li>
+        </ul>
+       </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#">
+         Quiz
+        </a>
+        <ul class="nav">
+         <li class="nav-item">
+          <a class="nav-link" href="https://quizapi.io/predefined-quizzes">
+           Predefined Quizzes
+          </a>
+         </li>
+         <li class="nav-item">
+          <a class="nav-link" href="https://quizapi.io/clientarea/quiz/pick">
+           Random Quizzes
+          </a>
+         </li>
+        </ul>
+       </li>
+       <a class="nav-link" href="https://quizapi.io/pricing">
+        Pricing
+       </a>
+       <a class="nav-link" href="https://quizapi.io/contact">
+        Contact
+       </a>
+       <a class="nav-link" href="https://quizapi.io/contribute">
+        Contribute
+       </a>
+      </nav>
+      <div>
+       <a class="btn btn-sm btn-round btn-success ml-lg-4 mr-2" href="https://quizapi.io/login">
+        Sign in
+       </a>
+       <a class="btn btn-sm btn-round btn-outline-success" href="https://quizapi.io/register">
+        Sign up
+       </a>
+      </div>
+     </section>
+    </div>
+   </nav>
+   <header class="header text-white h-fullscreen text-center text-lg-left" id="home">
+    <div class="container">
+     <div class="row align-items-center h-100">
+      <div class="col-lg-6">
+       <h3>
+        The QuizAPI includes a wide number of
+        <span class="text-success">
+         Cloud
+        </span>
+        <span class="typed-cursor typed-cursor--blink">
+         |
+        </span>
+        questions
+       </h3>
+       <p class="lead mt-5 mb-8">
+        Test your knowledge or easily embed a quiz on your website with the Quiz API
+       </p>
+       <p class="gap-xy">
+        <a class="btn btn-round btn-outline-success" href="https://quizapi.io/predefined-quizzes">
+         <label class="small">
+          Take a Quiz
+         </label>
+        </a>
+        <a class="btn btn-round btn-info" href="/docs">
+         <label class="small">
+          API Documentation
+         </label>
+        </a>
+       </p>
+      </div>
+      <div class="col-lg-6 ml-auto">
+       <img alt="Quiz API Website" class="mt-5" src="https://quizapi.io/storage/pages/laptop-quizapi.png"/>
+      </div>
+     </div>
+    </div>
+   </header>
+   <section class="section overflow-hidden py-lg-10 bg-gray" id="learnMore">
+    <div class="container-fluid pr-lg-0">
+     <div class="row gap-y">
+      <div class="col-10 col-lg-6 mx-auto text-center text-lg-left">
+       <h2>
+        What is it all about?
+       </h2>
+       <p class="lead">
+        The
+        <strong>
+         QuizAPI
+        </strong>
+        is a SaaS which lets you test your knowledge on a wide
+                          variety
+                          of technical topics. You can create your own Quiz or get random set of questions for a speicifc
+                          topic
+                          including Linux, DevOps, BASH, PHP and lots more. We offer an easy to use API which allows you to
+                          embed
+                          the quiz on your own website.
+       </p>
+       <br/>
+       <div class="row gap-y">
+        <div class="col-md-6">
+         <h6 class="text-uppercase mb-3">
+          Customizable
+         </h6>
+         <p class="fs-14">
+          Create your own Quiz.
+         </p>
+        </div>
+        <div class="col-md-6">
+         <h6 class="text-uppercase mb-3">
+          Responsive
+         </h6>
+         <p class="fs-14">
+          Create your own Quiz wrapper.
+         </p>
+        </div>
+        <div class="col-md-6">
+         <h6 class="text-uppercase mb-3">
+          Clean
+         </h6>
+         <p class="fs-14">
+          Easy to use API.
+         </p>
+        </div>
+        <div class="col-md-6">
+         <h6 class="text-uppercase mb-3">
+          Documented
+         </h6>
+         <p class="fs-14">
+          Fully documented API.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="col-lg-5 align-self-center">
+       <img alt="Quiz API" class="shadow-3 aos-init aos-animate" src="https://quizapi.io/storage/api.svg"/>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section text-white">
+    <div class="container">
+     <div class="row gap-y text-center">
+      <div class="col-md-4">
+       <p class="small text-uppercase ls-2">
+        Total API Request Made
+       </p>
+       <p class="lead-8 lh-1 fw-700 counted">
+        2691063
+       </p>
+      </div>
+      <div class="col-md-4">
+       <p class="small text-uppercase ls-2">
+        Total Questions
+       </p>
+       <p class="lead-8 lh-1 fw-700 counted">
+        10528
+       </p>
+      </div>
+      <div class="col-md-4">
+       <p class="small text-uppercase ls-2">
+        Total Quizzes Done
+       </p>
+       <p class="lead-8 lh-1 fw-700 counted">
+        6501
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section" id="topics">
+    <div class="container">
+     <header class="section-header">
+      <h2>
+       Our Top Topics
+      </h2>
+      <hr/>
+      <p class="lead">
+       Test your skills with our top topics with a variaty of questions set for beginners and
+                      seniors
+                      alike!
+      </p>
+     </header>
+     <div class="row gap-y">
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API PHP" class="card text-white text-center bg-img py-6" name="PHP">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          PHP
+         </h5>
+         <small class="opacity-70">
+          1413 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API JavaScript" class="card text-white text-center bg-img py-6" name="JavaScript">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          JavaScript
+         </h5>
+         <small class="opacity-70">
+          218 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API Openshift" class="card text-white text-center bg-img py-6" name="Openshift">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          Openshift
+         </h5>
+         <small class="opacity-70">
+          200 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API Next.js" class="card text-white text-center bg-img py-6" name="Next.js">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          Next.js
+         </h5>
+         <small class="opacity-70">
+          299 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API Postgres" class="card text-white text-center bg-img py-6" name="Postgres">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          Postgres
+         </h5>
+         <small class="opacity-70">
+          218 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API nodeJS" class="card text-white text-center bg-img py-6" name="nodeJS">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          nodeJS
+         </h5>
+         <small class="opacity-70">
+          1074 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API Docker" class="card text-white text-center bg-img py-6" name="Docker">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          Docker
+         </h5>
+         <small class="opacity-70">
+          246 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+      <div class="col-md-6 col-lg-3">
+       <a alt="Quiz API Linux" class="card text-white text-center bg-img py-6" name="Linux">
+        <div class="position-relative">
+         <h5 class="mb-0">
+          Linux
+         </h5>
+         <small class="opacity-70">
+          187 Questions
+         </small>
+        </div>
+       </a>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section text-white py-8">
+    <div class="container">
+     <header class="section-header">
+      <small>
+       <strong>
+        Get a taste of it
+       </strong>
+      </small>
+      <h2 class="display-3 fw-400">
+       Try it out
+       <span class="mark-underline">
+        Now
+       </span>
+      </h2>
+      <hr/>
+      <p class="lead-2">
+       If you want to use all of the available features create a an account with us or login to
+                      the one you already have
+      </p>
+     </header>
+     <p class="text-center">
+      <a class="btn btn-xl btn-round btn-light w-250" href="https://quizapi.io/login">
+       Login
+      </a>
+      <br/>
+     </p>
+    </div>
+   </section>
+   <section class="section overflow-hidden">
+    <div class="container">
+     <header class="section-header">
+      <h2>
+       Predifined Quizzes
+      </h2>
+      <hr/>
+      <p>
+       Get a taste our predifed quizzes containing the most relevant questions for interviews, jobs etc.
+      </p>
+     </header>
+     <div>
+      <nav class="nav nav-center nav-pills mb-7">
+       <a class="nav-link active" href="#">
+        All
+       </a>
+       <a class="nav-link" href="#">
+        Apache Kafka
+       </a>
+       <a class="nav-link" href="#">
+        Linux
+       </a>
+       <a class="nav-link" href="#">
+        DevOps
+       </a>
+       <a class="nav-link" href="#">
+        PHP
+       </a>
+       <a class="nav-link" href="#">
+        Openshift
+       </a>
+       <a class="nav-link" href="#">
+        Next.js
+       </a>
+       <a class="nav-link" href="#">
+        Terraform
+       </a>
+       <a class="nav-link" href="#">
+        Kubernetes
+       </a>
+      </nav>
+      <div class="row gap-y gap-2 shuffle">
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/kafka-architecture-and-troubleshooting-quiz">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Kafka Architecture &amp; Troubleshooting Quiz
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Apache Kafka
+           </code>
+           Usage:
+           <code>
+            2212
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/top-10-common-interview-linux-questions">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Top 10 Common Interview Linux Questions
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Linux
+           </code>
+           Usage:
+           <code>
+            6325
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/ansible-playbooks-quiz">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Ansible playbooks quiz
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            DevOps
+           </code>
+           Usage:
+           <code>
+            13069
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/top-common-interview-php-questions">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Top Common Interview PHP Questions
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            PHP
+           </code>
+           Usage:
+           <code>
+            7127
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/10-essential-openshift-commands-and-resources">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           10 Essential OpenShift Commands and Resources
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Openshift
+           </code>
+           Usage:
+           <code>
+            1204
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/the-ultimate-beginner-s-next-js-fundamentals-quiz">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           The Ultimate Beginner's Next.js Fundamentals Quiz
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Next.js
+           </code>
+           Usage:
+           <code>
+            2519
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/terraform-beginner-to-mid-level-quiz">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Terraform Beginner to Mid-Level Quiz
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Terraform
+                                                                                              DevOps
+           </code>
+           Usage:
+           <code>
+            2177
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="col-6 col-lg-3 shuffle-item shuffle-item--visible">
+        <a class="row no-gutters pricing-4 popular" href="https://quizapi.io/predefined-quizzes/top-10-kubernetes-interview-questions">
+         <div class="plan-description col-md-12 pt-4 pb-1">
+          <h6>
+           Top 10 Kubernetes Interview Questions
+          </h6>
+          <p class="mb-0 small">
+           Tags:
+           <code>
+            Kubernetes
+           </code>
+           Usage:
+           <code>
+            9524
+           </code>
+          </p>
+         </div>
+        </a>
+       </div>
+      </div>
+     </div>
+     <br/>
+     <div class="container">
+      <div class="text-center lead">
+       <p>
+        If you want to check out all of our Predifined Quizzes
+        <span class="mark-underline">
+         <a href="https://quizapi.io/predefined-quizzes ">
+          click here
+         </a>
+        </span>
+        to see them all.
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section class="section text-white py-10" id="newsletter">
+    <div class="container text-center">
+     <h2>
+      Stay Tuned
+     </h2>
+     <br/>
+     <p class="lead">
+      Subscribe to our newsletter and receive the latest news from QuzApi.
+     </p>
+     <div class="row mt-8" id="">
+      <form action="https://quizapi.io/newsletter" class="col-md-8 col-xl-6 input-glass input-round mx-auto" method="post" target="_blank">
+       <input name="_token" type="hidden" value="YvnSeQCuBGjekrHsvBk7xcZDVz7ZFVtLjtcaHS3F"/>
+       <div class="input-group input-group-lg" id="subscribe">
+        <input class="form-control" id="news_email" name="news_email" placeholder="Email Address" type="email"/>
+        <span class="input-group-append">
+         <button class="btn btn-success" id="newsletterForm" name="submitNewsletter" type="submit">
+          Subscribe
+         </button>
+        </span>
+       </div>
+      </form>
+     </div>
+    </div>
+   </section>
+   <footer class="footer bg-gray py-7">
+    <div class="container">
+     <div class="row gap-y">
+      <div class="col-6 col-lg-4">
+       <a href="/">
+        <img alt="Quiz API Logo" class="" src="https://quizapi.io/storage/settings/March2020/H8dOZWtQD0IND4pqOJTT.png"/>
+       </a>
+      </div>
+      <div class="col-6 col-md-3 col-xl-2">
+       <h6 class="mb-4 mt-1">
+        <strong>
+         Company
+        </strong>
+       </h6>
+       <div class="nav flex-column">
+        <a class="nav-link" href="https://quizapi.io/features">
+         Features
+        </a>
+        <a class="nav-link" href="https://quizapi.io/terms">
+         Terms
+        </a>
+        <a class="nav-link" href="https://quizapi.io/privacy">
+         Privacy Policy
+        </a>
+       </div>
+      </div>
+      <div class="col-6 col-md-3 col-xl-2">
+       <h6 class="mb-4 mt-1">
+        <strong>
+         Product
+        </strong>
+       </h6>
+       <div class="nav flex-column">
+        <a class="nav-link" href="/docs">
+         API
+        </a>
+        <a class="nav-link" href="https://quizapi.io/categories">
+         Quizzes
+        </a>
+        <a class="nav-link" href="#">
+         Demo
+        </a>
+        <a class="nav-link" href="https://devops-daily.com">
+         DevOps Daily
+        </a>
+       </div>
+      </div>
+      <div class="col-6 col-md-6 col-xl-2">
+       <h6 class="mb-4 mt-1">
+        <strong>
+         Support
+        </strong>
+       </h6>
+       <div class="nav flex-column">
+        <a class="nav-link" href="https://quizapi.io/contact">
+         Contact us
+        </a>
+        <a class="nav-link" href="https://quizapi.io/contribute">
+         Get Involved
+        </a>
+        <a class="nav-link" href="/docs">
+         Documentation
+        </a>
+       </div>
+      </div>
+      <div class="col-6 col-md-6 col-xl-2 text-center">
+       <p>
+        <a class="btn btn-block btn-round btn-success" href="https://quizapi.io/clientarea/settings/token">
+         Get API Token
+        </a>
+       </p>
+       <br/>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <div class="modal fade" id="signInModal-PHP">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/PHP">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-JavaScript">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/JavaScript">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-Openshift">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/Openshift">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-Next.js">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/Next.js">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-Postgres">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/Postgres">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-nodeJS">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/nodeJS">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-Docker">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/Docker">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="modal fade" id="signInModal-Linux">
+    <div class="modal-dialog modal-lg">
+     <div class="modal-content bg-img bg-img-bottom">
+      <div class="modal-body text-white">
+       <button class="close" type="button">
+        <span>
+         ×
+        </span>
+       </button>
+       <div class="row">
+        <div class="col-md-8 ml-auto">
+         <form class="input-glass p-5 p-md-7">
+          <h2>
+           Hello there!
+          </h2>
+          <p class="lead-1">
+           Take advantage of our free quizzes!
+          </p>
+          <p>
+           We urge you to take them as a
+           <strong>
+            registered user
+           </strong>
+           . You will get access
+                                          to a lot more questions and all results will be tied up to your profile!
+          </p>
+          <hr class="w-10"/>
+          <div class="input-group input-group-lg">
+           <a class="btn btn-round btn-lg1 btn-outline-info" href="https://quizapi.io/clientarea/quiz/free/Linux">
+            Login
+           </a>
+           <div class="pl-3 text-right">
+            <a class="btn btn-round btn-lg1 btn-success" href="https://quizapi.io/predefined-quizzes">
+             Free Quizzes
+            </a>
+           </div>
+          </div>
+         </form>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="cookieinfo">
+    <div class="cookieinfo-close">
+     Agree!
+    </div>
+    <span>
+     We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies
+     <a href="https://quizapi.io/privacy">
+      Learn more
+     </a>
+    </span>
+   </div>
+  </body>
+
+</body>
+</html>

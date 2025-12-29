@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RankWeek | Automatically detect and submit non-indexed pages to Google</title>
+</head>
+<body>
+  <body>
+   <div id="__nuxt">
+    <div>
+     <div class="sticky top-0 z-20">
+      <div>
+       <nav class="border-b-2 border-sky-600 relative z-30 md:px-6 block md:flex shadow gap-6 bg-blue-600 items-center justify-between text-light text-gray-200" id="top-nav">
+        <div class="inline-flex items-center w-auto h-14" id="nav-start">
+         <div>
+          <a class="router-link-active router-link-exact-active ml-4 md:ml-0 cursor-pointer flex items-center gap-3" href="/">
+           <img alt="logo" class="size-10 rounded-full border-2 border-blue-50 shadow-md" height="150" src="/dino_micro.png" width="150"/>
+           Rank Week
+          </a>
+         </div>
+        </div>
+        <div class="hidden md:block py-2 md:py-0 px-2 w-full md:w-auto border-t border-blue-800 md:border-none flex items-center" id="nav-end">
+         <div class="block text-sm md:flex gap-x-0.5 space-y-0.5 md:space-y-0 items-center justify-center w-full">
+          <a class="hover:bg-blue-600/10 md:hover:bg-white/10 block cursor-pointer rounded transition px-3 py-1 duration-100 capitalize" href="/app/sites">
+           app
+          </a>
+          <a class="hover:bg-blue-600/10 md:hover:bg-white/10 block cursor-pointer rounded transition px-3 py-1 duration-100 capitalize" href="/blog">
+           blog
+          </a>
+          <a class="hover:bg-blue-600/10 md:hover:bg-white/10 block cursor-pointer rounded transition px-3 py-1 duration-100 capitalize" href="/help">
+           help
+          </a>
+          <a class="hover:bg-blue-600/10 md:hover:bg-white/10 block cursor-pointer rounded transition px-3 py-1 duration-100 capitalize" href="/price">
+           price
+          </a>
+          <a class="hover:bg-blue-600/10 md:hover:bg-white/10 block cursor-pointer rounded transition px-3 py-1 duration-100 capitalize" href="/app/account">
+           account
+          </a>
+         </div>
+        </div>
+       </nav>
+      </div>
+     </div>
+     <main>
+      <span class="nuxt-route-announcer">
+       <span>
+        RankWeek | Automatically detect and submit non-indexed pages to Google
+       </span>
+      </span>
+      <div class="bg-white">
+       <div class="bg-gray-50 svg-squares overflow-hidden px-3 sm:px-20 sm:pt-20">
+        <div>
+         <div class="grid grid-cols-1 md:grid-cols-5 gap-10 items-end">
+          <div class="md:col-span-2 py-10 flex items-center h-full">
+           <div>
+            <h2 class="text-3xl font-extrabold tracking-tight text-blue-600 md:text-5xl">
+             Rank higher on Google.
+             <span class="bg-linear-to-r from-pink-500 via-red-500 to-yellow-500 inline-block text-transparent bg-clip-text pb-2">
+              Automatically.
+             </span>
+            </h2>
+            <div class="mt-6 text-gray-800">
+             <p>
+              Try it free and see the results yourself
+             </p>
+            </div>
+            <div class="mt-10 max-w-sm">
+             <button class="flex w-full items-center bg-blue-600 rounded-sm h-12 p-[1px] shadow hover:shadow-lg">
+              <p class="px-6 text-center w-full text-xs sm:text-base text-white">
+               Rank My Site Now
+              </p>
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="md:col-span-3">
+           <img alt="google-indexing" class="rounded-t-lg -mb-2 border bg-blue-50 border-gray-200 transform shadow-lg shadow-blue-200" height="1000" src="/google-autoindex-small.png" width="1800"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <section class="relative isolate overflow-hidden bg-white px-6 py-20 lg:px-8 border-t border-blue-100">
+        <div class="mx-auto max-w-2xl lg:max-w-4xl">
+         <div>
+          <figure class="max-w-3xl mx-auto">
+           <blockquote>
+            <p class="sm:text-2xl italic font-medium text-gray-800">
+             "After setting it up properly, it will scan your website pages consistently, give you the status previous, and then re-submit to Google to fix and re-index properly then give you the final status for example as indexed and fixed. AN ABSOLUTE GEM."
+            </p>
+           </blockquote>
+           <figcaption class="flex items-center justify-center mt-6 space-x-3">
+            <img alt="profile picture" class="w-6 h-6 rounded-full border" height="40" src="data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAADybWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAeaWxvYwAAAABEAAABAAEAAAABAAABGgAAA74AAAAoaWluZgAAAAAAAQAAABppbmZlAgAAAAABAABhdjAxQ29sb3IAAAAAamlwcnAAAABLaXBjbwAAABRpc3BlAAAAAAAAADwAAAA8AAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQAMAAAAABNjb2xybmNseAABAA0ABoAAAAAXaXBtYQAAAAAAAAABAAEEAQKDBAAAA8ZtZGF0EgAKCRgVe+2CAhoNCDKuBxbABxxxxQDda05fQ2FZCEN+5IoYGfdvvpZ9Q5bkA0vUSGJ10A7LKD4iDKpn+dX+M5OwhZqoI2MqQSDWWepxPD8QXDRIHku1DITX6bQ/0bN9AIQV1ZjMizD84Qxc55XE/PNqUA5qXKdMxW/lGzhTVHJi8+feBZoGelKmQjobXRR4fD1qJRiiNQEV8eRwuU39PoYz5l214XRx5vPeOqS5dHOXLACDxOnOlM8bkvI2MKiVIJV2wLjhVo/Rga1ENOnhFE9XDMu/DD1LG8ekIjg+OtZTrokCBPzoCFJAOV60UTT8nGRSnGdsyOQ9gtxnDPsXmGf0Eqwyxsqn28m3JoX2FG8xRe5QPrTU/qnjmaVL6A8h4Oif6M/IZnhx67xYD38JraHDZ0VwjTdo8tlg7vFE2vUtIZF28j9sB3qRTLba/GEAoXM2OTYsGt3Pslp2H05EaLd0V6eblKHs4KvPGtR5TSLFnq4GzwAc2z7THZH76whHOhpmnfSseYE7/gUs1DX9IqOF0TmBYeU91LU8MU4AewXEa5cbbcxlE1aIFoDk9XybrjK2+6HpXGBIJHOx1DGZEUfds5Xnbk7gblT/Fnp1szHbLBfKigxsggSKPt7S7NbXnNg5LIXaLo2zSlyD+oUhP98mbptzFEZNljiLniG1AKGs6pn473YiCH913HjSjFb8ghgfPReirfNpsuSuX8AyV7LuGwhvTCaTMQe4SU/OcE4BQXjPwNZqmorKsRRSFhbgrd5LBo0XZcZNOHofMzv5fnrMmrT5AiNhDjzGRPlMws6vTh2f1kVMQjgFylQoaZ0vdFQAX/wmmQxUtzNZ7QH4ZDZNUqeXGxFObBJnXZZFWGj7xSQ8WSOeGil4oFsyuGzZl/jRgdvzvMLtvF2K9Hdnmc7o9U1s1StI+NOewombaZRpQNMW7LSPDVtcv6cRcjFVh1Ing942IyjbTmJv2dDWV0H01hZ8YfHIu6wzVLLkSzQ8xMhIb43TX5Oxb57BnXqIgctmEs63ymPLm3QwUkB/Sb6Z0uSm7un26XZjSFEq+NyVZ8aE+ot81jMHR/E/W2Al2AYWkFusQNcZJVmmUVHe9cMQf3oq9SK87cO3mRa7qW3lMJ59dfDCECqnBe1IJPf791Azte2g/NtsxSnT40x6L9TlL0JRX++BKCWAu4S2DqRWkOpS3a5hp+GTIQkcWtAfLVRK45fMF6/vn9aOjmUNobgZfBMKaa/8LO416LJY6oy7Z/TNTYfpYj/gPEj/gQ==" width="40"/>
+            <div class="flex items-center divide-x-2 divide-gray-500">
+             <div class="pr-3 font-medium text-gray-900">
+              Jad Bourji
+             </div>
+             <div class="pl-3 text-sm font-light text-gray-500">
+              SEO Agency Owner
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+         </div>
+        </div>
+       </section>
+       <div class="bg-linear-to-b from-rose-100/80 via-white to-emerald-100/80 py-8 border-t border-rose-200">
+        <div class="">
+         <div class="grid sm:grid-cols-2 gap-3 p-3 sm:p-6 sm:py-20">
+          <div class="sm:p-10">
+           <p class="text-red-600 text-4xl sm:text-6xl font-extrabold -skew-y-2 mb-3">
+            Bye Bye Errors
+           </p>
+           <p class="mt-6">
+            While Google crawls your site it might encounter errors. Most times is enough to simply reindex the page.
+           </p>
+           <p class="mt-3">
+            RankWeek keeps track of your pages and the errors and automatically re-submit the page to be indexed
+           </p>
+           <div class="mt-6 pt-6 border-t-2 border-dashed border-rose-400 text-2xl text-gray-800 font-extrabold">
+            Try Rank Week and see the results yourself. It's free!
+           </div>
+           <div class="max-w-sm mt-6">
+            <button class="flex w-full items-center bg-blue-600 rounded-sm h-12 p-[1px] shadow hover:shadow-lg">
+             <p class="px-6 text-center w-full text-xs sm:text-base text-white">
+              Preview Your Error Pages
+             </p>
+            </button>
+           </div>
+          </div>
+          <div class="sm:p-10">
+           <div class="space-y-2">
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              Crawled - Currently Not Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              Discovered - Currently Not Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              Server error (5xx)
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              Redirect error
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              Soft 404
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              URL is unknown to Google
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-rose-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-red-600">
+              ...
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="text-xs text-center text-gray-800 border-t border-dashed max-w-2xl mx-auto my-20 sm:my-0">
+         <p class="-mt-2 max-w-96 bg-white mx-auto px-3">
+          🪄 Rank Week automatic error detection and indexing 🦾
+         </p>
+        </div>
+        <div class="">
+         <div class="grid sm:grid-cols-2 gap-3 p-3 sm:p-6 sm:py-20">
+          <div class="sm:p-10">
+           <p class="text-emerald-600 text-4xl sm:text-6xl font-extrabold -skew-y-2 mb-3">
+            Welcome Ranking
+           </p>
+           <p class="mt-3">
+            Most likely you have several pages not indexed correctly.
+           </p>
+           <p class="mt-3">
+            Let us index them and increase your ranking. The whole process is fully automated.
+           </p>
+           <div class="mt-6 pt-6 border-t-2 border-dashed border-emerald-400 text-2xl text-gray-800 font-extrabold">
+            The more pages you rank, the more impressions you get.
+           </div>
+           <div class="max-w-sm mt-6">
+            <button class="flex w-full items-center bg-blue-600 rounded-sm h-12 p-[1px] shadow hover:shadow-lg">
+             <p class="px-6 text-center w-full text-xs sm:text-base text-white">
+              Rank My Site
+             </p>
+            </button>
+           </div>
+          </div>
+          <div class="sm:p-10">
+           <div class="space-y-2">
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+            <div>
+             <p class="border border-dashed border-emerald-600 -skew-y-2 w-auto py-1 px-3 rounded-lg text-emerald-600">
+              Submitted and Indexed
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white shadow-inner border-t border-emerald-200 bg-[url('/backgrounds/blob-yellow.svg')] bg-no-repeat bg-cover bg-bottom">
+        <div class="p-3 sm:p-10 sm:py-20">
+         <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-10">
+          <div class="bg-gray-50 border border-gray-100 rounded-tr-3xl rounded-bl-3xl overflow-hidden text-sm text-gray-800 flex items-center justify-center flex-col">
+           <div class="flex flex-col p-6">
+            <p class="flex-1">
+             "Really impressed by speed of execution and the quick setup process. Very very easy to add sites (just adding an owner in GSC), and 1 click to auto index. Saves me probably 1-3 hours/week."
+            </p>
+            <p class="pt-3 mt-3 border-t border-gray-100 text-right text-xs font-medium text-blue-600">
+             Esus
+            </p>
+           </div>
+          </div>
+          <div class="bg-gray-50 border border-gray-100 rounded-tr-3xl rounded-bl-3xl overflow-hidden text-sm text-gray-800 flex items-center justify-center flex-col">
+           <div class="flex flex-col p-6">
+            <p class="flex-1">
+             "The tool we all need"
+            </p>
+            <p class="pt-3 mt-3 border-t border-gray-100 text-right text-xs font-medium text-blue-600">
+             Vlad Zivkovic
+            </p>
+           </div>
+          </div>
+          <div class="bg-gray-50 border border-gray-100 rounded-tr-3xl rounded-bl-3xl overflow-hidden text-sm text-gray-800 flex items-center justify-center flex-col">
+           <div class="flex flex-col p-6">
+            <p class="flex-1">
+             "Automating page reindexing on Google is sure to be a great help in boosting SEO"
+            </p>
+            <p class="pt-3 mt-3 border-t border-gray-100 text-right text-xs font-medium text-blue-600">
+             Beth Cufee
+            </p>
+           </div>
+          </div>
+          <div class="bg-gray-50 border border-gray-100 rounded-tr-3xl rounded-bl-3xl overflow-hidden text-sm text-gray-800 flex items-center justify-center flex-col">
+           <div class="flex flex-col p-6">
+            <p class="flex-1">
+             "A must-have for website owners"
+            </p>
+            <p class="pt-3 mt-3 border-t border-gray-100 text-right text-xs font-medium text-blue-600">
+             Alex Gavril
+            </p>
+           </div>
+          </div>
+          <div class="bg-gray-50 border border-gray-100 rounded-tr-3xl rounded-bl-3xl overflow-hidden text-sm text-gray-800 flex items-center justify-center flex-col">
+           <div class="flex flex-col p-6">
+            <p class="flex-1">
+             "As an SEO Specialist constantly having problems with indexing issues on Google and Google Search Console, this tool has been a god-sent! Absolute gem."
+            </p>
+            <p class="pt-3 mt-3 border-t border-gray-100 text-right text-xs font-medium text-blue-600">
+             Jad Bourji
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-blue-600 svg-pattern border-y-2 border-rose-400 font-extrabold text-2xl shadow-inner p-10 text-white text-center">
+        Set it up in minutes. Works fully on autopilot.
+       </div>
+       <div class="p-3 sm:p-20 bg-white border-t border-gray-50">
+        <div class="max-w-3xl mx-auto">
+         <ul>
+          <li class="py-6 border-b border-gray-50">
+           <p class="font-bold text-xl">
+            How does it work?
+           </p>
+           <p>
+            We monitor your sitemap daily, comparing it to your Search Console data. When we detect a new page or an indexing issue, we promptly submit a request to Google to re-index that specific page
+           </p>
+          </li>
+          <li class="py-6 border-b border-gray-50">
+           <p class="font-bold text-xl">
+            Is it complicate to setup?
+           </p>
+           <p>
+            No, you simply log in with your Google account and select the site you want to auto-index.
+           </p>
+          </li>
+          <li class="py-6 border-b border-gray-50">
+           <p class="font-bold text-xl">
+            Can I try it?
+           </p>
+           <p>
+            Yes, the free plan will identify pages with issues. Additionally, we offer a 7-day free trial that includes auto-indexing capabilities.
+           </p>
+          </li>
+         </ul>
+         <div class="max-w-md mx-auto my-10">
+          <button class="flex w-full items-center bg-blue-600 rounded-sm h-12 p-[1px] shadow hover:shadow-lg">
+           <p class="px-6 text-center w-full text-xs sm:text-base text-white">
+            Start Free Trial
+           </p>
+          </button>
+         </div>
+        </div>
+       </div>
+       <footer class="bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-5 items-center gap-6 justify-around p-3 sm:p-10 md:p-10">
+         <div class="md:col-span-2">
+          <img alt="rank-week-logo" class="size-44 mx-auto md:mx-0 rounded-full border-2 border-blue-50 shadow-md" height="400" src="/dino_small.png" width="400"/>
+          <div class="text-gray-800/80">
+           <p class="text-3xl font-bold text-black">
+            Rank Week © 2025
+           </p>
+           <p>
+            Auto-Index your site to Google and boost your SEO
+           </p>
+          </div>
+         </div>
+         <div>
+          <div class="pb-3 mb-3 border-b border-stone-200">
+           <p class="font-semibold">
+            Links
+           </p>
+          </div>
+          <ul class="space-y-1 underline text-blue-600 capitalize">
+           <li>
+            <a class="" href="/price">
+             price
+            </a>
+           </li>
+           <li>
+            <a class="" href="/help">
+             help
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div>
+          <div class="pb-3 mb-3 border-b border-stone-200">
+           <p class="font-semibold">
+            Legal
+           </p>
+          </div>
+          <ul class="space-y-1 underline text-blue-600 capitalize">
+           <li>
+            <a class="" href="/legal/terms-of-service">
+             terms of service
+            </a>
+           </li>
+           <li>
+            <a class="" href="/legal/privacy-policy">
+             privacy policy
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </footer>
+      </div>
+     </main>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

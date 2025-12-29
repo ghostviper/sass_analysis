@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Deploy your Web app to a VPS in less than 5 minutes</title>
+</head>
+<body>
+  <body>
+   <a href="/#cta">
+    <div class="flex items-center gap-x-6 bg-red-900 px-6 py-2.5 hover:bg-red-800 sm:px-3.5 sm:before:flex-1">
+     <p class="text-sm leading-6 text-white">
+      <span class="mr-2">
+       🎄
+      </span>
+      <strong class="font-semibold">
+       Christmas Sale
+      </strong>
+      Get QuickDeploy Lifetime for
+      <span class="font-bold text-white">
+       15€
+      </span>
+      <span class="ml-2">
+       →
+      </span>
+     </p>
+    </div>
+   </a>
+   <div class="overflow-hidden">
+    <div class="relative">
+     <div class="relative px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-7xl">
+       <header class="pt-12 sm:pt-16">
+        <div class="">
+         <div class="relative flex justify-between group/row relative isolate pt-[calc(--spacing(2)+1px)] last:pb-[calc(--spacing(2)+1px)]">
+          <nav class="relative hidden lg:flex">
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5" href="#how-it-works">
+             How it Works
+            </a>
+           </div>
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5" href="#features">
+             Features
+            </a>
+           </div>
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5" href="#faq">
+             FAQ
+            </a>
+           </div>
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5" href="/blog">
+             Blog
+            </a>
+           </div>
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5" href="/docs">
+             Docs
+            </a>
+           </div>
+           <div class="relative flex group/item relative">
+            <a class="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply data-hover:bg-black/2.5 bg-black/80 font-semibold text-white hover:!bg-black/70" href="#cta">
+             Buy now
+            </a>
+           </div>
+          </nav>
+         </div>
+        </div>
+       </header>
+       <div class="grid grid-cols-1 gap-8 pt-16 pb-24 sm:pt-24 sm:pb-32 md:grid-cols-2 md:pt-32 md:pb-48">
+        <div>
+         <h1 class="font-display text-4xl/[0.9] font-medium tracking-tight text-balance text-gray-950 sm:text-6xl/[0.8] md:text-7xl">
+          Deploying to your own server shouldn't be hard.
+         </h1>
+         <p class="mt-2 max-w-lg text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
+          Quickdeploy is a CLI that deploys your Web app to your own server with one command in less than 5 minutes.
+         </p>
+         <div class="mt-4 flex flex-col gap-x-2 gap-y-4 sm:flex-row">
+          <a class="inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+           Buy now
+          </a>
+          <a class="relative inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-white/15 shadow-md ring-1 ring-[#D15052]/15 after:absolute after:inset-0 after:rounded-lg after:shadow-[inset_0_0_2px_1px_#ffffff4d] text-base font-medium whitespace-nowrap text-gray-950 data-disabled:bg-white/15 data-disabled:opacity-40 data-hover:bg-white/20 hover:scale-95" href="https://www.youtube.com/watch?v=Feauj4OaePg">
+           Watch demo
+          </a>
+         </div>
+        </div>
+        <div class="flex flex-col items-center justify-center">
+         <div class="relative mx-auto w-full max-w-[750px]">
+          <div class="relative overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_25px_50px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+           <div class="flex items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3">
+            <div class="text-sm font-medium text-slate-400">
+             <span class="hidden md:inline">
+              Terminal — ~/my-awesome-app
+             </span>
+             <span class="md:hidden">
+              Terminal — ~/my-app
+             </span>
+            </div>
+            <div class="flex gap-3">
+             <div class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-400">
+              Deploy
+             </div>
+             <div class="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-400">
+              Live
+             </div>
+            </div>
+           </div>
+           <div class="p-8 font-mono md:p-8">
+            <div class="flex items-center text-sm leading-6 md:text-lg">
+             <span class="mr-3 font-semibold text-cyan-400">
+              ❯
+             </span>
+             <span class="relative text-slate-200" id="typed-command">
+              quickdeploy push --domain myapp.com
+             </span>
+             <span class="animate-[blink_1s_infinite] font-bold text-cyan-400">
+              |
+             </span>
+            </div>
+            <div class="mt-4 animate-[outputReveal_0.5s_ease-out_4s_both] rounded-r-lg border-l-[3px] border-cyan-400 bg-cyan-400/5 p-4 opacity-0" id="output">
+             <div class="mb-1 hidden text-sm text-cyan-400 md:block">
+              🚀 Detecting framework... Next.js detected
+             </div>
+             <div class="mb-1 hidden text-sm text-cyan-400 md:block">
+              📦 Creating optimized Docker image...
+             </div>
+             <div class="text-sm font-semibold text-green-500">
+              ✅ Deployment successful! Live at https://myapp.com
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <main>
+     <div class="mt-10 px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-7xl">
+       <div class="flex flex-col gap-2">
+        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+         Supported Frameworks
+        </h2>
+        <div class="mt-2 flex flex-wrap justify-between gap-4">
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/react">
+          <img alt="React" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/react.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/vue">
+          <img alt="Vue" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/vue.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/angular">
+          <img alt="Angular" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/angular.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/svelte">
+          <img alt="Svelte" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/svelte.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/nextjs">
+          <img alt="Next.js" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/nextjs.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/nuxt">
+          <img alt="Nuxt" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/nuxt.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/remix">
+          <img alt="Remix" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/remix.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/astro">
+          <img alt="Astro" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/astro.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/express">
+          <img alt="Express" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/express.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/django">
+          <img alt="Django" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/django.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/rails">
+          <img alt="Ruby on Rails" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/rails.svg"/>
+         </a>
+         <a class="group size-9 transition-opacity hover:opacity-75 sm:size-8 lg:size-12" href="/laravel">
+          <img alt="Laravel" class="size-full transition-transform duration-100 group-hover:scale-90" src="/frameworks/laravel.svg"/>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="mx-2 mt-16 rounded-4xl bg-gray-900 py-32">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <div class="">
+         <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+          The Problem
+         </h2>
+         <h2 class="mt-2 text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
+          Right now, deploying to your own server feels harder than it should.
+         </h2>
+         <p class="mt-6 text-lg/7 text-gray-400">
+          To get your app live on your own server, you end up doing way more than just "git push".
+         </p>
+        </div>
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
+         <div class="lg:col-span-2 max-lg:rounded-t-4xl lg:rounded-tl-4xl lg:rounded-bl-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Too many manual steps, too many ways to break.
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            SSH, Docker builds, reverse proxies, certs, services… every deploy is a little checklist in your head. Miss one step, it doesn't work and you have to start over.
+           </p>
+          </div>
+         </div>
+         <div class="lg:col-span-2 group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Deployment frustrations exactly when you don't want them.
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            You finally finish your app, and instead of shipping, you lose an evening working on your server, restarting stuff, and fixing "that last" deploy issue.
+           </p>
+          </div>
+         </div>
+         <div class="lg:col-span-2 max-lg:rounded-b-4xl lg:rounded-tr-4xl lg:rounded-br-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            You're on your own server to avoid hosted platform bills.
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            You picked a server because if the app ever takes off, you don't want the costs of a hosted platform to surprise you. But deploying your app to that server is harder than it should be.
+           </p>
+          </div>
+         </div>
+        </div>
+        <p class="mt-8 text-lg/7 text-gray-300">
+         You'd rather be shipping features than redoing the same deployment steps over and over.
+        </p>
+        <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+         Buy now
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="mx-2 mt-16 rounded-4xl py-32">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <div class="grid grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:grid-cols-2 lg:items-start">
+         <div class="px-6 lg:px-0 lg:pt-4 lg:pr-4">
+          <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-lg">
+           <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Smoother deployments
+           </h2>
+           <h2 class="mt-2 text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
+            Simplify Your Deployment Process
+           </h2>
+           <dl class="mt-16 max-w-xl space-y-6 text-base/7 lg:max-w-none">
+            <div class="relative">
+             <dt class="flex items-center gap-2 font-semibold text-black">
+              Save days of work on each deployment.
+             </dt>
+            </div>
+            <div class="relative">
+             <dt class="flex items-center gap-2 font-semibold text-black">
+              Single-command setups with no manual hassles.
+             </dt>
+            </div>
+            <div class="relative">
+             <dt class="flex items-center gap-2 font-semibold text-black">
+              Enjoy personal support when you need it.
+             </dt>
+            </div>
+            <div class="relative">
+             <dt class="flex items-center gap-2 font-semibold text-black">
+              Get a single lifetime license with no monthly fees.
+             </dt>
+            </div>
+           </dl>
+          </div>
+         </div>
+         <div class="pt-4 sm:px-6 lg:px-0">
+          <div class="relative isolate overflow-hidden bg-[#fff1be] px-6 pt-8 sm:mx-auto sm:max-w-2xl sm:rounded-3xl sm:pt-16 sm:pr-0 sm:pl-16 lg:mx-0 lg:max-w-none">
+           <div class="mx-auto max-w-2xl sm:mx-0 sm:max-w-none">
+            <img alt="Product screenshot" class="-mb-12 w-228 max-w-none rounded-tl-xl bg-gray-950 ring-1 ring-white/10" height="1442" src="/_next/image?url=%2Fterminal-screenshot.png&amp;w=3840&amp;q=75" width="2432"/>
+           </div>
+          </div>
+         </div>
+        </div>
+        <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+         Buy now
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="mx-2 mt-16 rounded-4xl bg-gray-900 py-32">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+         You are not alone with these frustrations
+        </h2>
+        <h2 class="mt-2 text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
+         We Understand Your Deployment Struggles
+        </h2>
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-2">
+         <div class="lg:rounded-tl-4xl max-lg:first:rounded-t-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            <div class="flex items-center gap-2">
+             <a class="w-max" href="https://www.producthunt.com/products/quickdeploy?embed=true&amp;utm_source=badge-top-post-badge&amp;utm_medium=badge&amp;utm_source=badge-quickdeploy" target="_blank">
+              <img alt="QuickDeploy - Deploy your web app to a VPS in minutes | Product Hunt" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1012277&amp;theme=light&amp;period=daily&amp;t=1757520864547" width="250"/>
+             </a>
+             <a href="https://founderplug.com/launch/quickdeploy">
+              <img alt="1st Place Badge" src="https://founderplug.com/badges/1TopProduct.png"/>
+             </a>
+            </div>
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Quickdeploy reached #5 on Product Hunt and #1 on Founderplug, proving its value.
+           </p>
+          </div>
+         </div>
+         <div class="lg:rounded-tr-4xl max-lg:first:rounded-t-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Developers report saving hours of work with QuickDeploy.
+           </p>
+          </div>
+         </div>
+         <div class="lg:col-span-2 lg:rounded-br-4xl lg:rounded-bl-4xl max-lg:rounded-b-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            "The 'single command' approach is exactly what's been missing! Last week I spent 4 hours wrestling with nginx configs and Docker deployments for a simple Next.js app."
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Anonymous
+           </p>
+          </div>
+         </div>
+        </div>
+        <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+         Buy now
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="bg-linear-to-b from-white from-50% to-gray-100 py-32">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+         How it works
+        </h2>
+        <h3 class="mt-2 max-w-3xl text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl" id="how-it-works">
+         Get your app live in 4 steps
+        </h3>
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+         <div class="max-lg:rounded-t-4xl lg:col-span-2 lg:rounded-tl-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 ✓ Ubuntu-based VPS
+  ✓ A domain name you own
+  ✓ Web app ready to deploy
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Step 0
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            What you need
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Make sure you have these ready before starting your deployment.
+           </p>
+           <div class="mt-2 w-max rounded bg-gray-100 px-2 py-1 text-sm text-gray-600 group-data-dark:text-gray-400">
+            €5-10/month VPS recommended
+           </div>
+          </div>
+         </div>
+         <div class="lg:col-span-2 group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 quickdeploy configure
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Step 1
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Configure QuickDeploy
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Set up QuickDeploy to point to your server and configure your deployment settings.
+           </p>
+           <div class="mt-2 w-max rounded bg-gray-100 px-2 py-1 text-sm text-gray-600 group-data-dark:text-gray-400">
+            One-time setup for deployments
+           </div>
+          </div>
+         </div>
+         <div class="lg:col-span-2 lg:rounded-tr-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 A record: myapp.com → 1.2.3.4
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Step 2
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Configure DNS
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Point your domain to your VPS by adding an A record in your DNS settings.
+           </p>
+           <div class="mt-2 w-max rounded bg-gray-100 px-2 py-1 text-sm text-gray-600 group-data-dark:text-gray-400">
+            Works with any domain registrar
+           </div>
+          </div>
+         </div>
+         <div class="lg:col-span-3 lg:rounded-bl-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-1 flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 <span>
+                  quickdeploy push --domain myapp.com
+                 </span>
+                 <br/>
+                 <div class="text-slate-400">
+                  <span>
+                   ✓ Building container
+                  </span>
+                  <br/>
+                  <span>
+                   ✓ Setting up HTTPS with Caddy
+                  </span>
+                  <br/>
+                  <span>
+                   ✓ Starting your app
+                  </span>
+                 </div>
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Step 3
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Deploy your web application
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Run the deploy command from your project directory. Behind the scenes, QuickDeploy will build a docker container and set up a reverse proxy for SSL and your domain.
+           </p>
+           <div class="mt-2 w-max rounded bg-gray-100 px-2 py-1 text-sm text-gray-600 group-data-dark:text-gray-400">
+            <span class="hidden md:block">
+             One-time setup takes 2-5 minutes with zero manual configuration
+            </span>
+            <span class="md:hidden">
+             2-5 minutes with zero manual configuration
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="max-lg:rounded-b-4xl lg:col-span-3 lg:rounded-br-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 https://myapp.com
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Step 4
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Live &amp; Production-Ready
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Your web application is now live with automatic HTTPS on your own infrastructure.
+           </p>
+           <div class="mt-2 w-max rounded bg-gray-100 px-2 py-1 text-sm text-gray-600 group-data-dark:text-gray-400">
+            No vendor lock-in, your server, your control
+           </div>
+          </div>
+         </div>
+        </div>
+        <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+         Buy now
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="mx-2 mt-2 rounded-4xl bg-gray-900 py-32">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400" id="features">
+         What Makes QuickDeploy Different
+        </h2>
+        <h3 class="mt-2 max-w-3xl text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl">
+         Built for developers that ship
+        </h3>
+        <div class="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+         <div class="max-lg:rounded-t-4xl lg:col-span-4 lg:rounded-tl-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="flex h-full flex-col items-center justify-center px-8 py-4">
+            <div class="relative mx-auto w-full max-w-[750px] h-full">
+             <div class="relative h-full overflow-hidden rounded-[20px] border border-white/10 bg-gradient-to-br from-[rgba(17,17,33,0.9)] to-[rgba(26,26,46,0.9)] shadow-[0_15px_25px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-[20px]">
+              <div class="hidden items-center justify-between border-b border-white/[0.05] bg-white/[0.02] px-6 py-3 md:flex">
+               <div class="text-sm font-medium text-slate-400">
+                <span>
+                 Terminal- ~/my-app
+                </span>
+               </div>
+              </div>
+              <div class="p-4 font-mono !leading-none md:p-4">
+               <div class="flex items-start text-sm leading-6 md:text-lg">
+                <span class="mr-3 font-semibold text-cyan-400">
+                 ❯
+                </span>
+                <code class="relative flex-1 whitespace-pre-wrap text-slate-200 text-sm" id="typed-command">
+                 quickdeploy push --domain myapp.com
+                 <span class="text-slate-400">
+                  # full-stack
+                 </span>
+                 <br/>
+                 quickdeploy push --domain myapp.com
+                 <span class="text-slate-400">
+                  # frontend
+                 </span>
+                 <br/>
+                 quickdeploy push
+                 <span class="text-slate-400">
+                  # backend
+                 </span>
+                </code>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Full-Stack / Frontend / Backend
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Flexible deployment options
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            You can either deploy your full-stack, frontend or backend with one command. For the backend you do not have to provide a domain and they communicate via the internal network.
+           </p>
+          </div>
+         </div>
+         <div class="z-10 overflow-visible! lg:col-span-2 lg:rounded-tr-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="relative h-full overflow-hidden">
+            <div class="@container absolute inset-0 grid grid-cols-1 pt-8">
+             <div class="group relative">
+              <div class="[animation-delay:-8s] [animation-duration:30s] absolute top-2 grid grid-cols-[1rem_1fr] items-center gap-2 px-3 py-1 whitespace-nowrap rounded-full bg-linear-to-t from-gray-800 from-50% to-gray-700 ring-1 ring-white/10 ring-inset [--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:paused] [animation-timing-function:linear] group-hover:[animation-play-state:running]">
+               <img alt="" class="size-4" src="/logo-timeline/postgresql.png"/>
+               <span class="text-sm/6 font-medium text-white">
+                PostgreSQL
+               </span>
+              </div>
+             </div>
+             <div class="group relative">
+              <div class="[animation-delay:-23s] [animation-duration:40s] absolute top-2 grid grid-cols-[1rem_1fr] items-center gap-2 px-3 py-1 whitespace-nowrap rounded-full bg-linear-to-t from-gray-800 from-50% to-gray-700 ring-1 ring-white/10 ring-inset [--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:paused] [animation-timing-function:linear] group-hover:[animation-play-state:running]">
+               <img alt="" class="size-4" src="/logo-timeline/mysql.svg"/>
+               <span class="text-sm/6 font-medium text-white">
+                MySQL
+               </span>
+              </div>
+             </div>
+             <div class="group relative">
+              <div class="[animation-delay:-9s] [animation-duration:40s] absolute top-2 grid grid-cols-[1rem_1fr] items-center gap-2 px-3 py-1 whitespace-nowrap rounded-full bg-linear-to-t from-gray-800 from-50% to-gray-700 ring-1 ring-white/10 ring-inset [--move-x-from:-100%] [--move-x-to:calc(100%+100cqw)] [animation-iteration-count:infinite] [animation-name:move-x] [animation-play-state:paused] [animation-timing-function:linear] group-hover:[animation-play-state:running]">
+               <img alt="" class="size-4" src="/logo-timeline/redis.svg"/>
+               <span class="text-sm/6 font-medium text-white">
+                Redis
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Database
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Database deployment
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            Depending on your app you will want to deploy a database. You can do this with by using the database flags in the deploy command.
+           </p>
+          </div>
+         </div>
+         <div class="lg:col-span-2 lg:rounded-bl-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            CI/CD
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Use locally or in CI/CD
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            You can either configure QuickDeploy interactively or use it with environment variables in your CI/CD pipeline.
+           </p>
+          </div>
+         </div>
+         <div class="max-lg:rounded-b-4xl lg:col-span-4 lg:rounded-br-4xl group relative flex flex-col overflow-hidden rounded-lg bg-white shadow-xs ring-1 ring-black/5 data-dark:bg-gray-800 data-dark:ring-white/15">
+          <div class="relative h-52 shrink-0">
+           <div class="isolate mx-auto grid h-full grid-cols-1">
+            <div class="z-10 col-start-1 row-start-1">
+             <div class="mx-auto flex size-full max-w-md items-center justify-around">
+              <div class="relative size-20 rounded-full bg-white/15 p-4 ring-4 ring-white/10">
+               <div class="absolute -right-0.5 -bottom-0.5 flex size-6 items-center justify-center rounded-full bg-white/15 text-center text-sm font-bold text-white">
+                1
+               </div>
+              </div>
+              <div class="relative size-20 rounded-full bg-white/15 p-4 ring-4 ring-white/10">
+               <div class="absolute -right-0.5 -bottom-0.5 flex size-6 items-center justify-center rounded-full bg-white/15 text-center text-sm font-bold text-white">
+                2
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative p-10 pt-6">
+           <h3 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+            Rolling updates
+           </h3>
+           <p class="mt-1 text-2xl/8 font-medium tracking-tight text-gray-950 group-data-dark:text-white">
+            Update without headaches
+           </p>
+           <p class="mt-2 max-w-[600px] text-sm/6 text-gray-600 group-data-dark:text-gray-400">
+            QuickDeploy updates the running container only after the new version has completed a health check. As soon as the new version is healthy the traffic is redirected and the old version is removed.
+           </p>
+          </div>
+         </div>
+        </div>
+        <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="#cta">
+         Buy now
+        </a>
+       </div>
+      </div>
+     </div>
+    </main>
+    <div class="relative pt-20 pb-16 sm:py-24">
+     <div class="px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:max-w-7xl">
+       <div>
+        <h2 class="font-mono text-xs/5 font-semibold tracking-widest text-gray-500 uppercase data-dark:text-gray-400">
+         Buy now
+        </h2>
+        <h2 class="mt-2 max-w-3xl text-4xl font-medium tracking-tighter text-pretty text-gray-950 data-dark:text-white sm:text-6xl" id="cta">
+         Start shipping faster today
+        </h2>
+       </div>
+       <div class="mx-auto mt-16 max-w-2xl rounded-3xl bg-white ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none dark:bg-gray-800/50 dark:ring-white/10">
+        <div class="p-8 sm:p-10 lg:flex-auto">
+         <h3 class="text-3xl font-semibold tracking-tight text-gray-900 dark:text-white">
+          Single License
+         </h3>
+         <p class="mt-6 text-base/7 text-gray-600 dark:text-gray-300">
+          QuickDeploy is yours forever! Updates, fixes, and improvements included.
+         </p>
+         <div class="mt-10 flex items-center gap-x-4">
+          <h4 class="flex-none text-sm/6 font-semibold text-black dark:text-white">
+           What's included
+          </h4>
+         </div>
+         <ul class="mt-8 grid grid-cols-1 gap-4 text-sm/6 text-gray-600 sm:grid-cols-2 sm:gap-6 dark:text-gray-300">
+          <li class="flex gap-x-3">
+           One time payment
+          </li>
+          <li class="flex gap-x-3">
+           CLI tool for Mac, Linux &amp; Windows
+          </li>
+          <li class="flex gap-x-3">
+           Free updates included
+          </li>
+          <li class="flex gap-x-3">
+           Simple, no vendor lock-in
+          </li>
+         </ul>
+        </div>
+        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:shrink-0">
+         <div class="rounded-2xl bg-gray-50 py-6 text-center inset-ring inset-ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-10 dark:bg-gray-900 dark:inset-ring-white/10">
+          <div class="mx-auto mb-4 flex flex-col items-center">
+           <div class="mt-4 mb-2 flex w-[232px] justify-between">
+            <span class="w-6 text-center text-sm font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             10€
+            </span>
+            <span class="w-6 text-center text-sm font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             20€
+            </span>
+            <span class="w-6 text-center text-sm font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             30€
+            </span>
+           </div>
+           <div class="mt-2 flex gap-5">
+            <span class="ml-1 w-20 text-center text-xs/4 font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             First 20
+            </span>
+            <span class="ml-1 w-20 text-center text-xs/4 font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             First 30
+  (17 left)
+            </span>
+            <span class="ml-1 w-20 text-center text-xs/4 font-medium whitespace-pre text-gray-600 dark:text-gray-400">
+             Final
+            </span>
+           </div>
+          </div>
+          <div class="mx-auto max-w-xs px-8">
+           <p class="text-base font-semibold text-gray-600 dark:text-gray-400">
+            Pay once, own it forever
+           </p>
+           <p class="mt-1 flex items-baseline justify-center gap-x-2">
+            <span class="text-5xl font-semibold tracking-tight text-gray-900 dark:text-white">
+             15€
+            </span>
+            <span class="text-5xl font-semibold tracking-tight text-gray-300 line-through dark:text-white">
+             20€
+            </span>
+            <span class="text-sm/6 font-semibold tracking-wide text-gray-600 dark:text-gray-400">
+             EUR
+            </span>
+           </p>
+           <a class="mt-4 inline-flex items-center justify-center px-4 py-[calc(--spacing(2)-1px)] rounded-lg border border-transparent bg-gray-950 shadow-md text-base font-medium whitespace-nowrap text-white data-disabled:bg-gray-950 data-disabled:opacity-40 data-hover:bg-gray-800 hover:scale-95" href="https://buy.stripe.com/28EeVdggL1ym0YVdjjgw00f?prefilled_promo_code=CHR25">
+            Buy now
+           </a>
+           <p class="mt-4 text-sm text-gray-500 dark:text-gray-400">
+            14-day money back guarantee.
+            <br/>
+            No questions asked.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <footer>
+     <div class="relative bg-linear-115 from-[#fff1be] from-28% via-[#ee87cb] via-70% to-[#b060ff] sm:bg-linear-145">
+      <div class="px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl lg:max-w-7xl">
+        <div class="relative mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8 lg:py-40">
+         <div class="mx-auto max-w-4xl">
+          <h2 class="text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-white" id="faq">
+           Frequently asked questions
+          </h2>
+          <dl class="mt-16 divide-y divide-gray-900/10 dark:divide-white/10">
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_8plolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               How does QuickDeploy work?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_99lolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               On which operating systems does QuickDeploy work?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_9plolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               How do I deploy my app?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_a9lolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               What frameworks does QuickDeploy support?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_aplolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               Does QuickDeploy support databases?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_b9lolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               Can QuickDeploy be used for a monorepo?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_bplolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               Can QuickDeploy be used for CI/CD?
+              </span>
+             </button>
+            </dt>
+           </div>
+           <div class="py-6 first:pt-0 last:pb-0">
+            <dt>
+             <button class="group flex w-full items-start justify-between text-left text-gray-900 hover:cursor-pointer dark:text-white" id="headlessui-disclosure-button-_R_c9lolubtb_" type="button">
+              <span class="text-base/7 font-semibold">
+               Do I need my own domain or does quickdeploy provide one?
+              </span>
+             </button>
+            </dt>
+           </div>
+          </dl>
+         </div>
+        </div>
+        <div class="pb-16">
+         <div class="group/row relative isolate pt-[calc(--spacing(2)+1px)] last:pb-[calc(--spacing(2)+1px)]">
+          <div class="grid grid-cols-2 gap-y-10 pb-6 lg:grid-cols-6 lg:gap-8">
+           <div class="col-span-2 grid grid-cols-2 gap-x-8 gap-y-12 lg:col-span-4 lg:grid-cols-subgrid lg:pt-6">
+            <div class="col-span-4 ml-auto">
+             <h3 class="text-sm/6 font-medium text-gray-950/50">
+              Company
+             </h3>
+             <ul class="mt-6 space-y-4 text-sm/6">
+              <li>
+               <a class="font-medium text-gray-950 data-hover:text-gray-950/75" href="/imprint">
+                Imprint
+               </a>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <div class="right" id="livechat-widget-container">
+    <div class="heyo-card">
+     <img alt="Agent Avatar" class="heyo-avatar" src="https://cdn.heyo.so/users/68b5bed079c04bc3521e1dda/avatar"/>
+     <div>
+      <div class="heyo-name-row">
+       <span class="heyo-name">
+        Max
+       </span>
+       <span class="heyo-role">
+        - Founder
+       </span>
+      </div>
+      <div class="heyo-status-row">
+       <span class="heyo-status-text">
+        Offline
+       </span>
+      </div>
+     </div>
+     <button class="heyo-chat-now">
+      Chat now
+     </button>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

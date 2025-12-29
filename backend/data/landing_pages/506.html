@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WhisperBuddy - AI powered transcription macOS app</title>
+</head>
+<body>
+  <body>
+   <header class="header-global" id="home">
+    <nav class="navbar navbar-main navbar-expand-lg navbar-theme-primary headroom navbar-light navbar-theme-secondary headroom--not-top headroom--not-bottom headroom--unpinned" id="navbar-main">
+     <div class="container position-relative">
+      <div class="navbar-collapse collapse mr-auto" id="navbar_global">
+       <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+        <li class="nav-item">
+         <a class="nav-link" href="#about">
+          About
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#pricing">
+          Pricing
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#download">
+          Download
+         </a>
+        </li>
+        <li class="nav-item">
+         <a class="nav-link" href="#faq">
+          FAQ
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="d-flex align-items-center">
+       <a class="btn btn-md btn-tertiary text-white d-none d-md-inline animate-up-2" href="https://whisperbuddy.lemonsqueezy.com/buy/8fb628ab-952f-41b7-931f-2194d819a305" target="_blank">
+        Upgrade to Pro
+       </a>
+      </div>
+     </div>
+    </nav>
+   </header>
+   <main>
+    <section class="section section-header text-dark pb-0">
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-12 col-md-10 text-center mb-5 mb-md-7">
+        <img alt="App Icon" class="img-fluid mx-auto d-block mb-4" src="./assets/img/app-icon.png"/>
+        <h1 class="display-3 font-weight-bold mb-4">
+         Fast, Accurate, and Private.
+        </h1>
+        <img alt="App Preview" class="img-fluid mx-auto d-block mb-4" src="./assets/img/illustrations/preview.png"/>
+        <p class="lead mb-4 mb-lg-5">
+         AI powered transcription app for macOS
+        </p>
+        <div class="mb-4">
+         <div class="text-center">
+          <a href="https://www.producthunt.com/products/whisper-buddy?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-whisper-buddy" target="_blank">
+           <img alt="Whisper Buddy - Privacy-first AI-powered transcription macOS app | Product Hunt" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=976564&amp;theme=light&amp;t=1750052278044" width="250"/>
+          </a>
+         </div>
+        </div>
+        <div class="promotional-banner mb-4 p-4 rounded">
+         <h3 class="text-center mb-3">
+          🎉 Early Bird Special - Only 100 spots! 🎉
+         </h3>
+         <h4 class="text-center mb-3">
+          Get
+          <span>
+           50% OFF
+          </span>
+          on all licenses
+         </h4>
+         <div class="text-center">
+          <p class="mb-2">
+           Use discount code:
+          </p>
+          <div class="d-inline-block px-4 py-2 rounded">
+           <code>
+            E0OTQZNA
+           </code>
+          </div>
+         </div>
+        </div>
+        <div>
+         <a class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3" href="./assets/release/WhisperBuddy-v1.1.0.dmg">
+          <span class="d-flex align-items-center">
+           <span class="d-inline-block text-left">
+            <small class="font-weight-normal d-none d-md-block">
+             Download
+            </small>
+            for macOS
+           </span>
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section section-lg py-0" id="use-cases">
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-8 text-center">
+        <h2 class="display-4 font-weight-bold mb-4">
+         What is WhisperBuddy for?
+        </h2>
+        <p class="lead mt-3 mb-5">
+         Learn about different use cases of our transcription app
+        </p>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-10">
+        <div class="mb-5">
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Transform any audio/video file or real-time microphone input into accurately formatted text with timestamps
+          </p>
+         </div>
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Capture audio directly from your microphone or other applications with lightning-fast transcription
+          </p>
+         </div>
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Export in multiple formats (SRT, JSON, TXT, VTT) for seamless video integration
+          </p>
+         </div>
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Edit transcriptions segment-by-segment with synchronized audio playbook for precision
+          </p>
+         </div>
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Translate transcripts to multiple languages completely offline without internet
+          </p>
+         </div>
+         <div class="d-flex mb-4">
+          <p class="mb-0">
+           Work entirely offline with advanced AI models—your data never leaves your computer
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section section-lg py-0">
+     <div class="container">
+      <div class="row">
+       <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <div class="card border-0 bg-white text-center p-1">
+         <div class="card-header bg-white border-0 pb-0">
+          <div class="icon icon-lg icon-primary mb-4">
+           <img alt="Voice Privacy Icon" class="img-fluid mx-auto d-block" src="./assets/img/illustrations/lightning-fast.png"/>
+          </div>
+          <h3 class="h4 text-dark m-0">
+           Lightning Fast
+          </h3>
+         </div>
+         <div class="card-body">
+          <p>
+           Built for speed with optimized local processing that delivers real-time results without compromising accuracy or quality.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-md-6 col-lg-4 mb-4 mb-lg-0">
+        <div class="card border-0 bg-white text-center p-1">
+         <div class="card-header bg-white border-0 pb-0">
+          <div class="icon icon-lg icon-primary mb-4">
+           <img alt="Speak Freely Icon" class="img-fluid mx-auto d-block" src="./assets/img/illustrations/completely-private.png"/>
+          </div>
+          <h3 class="h4 text-dark m-0">
+           Completely Private
+          </h3>
+         </div>
+         <div class="card-body">
+          <p>
+           All transcription happens locally on your Mac—no internet required, no cloud uploads, your conversations remain completely private.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-md-6 col-lg-4">
+        <div class="card border-0 bg-white text-center p-1">
+         <div class="card-header bg-white border-0 pb-0">
+          <div class="icon icon-lg icon-primary mb-4">
+           <img alt="Transcribe Anywhere Icon" class="img-fluid mx-auto d-block" src="./assets/img/illustrations/feature-rich.png"/>
+          </div>
+          <h3 class="h4 text-dark m-0">
+           Feature-Rich
+          </h3>
+         </div>
+         <div class="card-body">
+          <p>
+           Multi-source recording, language selection, export options, and editing tools—all in one streamlined native macOS interface.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section section-lg pb-0" id="about">
+     <div class="container">
+      <div class="row justify-content-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-8 text-center">
+        <h2 class="display-4 font-weight-bold mb-4">
+         Better in every way
+        </h2>
+        <p class="lead">
+         Transcribe audio to text with AI precision, edit easily, and export in any format—all with complete privacy on your Mac.
+        </p>
+       </div>
+      </div>
+      <div class="row row-grid align-items-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-4">
+        <h3 class="h2 mb-4">
+         File Transcription Excellence
+        </h3>
+        <p>
+         Convert audio and video files to text instantly with drag-and-drop simplicity. Process any format locally with complete privacy while maintaining quality.
+        </p>
+       </div>
+      </div>
+      <div class="row row-grid align-items-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-4 order-lg-2">
+        <h3 class="h2 mb-4">
+         Live Transcription Magic.
+        </h3>
+        <p>
+         Real-time transcription from your MacBook, AirPods, or any audio source. Watch words appear instantly with live translation capabilities while maintaining complete privacy.
+        </p>
+       </div>
+      </div>
+      <div class="row row-grid align-items-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-4">
+        <h3 class="h2 mb-4">
+         Seamless Audio Capture &amp; Transcription
+        </h3>
+        <p>
+         Record from your microphone or capture audio from other apps with one click. Intelligent transcription converts recordings to accurate text in any language, ready to edit or export.
+        </p>
+       </div>
+      </div>
+      <div class="row row-grid align-items-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-4 order-lg-2">
+        <h3 class="h2 mb-4">
+         Powerful Local Translation
+        </h3>
+        <p>
+         Lightning-fast translation across 21 languages, completely offline. Advanced local processing keeps your data private while delivering exceptional results you can instantly copy or export.
+        </p>
+       </div>
+      </div>
+      <div class="row row-grid align-items-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-4">
+        <h3 class="h2 mb-4">
+         Intelligent Voice Dictation
+        </h3>
+        <p>
+         Instant voice-to-text transcription that seamlessly inserts content wherever you're typing—Slack, Notes, Cursor AI, email, or any app—with a simple `Option + Space` keystroke. Powered by advanced on-device processing for lightning-fast, accurate results that keep your data completely private.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section py-0" id="why-choose">
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-8 text-center">
+        <h1 class="display-2 font-weight-bolder">
+         Why Choose WhisperBuddy?
+        </h1>
+        <p class="lead mt-3 mb-5">
+         Experience the perfect blend of privacy, technology, and usability
+        </p>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-10">
+        <div class="mb-5">
+         <div class="d-flex mb-4">
+          <div>
+           <h4 class="mb-2">
+            100% Privacy, Forever
+           </h4>
+           <p class="lead mb-0">
+            All processing happens locally on your device. Your audio and transcriptions never leave your computer, ensuring complete data privacy and security.
+           </p>
+          </div>
+         </div>
+         <div class="d-flex mb-4">
+          <div>
+           <h4 class="mb-2">
+            State-of-the-Art Technology
+           </h4>
+           <p class="lead mb-0">
+            Powered by advanced AI models and cutting-edge speech recognition technology for superior accuracy and performance.
+           </p>
+          </div>
+         </div>
+         <div class="d-flex mb-4">
+          <div>
+           <h4 class="mb-2">
+            Feature-Rich Experience
+           </h4>
+           <p class="lead mb-0">
+            From real-time transcription to offline translation, file processing to voice dictation - everything you need in one elegant package.
+           </p>
+          </div>
+         </div>
+         <div class="d-flex mb-4">
+          <div>
+           <h4 class="mb-2">
+            Flexible Editing &amp; Export
+           </h4>
+           <p class="lead mb-0">
+            Edit transcriptions with synchronized audio playback, export in multiple formats (SRT, JSON, TXT, VTT), and easily make corrections.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section section-lg" id="testimonials">
+     <div class="container">
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-8 text-center">
+        <h2 class="display-4 font-weight-bold mb-4">
+         Customers love it
+        </h2>
+        <p class="lead mt-3 mb-5">
+         The final result of our formula at work. Check out what our clients have to say about our mobile app and our support team.
+        </p>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-10">
+        <div class="row">
+         <div class="col-12 col-md-6 mb-4">
+          <div class="card border-0 bg-white shadow-lg h-100">
+           <div class="card-body p-5 d-flex flex-column">
+            <p class="mb-4 flex-grow-1">
+             "This is awesome, thanks for caring about privacy and going the extra mile to develop this! I look forward to trying it out 👏"
+            </p>
+            <div class="mt-auto">
+             <h6 class="mb-0 font-weight-bold">
+              — Jeanette Antal
+             </h6>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-md-6 mb-4">
+          <div class="card border-0 bg-white shadow-lg h-100">
+           <div class="card-body p-5 d-flex flex-column">
+            <p class="mb-4 flex-grow-1">
+             "Good stuff, Nghia! I've already got my license! =D"
+            </p>
+            <div class="mt-auto">
+             <h6 class="mb-0 font-weight-bold">
+              — Tiago Marques
+             </h6>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-md-6 mb-4">
+          <div class="card border-0 bg-white shadow-lg h-100">
+           <div class="card-body p-5 d-flex flex-column">
+            <p class="mb-4 flex-grow-1">
+             "Amazing product sir!"
+            </p>
+            <div class="mt-auto">
+             <h6 class="mb-0 font-weight-bold">
+              — Finn / Phong Tran
+             </h6>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="col-12 col-md-6 mb-4">
+          <div class="card border-0 bg-white shadow-lg h-100">
+           <div class="card-body p-5 d-flex flex-column">
+            <p class="mb-4 flex-grow-1">
+             "That is super cool and a great name for such a solution 👏"
+            </p>
+            <div class="mt-auto">
+             <h6 class="mb-0 font-weight-bold">
+              — Lasse Rey-Andersen
+             </h6>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section mt-n5 pt-7" id="pricing">
+     <div class="container">
+      <div class="row justify-content-center mb-4">
+       <div class="col-12 col-md-8 text-center">
+        <h2 class="display-4 font-weight-bold mb-4">
+         Unlock PRO Features
+        </h2>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="col-12 col-md-6 col-lg-5 mb-5 mb-lg-0">
+        <div class="card border-light shadow-soft p-4">
+         <div class="card-body p-4">
+          <h3 class="h2 font-weight-bold mb-3">
+           Free
+          </h3>
+          <p class="text-muted mb-4">
+           Perfect for getting started
+          </p>
+          <div class="d-flex align-items-center mb-5">
+           <span class="h1 font-weight-bolder mb-0">
+            $0
+           </span>
+          </div>
+          <p class="mb-4">
+           Free to download and use
+          </p>
+          <ul class="list-unstyled mb-5">
+           <li class="mb-3">
+            <strong>
+             10 times
+            </strong>
+            of Export and Copy Transcriptions
+           </li>
+           <li class="mb-3">
+            File Transcription
+           </li>
+           <li class="mb-3">
+            Live Transcription
+           </li>
+           <li class="mb-3">
+            Record &amp; Transcribe
+           </li>
+           <li class="mb-3">
+            <strong>
+             7 days
+            </strong>
+            of Dictation
+           </li>
+           <li class="mb-3">
+            Translation
+           </li>
+           <li class="mb-3">
+            Edit Transcription
+           </li>
+           <li class="mb-3">
+            Batch Processing
+           </li>
+          </ul>
+          <a class="btn btn-outline-primary btn-block" href="#">
+           Download for Free
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="col-12 col-md-6 col-lg-5">
+        <div class="card border-light shadow-soft p-4">
+         <div class="card-body p-4">
+          <h3 class="h2 font-weight-bold mb-3">
+           PRO
+          </h3>
+          <p class="text-muted mb-4">
+           Perfect for professionals
+          </p>
+          <div class="d-flex align-items-center mb-5">
+           <span class="h1 font-weight-bolder mb-0">
+            $29.99
+           </span>
+          </div>
+          <p class="mb-4">
+           <strong>
+            One-time payment with 1 year of app updates.
+            <strong>
+             <span>
+              No subscription, no hidden fees.
+             </span>
+            </strong>
+           </strong>
+          </p>
+          <ul class="list-unstyled mb-5">
+           <li class="mb-3">
+            <strong>
+             Unlimited
+            </strong>
+            Export and Copy Transcriptions
+           </li>
+           <li class="mb-3">
+            File Transcription
+           </li>
+           <li class="mb-3">
+            Live Transcription
+           </li>
+           <li class="mb-3">
+            Record &amp; Transcribe
+           </li>
+           <li class="mb-3">
+            <strong>
+             Unlimited
+            </strong>
+            Dictation
+           </li>
+           <li class="mb-3">
+            Translation
+           </li>
+           <li class="mb-3">
+            Edit Transcription
+           </li>
+           <li class="mb-3">
+            Batch Processing
+           </li>
+           <li class="mb-3">
+            <strong>
+             1 macOS device
+            </strong>
+           </li>
+           <li class="mb-3">
+            <strong>
+             1 year of updates
+            </strong>
+           </li>
+          </ul>
+          <a class="btn btn-primary btn-block" href="https://whisperbuddy.lemonsqueezy.com/buy/8fb628ab-952f-41b7-931f-2194d819a305">
+           Buy PRO License
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="section section-lg faq-section" id="faq">
+     <div class="container">
+      <div class="row justify-content-center mb-5 mb-lg-7">
+       <div class="col-12 col-lg-8 text-center">
+        <h2 class="display-4 font-weight-bold mb-4">
+         Facts &amp; Questions
+        </h2>
+        <p class="lead">
+         Have a question? Read through our FAQ below. If you can't find an answer, please email our support team. We're here to help.
+        </p>
+       </div>
+      </div>
+      <div class="row justify-content-center">
+       <div class="col-12 col-lg-10">
+        <div class="accordion faq-accordion" id="faqAccordion">
+         <div class="card">
+          <div class="card-header" id="faq1">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              Does WhisperBuddy require an internet connection?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse1">
+           <div class="card-body">
+            <p class="mb-0">
+             No! WhisperBuddy works completely offline. All transcription, translation, and processing happens locally on your Mac using advanced AI models. Your audio data never leaves your device, ensuring complete privacy and security.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq2">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              What audio formats does WhisperBuddy support?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse2">
+           <div class="card-body">
+            <p class="mb-0">
+             WhisperBuddy supports all major audio and video formats including MP3, MP4, WAV, M4A, FLAC, AAC, and many more. You can also capture audio directly from your microphone or any other audio source on your Mac.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq3">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              How many languages does WhisperBuddy support?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse3">
+           <div class="card-body">
+            <p class="mb-0">
+             WhisperBuddy supports transcription in over 100 languages and can translate between 21 languages completely offline. The AI models are optimized for accuracy across multiple languages and dialects.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq4">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              What export formats are available?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse4">
+           <div class="card-body">
+            <p class="mb-0">
+             You can export your transcriptions in multiple formats: SRT (subtitles), JSON (structured data), TXT (plain text), and VTT (video text tracks). This makes it easy to integrate with video editing software, subtitle tools, or any other workflow.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq5">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              What's the difference between Free and PRO versions?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse5">
+           <div class="card-body">
+            <p class="mb-0">
+             The Free version includes all core features but limits you to 10 export/copy actions. The PRO version ($29.99 one-time payment) removes all limitations, giving you unlimited exports and copies, plus 1 year of app updates. All other features like transcription, translation, and editing are identical.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq6">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              What are the system requirements?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse6">
+           <div class="card-body">
+            <p class="mb-0">
+             WhisperBuddy requires macOS 14.6 or later and works on both Intel and Apple Silicon Macs. For optimal performance, we recommend at least 8GB of RAM. The app will download AI models locally (approximately 1-3GB depending on language selection).
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="card">
+          <div class="card-header" id="faq7">
+           <h2 class="mb-0">
+            <button class="btn font-weight-bold text-dark collapsed" type="button">
+             <span>
+              In Record &amp; transcribe tab, how to record audio's sound from browser like Chrome?
+             </span>
+            </button>
+           </h2>
+          </div>
+          <div class="collapse" id="collapse7">
+           <div class="card-body">
+            <p class="mb-0">
+             Select the audio source, choose
+             <code>
+              Google Chrome Helper
+             </code>
+             , you will be able to capture Chrome's audio.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="section bg-soft" id="download">
+     <div class="container">
+      <div class="row row-grid align-items-center">
+       <div class="col-12 col-lg-6">
+        <span class="h5 text-muted mb-2 d-block">
+         Download App
+        </span>
+        <h2 class="display-3 mb-4">
+         Get started in seconds
+        </h2>
+        <div class="mt-4 mt-lg-5">
+         <a class="btn btn-dark btn-download-app mb-xl-0 mr-2 mr-md-3" href="./assets/release/WhisperBuddy-v1.1.0.dmg">
+          <span class="d-flex align-items-center">
+           <span class="d-inline-block text-left">
+            <small class="font-weight-normal d-none d-md-block">
+             Download
+            </small>
+            for macOS
+           </span>
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer class="footer py-5 pt-lg-6">
+    <div class="container">
+     <hr class="bg-light my-2"/>
+     <div class="row pt-2 pt-lg-5">
+      <div class="d-flex text-center justify-content-center align-items-center">
+       <p class="font-weight-normal font-small mb-0">
+        Copyright © Themesberg 2019-
+        <span class="current-year">
+         2025
+        </span>
+        . All rights reserved.
+       </p>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

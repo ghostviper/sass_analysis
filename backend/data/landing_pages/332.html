@@ -1,0 +1,1941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Presentia AI: Best AI Presentation Maker</title>
+</head>
+<body>
+  <body>
+   <section>
+   </section>
+   <dialog class="modal" id="out_of_credit">
+    <div class="modal-box max-w-sm bg-base-200 p-6">
+     <div class="flex justify-between items-center border-b border-base-300 pb-2">
+      <h2 class="font-semibold text-xl text-base-content">
+       Out of Credits
+      </h2>
+      <form method="dialog">
+       <button class="btn btn-sm btn-circle btn-ghost">
+        ✕
+       </button>
+      </form>
+     </div>
+     <div class="modal-action mt-2">
+      <div class="flex flex-col gap-6">
+       <p class="text-sm">
+        You've used all your available credits. Purchase more credits to continue generating slides for your presentation.
+       </p>
+       <button class="flex w-full justify-center px-6 mx-auto items-center bg-purple-600 hover:bg-purple-700 text-white text-center py-2 text-sm rounded-lg font-medium transition-colors">
+        Buy More Credits
+       </button>
+      </div>
+     </div>
+    </div>
+    <form class="modal-backdrop" method="dialog">
+     <button>
+      close
+     </button>
+    </form>
+   </dialog>
+   <dialog class="modal" id="pricing_modal">
+    <div class="modal-box w-11/12 max-w-7xl bg-base-200">
+     <h2 class="font-medium text-lg text-primary text-center">
+      Pricing
+     </h2>
+     <p class="py-4 font-bold text-3xl text-center">
+      Create Stunning AI-Generated Presentations — Pay Only for What You Use
+     </p>
+     <form method="dialog">
+      <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+       ✕
+      </button>
+     </form>
+     <div class="modal-action">
+      <div class="relative flex justify-center flex-col w-full lg:flex-wrap xl:flex-nowrap lg:flex-row items-center lg:items-stretch gap-8">
+       <div class="relative w-full max-w-lg">
+        <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+         <div class="flex justify-between items-center gap-4">
+          <div>
+           <p class="text-lg lg:text-xl font-bold">
+            Pro
+           </p>
+           <p class="text-base-content/80 mt-2">
+            Includes up to 110 slides per month
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-2">
+          <div class="flex flex-col justify-end mb-[4px] text-lg">
+           <p class="relative">
+            <span class="text-base-content/80">
+             $29
+            </span>
+           </p>
+          </div>
+          <p class="text-5xl tracking-tight font-extrabold">
+           $20
+          </p>
+          <div class="flex flex-col justify-end mb-[4px]">
+           <p class="text-xs text-base-content/60 uppercase font-semibold">
+            per month
+           </p>
+          </div>
+         </div>
+         <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+          <li class="flex items-center gap-2">
+           <span>
+            AI-generated images
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Save Presentations
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Customise Presentation Theme
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Multiple languages
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Team Sharing (Coming Soon)
+           </span>
+          </li>
+         </ul>
+         <div class="space-y-2">
+          <button class="btn btn-primary btn-block group rounded-xl">
+           Choose Pro
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="relative w-full max-w-lg">
+        <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+         <div class="flex justify-between items-center gap-4">
+          <div>
+           <p class="text-lg lg:text-xl font-bold">
+            Max Yearly (Most Popular)
+           </p>
+           <p class="text-base-content/80 mt-2">
+            Includes up to 1500 slides per year
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-2">
+          <div class="flex flex-col justify-end mb-[4px] text-lg">
+           <p class="relative">
+            <span class="text-base-content/80">
+             $600
+            </span>
+           </p>
+          </div>
+          <p class="text-5xl tracking-tight font-extrabold">
+           $199
+          </p>
+          <div class="flex flex-col justify-end mb-[4px]">
+           <p class="text-xs text-base-content/60 uppercase font-semibold">
+            per year
+           </p>
+          </div>
+         </div>
+         <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+          <li class="flex items-center gap-2">
+           <span>
+            All Pro features
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Priority Support
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Commercial Use
+           </span>
+          </li>
+         </ul>
+         <div class="space-y-2">
+          <button class="btn btn-primary btn-block group rounded-xl">
+           Choose Max Yearly
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <form class="modal-backdrop" method="dialog">
+     <button>
+      close
+     </button>
+    </form>
+   </dialog>
+   <header class="mt-4 relative z-20">
+    <nav class="container flex items-center justify-between px-8 py-4 mx-auto">
+     <div class="z-50 mx-auto rounded-full border bg-white/80 px-3 shadow-[5px_5px_30px_rgba(190,190,190,0.15),-5px_-5px_30px_rgba(255,255,255,0.15)] backdrop-blur-md">
+      <div class="flex w-full items-center">
+       <div class="flex items-center flex-shrink-0 pr-4">
+        <a class="flex items-center gap-2" href="/" title="Presentia AI homepage">
+         <img alt="Presentia AI logo" class="w-12 h-12" height="250" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ficon.1a5aa52c.png&amp;w=640&amp;q=75" width="250"/>
+         <span class="font-extrabold text-lg">
+          Presentia AI
+         </span>
+        </a>
+       </div>
+       <div class="flex-1 justify-center items-center gap-3 sm:gap-4 px-2 sm:px-4 md:flex hidden">
+        <a class="link link-hover text-sm sm:text-base" href="/#pricing" title="Pricing">
+         Pricing
+        </a>
+        <a class="link link-hover text-sm sm:text-base" href="/#features" title="Features">
+         Features
+        </a>
+        <a class="link link-hover text-sm sm:text-base" href="/#faq" title="FAQ">
+         FAQ
+        </a>
+        <a class="link link-hover text-sm sm:text-base" href="/blog" title="Blog">
+         Blog
+        </a>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div class="flex items-center gap-2">
+         <a class="btn rounded-full btn-sm btn-outline border-gray-200" href="/signin">
+          Login
+         </a>
+         <a class="btn rounded-full btn-sm btn-solid bg-black text-white hover:bg-gray-800 hover:text-gray-200" href="/signin">
+          Start Now
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </nav>
+   </header>
+   <main>
+    <section class="relative min-h-screen py-20 flex items-center justify-center overflow-hidden">
+     <div class="container mx-auto px-4 relative z-10">
+      <div class="max-w-7xl mx-auto">
+       <div class="text-center mb-12">
+        <h1 class="font-extrabold text-4xl lg:text-6xl tracking-tight">
+         Effortlessly Generate
+         <br/>
+         <span class="text-primary inline-block transition-all animate-slideUp">
+          Presentations
+         </span>
+         <br/>
+         using AI
+        </h1>
+        <p class="text-lg opacity-80 leading-relaxed mt-4">
+         Generate a PowerPoint Presentation using AI about any topic
+        </p>
+       </div>
+       <div class="max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl border border-gray-200 p-4 md:p-6 mb-4 md:mb-6 shadow-sm">
+         <div class="text-center text-sm text-gray-500 mb-4">
+          250000 characters remaining
+         </div>
+         <div class="text-center mb-2 flex flex-col md:flex-row items-center justify-center gap-2 md:gap-4">
+          <span class="text-gray-500 text-sm md:text-base">
+           Or upload a document
+          </span>
+          <label class="inline-flex items-center px-3 md:px-4 py-2 bg-purple-600 text-white text-sm md:text-base rounded-xl hover:bg-purple-700 transition-colors cursor-pointer" for="file-upload-hero">
+           Upload Document
+          </label>
+          <input class="hidden" id="file-upload-hero" type="file"/>
+         </div>
+         <p class="text-xs text-gray-500 text-center mt-2">
+          We extract text only from PDF, DOCX, and TXT files
+         </p>
+        </div>
+        <div class="bg-white/90 backdrop-blur rounded-xl border border-purple-200 shadow-sm mb-4 md:mb-6">
+         <button class="w-full flex items-center justify-between p-4 md:p-6 hover:bg-purple-50/50 transition-colors rounded-t-xl">
+          <div class="flex items-start gap-3 md:gap-4 flex-1 text-left">
+           <span class="text-2xl md:text-3xl">
+            🚀
+           </span>
+           <div class="flex-1 min-w-0">
+            <h3 class="text-base md:text-lg font-semibold text-gray-900">
+             6 Slide Presentation
+            </h3>
+            <p class="text-xs md:text-sm text-gray-500">
+             AI showcases, tech roadmaps, keynotes
+            </p>
+            <div class="flex items-center gap-2 md:gap-3 mt-2 flex-wrap">
+             <span class="inline-flex items-center gap-1 px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded">
+              6 slides
+             </span>
+             <span class="inline-flex items-center gap-1 px-2 py-0.5 text-xs font-medium rounded bg-purple-100 text-purple-700">
+              AI Images
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-center gap-1 md:gap-2 ml-2 md:ml-4 flex-shrink-0">
+           <span class="text-xs md:text-sm text-purple-600 font-medium hidden sm:inline">
+            Template &amp; Style
+           </span>
+          </div>
+         </button>
+        </div>
+        <div class="text-center mt-6 md:mt-8 mb-4 md:mb-0">
+         <button class="w-full md:w-auto inline-flex items-center justify-center px-8 md:px-10 py-3 md:py-4 bg-purple-600 text-white text-base md:text-lg font-semibold rounded-xl hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors shadow-lg hover:shadow-xl">
+          Generate Presentation
+         </button>
+        </div>
+       </div>
+       <div class="text-center mt-12">
+        <div class="flex flex-col items-center justify-center gap-3">
+         <div class="flex flex-col items-center justify-center gap-1">
+          <div class="text-base text-base-content/80 text-center">
+           <span class="font-semibold text-base-content">
+            Over 121k
+           </span>
+           Presentations Generated!
+          </div>
+          <br/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="w-full -translate-y-2 md:-translate-y-10">
+     <div class="relative inset-x-px max-w-[100%] overflow-hidden text-sm">
+      <div class="flex gap-4">
+       <div class="marquee flex animate-marquee gap-4 whitespace-nowrap">
+        <div class="flex gap-4">
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Benny R, Solopreneur" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-1.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Aish K • Solopreneur
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Honestly the best ppt generation tool I've used so far. Happy customer.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Travis M, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-2.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Jane D • Designer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            They ship insanely fast. I've got the fastest feature implementation based on my suggestion ever.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Dennis, Founder" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-3.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Dom • Student
+           </div>
+           <div class="text-start font-light text-gray-700">
+            🤯
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Aleks J, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-4.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Zach T • Developer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Wow, the AI PowerPoint Generator is brilliant!! Generating presentations takes only 5 seconds of my work.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Michael C, Automation Wizard" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-5.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Ken M • Doctor
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It makes a real difference. Don't miss out!
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Raz, " class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-1.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Alex
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Success is imminent, really awesome product 🔥
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="absolute animate-marquee2 whitespace-nowrap pl-2">
+        <div class="flex gap-4">
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Benny R, Solopreneur" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-2.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Aish K • Solopreneur
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Honestly the best content conversion tool I've used so far. Happy customer.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Travis M, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-3.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Jane D • Designer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            They ship insanely fast. I've got the fastest feature implementation based on my suggestion ever.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Dennis, Founder" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-4.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Dom • Student
+           </div>
+           <div class="text-start font-light text-gray-700">
+            🤯
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Aleks J, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-5.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Zach T • Developer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Wow, the AI PowerPoint Generator is brilliant!! Generating presentations takes only 5 seconds of my work.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Michael C, Automation Wizard" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-1.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Ken M • Doctor
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It makes a real difference. Don't miss out!
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Raz, " class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-2.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Alex
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Success is imminent, really awesome product 🔥
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="relative inset-x-px max-w-[100%] overflow-hidden pt-4 text-sm">
+      <div class="flex gap-4">
+       <div class="marquee flex animate-marquee gap-4 whitespace-nowrap">
+        <div class="flex gap-4">
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Akshat G, Engineer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-3.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Akshat G • Engineer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Love it so far. The script was pretty good and the audio was great as well.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Guin W, Partner" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-4.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Guin W • Partner
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It truly is so cool, mind-blowing what it can do relatively quickly! I love it.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Anna B, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-5.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Anna B • Marketer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            I can't believe I was creating presentations manually before. This is a game-changer.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Miko C, Founder" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-1.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Miko C • Founder
+           </div>
+           <div class="text-start font-light text-gray-700">
+            DAMN, it works!
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Alun H, CEO" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-2.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Alun H • CEO
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It's brilliant - I want to do more!
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="absolute animate-marquee2 whitespace-nowrap pl-2">
+        <div class="flex gap-4">
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Akshat G, Engineer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-3.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Akshat G • Engineer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            Love it so far. The script was pretty good and the audio was great as well.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Guin W, Partner" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-2.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Guin W • Partner
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It truly is so cool, mind-blowing what it can do relatively quickly! I love it.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Anna B, Marketer" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-3.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Anna B • Marketer
+           </div>
+           <div class="text-start font-light text-gray-700">
+            I can't believe I was creating presentations manually before. This is a game-changer.
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Miko C, Founder" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-4.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Miko C • Founder
+           </div>
+           <div class="text-start font-light text-gray-700">
+            DAMN, it works!
+           </div>
+          </div>
+         </div>
+         <div class="shadow-neumorphic flex flex-row items-center gap-2 rounded-lg border bg-white py-1 pl-2 pr-3">
+          <img alt="Avatar of Alun H, CEO" class="h-8 w-8 min-w-[32px] rounded-full border object-cover" height="32" src="/_next/image?url=%2Fuser-5.jpeg&amp;w=64&amp;q=75" width="32"/>
+          <div class="w-full">
+           <div class="flex items-center gap-1 text-sm font-semibold text-card-foreground">
+            Alun H • CEO
+           </div>
+           <div class="text-start font-light text-gray-700">
+            It's brilliant - I want to do more!
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <section class="py-24 bg-gray-50">
+     <div class="max-w-7xl mx-auto px-8">
+      <div class="text-center mb-16">
+       <div class="inline-block px-3 py-1 bg-purple-100 text-purple-600 rounded-lg text-xs font-medium mb-4">
+        Showcase
+       </div>
+       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        See What Our AI Can
+        <span class="text-purple-600">
+         Create
+        </span>
+       </h2>
+       <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        From business pitches to educational content, our AI generates professional presentations in seconds. Here are some examples of what you can create.
+       </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             KSA 2026 Growth Strategy
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             Achieving 6€ GP 75% and GR 70% through targeted initiatives
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             • Accelerate growth in ADWC, CT
+  • Activate new distributors for enhanced S&amp;OP
+  • Increase acute wound dressing availability
+  • Elevate GP via product mix optimization
+  • Focus on Sorbact as top antimicrobial choice
+  • Develop JOBST range in key areas
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="A dynamic abstract representation of growth and strategy, featuring swirling cosmic gradients and light bursts to symbolize innovation and forward momentum. No text included in the image." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/b0705181-9974-4334-b1a7-5ce1351c1c81"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           KSA 2026 Growth Strategy
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           ESSITY INTERNAL
+  KSA 2026 to Achieve 6€ GP 75 % and GR 70 %
+  Essity Business
+  JANFEBMARAPRMAYJUNJULAUGSEPOCTNOVDEC
+  Cutimed Goal 3.4€ with contribution 38%
+  JOBST and Ortho 2.3 €  
+  KSA Stand 
+  Alone SSI 
+  prevention 
+  •Enlist Sorbact in 23 DF center
+  •Deliver education of Sorbact use
+  • Heavy customer engagement( Physical and 
+  digital visit)
+  •Conduct a workshops for the southern rejoin 
+  Three main indication to tackle 
+  •DF 1
+  st
+   choice of infection 
+  prevention 50%
+  •PU infection prevention and 
+  treatment 25%
+  •Partial thickness Burn 25%
+  •4 main department to penetrate
+  •HHC
+  •Plastic Surgery 
+  •Wound Care
+  • DF department
+  Leukplast , wide area fixation, JOBST CL1, Actimove Pharmacy and PVT our aim 3.3 € 
+  •Approach Tender Stakeholder with LUEKOMED SORBACT 
+  •Add unique description  for Leukomed Sorbact and Sorbion
+  •Partnership with Infection control in SSI prevention awareness
+  •Maintain Sorbact SKUs descrition in the new tender
+  •Increase LEUKOSAN Glue prices 
+  •Create value proposition message for Skin sensitive range 
+  •Introudce new tender items with low GMNP prices to compete 
+  with Chinase and local brands in fixation dressing wide are 
+  fixation and acute dressing 
+  •Leukomed, Leukomed T and Leukomed T Plus 
+  enlisting in 2 new pharmacy chains 
+  •Increase number of doors from in the existing 
+  chains
+  •Salesout for new introduction Actomove, JOBST CL1
+  KSA Stand 
+  Alone SSI 
+  prevention 
+  NUPCO 
+  tender 
+  enlisting 
+  TENDER Shaping
+  STOP PU  
+  event 
+  MOH Project DF 30% 
+  Pharmacy chain expansion 75%  
+  Master of 
+  excellence 
+  JOBST
+  GVT accounts 70%
+  •Leukomed, Leukomed T and Leukomed T Plus 
+  enlisting in 10 PVT account
+  •Enlist wide area fixation in 10 pvt Hospital
+  • 
+  PVT  account expansion  25 % 
+  Enlist JOBST items of NUPCO in MOH 
+  Partnership with Lymphedema clinics in MOH
+  Leukotape  P codes creation in GVT 
+  Educational activity to train the HCPs in using of Jobst 
+  Activation of MOH and GVT 80% 
+  KSA PVT Leukoplast
+  NUPCO 
+  tender QTY 
+  requirements 
+  Dynacast prelude introduction in Sulimna Alhabib, 
+  Dallah and Suliman Faqeeh
+  Reactivate prints project with Manaa and Suliman 
+  AlhABIB
+  Delta lite enlisting in potential PVT hospital 
+  Activation of PVT 20%
+  •Stakeholder mapping, Identify DM,influencers &amp; gate 
+  keeper
+  •Create Value proposition message against other 
+  competitor 
+  •Explore the business opportunity 
+  Leukotap K in Sports club
+  HospitalContr%
+  Gov.Hosp80%
+  DF MOH40%
+  KFMC15%
+  PSMMC15%
+  KFSH-R10%
+  KFMH10%
+  KSMC5%
+  SFH &amp; UNI5%
+  KFAF5%
+  KAMC5%
+  Pvt. &amp; PH20%
+  Pharmacy 40%
+  Sul. Habib20%
+  Sul.Fakieh20%
+  IMC5%
+  DALLA5%
+  Manaa5%
+  Mowasaa5%
+  Celebration  of 
+  achievement 
+  0
+  0.5
+  1
+  1.5
+  2
+  2.5
+  3
+  3.5
+  4
+  Brand Contribution 
+  NUPCO 
+  tender 
+  Stakeholder 
+  identifier 
+
+  ESSITY INTERNAL
+  3Top priorities for KSA
+  ➢Accelerate the growth in 
+  ADWC , CT 
+  ➢Activate new distributer to 
+  take the S&amp;OP. to the 
+  second level and ensure 
+  high forecasting 
+  capabilities 
+  ➢Increase number of doors 
+  having our acute wound 
+  dressing .
+  •Drive more focus for 
+  elevating  GP by achieving 
+  the product mix and 
+  maximize the hospital 
+  channel penetration 
+  •Improve the product mix by 
+  adding new launches with 
+  high profit (leukomed 
+  Sorbact, Sorbion +70% GP)
+  •Enhance the pharmacy 
+  channel sales activation
+  •Focusing in ADWC by 
+  make sorbact the 1
+  st
+ 
+  choice antimicrobial 
+  dressing 
+  •Developing the Synth 
+  casting prod. (Dynacast, 
+  Elite)
+  •Develop JOBST range in 
+  both Lymphology and 
+  Phlebology range focus 
+  in both pharmacy and 
+  hospital.
+  GrowthProfitabilityFocus
+
+  ESSITY INTERNAL
+  BUSINESS MODEL CANVAS
+  KEY PARTNERS
+  ❖Hospital C suites
+  ❖NUPCO
+  ❖MOH
+  ❖The right team. 
+  KEY ACTIVITIES
+  •AVs
+  •Conferences.
+  •Workshops and 
+  Inservice. 
+  •Symposiums. 
+  •Standalone.
+  •Clinical Education
+  KEY RESOURCES
+  Product trainings.
+  Clinical &amp; Commercial 
+  trainings.
+  Local RCTs.
+  Case reports. 
+  Comparative studies.
+  VALUE 
+  PROPOSITIONS
+  Showing Essity top notch 
+  technology in connect the 
+  reduction of the total cost 
+  of treatment.
+  (Sorbact, SYNTH casting, 
+  lymphology and 
+  Phlebology)
+  By identifying the real 
+  pain and show them what 
+  they can gain
+  CUSTOMER 
+  RELATIONSHIP
+  •Keep the HCP informed 
+  with all the updates
+  •Providing updated 
+  studies  
+  •Reaching them 
+  physically and digitally
+  CHANNELS
+  Directly through 
+  hospital visits and 
+  product availability 
+  through medical shops 
+  and pharmacies 
+  CUSTOMER 
+  SEGMENTS
+  Our main foucs on 
+  class A HCPS 
+  customers are  
+  HCPs , care givers, 
+  class A Hospitals 
+  and  class A 
+  Pharmacy Channels 
+  COST STRUCTURE
+  Increasing profitability by introducing  the right product mix and 
+  slightly increasing prices to enhance gross profit. Which lead to 
+  team expansion 
+  REVENUE SOURCES
+  Focus strategic product mix with maintain the demand of the 
+  core item and non, Maintain healthy AR
+
+  ESSITY INTERNAL
+  Eastern region 
+  Southern region
+  Western region
+  Central Area
+  Westren 
+  region
+  25%
+  Central  region
+  60%
+  Eastren  
+  region 
+  15%
+  Geographical distribution
+  Westren regionCentral  regionEastren  region
+  Essity WC team
+  Damasco WC team
+  Tamer CT &amp;ORTH team
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=c01db516-cc62-4067-b501-cfe01f74c5c3">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             Exploring Allama Iqbal
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             The Poet of the East and His Legacy
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             • Visionary thinker
+  • Philosopher and poet
+  • Advocate for self-discovery
+  • Catalyst for Pakistan's creation
+  • Cultural and spiritual icon
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="An abstract representation of inspiration and thought, featuring cosmic elements and vibrant colors that symbolize creativity and intellectual depth. No text included." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/4977b021-819b-4904-8ff9-e0323007d241"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           Exploring Allama Iqbal
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           Presentation on allma iqbal
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=77c8848f-b779-4f63-b009-901f33ae4bd4">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             Seguridad en el Procesamiento de Alimentos
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             Medidas para Proteger a Trabajadores y Productos
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             • Normas y procedimientos de seguridad
+  • Prevención de accidentes y enfermedades
+  • Contaminación de alimentos controlada
+  • Ejemplos prácticos aplicados
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="An abstract representation of food processing safety, featuring vibrant colors and shapes symbolizing safety measures, such as shields and gears, without any text." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/9bae48ce-342b-40dc-b8ef-53103fefab79"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           Seguridad en el Procesamiento de Alimentos
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           INFORME: SEGURIDAD EN EL TRABAJO - ÁREA DE PROCESAMIENTO INDUSTRIAL DE ALIMENTOS
+
+  Alumna : Ana jesus gomez
+
+  Objetivo: Explicar las medidas de seguridad aplicables al procesamiento de alimentos, con teoría y ejemplos prácticos para prevenir accidentes, enfermedades, contaminación de alimentos y daños.
+
+  1. SEGURIDAD INDUSTRIAL Y SEGURIDAD GENERAL
+
+  - Teoría:
+
+  Seguridad industrial en alimentos es el conjunto de normas, procedimientos y medidas que protegen a los trabajadores, garantizan la calidad de los alimentos y previenen riesgos en el proceso (ej: calor, maquinaria, sustancias químicas). Seguridad general incluye orden, limpieza, higiene personal y cumplimiento de normativas sanitarias.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - Mantener los pasillos de transporte de materias primas libres de cajas, cubiertos o residuos de empaque para evitar tropiezos.
+
+  ​
+
+  - Controlar la ventilación en la zona de cocción (hornos, frituras) para evitar acumulación de humedad y vapores de grasa.
+
+  ​
+
+  - Realizar limpiezas diarias de las mesas de trabajo y máquinas para prevenir acumulación de restos de alimentos que causen infecciones o incendios.
+
+  2. SEGURIDAD EN EL MANEJO DE EQUIPOS, HERRAMIENTAS Y CONSUMOS
+
+  - Teoría:
+
+  Usar el equipo/herramienta adecuada para cada tarea, verificar su estado y limpieza antes de usarla, y cuidar consumos (lubricantes, limpiadores, aditivos) para evitar contaminación de alimentos.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - No usar una cuchilla de corte de carnes para cortar vegetales (riesgo de contaminación cruzada y uso incorrecto).
+
+  ​
+
+  - Verificar que la máquina de envasado de leche tenga las partes en contacto con alimento limpias y esterilizadas antes de empezar el proceso.
+
+  ​
+
+  - Almacenar lubricantes para motores en recipientes cerrados y etiquetados, alejados de zonas de preparación de alimentos.
+
+  3. PROTECCIÓN DE SEGURIDAD EN MÁQUINAS
+
+  - Teoría:
+
+  Las guardas de seguridad separan al trabajador de partes peligrosas de máquinas (ej: engranajes, cuchillas, tambores giratorios) y previenen contactos que causen cortes, aplastamientos o proyectaciones. También protegen los alimentos de contaminación por partes de la máquina.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - Una guarda fija de acero inoxidable en la máquina de trituración de frutas que impide que las manos lleguen a las cuchillas y evita que restos de metal entren en los alimentos.
+
+  ​
+
+  - Una guarda automática en la máquina de empaque de pan que se cierra cuando la cinta transportadora empieza a funcionar.
+
+  ​
+
+  - Un dispositivo de parada inmediata en la máquina de fritura que corta la corriente si hay un desbordamiento de aceite.
+
+  4. MANEJO DE MATERIALES
+
+  - Tipos de materiales en procesamiento de alimentos:
+
+  ​
+
+  - Brutos: Frutas, verduras, carnes, granos, leche cruda.
+
+  ​
+
+  - Semifabricados: Purés, harinas, aceites, productos curtidos.
+
+  ​
+
+  - Terminados: Enlatados, embutidos, lácteos, panes.
+
+  ​
+
+  - Peligrosos: Limpiadores sanitarios, desinfectantes, aditivos químicos, gases de refrigeración.
+
+  ​
+
+  - Manipulación y transporte:
+
+  ​
+
+  - Ejemplo: Usar una carretilla con rodillos suaves para llevar barriles de leche cruda de 100kg en lugar de arrastralos, y asegurarlos para evitar derrames y contaminación.
+
+  ​
+
+  - Fichas de seguridad (FS):
+
+  ​
+
+  - Ejemplo: La FS de un desinfectante usado para limpiar mesas indica que es irritante para ojos y no debe entrar en contacto con alimentos — recomienda usar guantes, gafas y lavar bien las superficies después de usarlo.
+
+  ​
+
+  - Almacenamiento:
+
+  ​
+
+  - Ejemplo: Separar alimentos crudos (carnes) de alimentos listos para consumir (embutidos) en refrigeradores diferentes, y almacenar limpiadores en estanterías cerradas, por encima de los alimentos para evitar fugas que los contaminen.
+
+  ​
+
+  - Sistema de clasificación de materiales peligrosos (GHS):
+
+  ​
+
+  - Ejemplo: Un recipiente de gas de refrigeración (ammoniaco) tiene el símbolo de "tóxico" (rombo rojo con cráneo) y el de "corrosivo" (rombo amarillo con ácido).
+
+  5. SEÑALIZACIONES DE SEGURIDAD
+
+  - Empleo de colores y ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - Rojo: Cartel "PROHIBIDO FUMAR" cerca de depósitos de aceite y refrigerantes; señal de "EXTINTOR" en paredes visibles.
+
+  ​
+
+  - Amarillo: Cartel "CUIDADO: MÁQUINA EN MOVIMIENTO" cerca de trituradoras; señal "PISO HÚMEDO" en zonas de limpieza de máquinas.
+
+  ​
+
+  - Verde: Señal de "SALIDA DE EMERGENCIA" con flecha luminosa; cartel "BOTIQUÍN DE PRIMEROS AUXILIOS".
+
+  ​
+
+  - Azul: Cartel "DEBES USAR GUANTES HIGIÉNICOS" en zona de preparación; señal "DEBES USAR GAFAS" en zona de limpieza con químicos.
+
+  ​
+
+  - Negro/blanco: Panel con mapa de rutas de evacuación; señal "SENTIDO DE TRÁFICO DE CARRETILLAS".
+
+  ​
+
+  - Señales en forma de panel:
+
+  ​
+
+  - Ejemplo: Un panel en la entrada de la planta que muestra la ubicación de extintores, botiquines, salidas de emergencia y zonas de riesgo (ej: zona de fritura, refrigeración).
+
+  6. TRABAJO EN ALTURA
+
+  - Teoría:
+
+  El trabajo en altura en la planta (ej: mantenimiento de hornos, limpieza de tanques de almacenamiento de agua) presenta riesgos de caídas y proyectación de objetos. Se requieren equipos de protección y medidas de aislamiento.
+
+  ​
+
+  - Ejemplo en procesamiento de alimentos:
+
+  ​
+
+  - Un trabajador que limpia un tanque de almacenamiento de jugo a 4 metros de altura usa un arnés anclado a un punto seguro en el techo y trabaja sobre una plataforma elevadora estable. Además, se marca una zona de riesgo en el suelo para evitar que otros pasen por debajo.
+
+  7. RIESGOS ELÉCTRICOS Y SEGURIDAD EN EL MANEJO
+
+  - Teoría:
+
+  Los riesgos eléctricos incluyen choques, quemaduras y incendios. Se deben evitar contactos con equipos húmedos (muy común en limpiezas) y verificar cables y dispositivos de protección.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - No manipular la máquina de envasado de jugo cuando el suelo está húmedo por limpieza — esperar a que se seque y usar calzado aislante.
+
+  ​
+
+  - Instalar interruptores diferenciales en todas las zonas de maquinaria eléctrica (trituradoras, envasadoras) para cortar la corriente rápidamente si hay un cortocircuito.
+
+  ​
+
+  - No conectar múltiples equipos (ej: licuadora industrial y máquina de empaque) al mismo enchufe en la zona de preparación.
+
+  8. RIESGOS DE INCENDIOS
+
+  - Tetraedro del fuego:
+
+  Elementos necesarios: combustible (ej: aceite de fritura, empaques de papel, madera), oxígeno (aire), calor (horno, chispa eléctrica, cable caliente) y cadena de reacción.
+
+  ​
+
+  - Ejemplo de tetraedro en procesamiento de alimentos:
+
+  ​
+
+  - Un incendio en la zona de fritura que se enciende cuando aceite caliente (combustible) se derrama sobre una placa caliente (calor) en el aire (oxígeno).
+
+  ​
+
+  - Métodos de extinción:
+
+  ​
+
+  - Ejemplo: Usar espuma o extintor de clase K (específico para aceites y grasas) para apagar un incendio de fritura (quita oxígeno y calor); usar agua para apagar un incendio de empaques de papel.
+
+  ​
+
+  - Equipos y gabinetes contra incendios:
+
+  ​
+
+  - Ejemplo: Un gabinete con extintores de clase K (cerca de frituras) y extintores ABC (en otras zonas), además de mangueras y hydrantes en cada esquina de la planta.
+
+  ​
+
+  - Extintores: tipos y manejo:
+
+  ​
+
+  - Tipos en procesamiento de alimentos:
+
+  ​
+
+  - Extintor K: Específico para incendios de aceites, grasas y productos de cocción.
+
+  ​
+
+  - Extintor ABC: Para incendios de papel, madera y equipos eléctricos pequeños.
+
+  ​
+
+  - Manejo (método PASO):
+
+  ​
+
+  1. P: Sacar el pasador de seguridad.
+
+  ​
+
+  2. A: Apuntar la boquilla a la base del fuego.
+
+  ​
+
+  3. S: Estrechar la palanca de accionamiento.
+
+  ​
+
+  4. O: Oscilar la boquilla de lado a lado para cubrir todo el área del fuego.
+
+  9. RIESGOS DE DERRAMES DE SUSTANCIAS PELIGROSAS
+
+  - Teoría:
+
+  Los derrames de sustancias peligrosas (limpiadores, desinfectantes, gases de refrigeración) pueden causar quemaduras, contaminación de alimentos y riesgos de incendios. Se requieren medidas de prevención y control.
+
+  ​
+
+  - Ejemplo en procesamiento de alimentos:
+
+  ​
+
+  - Un depósito de limpiador sanitario está colocado en una charola de contención de plástico resistente, que recoge cualquier derrame. El personal que lo manipula usa guantes, gafas y trabaja alejado de zonas de preparación de alimentos. Si hay un derrame, se aísla la zona, se limpia con agua y jabón, y se verifica que no haya contaminado alimentos.
+
+  10. MEDIDAS DE PREVENCIÓN: EPP (EQUIPOS DE PROTECCIÓN PERSONAL)
+
+  - Teoría:
+
+  El EPP protege al trabajador y previene la contaminación de alimentos. Debe ser adecuado para el riesgo, limpio y esterilizado cuando sea necesario.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - Trabajador de preparación de vegetales: Gorra de pelo, bata higiénica, guantes desechables, zapatos cerrados.
+
+  ​
+
+  - Trabajador de fritura: Gorra, bata resistente a calor, guantes de protección contra quemaduras, gafas.
+
+  ​
+
+  - Trabajador de limpieza con químicos: Mascara respiradora, guantes resistentes a químicos, gafas, bata impermeable.
+
+  11. PRIMEROS AUXILIOS EN CASO DE EMERGENCIA (PRE)
+
+  - Teoría:
+
+  PRE significa Preparación, Reanimación y Evacuación. Son los pasos básicos para actuar en caso de emergencia (quemaduras, choques, incendios) y salvar vidas.
+
+  ​
+
+  - Ejemplos en procesamiento de alimentos:
+
+  ​
+
+  - Preparación: Tener un botiquín de primeros auxilios completo con productos para quemaduras (especialmente importantes en frituras) y al menos 2 trabajadores entrenados por turno.
+
+  ​
+
+  - Reanimación: Si un trabajador tiene un choque eléctrico al manipular la máquina de refrigeración y no respira, hacer RCP hasta que lleguen los servicios de emergencia.
+
+  ​
+
+  - Evacuación: Si hay un incendio grande en la zona de envasado, activar la alarma, dirigir a los trabajadores por la ruta de evacuación y reunirse en el punto de encuentro seguro fuera de la planta.
+
+  Conclusión:
+
+  La seguridad en el procesamiento industrial de alimentos es fundamental para proteger a los trabajadores y garantizar la calidad y seguridad de los productos que llegan a los consumidores. Los ejemplos prácticos aquí presentados ayudan a entender cómo aplicar estas medidas en el día a día.
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=46c07685-62e7-4eac-8476-4e5f7ec0728f">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             Discover the Quokka
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             The World's Happiest Animal from Australia
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             • Quokka
+  • A small marsupial from Australia
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="A vibrant and playful depiction of a quokka in its natural habitat, showcasing its friendly nature and unique appearance. The image should be colorful and engaging, capturing the essence of this cheerful animal without any text." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/efc47d04-db94-47fc-a853-54bc20986d59"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           Discover the Quokka
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           Create a 1-minute English presentation about the animal Quokka.
+  The presentation should have 5 slides.
+  Use short bullet points only, no long sentences.
+  Make it simple and suitable for school.
+
+  Slide structure:
+
+  Slide 1 – Title &amp; Introduction
+  * Quokka
+  * A small marsupial from Australia
+
+  Slide 2 – Habitat
+  * Lives in Australia
+  * Mainly on Rottnest Island
+  * Warm climate
+
+  Slide 3 – Appearance
+  * Small and round body
+  * Brown fur
+  * Short tail
+  * Looks like it is smiling
+
+  Slide 4 – Diet &amp; Behavior
+  * Eats plants and leaves
+  * Active at night
+  * Friendly animal
+
+  Slide 5 – Fun Facts
+  * Called the “world’s happiest animal”
+  * Famous for cute selfies
+  * Harmless to humans
+
+  Keep the design clean and modern and add pictures.
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=2eff82d3-a835-4b49-a30c-d1dd4671bd39">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             Why Crypto Will Keep Growing Strong
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             Exploring the future of cryptocurrency amidst economic challenges
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             • Economic uncertainty drives demand for crypto
+  • Wealthy investors are diversifying into digital assets
+  • New policies are facilitating retirement investments in crypto
+  • Crypto offers decentralization and security
+  • Increased scams won't hinder overall growth
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="A visually striking abstract image of a digital landscape with glowing cryptocurrency symbols and a cosmic background, representing the growth and potential of cryptocurrency. No text in the image." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/b82bc3fe-6307-45e1-8d86-e332ad3dde1a"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           Why Crypto Will Keep Growing Strong
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           5-Minute Presentation Script: Why Crypto Will Keep Growing Strong in the Coming Years
+  Introduction (30-45 seconds)
+  Hey everyone, thanks for listening today. I'm here to talk about why cryptocurrency—like Bitcoin—is set to keep growing big time in the next few years. The world feels like it's getting tougher economically, with inflation risks, big debts, and shaky currencies. Wealthy people and big institutions are jumping into crypto to protect their money. Crypto is special because no government can fully control it like regular money. Plus, new policies under President Trump are making it easier for everyday folks' retirement savings to flow into crypto. Sure, scams will pop up more, but that won't stop the growth. Let's break it down simply.
+  Point 1: Things Are Getting Tougher – People Need a Safe Place for Their Money (45 seconds)
+  Right now, the global economy has challenges: slowing growth, high debts in many countries, and inflation that could come back with things like energy prices or trade issues. In places with bad inflation, like some countries we've seen, people already use Bitcoin to protect their savings because regular money loses value fast.
+  As things get uncertain, more people see Bitcoin as "digital gold"—it's limited to just 21 million coins ever, so governments can't print more like they do with dollars. This makes it a great way to hedge against money losing value.
+  Point 2: Rich People and Big Institutions Are Protecting Their Wealth (45 seconds)
+  The wealthy aren't waiting around—they're already pouring money into crypto. There are hundreds of thousands of crypto millionaires now, and big companies are holding Bitcoin on their balance sheets. Institutional investors, like hedge funds and family offices, are adding crypto for diversification and protection against inflation or a weaker dollar.
+  Billions have flowed into Bitcoin ETFs, and experts predict prices could keep rising as more big money comes in.
+  Point 3: Trump's New Policies Are Opening the Floodgates – Even Retirement Money Is Coming In (1 minute)
+  Here's a game-changer: President Trump has signed executive orders and supported laws that are super friendly to crypto. In 2025, he created a Strategic Bitcoin Reserve for the U.S. government, treating Bitcoin like a national asset—kind of like gold. He also rolled back old restrictions and pushed for clearer rules to help crypto grow.
+  Most importantly, in August 2025, Trump signed an order making it easier for 401(k) retirement plans—those workplace savings accounts with trillions of dollars—to include crypto and other alternative investments like private companies or real estate.
+  Why does this matter? Portfolio managers have a legal duty to act in your best interest (called fiduciary duty). With crypto now seen as a legitimate way to diversify and potentially get better returns or protect against risks, many managers will feel they have no choice but to put at least a small percentage into crypto. Otherwise, they might not be doing their job properly. This could send massive amounts of everyday retirement money flowing into crypto markets, pushing growth even higher.
+  Point 4: Crypto Can't Be Controlled Like Regular Money (45 seconds)
+  Unlike dollars or euros, which governments and banks control—they can print more, freeze accounts, or set rules—crypto runs on a decentralized network. No one person or country owns it. You can hold it yourself in a wallet, and transactions happen peer-to-peer without permission.
+  Governments can regulate buying and selling, but they can't inflate Bitcoin's supply or easily seize it if you store it right. In tough times or places with strict controls, this freedom is huge. As trust in traditional money systems drops, more people will choose crypto.
+  Point 5: Scams Will Increase, But Growth Won't Stop (30 seconds)
+  As crypto gets bigger and more money comes in, sadly, scams will rise too—things like fake investments or hacks. We've already seen billions lost this way.
+  But think about it: the stock market has fraud, gold has fakes, even banks have scams—yet they all keep growing. Better tools, rules, and education will help fight scams over time. The big drivers—like protection, decentralization, and now easier access through retirement plans— are way stronger.
+  Conclusion (45 seconds)
+  So, to wrap up: with economic challenges pushing people to protect their wealth, crypto's uncontrollable nature making it unique, and Trump's policies opening doors for trillions in retirement money to flow in—crypto is primed for more growth. It's going mainstream fast, from government reserves to your 401(k).
+  Thanks for your time—any questions?
+  (Total: About 5 minutes when spoken naturally with short pauses. Keep it conversational—smile, make eye contact, and use simple hand gestures for emphasis.)
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=bc5b827c-443a-47ee-a49e-c81457089900">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="bg-white rounded-2xl shadow-sm overflow-hidden hover:shadow-lg hover:scale-[1.02] transition-all duration-200 group border border-gray-100 will-change-transform">
+        <div class="flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-200">
+         <div class="relative overflow-hidden">
+          <div class="relative overflow-hidden">
+           <div class="pointer-events-none">
+            <div>
+             Quality Inspection in a Textile Factory
+            </div>
+           </div>
+           <div class="pointer-events-none">
+            <div>
+             Ensuring Excellence in Fabric Production
+            </div>
+           </div>
+           <div class="pointer-events-none overflow-hidden rounded">
+            <img alt="A conceptual image representing quality control in a textile factory, featuring an abstract depiction of fabric inspection tools and textiles, with a vibrant cosmic background. No text in the image." src="https://aqlfxbcfnfqogapzreyz.supabase.co/storage/v1/object/public/image-files/ea6be73b-c9d6-4f04-b23f-ce4a8109a899"/>
+           </div>
+          </div>
+          <div class="absolute top-3 right-3 z-10 bg-black/50 text-white text-xs px-2 py-1 rounded-full">
+           1 / 6
+          </div>
+         </div>
+         <div class="p-6 border-t border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">
+           Quality Inspection in a Textile Factory
+          </h3>
+          <p class="text-gray-600 mb-4 line-clamp-2 text-sm">
+           “Quality Inspection in a Textile Factory”.
+  (Simple English – suitable for class/academic presentation)
+
+  Slide 1: Title
+
+  Quality Inspection in a Textile Factory
+
+  Name
+
+  Department
+
+  Course / Class
+
+  Slide 2: Introduction
+
+  Quality inspection ensures fabric meets required standards
+
+  It helps reduce defects and customer complaints
+
+  Important for export and brand reputation
+
+  Slide 3: Objectives of Quality Inspection
+
+  Identify fabric defects
+
+  Maintain consistent quality
+
+  Reduce production loss
+
+  Ensure customer satisfaction
+
+  Slide 4: Common Fabric Defects
+
+  Broken ends
+
+  Uneven dyeing
+
+  Oil or stain marks
+
+  Holes and thick/thin places
+
+  Slide 5: Conclusion
+
+  Quality inspection is essential in textile factories
+
+  It improves product value and trust
+
+  Proper inspection leads to better business success
+
+  If you want, I can also:
+
+  Simplify English more
+
+  Convert this into Bangla
+
+  Make it exam-friendly or presentation style
+          </p>
+          <div class="flex items-center justify-between">
+           <div class="flex items-center gap-2 text-sm text-gray-600">
+            <span>
+             6 slides
+            </span>
+           </div>
+           <a class="text-purple-600 hover:text-purple-700 text-sm font-medium transition-colors" href="/share?name=89b16bc5-d704-40f2-a04b-9fe4b4f9ce83">
+            Preview
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 md:py-32 space-y-24 md:space-y-32 max-w-7xl mx-auto" id="features">
+     <div class="px-8">
+      <h2 class="font-extrabold text-4xl lg:text-6xl tracking-tight mb-12 md:mb-24">
+       Discover the
+       <span class="text-primary">
+        Features
+       </span>
+      </h2>
+      <div class="flex flex-col md:flex-row gap-12 md:gap-24">
+       <div class="grid grid-cols-1 items-stretch gap-8 sm:gap-12 lg:grid-cols-2 lg:gap-20">
+        <ul class="w-full">
+         <li>
+          <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+           <span class="flex-1 text-base-content text-primary font-semibold">
+            <h3 class="inline">
+             Unlimited AI-Powered Generations
+            </h3>
+           </span>
+          </button>
+          <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+           <div class="pb-5 leading-relaxed">
+            Break free from presentation limitations! Presentia.ai offers unlimited AI-powered presentations with no restrictions. Whether you're crafting a business pitch, academic presentation, or creative showcase, our platform gives you the freedom to iterate, refine, and perfect your message. Experience the power of unlimited creativity with our advanced AI technology, designed to transform your ideas into stunning presentations in minutes.
+           </div>
+          </div>
+         </li>
+         <li>
+          <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+           <span class="flex-1 text-base-content">
+            <h3 class="inline">
+             Global Language Support
+            </h3>
+           </span>
+          </button>
+          <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+           <div class="pb-5 leading-relaxed">
+            Connect with audiences worldwide! Presentia.ai breaks down language barriers with seamless multilingual support. Our advanced AI understands context and nuance across multiple languages, ensuring your message resonates perfectly with international audiences. Perfect for global teams, international businesses, and multilingual presentations that need to make a lasting impact.
+           </div>
+          </div>
+         </li>
+         <li>
+          <button class="relative flex gap-2 items-center w-full py-5 text-base font-medium text-left md:text-lg">
+           <span class="flex-1 text-base-content">
+            <h3 class="inline">
+             Smart Content Generation
+            </h3>
+           </span>
+          </button>
+          <div class="transition-all duration-300 ease-in-out text-base-content-secondary overflow-hidden">
+           <div class="pb-5 leading-relaxed">
+            Transform your ideas into compelling presentations instantly! Our AI-powered content generation understands your topic, audience, and goals to create perfectly tailored presentations. From executive summaries to detailed technical reports, Presentia.ai crafts engaging content that captures attention and delivers your message with impact. Save hours of work while achieving professional-quality results.
+           </div>
+          </div>
+         </li>
+        </ul>
+        <div>
+         <img alt="An infinite symbol" class="rounded-2xl aspect-square w-full sm:w-[26rem] object-cover object-center" height="500" src="/_next/image?url=%2Funlimited.png&amp;w=1080&amp;q=75" width="500"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-base-200 overflow-hidden" id="pricing">
+     <div class="py-24 px-8 max-w-5xl mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+       <p class="font-medium text-primary mb-8">
+        Pricing
+       </p>
+       <h2 class="font-bold text-3xl lg:text-5xl tracking-tight">
+        Create Stunning AI-Generated Presentations — Pay Only for What You Use
+       </h2>
+      </div>
+      <div class="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
+       <div class="relative w-full max-w-lg">
+        <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+         <div class="flex justify-between items-center gap-4">
+          <div>
+           <p class="text-lg lg:text-xl font-bold">
+            Pro
+           </p>
+           <p class="text-base-content/80 mt-2">
+            Includes up to 110 slides per month
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-2">
+          <div class="flex flex-col justify-end mb-[4px] text-lg">
+           <p class="relative">
+            <span class="text-base-content/80">
+             $29
+            </span>
+           </p>
+          </div>
+          <p class="text-5xl tracking-tight font-extrabold">
+           $20
+          </p>
+          <div class="flex flex-col justify-end mb-[4px]">
+           <p class="text-xs text-base-content/60 uppercase font-semibold">
+            per month
+           </p>
+          </div>
+         </div>
+         <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+          <li class="flex items-center gap-2">
+           <span>
+            AI-generated images
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Save Presentations
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Customise Presentation Theme
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Multiple languages
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Team Sharing (Coming Soon)
+           </span>
+          </li>
+         </ul>
+         <div class="space-y-2">
+          <button class="btn btn-primary btn-block group rounded-xl">
+           Choose Pro
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="relative w-full max-w-lg">
+        <div class="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
+         <div class="flex justify-between items-center gap-4">
+          <div>
+           <p class="text-lg lg:text-xl font-bold">
+            Max Yearly (Most Popular)
+           </p>
+           <p class="text-base-content/80 mt-2">
+            Includes up to 1500 slides per year
+           </p>
+          </div>
+         </div>
+         <div class="flex gap-2">
+          <div class="flex flex-col justify-end mb-[4px] text-lg">
+           <p class="relative">
+            <span class="text-base-content/80">
+             $600
+            </span>
+           </p>
+          </div>
+          <p class="text-5xl tracking-tight font-extrabold">
+           $199
+          </p>
+          <div class="flex flex-col justify-end mb-[4px]">
+           <p class="text-xs text-base-content/60 uppercase font-semibold">
+            per year
+           </p>
+          </div>
+         </div>
+         <ul class="space-y-2.5 leading-relaxed text-base flex-1">
+          <li class="flex items-center gap-2">
+           <span>
+            All Pro features
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Priority Support
+           </span>
+          </li>
+          <li class="flex items-center gap-2">
+           <span>
+            Commercial Use
+           </span>
+          </li>
+         </ul>
+         <div class="space-y-2">
+          <button class="btn btn-primary btn-block group rounded-xl">
+           Choose Max Yearly
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-base-200" id="faq">
+     <div class="py-24 px-8 max-w-7xl mx-auto flex flex-col md:flex-row gap-12">
+      <div class="flex flex-col text-left basis-1/2">
+       <p class="inline-block font-semibold text-primary mb-4">
+        FAQ
+       </p>
+       <p class="sm:text-4xl text-3xl font-extrabold text-base-content">
+        Frequently Asked Questions
+       </p>
+      </div>
+      <ul class="basis-1/2">
+       <li>
+        <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+         <span class="flex-1 text-base-content">
+          How does it work?
+         </span>
+        </button>
+        <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+         <div class="pb-5 leading-relaxed">
+          <div class="space-y-2 leading-relaxed">
+           <p>
+            Presentia AI uses an AI model to generate Power Point Presentations for you. Once generated, you can download and edit them as you please.
+           </p>
+          </div>
+         </div>
+        </div>
+       </li>
+       <li>
+        <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+         <span class="flex-1 text-base-content">
+          What do I get exactly?
+         </span>
+        </button>
+        <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+         <div class="pb-5 leading-relaxed">
+          <div class="space-y-2 leading-relaxed">
+           <p>
+            When you sign up for Presentia AI, you get access to use of our AI PowerPoint Generator.
+           </p>
+          </div>
+         </div>
+        </div>
+       </li>
+       <li>
+        <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+         <span class="flex-1 text-base-content">
+          Do the slides contain images?
+         </span>
+        </button>
+        <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+         <div class="pb-5 leading-relaxed">
+          <div class="space-y-2 leading-relaxed">
+           <p>
+            Yes, the slides will contain images too!
+           </p>
+          </div>
+         </div>
+        </div>
+       </li>
+       <li>
+        <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+         <span class="flex-1 text-base-content">
+          Can I get a refund?
+         </span>
+        </button>
+        <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+         <div class="pb-5 leading-relaxed">
+          <div class="space-y-2 leading-relaxed">
+           <p>
+            You're only eligible for a refund if you've not created a presentation with your current subscription yet.
+           </p>
+           <p>
+            If you've already used a paid subscription to create a presentation, we cannot offer a refund as costs incurred for generative AI are extremely high.
+           </p>
+           <p>
+            In turn, our upstream providers do not let us ask for refunds for the GPU processing time used to create your AI models and generate your photos and videos. This would make it a loss making endeavor for us. During sign up you agree to withhold your right to refund for this reason.
+           </p>
+           <p>
+            You can cancel your subscription at any time though: your subscription won't renew and you will not be charged again.
+           </p>
+           <p>
+            To request a refund, please email
+            <a class="text-primary hover:underline" href="mailto:support@presentia.ai">
+             support@presentia.ai
+            </a>
+            .
+           </p>
+          </div>
+         </div>
+        </div>
+       </li>
+       <li>
+        <button class="relative flex gap-2 items-center w-full py-5 text-base font-semibold text-left border-t md:text-lg border-base-content/10">
+         <span class="flex-1 text-base-content">
+          Can I delete my data?
+         </span>
+        </button>
+        <div class="transition-all duration-300 ease-in-out opacity-80 overflow-hidden">
+         <div class="pb-5 leading-relaxed">
+          <div class="space-y-2 leading-relaxed">
+           <p>
+            Yes, you can delete your presentations from the library page: hover over a presentation, and click the trash bin icon to delete it.
+           </p>
+           <p>
+            To fully delete your profile and email address from our system, please email
+            <a class="text-primary hover:underline" href="mailto:support@presentia.ai">
+             support@presentia.ai
+            </a>
+            with your request.
+           </p>
+          </div>
+         </div>
+        </div>
+       </li>
+      </ul>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-base-200 border-t border-base-content/10">
+    <div class="max-w-7xl mx-auto px-8 py-24">
+     <div class="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
+      <div class="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
+       <a class="flex gap-2 justify-center md:justify-start items-center" href="/#">
+        <img alt="Presentia AI logo" class="w-6 h-6" height="24" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ficon.1a5aa52c.png&amp;w=48&amp;q=75" width="24"/>
+        <strong class="font-extrabold tracking-tight text-base md:text-lg">
+         Presentia AI
+        </strong>
+       </a>
+       <p class="mt-3 text-sm text-base-content/80">
+        Generate a PowerPoint Presentation on any topic. Just type in a few words and our AI will generate it for you.
+       </p>
+       <p class="mt-3 text-sm text-base-content/80">
+        Email: support@presentia.ai
+       </p>
+      </div>
+      <div class="flex-grow flex flex-wrap justify-center -mb-10 md:mt-0 mt-10 text-center">
+       <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+        <div class="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+         Solutions
+        </div>
+        <div class="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+         <a class="link link-hover" href="/pdf-to-ppt">
+          PDF to PPT
+         </a>
+         <a class="link link-hover" href="/word-to-ppt">
+          Word to PPT
+         </a>
+         <a class="link link-hover" href="/convert-outline-to-ppt">
+          Outline to PPT
+         </a>
+         <a class="link link-hover" href="/reports-to-ppt">
+          Reports to PPT
+         </a>
+         <a class="link link-hover" href="/ai-presentation-generator">
+          AI Presentation Generator
+         </a>
+         <a class="link link-hover" href="/convert-research-papers-to-powerpoint-with-ai">
+          Research Papers to PowerPoint
+         </a>
+         <a class="link link-hover" href="/text-to-ppt">
+          Text to PPT
+         </a>
+         <a class="link link-hover" href="/webpage-to-ppt">
+          WebPage to PPT
+         </a>
+        </div>
+       </div>
+       <div class="lg:w-1/3 md:w-1/2 w-full px-4">
+        <div class="footer-title font-semibold text-base-content tracking-widest text-sm md:text-left mb-3">
+         COMPANY
+        </div>
+        <div class="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
+         <a class="link link-hover" href="/blog">
+          Blog
+         </a>
+         <a class="link link-hover" href="/affiliate">
+          Affiliate Signup
+         </a>
+         <a class="link link-hover" href="/privacy-policy">
+          Privacy policy
+         </a>
+         <a class="link link-hover" href="/tos">
+          Terms of service
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

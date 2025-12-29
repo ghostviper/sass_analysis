@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TrackEats</title>
+</head>
+<body>
+  <body>
+   <div>
+    <div class="wrapper overflow-x-hidden w-full">
+     <div class="navbar bg-base-100 py-1 px-4">
+      <div class="flex-1">
+       <a class="normal-case text-2xl font-bold flex items-center" href="/">
+        <img alt="TrackEats Logo" class="h-10 w-auto" src="/favicon.png"/>
+        <span class="ml-2">
+         TrackEats
+        </span>
+       </a>
+      </div>
+      <div class="flex-none">
+       <ul class="menu menu-horizontal px-1 hidden sm:flex font-medium">
+        <li>
+         <a class="text-base px-4" href="/demo">
+          Demo
+         </a>
+        </li>
+        <li>
+         <a class="text-base px-4" href="/#how-it-works">
+          How It Works
+         </a>
+        </li>
+        <li>
+         <a class="btn btn-primary text-primary-content ml-2" href="/account">
+          Get Started
+         </a>
+        </li>
+       </ul>
+       <div class="dropdown dropdown-end sm:hidden">
+        <ul class="menu dropdown-content mt-3 z-[100] p-2 shadow-sm bg-base-100 rounded-box w-48 font-medium">
+         <li>
+          <a href="/demo">
+           Demo
+          </a>
+         </li>
+         <li>
+          <a href="/#how-it-works">
+           How It Works
+          </a>
+         </li>
+         <li>
+          <a class="mt-2 btn btn-primary btn-sm text-primary-content" href="/account">
+           Get Started
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="content-wrapper overflow-x-hidden w-full">
+      <div class="min-h-screen flex flex-col svelte-le4ju1">
+       <div class="hero min-h-[90vh] bg-gradient-to-br from-base-100 via-base-100 to-base-200 svelte-le4ju1">
+        <div class="hero-content flex-col lg:flex-row-reverse px-4 py-12 md:p-10 gap-12 md:gap-20 w-full max-w-7xl svelte-le4ju1">
+         <div class="w-full lg:max-w-xl relative svelte-le4ju1">
+          <div class="rounded-2xl overflow-hidden shadow-2xl border border-base-300/30 relative svelte-le4ju1">
+           <img alt="Food tracking app dashboard" class="w-full h-auto transform transition-transform duration-700 hover:scale-105 svelte-le4ju1" src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&amp;w=800&amp;auto=format"/>
+          </div>
+          <div class="absolute -bottom-6 right-8 bg-base-100 rounded-2xl shadow-xl p-3 border border-base-300/50 hidden md:flex items-center gap-3 transform rotate-3 svelte-le4ju1">
+           <span class="text-3xl svelte-le4ju1">
+            📊
+           </span>
+           <div class="svelte-le4ju1">
+            <p class="font-semibold text-sm svelte-le4ju1">
+             Calories today
+            </p>
+            <p class="text-primary font-bold svelte-le4ju1">
+             1,480 / 2,000
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="w-full lg:max-w-xl mt-8 lg:mt-0 relative svelte-le4ju1">
+          <span class="px-4 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-6 inline-block svelte-le4ju1">
+           Healthy eating made simple
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-neutral mb-2 svelte-le4ju1">
+           Track Your Food,
+           <span class="text-primary svelte-le4ju1">
+            Transform
+           </span>
+           Your Health
+          </h1>
+          <p class="py-6 md:py-8 text-base md:text-lg text-neutral/80 leading-relaxed svelte-le4ju1">
+           Log meals, track nutrition, and reach your health goals with our
+            easy-to-use food tracker. Our AI technology ensures the most accurate
+            food recognition and tracking.
+           <br class="svelte-le4ju1"/>
+           <span class="font-semibold text-primary svelte-le4ju1">
+            100% free to use.
+           </span>
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 svelte-le4ju1">
+           <a class="w-full sm:w-auto svelte-le4ju1" href="/account">
+            <button class="btn btn-primary w-full sm:w-auto px-8 py-3 h-auto text-primary-content font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg svelte-le4ju1">
+             Start Tracking
+            </button>
+           </a>
+           <a class="w-full sm:w-auto svelte-le4ju1" href="#how-it-works">
+            <button class="btn btn-outline btn-primary w-full sm:w-auto px-8 py-3 h-auto transition-all duration-300 hover:scale-105 svelte-le4ju1">
+             See How It Works
+            </button>
+           </a>
+          </div>
+          <div class="mt-8 flex items-center gap-2 svelte-le4ju1">
+           <div class="flex -space-x-3 svelte-le4ju1">
+            <div class="w-8 h-8 rounded-full bg-base-300 border-2 border-base-100 flex items-center justify-center overflow-hidden svelte-le4ju1">
+             <img alt="User avatar" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=1"/>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-base-300 border-2 border-base-100 flex items-center justify-center overflow-hidden svelte-le4ju1">
+             <img alt="User avatar" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=2"/>
+            </div>
+            <div class="w-8 h-8 rounded-full bg-base-300 border-2 border-base-100 flex items-center justify-center overflow-hidden svelte-le4ju1">
+             <img alt="User avatar" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=3"/>
+            </div>
+           </div>
+           <p class="text-sm text-neutral/70 svelte-le4ju1">
+            <span class="font-semibold svelte-le4ju1">
+             1,000+
+            </span>
+            people tracking meals today
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-200 relative overflow-hidden svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="text-center mb-12 md:mb-16 svelte-le4ju1">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Complete Nutrition Database
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+           Track All Food Categories
+          </h2>
+          <p class="text-base md:text-lg max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           Our comprehensive database covers all major food groups, making it
+            easy to log and track your complete nutritional intake.
+          </p>
+         </div>
+         <div class="relative px-4 md:px-10 svelte-le4ju1">
+          <div class="design-styles-scroll-container svelte-le4ju1" id="food-categories-container">
+           <div class="design-styles-inner-container svelte-le4ju1">
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Fruits &amp; Vegetables" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🥗
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Fruits &amp; Vegetables
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Fresh, nutritious produce to fuel your body
+              </p>
+             </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Proteins" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🍗
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Proteins
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Essential for muscle repair and growth
+              </p>
+             </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Whole Grains" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1568254183919-78a4f43a2877?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🌾
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Whole Grains
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Complex carbohydrates for sustained energy
+              </p>
+             </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Dairy &amp; Alternatives" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🥛
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Dairy &amp; Alternatives
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Calcium-rich foods for bone health
+              </p>
+             </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Healthy Fats" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🥑
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Healthy Fats
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Essential for hormone production and cell health
+              </p>
+             </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl overflow-hidden min-w-[280px] md:min-w-[320px] transition-transform duration-300 hover:shadow-2xl hover:-translate-y-2 border border-base-300/30 svelte-le4ju1">
+             <figure class="h-48 md:h-60 overflow-hidden relative svelte-le4ju1">
+              <img alt="Snacks &amp; Treats" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110 svelte-le4ju1" src="https://images.unsplash.com/photo-1599490659213-e2b9527bd087?q=80&amp;w=800&amp;auto=format"/>
+              <div class="absolute top-3 right-3 w-12 h-12 bg-base-100 rounded-full flex items-center justify-center text-2xl shadow-lg svelte-le4ju1">
+               🍪
+              </div>
+             </figure>
+             <div class="card-body p-5 md:p-6 svelte-le4ju1">
+              <h3 class="card-title text-neutral text-xl font-bold svelte-le4ju1">
+               Snacks &amp; Treats
+              </h3>
+              <p class="text-neutral/70 text-sm md:text-base svelte-le4ju1">
+               Balance is key - track your occasional indulgences
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex justify-center mt-10 svelte-le4ju1">
+          <a class="btn btn-primary px-8 py-3 h-auto font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg svelte-le4ju1" href="/account">
+           Start Tracking Now - It's Free
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-100 relative svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="text-center mb-12 md:mb-16 svelte-le4ju1">
+          <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Everything You Need
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+           Powerful Features
+          </h2>
+          <p class="text-base md:text-lg max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           Everything you need to take control of your nutrition and health
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 svelte-le4ju1">
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Comprehensive Nutrition Tracking
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Track calories, macros, and micronutrients with our extensive food
+                database. Get detailed insights into your nutritional intake with
+                beautiful charts and graphs.
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Photo Food Logging
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Simply take a photo of your meal and our AI recognizes the food,
+                making logging faster and easier than ever. No more manual
+                searching or guessing portion sizes!
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Personalized Goals &amp; Plans
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Set custom nutrition goals based on your needs—whether you're
+                losing weight, building muscle, or managing health conditions. Get
+                personalized recommendations to improve your diet.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mt-8 md:mt-10 svelte-le4ju1">
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Meal Planning &amp; Recipes
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Plan your meals in advance with our easy-to-use meal planner.
+                Discover healthy recipes tailored to your nutritional goals and
+                preferences.
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Progress Monitoring
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Track your health metrics over time with detailed charts and
+                reports. See how your eating habits correlate with energy levels,
+                weight changes, and more.
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Smart Reminders
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Never forget to log a meal with customizable reminders. Get timely
+                notifications about your nutritional goals and progress updates.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-100 relative svelte-le4ju1" id="how-it-works">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="text-center mb-12 md:mb-16 svelte-le4ju1">
+          <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Simple Process
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+           How It Works
+          </h2>
+          <p class="text-base md:text-lg max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           Our simple 4-step process makes tracking your nutrition easier than
+            ever
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 svelte-le4ju1">
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden relative svelte-le4ju1">
+           <span class="absolute -top-3 -left-3 w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-xl font-bold text-primary-content shadow-lg svelte-le4ju1">
+            01
+           </span>
+           <div class="card-body p-8 pt-10 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 svelte-le4ju1">
+             Log your meals
+            </h3>
+            <p class="text-neutral/70 text-base leading-relaxed svelte-le4ju1">
+             Take a photo or search our database to quickly add what you eat
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden relative svelte-le4ju1">
+           <span class="absolute -top-3 -left-3 w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-xl font-bold text-primary-content shadow-lg svelte-le4ju1">
+            02
+           </span>
+           <div class="card-body p-8 pt-10 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 svelte-le4ju1">
+             Track nutrition
+            </h3>
+            <p class="text-neutral/70 text-base leading-relaxed svelte-le4ju1">
+             Get instant insights into calories, macros, and micronutrients
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden relative svelte-le4ju1">
+           <span class="absolute -top-3 -left-3 w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-xl font-bold text-primary-content shadow-lg svelte-le4ju1">
+            03
+           </span>
+           <div class="card-body p-8 pt-10 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 svelte-le4ju1">
+             Set goals
+            </h3>
+            <p class="text-neutral/70 text-base leading-relaxed svelte-le4ju1">
+             Define your nutrition targets based on your health objectives
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden relative svelte-le4ju1">
+           <span class="absolute -top-3 -left-3 w-14 h-14 rounded-xl bg-primary flex items-center justify-center text-xl font-bold text-primary-content shadow-lg svelte-le4ju1">
+            04
+           </span>
+           <div class="card-body p-8 pt-10 svelte-le4ju1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 svelte-le4ju1">
+             Monitor progress
+            </h3>
+            <p class="text-neutral/70 text-base leading-relaxed svelte-le4ju1">
+             View detailed reports and trends to stay on track with your goals
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="flex justify-center mt-14 md:mt-16 svelte-le4ju1">
+          <a class="btn btn-primary px-8 py-3 h-auto text-primary-content font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg svelte-le4ju1" href="/account">
+           Get Started Free - No Credit Card
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-100 rounded-xl svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="text-center mb-12 svelte-le4ju1">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Coming Soon
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-neutral mb-4 svelte-le4ju1">
+           Upcoming Features
+          </h2>
+          <p class="text-base max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           We're constantly improving our platform. Here's what's coming soon:
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 svelte-le4ju1">
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Meal Suggestion AI
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Based on your dietary preferences and nutrition goals, our AI will
+                suggest personalized meal ideas to help you stay on track while
+                enjoying delicious food options that match your taste.
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Grocery List Generator
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Automatically generate shopping lists based on your meal plans.
+                Save time planning your grocery trips and ensure you have all the
+                ingredients you need for healthy meals.
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 border border-base-300/30 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 svelte-le4ju1">
+            <h3 class="text-lg md:text-xl font-bold mb-3 text-neutral svelte-le4ju1">
+             Social Challenges &amp; Community
+            </h3>
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Join nutrition challenges with friends or the community to stay
+                motivated. Share recipes, progress, and tips with like-minded
+                individuals on their health journey.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-200 relative overflow-hidden svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="text-center mb-12 md:mb-16 svelte-le4ju1">
+          <span class="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Success Stories
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+           What Our Users Say
+          </h2>
+          <p class="text-base md:text-lg max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           Join thousands of satisfied users who have transformed their health
+            with our food tracker
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 svelte-le4ju1">
+          <div class="card bg-base-100 shadow-xl overflow-hidden border border-base-300/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 relative svelte-le4ju1">
+            <p class="mb-8 text-neutral/90 italic text-lg leading-relaxed svelte-le4ju1">
+             "TrackEats has completely changed my relationship with food. I'm much more aware of what I eat and have lost 15 pounds!"
+            </p>
+            <div class="flex items-center mt-auto svelte-le4ju1">
+             <div class="w-12 h-12 rounded-full bg-base-300 overflow-hidden mr-4 svelte-le4ju1">
+              <img alt="Sarah Johnson" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=4"/>
+             </div>
+             <div class="svelte-le4ju1">
+              <h4 class="font-bold text-neutral text-lg svelte-le4ju1">
+               Sarah Johnson
+              </h4>
+              <p class="text-sm text-neutral/70 svelte-le4ju1">
+               Fitness Enthusiast
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl overflow-hidden border border-base-300/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 relative svelte-le4ju1">
+            <p class="mb-8 text-neutral/90 italic text-lg leading-relaxed svelte-le4ju1">
+             "As a nutritionist, I recommend TrackEats to all my clients. It's simple to use but provides comprehensive data for better health decisions."
+            </p>
+            <div class="flex items-center mt-auto svelte-le4ju1">
+             <div class="w-12 h-12 rounded-full bg-base-300 overflow-hidden mr-4 svelte-le4ju1">
+              <img alt="Michael Chen" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=5"/>
+             </div>
+             <div class="svelte-le4ju1">
+              <h4 class="font-bold text-neutral text-lg svelte-le4ju1">
+               Michael Chen
+              </h4>
+              <p class="text-sm text-neutral/70 svelte-le4ju1">
+               Registered Nutritionist
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl overflow-hidden border border-base-300/30 hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 svelte-le4ju1">
+           <div class="card-body p-8 relative svelte-le4ju1">
+            <p class="mb-8 text-neutral/90 italic text-lg leading-relaxed svelte-le4ju1">
+             "Tracking my macros has never been easier. I've gained muscle while staying lean thanks to the insights from this app."
+            </p>
+            <div class="flex items-center mt-auto svelte-le4ju1">
+             <div class="w-12 h-12 rounded-full bg-base-300 overflow-hidden mr-4 svelte-le4ju1">
+              <img alt="Amanda Torres" class="w-full h-full object-cover svelte-le4ju1" src="https://i.pravatar.cc/100?img=6"/>
+             </div>
+             <div class="svelte-le4ju1">
+              <h4 class="font-bold text-neutral text-lg svelte-le4ju1">
+               Amanda Torres
+              </h4>
+              <p class="text-sm text-neutral/70 svelte-le4ju1">
+               Crossfit Athlete
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-100 relative overflow-hidden svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-7xl svelte-le4ju1">
+         <div class="flex flex-col md:flex-row gap-10 md:gap-16 items-center svelte-le4ju1">
+          <div class="w-full md:w-1/2 svelte-le4ju1">
+           <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+            Personalized Approach
+           </span>
+           <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+            Set Your Nutrition Goals
+           </h2>
+           <p class="text-base md:text-lg text-neutral/80 mb-6 leading-relaxed svelte-le4ju1">
+            Whether you're looking to lose weight, gain muscle, improve athletic
+              performance, or manage a health condition, our food tracker helps
+              you set and achieve your specific nutrition goals.
+           </p>
+           <ul class="space-y-4 mb-8 svelte-le4ju1">
+            <li class="flex items-start svelte-le4ju1">
+             <span class="ml-2 svelte-le4ju1">
+              Customizable calorie and macro targets
+             </span>
+            </li>
+            <li class="flex items-start svelte-le4ju1">
+             <span class="ml-2 svelte-le4ju1">
+              Track micronutrients important for your health
+             </span>
+            </li>
+            <li class="flex items-start svelte-le4ju1">
+             <span class="ml-2 svelte-le4ju1">
+              Monitor water intake and hydration
+             </span>
+            </li>
+            <li class="flex items-start svelte-le4ju1">
+             <span class="ml-2 svelte-le4ju1">
+              Set meal-specific nutrition targets
+             </span>
+            </li>
+           </ul>
+           <a class="btn btn-primary px-8 py-3 h-auto font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg svelte-le4ju1" href="/account">
+            Set Your Goals
+           </a>
+          </div>
+          <div class="w-full md:w-1/2 svelte-le4ju1">
+           <div class="relative svelte-le4ju1">
+            <img alt="Nutrition goals and healthy food" class="w-full h-auto rounded-2xl shadow-2xl border border-base-300/30 svelte-le4ju1" src="https://images.unsplash.com/photo-1505576399279-565b52d4ac71?q=80&amp;w=800&amp;auto=format"/>
+            <div class="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm p-4 rounded-xl shadow-lg max-w-xs border border-base-300/50 svelte-le4ju1">
+             <div class="flex items-center gap-3 mb-2 svelte-le4ju1">
+              <h4 class="font-bold svelte-le4ju1">
+               Daily Nutrition Tip
+              </h4>
+             </div>
+             <p class="text-sm text-neutral/80 svelte-le4ju1">
+              Eating a rainbow of colorful vegetables ensures you get a wide
+                  variety of nutrients and antioxidants.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-20 md:py-28 bg-gradient-to-br from-primary to-primary-focus text-primary-content relative overflow-hidden svelte-le4ju1">
+        <div class="container mx-auto px-4 text-center max-w-5xl svelte-le4ju1">
+         <div class="bg-white/10 backdrop-blur-sm p-1 rounded-full inline-flex mb-8 svelte-le4ju1">
+          <span class="px-6 py-2 bg-white/20 rounded-full font-medium text-sm svelte-le4ju1">
+           Limited Time Offer
+          </span>
+         </div>
+         <h2 class="text-3xl md:text-5xl font-bold mb-6 md:mb-8 svelte-le4ju1">
+          Start Your Health Journey Today - 100% Free
+         </h2>
+         <p class="text-lg md:text-xl max-w-2xl mx-auto mb-10 md:mb-12 opacity-90 svelte-le4ju1">
+          Join thousands of users who have transformed their relationship with
+          food and improved their health with our tracker.
+         </p>
+         <div class="flex flex-col sm:flex-row justify-center gap-5 svelte-le4ju1">
+          <a class="svelte-le4ju1" href="/account">
+           <button class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-10 py-4 h-auto font-semibold transition-all duration-300 hover:shadow-xl hover:scale-105 svelte-le4ju1">
+            Get Started Free
+           </button>
+          </a>
+          <a class="svelte-le4ju1" href="#how-it-works">
+           <button class="btn btn-lg bg-transparent border-white text-white hover:bg-white/10 px-10 py-4 h-auto font-semibold transition-all duration-300 svelte-le4ju1">
+            Learn More
+           </button>
+          </a>
+         </div>
+         <div class="mt-12 flex flex-col md:flex-row items-center justify-center gap-8 text-sm svelte-le4ju1">
+          <div class="flex items-center gap-2 svelte-le4ju1">
+           <span class="svelte-le4ju1">
+            Free forever, no hidden fees
+           </span>
+          </div>
+          <div class="flex items-center gap-2 svelte-le4ju1">
+           <span class="svelte-le4ju1">
+            Cancel anytime
+           </span>
+          </div>
+          <div class="flex items-center gap-2 svelte-le4ju1">
+           <span class="svelte-le4ju1">
+            Data privacy guaranteed
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="py-16 md:py-24 bg-base-100 svelte-le4ju1">
+        <div class="container mx-auto px-4 max-w-5xl svelte-le4ju1">
+         <div class="text-center mb-12 md:mb-16 svelte-le4ju1">
+          <span class="px-3 py-1 bg-secondary/10 text-secondary rounded-full text-sm font-medium mb-4 inline-block svelte-le4ju1">
+           Common Questions
+          </span>
+          <h2 class="text-3xl md:text-4xl font-bold text-neutral mb-4 md:mb-6 svelte-le4ju1">
+           Frequently Asked Questions
+          </h2>
+          <p class="text-base md:text-lg max-w-2xl mx-auto text-neutral/80 svelte-le4ju1">
+           Find answers to common questions about our food tracking app
+          </p>
+         </div>
+         <div class="max-w-3xl mx-auto space-y-4 svelte-le4ju1">
+          <div class="collapse bg-base-100 shadow-lg border border-base-300/30 rounded-xl overflow-hidden svelte-le4ju1">
+           <input class="svelte-le4ju1" name="my-accordion-1" type="radio"/>
+           <div class="collapse-title text-xl font-semibold flex justify-between items-center pr-4 py-5 svelte-le4ju1">
+            How accurate is the photo recognition feature?
+           </div>
+           <div class="collapse-content pb-5 svelte-le4ju1">
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Our AI can recognize thousands of different foods with high
+                accuracy. For mixed meals, the system will suggest the main
+                components and allow you to adjust as needed for maximum accuracy.
+            </p>
+           </div>
+          </div>
+          <div class="collapse bg-base-100 shadow-lg border border-base-300/30 rounded-xl overflow-hidden svelte-le4ju1">
+           <input class="svelte-le4ju1" name="my-accordion-1" type="radio"/>
+           <div class="collapse-title text-xl font-semibold flex justify-between items-center pr-4 py-5 svelte-le4ju1">
+            Can I track specific diets like keto or vegan?
+           </div>
+           <div class="collapse-content pb-5 svelte-le4ju1">
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Absolutely! You can customize your nutrition goals for any diet
+                type, including keto, paleo, vegan, vegetarian, Mediterranean, and
+                more. The app will help you stay on track with your specific
+                dietary needs.
+            </p>
+           </div>
+          </div>
+          <div class="collapse bg-base-100 shadow-lg border border-base-300/30 rounded-xl overflow-hidden svelte-le4ju1">
+           <input class="svelte-le4ju1" name="my-accordion-1" type="radio"/>
+           <div class="collapse-title text-xl font-semibold flex justify-between items-center pr-4 py-5 svelte-le4ju1">
+            Is my data secure and private?
+           </div>
+           <div class="collapse-content pb-5 svelte-le4ju1">
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Yes, we take data privacy very seriously. All your personal
+                information and nutrition data are encrypted and stored securely.
+                We never share your data with third parties without your explicit
+                consent.
+            </p>
+           </div>
+          </div>
+          <div class="collapse bg-base-100 shadow-lg border border-base-300/30 rounded-xl overflow-hidden svelte-le4ju1">
+           <input class="svelte-le4ju1" name="my-accordion-1" type="radio"/>
+           <div class="collapse-title text-xl font-semibold flex justify-between items-center pr-4 py-5 svelte-le4ju1">
+            Is the app really free or are there hidden costs?
+           </div>
+           <div class="collapse-content pb-5 svelte-le4ju1">
+            <p class="text-neutral/80 leading-relaxed svelte-le4ju1">
+             Yes, our app is completely free to use with all core tracking
+                features included. We believe everyone should have access to tools
+                that help improve their health without financial barriers. We may
+                offer optional premium features in the future, but the main
+                functionality will always remain free.
+            </p>
+           </div>
+          </div>
+          <div class="text-center mt-10 svelte-le4ju1">
+           <a class="btn btn-outline btn-primary px-8 py-3 h-auto transition-all duration-300 svelte-le4ju1" href="/contact_us">
+            Have another question? Contact us
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="bg-base-200 w-full overflow-x-hidden">
+      <footer class="footer container mx-auto pt-8 pb-2 px-4 text-base-content">
+       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mb-4">
+        <nav class="space-y-1">
+         <h6 class="footer-title mb-1">
+          Explore
+         </h6>
+         <a class="link link-hover block text-sm" href="/">
+          Home
+         </a>
+         <a class="link link-hover block text-sm" href="/demo">
+          Demo
+         </a>
+         <a class="link link-hover block text-sm" href="/calories_estimator">
+          Calories Estimator
+         </a>
+        </nav>
+        <nav class="space-y-1">
+         <h6 class="footer-title mb-1">
+          Company
+         </h6>
+         <a class="link link-hover block text-sm" href="/contact_us">
+          Contact
+         </a>
+         <a class="link link-hover block text-sm" href="/blog">
+          Blog
+         </a>
+         <a class="link link-hover block text-sm" href="https://insigh.to/b/trackeats">
+          Roadmap
+         </a>
+        </nav>
+        <nav class="space-y-1">
+         <h6 class="footer-title mb-1">
+          Legal
+         </h6>
+         <a class="link link-hover block text-sm" href="/privacy">
+          Privacy
+         </a>
+         <a class="link link-hover block text-sm" href="/terms">
+          Terms
+         </a>
+        </nav>
+       </div>
+       <div class="flex justify-between items-center w-full border-t border-base-300 pt-2 mt-2">
+        <div class="text-sm">
+         © 2025 TrackEats
+        </div>
+       </div>
+      </footer>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

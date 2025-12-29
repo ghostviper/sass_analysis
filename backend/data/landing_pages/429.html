@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Supascans - Convert Handwritten Notes to Clean Text</title>
+</head>
+<body>
+  <body>
+   <main class="min-h-screen">
+    <header class="sticky top-0 z-50 bg-white border-b border-gray-200">
+     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+       <div class="flex items-center">
+        <a class="flex items-center space-x-2" href="/">
+         <div class="h-8 w-8 relative">
+          <img alt="Supascans" class="object-contain" src="https://supascans.com/supascans.svg"/>
+         </div>
+         <span class="text-xl font-bold text-gray-900">
+          Supascans
+         </span>
+        </a>
+       </div>
+       <nav class="hidden md:flex items-center space-x-8">
+        <a class="text-gray-600 hover:text-gray-900 transition-colors" href="/#features">
+         Features
+        </a>
+        <a class="text-gray-600 hover:text-gray-900 transition-colors" href="/#pricing">
+         Pricing
+        </a>
+        <a class="text-gray-600 hover:text-gray-900 transition-colors" href="/#faq">
+         FAQ
+        </a>
+       </nav>
+       <div class="flex items-center space-x-4">
+        <button class="px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors font-medium">
+         Sign In
+        </button>
+       </div>
+      </div>
+     </div>
+    </header>
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-50 to-white">
+     <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+       <h1 class="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+        Stop wasting hours
+        <span class="text-accent-red">
+         typing
+        </span>
+        handwritten notes
+       </h1>
+       <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        Upload a photo. Get organized text. That's it. No credit card, no monthly fees. Just pay once if you need more.
+       </p>
+       <p class="text-sm text-gray-500 mb-8">
+        Try free: 5 scans/month. Upgrade packs are one-time payments, never expire.
+       </p>
+      </div>
+      <div class="max-w-5xl mx-auto">
+       <div class="bg-white rounded-lg shadow-lg p-8">
+        <div class="mb-6">
+         <input class="hidden" id="file-upload" type="file"/>
+         <label class="flex flex-col items-center justify-center w-full h-64 border-2 border-dashed border-gray-300 rounded-lg cursor-pointer hover:border-primary-500 transition-colors bg-gray-50" for="file-upload">
+          <p class="text-gray-600 mb-2">
+           Click to upload or drag and drop
+          </p>
+          <p class="text-sm text-gray-500">
+           PNG, JPG, JPEG up to 10MB
+          </p>
+         </label>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="features">
+     <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+       Why waste time typing?
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6 mb-16">
+       <div class="bg-red-50 border-red-200 border-2 rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900">
+         Manual Typing
+        </h3>
+        <ul class="space-y-2">
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Hours of typing
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Human errors
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           No formatting
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Time-consuming
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Expensive
+          </span>
+         </li>
+        </ul>
+       </div>
+       <div class="bg-primary-50 border-primary-200 border-2 rounded-lg p-6">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900">
+         Supascans
+        </h3>
+        <ul class="space-y-2">
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Seconds to convert
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Clean, AI-organized text
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Readable formatting
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Simple &amp; fast
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           5 free scans/month
+          </span>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-start mt-12">
+       <div>
+        <h3 class="text-3xl font-bold text-gray-900 mb-8">
+         How It Works
+        </h3>
+        <ol class="space-y-5">
+         <li class="flex items-start gap-4">
+          <span class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center font-semibold text-lg">
+           1
+          </span>
+          <span class="text-gray-700 text-lg pt-1.5">
+           Upload your handwritten notes, job sheets, or photos
+          </span>
+         </li>
+         <li class="flex items-start gap-4">
+          <span class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center font-semibold text-lg">
+           2
+          </span>
+          <span class="text-gray-700 text-lg pt-1.5">
+           AI extracts &amp; cleans the text (removes junk, organizes into readable format)
+          </span>
+         </li>
+         <li class="flex items-start gap-4">
+          <span class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center font-semibold text-lg">
+           3
+          </span>
+          <span class="text-gray-700 text-lg pt-1.5">
+           Review &amp; download. Export as text or copy directly
+          </span>
+         </li>
+         <li class="flex items-start gap-4">
+          <span class="flex-shrink-0 w-10 h-10 bg-primary-500 text-white rounded-full flex items-center justify-center font-semibold text-lg">
+           4
+          </span>
+          <span class="text-gray-700 text-lg pt-1.5">
+           Done. Save hours of manual typing
+          </span>
+         </li>
+        </ol>
+       </div>
+       <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+        <h4 class="text-lg font-semibold text-gray-900 mb-4">
+         What We Convert
+        </h4>
+        <div class="space-y-3 mb-6">
+         <div class="bg-white rounded-lg p-4 flex items-center shadow-sm border border-gray-100">
+          <div class="flex items-center space-x-3 flex-1">
+           <div>
+            <span class="font-medium text-gray-900 block">
+             Job Sheets
+            </span>
+            <span class="text-sm text-gray-500">
+             Handwritten work orders &amp; forms
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="bg-white rounded-lg p-4 flex items-center shadow-sm border border-gray-100">
+          <div class="flex items-center space-x-3 flex-1">
+           <div>
+            <span class="font-medium text-gray-900 block">
+             Handwritten Notes
+            </span>
+            <span class="text-sm text-gray-500">
+             Personal notes &amp; documents
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="bg-white rounded-lg p-4 flex items-center shadow-sm border border-gray-100">
+          <div class="flex items-center space-x-3 flex-1">
+           <div>
+            <span class="font-medium text-gray-900 block">
+             Image Formats
+            </span>
+            <span class="text-sm text-gray-500">
+             PNG, JPG, JPEG (up to 10MB)
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <a class="w-full bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2" href="#">
+         Try it now
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white via-primary-50/30 to-white">
+     <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12">
+       <span class="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
+        The Story
+       </span>
+       <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Why I Built This
+       </h2>
+      </div>
+      <div class="relative">
+       <div class="relative bg-white rounded-2xl p-8 md:p-12 shadow-2xl border-2 border-primary-200 max-w-4xl mx-auto">
+        <div class="space-y-8">
+         <div class="text-center pb-6 border-b-2 border-primary-100">
+          <p class="text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+           I gave up on coding.
+           <br/>
+           <span class="text-primary-600">
+            Then my wife needed this tool.
+           </span>
+          </p>
+         </div>
+         <div class="space-y-6 max-w-3xl mx-auto">
+          <div class="flex items-start gap-4">
+           <p class="text-lg text-gray-700 leading-relaxed">
+            I spent a year building random apps to learn to code. Failed at 12. Gave up.
+           </p>
+          </div>
+          <div class="flex items-start gap-4">
+           <p class="text-lg text-gray-700 leading-relaxed">
+            Then my wife mentioned her data entry bottleneck: scanning handwritten job sheets, fighting terrible penmanship, typing into Excel for hours.
+           </p>
+          </div>
+          <div class="flex items-start gap-4">
+           <p class="text-lg text-gray-700 leading-relaxed">
+            I looked for a tool. Google Lens? Limited. ChatGPT? 3 free images/month. Paid options? $99+/month.
+           </p>
+          </div>
+          <div class="bg-primary-50 rounded-xl p-6 border-l-4 border-primary-500 mt-8">
+           <p class="text-xl font-semibold text-gray-900 leading-relaxed">
+            So I built SupaScans: simple OCR with AI cleanup. No credit card needed to try. No subscriptions. Pay once if you want more.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="pricing">
+     <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-gray-900 mb-4">
+       Simple, Pay-Only-If-You-Need Pricing
+      </h2>
+      <p class="text-xl text-center text-gray-600 mb-12">
+       Start free. Upgrade only if you want more scans. All upgrades are one-time payments, no subscriptions.
+      </p>
+      <div class="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+       <div class="bg-white rounded-lg border-2 p-8 border-gray-200">
+        <h3 class="text-2xl font-bold mb-2 text-gray-500">
+         Free
+        </h3>
+        <div class="mb-2">
+         <span class="text-4xl font-bold text-gray-400">
+          $0
+         </span>
+        </div>
+        <div class="mb-6">
+         <p class="text-sm text-gray-500">
+          <span class="font-semibold text-gray-400">
+           5 scans
+          </span>
+          • per month
+         </p>
+        </div>
+        <ul class="space-y-3 mb-8">
+         <li class="flex items-start">
+          <span class="text-gray-500">
+           5 scans per month
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-500">
+           AI-organized text
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-500">
+           Works great for trying it out
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-500">
+           No credit card needed
+          </span>
+         </li>
+        </ul>
+        <a class="w-full block py-2 px-6 rounded-lg font-normal transition-colors text-center bg-gray-100 hover:bg-gray-200 text-gray-600 border border-gray-300" href="/sign-up">
+         Try Free (5 scans)
+        </a>
+       </div>
+       <div class="bg-white rounded-lg border-2 p-8 border-primary-500 shadow-lg relative">
+        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+         <span class="bg-primary-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
+          Most Popular
+         </span>
+        </div>
+        <h3 class="text-2xl font-bold mb-2 text-gray-900">
+         Starter
+        </h3>
+        <div class="mb-2">
+         <span class="text-4xl font-bold text-gray-900">
+          $5
+         </span>
+        </div>
+        <div class="mb-6">
+         <p class="text-sm text-gray-600">
+          <span class="font-semibold text-gray-900">
+           50 scans
+          </span>
+          • never expires
+         </p>
+        </div>
+        <ul class="space-y-3 mb-8">
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           50 scans (one-time)
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           AI-organized text
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Never expires
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Best for occasional use
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Buy once, use forever
+          </span>
+         </li>
+        </ul>
+        <a class="w-full block py-3 px-6 rounded-lg font-semibold transition-colors text-center bg-primary-500 hover:bg-primary-600 text-white" href="/checkout/starter">
+         Buy 50-Scan Pack
+        </a>
+       </div>
+       <div class="bg-white rounded-lg border-2 p-8 border-gray-200">
+        <h3 class="text-2xl font-bold mb-2 text-gray-900">
+         Lifetime
+        </h3>
+        <div class="mb-2">
+         <span class="text-4xl font-bold text-gray-900">
+          $29
+         </span>
+         <span class="text-gray-600">
+          one-time
+         </span>
+        </div>
+        <div class="mb-6">
+         <p class="text-sm text-gray-600">
+          <span class="font-semibold text-gray-900">
+           500 scans
+          </span>
+          • lifetime
+         </p>
+        </div>
+        <ul class="space-y-3 mb-8">
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           500 scans (lifetime)
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           AI-organized text
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           One-time payment
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Never expires
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Best value for regular users
+          </span>
+         </li>
+         <li class="flex items-start">
+          <span class="text-gray-700">
+           Buy once, 500 scans that never expire.
+          </span>
+         </li>
+        </ul>
+        <a class="w-full block py-3 px-6 rounded-lg font-semibold transition-colors text-center bg-primary-500 hover:bg-primary-600 text-white" href="/checkout/lifetime">
+         Buy 500-Scan Lifetime
+        </a>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white" id="faq">
+     <div class="max-w-5xl mx-auto">
+      <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">
+       Frequently Asked Questions
+      </h2>
+      <div class="space-y-4">
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          What is Supascans?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          How does Supascans work?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          What file formats are supported?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          How accurate is the OCR?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          Can I edit the extracted text?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          Is my data secure?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          Do you support multiple languages?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          Why do I need an account to use SupaScans?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          What if the OCR makes mistakes?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          Is it really free?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          How is this different from Google Lens?
+         </span>
+        </button>
+       </div>
+       <div class="border-b border-gray-200 pb-4">
+        <button class="w-full flex justify-between items-center text-left py-4">
+         <span class="text-lg font-semibold text-gray-900">
+          What happens if I run out of scans?
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-primary-50 to-white">
+     <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-4xl font-bold text-gray-900 mb-4">
+       Ready to save hours of typing?
+      </h2>
+      <p class="text-xl text-gray-600 mb-8">
+       Try free: 5 scans/month. No credit card required. Upgrade packs are one-time payments.
+      </p>
+      <a class="inline-block bg-primary-500 hover:bg-primary-600 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-colors" href="#">
+       Try Free (5 scans)
+      </a>
+     </div>
+    </section>
+    <footer class="bg-gray-900 text-gray-300 py-12 px-4 sm:px-6 lg:px-8">
+     <div class="max-w-5xl mx-auto">
+      <div class="mb-12 pb-8 border-b border-gray-800">
+       <h3 class="text-white font-semibold mb-4 text-center">
+        Popular Searches
+       </h3>
+       <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/handwritten-notes-to-text">
+         Handwriting to Text
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/convert-handwriting-to-text">
+         Convert Handwriting
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/ocr-handwriting-online">
+         OCR Handwriting
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/handwriting-to-digital-text">
+         Digitize Notes
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/job-sheet-ocr">
+         Job Sheet OCR
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/scan-handwriting-to-text">
+         Scan Handwriting
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/handwritten-document-scanner">
+         Document Scanner
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/digitize-handwritten-notes">
+         Digitize Handwritten Notes
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/handwriting-recognition-online">
+         Handwriting Recognition
+        </a>
+        <a class="text-xs text-gray-400 hover:text-gray-300 transition-colors" href="/convert-handwritten-notes-to-digital">
+         Notes to Digital
+        </a>
+       </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+       <div>
+        <div class="flex items-center space-x-2 mb-4">
+         <div class="h-8 w-8 relative">
+          <img alt="Supascans" class="object-contain" height="32" src="https://supascans.com/supascans.svg" width="32"/>
+         </div>
+         <span class="text-xl font-bold text-white">
+          Supascans
+         </span>
+        </div>
+        <p class="text-sm text-gray-400 mb-4">
+         © 2025-2026 Supascans. All rights reserved.
+        </p>
+        <a class="text-sm text-gray-400 hover:text-gray-300" href="/legal/terms">
+         Terms &amp; Privacy
+        </a>
+       </div>
+       <div>
+        <h3 class="text-white font-semibold mb-4">
+         Product
+        </h3>
+        <ul class="space-y-2">
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/#pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/#faq">
+           FAQ
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/handwritten-notes-to-text">
+           Handwriting OCR
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-white font-semibold mb-4">
+         Company
+        </h3>
+        <ul class="space-y-2">
+         <li>
+          <a class="text-sm hover:text-gray-300" href="mailto:supascans@gmail.com">
+           Contact Us
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/legal/refund">
+           Refund Policy
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-white font-semibold mb-4">
+         Legal
+        </h3>
+        <ul class="space-y-2">
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/legal/terms">
+           Terms of Service
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/legal/privacy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-sm hover:text-gray-300" href="/legal/cookies">
+           Cookie Policy
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+       <p class="text-sm text-gray-400 mb-4 md:mb-0">
+        © 2025-2026 Supascans. All rights reserved.
+       </p>
+       <p class="text-sm text-gray-400">
+        Built by
+        <a class="hover:text-gray-300 underline" href="https://github.com/vahgartilal" rel="noopener noreferrer" target="_blank">
+         Vahgartilal
+        </a>
+        with love 💚
+       </p>
+      </div>
+     </div>
+    </footer>
+   </main>
+  </body>
+
+</body>
+</html>

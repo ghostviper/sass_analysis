@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BeLead | Outil de Prospection LinkedIn B2B Automatisée</title>
+</head>
+<body>
+  <body>
+   <header>
+    <div class="bg-blue-100 text-primary text-center py-2 px-4 text-xs">
+     🚀 Bêta ouverte — Essai gratuit 7 jours (aucune carte requise)
+     <a class="font-bold" href="https://app.belead.io" target="_blank">
+      Rejoignez la bêta maintenant →
+     </a>
+    </div>
+   </header>
+   <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="flex justify-between h-16">
+      <div class="flex items-center">
+       <div class="flex-shrink-0 flex items-center cursor-pointer">
+        <img alt="Logo BeLead" class="h-8 w-auto mr-2 rounded-md" src="logo.jpg"/>
+        <span class="text-xl font-bold text-dark">
+         Be
+         <span class="gradient-text">
+          Lead
+         </span>
+        </span>
+        <span class="ml-2 dev-badge inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary text-white">
+         Bêta
+        </span>
+       </div>
+      </div>
+      <div class="hidden md:ml-10 md:flex md:items-center lg:space-x-8">
+       <div class="relative group">
+        <button class="text-dark hover:text-primary px-3 py-2 text-sm font-medium flex items-center" type="button">
+         Produits
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+         <div class="py-1">
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="/#features">
+           Fonctionnalités
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="/#calculator">
+           Calculateur
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="/#roadmap">
+           Roadmap
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="/#faq">
+           FAQ
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="/ressources">
+           Ressources
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="relative group">
+        <button class="text-dark hover:text-primary px-3 py-2 text-sm font-medium flex items-center" type="button">
+         Tarifs
+        </button>
+        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+         <div class="py-1">
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="#subscription">
+           Voir les tarifs
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="#beta-subscription">
+           Offre Bêta
+          </a>
+          <a class="block px-4 py-2 text-sm text-dark hover:bg-gray-100 hover:text-primary" href="#ltd-subscription">
+           LifeTimeDeal
+          </a>
+         </div>
+        </div>
+       </div>
+       <a class="text-dark hover:text-primary px-3 py-2 text-sm font-medium" href="https://belead.firstpromoter.com" target="_blank">
+        Devenir affilié (20%)
+       </a>
+       <a class="text-yellow-600 hover:text-yellow-600 px-3 py-2 text-sm font-medium flex items-center gap-1 transition-colors duration-200" href="#ltd-subscription">
+        Obtenir
+            BeLead à vie
+       </a>
+      </div>
+      <div class="hidden xl:ml-6 xl:flex xl:items-center">
+       <a class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium flex items-center glow" href="https://app.belead.io" target="_blank">
+        Essayer gratuitement
+       </a>
+      </div>
+      <div class="hidden md:ml-6 md:flex md:items-center xl:hidden">
+       <a class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium flex items-center glow" href="https://app.belead.io" target="_blank">
+        Essayer gratuitement
+       </a>
+      </div>
+      <div class="-mr-2 flex items-center md:hidden">
+       <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary" id="mobile-menu-button" type="button">
+        <span class="sr-only">
+         Ouvrir le menu
+        </span>
+       </button>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <main>
+    <div class="hero-bg">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-6 animate-fadeIn opacity-0">
+       Votre
+       <span class="text-primary">
+        allié LinkedIn
+       </span>
+       pour
+       <span class="text-primary bg-primary/10 px-2 -py-3 rounded-md">
+        trouver
+       </span>
+       ,
+       <span class="text-primary bg-primary/10 px-2 -py-3 rounded-md">
+        suivre
+       </span>
+       et
+       <span class="text-primary bg-primary/10 px-2 -py-3 rounded-md">
+        signer
+       </span>
+       plus de clients.
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto animate-fadeIn opacity-0">
+       Choisissez un
+       <strong>
+        type de campagne
+       </strong>
+       (Chaud, Spy, Magnet, Froid).
+       <br/>
+       BeLead
+       <strong>
+        collecte
+       </strong>
+       les bons profils et les
+       <strong>
+        range
+       </strong>
+       dans un pipeline simple
+       <br/>
+       où vous voyez le
+        statut de chacun et la prochaine action à effectuer.
+       <br/>
+       <br/>
+       Un seul endroit pour
+       <strong>
+        détecter
+       </strong>
+       ,
+       <strong>
+        organiser
+       </strong>
+       ,
+       <strong>
+        relancer
+       </strong>
+       .
+      </p>
+      <div class="flex justify-center">
+       <a class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-sm font-medium flex items-center glow" href="https://app.belead.io" target="_blank">
+        Essayer 7 jours gratuitement
+       </a>
+      </div>
+      <div class="relative mt-12 max-w-5xl mx-auto rounded-lg overflow-hidden shadow-2xl animate-fadeIn">
+       <div class="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-md text-sm">
+        Démonstration BeLead
+       </div>
+      </div>
+      <div class="relative mt-12 animate-fadeIn opacity-0">
+       <div class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary bg-opacity-10 text-primary mb-6">
+        Accès Bêta
+       </div>
+       <div class="mt-8 flex justify-center">
+        <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
+         <li class="flex items-start">
+          <p class="ml-3 text-gray-700">
+           <span class="font-bold">
+            20 offres LifeTimeDeal
+           </span>
+           pour les 20 premiers
+          </p>
+         </li>
+         <li class="flex items-start">
+          <p class="ml-3 text-gray-700">
+           <span class="font-bold">
+            Early-access
+           </span>
+           1 semaine avant les nouvelles mises à jour
+          </p>
+         </li>
+         <li class="flex items-start">
+          <p class="ml-3 text-gray-700">
+           <span class="font-bold">
+            Beta Club WhatsApp
+           </span>
+          </p>
+         </li>
+         <li class="flex items-start">
+          <p class="ml-3 text-gray-700">
+           <span class="font-bold">
+            Essai gratuit de 7 jours :
+           </span>
+           aucune carte requise
+          </p>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="py-16 sm:py-24 bg-white" id="features">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-24">
+       <div class="text-center mb-16">
+        <h3 class="text-3xl font-bold text-dark sm:text-4xl">
+         4 campagnes pour alimenter votre pipeline
+        </h3>
+        <p class="mt-4 max-w-3xl text-xl text-gray-600 mx-auto">
+         Choisissez le type de campagne qui vous correspond : Lead Chaud, Lead
+            Froid, Lead Magnet ou Lead Espion et BeLead collecte des prospects
+            qualifiés adaptés à votre objectif.
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 gap-x-12 gap-y-16">
+        <div class="flex gap-6">
+         <div class="flex-shrink-0 text-5xl mt-1">
+          🔥
+         </div>
+         <div class="flex flex-col">
+          <div>
+           <h4 class="text-2xl font-bold text-dark mb-3">
+            Lead Chaud
+           </h4>
+           <p class="text-gray-700 leading-relaxed mb-4">
+            Collez le lien de votre post : BeLead extrait tous ceux qui ont liké ou commenté. Ils vous connaissent déjà ; relance directe, taux de réponse élevé.
+           </p>
+          </div>
+          <div class="mt-auto">
+           <div class="bg-primary/10 text-primary text-sm font-semibold rounded-full px-4 py-2 flex flex-col lg:flex-row lg:w-fit items-center">
+            <span class="font-bold mr-1">
+             Usage idéal :
+            </span>
+            Activer votre audience existante.
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="flex gap-6">
+         <div class="flex-shrink-0 text-5xl mt-1">
+          🕵️
+         </div>
+         <div class="flex flex-col">
+          <div>
+           <h4 class="text-2xl font-bold text-dark mb-3">
+            Lead Espion
+           </h4>
+           <p class="text-gray-700 leading-relaxed mb-4">
+            Collez le lien d'un post d'un concurrent : BeLead aspire ses réactions et commentaires. Vous captez une audience déjà intéressée, sans produire de contenu.
+           </p>
+          </div>
+          <div class="mt-auto">
+           <div class="bg-primary/10 text-primary text-sm font-semibold rounded-full px-4 py-2 flex flex-col lg:flex-row lg:w-fit items-center">
+            <span class="font-bold mr-1">
+             Usage idéal :
+            </span>
+            Capter l'audience d'un concurrent.
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="flex gap-6">
+         <div class="flex-shrink-0 text-5xl mt-1">
+          🎁
+         </div>
+         <div class="flex flex-col">
+          <div>
+           <h4 class="text-2xl font-bold text-dark mb-3">
+            Lead Magnet
+           </h4>
+           <p class="text-gray-700 leading-relaxed mb-4">
+            Utilisez n'importe quel post (le vôtre ou celui d'un tiers) et appliquez des filtres précis : type de réaction, repartage, mots-clés dans les commentaires. Vous ne récupérez que les profils qui valident exactement vos critères.
+           </p>
+          </div>
+          <div class="mt-auto">
+           <div class="bg-primary/10 text-primary text-sm font-semibold rounded-full px-4 py-2 flex flex-col lg:flex-row lg:w-fit items-center">
+            <span class="font-bold mr-1">
+             Usage idéal :
+            </span>
+            Qualifier finement les demandeurs.
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="flex gap-6">
+         <div class="flex-shrink-0 text-5xl mt-1">
+          ❄️
+         </div>
+         <div class="flex flex-col">
+          <div>
+           <h4 class="text-2xl font-bold text-dark mb-3">
+            Lead Froid
+           </h4>
+           <p class="text-gray-700 leading-relaxed mb-4">
+            Sans post. Sélectionnez métier, localisation, taille de réseau, etc. BeLead dresse la liste des profils correspondant à votre ICP pour élargir votre prospection hors audience existante.
+           </p>
+          </div>
+          <div class="mt-auto">
+           <div class="bg-primary/10 text-primary text-sm font-semibold rounded-full px-4 py-2 flex flex-col lg:flex-row lg:w-fit items-center">
+            <span class="font-bold mr-1">
+             Usage idéal :
+            </span>
+            Prospecter un segment ciblé.
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div>
+       <div class="text-center mb-16">
+        <h3 class="text-3xl font-bold text-dark sm:text-4xl">
+         Tout le reste se fait en pilote automatique
+        </h3>
+        <p class="mt-4 max-w-3xl text-xl text-gray-600 mx-auto">
+         BeLead organise vos leads, filtre les rendez-vous et suit vos
+            performances ; vous n'avez plus qu'à conclure vos ventes.
+        </p>
+       </div>
+       <div class="flex justify-center">
+        <div class="inline-grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+         <div class="feature-card text-center col-span-2 bg-gray-50 rounded-2xl p-8 shadow-md transition-all duration-300 flex flex-col animate-fadeIn">
+          <div class="flex-grow">
+           <div class="text-5xl mb-5 inline-block">
+            📋
+           </div>
+           <h4 class="text-xl font-bold text-dark mb-3">
+            Pipeline &amp; statuts
+           </h4>
+           <p class="text-gray-600 text-base">
+            Mettez à jour le statut de chaque prospect en 1 clic. Voyez où ça bloque, qui relancer et quoi faire ensuite.
+           </p>
+          </div>
+         </div>
+         <div class="feature-card text-center col-span-2 bg-gray-50 rounded-2xl p-8 shadow-md transition-all duration-300 flex flex-col animate-fadeIn">
+          <div class="flex-grow">
+           <div class="text-5xl mb-5 inline-block">
+            👤
+           </div>
+           <h4 class="text-xl font-bold text-dark mb-3">
+            Fiche prospect détaillée
+           </h4>
+           <p class="text-gray-600 text-base">
+            Infos, notes, tags et sources de collecte — tout au même endroit pour garder le contexte.
+           </p>
+          </div>
+         </div>
+         <div class="feature-card text-center col-span-2 bg-gray-50 rounded-2xl p-8 shadow-md transition-all duration-300 flex flex-col animate-fadeIn">
+          <div class="flex-grow">
+           <div class="text-5xl mb-5 inline-block">
+            📊
+           </div>
+           <h4 class="text-xl font-bold text-dark mb-3">
+            Dashboard
+           </h4>
+           <p class="text-gray-600 text-base">
+            Nombre de leads, taux de réponse, progression par campagne — comprenez ce qui marche et ajustez.
+           </p>
+          </div>
+         </div>
+         <div class="feature-card text-center col-span-2 bg-gray-50 rounded-2xl p-8 shadow-md transition-all duration-300 flex flex-col animate-fadeIn">
+          <div class="flex-grow">
+           <div class="text-5xl mb-5 inline-block">
+            ♾️
+           </div>
+           <h4 class="text-xl font-bold text-dark mb-3">
+            Collectez sans limites
+           </h4>
+           <p class="text-gray-600 text-base">
+            Aucun crédit ni plafond : récupérez autant de prospects qualifiés que nécessaire chaque jour pour soutenir votre croissance.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="text-center mt-12 flex justify-center">
+        <a class="bg-primary hover:bg-secondary text-white px-4 py-2 rounded-md text-md font-medium flex items-center glow" href="https://app.belead.io" target="_blank">
+         🚀 Prêt à signer plus de clients ? Rejoindre la Bêta - 50 places max.
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="py-16 sm:py-24 bg-gray-50" id="calculator">
+     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12">
+       <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+         Calculez ce que
+         <span class="gradient-text">
+          BeLead
+         </span>
+         vous fait gagner.
+        </h2>
+        <p class="mt-3 text-lg text-gray-600">
+         Estimez en quelques clics ce que BeLead peut vous rapporter.
+        </p>
+       </div>
+       <div class="space-y-8">
+        <div class="space-y-3">
+         <label class="block text-md font-medium text-gray-700" for="price">
+          Prix moyen de votre offre :
+          <span class="font-bold text-primary" id="price-value">
+           3 000 €
+          </span>
+         </label>
+         <input class="w-full h-2 rounded-lg appearance-none cursor-pointer range-slider" id="price" type="range" value="3000"/>
+        </div>
+        <div class="space-y-3">
+         <label class="block text-md font-medium text-gray-700" for="hours">
+          Heure que vous passez à prospecter manuellement par jour :
+          <span class="font-bold text-primary" id="hours-value">
+           2 h
+          </span>
+         </label>
+         <input class="w-full h-2 rounded-lg appearance-none cursor-pointer range-slider" id="hours" type="range" value="2"/>
+        </div>
+        <div class="space-y-3">
+         <label class="block text-md font-medium text-gray-700" for="closing">
+          Taux de ventes conclues :
+          <span class="font-bold text-primary" id="closing-value">
+           5%
+          </span>
+         </label>
+         <input class="w-full h-2 rounded-lg appearance-none cursor-pointer range-slider" id="closing" type="range" value="5"/>
+        </div>
+        <div class="bg-blue-50/50 text-blue-900 rounded-xl p-6 text-center space-y-4">
+         <div class="flex justify-center mb-4">
+          <div class="relative inline-block">
+           <span class="text-sm text-blue-600 underline cursor-help hover:text-blue-800 transition-colors" id="calculation-trigger">
+            Comment c'est calculé ?
+           </span>
+           <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-4 py-3 bg-gray-800 text-white text-sm rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 w-80 z-10" id="calculation-tooltip">
+            <div class="space-y-2">
+             <div class="font-semibold border-b border-gray-600 pb-2">
+              Comment c'est calculé ?
+             </div>
+             <div>
+              <span class="font-medium">
+               2 ventes / mois = Y € de bénéfice
+              </span>
+              <br/>
+              <span class="text-gray-300">
+               (Prix de votre offre × 2) − 30 €.
+              </span>
+             </div>
+             <div>
+              <span class="font-medium">
+               Temps gagné
+              </span>
+              <br/>
+              <span class="text-gray-300">
+               Heures de prospection indiquées × 30 jours.
+              </span>
+             </div>
+             <div class="text-xs text-gray-400 border-t border-gray-600 pt-2">
+              Les montants sont arrondis pour rester lisibles.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <p class="text-lg font-bold">
+           <span class="font-bold" id="clients-per-month">
+            2 ventes
+           </span>
+           / mois
+                → +
+           <span class="font-bold" id="net-margin">
+            5 970 €
+           </span>
+           de bénéfice
+                net
+          </p>
+          <p class="text-sm text-blue-700 mt-1">
+           Abonnement déjà déduit : tout le reste, c'est du gain.
+          </p>
+         </div>
+         <div>
+          <p class="text-lg font-bold">
+           Temps libéré :
+           <span class="font-bold" id="time-saved">
+            60 h
+           </span>
+           par mois
+          </p>
+          <p class="text-sm text-blue-700 mt-1">
+           BeLead remplace vos journées de prospection manuelle.
+          </p>
+         </div>
+        </div>
+        <div>
+         <a class="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-lg text-center font-medium text-white bg-dark hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary glow" href="https://app.belead.io" target="_blank">
+          Je m'inscris à la Bêta
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="py-16 sm:py-24 bg-white" id="roadmap">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+        Une roadmap claire,
+        <span class="gradient-text">
+         des étapes ambitieuses
+        </span>
+       </h2>
+       <p class="mt-4 max-w-3xl text-xl text-gray-600 mx-auto">
+        Voici les prochaines étapes importantes prévues pour BeLead. Les détails
+          complets et les votes de fonctionnalités sont réservés aux membres Bêta
+          et LifeTime Deal.
+       </p>
+      </div>
+      <div class="max-w-3xl mx-auto">
+       <div class="relative">
+        <div class="relative pl-12 pb-12">
+         <div class="bg-gray-50/80 p-6 rounded-lg border-2 border-teal-100">
+          <p class="font-semibold text-primary">
+           16 juin 2025
+          </p>
+          <h4 class="mt-2 text-xl font-bold text-dark">
+           Private Beta – 10 places
+          </h4>
+          <p class="mt-3 text-gray-600">
+           Validation du core produit avec nos tout premiers testeurs.
+           <br/>
+           <em class="text-sm text-gray-500">
+            Phase complète – merci à nos premiers testeurs !
+           </em>
+          </p>
+         </div>
+        </div>
+        <div class="relative pl-12 pb-12">
+         <div class="bg-gray-50/80 p-6 rounded-lg border-2 border-blue-100 animate-border-pulse rounded-lg">
+          <p class="font-semibold text-primary">
+           Maintenant
+          </p>
+          <h4 class="mt-2 text-xl font-bold text-dark">
+           Bêta publique
+          </h4>
+          <p class="mt-3 text-gray-600">
+           Focus : collecte par campagnes + pipeline &amp; statuts + dashboard
+           <br/>
+           <i>
+            Offre unique + LifeTimeDeal
+           </i>
+          </p>
+          <div class="mt-4">
+           <a class="inline-block bg-primary text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors shadow-md" href="https://app.belead.io" target="_blank">
+            <span>
+             Rejoindre la Bêta - Essayer gratuitement
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="relative pl-12 pb-12">
+         <div class="bg-gray-50/80 p-6 rounded-lg border-2 border-gray-100">
+          <p class="font-semibold text-primary">
+           Q4 2025
+          </p>
+          <h4 class="mt-2 text-xl font-bold text-dark">
+           Nouvelle version BeLead
+          </h4>
+          <p class="mt-3 text-gray-600">
+           Expérience repensée et ajout de nouvelles fonctionnalités pour en faire un outil all-in-one qui vous accompagne de A à Z
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <p class="mt-12 text-center text-gray-500 italic max-w-3xl mx-auto">
+       *Accès anticipé : Les acheteurs du LifeTimeDeal reçoivent les nouveautés 2
+        semaines avant.*
+      </p>
+     </div>
+    </div>
+    <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100" id="subscription">
+     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Choisissez votre plan
+       </h2>
+       <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Sélectionnez le plan parfait pour vos besoins de prospection LinkedIn
+       </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+       <div class="relative border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full bg-white border-gray-200">
+        <div class="absolute -top-2 right-4">
+         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-primary text-white shadow-md">
+          Populaire
+         </span>
+        </div>
+        <div class="text-center flex-grow flex flex-col">
+         <div class="flex items-center justify-center gap-3 mb-6">
+          <h3 class="text-xl font-bold text-gray-900">
+           Mensuel
+          </h3>
+         </div>
+         <div class="mb-6">
+          <div class="rounded-lg p-4 mb-4 bg-gray-50">
+           <div class="text-center">
+            <div class="text-3xl font-bold text-gray-900">
+             30€
+             <span class="text-base font-normal text-gray-600">
+              / mois
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-xs h-6">
+           <span class="text-blue-600 bg-blue-50 px-2 py-1 rounded-full font-medium">
+            Essai gratuit 7 jours — sans carte
+           </span>
+          </div>
+         </div>
+         <div class="mb-8 space-y-4 flex-grow">
+          <div class="text-sm font-semibold pb-2 border-b text-gray-800 border-gray-200">
+           Idéal pour démarrer et valider votre acquisition LinkedIn.
+          </div>
+          <div class="space-y-4">
+           <div class="space-y-2">
+            <div class="text-xs font-medium text-center px-2 py-1 rounded-md bg-gray-100 text-gray-700">
+             Inclus
+            </div>
+            <div class="space-y-2">
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-gray-700">
+               4 campagnes de collecte :
+               <br/>
+               Chaud, Spy, Lead Magnet, Froid
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-gray-700">
+               Leads illimités, sans crédits ni surcoûts
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-gray-700">
+               Pipeline &amp; statuts :
+               <br/>
+               Suivez l’avancement de chaque prospect et la prochaine action
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-gray-700">
+               Fiche prospect détaillée :
+               <br/>
+               Source, infos clés, historique d’actions
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-gray-700">
+               Dashboard :
+               <br/>
+               Volume de leads, réponses, performance par campagne
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <button class="w-full text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2 mt-auto bg-primary hover:bg-secondary">
+         Commencer l’essai gratuit
+        </button>
+       </div>
+       <div class="relative border rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col h-full bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-300">
+        <div class="absolute -top-2 right-4">
+         <span class="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-medium bg-gradient-to-r from-amber-400 to-yellow-500 text-white shadow-md animate-pulse">
+          Temps limité
+         </span>
+        </div>
+        <div class="text-center flex-grow flex flex-col">
+         <div class="flex items-center justify-center gap-3 mb-6">
+          <h3 class="text-xl font-bold text-amber-800">
+           LifeTimeDeal
+          </h3>
+         </div>
+         <div class="mb-6">
+          <div class="rounded-lg p-4 mb-4 bg-gradient-to-br from-amber-50 to-yellow-50">
+           <div class="text-center">
+            <div>
+             <span class="text-3xl font-bold text-amber-800">
+              99€
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="flex items-center justify-center gap-2 text-xs h-6">
+           <span class="text-amber-700 bg-amber-100 px-2 py-1 rounded-full font-medium">
+            Places limitées
+           </span>
+          </div>
+         </div>
+         <div class="mb-8 space-y-4 flex-grow">
+          <div class="text-sm font-semibold pb-2 border-b text-amber-800 border-amber-200">
+           Accès à vie + accès anticipé aux nouveautés.
+          </div>
+          <div class="space-y-4">
+           <div class="space-y-2">
+            <div class="text-xs font-medium text-center px-2 py-1 rounded-md bg-amber-100 text-amber-800">
+             Inclus
+            </div>
+            <div class="space-y-2">
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-amber-700">
+               Tout ce que contient le plan Mensuel — à vie
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-amber-700">
+               Early Access 2 semaines sur chaque nouvelle release
+              </span>
+             </div>
+             <div class="flex items-start text-sm">
+              <span class="font-medium text-left text-amber-700">
+               Leads illimités et mises à jour pendant toute la bêta puis au-delà
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <button class="w-full text-white py-3 px-6 rounded-lg font-semibold transition-all duration-200 hover:scale-[1.02] shadow-lg hover:shadow-xl flex items-center justify-center gap-2 mt-auto bg-gradient-to-r from-amber-400 to-yellow-500 hover:from-amber-500 hover:to-yellow-600">
+         Commencer l’essai gratuit
+        </button>
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="bg-white py-16 sm:py-24" id="faq">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+       <h2 class="text-3xl font-extrabold text-dark sm:text-4xl">
+        Questions fréquentes
+       </h2>
+       <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+        Tout ce que vous devez savoir sur BeLead
+       </p>
+      </div>
+      <div class="max-w-3xl mx-auto divide-y-2 divide-gray-200">
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           BeLead risque-t-il de faire bannir mon compte LinkedIn ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Non. Nous respectons les quotas officiels : &lt; 80 actions/jour, pauses aléatoires et vitesse humaine. Aucun de nos bêta-testeurs n'a eu de restriction.
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           Combien de temps faut-il pour obtenir mes premiers leads ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Moins de 5 minutes : choisissez une campagne, collez un lien ou des filtres, BeLead affiche les premiers prospects en direct.
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           Dois-je payer des “crédits” de leads en plus de l’abonnement ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Jamais. Tous les plans incluent des leads illimités ; vous ne verrez aucune facture additionnelle.
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           Mes données LinkedIn sont-elles en sécurité ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Oui. Les sessions sont chiffrées localement ; nous ne stockons ni mot de passe ni cookie durable sur nos serveurs.
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           L'offre LifeTime Deal disparaîtra-t-elle vraiment ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Oui : 20 places, compteur public. Une fois à 0, seule la formule abonnement restera disponible.
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           Puis-je ajouter d'autres utilisateurs plus tard ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Bien sûr : ajoutez des sièges à –50 % (avantage LTD) ou au tarif en vigueur (plans mensuels/annuels).
+          </p>
+         </div>
+        </details>
+       </div>
+       <div class="py-6">
+        <details class="group">
+         <summary class="flex justify-between items-center cursor-pointer">
+          <h3 class="text-lg font-semibold text-dark">
+           Et si je prends le LifeTime Deal mais que je ne suis pas satisfait ?
+          </h3>
+         </summary>
+         <div class="mt-3 text-gray-600">
+          <p>
+           Aucun risque : vous bénéficiez de notre garantie "30 jours satisfait ou remboursé". Contactez-nous à contact@belead.io pour un remboursement intégral.
+          </p>
+         </div>
+        </details>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="gradient-bg">
+     <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl font-extrabold text-white sm:text-4xl animate-fadeIn opacity-0">
+       <span class="block">
+        Prêt à automatiser votre prospection ?
+       </span>
+       <span class="block gradient-text-dark mt-2">
+        Rejoignez la bêta de BeLead.
+       </span>
+      </h2>
+      <p class="mt-6 max-w-lg mx-auto text-xl text-indigo-100 animate-fadeIn opacity-0">
+       Ne manquez pas l'opportunité d'être parmi les premiers à transformer votre
+        prospection LinkedIn. Places limitées pour la bêta privée.
+      </p>
+      <div class="mt-10 max-w-sm mx-auto flex justify-center animate-fadeIn opacity-0">
+       <a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-white hover:bg-indigo-50 md:py-4 md:text-lg md:px-10 glow" href="https://app.belead.io" target="_blank">
+        Rejoindre la Bêta - Essayer gratuitement
+       </a>
+      </div>
+     </div>
+    </div>
+   </main>
+   <footer>
+    <footer class="bg-dark text-white pt-16 pb-8">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+       <div class="col-span-2">
+        <div class="flex items-center mb-4">
+         <img alt="BeLead" class="w-10 h-10 mr-2 rounded-md" src="logo.jpg"/>
+         <span class="text-xl font-bold">
+          Be
+          <span class="gradient-text">
+           Lead
+          </span>
+         </span>
+        </div>
+        <p class="text-gray-400 mb-4">
+         Votre allié LinkedIn pour trouver, suivre et signer plus de clients.
+        </p>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
+         Ressources
+        </h3>
+        <ul class="space-y-2">
+         <li>
+          <a class="text-gray-400 hover:text-white" href="#features">
+           Fonctionnalités
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="#calculator">
+           Calculateur
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="#roadmap">
+           Roadmap
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="#faq">
+           FAQ
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-gray-300 uppercase tracking-wider mb-4">
+         Légal
+        </h3>
+        <ul class="space-y-2">
+         <li>
+          <a class="text-gray-400 hover:text-white" href="https://help.belead.io/legals/privacy-policy.html" target="_blank">
+           Confidentialité
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="https://help.belead.io/legals/terms-of-service.html" target="_blank">
+           CGU
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="https://help.belead.io/legals/rgpd.html" target="_blank">
+           RGPD
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-400 hover:text-white" href="https://help.belead.io" target="_blank">
+           Centre d'aide
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+       <p class="text-gray-400 text-sm">
+        © 2025 BeLead. Lead your talks, effortlessly. - Tous
+          droits réservés.
+       </p>
+       <div class="mt-4 md:mt-0">
+        <p class="text-gray-400 text-sm">
+         Développé avec passion en France
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </footer>
+  </body>
+
+</body>
+</html>

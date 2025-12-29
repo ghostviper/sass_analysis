@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Synta - AI Workflow Builder</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-black text-white overflow-x-hidden relative">
+    <div class="relative z-10">
+     <nav class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-black/80 backdrop-blur-xl border-b border-[#2a2a2a]/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex justify-between items-center py-4">
+        <a class="flex items-center space-x-3 group" href="/">
+         <div class="relative w-10 h-10">
+          <img alt="Synta Logo" class="object-contain" height="40" src="/synta-logo.png" width="40"/>
+         </div>
+         <span class="text-2xl font-bold bg-gradient-to-r from-[#4ade80] to-[#22c55e] bg-clip-text text-transparent">
+          Synta
+         </span>
+        </a>
+        <div class="hidden md:flex items-center space-x-8">
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors relative group" href="#features">
+          Features
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors relative group" href="#how-it-works">
+          How It Works
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors relative group" href="#pricing">
+          Pricing
+         </a>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black font-bold rounded-xl px-6 py-2 transition-all duration-300 hover:scale-105">
+          Sign In
+         </button>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black font-bold rounded-xl px-6 py-2 transition-all duration-300 hover:scale-105">
+          Start Building
+         </button>
+        </div>
+       </div>
+      </div>
+     </nav>
+     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-20">
+       <h2 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 text-white leading-tight px-4">
+        Build Perfect Workflows with
+        <br/>
+        <span class="inline-block bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black px-2 sm:px-4 py-1 sm:py-2 rounded-lg sm:rounded-xl mt-2 sm:mt-4 font-bold text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl">
+         AI Assistance
+        </span>
+       </h2>
+       <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-[#9ca3af] mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4">
+        Create, debug, and optimize n8n workflows effortlessly. When you're stuck, Synta provides instant AI-powered solutions to get you back on track.
+       </p>
+       <div class="flex justify-center mb-12 sm:mb-16 px-4">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 relative group overflow-hidden bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] hover:bg-gradient-to-br border-2 border-[#3a3a3a] text-[#d1d5db] font-bold rounded-xl px-6 sm:px-8 md:px-12 py-4 sm:py-6 text-base sm:text-lg md:text-xl transition duration-300">
+         <span class="relative z-10 flex items-center gap-2 sm:gap-3 transition-colors duration-500 group-hover:text-black">
+          <span>
+           Start Building Workflows
+          </span>
+         </span>
+        </button>
+       </div>
+       <div class="mb-12 sm:mb-16 px-4">
+        <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors text-sm sm:text-base" href="/dashboard">
+         Or explore our workflow tools →
+        </a>
+       </div>
+       <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-2xl mx-auto px-4">
+        <div class="relative text-center">
+         <div class="absolute -top-2 right-0 flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#4ade80]/10 border border-[#4ade80]/30">
+          <span class="text-xs font-medium text-[#4ade80]">
+           LIVE
+          </span>
+         </div>
+         <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#4ade80] mb-1">
+          <span>
+           25,078
+          </span>
+         </div>
+         <div class="text-[#6b7280] text-xs sm:text-sm">
+          Workflows Created
+         </div>
+        </div>
+        <div class="relative text-center">
+         <div class="absolute -top-2 right-0 flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#4ade80]/10 border border-[#4ade80]/30">
+          <span class="text-xs font-medium text-[#4ade80]">
+           LIVE
+          </span>
+         </div>
+         <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#4ade80] mb-1">
+          <span>
+           1,835
+          </span>
+         </div>
+         <div class="text-[#6b7280] text-xs sm:text-sm">
+          Active Users
+         </div>
+        </div>
+        <div class="relative text-center">
+         <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#4ade80] mb-1">
+          <span>
+           97.3
+          </span>
+          <span>
+           %
+          </span>
+         </div>
+         <div class="text-[#6b7280] text-xs sm:text-sm">
+          Success Rate
+         </div>
+        </div>
+        <div class="relative text-center">
+         <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-[#4ade80] mb-1">
+          <span>
+           24
+          </span>
+          <span>
+           /7
+          </span>
+         </div>
+         <div class="text-[#6b7280] text-xs sm:text-sm">
+          AI Support
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-12 sm:py-16 md:py-20 px-4 md:px-6 lg:px-8" id="features">
+      <div class="container mx-auto max-w-6xl">
+       <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-12 sm:mb-16 text-white">
+        <span>
+         Build Workflows on
+        </span>
+        <br class="sm:hidden"/>
+        <span class="bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black px-2 sm:px-4 py-1 sm:py-2 rounded-lg font-bold inline-block mt-2 sm:mt-0 sm:ml-2">
+         Autopilot
+        </span>
+       </h2>
+       <div class="grid md:grid-cols-3 gap-8">
+        <article class="relative">
+         <div class="p-8 rounded-2xl border bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] flex flex-col items-center text-center transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a] h-full min-h-[350px]">
+          <div class="flex flex-col items-center">
+           <h3 class="text-2xl font-bold mb-4 text-white">
+            AI-Powered Workflow Creation
+           </h3>
+           <p class="text-[#9ca3af] text-lg leading-relaxed">
+            Describe what you want to automate and let our AI build the entire workflow for you. Smart node selection, proper connections, and optimized configurations automatically.
+           </p>
+          </div>
+         </div>
+        </article>
+        <article class="relative">
+         <div class="p-8 rounded-2xl border bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] flex flex-col items-center text-center transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a] h-full min-h-[350px]">
+          <div class="flex flex-col items-center">
+           <h3 class="text-2xl font-bold mb-4 text-white">
+            Instant Debugging &amp; Optimization
+           </h3>
+           <p class="text-[#9ca3af] text-lg leading-relaxed">
+            Stuck with errors or poor performance? Our AI analyzes your workflow, identifies issues, and provides instant fixes and performance improvements.
+           </p>
+          </div>
+         </div>
+        </article>
+        <article class="relative">
+         <div class="p-8 rounded-2xl border bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] flex flex-col items-center text-center transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a] h-full min-h-[350px]">
+          <div class="flex flex-col items-center">
+           <h3 class="text-2xl font-bold mb-4 text-white">
+            Smart Workflow Refinement
+           </h3>
+           <p class="text-[#9ca3af] text-lg leading-relaxed">
+            Continuously improve your workflows with AI suggestions. Add new features, handle edge cases, and adapt to changing requirements effortlessly.
+           </p>
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </section>
+     <section class="py-12 sm:py-16 md:py-20 px-4">
+      <div class="max-w-7xl mx-auto">
+       <div class="flex flex-col items-center mb-12 sm:mb-16">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center mb-6 sm:mb-6 text-white">
+         <span class="hidden sm:inline">
+          Transform your
+         </span>
+         <span class="sm:hidden">
+          Transform your
+         </span>
+         <br class="sm:hidden"/>
+         <span class="bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black px-2 sm:px-4 py-1 sm:py-2 rounded-lg font-bold inline-block mt-2 sm:mt-4">
+          <span class="sm:hidden">
+           Workflows
+          </span>
+          <span class="hidden sm:inline">
+           Workflow Development
+          </span>
+         </span>
+        </h2>
+        <p class="text-[#9ca3af] text-center text-base sm:text-lg md:text-xl max-w-2xl mx-auto">
+         Stop struggling with complex n8n workflows. Synta provides AI assistance for creation, debugging, and optimization.
+        </p>
+       </div>
+       <div class="flex flex-col lg:flex-row gap-6 sm:gap-8">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm flex-1 transition-transform duration-300 hover:scale-[1.02] bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] border-[#2a2a2a] backdrop-blur-sm">
+         <div class="flex flex-col space-y-1.5 p-6 text-center pb-3 sm:pb-4">
+          <div class="font-semibold tracking-tight flex items-center mb-3 sm:mb-4 justify-center gap-2 text-xl sm:text-2xl text-[#d1d5db]">
+           Without Synta
+          </div>
+         </div>
+         <div class="p-6 pt-0 space-y-3 sm:space-y-4">
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-[#3a3a3a] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:scale-[1.02] hover:border-[#4a4a4a]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-bold text-[#d1d5db] mb-1 text-sm sm:text-base truncate">
+               Hours of Manual Work
+              </h3>
+              <p class="text-xs sm:text-sm text-[#9ca3af] line-clamp-2">
+               Spending countless hours building workflows from scratch, researching nodes and configurations
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-[#3a3a3a] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:scale-[1.02] hover:border-[#4a4a4a]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-bold text-[#d1d5db] mb-1 text-sm sm:text-base truncate">
+               Trial and Error Debugging
+              </h3>
+              <p class="text-xs sm:text-sm text-[#9ca3af] line-clamp-2">
+               Struggling with cryptic error messages and spending days figuring out what went wrong
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-[#3a3a3a] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:scale-[1.02] hover:border-[#4a4a4a]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-bold text-[#d1d5db] mb-1 text-sm sm:text-base truncate">
+               Complex Node Configurations
+              </h3>
+              <p class="text-xs sm:text-sm text-[#9ca3af] line-clamp-2">
+               Getting lost in documentation trying to configure nodes properly for your specific use case
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-[#3a3a3a] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:scale-[1.02] hover:border-[#4a4a4a]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-bold text-[#d1d5db] mb-1 text-sm sm:text-base truncate">
+               Inconsistent Results
+              </h3>
+              <p class="text-xs sm:text-sm text-[#9ca3af] line-clamp-2">
+               Workflows that work sometimes but fail unpredictably due to edge cases you missed
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border bg-card text-card-foreground shadow-sm border-[#3a3a3a] bg-gradient-to-br from-[#1a1a1a] to-[#2a2a2a] min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:scale-[1.02] hover:border-[#4a4a4a]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-bold text-[#d1d5db] mb-1 text-sm sm:text-base truncate">
+               Developer Frustration
+              </h3>
+              <p class="text-xs sm:text-sm text-[#9ca3af] line-clamp-2">
+               The exhausting cycle of build, break, debug, repeat that kills productivity
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm flex-1 transition-transform duration-300 hover:scale-[1.02] bg-gradient-to-br from-[#4ade80] to-[#22c55e] border-[#4ade80]">
+         <div class="flex flex-col space-y-1.5 p-6 text-center pb-3 sm:pb-4">
+          <div class="font-semibold tracking-tight flex items-center mb-3 sm:mb-4 justify-center gap-2 text-xl sm:text-2xl text-black">
+           With Synta
+          </div>
+         </div>
+         <div class="p-6 pt-0 space-y-3 sm:space-y-4">
+          <div class="rounded-lg text-card-foreground shadow-sm bg-black/10 border border-black/20 min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:bg-black/20 hover:scale-[1.02]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-semibold text-black mb-1 text-sm sm:text-base truncate">
+               Minutes to Build
+              </h3>
+              <p class="text-xs sm:text-sm text-black/70 line-clamp-2">
+               Describe your automation needs and get a complete workflow in minutes, not hours
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg text-card-foreground shadow-sm bg-black/10 border border-black/20 min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:bg-black/20 hover:scale-[1.02]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-semibold text-black mb-1 text-sm sm:text-base truncate">
+               Instant Error Solutions
+              </h3>
+              <p class="text-xs sm:text-sm text-black/70 line-clamp-2">
+               AI analyzes your workflow and provides specific fixes for any errors or issues
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg text-card-foreground shadow-sm bg-black/10 border border-black/20 min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:bg-black/20 hover:scale-[1.02]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-semibold text-black mb-1 text-sm sm:text-base truncate">
+               Smart Configuration
+              </h3>
+              <p class="text-xs sm:text-sm text-black/70 line-clamp-2">
+               AI handles complex node setups and optimal configurations automatically
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg text-card-foreground shadow-sm bg-black/10 border border-black/20 min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:bg-black/20 hover:scale-[1.02]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-semibold text-black mb-1 text-sm sm:text-base truncate">
+               Robust &amp; Reliable
+              </h3>
+              <p class="text-xs sm:text-sm text-black/70 line-clamp-2">
+               AI-built workflows handle edge cases and run consistently in production
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg text-card-foreground shadow-sm bg-black/10 border border-black/20 min-h-[80px] sm:h-[100px] flex items-center transition-all duration-300 hover:bg-black/20 hover:scale-[1.02]">
+           <div class="p-3 sm:p-4 w-full">
+            <div class="flex items-start gap-2 sm:gap-3">
+             <div class="min-w-0">
+              <h3 class="font-semibold text-black mb-1 text-sm sm:text-base truncate">
+               Developer Joy
+              </h3>
+              <p class="text-xs sm:text-sm text-black/70 line-clamp-2">
+               Focus on building features while Synta handles the workflow complexity
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-12 sm:py-16 md:py-20 px-4 md:px-6 lg:px-8" id="how-it-works">
+      <div class="container mx-auto max-w-6xl">
+       <header class="mb-12 sm:mb-16 text-center">
+        <div class="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 justify-center">
+         <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white">
+          How
+          <span class="sr-only">
+           Synta
+          </span>
+         </h2>
+         <div class="bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black px-2 sm:px-4 py-1 sm:py-2 rounded-lg">
+          <span class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">
+           It Works
+          </span>
+         </div>
+        </div>
+        <p class="text-base sm:text-lg md:text-xl text-[#9ca3af] max-w-2xl mx-auto mt-4 sm:mt-6">
+         From idea to production-ready workflow in minutes, not hours.
+        </p>
+       </header>
+       <div class="grid gap-6 sm:gap-8">
+        <article class="relative">
+         <div class="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm rounded-2xl border transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a]">
+          <div class="flex flex-col sm:hidden">
+           <div class="flex items-center gap-4 mb-4">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">
+             1. Describe Your Workflow
+            </h3>
+           </div>
+           <p class="text-[#9ca3af] text-sm sm:text-base md:text-lg leading-relaxed">
+            Simply tell Synta what you want to automate in plain English. Whether it's data processing, API integrations, or complex business logic, just describe your needs naturally.
+           </p>
+          </div>
+          <div class="hidden sm:flex gap-6 md:gap-8 items-start">
+           <div class="flex-1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">
+             1. Describe Your Workflow
+            </h3>
+            <p class="text-[#9ca3af] text-base md:text-lg leading-relaxed">
+             Simply tell Synta what you want to automate in plain English. Whether it's data processing, API integrations, or complex business logic, just describe your needs naturally.
+            </p>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="relative">
+         <div class="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm rounded-2xl border transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a]">
+          <div class="flex flex-col sm:hidden">
+           <div class="flex items-center gap-4 mb-4">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">
+             2. AI Builds Your Workflow
+            </h3>
+           </div>
+           <p class="text-[#9ca3af] text-sm sm:text-base md:text-lg leading-relaxed">
+            Our AI analyzes your requirements and automatically generates a complete n8n workflow with proper nodes, connections, and configurations. No manual setup required.
+           </p>
+          </div>
+          <div class="hidden sm:flex gap-6 md:gap-8 items-start">
+           <div class="flex-1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">
+             2. AI Builds Your Workflow
+            </h3>
+            <p class="text-[#9ca3af] text-base md:text-lg leading-relaxed">
+             Our AI analyzes your requirements and automatically generates a complete n8n workflow with proper nodes, connections, and configurations. No manual setup required.
+            </p>
+           </div>
+          </div>
+         </div>
+        </article>
+        <article class="relative">
+         <div class="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm rounded-2xl border transition-all duration-300 shadow-lg border-[#2a2a2a] hover:border-[#3a3a3a]">
+          <div class="flex flex-col sm:hidden">
+           <div class="flex items-center gap-4 mb-4">
+            <h3 class="text-lg sm:text-xl md:text-2xl font-bold text-white">
+             3. Deploy and Optimize
+            </h3>
+           </div>
+           <p class="text-[#9ca3af] text-sm sm:text-base md:text-lg leading-relaxed">
+            Download your workflow and deploy it instantly. Need changes? Our AI provides real-time debugging, optimization suggestions, and feature enhancements.
+           </p>
+          </div>
+          <div class="hidden sm:flex gap-6 md:gap-8 items-start">
+           <div class="flex-1">
+            <h3 class="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-white">
+             3. Deploy and Optimize
+            </h3>
+            <p class="text-[#9ca3af] text-base md:text-lg leading-relaxed">
+             Download your workflow and deploy it instantly. Need changes? Our AI provides real-time debugging, optimization suggestions, and feature enhancements.
+            </p>
+           </div>
+          </div>
+         </div>
+        </article>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4 relative overflow-hidden bg-black" id="pricing">
+      <div class="max-w-7xl mx-auto relative z-10">
+       <div class="text-center mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+         Choose Your
+         <span class="bg-gradient-to-r from-[#00D084] to-[#00FF94] text-transparent bg-clip-text">
+          Perfect Plan
+         </span>
+        </h2>
+        <p class="text-xl text-[#9ca3af] max-w-2xl mx-auto mb-8">
+         Start with 3-day free trial.
+        </p>
+        <div class="flex items-center justify-center gap-4 mb-4">
+         <span class="text-sm font-medium transition-colors text-[#6b7280]">
+          Monthly
+         </span>
+         <span class="text-sm font-medium transition-colors text-white">
+          Yearly
+         </span>
+        </div>
+        <div class="inline-flex items-center gap-2 bg-[#008557]/20 border border-[#008557]/40 text-[#00D084] text-sm font-semibold px-4 py-2 rounded-full">
+         Get 2-3 months free
+        </div>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="relative rounded-3xl p-8 transition-all duration-300 bg-white/[0.02] border border-[#2a2a2a]/50 hover:border-white/30 hover:transform hover:scale-[1.02]">
+         <div class="relative z-10">
+          <h3 class="text-3xl font-bold text-white mb-2">
+           Standard
+          </h3>
+          <p class="text-[#9ca3af] mb-6 text-sm leading-relaxed">
+           Perfect for individual developers and small teams getting started
+          </p>
+          <div class="mb-6">
+           <div class="flex items-baseline gap-2 mb-2">
+            <span class="text-5xl font-bold text-white">
+             $29
+            </span>
+            <span class="text-[#9ca3af]">
+             /month
+            </span>
+           </div>
+           <div class="space-y-1">
+            <p class="text-sm text-[#9ca3af]">
+             Billed annually at $349
+            </p>
+            <div class="inline-flex items-center gap-2 bg-[#008557]/20 border border-[#008557]/40 text-[#00D084] text-xs font-semibold px-3 py-1.5 rounded-full">
+             2 months free
+            </div>
+           </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 w-full py-6 text-lg font-bold rounded-xl mb-8 transition-all duration-300 bg-white hover:bg-[#f3f4f6] text-black">
+           <span class="flex items-center justify-center gap-2">
+            Get Started
+           </span>
+          </button>
+          <div class="space-y-3">
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             100 credits per month
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Up to 10 AI-generated workflows
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Basic debugging assistance
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Standard workflow templates
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Email support
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Export to n8n format
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="relative rounded-3xl p-8 transition-all duration-300 bg-white/[0.02] border-2 border-[#00D084]/50 hover:border-[#00D084]/70 hover:transform hover:scale-[1.02]">
+         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+          <div class="bg-gradient-to-r from-[#00D084] to-[#00FF94] text-black text-sm font-bold px-6 py-2 rounded-full flex items-center gap-2 shadow-lg">
+           <span>
+            Most Popular
+           </span>
+          </div>
+         </div>
+         <div class="relative z-10">
+          <h3 class="text-3xl font-bold text-white mb-2">
+           Pro
+          </h3>
+          <p class="text-[#9ca3af] mb-6 text-sm leading-relaxed">
+           For growing teams and businesses that need advanced AI assistance
+          </p>
+          <div class="mb-6">
+           <div class="flex items-baseline gap-2 mb-2">
+            <span class="text-5xl font-bold text-white">
+             $51
+            </span>
+            <span class="text-[#9ca3af]">
+             /month
+            </span>
+           </div>
+           <div class="space-y-1">
+            <p class="text-sm text-[#9ca3af]">
+             Billed annually at $615
+            </p>
+            <div class="inline-flex items-center gap-2 bg-[#008557]/20 border border-[#008557]/40 text-[#00D084] text-xs font-semibold px-3 py-1.5 rounded-full">
+             3 months free
+            </div>
+           </div>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-10 px-4 w-full py-6 text-lg font-bold rounded-xl mb-8 transition-all duration-300 bg-gradient-to-r from-[#00D084] to-[#00FF94] hover:from-[#00FF94] hover:to-[#00D084] text-black shadow-lg hover:shadow-[0_0_20px_rgba(0,208,132,0.5)]">
+           <span class="flex items-center justify-center gap-2">
+            Get Started
+           </span>
+          </button>
+          <div class="space-y-3">
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             300 credits per month
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Unlimited AI-generated workflows
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Advanced debugging &amp; optimization
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Custom node recommendations
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Priority AI support
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Team collaboration features
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Advanced workflow templates
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             API integrations
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="relative rounded-3xl p-8 bg-white/[0.02] border border-[#2a2a2a]/50 hover:border-white/30 transition-all duration-300 hover:scale-[1.02]">
+         <div class="relative z-10">
+          <h3 class="text-3xl font-bold text-white mb-2">
+           Enterprise
+          </h3>
+          <p class="text-[#9ca3af] mb-6 text-sm leading-relaxed">
+           For large teams and organizations with custom needs
+          </p>
+          <div class="mb-6">
+           <div class="flex items-baseline gap-2 mb-2">
+            <span class="text-4xl font-bold text-white">
+             Custom
+            </span>
+           </div>
+           <p class="text-sm text-[#9ca3af]">
+            Tailored pricing for your organization
+           </p>
+          </div>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 w-full py-6 text-lg font-bold rounded-xl mb-8 bg-white hover:bg-[#f3f4f6] text-black transition-all duration-300">
+           <span class="flex items-center justify-center gap-2">
+            Contact Sales
+           </span>
+          </button>
+          <div class="space-y-3">
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Unlimited credits
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Dedicated account manager
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Custom integrations
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             SLA guarantees
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Advanced security features
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Priority support 24/7
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Custom training &amp; onboarding
+            </span>
+           </div>
+           <div class="flex items-start gap-3 group/feature">
+            <span class="text-[#d1d5db] text-sm leading-relaxed">
+             Volume discounts
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="mt-16 text-center">
+        <p class="text-[#6b7280] text-sm">
+         Instant access • Cancel anytime • Trusted by 1,000+ developers
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4 md:px-6 lg:px-8" id="faqs">
+      <div class="container mx-auto max-w-3xl">
+       <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-white">
+        Frequently Asked Questions 🤖
+       </h2>
+       <div class="w-full space-y-4">
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«Rcu7db»" type="button">
+           <h3 class="text-xl text-left">
+            What is Synta?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«Rku7db»" type="button">
+           <h3 class="text-xl text-left">
+            How does Synta generate workflows?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«Rsu7db»" type="button">
+           <h3 class="text-xl text-left">
+            Can Synta help debug existing workflows?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«R14u7db»" type="button">
+           <h3 class="text-xl text-left">
+            Is Synta compatible with n8n?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«R1cu7db»" type="button">
+           <h3 class="text-xl text-left">
+            Do I need coding experience to use Synta?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«R1ku7db»" type="button">
+           <h3 class="text-xl text-left">
+            Is there a free trial available?
+           </h3>
+          </button>
+         </h3>
+        </div>
+        <div class="border border-[#2a2a2a] rounded-lg px-6 py-2 bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm hover:border-[#3a3a3a] transition-colors">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between py-4 [&amp;[data-state=open]&gt;svg]:rotate-180 text-lg font-semibold hover:no-underline text-white hover:text-[#4ade80] transition-colors" id="radix-«R1su7db»" type="button">
+           <h3 class="text-xl text-left">
+            How accurate are the AI-generated workflows?
+           </h3>
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="container mx-auto px-4 sm:px-6 md:px-8 py-12 sm:py-16 md:py-20">
+      <section class="relative py-6 sm:py-8 overflow-hidden w-full max-w-[90vw] sm:max-w-[80vw] md:max-w-[70vw] lg:max-w-[60vw] mx-auto border border-white/10 rounded-lg">
+       <div class="relative w-full text-center px-4">
+        <div class="mb-12 sm:mb-16">
+         <div class="inline-flex items-center justify-center p-1 mb-8 sm:mb-12 rounded-full bg-gradient-to-r from-[#4ade80]/20 to-[#4ade80]/10 border border-[#4ade80]/30">
+          <div class="flex items-center px-3 sm:px-4 py-2 rounded-full bg-black/50">
+           <span class="text-white text-xs sm:text-sm font-medium">
+            Join the Revolution
+           </span>
+          </div>
+         </div>
+         <div class="mb-6 sm:mb-8">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight">
+           Ready to
+           <span class="bg-gradient-to-br from-[#4ade80] to-[#22c55e] text-black px-2 sm:px-4 py-1 rounded-lg font-bold">
+            Transform
+           </span>
+          </h2>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mt-2 sm:mt-4">
+           Your Workflow?
+          </h2>
+         </div>
+         <div class="mb-8 sm:mb-12">
+          <p class="text-sm sm:text-lg md:text-xl lg:text-2xl text-[#9ca3af] max-w-4xl mx-auto leading-relaxed block">
+           Join thousands of innovators who are already building the future with Synta.
+          </p>
+          <p class="text-sm sm:text-lg md:text-xl lg:text-2xl text-[#9ca3af] max-w-4xl mx-auto leading-relaxed block mt-1 sm:mt-2">
+           Start your journey today and experience the power of next-generation automation.
+          </p>
+         </div>
+         <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-12">
+          <a href="/dashboard">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-11 bg-gradient-to-br from-[#4ade80] to-[#22c55e] hover:from-[#22c55e] hover:to-[#16a34a] text-black font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-6 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg lg:text-xl group transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(74,222,128,0.4)]">
+            Start Building Now
+           </button>
+          </a>
+          <a href="/dashboard">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-11 border-2 border-[#4ade80]/50 text-[#4ade80] hover:bg-[#4ade80]/10 font-bold px-6 sm:px-8 md:px-12 py-4 sm:py-6 rounded-xl sm:rounded-2xl text-sm sm:text-base md:text-lg lg:text-xl group transition-all duration-300 hover:scale-105 bg-transparent">
+            Explore Features
+           </button>
+          </a>
+         </div>
+         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 md:gap-8 text-[#9ca3af]">
+          <div class="flex items-center">
+           <span class="text-xs sm:text-sm">
+            Free 3-day trial
+           </span>
+          </div>
+          <div class="flex items-center">
+           <span class="text-xs sm:text-sm">
+            Access to all features during trial
+           </span>
+          </div>
+          <div class="flex items-center">
+           <span class="text-xs sm:text-sm">
+            Cancel anytime
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+     <footer class="relative border-t border-[#2a2a2a] bg-gradient-to-br from-[#0f0f0f] to-[#1a1a1a] backdrop-blur-sm">
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+       <div class="flex flex-col items-center text-center space-y-8">
+        <div class="flex flex-col items-center space-y-4">
+         <a class="flex items-center space-x-3 group" href="/">
+          <span class="text-3xl font-bold bg-gradient-to-r from-[#4ade80] to-[#22c55e] bg-clip-text text-transparent">
+           Synta
+          </span>
+         </a>
+         <p class="text-[#9ca3af] leading-relaxed max-w-md">
+          Helping you find your customers, effortlessly.
+         </p>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-8 text-sm">
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors duration-300" href="/privacy-policy">
+          Privacy Policy
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors duration-300" href="/terms-and-conditions">
+          Terms &amp; Conditions
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors duration-300" href="mailto:Info@synta.io">
+          Contact Us
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors duration-300" href="/chat">
+          Dashboard
+         </a>
+         <a class="text-[#9ca3af] hover:text-[#4ade80] transition-colors duration-300" href="/brainstorm">
+          Build Workflows
+         </a>
+        </div>
+        <div class="border-t border-[#2a2a2a] pt-8 w-full">
+         <div class="text-[#9ca3af] text-sm">
+          © 2025 Synta. All rights reserved.
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

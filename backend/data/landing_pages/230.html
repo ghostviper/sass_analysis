@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Launch Express</title>
+</head>
+<body>
+  <html>
+   <head>
+    <header class="z-50 h-full! w-full sm:h-auto sticky top-0 bg-background/80 border-b shadow-none backdrop-blur-lg md:shadow-xs">
+     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center h-16 transition-all duration-300">
+       <div class="shrink-0">
+        <a class="flex items-center gap-2 text-xl font-semibold" href="/">
+         <img alt="Launch Express" class="h-9" height="36" src="/images/logo.svg" width="36"/>
+         <span>
+          Launch Express
+         </span>
+        </a>
+       </div>
+       <div class="hidden grow justify-end md:flex">
+        <nav class="items-center text-sm lg:gap-x-8">
+         <a class="relative px-2 py-2 font-medium transition-colors text-muted-foreground hover:text-foreground" href="/#pricing">
+          Pricing
+         </a>
+         <a class="relative px-2 py-2 font-medium transition-colors text-muted-foreground hover:text-foreground" href="/#faq">
+          FAQ
+         </a>
+         <a class="relative px-2 py-2 font-medium transition-colors text-muted-foreground hover:text-foreground" href="https://docs.launch-express.com">
+          Docs
+         </a>
+         <a class="relative px-2 py-2 font-medium transition-colors text-muted-foreground hover:text-foreground" href="/changelog">
+          Changelog
+         </a>
+         <a class="relative px-2 py-2 font-medium transition-colors text-muted-foreground hover:text-foreground" href="/affiliates">
+          Affiliate (40%)
+         </a>
+        </nav>
+       </div>
+      </div>
+     </div>
+     <div class="overflow-hidden md:hidden">
+      <div class="space-y-1 border-t px-4 py-4">
+       <a class="block rounded-md px-3 py-2.5 text-base font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground" href="/#pricing">
+        Pricing
+       </a>
+       <a class="block rounded-md px-3 py-2.5 text-base font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground" href="/#faq">
+        FAQ
+       </a>
+       <a class="block rounded-md px-3 py-2.5 text-base font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground" href="https://docs.launch-express.com">
+        Docs
+       </a>
+       <a class="block rounded-md px-3 py-2.5 text-base font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground" href="/changelog">
+        Changelog
+       </a>
+       <a class="block rounded-md px-3 py-2.5 text-base font-medium transition-colors text-muted-foreground hover:bg-muted hover:text-foreground" href="/affiliates">
+        Affiliate (40%)
+       </a>
+      </div>
+     </div>
+    </header>
+    <main>
+     <section class="jsx-700a0fa313f05b21 relative w-full overflow-hidden mask-b-from-85% mask-b-to-100% py-24 md:py-32">
+      <div class="jsx-700a0fa313f05b21 absolute inset-0 overflow-hidden">
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Shadcn UI" class="h-full w-full object-contain" height="40" src="/images/hero/shadcn.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Better Auth" class="h-full w-full object-contain" height="40" src="/images/logos/better-auth.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Tailwind CSS" class="h-full w-full object-contain" height="40" src="/images/hero/tailwind.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Next.js" class="h-full w-full object-contain" height="40" src="/images/hero/nextjs.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Prisma" class="h-full w-full object-contain" height="40" src="/images/logos/prisma-white.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Resend" class="h-full w-full object-contain" height="40" src="/images/logos/resend-white.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Stripe" class="h-full w-full object-contain" height="40" src="/images/logos/stripe.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="OpenAI" class="h-full w-full object-contain" height="40" src="/images/logos/openai-white.svg" width="40"/>
+        </div>
+       </div>
+       <div class="jsx-700a0fa313f05b21 absolute opacity-15 transition-opacity duration-1000">
+        <div class="jsx-700a0fa313f05b21 flex h-full w-full items-center justify-center rounded-xl bg-white/10 p-2 shadow-lg shadow-[#7c62f0]/5 backdrop-blur-sm">
+         <img alt="Lemon Squeezy" class="h-full w-full object-contain" height="40" src="/images/hero/lemonsqueezy.svg" width="40"/>
+        </div>
+       </div>
+      </div>
+      <div class="jsx-700a0fa313f05b21 relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+       <div class="jsx-700a0fa313f05b21 flex flex-col items-center justify-center">
+        <div class="jsx-700a0fa313f05b21 mx-auto max-w-3xl text-center">
+         <div class="jsx-700a0fa313f05b21 transition-opacity duration-500 opacity-100">
+          <h1 class="jsx-700a0fa313f05b21 font-display text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl md:text-7xl dark:text-white">
+           Build Your SaaS
+           <span class="jsx-700a0fa313f05b21 relative whitespace-nowrap">
+            <span class="jsx-700a0fa313f05b21 relative z-10 bg-gradient-to-r from-[#7c62f0] to-[#9B88F4] bg-clip-text text-transparent">
+             10x Faster
+            </span>
+           </span>
+          </h1>
+          <p class="jsx-700a0fa313f05b21 mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+           From concept to launch in days, not months. Our complete SaaS foundation includes authentication, payments, analytics, and beautifully designed pages — letting you focus on what makes your product unique.
+          </p>
+          <div class="jsx-700a0fa313f05b21 mt-10 flex flex-wrap justify-center gap-4">
+           <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer text-sm font-medium transition-all group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:opacity-70 h-10 rounded-md px-6 has-[&gt;svg]:px-4 group relative min-w-[180px] overflow-hidden bg-gradient-to-r from-[#7c62f0] to-[#9B88F4] text-white shadow-lg shadow-[#7c62f0]/20 hover:from-[#6a52db] hover:to-[#8A77E3]" href="#pricing">
+            <span class="jsx-700a0fa313f05b21 relative z-10 flex items-center text-shadow-lg">
+             <img alt="" class="mr-2 h-5 w-5 transition duration-300 group-hover:scale-110 group-hover:-rotate-6" height="20" src="/images/logo-white.svg" width="20"/>
+             Get Launch Express
+            </span>
+           </a>
+           <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap cursor-pointer relative text-sm font-medium transition-all group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary/10 h-10 rounded-md px-6 has-[&gt;svg]:px-4 border-primary/30 min-w-[180px] border text-slate-800 hover:bg-[#7c62f0]/5 dark:text-white" href="#demo-video">
+            Watch Demo
+           </a>
+          </div>
+         </div>
+        </div>
+        <div class="mt-10 flex items-center justify-center">
+         <div class="jsx-700a0fa313f05b21 flex items-center gap-3 rounded-full px-4 py-2">
+          <span class="jsx-700a0fa313f05b21 text-sm font-medium text-slate-700 dark:text-slate-200">
+           <span class="jsx-700a0fa313f05b21 font-semibold text-[#7c62f0]">
+            $100 off
+           </span>
+           for early adopters
+          </span>
+         </div>
+        </div>
+        <div class="mt-10 flex flex-col items-center justify-center gap-2">
+         <a class="flex flex-col items-center gap-2" href="#solution">
+          See what you'll get
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="scroll-mt-20" id="solution">
+      <div class="mt-20">
+       <div class="relative container mx-auto max-w-7xl px-4 py-16">
+        <div class="mx-auto space-y-4 pb-6 text-center">
+         <div>
+          <h3 class="mx-auto mt-4 max-w-xs text-3xl font-semibold sm:max-w-none sm:text-4xl md:text-5xl">
+           A pre-built solution for your applications
+          </h3>
+         </div>
+         <div>
+          <p class="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg leading-8">
+           Save over 100 development hours with our comprehensive pre-built solution.
+          </p>
+         </div>
+        </div>
+        <div class="mx-auto mt-16 grid max-w-sm grid-cols-1 gap-6 text-white/50 md:max-w-3xl md:grid-cols-2 md:grid-rows-3 xl:max-w-6xl xl:auto-rows-fr xl:grid-cols-3 xl:grid-rows-2">
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 hover:bg-primary/5 transition-all duration-500 ease-out">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            Authentication Ready
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Seamlessly integrates with Better-Auth, offering custom auth pages, social login, Magic Link, and secure route protection.
+           </p>
+          </div>
+          <img alt="" class="mt-4 -mb-32 max-h-64 w-full px-4 drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-y-[-10px]" height="720" src="/_next/image?url=%2Fauthentication.png&amp;w=3840&amp;q=75" width="1026"/>
+         </div>
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 order-3 xl:order-none hover:bg-primary/5 transition-all duration-500 ease-out">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            Database Integration
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Pre-configured with Prisma ORM, ready to handle auth, payments, and user data across PostgreSQL, MySQL, SQLite, and MongoDB.
+           </p>
+          </div>
+          <img alt="" class="mt-4 -mb-32 max-h-64 w-full px-4 drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-y-[-10px]" height="1344" src="/_next/image?url=%2Fdatabase.png&amp;w=3840&amp;q=75" width="2696"/>
+         </div>
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 md:row-span-2 hover:bg-primary/5 transition-all duration-500 ease-out">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            Payment Processing
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Easily integrate Stripe or LemonSqueezy to create checkout sessions and store payment data for one-time or subscription payments.
+           </p>
+          </div>
+          <div class="mt-16 -mb-48 ml-12 h-full w-[380px] px-4 drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-x-[-10px]">
+           <img alt="" class="rounded-lg" height="800" src="/_next/image?url=%2Fpayment.png&amp;w=3840&amp;q=75" width="1336"/>
+          </div>
+         </div>
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 md:row-span-2 hover:bg-primary/5 transition-all duration-500 ease-out">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            Email Integration
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Send transactional emails with Beehiiv, Brevo, Loops, Resend &amp; more pre-configured and powered by React Email templates.
+           </p>
+          </div>
+          <div class="mt-16 -mb-48 ml-12 h-full px-4 drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-x-[-10px]">
+           <img alt="" height="900" src="/_next/image?url=%2Femail.png&amp;w=3840&amp;q=75" width="1440"/>
+          </div>
+         </div>
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 order-3 xl:order-none hover:bg-primary/5 transition-all duration-500 ease-out md:col-span-2 xl:col-span-1">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            AI Integration
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Kickstart with copy-paste examples, powered by OpenAI, Hugging Face, Langchain, Pinecone, and more.
+           </p>
+          </div>
+          <img alt="" class="mt-4 -mb-32 max-h-64 w-full object-cover object-top px-4 drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-y-[-10px]" height="720" src="/_next/image?url=%2Fai.png&amp;w=3840&amp;q=75" width="1026"/>
+         </div>
+         <div class="group relative items-start overflow-hidden rounded-2xl bg-neutral-50 p-6 dark:bg-white/5 flex-row order-4 md:col-span-2 md:flex-row xl:order-none hover:bg-primary/5 transition-all duration-500 ease-out">
+          <div>
+           <h3 class="text-primary mb-2 flex items-center gap-2 text-lg font-semibold">
+            UI Components and Styling
+           </h3>
+           <p class="text-muted-foreground font-medium">
+            Crafted with custom and Shadcn UI components, styled effortlessly using Tailwind CSS for a sleek, responsive landing page.
+           </p>
+          </div>
+          <img alt="" class="mx-auto mt-4 -mb-32 max-h-64 w-auto rounded-lg drop-shadow-[0_0_28px_rgba(0,0,0,.1)] transition-all duration-300 select-none group-hover:translate-y-[-10px]" height="1344" src="/_next/image?url=%2Fui-dark.png&amp;w=3840&amp;q=75" width="2696"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="scroll-mt-20" id="...-and-more">
+      <div class="[&amp;_&gt;_div]:py-4">
+       <div class="relative container mx-auto max-w-7xl px-4 py-16">
+        <div class="mx-auto space-y-4 pb-6 text-center">
+         <div>
+          <h2 class="text-primary font-mono text-sm font-medium tracking-wider uppercase">
+           ... and more
+          </h2>
+         </div>
+         <div>
+          <p class="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg leading-8">
+           Integrated SEO optimized Markdown-based Blog with YouTube, Twitter, Reddit and Loom embeds &amp; automatic sitemap generation. Customer support with Crisp and Userdesk. Analytics with Plausible, Posthog and others. Plus, a lot more incredible extra features and content.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="relative py-24" id="pricing">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl text-center">
+        <h2 class="bg-primary/10 text-primary inline-flex items-center justify-center gap-x-2 rounded-full px-4 py-1.5 text-sm font-medium">
+         Pricing Plans
+        </h2>
+        <p class="mt-4 text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl dark:text-white">
+         Simplify coding, launch quickly,
+         <span class="relative whitespace-nowrap">
+          <span class="relative">
+           make profits faster!
+          </span>
+         </span>
+        </p>
+       </div>
+       <div class="mt-10">
+        <div class="relative flex items-center justify-center">
+         <div class="bg-primary/10 border-primary/20 shadow-primary/10 text-primary mx-auto flex max-w-fit items-center justify-center gap-x-3 rounded-full border px-5 py-2.5 text-center text-sm font-medium shadow-lg">
+          <span class="font-bold">
+           $100 off
+          </span>
+          for the first 100 customers!
+         </div>
+        </div>
+       </div>
+       <div class="mx-auto mt-16 grid max-w-md grid-cols-1 gap-x-6 gap-y-6 sm:mt-20 lg:max-w-none lg:grid-cols-2">
+        <div class="relative flex flex-col overflow-hidden rounded-3xl border border-gray-200 bg-white dark:border-white/10 dark:bg-white/5">
+         <div class="flex-1 p-8 sm:p-10">
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+           Starter Plan
+          </h3>
+          <div class="mt-6 flex items-baseline gap-x-2">
+           <span class="text-2xl font-semibold text-gray-500 line-through">
+            $249
+           </span>
+           <span class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            $149
+           </span>
+           <span class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300">
+            one-time
+           </span>
+          </div>
+          <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
+           One Year access. Unlimited projects
+          </p>
+          <ul class="mt-8 space-y-3 text-sm">
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             NextJS Starter Kit
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             SEO &amp; Blog
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Stripe &amp; Lemon Squeezy payment
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Better-Auth Integration
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Google Oauth &amp; Magic Links
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Easy to use components &amp; animations
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             AI Integration
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             ChatGPT prompts for terms &amp; privacy
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Discord community
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Lifetime updates (One Year access)
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="border-t border-gray-200 p-8 dark:border-white/10">
+          <button class="gap-2 whitespace-nowrap cursor-pointer group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:opacity-70 has-[&gt;svg]:px-3 group/checkout relative flex items-center justify-center gap-x-2 px-3 py-2 text-center text-sm leading-6 font-semibold shadow-xs transition duration-200 hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] focus-visible:outline-2 focus-visible:outline-offset-2 mt-0 h-10 w-full rounded-lg bg-gray-100 text-gray-900 hover:bg-gray-200 dark:bg-white/10 dark:text-white dark:hover:bg-white/20">
+           This is definitely for me
+          </button>
+         </div>
+        </div>
+        <div class="relative flex flex-col overflow-hidden rounded-3xl border-primary ring-primary/20 to-primary/5 dark:to-primary/10 bg-gradient-to-b from-white via-white ring-4 dark:from-black/40 dark:via-black/40">
+         <div class="absolute top-8 right-8 z-10">
+          <div class="bg-primary flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold text-white shadow-lg">
+           Most Popular
+          </div>
+         </div>
+         <div class="flex-1 p-8 sm:p-10">
+          <h3 class="text-2xl font-bold tracking-tight text-primary dark:text-primary">
+           Extended Plan
+          </h3>
+          <div class="mt-6 flex items-baseline gap-x-2">
+           <span class="text-2xl font-semibold text-gray-500 line-through">
+            $269
+           </span>
+           <span class="text-5xl font-bold tracking-tight text-gray-900 dark:text-white">
+            $169
+           </span>
+           <span class="text-sm leading-6 font-semibold text-gray-600 dark:text-gray-300">
+            one-time
+           </span>
+          </div>
+          <p class="mt-2 text-base text-gray-500 dark:text-gray-400">
+           Lifetime access. Unlimited projects. Free Updates
+          </p>
+          <ul class="mt-8 space-y-3 text-sm">
+           <li class="flex items-start gap-3 bg-primary/10 border-primary rounded-md border-l-4 p-3">
+            <span class="text-gray-700 dark:text-gray-300 font-medium">
+             All features from Starter Plan
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Features by Request
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Priority support on Discord
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Example projects (Coming Soon)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Exclusive deals and discounts (Coming Soon)
+            </span>
+           </li>
+           <li class="flex items-start gap-3">
+            <span class="text-gray-700 dark:text-gray-300">
+             Lifetime updates
+            </span>
+           </li>
+          </ul>
+         </div>
+         <div class="border-t border-gray-200 p-8 dark:border-white/10">
+          <button class="gap-2 whitespace-nowrap cursor-pointer group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:opacity-70 has-[&gt;svg]:px-3 group/checkout relative flex items-center justify-center gap-x-2 px-3 py-2 text-center text-sm leading-6 font-semibold shadow-xs transition duration-200 hover:shadow-[0_0_20px_hsl(var(--primary)/10%)] focus-visible:outline-2 focus-visible:outline-offset-2 mt-0 h-10 w-full rounded-lg bg-primary hover:bg-primary/90 text-white">
+           I'm taking this plan
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="relative w-full overflow-hidden py-20 md:py-28" id="demo-video">
+      <div class="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+       <div class="flex flex-col items-center justify-center">
+        <div class="mx-auto max-w-3xl text-center">
+         <span class="bg-primary/10 text-primary mb-6 inline-flex items-center justify-center gap-x-2 rounded-full px-4 py-1.5 text-sm font-medium">
+          Video Demo
+         </span>
+         <h2 class="text-4xl font-bold tracking-tight md:text-5xl">
+          <span class="relative whitespace-nowrap">
+           <span class="from-primary to-primary/70 relative z-10 bg-gradient-to-r bg-clip-text text-transparent">
+            Watch Demo
+           </span>
+          </span>
+         </h2>
+         <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+          Watch a quick demo of how to start using the Starter Kit of Launch Express and get your SaaS off the ground in less than 48 hours.
+         </p>
+        </div>
+        <div class="mt-12 w-full max-w-5xl">
+         <div class="relative mx-auto aspect-video w-full overflow-hidden rounded-2xl border border-white/10 bg-black/5 shadow-2xl backdrop-blur-sm">
+          <button class="gap-2 whitespace-nowrap cursor-pointer rounded-md text-sm font-medium group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary underline-offset-4 hover:underline px-4 py-2 has-[&gt;svg]:px-3 group absolute inset-0 z-10 flex h-full w-full items-center justify-center bg-black/30 backdrop-blur-sm transition-all duration-300 hover:bg-black/40 focus:outline-none" type="button">
+           <div class="flex flex-col items-center space-y-4">
+            <div class="text-lg font-medium text-white drop-shadow-md transition-transform duration-300 group-hover:scale-105">
+             <div class="mt-2 flex rounded-full border border-gray-200 bg-white p-1 shadow-xl group-hover:shadow-2xl">
+              <img alt="Watch Demo" class="blur-0 h-10 w-10 rounded-full" height="36" src="/_next/image?url=https%3A%2F%2Favatars.githubusercontent.com%2Fu%2F70667104%3Fv%3D4&amp;w=96&amp;q=75" width="36"/>
+              <div class="mr-4 ml-2 flex flex-col text-left">
+               <p class="text-sm font-medium text-gray-500">
+                Watch Demo
+               </p>
+               <p class="text-sm text-blue-500">
+                2:23
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </button>
+          <img alt="Watch Demo" class="absolute inset-0 h-full w-full object-cover transition duration-500 blur-0 scale-100" height="720" src="/_next/image?url=https%3A%2F%2Fi.ytimg.com%2Fvi%2FSw62JrFplOk%2Fmaxresdefault.jpg&amp;w=3840&amp;q=75" width="1280"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="relative scroll-mt-24 px-4 py-20 md:px-6 lg:py-24" id="faq">
+      <div class="mx-auto max-w-6xl">
+       <div class="relative">
+        <div class="relative mx-auto flex max-w-3xl flex-col gap-y-12">
+         <div class="flex flex-col gap-y-6">
+          <div class="text-center">
+           <span class="bg-primary/10 text-primary mb-6 inline-flex items-center justify-center gap-x-2 rounded-full px-4 py-1.5 text-sm font-medium">
+            Frequently Asked Questions
+           </span>
+           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
+            Frequently Asked Questions
+           </h2>
+           <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-300">
+            If you have any questions, please feel free to contact us.
+           </p>
+          </div>
+         </div>
+         <div class="mx-auto w-full max-w-3xl">
+          <div class="w-full space-y-4">
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R13aouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 What do I get for my money?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R15aouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 What am I allowed to do with the boilerplate?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R17aouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 How often is Launch Express updated?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R19aouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 Is it a template?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R1baouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 Can I get a refund?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+           <div>
+            <div class="last:border-b-0 group overflow-hidden rounded-xl border border-white/10 bg-white shadow-sm transition-all duration-300 hover:shadow-md dark:border-white/10 dark:bg-white/5">
+             <h3 class="flex">
+              <button class="group flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 flex border-white/10 px-6 py-5 text-left text-base font-medium group-data-[state=open]:border-b hover:no-underline dark:border-white/10" id="radix-«R1daouplb»" type="button">
+               <div class="flex flex-1 items-center justify-between">
+                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                 Is it possible to use Stripe or Lemonsqueezy?
+                </h3>
+               </div>
+              </button>
+             </h3>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mx-auto mt-6 text-center">
+          <p class="text-sm text-gray-500 dark:text-gray-400">
+           Still have questions?
+           <a class="text-primary font-medium hover:underline" href="mailto:hello@launch-express.com">
+            Contact me
+           </a>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="mx-auto max-w-5xl px-4">
+      <div class="from-primary/5 via-primary/2 to-background border-primary/10 relative overflow-hidden rounded-2xl border bg-gradient-to-br p-8 md:p-12 lg:p-16">
+       <div class="relative z-10 mx-auto max-w-3xl">
+        <div class="text-center">
+         <h2 class="text-2xl font-bold tracking-tight md:text-3xl lg:text-4xl">
+          Stay up to date with our progress
+         </h2>
+         <p class="text-muted-foreground mx-auto mt-4 max-w-2xl text-base md:text-lg">
+          Sign up to our waitlist and we'll send you updates on new features, product launches, and exclusive early access opportunities.
+         </p>
+        </div>
+        <form class="mx-auto mt-8 sm:max-w-xl">
+         <div class="relative sm:flex">
+          <div class="relative w-full rounded-lg transition-all duration-200">
+           <input class="text-foreground ring-primary/20 placeholder:text-muted-foreground/60 focus:ring-primary/50 block w-full rounded-lg border-0 px-4 py-3 text-base shadow-sm ring-1 ring-inset focus:ring-2 focus:ring-inset sm:text-sm bg-background/80 backdrop-blur-sm" placeholder="Enter your email" type="email" value=""/>
+          </div>
+          <div class="mt-3 sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+           <button class="whitespace-nowrap cursor-pointer relative transition-all group select-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:opacity-70 has-[&gt;svg]:px-3 hover:bg-primary/90 focus-visible:outline-primary flex h-full w-full items-center justify-center gap-2 rounded-lg px-6 py-3 text-base font-medium text-white shadow-sm focus-visible:outline-2 focus-visible:outline-offset-2 sm:text-sm bg-primary" type="submit">
+            <span class="flex items-center gap-2">
+             Notify Me
+            </span>
+           </button>
+          </div>
+         </div>
+         <p class="text-muted-foreground mt-3 text-center text-sm">
+          We care about your data. Read our
+          <a class="text-primary hover:text-primary/80 font-medium underline underline-offset-2" href="/legal/privacy-policy">
+           Privacy Policy
+          </a>
+         </p>
+        </form>
+       </div>
+      </div>
+     </div>
+    </main>
+    <footer class="bg-transparent">
+     <div class="mx-auto max-w-6xl px-4 pt-16 pb-8 sm:pt-24 lg:px-6 lg:pt-32">
+      <div class="mb-10 flex flex-wrap justify-center gap-3">
+       <a class="flex items-center rounded-md bg-white/80 p-1.5 shadow-sm backdrop-blur-sm dark:bg-white/5 dark:backdrop-blur-sm" href="https://www.tinylaun.ch/launch/325" rel="dofollow" target="_blank">
+        <img alt="TinyLaunch" class="h-12 w-auto" height="32" src="/tinylaunch_badge.svg" width="120"/>
+       </a>
+       <a class="flex items-center rounded-md bg-white/80 p-1.5 shadow-sm backdrop-blur-sm dark:bg-white/5 dark:backdrop-blur-sm" href="https://www.thedeadlinehub.com/projects/launch-express" rel="dofollow" target="_blank">
+        <img alt="Deadline Hub" class="h-12 w-auto" height="32" src="/deadlinehub_badge.svg" width="120"/>
+       </a>
+       <a class="flex items-center rounded-md bg-white/80 p-1.5 shadow-sm backdrop-blur-sm dark:bg-white/5 dark:backdrop-blur-sm" href="https://microlaunch.net/p/launchexpress?utm_source=badge-winner-microlaunch&amp;utm_medium=badge" target="_blank">
+        <img alt="Microlaunch - Launch, get feedback, exposure and first customers over a month" class="h-12 w-auto" src="https://wild-dust-0517.microlaunch.workers.dev/badges/potd/ml_potd_dark.svg"/>
+       </a>
+      </div>
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-4">
+       <div class="space-y-8">
+        <div class="flex flex-col items-start justify-start gap-y-3.5">
+         <div class="flex items-center gap-2">
+          <img alt="Launch Express" class="h-8 w-auto" height="28" src="/images/logo.svg" width="28"/>
+          <p class="text-lg font-medium">
+           Launch Express
+          </p>
+         </div>
+         <p class="text-sm text-neutral-700 dark:text-neutral-300">
+          Launch Your Startup in Days, Not Weeks
+         </p>
+        </div>
+        <a class="inline-flex items-center gap-2 rounded-md border border-gray-200/80 bg-white/80 px-3 py-1.5 text-sm shadow-sm backdrop-blur-sm transition hover:bg-white dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10" href="https://www.launch-express.com" target="_blank">
+         <span class="text-xs font-normal text-gray-600 dark:text-gray-400">
+          Built with
+         </span>
+         <div class="flex items-center gap-x-1">
+          <img alt="Launch Express" height="16" src="https://www.launch-express.com/images/logo.svg" width="16"/>
+          <span class="text-xs font-medium text-gray-800 dark:text-gray-200">
+           Launch Express
+          </span>
+         </div>
+        </a>
+       </div>
+       <div class="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-2">
+        <div>
+         <h3 class="text-sm font-semibold text-[hsl(251,83%,75%)] dark:text-[hsl(251,83%,75%)]">
+          Links
+         </h3>
+         <ul class="mt-4 space-y-3">
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/blog">
+            Blog
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="https://docs.launch-express.com">
+            Documentation
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="mailto:hello@launch-express.com">
+            Support
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/affiliates">
+            Affiliate — Earn 40%
+           </a>
+          </li>
+          <li>
+           <a class="cursor-pointer text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/dashboard">
+            Setup Account
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="text-sm font-semibold text-[hsl(251,83%,75%)] dark:text-[hsl(251,83%,75%)]">
+          Legal
+         </h3>
+         <ul class="mt-4 space-y-3">
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/legal/terms-of-service">
+            Terms of Service
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/legal/privacy-policy">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/legal/legal-notice">
+            Legal Notice
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="text-sm font-semibold text-[hsl(251,83%,75%)] dark:text-[hsl(251,83%,75%)]">
+          Tools
+         </h3>
+         <ul class="mt-4 space-y-3">
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/tools">
+            Tools Directory
+           </a>
+          </li>
+          <li>
+           <a class="text-sm text-gray-600 transition hover:text-[hsl(251,83%,75%)] dark:text-gray-400 dark:hover:text-[hsl(251,83%,75%)]" href="/password-secret">
+            Password &amp; Secret Generator
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="lg:col-span-1">
+        <h3 class="mb-4 text-sm font-semibold text-[hsl(251,83%,75%)] dark:text-[hsl(251,83%,75%)]">
+         Our Products
+        </h3>
+        <div class="flex flex-col space-y-3">
+         <a class="group dark:hover:border-primary hover:border-primary relative flex items-center overflow-hidden rounded-lg border border-white/80 bg-white/80 p-3 shadow-sm backdrop-blur-sm transition-all hover:shadow-md dark:border-white/10 dark:bg-white/5" href="https://fastdomain.io" rel="noopener noreferrer" target="_blank">
+          <div class="min-w-0 flex-1">
+           <h4 class="truncate text-sm font-medium text-gray-900 group-hover:text-[hsl(251,83%,65%)] dark:text-white dark:group-hover:text-[hsl(251,83%,75%)]">
+            FastDomain.io
+           </h4>
+           <p class="truncate text-xs text-gray-500 dark:text-gray-400">
+            Find the best deal for your Domain!
+           </p>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="mt-12 border-t border-white/10 pt-8">
+       <p class="text-center text-xs text-gray-500 dark:text-gray-400">
+        © 2025 Launch Express, Inc. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+    <section>
+    </section>
+   </head>
+  </html>
+
+</body>
+</html>

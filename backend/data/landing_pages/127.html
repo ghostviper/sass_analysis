@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Documind - Chat with PDF AI</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="relative">
+     <header class="sticky left-0 top-4 z-20">
+      <div class="container">
+       <div class="relative z-20 mx-auto mb-4 flex max-w-[1000px] items-center justify-between rounded-xl border border-greyscale-100 bg-white p-3 shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+        <a href="/">
+         <img alt="logo" class="max-w-[106px] md:max-w-[145px]" src="/documind-landing/logo.svg"/>
+        </a>
+        <nav class="hidden flex-1 items-center justify-center md:flex">
+         <ul class="flex gap-8">
+          <li>
+           <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="#how-it-works">
+            How it works
+           </a>
+          </li>
+          <li>
+           <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="#pricing">
+            Pricing
+           </a>
+          </li>
+          <li>
+           <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="https://www.documind.chat/blog" target="_blank">
+            Blog
+           </a>
+          </li>
+         </ul>
+        </nav>
+        <div class="ml-auto flex gap-2">
+         <a class="btn btn-outline hidden sm:flex" href="/login">
+          Login
+         </a>
+         <a class="btn btn-gradient" href="/signup">
+          Start for Free
+         </a>
+        </div>
+        <div>
+         <div class="absolute left-0 top-full -z-10 -mt-5 h-auto w-full rounded-bl-2xl rounded-br-2xl rounded-tl-none rounded-tr-none border-t-0 bg-white">
+          <div class="-z-10 grid overflow-hidden border border-transparent transition-[grid-rows-[1fr]] grid-rows-[0fr] opacity-0">
+           <div class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            <nav class="flex-1 items-center justify-center">
+             <ul class="flex flex-col gap-6 p-6">
+              <li class="text-center">
+               <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="/roducts">
+                Products
+               </a>
+              </li>
+              <li class="text-center">
+               <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="/ai-tools">
+                AI Tools
+               </a>
+              </li>
+              <li class="text-center">
+               <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="/pricing">
+                Pricing
+               </a>
+              </li>
+              <li class="text-center">
+               <a class="relative text-sm font-medium text-greyscale-950 after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:scale-0 after:bg-current after:transition-transform hover:after:scale-100" href="/blog">
+                Blog
+               </a>
+              </li>
+             </ul>
+            </nav>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </header>
+     <main>
+      <section class="overflow-hidden pt-0 lg:py-16 lg:pb-7 hero">
+       <div class="container">
+        <div>
+         <div class="relative w-full after:absolute after:left-0 after:top-[144px] after:-z-0 after:h-[258px] after:w-full after:bg-[linear-gradient(180deg,rgba(255,255,255,0.00)_0%,#FFF_100%)]">
+          <picture class="-z-10 flex justify-center lg:mb-20">
+           <source>
+            <source>
+             <img alt="hero" src="/documind-landing/blue.webp"/>
+            </source>
+           </source>
+          </picture>
+         </div>
+        </div>
+        <div class="relative z-10 after:absolute after:bottom-[53px] after:left-[72px] after:-z-10 after:h-[224px] after:w-[1055px] after:rounded-[1055px] after:bg-[#4e46dc]/[0.08] after:blur-[125px] lg:-mt-[175px]">
+         <div class="mx-auto max-w-[650px] flex flex-col gap-7">
+          <div class="flex flex-col">
+           <h1 class="text-center text-[40px] font-semibold leading-[1.2] tracking-[-1.2px] text-greyscale-950 lg:text-[68px] lg:leading-[1.2]">
+            Chat to
+            <br/>
+            <span class="text-primary-600 inline-block min-h-[1.2em] relative overflow-hidden">
+             <span class="block">
+              Financial Reports
+             </span>
+            </span>
+            <br/>
+            with AI
+           </h1>
+          </div>
+          <div class="mt-6 flex flex-col gap-3 md:flex-row items-center justify-center">
+           <a class="btn btn-gradient btn-xl" href="/signup">
+            <span class="flex items-center gap-3 shrink-0">
+             Start for Free
+            </span>
+           </a>
+           <button class="btn btn-outline btn-xl">
+            <span class="flex items-center gap-3 shrink-0">
+             <img alt="google" class="w-5 h-5" src="/documind-landing/google-icon-logo.svg"/>
+             Join with Google
+            </span>
+           </button>
+          </div>
+         </div>
+         <img alt="icon" class="absolute -bottom-4 left-[112px] hidden lg:block" src="/documind-landing/hero-left-icon.webp"/>
+         <img alt="icon" class="absolute -bottom-4 right-0 hidden lg:block" src="/documind-landing/hero-right-icon.webp"/>
+        </div>
+        <div class="mx-auto mt-6 flex max-w-fit gap-3 md:my-4">
+         <img alt="avatars" class="w-20" src="/documind-landing/avatars.webp"/>
+         <div class="space-y-[2px]">
+          <img alt="stars" src="/documind-landing/stars.svg"/>
+          <p class="text-xs text-greyscale-950">
+           Loved by 63,577 users
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="pb-6 pt-4 lg:pb-[60px]">
+       <div class="container">
+        <p class="text-center font-medium">
+         Used by professionals in
+        </p>
+        <div class="mx-auto mt-4 flex max-w-[800px] flex-wrap justify-center gap-3 lg:mt-6 lg:gap-10">
+         <img alt="partner logo" class="max-w-[112px] lg:max-w-full" src="/documind-landing/partner-1.svg"/>
+         <img alt="partner logo" class="max-w-[120px] lg:max-w-full" src="/documind-landing/partner-2.svg"/>
+         <img alt="partner logo" class="max-w-[82px] lg:max-w-full" src="/documind-landing/partner-3.svg"/>
+         <img alt="partner logo" class="max-w-[82px] lg:max-w-full" src="/documind-landing/partner-4.svg"/>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden" id="how-it-works">
+       <div class="container px-4 md:px-6">
+        <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+         <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         How It Works
+         <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+        </div>
+        <div class="mt-3 grid grid-cols-1 gap-4 md:mt-4 md:grid-cols-2 lg:gap-10">
+         <div>
+          <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+           Simplify Your Document Workflow
+          </h2>
+         </div>
+         <div class="space-y-4 md:space-y-6">
+          <p class="text-base md:text-lg">
+           Our process is designed to be simple and efficient, allowing you to unlock the full potential of your PDFs with minimal effort.
+          </p>
+          <a class="btn btn-gradient" href="/signup">
+           Upload Your PDF
+          </a>
+         </div>
+        </div>
+        <div class="mt-8 md:mt-12 lg:mt-16">
+         <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div class="relative rounded-3xl border p-6 mt-8 border-[#CAD4FB] bg-primary-50">
+           <div class="bg-circle-blue-gradient shadow-circle-blue absolute -top-6 left-1/2 flex w-[51px] h-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white text-lg font-semibold z-10">
+            1
+           </div>
+           <div class="flex items-center justify-center h-[200px] mb-4">
+            <img alt="Step 1" class="h-auto w-full max-w-full object-contain" height="200" src="documind-landing/how-1.webp" width="200"/>
+           </div>
+           <div>
+            <h3 class="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+             Bulk upload 100s of PDF documents
+            </h3>
+            <p class="mt-2 text-sm md:text-base">
+             Upload and manage hundreds of PDF documents at once with our bulk upload feature, saving you time and making document management easier.
+            </p>
+           </div>
+          </div>
+          <div class="relative rounded-3xl border p-6 mt-8 border-[#B8ECFF] bg-[#EFFAFF]">
+           <div class="bg-circle-lightblue-gradient shadow-circle-lightblue absolute -top-6 left-1/2 flex w-[51px] h-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white text-lg font-semibold z-10">
+            2
+           </div>
+           <div class="flex items-center justify-center h-[200px] mb-4">
+            <img alt="Step 2" class="h-auto w-full max-w-full object-contain" height="200" src="documind-landing/how-2.webp" width="200"/>
+           </div>
+           <div>
+            <h3 class="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+             AI will process your documents
+            </h3>
+            <p class="mt-2 text-sm md:text-base">
+             Process your documents with speed and precision, ensuring that all your files are handled efficiently and accurately, and saving you time.
+            </p>
+           </div>
+          </div>
+          <div class="relative rounded-3xl border p-6 mt-8 border-[#C6ECC9] bg-[#F2FBF3]">
+           <div class="bg-circle-lightgreen-gradient shadow-circle-lightgreen absolute -top-6 left-1/2 flex w-[51px] h-[51px] -translate-x-1/2 items-center justify-center rounded-full border border-white text-lg font-semibold z-10">
+            3
+           </div>
+           <div class="flex items-center justify-center h-[200px] mb-4">
+            <img alt="Step 3" class="h-auto w-full max-w-full object-contain" height="200" src="documind-landing/how-3.webp" width="200"/>
+           </div>
+           <div>
+            <h3 class="mt-3 text-lg font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+             Ask questions and chat with documents
+            </h3>
+            <p class="mt-2 text-sm md:text-base">
+             Engage with your documents. Ask questions, extract information, and summarize everything with our advanced and friendly AI.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          Features
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Unlock the Power of Your Documents
+         </h2>
+        </div>
+        <div class="mt-6 md:mt-10 space-y-6">
+         <div class="grid rounded-2xl bg-greyscale-10 md:grid-cols-2 overflow-hidden">
+          <div class="p-4 md:p-6 lg:p-10">
+           <h3 class="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">
+            Ask Questions
+           </h3>
+           <p class="mt-[6px] text-balance">
+            Have conversation with PDFs to get answers in natural language, along with citations and the source PDF.
+           </p>
+           <ul class="mb-4 mt-3 space-y-2 md:mb-8 md:mt-4 md:space-y-3">
+            <li class="flex items-center gap-2">
+             <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+             <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+              Engage with several PDFs simultaneously
+             </p>
+            </li>
+            <li class="flex items-center gap-2">
+             <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+             <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+              Chat across various languages
+             </p>
+            </li>
+            <li class="flex items-center gap-2">
+             <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+             <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+              Get accurate, relevant answers
+             </p>
+            </li>
+           </ul>
+           <a class="btn btn-gradient" href="/signup">
+            <span>
+             Get Started
+            </span>
+            <img alt="arrow-icon" src="/documind-landing/btn-arrow.svg"/>
+           </a>
+          </div>
+          <div class="mt-auto rounded-tl-2xl rounded-tr-2xl">
+           <img alt="image" src="/documind-landing/features-3.webp"/>
+          </div>
+         </div>
+         <div class="mt-6 grid gap-6 md:grid-cols-2">
+          <div class="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
+           <div class="rounded-tl-2xl rounded-tr-2xl">
+            <img alt="image" src="/documind-landing/features-1.webp"/>
+           </div>
+           <div class="p-4 md:p-6 lg:p-10">
+            <h3 class="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">
+             Generate Content
+            </h3>
+            <p class="mt-[6px] text-balance">
+             Unlock your content creation potential effortlessly with Documind. Streamline the process of generating articles, crafting essays, and brainstorming ideas.
+            </p>
+            <ul class="mb-4 mt-3 space-y-2 md:mb-8 md:mt-4 md:space-y-3">
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Generate reports and essays quickly
+              </p>
+             </li>
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Brainstorm ideas effortlessly
+              </p>
+             </li>
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Get accurate, relevant answers
+              </p>
+             </li>
+            </ul>
+            <a class="btn btn-gradient" href="/signup">
+             <span>
+              Get Started
+             </span>
+             <img alt="arrow-icon" src="/documind-landing/btn-arrow.svg"/>
+            </a>
+           </div>
+          </div>
+          <div class="flex flex-col-reverse rounded-2xl bg-greyscale-10 md:flex-col">
+           <div class="rounded-tl-2xl rounded-tr-2xl">
+            <img alt="image" src="/documind-landing/features-2.webp"/>
+           </div>
+           <div class="p-4 md:p-6 lg:p-10">
+            <h3 class="text-2xl font-semibold tracking-[-0.71px] text-greyscale-900">
+             Train a Chatbot
+            </h3>
+            <p class="mt-[6px] text-balance">
+             Create a chatbot trained on your documents and share it with anyone with a shareable link. No signup required to use your link, and you can also place it on your website for easy access.
+            </p>
+            <ul class="mb-4 mt-3 space-y-2 md:mb-8 md:mt-4 md:space-y-3">
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Share with others easily
+              </p>
+             </li>
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Embed directly on your website
+              </p>
+             </li>
+             <li class="flex items-center gap-2">
+              <img alt="check arrow" src="/documind-landing/check-icon.svg"/>
+              <p class="text-base tracking-[-0.36px] text-greyscale-950 md:text-lg">
+               Use without needing to sign up
+              </p>
+             </li>
+            </ul>
+            <a class="btn btn-gradient" href="/signup">
+             <span>
+              Get Started
+             </span>
+             <img alt="arrow-icon" src="/documind-landing/btn-arrow.svg"/>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          Chat Tools
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Built for any type of PDF
+         </h2>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+         <div class="flex flex-col">
+          <div class="flex h-fit items-center justify-center rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="textbooks.pdf" class="w-full h-full object-contain" src="/documind-landing/pdf-1.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           textbooks.pdf
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           Chat with pdf textbooks and engage in interactive conversation with your textbooks or a novel.
+          </p>
+         </div>
+         <div class="flex flex-col">
+          <div class="flex h-fit items-center justify-center rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="research_papers.pdf" class="w-full h-full object-contain" src="/documind-landing/pdf-2.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           research_papers.pdf
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           Ask questions about complex topics with a simple chat interface for research papers. Take your research game to the next level.
+          </p>
+         </div>
+         <div class="flex flex-col">
+          <div class="flex h-fit items-center justify-center rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="legal_agreement.pdf" class="w-full h-full object-contain" src="/documind-landing/pdf-3.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           legal_agreement.pdf
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           With Documind, legal documents becomes easier to understand and easier to search for contracts or key terms.
+          </p>
+         </div>
+         <div class="flex flex-col">
+          <div class="flex h-fit items-center justify-center rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="customer_support.pdf" class="w-full h-full object-contain" src="/documind-landing/pdf-4.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           customer_support.pdf
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           Upload multiple customer support manuals, guides &amp; FAQ documents and ask for any information.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section>
+       <div class="container">
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Ask questions
+         </h2>
+         <div class="space-y-4 md:space-y-6">
+          <p>
+           Have conversation with PDFs to get answers in natural language, along with citations and the source PDF.
+          </p>
+          <a class="btn btn-gradient" href="/signup">
+           Start Now
+          </a>
+         </div>
+        </div>
+        <div class="grid gap-4 md:gap-6 lg:grid-cols-3">
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-1.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Engage with several PDFs simultaneously
+          </p>
+         </div>
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-2.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Chat across various languages
+          </p>
+         </div>
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-3.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Get accurate, relevant answers
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section>
+       <div class="container">
+        <div class="grid grid-cols-1 gap-2 md:grid-cols-2">
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Train a Chatbot
+         </h2>
+         <div class="space-y-4 md:space-y-6">
+          <p>
+           Create a chatbot trained on your documents and share it with anyone with a shareable link. No signup required to use your link, and you can also place it on your website for easy access.
+          </p>
+          <a class="btn btn-gradient" href="/signup">
+           Start Now
+          </a>
+         </div>
+        </div>
+        <div class="grid gap-4 md:gap-6 lg:grid-cols-3">
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-1.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Share with others easily
+          </p>
+         </div>
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-2.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Embed directly on your website
+          </p>
+         </div>
+         <div class="flex items-center gap-3 rounded-2xl border border-greyscale-200 p-4 md:gap-6 md:p-6">
+          <img alt="image" class="size-8 md:size-10" src="/documind-landing/feature-icon-3.svg"/>
+          <p class="font-semibold text-greyscale-950 md:text-2xl">
+           Use without needing to sign up
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          AI Automation
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Work 10x Faster with AI
+         </h2>
+         <p>
+          Busy students &amp; professionals are saving 100's of hours a week with AI
+         </p>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2">
+         <div class="flex flex-col">
+          <div class="rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="Manual work 😒" class="w-full h-auto object-cover" src="/documind-landing/ai-1.webp"/>
+          </div>
+          <h3 class="mt-3 text-center text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Manual work 😒
+          </h3>
+          <p class="mt-2 text-balance text-center">
+           Managing PDFs manually involves repetitive and time-consuming tasks such as opening each document, reading through pages, extracting information, and organizing data yourself.
+          </p>
+         </div>
+         <div class="flex flex-col">
+          <div class="rounded-2xl bg-greyscale-10 overflow-hidden">
+           <img alt="Documind chat 😀" class="w-full h-auto object-cover" src="/documind-landing/ai-2.webp"/>
+          </div>
+          <h3 class="mt-3 text-center text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Documind chat 😀
+          </h3>
+          <p class="mt-2 text-balance text-center">
+           Automatically process documents, extracting key information, summarizing content, and organizing data in a fraction of the time.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          Security
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          We respect your Data &amp; Security
+         </h2>
+         <p class="text-base md:text-lg">
+          We follow industry standards while constantly investing in the privacy of our users.
+         </p>
+        </div>
+        <div class="mt-6 grid gap-6 md:grid-cols-2 md:gap-x-6 md:gap-y-10">
+         <div class="flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6 lg:p-10">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Hosted in the United States" class="w-full h-auto object-contain" src="/documind-landing/benefits-1.svg"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Hosted in the United States
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           We are proudly hosted in the United States, adhering to robust data protection standards and privacy regulations to ensure the security of your information.
+          </p>
+         </div>
+         <div class="flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6 lg:p-10">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Trust" class="w-full h-auto object-contain" src="/documind-landing/benefits-2.svg"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Trust
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           We appreciate our users trusting us with their sensitive document information. No data is used to train AI model or shared with anyone.
+          </p>
+         </div>
+         <div class="flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6 lg:p-10">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Regular Security Audits" class="w-full h-auto object-contain" src="/documind-landing/benefits-3.svg"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Regular Security Audits
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           Our commitment to data security is demonstrated through regular, comprehensive security audits to ensure the integrity of our systems.
+          </p>
+         </div>
+         <div class="flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6 lg:p-10">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Secure Data Transmission" class="w-full h-auto object-contain" src="/documind-landing/benefits-4.svg"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-greyscale-900 md:mt-6">
+           Secure Data Transmission
+          </h3>
+          <p class="mt-2 text-sm md:text-base">
+           All data sent to and from our tool is encrypted using SSL/TLS, safeguarding it from interception during transmission.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section id="pricing">
+       <div class="container flex flex-col">
+        <div class="mx-auto flex max-w-[600px] flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          Pricing
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Stop working so hard, put AI to work!
+         </h2>
+         <p>
+          AI is something we all can benefit from, and our mission at Documind is to help you make your work quicker and easier.
+         </p>
+        </div>
+        <div class="text-center font-semibold flex flex-col items-center">
+         <button class="relative mx-auto my-6 grid w-full grid-cols-2 items-center justify-center rounded-2xl bg-greyscale-50 p-1 xs:gap-2 sm:max-w-[286px] lg:my-11 border border-gray-200">
+          <p class="relative z-0 px-6 py-3 text-center font-semibold leading-normal text-greyscale-950">
+           Monthly
+          </p>
+          <p class="z-0 flex flex-col justify-center gap-1 px-6 py-3 text-center font-semibold leading-normal text-greyscale-950 xs:flex-row">
+           Yearly
+           <span class="ml-2 flex shrink-0 items-center justify-center rounded-full bg-primary-50 px-2 py-1 text-xs font-semibold tracking-[-0.24px] text-primary-600">
+            30% off
+           </span>
+          </p>
+         </button>
+         <div class="pt-2 lg:py-12 flex lg:flex-row flex-col items-center lg:items-start lg:transform gap-6 lg:gap-0">
+          <div class="xl:w-[360px] lg:w-auto w-80 p-6 bg-white text-center rounded-2xl lg:pr-12 relative border-2 border-gray-100">
+           <h3 class="text-black font-semibold text-2xl">
+            Premium
+           </h3>
+           <div class="p-2 px-4 my-2 rounded-2xl text-sm">
+            <p class="font-medium text-green-600">
+             For High Achiever Students
+            </p>
+           </div>
+           <div class="pt-2 tracking-wide flex items-end justify-center">
+            <div class="flex items-baseline justify-center gap-x-2">
+             <span class="text-5xl font-bold tracking-tight white">
+              <span class="opacity-30 line-through text-2xl font-medium">
+               $20
+              </span>
+              $9.93
+             </span>
+            </div>
+            <span class="text-gray-400 font-medium mb-1 ml-1">
+             / month
+            </span>
+           </div>
+           <hr class="mt-4 border-1"/>
+           <div class="mt-6">
+            <button class="btn btn-gradient btn-lg w-full max-w-full">
+             ✨Upgrade Now →
+            </button>
+           </div>
+           <div class="pt-4 text-md">
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Unlimited
+              </span>
+              Monthly Chats
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               100
+              </span>
+              PDF uploads
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               50MB
+              </span>
+              PDF size limit
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Priority Support
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Generate articles, reports
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Summarize long PDFs
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Upload PDFs in bulk
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Chat with multiple documents
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Organize files in folders
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              API access
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Share your Chatbot
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Embed on your website
+             </span>
+            </p>
+           </div>
+          </div>
+          <div class="w-[340px] p-6 pt-16 bg-primary-950 text-center rounded-2xl text-white border-4 border-white lg:transform lg:scale-[1.15] z-10 relative">
+           <h3 class="text-white font-semibold text-2xl">
+            Professional
+           </h3>
+           <div class="p-2 px-4 my-2 rounded-2xl text-sm">
+            <p class="font-medium text-green-300">
+             For Ambitious Professionals
+            </p>
+           </div>
+           <div class="pt-2 tracking-wide flex items-end justify-center">
+            <div class="flex items-baseline justify-center gap-x-2">
+             <span class="text-5xl font-bold tracking-tight white">
+              <span class="opacity-30 line-through text-2xl font-medium">
+               $30
+              </span>
+              $14.93
+             </span>
+            </div>
+            <span class="text-gray-400 font-medium mb-1 ml-1">
+             / month
+            </span>
+           </div>
+           <hr class="mt-4 border-1 border-gray-600"/>
+           <div class="mt-6">
+            <button class="btn btn-gradient btn-lg w-full max-w-full">
+             ✨Upgrade Now →
+            </button>
+           </div>
+           <div class="pt-6 text-md">
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Unlimited
+              </span>
+              Monthly Chats
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               1,000
+              </span>
+              PDF uploads
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               100MB
+              </span>
+              PDF size limit
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Full API access
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Share your Chatbot
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Embed on your website
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Priority Support
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Priority access to new features
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              Generate articles, reports
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              Summarize long PDFs
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              Upload PDFs in bulk
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              Chat with multiple documents
+             </span>
+            </p>
+            <p class="font-medium text-gray-100 text-left pt-3">
+             <span class="pl-1">
+              Organize files in folders
+             </span>
+            </p>
+           </div>
+           <div class="absolute top-4 right-4">
+            <p class="bg-indigo-600 font-semibold px-4 py-1 rounded-full uppercase text-xs text-white">
+             most popular
+            </p>
+           </div>
+          </div>
+          <div class="lg:w-auto w-80 p-6 pt-9 text-center rounded-2xl lg:pl-12 lg:scale-[1.05] bg-greyscale-10 relative border-2 border-primary-50">
+           <h3 class="text-black font-semibold text-2xl">
+            Enterprise
+           </h3>
+           <div class="p-2 px-4 my-2 rounded-2xl text-sm">
+            <p class="font-medium text-green-600">
+             For Top Performer Businesses
+            </p>
+           </div>
+           <div class="pt-2 tracking-wide flex items-end justify-center">
+            <div class="flex items-baseline justify-center gap-x-2">
+             <span class="text-5xl font-bold tracking-tight white">
+              <span class="opacity-30 line-through text-2xl font-medium">
+               $80
+              </span>
+              $39.93
+             </span>
+            </div>
+            <span class="text-gray-400 font-medium mb-1 ml-1">
+             / month
+            </span>
+           </div>
+           <hr class="mt-4 border-1"/>
+           <div class="mt-6">
+            <button class="btn btn-gradient btn-lg w-full max-w-full">
+             ✨Upgrade Now →
+            </button>
+           </div>
+           <div class="pt-6 text-md">
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Unlimited
+              </span>
+              Monthly Chats
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               10,000
+              </span>
+              PDF uploads
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               150MB
+              </span>
+              PDF size limit
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Full API access
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Share your Chatbot
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Embed on your website
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Priority access to new features
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Remove Documind branding
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              <span class="font-bold">
+               Dedicated 24/7 support
+              </span>
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Generate articles, reports
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Summarize long PDFs
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Upload PDFs in bulk
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Chat with multiple documents
+             </span>
+            </p>
+            <p class="font-medium text-gray-800 text-left pt-3">
+             <span class="pl-1">
+              Organize files in folders
+             </span>
+            </p>
+           </div>
+           <img alt="bookmark icon" class="absolute top-0 right-8 w-12 h-12" src="/bookmark.png" title="bookmark icon"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          Testimonial
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          Don't Just Take Our Word for it!
+         </h2>
+         <p class="text-base md:text-lg">
+          Tens of thousands of students and professionals benefit from Documind everyday.
+         </p>
+        </div>
+       </div>
+       <div class="mt-10 px-4 md:px-6 lg:container">
+        <div class="swiper swiper-initialized swiper-horizontal swiper-pointer-events swiper-backface-hidden">
+         <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-active">
+           <div class="flex flex-col gap-6">
+            <div class="relative z-0 overflow-hidden rounded-3xl p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-blue-gradient">
+             <div class="mt-4 flex items-center justify-between gap-[10px]">
+              <div class="flex items-center">
+               <div class="size-10 overflow-hidden rounded-full">
+                <img alt="Aidan's avatar" src="/testimonials/aidan.jpg"/>
+               </div>
+               <div class="flex-grow flex-col pl-3">
+                <p class="font-semibold text-sm text-greyscale-950">
+                 Aidan
+                </p>
+                <p class="text-xs text-greyscale-600">
+                 AI Influencer
+                </p>
+               </div>
+              </div>
+              <div class="flex items-center">
+               <img alt="stars" class="w-24" src="/documind-landing/stars.svg"/>
+               <p class="font-medium text-greyscale-600 ml-2">
+                5.0
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Jeremy" class="object-cover h-full w-full" src="/testimonials/jeremy.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Jeremy
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Digital Marketing Agency Owner
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind is a real asset for my agency and coaching clients. The UI could be better, but it's a minor point. I'm able to get answers from blog posts and books effortlessly, making my workflow much smoother.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 15, 2024
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Gemma" class="object-cover h-full w-full" src="/testimonials/gemma.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Gemma
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Research Student
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind is easy to use and fantastic for summarizing my research papers. I can upload multiple documents, which is a huge help for my science projects.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 09, 2024
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Ann" class="object-cover h-full w-full" src="/testimonials/colin.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Ann
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Genetic Testing Company Owner
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind has revolutionized the way I read genetic reports and consult with clients. It's quick, precise, and allows me to handle more customer queries efficiently.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 09, 2024
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide swiper-slide-next">
+           <div class="flex flex-col gap-6">
+            <div class="relative z-0 overflow-hidden rounded-3xl p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-blue-gradient">
+             <div class="mt-4 flex items-center justify-between gap-[10px]">
+              <div class="flex items-center">
+               <div class="size-10 overflow-hidden rounded-full">
+                <img alt="Sefas's avatar" src="/testimonials/sefas.jpg"/>
+               </div>
+               <div class="flex-grow flex-col pl-3">
+                <p class="font-semibold text-sm text-greyscale-950">
+                 Sefas
+                </p>
+                <p class="text-xs text-greyscale-600">
+                 AI Influencer
+                </p>
+               </div>
+              </div>
+              <div class="flex items-center">
+               <img alt="stars" class="w-24" src="/documind-landing/stars.svg"/>
+               <p class="font-medium text-greyscale-600 ml-2">
+                5.0
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Sean" class="object-cover h-full w-full" src="/testimonials/sean.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Sean
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Academic Researcher
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind is the best research tool I've found so far. It's user-friendly and excellent for synthesizing information from multiple sources. It's a game-changer for my book and academic research.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 04, 2024
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Ronnie" class="object-cover h-full w-full" src="/testimonials/ronnie-word.png"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Ronnie
+               </p>
+               <p class="text-xs text-greyscale-600">
+                University Student
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Thanks to Documind, I can sift through technical and educational documents quickly. This tool has been a lifesaver for writing my assignments in record time!
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 08, 2024
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Paulo" class="object-cover h-full w-full" src="/testimonials/paulo.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Paulo
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Academic Researcher
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Using Documind has been a revelation for me. It provides quick, draft-style answers that are incredibly useful in my academic work.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 05, 2024
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="swiper-slide">
+           <div class="flex flex-col gap-6">
+            <div class="relative z-0 overflow-hidden rounded-3xl p-6 after:pointer-events-none after:absolute after:left-0 after:top-0 after:-z-10 after:h-full after:w-full after:bg-blue-gradient">
+             <div class="mt-4 flex items-center justify-between gap-[10px]">
+              <div class="flex items-center">
+               <div class="size-10 overflow-hidden rounded-full">
+                <img alt="Adam's avatar" src="/testimonials/harris.jpg"/>
+               </div>
+               <div class="flex-grow flex-col pl-3">
+                <p class="font-semibold text-sm text-greyscale-950">
+                 Adam
+                </p>
+                <p class="text-xs text-greyscale-600">
+                 AI Influencer
+                </p>
+               </div>
+              </div>
+              <div class="flex items-center">
+               <img alt="stars" class="w-24" src="/documind-landing/stars.svg"/>
+               <p class="font-medium text-greyscale-600 ml-2">
+                5.0
+               </p>
+              </div>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Daniel" class="object-cover h-full w-full" src="/testimonials/daniel.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Daniel
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Startup Founder &amp; Teacher
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               I work with teachers using Documind, and it's been very accurate and useful. It's great to see how it improves our work with simple documents.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Dec 22, 2023
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Kaitlyn" class="object-cover h-full w-full" src="/testimonials/kaitlyn-word.png"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Kaitlyn
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Legal Researcher
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind has been a crucial tool in simplifying and summarizing legal texts and academic journals. It's made understanding my work much more accessible.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Dec 29, 2023
+              </p>
+             </div>
+            </div>
+            <div class="flex flex-col rounded-3xl p-4 lg:p-8 bg-white border border-gray-200">
+             <div class="flex items-center mb-2">
+              <div class="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
+               <img alt="Matthew" class="object-cover h-full w-full" src="/testimonials/matthew.webp"/>
+              </div>
+              <div class="flex-grow flex-col pl-3">
+               <p class="font-semibold text-sm text-greyscale-950">
+                Matthew
+               </p>
+               <p class="text-xs text-greyscale-600">
+                Education Administrator
+               </p>
+              </div>
+             </div>
+             <div class="flex items-center mb-3">
+              <img alt="stars" class="w-[108px]" src="/documind-landing/stars-rounded.svg"/>
+              <p class="font-medium text-greyscale-600 ml-2">
+               5.0
+              </p>
+             </div>
+             <div class="w-full mb-3 font-medium text-greyscale-950">
+              <p>
+               Documind was recommended by a friend, and it's been fantastic. It's like having an AI trained on my specific needs, which has greatly enhanced my work in academia.
+              </p>
+             </div>
+             <div class="w-full text-sm text-greyscale-600">
+              <p>
+               Jan 04, 2024
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-8 md:py-12 lg:py-16 overflow-hidden">
+       <div class="container px-4 md:px-6">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          We In Numbers
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          We help ambitious professionals succeed
+         </h2>
+         <p class="text-base md:text-lg">
+          Our results speak for themselves.
+         </p>
+        </div>
+        <div class="mx-auto mt-6 grid max-w-[1040px] grid-cols-2 gap-3 md:grid-cols-4 md:gap-6 lg:gap-10">
+         <div class="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Professionals" class="w-10 h-10 object-contain" src="documind-landing/statistic-1.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
+           100,000+
+          </h3>
+          <p class="mt-2 text-sm md:text-base text-balance font-medium text-greyscale-950">
+           Professionals
+          </p>
+         </div>
+         <div class="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Hours saved" class="w-10 h-10 object-contain" src="documind-landing/statistic-2.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
+           500,000+
+          </h3>
+          <p class="mt-2 text-sm md:text-base text-balance font-medium text-greyscale-950">
+           Hours saved
+          </p>
+         </div>
+         <div class="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Questions asked" class="w-10 h-10 object-contain" src="documind-landing/statistic-3.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
+           1M+
+          </h3>
+          <p class="mt-2 text-sm md:text-base text-balance font-medium text-greyscale-950">
+           Questions asked
+          </p>
+         </div>
+         <div class="group flex flex-col rounded-2xl bg-greyscale-10 p-4 md:p-6">
+          <div class="rounded-tl-2xl rounded-tr-2xl">
+           <img alt="Return on investment" class="w-10 h-10 object-contain" src="documind-landing/statistic-4.webp"/>
+          </div>
+          <h3 class="mt-3 text-xl md:text-2xl font-semibold tracking-[-0.71px] text-primary-600 md:mt-6">
+           500%+
+          </h3>
+          <p class="mt-2 text-sm md:text-base text-balance font-medium text-greyscale-950">
+           Return on investment
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section>
+       <div class="container">
+        <div class="flex flex-col items-center gap-4 text-center">
+         <div class="flex max-w-fit items-center gap-2 rounded-full border border-greyscale-200 px-[14px] py-2 text-xs font-medium leading-none">
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+          FAQ
+          <img alt="star icon" src="/documind-landing/star-icon.svg"/>
+         </div>
+         <h2 class="text-balance text-[32px] font-semibold leading-snug tracking-[-0.96px] text-greyscale-950 lg:text-[56px] lg:leading-tight lg:tracking-[-1.68px]">
+          You asked, we answer
+         </h2>
+        </div>
+        <div class="mx-auto mt-6 grid max-w-[846px] gap-3 md:gap-6 lg:mt-[50px]">
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            How can Documind benefit my work?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            Documind enhances your productivity by allowing you to quickly extract information from documents, generate summaries, and create custom chatbots. It's ideal for professionals dealing with large volumes of text, helping you save time and make informed decisions faster.
+           </p>
+          </div>
+         </div>
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            Is Documind helpful for students?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            Absolutely! Students can use Documind to efficiently process textbooks, research papers, and study materials. It helps in summarizing complex topics, generating study notes, and providing quick answers to specific questions, making study sessions more productive.
+           </p>
+          </div>
+         </div>
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            Does Documind support multiple languages?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            Yes, Documind supports multiple languages. Our AI can process and analyze documents in various languages, making it a versatile tool for international businesses and multilingual research. You can also interact with the AI in different languages for a more personalized experience.
+           </p>
+          </div>
+         </div>
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            How does Documind ensure the security of my data?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            We take data security seriously. All uploaded documents are stored in secure cloud servers. We employ industry-standard security protocols to protect your information. Additionally, you have full control over who can access your documents within your organization.
+           </p>
+          </div>
+         </div>
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            Can I share Documind's insights with my team?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            Absolutely! Documind offers collaborative features that allow you to share insights, summaries, and even custom chatbots with your team members. This facilitates better knowledge sharing and decision-making across your organization, enhancing overall productivity.
+           </p>
+          </div>
+         </div>
+         <div class="flex h-full flex-col rounded-xl bg-greyscale-50">
+          <button class="text-grey-60 flex items-center justify-between p-4 text-xl font-semibold sm:text-left sm:text-base md:p-6">
+           <span class="pr-5 font-semibold tracking-[-0.32px] text-greyscale-950 md:text-lg">
+            What is Documind's refund policy?
+           </span>
+          </button>
+          <div class="grid overflow-hidden transition-all grid-rows-[0fr] opacity-0">
+           <p class="overflow-hidden text-base font-medium tracking-[-0.32px] text-greyscale-500 md:text-lg">
+            We offer a 7-day money-back guarantee. If you're not satisfied with Documind within the first 7 days of your purchase, you can request a full refund. We're confident in our product's value, but we understand it may not fit everyone's needs.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="mt-3 flex justify-center md:mt-6">
+         <p class="text-base font-semibold tracking-[-0.32px] text-greyscale-500">
+          More questions?
+          <a class="text-base font-semibold tracking-[-0.32px] text-primary-600 underline-offset-4 hover:underline" href="mailto:hello@documind.chat">
+           Contact Us
+          </a>
+         </p>
+        </div>
+       </div>
+      </section>
+      <section class="relative p-0">
+       <div class="container relative z-10">
+        <div class="relative z-0 flex flex-col items-center overflow-hidden rounded-2xl bg-blue-gradient p-6 md:p-10 lg:p-20">
+         <img alt="vector" class="absolute left-1/2 top-1/2 -z-10 hidden h-auto w-full max-w-full -translate-x-1/2 -translate-y-1/2 xl:block" src="/documind-landing/vector.webp"/>
+         <img alt="small logo" class="lg:size-12" src="/documind-landing/small-logo.svg"/>
+         <h4 class="mb-4 mt-3 max-w-[560px] text-balance text-center text-[32px] font-semibold tracking-[-0.96px] text-greyscale-950 lg:mb-10 lg:mt-4 lg:text-[56px] lg:leading-tight">
+          Unlock your potential with Documind
+         </h4>
+         <a class="btn btn-gradient btn-xl" href="/signup">
+          Upload Your PDF
+         </a>
+        </div>
+       </div>
+      </section>
+     </main>
+     <footer class="bg-greyscale-50 py-8 md:py-16">
+      <div class="container">
+       <hr class="h-px w-full border border-greyscale-200"/>
+       <div class="my-6 grid grid-cols-2 justify-between md:flex lg:my-14">
+        <div class="flex-0 space-y-[10px]">
+         <a href="/">
+          <img alt="logo" class="max-w-[106px] lg:max-w-[136px]" src="/documind-landing/logo.svg"/>
+         </a>
+         <ul class="flex gap-3">
+          <li class="flex size-8 items-center justify-center lg:size-10">
+           <a class="flex rounded-lg bg-white p-[7px] hover:bg-greyscale-100" href="https://x.com/documindai">
+            <img alt="twitter icon" src="/documind-landing/twitter.svg"/>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <ul class="order-3 col-span-2 flex flex-col items-center gap-3 md:-order-none md:flex-1 md:flex-row md:justify-center lg:gap-10">
+         <li>
+          <a class="text-sm font-semibold tracking-[-0.28px] text-greyscale-950 underline-offset-4 hover:underline" href="https://www.documind.chat/chat-with-pdf-api-docs.html">
+           API Docs
+          </a>
+         </li>
+         <li>
+          <a class="text-sm font-semibold tracking-[-0.28px] text-greyscale-950 underline-offset-4 hover:underline" href="/privacy-policy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-sm font-semibold tracking-[-0.28px] text-greyscale-950 underline-offset-4 hover:underline" href="/terms-of-service">
+           Terms &amp; Conditions
+          </a>
+         </li>
+         <li>
+          <a class="text-sm font-semibold tracking-[-0.28px] text-greyscale-950 underline-offset-4 hover:underline" href="https://documind-1.getrewardful.com/signup">
+           Become an Affiliate
+          </a>
+         </li>
+        </ul>
+        <img alt="google logo" class="lg:w-[148px]" src="/documind-landing/google.svg"/>
+       </div>
+       <hr class="h-px w-full border border-greyscale-200"/>
+       <div class="flex flex-col gap-2 pt-6 text-center md:flex-row md:justify-between md:pt-14">
+        <p class="text-sm font-medium">
+         © 2024 Documind™. All Rights Reserved.
+        </p>
+        <a class="text-sm font-semibold text-primary-500 underline-offset-4 hover:underline" href="mailto:hello@documind.chat">
+         hello@documind.chat
+        </a>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

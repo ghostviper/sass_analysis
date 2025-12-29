@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Competitor Radar - AI-Powered Competitor Analysis</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <section>
+    </section>
+    <div class="min-h-screen bg-background">
+     <header class="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
+      <div class="container mx-auto px-6 py-4 flex items-center justify-between">
+       <div class="flex items-center gap-2.5">
+        <span class="font-display font-semibold text-xl text-foreground">
+         Competitor Radar
+        </span>
+       </div>
+       <nav class="hidden md:flex items-center gap-10">
+        <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#how-it-works">
+         How it works
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/comparisons">
+         Comparisons
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/alternatives">
+         Alternatives
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#pricing">
+         Pricing
+        </a>
+       </nav>
+       <div class="flex items-center gap-3">
+        <a href="/auth">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 text-muted-foreground hover:text-foreground">
+          Login
+         </button>
+        </a>
+        <a href="/auth">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-9 rounded-full px-5 bg-foreground text-background hover:bg-foreground/90">
+          Get Started
+         </button>
+        </a>
+       </div>
+      </div>
+     </header>
+     <section class="container mx-auto px-6 pt-24 pb-20">
+      <div class="max-w-4xl mx-auto text-center space-y-8">
+       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium text-foreground leading-[1.1] tracking-tight">
+        Know your competitors —
+        <span class="text-primary">
+         and the actions to outpace them
+        </span>
+       </h1>
+       <p class="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        Powerfull competitor analysis with traffic insights, keyword gaps, and actionable recommendations in 60 seconds.
+       </p>
+       <div class="max-w-xl mx-auto pt-4">
+        <div class="flex flex-col sm:flex-row gap-3">
+         <input class="flex w-full border py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm h-14 rounded-full px-6 border-border bg-card text-base" placeholder="Enter your website URL (e.g. stripe.com)"/>
+         <a href="/auth">
+          <button class="inline-flex items-center justify-center gap-2 text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 h-14 w-full sm:w-auto whitespace-nowrap shadow-lg shadow-primary/25">
+           Analyze
+          </button>
+         </a>
+        </div>
+        <p class="text-sm text-muted-foreground mt-4">
+         No credit card required • Results in 60 seconds
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="container mx-auto px-6 py-16">
+      <p class="text-center text-sm text-muted-foreground mb-8">
+       Trusted by teams analyzing competitors like
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60">
+       <img alt="Stripe" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='%23635BFF'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eStripe%3c/title%3e%3cpath%20d='M13.976%209.15c-2.172-.806-3.356-1.426-3.356-2.409%200-.831.683-1.305%201.901-1.305%202.227%200%204.515.858%206.09%201.631l.89-5.494C18.252.975%2015.697%200%2012.165%200%209.667%200%207.589.654%206.104%201.872%204.56%203.147%203.757%204.992%203.757%207.218c0%204.039%202.467%205.76%206.476%207.219%202.585.92%203.445%201.574%203.445%202.583%200%20.98-.84%201.545-2.354%201.545-1.875%200-4.965-.921-6.99-2.109l-.9%205.555C5.175%2022.99%208.385%2024%2011.714%2024c2.641%200%204.843-.624%206.328-1.813%201.664-1.305%202.525-3.236%202.525-5.732%200-4.128-2.524-5.851-6.594-7.305h.003z'/%3e%3c/svg%3e"/>
+       <img alt="Notion" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='%23000000'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eNotion%3c/title%3e%3cpath%20d='M4.459%204.208c.746.606%201.026.56%202.428.466l13.215-.793c.28%200%20.047-.28-.046-.326L17.86%201.968c-.42-.326-.981-.7-2.055-.607L3.01%202.295c-.466.046-.56.28-.374.466zm.793%203.08v13.904c0%20.747.373%201.027%201.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42%200%20.84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748%200-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21%2019s0%20.84-1.168.84l-3.222.186c-.093-.186%200-.653.327-.746l.84-.233V9.854L7.822%209.76c-.094-.42.14-1.026.793-1.073l3.456-.233%204.764%207.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936%201.035l13.31-.98c1.634-.14%202.055-.047%203.082.7l4.249%202.986c.7.513.934.653.934%201.213v16.378c0%201.026-.373%201.634-1.68%201.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54%201.447-1.632z'/%3e%3c/svg%3e"/>
+       <img alt="Figma" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='%23F24E1E'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eFigma%3c/title%3e%3cpath%20d='M15.852%208.981h-4.588V0h4.588c2.476%200%204.49%202.014%204.49%204.49s-2.014%204.491-4.49%204.491zM12.735%207.51h3.117c1.665%200%203.019-1.355%203.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0%201.471H8.148c-2.476%200-4.49-2.014-4.49-4.49S5.672%200%208.148%200h4.588v8.981zm-4.587-7.51c-1.665%200-3.019%201.355-3.019%203.019s1.354%203.02%203.019%203.02h3.117V1.471H8.148zm4.587%2015.019H8.148c-2.476%200-4.49-2.014-4.49-4.49s2.014-4.49%204.49-4.49h4.588v8.98zM8.148%208.981c-1.665%200-3.019%201.355-3.019%203.019s1.355%203.019%203.019%203.019h3.117V8.981H8.148zM8.172%2024c-2.489%200-4.515-2.014-4.515-4.49s2.014-4.49%204.49-4.49h4.588v4.441c0%202.503-2.047%204.539-4.563%204.539zm-.024-7.51a3.023%203.023%200%200%200-3.019%203.019c0%201.665%201.365%203.019%203.044%203.019%201.705%200%203.093-1.376%203.093-3.068v-2.97H8.148zm7.704%200h-.098c-2.476%200-4.49-2.014-4.49-4.49s2.014-4.49%204.49-4.49h.098c2.476%200%204.49%202.014%204.49%204.49s-2.014%204.49-4.49%204.49zm-.097-7.509c-1.665%200-3.019%201.355-3.019%203.019s1.355%203.019%203.019%203.019h.098c1.665%200%203.019-1.355%203.019-3.019s-1.355-3.019-3.019-3.019h-.098z'/%3e%3c/svg%3e"/>
+       <img alt="Slack" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='%234A154B'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eSlack%3c/title%3e%3cpath%20d='M5.042%2015.165a2.528%202.528%200%200%201-2.52%202.523A2.528%202.528%200%200%201%200%2015.165a2.527%202.527%200%200%201%202.522-2.52h2.52v2.52zM6.313%2015.165a2.527%202.527%200%200%201%202.521-2.52%202.527%202.527%200%200%201%202.521%202.52v6.313A2.528%202.528%200%200%201%208.834%2024a2.528%202.528%200%200%201-2.521-2.522v-6.313zM8.834%205.042a2.528%202.528%200%200%201-2.521-2.52A2.528%202.528%200%200%201%208.834%200a2.528%202.528%200%200%201%202.521%202.522v2.52H8.834zM8.834%206.313a2.528%202.528%200%200%201%202.521%202.521%202.528%202.528%200%200%201-2.521%202.521H2.522A2.528%202.528%200%200%201%200%208.834a2.528%202.528%200%200%201%202.522-2.521h6.312zM18.956%208.834a2.528%202.528%200%200%201%202.522-2.521A2.528%202.528%200%200%201%2024%208.834a2.528%202.528%200%200%201-2.522%202.521h-2.522V8.834zM17.688%208.834a2.528%202.528%200%200%201-2.523%202.521%202.527%202.527%200%200%201-2.52-2.521V2.522A2.527%202.527%200%200%201%2015.165%200a2.528%202.528%200%200%201%202.523%202.522v6.312zM15.165%2018.956a2.528%202.528%200%200%201%202.523%202.522A2.528%202.528%200%200%201%2015.165%2024a2.527%202.527%200%200%201-2.52-2.522v-2.522h2.52zM15.165%2017.688a2.527%202.527%200%200%201-2.52-2.523%202.526%202.526%200%200%201%202.52-2.52h6.313A2.527%202.527%200%200%201%2024%2015.165a2.528%202.528%200%200%201-2.522%202.523h-6.313z'/%3e%3c/svg%3e"/>
+       <img alt="Shopify" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='%237AB55C'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eShopify%3c/title%3e%3cpath%20d='M15.337%2023.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914%2021.104h.023zM11.71%2011.305s-.81-.424-1.774-.424c-1.447%200-1.504.906-1.504%201.141%200%201.232%203.24%201.715%203.24%204.629%200%202.295-1.44%203.76-3.406%203.76-2.354%200-3.54-1.465-3.54-1.465l.646-2.086s1.245%201.066%202.28%201.066c.675%200%20.975-.545.975-.932%200-1.619-2.654-1.694-2.654-4.359-.034-2.237%201.571-4.416%204.827-4.416%201.257%200%201.875.361%201.875.361l-.945%202.715-.02.01zM11.17.83c.136%200%20.271.038.405.135-.984.465-2.064%201.639-2.508%203.992-.656.213-1.293.405-1.889.578C7.697%203.75%208.951.84%2011.17.84V.83zm1.235%202.949v.135c-.754.232-1.583.484-2.394.736.466-1.777%201.333-2.645%202.085-2.971.193.501.309%201.176.309%202.1zm.539-2.234c.694.074%201.141.867%201.429%201.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992%201.289c-.02%200-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209%2011.669%200%2011.265%200%208.159%200%206.675%203.877%206.21%205.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83%2014.063-1.83%2014.063L15.009%2024l.927-21.166z'/%3e%3c/svg%3e"/>
+       <img alt="Vercel" class="h-7 md:h-8 grayscale hover:grayscale-0 transition-all" src="data:image/svg+xml,%3csvg%20fill='none'%20height='2500'%20viewBox='0%200%20282.72%2064'%20width='2500'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M141.04%2016c-11.04%200-19%207.2-19%2018s8.96%2018%2020%2018c6.67%200%2012.55-2.64%2016.19-7.09l-7.65-4.42c-2.02%202.21-5.09%203.5-8.54%203.5-4.79%200-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5%200-10.79-7.96-17.99-19-17.99zm-9.46%2014.5c1.25-3.99%204.67-6.5%209.45-6.5%204.79%200%208.21%202.51%209.45%206.5zM248.72%2016c-11.04%200-19%207.2-19%2018s8.96%2018%2020%2018c6.67%200%2012.55-2.64%2016.19-7.09l-7.65-4.42c-2.02%202.21-5.09%203.5-8.54%203.5-4.79%200-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5%200-10.79-7.96-17.99-19-17.99zm-9.45%2014.5c1.25-3.99%204.67-6.5%209.45-6.5%204.79%200%208.21%202.51%209.45%206.5zM200.24%2034c0%206%203.92%2010%2010%2010%204.12%200%207.21-1.87%208.8-4.92l7.68%204.43c-3.18%205.3-9.14%208.49-16.48%208.49-11.05%200-19-7.2-19-18s7.96-18%2019-18c7.34%200%2013.29%203.19%2016.48%208.49l-7.68%204.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07%200-10%204-10%2010zm82.48-29v46h-9V5zM36.95%200L73.9%2064H0zm92.38%205l-27.71%2048L73.91%205H84.3l17.32%2030%2017.32-30zm58.91%2012v9.69c-1-.29-2.06-.49-3.2-.49-5.81%200-10%204-10%2010V51h-9V17h9v9.2c0-5.08%205.91-9.2%2013.2-9.2z'%20fill='%23000'/%3e%3c/svg%3e"/>
+      </div>
+     </section>
+     <section class="container mx-auto px-6 py-20">
+      <div class="text-center mb-12">
+       <h2 class="font-display text-3xl md:text-4xl font-medium mb-4 text-foreground">
+        Startup Leaderboard
+       </h2>
+       <p class="text-muted-foreground text-lg max-w-xl mx-auto">
+        Explore competitor analysis for the fastest-growing startups
+       </p>
+      </div>
+      <div class="border text-card-foreground shadow-sm overflow-hidden rounded-2xl border-border/50 max-w-5xl mx-auto bg-card">
+       <div class="overflow-x-auto">
+        <table class="w-full">
+         <thead>
+          <tr class="border-b border-border/50 bg-muted/30">
+           <th class="text-left py-4 px-6 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            Rank
+           </th>
+           <th class="text-left py-4 px-6 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            Company
+           </th>
+           <th class="text-left py-4 px-6 text-xs font-medium text-muted-foreground uppercase tracking-wider hidden md:table-cell">
+            Category
+           </th>
+           <th class="text-right py-4 px-6 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            Monthly Visits
+           </th>
+           <th class="text-right py-4 px-6 text-xs font-medium text-muted-foreground uppercase tracking-wider">
+            Growth
+           </th>
+          </tr>
+         </thead>
+         <tbody>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-gray-100 w-9 h-9">
+              <img alt="OpenAI logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20height='2500'%20viewBox='-1%20-.1%20949.1%20959.8'%20width='2474'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='m925.8%20456.3c10.4%2023.2%2017%2048%2019.7%2073.3%202.6%2025.3%201.3%2050.9-4.1%2075.8-5.3%2024.9-14.5%2048.8-27.3%2070.8-8.4%2014.7-18.3%2028.5-29.7%2041.2-11.3%2012.6-23.9%2024-37.6%2034-13.8%2010-28.5%2018.4-44.1%2025.3-15.5%206.8-31.7%2012-48.3%2015.4-7.8%2024.2-19.4%2047.1-34.4%2067.7-14.9%2020.6-33%2038.7-53.6%2053.6-20.6%2015-43.4%2026.6-67.6%2034.4-24.2%207.9-49.5%2011.8-75%2011.8-16.9.1-33.9-1.7-50.5-5.1-16.5-3.5-32.7-8.8-48.2-15.7s-30.2-15.5-43.9-25.5c-13.6-10-26.2-21.5-37.4-34.2-25%205.4-50.6%206.7-75.9%204.1-25.3-2.7-50.1-9.3-73.4-19.7-23.2-10.3-44.7-24.3-63.6-41.4s-35-37.1-47.7-59.1c-8.5-14.7-15.5-30.2-20.8-46.3s-8.8-32.7-10.6-49.6c-1.8-16.8-1.7-33.8.1-50.7%201.8-16.8%205.5-33.4%2010.8-49.5-17-18.9-31-40.4-41.4-63.6-10.3-23.3-17-48-19.6-73.3-2.7-25.3-1.3-50.9%204-75.8s14.5-48.8%2027.3-70.8c8.4-14.7%2018.3-28.6%2029.6-41.2s24-24%2037.7-34%2028.5-18.5%2044-25.3c15.6-6.9%2031.8-12%2048.4-15.4%207.8-24.3%2019.4-47.1%2034.3-67.7%2015-20.6%2033.1-38.7%2053.7-53.7%2020.6-14.9%2043.4-26.5%2067.6-34.4%2024.2-7.8%2049.5-11.8%2075-11.7%2016.9-.1%2033.9%201.6%2050.5%205.1s32.8%208.7%2048.3%2015.6c15.5%207%2030.2%2015.5%2043.9%2025.5%2013.7%2010.1%2026.3%2021.5%2037.5%2034.2%2024.9-5.3%2050.5-6.6%2075.8-4s50%209.3%2073.3%2019.6c23.2%2010.4%2044.7%2024.3%2063.6%2041.4%2018.9%2017%2035%2036.9%2047.7%2059%208.5%2014.6%2015.5%2030.1%2020.8%2046.3%205.3%2016.1%208.9%2032.7%2010.6%2049.6%201.8%2016.9%201.8%2033.9-.1%2050.8-1.8%2016.9-5.5%2033.5-10.8%2049.6%2017.1%2018.9%2031%2040.3%2041.4%2063.6zm-333.2%20426.9c21.8-9%2041.6-22.3%2058.3-39s30-36.5%2039-58.4c9-21.8%2013.7-45.2%2013.7-68.8v-223q-.1-.3-.2-.7-.1-.3-.3-.6-.2-.3-.5-.5-.3-.3-.6-.4l-80.7-46.6v269.4c0%202.7-.4%205.5-1.1%208.1-.7%202.7-1.7%205.2-3.1%207.6s-3%204.6-5%206.5a32.1%2032.1%200%200%201%20-6.5%205l-191.1%20110.3c-1.6%201-4.3%202.4-5.7%203.2%207.9%206.7%2016.5%2012.6%2025.5%2017.8%209.1%205.2%2018.5%209.6%2028.3%2013.2%209.8%203.5%2019.9%206.2%2030.1%208%2010.3%201.8%2020.7%202.7%2031.1%202.7%2023.6%200%2047-4.7%2068.8-13.8zm-455.1-151.4c11.9%2020.5%2027.6%2038.3%2046.3%2052.7%2018.8%2014.4%2040.1%2024.9%2062.9%2031s46.6%207.7%2070%204.6%2045.9-10.7%2066.4-22.5l193.2-111.5.5-.5q.2-.2.3-.6.2-.3.3-.6v-94l-233.2%20134.9c-2.4%201.4-4.9%202.4-7.5%203.2-2.7.7-5.4%201-8.2%201-2.7%200-5.4-.3-8.1-1-2.6-.8-5.2-1.8-7.6-3.2l-191.1-110.4c-1.7-1-4.2-2.5-5.6-3.4-1.8%2010.3-2.7%2020.7-2.7%2031.1s1%2020.8%202.8%2031.1c1.8%2010.2%204.6%2020.3%208.1%2030.1%203.6%209.8%208%2019.2%2013.2%2028.2zm-50.2-417c-11.8%2020.5-19.4%2043.1-22.5%2066.5s-1.5%2047.1%204.6%2070c6.1%2022.8%2016.6%2044.1%2031%2062.9%2014.4%2018.7%2032.3%2034.4%2052.7%2046.2l193.1%20111.6q.3.1.7.2h.7q.4%200%20.7-.2.3-.1.6-.3l81-46.8-233.2-134.6c-2.3-1.4-4.5-3.1-6.5-5a32.1%2032.1%200%200%201%20-5-6.5c-1.3-2.4-2.4-4.9-3.1-7.6-.7-2.6-1.1-5.3-1-8.1v-227.1c-9.8%203.6-19.3%208-28.3%2013.2-9%205.3-17.5%2011.3-25.5%2018-7.9%206.7-15.3%2014.1-22%2022.1-6.7%207.9-12.6%2016.5-17.8%2025.5zm663.3%20154.4c2.4%201.4%204.6%203%206.6%205%201.9%201.9%203.6%204.1%205%206.5%201.3%202.4%202.4%205%203.1%207.6.6%202.7%201%205.4.9%208.2v227.1c32.1-11.8%2060.1-32.5%2080.8-59.7%2020.8-27.2%2033.3-59.7%2036.2-93.7s-3.9-68.2-19.7-98.5-39.9-55.5-69.5-72.5l-193.1-111.6q-.3-.1-.7-.2h-.7q-.3.1-.7.2-.3.1-.6.3l-80.6%2046.6%20233.2%20134.7zm80.5-121h-.1v.1zm-.1-.1c5.8-33.6%201.9-68.2-11.3-99.7-13.1-31.5-35-58.6-63-78.2-28-19.5-61-30.7-95.1-32.2-34.2-1.4-68%206.9-97.6%2023.9l-193.1%20111.5q-.3.2-.5.5l-.4.6q-.1.3-.2.7-.1.3-.1.7v93.2l233.2-134.7c2.4-1.4%205-2.4%207.6-3.2%202.7-.7%205.4-1%208.1-1%202.8%200%205.5.3%208.2%201%202.6.8%205.1%201.8%207.5%203.2l191.1%20110.4c1.7%201%204.2%202.4%205.6%203.3zm-505.3-103.2c0-2.7.4-5.4%201.1-8.1.7-2.6%201.7-5.2%203.1-7.6%201.4-2.3%203-4.5%205-6.5%201.9-1.9%204.1-3.6%206.5-4.9l191.1-110.3c1.8-1.1%204.3-2.5%205.7-3.2-26.2-21.9-58.2-35.9-92.1-40.2-33.9-4.4-68.3%201-99.2%2015.5-31%2014.5-57.2%2037.6-75.5%2066.4-18.3%2028.9-28%2062.3-28%2096.5v223q.1.4.2.7.1.3.3.6.2.3.5.6.2.2.6.4l80.7%2046.6zm43.8%20294.7%20103.9%2060%20103.9-60v-119.9l-103.8-60-103.9%2060z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                OpenAI
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               AI research and deployment company
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-pink-50 text-pink-700 border-pink-200">
+             AI/ML
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             1.8B
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +156%
+             </span>
+            </div>
+           </td>
+          </tr>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-green-100 w-9 h-9">
+              <img alt="Shopify logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20fill='%237AB55C'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eShopify%3c/title%3e%3cpath%20d='M15.337%2023.979l7.216-1.561s-2.604-17.613-2.625-17.73c-.018-.116-.114-.192-.211-.192s-1.929-.136-1.929-.136-1.275-1.274-1.439-1.411c-.045-.037-.075-.057-.121-.074l-.914%2021.104h.023zM11.71%2011.305s-.81-.424-1.774-.424c-1.447%200-1.504.906-1.504%201.141%200%201.232%203.24%201.715%203.24%204.629%200%202.295-1.44%203.76-3.406%203.76-2.354%200-3.54-1.465-3.54-1.465l.646-2.086s1.245%201.066%202.28%201.066c.675%200%20.975-.545.975-.932%200-1.619-2.654-1.694-2.654-4.359-.034-2.237%201.571-4.416%204.827-4.416%201.257%200%201.875.361%201.875.361l-.945%202.715-.02.01zM11.17.83c.136%200%20.271.038.405.135-.984.465-2.064%201.639-2.508%203.992-.656.213-1.293.405-1.889.578C7.697%203.75%208.951.84%2011.17.84V.83zm1.235%202.949v.135c-.754.232-1.583.484-2.394.736.466-1.777%201.333-2.645%202.085-2.971.193.501.309%201.176.309%202.1zm.539-2.234c.694.074%201.141.867%201.429%201.755-.349.114-.735.231-1.158.366v-.252c0-.752-.096-1.371-.271-1.871v.002zm2.992%201.289c-.02%200-.06.021-.078.021s-.289.075-.714.21c-.423-1.233-1.176-2.37-2.508-2.37h-.115C12.135.209%2011.669%200%2011.265%200%208.159%200%206.675%203.877%206.21%205.846c-1.194.365-2.063.636-2.16.674-.675.213-.694.232-.772.87-.075.462-1.83%2014.063-1.83%2014.063L15.009%2024l.927-21.166z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                Shopify
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               E-commerce platform for online stores
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-orange-50 text-orange-700 border-orange-200">
+             E-commerce
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             89M
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +18%
+             </span>
+            </div>
+           </td>
+          </tr>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-purple-100 w-9 h-9">
+              <img alt="Slack logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20fill='%234A154B'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eSlack%3c/title%3e%3cpath%20d='M5.042%2015.165a2.528%202.528%200%200%201-2.52%202.523A2.528%202.528%200%200%201%200%2015.165a2.527%202.527%200%200%201%202.522-2.52h2.52v2.52zM6.313%2015.165a2.527%202.527%200%200%201%202.521-2.52%202.527%202.527%200%200%201%202.521%202.52v6.313A2.528%202.528%200%200%201%208.834%2024a2.528%202.528%200%200%201-2.521-2.522v-6.313zM8.834%205.042a2.528%202.528%200%200%201-2.521-2.52A2.528%202.528%200%200%201%208.834%200a2.528%202.528%200%200%201%202.521%202.522v2.52H8.834zM8.834%206.313a2.528%202.528%200%200%201%202.521%202.521%202.528%202.528%200%200%201-2.521%202.521H2.522A2.528%202.528%200%200%201%200%208.834a2.528%202.528%200%200%201%202.522-2.521h6.312zM18.956%208.834a2.528%202.528%200%200%201%202.522-2.521A2.528%202.528%200%200%201%2024%208.834a2.528%202.528%200%200%201-2.522%202.521h-2.522V8.834zM17.688%208.834a2.528%202.528%200%200%201-2.523%202.521%202.527%202.527%200%200%201-2.52-2.521V2.522A2.527%202.527%200%200%201%2015.165%200a2.528%202.528%200%200%201%202.523%202.522v6.312zM15.165%2018.956a2.528%202.528%200%200%201%202.523%202.522A2.528%202.528%200%200%201%2015.165%2024a2.527%202.527%200%200%201-2.52-2.522v-2.522h2.52zM15.165%2017.688a2.527%202.527%200%200%201-2.52-2.523%202.526%202.526%200%200%201%202.52-2.52h6.313A2.527%202.527%200%200%201%2024%2015.165a2.528%202.528%200%200%201-2.522%202.523h-6.313z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                Slack
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               Business communication and collaboration platform
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-indigo-50 text-indigo-700 border-indigo-200">
+             Communication
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             52M
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +12%
+             </span>
+            </div>
+           </td>
+          </tr>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-muted/50">
+             <span class="text-sm font-medium text-muted-foreground">
+              4
+             </span>
+            </div>
+           </td>
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-violet-100 w-9 h-9">
+              <img alt="Stripe logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20fill='%23635BFF'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eStripe%3c/title%3e%3cpath%20d='M13.976%209.15c-2.172-.806-3.356-1.426-3.356-2.409%200-.831.683-1.305%201.901-1.305%202.227%200%204.515.858%206.09%201.631l.89-5.494C18.252.975%2015.697%200%2012.165%200%209.667%200%207.589.654%206.104%201.872%204.56%203.147%203.757%204.992%203.757%207.218c0%204.039%202.467%205.76%206.476%207.219%202.585.92%203.445%201.574%203.445%202.583%200%20.98-.84%201.545-2.354%201.545-1.875%200-4.965-.921-6.99-2.109l-.9%205.555C5.175%2022.99%208.385%2024%2011.714%2024c2.641%200%204.843-.624%206.328-1.813%201.664-1.305%202.525-3.236%202.525-5.732%200-4.128-2.524-5.851-6.594-7.305h.003z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                Stripe
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               Payment processing platform for internet businesses
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-emerald-50 text-emerald-700 border-emerald-200">
+             Fintech
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             45M
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +23%
+             </span>
+            </div>
+           </td>
+          </tr>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-muted/50">
+             <span class="text-sm font-medium text-muted-foreground">
+              5
+             </span>
+            </div>
+           </td>
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-zinc-100 w-9 h-9">
+              <img alt="Notion logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20fill='%23000000'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eNotion%3c/title%3e%3cpath%20d='M4.459%204.208c.746.606%201.026.56%202.428.466l13.215-.793c.28%200%20.047-.28-.046-.326L17.86%201.968c-.42-.326-.981-.7-2.055-.607L3.01%202.295c-.466.046-.56.28-.374.466zm.793%203.08v13.904c0%20.747.373%201.027%201.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42%200%20.84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748%200-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21%2019s0%20.84-1.168.84l-3.222.186c-.093-.186%200-.653.327-.746l.84-.233V9.854L7.822%209.76c-.094-.42.14-1.026.793-1.073l3.456-.233%204.764%207.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936%201.035l13.31-.98c1.634-.14%202.055-.047%203.082.7l4.249%202.986c.7.513.934.653.934%201.213v16.378c0%201.026-.373%201.634-1.68%201.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54%201.447-1.632z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                Notion
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               All-in-one workspace for notes, docs, and collaboration
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-blue-50 text-blue-700 border-blue-200">
+             Productivity
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             38M
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +45%
+             </span>
+            </div>
+           </td>
+          </tr>
+          <tr class="border-b border-border/30 cursor-pointer transition-all duration-200 hover:bg-muted/50">
+           <td class="py-4 px-6">
+            <div class="flex items-center justify-center w-8 h-8 rounded-full bg-muted/50">
+             <span class="text-sm font-medium text-muted-foreground">
+              6
+             </span>
+            </div>
+           </td>
+           <td class="py-4 px-6">
+            <div class="flex items-center gap-3">
+             <div class="rounded-xl flex items-center justify-center bg-pink-100 w-9 h-9">
+              <img alt="Figma logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20fill='%23F24E1E'%20role='img'%20viewBox='0%200%2024%2024'%20xmlns='http://www.w3.org/2000/svg'%3e%3ctitle%3eFigma%3c/title%3e%3cpath%20d='M15.852%208.981h-4.588V0h4.588c2.476%200%204.49%202.014%204.49%204.49s-2.014%204.491-4.49%204.491zM12.735%207.51h3.117c1.665%200%203.019-1.355%203.019-3.019s-1.355-3.019-3.019-3.019h-3.117V7.51zm0%201.471H8.148c-2.476%200-4.49-2.014-4.49-4.49S5.672%200%208.148%200h4.588v8.981zm-4.587-7.51c-1.665%200-3.019%201.355-3.019%203.019s1.354%203.02%203.019%203.02h3.117V1.471H8.148zm4.587%2015.019H8.148c-2.476%200-4.49-2.014-4.49-4.49s2.014-4.49%204.49-4.49h4.588v8.98zM8.148%208.981c-1.665%200-3.019%201.355-3.019%203.019s1.355%203.019%203.019%203.019h3.117V8.981H8.148zM8.172%2024c-2.489%200-4.515-2.014-4.515-4.49s2.014-4.49%204.49-4.49h4.588v4.441c0%202.503-2.047%204.539-4.563%204.539zm-.024-7.51a3.023%203.023%200%200%200-3.019%203.019c0%201.665%201.365%203.019%203.044%203.019%201.705%200%203.093-1.376%203.093-3.068v-2.97H8.148zm7.704%200h-.098c-2.476%200-4.49-2.014-4.49-4.49s2.014-4.49%204.49-4.49h.098c2.476%200%204.49%202.014%204.49%204.49s-2.014%204.49-4.49%204.49zm-.097-7.509c-1.665%200-3.019%201.355-3.019%203.019s1.355%203.019%203.019%203.019h.098c1.665%200%203.019-1.355%203.019-3.019s-1.355-3.019-3.019-3.019h-.098z'/%3e%3c/svg%3e"/>
+             </div>
+             <div>
+              <div class="flex items-center gap-2">
+               <span class="font-medium text-foreground">
+                Figma
+               </span>
+              </div>
+              <p class="text-xs text-muted-foreground line-clamp-1 max-w-[200px]">
+               Collaborative interface design tool
+              </p>
+             </div>
+            </div>
+           </td>
+           <td class="py-4 px-6 hidden md:table-cell">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs font-normal bg-purple-50 text-purple-700 border-purple-200">
+             Design
+            </div>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <span class="font-medium text-foreground">
+             28M
+            </span>
+           </td>
+           <td class="py-4 px-6 text-right">
+            <div class="flex items-center justify-end gap-1">
+             <span class="font-medium text-success">
+              +67%
+             </span>
+            </div>
+           </td>
+          </tr>
+         </tbody>
+        </table>
+       </div>
+      </div>
+      <div class="text-center mt-10">
+       <a href="/auth">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-full px-8 h-12 border-2">
+         Analyze Your Own Competitor
+        </button>
+       </a>
+      </div>
+     </section>
+     <section class="container mx-auto px-6 py-24" id="how-it-works">
+      <div class="text-center mb-20">
+       <h2 class="font-display text-4xl md:text-5xl font-medium mb-6 text-foreground">
+        See it in action
+       </h2>
+       <p class="text-lg text-muted-foreground max-w-xl mx-auto">
+        Watch how we transform a URL into actionable insights in seconds
+       </p>
+      </div>
+      <div class="mb-24">
+       <div class="relative w-full max-w-5xl mx-auto">
+        <div class="relative rounded-3xl border-8 border-muted p-4 bg-destructive-foreground shadow-md">
+         <div class="bg-background rounded-2xl shadow-inner overflow-hidden border border-border">
+          <div class="bg-card border-b border-border px-4 py-3">
+           <div class="bg-muted/50 rounded-lg px-4 py-2 text-sm text-muted-foreground">
+            https://knowyourcompetitor.xyz/
+           </div>
+          </div>
+          <div class="bg-background p-8 h-[600px] flex items-center justify-center overflow-hidden">
+           <div class="text-center space-y-6 animate-scale-in">
+            <div class="space-y-2">
+             <p class="text-xl font-semibold text-foreground">
+              Analyzing stripe.com
+             </p>
+             <p class="text-sm text-muted-foreground animate-pulse">
+              Finding competitors and analyzing market position...
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
+       <div class="text-center space-y-4 p-8">
+        <div class="text-sm font-medium text-primary">
+         Step 1
+        </div>
+        <h3 class="font-display text-xl font-medium text-foreground">
+         Paste Your Website
+        </h3>
+        <p class="text-muted-foreground leading-relaxed">
+         Our crawler instantly extracts your product info, keywords, pricing structure &amp; core messaging.
+        </p>
+       </div>
+       <div class="text-center space-y-4 p-8">
+        <div class="text-sm font-medium text-primary">
+         Step 2
+        </div>
+        <h3 class="font-display text-xl font-medium text-foreground">
+         AI Competitor Search
+        </h3>
+        <p class="text-muted-foreground leading-relaxed">
+         We scan millions of SERPs and use vector embeddings to find your direct &amp; indirect competitors.
+        </p>
+       </div>
+       <div class="text-center space-y-4 p-8">
+        <div class="text-sm font-medium text-primary">
+         Step 3
+        </div>
+        <h3 class="font-display text-xl font-medium text-foreground">
+         Get Your Report
+        </h3>
+        <p class="text-muted-foreground leading-relaxed">
+         View ranked competitors, detailed SWOT analysis, keyword gaps &amp; actionable growth suggestions.
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="container mx-auto px-6 py-24" id="pricing">
+      <div class="text-center mb-16">
+       <h2 class="font-display text-4xl md:text-5xl font-medium mb-6 text-foreground">
+        Simple, transparent pricing
+       </h2>
+       <p class="text-lg text-muted-foreground">
+        Start for free, upgrade when you need more.
+       </p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+       <div class="border text-card-foreground shadow-sm p-8 md:p-10 rounded-3xl border-border/50 flex flex-col bg-card">
+        <div class="mb-8">
+         <h3 class="font-display text-2xl font-medium mb-2 text-foreground">
+          Free Starter
+         </h3>
+         <div class="flex items-baseline gap-1">
+          <span class="font-display text-5xl font-medium text-foreground">
+           $0
+          </span>
+          <span class="text-muted-foreground">
+           /forever
+          </span>
+         </div>
+        </div>
+        <ul class="space-y-4 mb-10 flex-grow">
+         <li class="flex items-center gap-3 text-foreground">
+          <span>
+           1 Competitor Analysis
+          </span>
+         </li>
+         <li class="flex items-center gap-3 text-foreground">
+          <span>
+           Basic Traffic Overview
+          </span>
+         </li>
+         <li class="flex items-center gap-3 text-foreground">
+          <span>
+           No Credit Card Required
+          </span>
+         </li>
+        </ul>
+        <a class="w-full" href="/auth">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border-input bg-background hover:bg-accent hover:text-accent-foreground px-8 w-full rounded-full h-12 border-2">
+          Start for Free
+         </button>
+        </a>
+       </div>
+       <div class="text-card-foreground p-8 md:p-10 rounded-3xl border-2 border-primary relative flex flex-col bg-card shadow-xl shadow-primary/5">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+         <span class="bg-primary text-primary-foreground px-4 py-1.5 rounded-full text-sm font-medium">
+          Most Popular
+         </span>
+        </div>
+        <div class="mb-8">
+         <h3 class="font-display text-2xl font-medium mb-2 text-foreground">
+          Pro
+         </h3>
+         <div class="flex items-baseline gap-1">
+          <span class="font-display text-5xl font-medium text-foreground">
+           $2.99
+          </span>
+          <span class="text-muted-foreground">
+           /month
+          </span>
+         </div>
+        </div>
+        <ul class="space-y-4 mb-10 flex-grow">
+         <li class="flex items-center gap-3 text-foreground">
+          <span class="font-medium">
+           Unlimited Analyses
+          </span>
+         </li>
+         <li class="flex items-center gap-3 text-foreground">
+          <span class="font-medium">
+           Deep Keyword Research
+          </span>
+         </li>
+         <li class="flex items-center gap-3 text-foreground">
+          <span class="font-medium">
+           PDF &amp; CSV Exports
+          </span>
+         </li>
+         <li class="flex items-center gap-3 text-foreground">
+          <span class="font-medium">
+           Priority Crawling Queue
+          </span>
+         </li>
+        </ul>
+        <a class="w-full" href="/auth">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 px-8 w-full rounded-full h-12 shadow-lg shadow-primary/25">
+          Get Pro Now
+         </button>
+        </a>
+        <p class="text-xs text-center text-muted-foreground mt-4">
+         Secured by Lemon Squeezy
+        </p>
+       </div>
+      </div>
+     </section>
+     <section class="container mx-auto px-6 py-20 border-t border-border/50">
+      <div class="text-center mb-12">
+       <h2 class="font-display text-2xl md:text-3xl font-medium mb-3 text-foreground">
+        Explore Our Resources
+       </h2>
+       <p class="text-muted-foreground">
+        In-depth comparisons, alternatives, and industry insights
+       </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+       <div>
+        <h3 class="font-medium mb-4 text-foreground">
+         Popular Comparisons
+        </h3>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/compare/stripe-vs-paypal">
+           Stripe vs PayPal
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/compare/shopify-vs-woocommerce">
+           Shopify vs WooCommerce
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/compare/notion-vs-confluence">
+           Notion vs Confluence
+          </a>
+         </li>
+         <li>
+          <a class="text-primary hover:underline font-medium" href="/comparisons">
+           View all comparisons →
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="font-medium mb-4 text-foreground">
+         Top Alternatives
+        </h3>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/alternatives/stripe">
+           Stripe Alternatives
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/alternatives/notion">
+           Notion Alternatives
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/alternatives/slack">
+           Slack Alternatives
+          </a>
+         </li>
+         <li>
+          <a class="text-primary hover:underline font-medium" href="/alternatives">
+           View all alternatives →
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="font-medium mb-4 text-foreground">
+         Industry Analysis
+        </h3>
+        <ul class="space-y-3 text-sm">
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/industry/saas">
+           SaaS Industry
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/industry/fintech">
+           Fintech Industry
+          </a>
+         </li>
+         <li>
+          <a class="text-muted-foreground hover:text-primary transition-colors" href="/industry/ecommerce">
+           E-commerce Industry
+          </a>
+         </li>
+         <li>
+          <a class="text-primary hover:underline font-medium" href="/industries">
+           View all industries →
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </section>
+     <footer class="border-t border-border/50 py-10">
+      <div class="container mx-auto px-6 text-center text-sm text-muted-foreground">
+       <p>
+        © 2025 Competitor Radar. All rights reserved.
+       </p>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>F1Laps: manage your F1 25 game, setups and AI difficulty</title>
+</head>
+<body>
+  <body>
+   <div class="bg-background-muted relative">
+    <div class="relative overflow-hidden">
+     <div class="relative pt-3 sm:pt-6 pb-8">
+      <div>
+       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav class="relative flex items-center justify-between sm:h-5 md:justify-left">
+         <div class="flex items-center flex-1 md:absolute md:inset-y-0 md:left-0">
+          <div class="flex items-center justify-between w-full md:w-auto text-sm">
+           <a href="/">
+            <span class="text-primary font-sans font-semibold text-xl">
+             F1Laps
+            </span>
+           </a>
+           <div class="-mr-2 flex-1 items-center text-right md:hidden">
+            <button class="bg-background-muted rounded-md p-2 inline-flex items-center justify-center text-foreground-muted hover:text-foreground hover:bg-background-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring" id="main-menu" type="button">
+             <span class="sr-only">
+              Open main menu
+             </span>
+            </button>
+           </div>
+           <div class="hidden ml-10 md:flex-1 md:flex md:justify-between items-baseline space-x-4">
+            <a class="px-4 py-2 font-medium text-foreground-muted hover:text-foreground" href="/ai-difficulty-calculator/">
+             AI Difficulty
+            </a>
+            <a class="px-4 py-2 font-medium text-foreground-muted hover:text-foreground" href="/setups/tracks/">
+             Setups
+            </a>
+            <a class="px-4 py-2 font-medium text-foreground-muted hover:text-foreground" href="/laptimes/leaderboard/">
+             Leaderboard
+            </a>
+            <a class="px-4 py-2 font-medium text-foreground-muted hover:text-foreground" href="/#pricing">
+             Pricing
+            </a>
+            <a class="px-4 py-2 font-medium text-foreground-muted hover:text-foreground" href="/games/">
+             F1 Games
+            </a>
+           </div>
+          </div>
+         </div>
+         <div class="hidden md:absolute md:flex md:items-center md:justify-end md:inset-y-0 md:right-0 space-x-2">
+          <span class="inline-flex rounded-md shadow">
+           <a class="inline-flex items-center px-4 py-2 border border-border text-sm font-medium rounded-md text-foreground-muted bg-background hover:text-foreground hover:bg-background-muted" href="/profile/login/">
+            Sign In
+           </a>
+          </span>
+          <span class="inline-flex rounded-md shadow-md">
+           <a class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 transition-all duration-200" href="/profile/register/">
+            Sign Up
+           </a>
+          </span>
+         </div>
+        </nav>
+       </div>
+       <div class="hidden absolute top-0 inset-x-0 px-2 z-40 pt-1 transition transform origin-top-right md:hidden">
+        <div class="rounded-lg shadow-md bg-background ring-1 ring-black ring-opacity-5 overflow-hidden">
+         <div class="px-2 pt-2 flex items-center justify-between">
+          <div>
+           <span class="text-primary font-sans font-semibold text-xl">
+            F1Laps
+           </span>
+          </div>
+          <div class="-mr-2">
+           <button class="bg-background rounded-md p-2 inline-flex items-center justify-center text-foreground-muted hover:text-foreground-muted hover:bg-background-subtle focus:outline-none focus:ring-2 focus:ring-inset focus:ring-ring" type="button">
+            <span class="sr-only">
+             Close main menu
+            </span>
+           </button>
+          </div>
+         </div>
+         <div>
+          <div class="px-2 pt-5 pb-3 space-y-1 text-base font-medium text-foreground">
+           <a class="px-3 py-1 flex rounded-md hover:text-foreground hover:bg-background-muted" href="/ai-difficulty-calculator/">
+            <span class="ml-3">
+             AI Difficulty
+            </span>
+           </a>
+           <a class="px-3 py-1 flex rounded-md hover:text-foreground hover:bg-background-muted" href="/setups/tracks/">
+            <span class="ml-3">
+             Setups
+            </span>
+           </a>
+           <a class="px-3 py-1 flex rounded-md hover:text-foreground hover:bg-background-muted" href="/laptimes/leaderboard/">
+            <span class="ml-3">
+             Leaderboard
+            </span>
+           </a>
+           <a class="px-3 py-1 flex rounded-md hover:text-foreground hover:bg-background-muted" href="/#pricing">
+            <span class="ml-3">
+             Pricing
+            </span>
+           </a>
+           <a class="px-3 py-1 flex rounded-md hover:text-foreground hover:bg-background-muted" href="/games/">
+            <span class="ml-3">
+             F1 Games
+            </span>
+           </a>
+          </div>
+          <div>
+           <a class="flex mt-3 mb-2 mx-5 px-5 py-3 text-center text-base font-medium text-white bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 rounded-lg border-0 shadow-sm" href="/profile/register/">
+            Start Tracking Free
+           </a>
+           <a class="block w-full mt-1 px-5 py-3 text-center text-base font-medium text-primary bg-background-muted hover:bg-background-subtle hover:text-primary-hover" href="/profile/login/">
+            Sign In
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mt-12 sm:mt-16 mx-auto max-w-7xl px-4 sm:px-6">
+       <div class="text-center">
+        <h1 class="text-4xl tracking-tight font-extrabold text-foreground sm:text-5xl md:text-6xl">
+         <span class="block">
+          Track Your F1 Game
+         </span>
+         <span class="mx-auto block bg-gradient-to-r text-transparent bg-clip-text from-indigo-500 via-blue-500 to-purple-500 mt-2 pb-2">
+          Progress Automatically
+         </span>
+        </h1>
+        <p class="py-4 max-w-md mx-auto text-base font-normal text-foreground-muted sm:text-lg md:mt-4 md:text-xl md:max-w-3xl">
+         Connect your F1 game and automatically track every lap, analyze your performance, and see your progress over time. Join 76,000+ racers already improving their times.
+        </p>
+       </div>
+       <div class="mx-auto sm:flex sm:justify-center mt-6 sm:mt-8">
+        <div class="flex flex-col sm:flex-row gap-4 sm:gap-3 sm:items-start">
+         <div class="rounded-md">
+          <a class="w-full flex items-center justify-center px-10 py-4 text-base font-bold text-white rounded-lg bg-gradient-to-r from-indigo-500 to-blue-500 hover:from-indigo-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl md:text-lg md:px-12 md:py-5" href="/profile/register/">
+           Start Tracking Free
+          </a>
+          <p class="mt-3 text-xs text-foreground-muted text-center">
+           No credit card required
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 sm:mt-16 mb-8 max-w-6xl mx-auto">
+        <div class="overflow-hidden rounded-xl border border-border ring-1 ring-indigo-500/20 shadow-[0_0_50px_rgba(99,102,241,0.3)] dark:shadow-[0_0_50px_rgba(99,102,241,0.15)]">
+         <video class="w-full dark:hidden">
+          <source src="/static/videos/f1laps-teaser.mp4" type="video/mp4">
+          </source>
+         </video>
+         <video class="w-full hidden dark:block">
+          <source src="/static/videos/f1laps-dark-teaser.mp4" type="video/mp4">
+          </source>
+         </video>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="max-w-7xl mx-auto pb-12 xl:pb-20 px-4 sm:px-6 xl:px-8">
+     <h2 class="text-center text-foreground-muted text-sm font-semibold uppercase tracking-wide">
+      Software for the official EA Codemasters F1 Game
+     </h2>
+     <div class="pt-2 flex flex-col items-center">
+      <div class="flex flex-col lg:flex-row justify-between items-center w-full">
+       <div class="relative text-foreground flex items-center my-2 lg:my-0">
+        <img class="dark:invert dark:opacity-80" height="58" src="/static/images/home/laurel.svg" width="185"/>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+         <span class="text-center mb-0.5 font-semibold tracking-tight">
+          #1 F1 Game App
+         </span>
+        </div>
+       </div>
+       <div class="flex items-center my-2 lg:my-0">
+        <img alt="F1 23 Game" class="h-8 invert opacity-80 dark:invert-0 dark:brightness-100 dark:mix-blend-lighten" src="/static/images/formula%20logos/f1-2023-game-logo.png"/>
+       </div>
+       <div class="flex items-center my-2 lg:my-0">
+        <img alt="F1 24 Game" class="h-8 invert opacity-80 dark:invert-0 dark:brightness-100 dark:mix-blend-lighten" src="/static/images/formula%20logos/f1-2024-game-logo.png"/>
+       </div>
+       <div class="flex items-center my-2 lg:my-0">
+        <img alt="F1 25 Game" class="h-8 invert opacity-80 dark:invert-0 dark:brightness-100 dark:mix-blend-lighten" src="/static/images/formula%20logos/f1-2025-game-logo.png"/>
+       </div>
+       <div class="flex flex-col items-center my-2 lg:my-0">
+        <img alt="Fanatec" class="h-8 py-2 opacity-75 dark:invert dark:opacity-70" src="/static/images/formula%20logos/fanatec.svg"/>
+        <p class="-mt-2 text-xs text-foreground-muted tracking-tight text-center">
+         Official Partner
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="py-16 md:py-28 relative">
+    <div class="relative max-w-xl mx-auto px-4 sm:px-6 md:max-w-7xl md:px-8 text-center">
+     <h2 class="pb-20 text-center text-foreground font-bold text-3xl tracking-tight sm:text-4xl">
+      The most popular F1 game companion app
+     </h2>
+     <div class="mx-auto px-6 md:px-8">
+      <dl class="grid grid-cols-1 gap-y-10 md:gap-y-16 gap-x-8 text-center md:grid-cols-3">
+       <div class="mx-auto flex max-w-xs flex-col gap-y-3 md:gap-y-4">
+        <dd class="order-first text-4xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent sm:text-6xl">
+         3.7 million+
+        </dd>
+        <dt class="text-base leading-7 text-foreground-muted font-medium">
+         Laps tracked with F1Laps
+        </dt>
+       </div>
+       <div class="mx-auto flex max-w-xs flex-col gap-y-3 md:gap-y-4">
+        <dd class="order-first text-4xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent sm:text-6xl">
+         83,000+
+        </dd>
+        <dt class="text-base leading-7 text-foreground-muted font-medium">
+         Drivers using F1Laps
+        </dt>
+       </div>
+       <div class="mx-auto flex max-w-xs flex-col gap-y-3 md:gap-y-4">
+        <dd class="order-first text-4xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent sm:text-6xl">
+         149,000+
+        </dd>
+        <dt class="text-base leading-7 text-foreground-muted font-medium">
+         Car setups to choose from
+        </dt>
+       </div>
+      </dl>
+     </div>
+    </div>
+   </div>
+   <section class="py-16 md:py-28 bg-gray-50 dark:bg-background-subtle">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+       Your F1 Game Data Hub
+      </h2>
+      <p class="mt-4 text-lg text-foreground-muted max-w-2xl mx-auto">
+       Everything you need to track, analyze, and improve your F1 game performance.
+      </p>
+     </div>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Automatic data sync from F1 game to F1Laps" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/data-light.jpg"/>
+       <img alt="Automatic data sync from F1 game to F1Laps" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/data-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Automatic Data Sync
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Just race. Our Windows, Mac, and iOS apps capture every lap automatically while you play—zero manual work required.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Detailed lap analysis showing sector times and tyre wear" class="w-full aspect-[16/10] object-contain p-4" src="/static/images/features/lap-details.png"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Detailed Lap Analysis
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Break down every lap by sector, see tyre degradation, track ERS deployment, and pinpoint exactly where you're losing time.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Pro-level telemetry analysis with speed, throttle and brake data" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/telemetry-light.jpg"/>
+       <img alt="Pro-level telemetry analysis with speed, throttle and brake data" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/telemetry-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Pro-Level Telemetry
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         The same telemetry tools used by F1 Esports teams. Analyze speed, throttle, brake, gear, and steering inputs meter-by-meter to find your edge.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Complete session history with race results and tyre strategies" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/session2-light.jpg"/>
+       <img alt="Complete session history with race results and tyre strategies" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/session2-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Complete Session History
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Every practice, qualifying, sprint, and race saved automatically. Review results, tyre strategies, pit stops, and penalties whenever you want.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Full season tracking with championship standings and race results" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/season-light.jpg"/>
+       <img alt="Full season tracking with championship standings and race results" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/season-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Full Season Tracking
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Whether you're in Career Mode, MyTeam, or a Championship, track every race, monitor standings, and relive your championship journey.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Car setup database with community-shared configurations" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/setup-light.jpg"/>
+       <img alt="Car setup database with community-shared configurations" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/setup-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Setup Database
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Access thousands of community-shared car setups for every track and condition. Save your own and find what works best for your driving style.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="AI difficulty calculator with personalized recommendations" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/aidc-light.jpg"/>
+       <img alt="AI difficulty calculator with personalized recommendations" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/aidc-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         AI Difficulty Calculator
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Get personalized AI difficulty recommendations for each track. Race against AI that matches your skill level for competitive, realistic battles.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Global leaderboards and telemetry comparisons" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/leaderboard-light.jpg"/>
+       <img alt="Global leaderboards and telemetry comparisons" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/leaderboard-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Leaderboards &amp; Comparisons
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         See how you stack up on global leaderboards. Compare your telemetry side-by-side with friends or top esports drivers to learn exactly where they gain time.
+        </p>
+       </div>
+      </div>
+      <div class="bg-background rounded-lg border border-border shadow-sm hover:shadow-md transition-shadow duration-200 overflow-hidden">
+       <img alt="Automated performance analytics and insights" class="w-full aspect-[16/10] object-contain p-4 dark:hidden" src="/static/images/features/analytics-light.jpg"/>
+       <img alt="Automated performance analytics and insights" class="w-full aspect-[16/10] object-contain p-4 hidden dark:block" src="/static/images/features/analytics-dark.jpg"/>
+       <div class="p-5">
+        <h3 class="font-bold text-foreground">
+         Performance Analytics
+        </h3>
+        <p class="mt-1 text-sm text-foreground-muted">
+         Get automated insights about your racing. Track trends in lap times, AI difficulty, team performance, and more—all calculated for you.
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <div class="relative overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto py-28 px-4 sm:px-6 lg:px-8">
+     <div class="lg:text-center">
+      <h2 class="font-bold text-3xl tracking-tight text-white sm:text-5xl">
+       Find your optimal race strategy
+      </h2>
+      <p class="mt-4 max-w-2xl text-base text-primary-foreground lg:mx-auto">
+       F1Laps provides free resources for your next race. Check them out, no signup needed.
+      </p>
+      <div class="pt-14 space-y-6 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-8 text-left">
+       <div class="">
+        <a href="/ai-difficulty-calculator/">
+         <div class="bg-white/10 dark:bg-white/5 dark:backdrop-blur-sm hover:bg-white/[0.17] dark:hover:bg-white/10 border border-white/20 rounded-lg p-6 sm:p-8 text-white transition-colors">
+          <div class="flex">
+           <div class="my-auto">
+            <span class="text-2xl font-bold">
+             AI Difficulty Calculator
+            </span>
+           </div>
+          </div>
+          <p class="pt-4 text-primary-foreground text-sm">
+           Figure out your ideal AI difficulty level for each track
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="">
+        <a href="/setups/tracks/">
+         <div class="bg-white/10 dark:bg-white/5 dark:backdrop-blur-sm hover:bg-white/[0.17] dark:hover:bg-white/10 border border-white/20 rounded-lg p-6 sm:p-8 text-white transition-colors">
+          <div class="flex">
+           <div class="my-auto">
+            <span class="text-2xl font-bold">
+             Setups
+            </span>
+           </div>
+          </div>
+          <p class="pt-4 text-primary-foreground text-sm">
+           Find your perfect setup to achieve faster lap times
+          </p>
+         </div>
+        </a>
+       </div>
+       <div class="">
+        <a href="/tracks/">
+         <div class="bg-white/10 dark:bg-white/5 dark:backdrop-blur-sm hover:bg-white/[0.17] dark:hover:bg-white/10 border border-white/20 rounded-lg p-6 sm:p-8 text-white transition-colors">
+          <div class="flex">
+           <div class="my-auto">
+            <span class="text-2xl font-bold">
+             Tracks
+            </span>
+           </div>
+          </div>
+          <p class="pt-4 text-primary-foreground text-sm">
+           Learn track details and benchmark your lap records
+          </p>
+         </div>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="bg-slate-900 py-20 sm:py-28">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+     <div class="lg:text-center">
+      <h2 class="text-white font-bold text-3xl tracking-tight sm:text-4xl">
+       F1Laps powers F1 Esports Teams
+      </h2>
+      <p class="hidden lg:block mt-4 max-w-2xl text-base text-primary-foreground lg:mx-auto">
+       Official F1 Esports teams rely on F1Laps to analyze their lap telemetry data.
+      </p>
+      <div class="text-white text-left lg:flex pt-16 lg:pt-12">
+       <div class="my-auto lg:ml-16">
+        <div>
+         <img alt="" class="h-10 mb-4" src="/static/images/home/f1-esports-logo.png"/>
+         F1 Esports team leverage F1Laps to access detailed telemetry data and analysis. Reach out to us to learn more.
+        </div>
+        <div class="pt-6 font-semibold">
+         <a class="hover:underline" href="mailto:contact@f1laps.com?subject=F1Laps F1 Esports Program Inquiry">
+          Get in touch ›
+         </a>
+        </div>
+       </div>
+       <div class="mt-12 lg:mt-0 rounded-md border border-gray-400 p-8 lg:p-10 max-w-xl bg-slate-800 bg-opacity-50">
+        <a href="https://www.f1laps.com/blog/f1laps-haas-f1-esports-telemetry">
+         <div class="pb-6 flex">
+          <img alt="" class="h-12" src="/static/images/home/haas.png"/>
+          <img alt="" class="h-8 my-auto ml-12" src="/static/images/home/r8g.png"/>
+         </div>
+         <h3 class="mt-1 font-semibold">
+          Haas F1 Esports Case Study
+         </h3>
+         <p class="mt-6 text-sm">
+          Haas F1 Esports is a top-tier racing team in F1 sim racing. The team, managed by R8G, partnered with F1Laps to improve lap times and maintain a competitive edge in the world of F1 esports racing.
+         </p>
+        </a>
+        <p class="mt-6 text-sm font-semibold">
+         <a class="hover:underline" href="https://www.f1laps.com/blog/f1laps-haas-f1-esports-telemetry">
+          Read more ›
+         </a>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="bg-background-muted py-20 sm:py-28" id="pricing">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+     <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+       Pricing
+      </h2>
+      <p class="mt-4 text-lg text-foreground-muted">
+       F1Laps is free to use. Subscribe to one of our plans to access advanced data.
+      </p>
+     </div>
+     <div class="text-left">
+      <div class="max-w-md space-y-4 lg:max-w-5xl lg:grid lg:grid-cols-3 lg:gap-5 lg:space-y-0 mx-auto">
+       <div class="flex flex-col border border-border-muted rounded-lg shadow-sm overflow-hidden">
+        <div class="px-6 py-8 bg-background sm:p-8 sm:pb-6">
+         <div>
+          <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-muted text-primary" id="tier-standard">
+           Free
+          </h3>
+         </div>
+         <div class="mt-4 flex items-baseline text-4xl font-extrabold">
+          Free
+         </div>
+        </div>
+        <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-background-muted sm:p-8 sm:pt-6">
+         <p class="mt-1 text-base font-medium text-foreground">
+          Track basic season &amp; lap data
+         </p>
+         <ul class="mt-6 space-y-4 flex-1">
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track My Team &amp; Career Mode
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track lap times
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Auto-import all game data
+           </p>
+          </li>
+         </ul>
+         <div class="mt-6 rounded-md shadow">
+          <a class="cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-hover" href="/profile/register/">
+           Register for free
+          </a>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col border border-border-muted rounded-lg shadow-sm overflow-hidden">
+        <div class="px-6 py-8 bg-background sm:p-8 sm:pb-6">
+         <div>
+          <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-muted text-primary" id="tier-standard">
+           Premium
+          </h3>
+         </div>
+         <div class="mt-4 flex items-baseline text-4xl font-extrabold">
+          €2.99
+          <span class="ml-1 text-xl font-medium text-foreground-muted">
+           /mo
+          </span>
+         </div>
+         <p class="mt-4 text-sm text-foreground-muted">
+          or €29.99 /year
+          <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-success text-success-foreground">
+           €6 off
+          </span>
+         </p>
+        </div>
+        <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-background-muted sm:p-8 sm:pt-6">
+         <p class="mt-1 text-base font-medium text-foreground">
+          Access all session data
+         </p>
+         <ul class="mt-6 space-y-4 flex-1">
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track My Team &amp; Career Mode
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track lap times
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Auto-import all game data
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             All session data:
+            </span>
+            lap history, tyre stints, classifications &amp; more
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             All seasons data:
+            </span>
+            Grand Prix results &amp; standings
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground font-semibold">
+            Analytics
+           </p>
+          </li>
+         </ul>
+         <div class="mt-6">
+          <div class="text-left text-sm text-foreground flex">
+           <p class="ml-3 text-sm text-success-foreground">
+            <a href="https://climate.stripe.com/RTvmZz" target="_blanc">
+             We contribute 1% to remove CO₂ from the atmosphere
+            </a>
+           </p>
+          </div>
+         </div>
+         <div class="mt-6 rounded-md shadow">
+          <a class="cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-hover" href="/profile/register/?next=/telemetry/plans">
+           Start free 14 day trial
+          </a>
+         </div>
+         <div class="mt-2 mx-auto italic text-xs text-foreground-muted">
+          Cancel anytime
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col border border-border-muted rounded-lg shadow-sm overflow-hidden">
+        <div class="px-6 py-8 bg-background sm:p-8 sm:pb-6">
+         <div>
+          <h3 class="inline-flex px-4 py-1 rounded-full text-sm font-semibold tracking-wide uppercase bg-primary-muted text-primary" id="tier-standard">
+           Champion
+          </h3>
+         </div>
+         <div class="mt-4 flex items-baseline text-4xl font-extrabold">
+          €6.99
+          <span class="ml-1 text-xl font-medium text-foreground-muted">
+           /mo
+          </span>
+         </div>
+         <p class="mt-4 text-sm text-foreground-muted">
+          or €69.99 /year
+          <span class="inline-flex items-center px-1.5 py-0.5 rounded-full text-xs font-medium bg-success text-success-foreground">
+           €14 off
+          </span>
+         </p>
+        </div>
+        <div class="flex-1 flex flex-col justify-between px-6 pt-6 pb-8 bg-background-muted sm:p-8 sm:pt-6">
+         <p class="mt-1 text-base font-medium text-foreground">
+          Access telemetry data
+         </p>
+         <ul class="mt-6 space-y-4">
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track My Team &amp; Career Mode
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Track lap times
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            Auto-import all game data
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             All session data:
+            </span>
+            lap history, tyre stints, classifications &amp; more
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             All seasons data:
+            </span>
+            Grand Prix results &amp; standings
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground font-semibold">
+            Analytics
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             Lap telemetry data:
+            </span>
+            speed, time delta, gear, etc.
+           </p>
+          </li>
+          <li class="flex items-start">
+           <p class="ml-3 text-sm text-foreground">
+            <span class="font-semibold">
+             Leaderboard:
+            </span>
+            your laps are eligible to be shown on the F1Laps leaderboard
+           </p>
+          </li>
+         </ul>
+         <div class="mt-6">
+          <div class="text-left text-sm text-foreground flex">
+           <p class="ml-3 text-sm text-success-foreground">
+            <a href="https://climate.stripe.com/RTvmZz" target="_blanc">
+             We contribute 1% to remove CO₂ from the atmosphere
+            </a>
+           </p>
+          </div>
+         </div>
+         <div class="mt-6 rounded-md shadow">
+          <a class="cursor-pointer flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-primary-hover" href="/profile/register/?next=/telemetry/plans">
+           Start free 14 day trial
+          </a>
+         </div>
+         <div class="mt-2 mx-auto italic text-xs text-foreground-muted">
+          Cancel anytime
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="mt-24 text-center mb-12">
+      <h2 class="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+       Frequently Asked Questions
+      </h2>
+     </div>
+     <div class="max-w-3xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/what-is-f1laps/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         What is F1Laps?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/how-to-connect-f1laps/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         How do I connect F1Laps to my F1 game?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/supported-platforms/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         What platforms does F1Laps support?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/separate-device-required/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         Do I need a separate device to use F1Laps?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/find-car-setups/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         Where can I find car setups for F1 24/F1 25?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/compare-laps/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         Can I compare my laps against other players?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/is-f1laps-free/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         Is F1Laps free?
+        </h3>
+       </a>
+       <a class="block bg-background rounded-lg shadow-sm border border-border-muted hover:shadow-md hover:border-primary transition-all duration-200 px-5 py-4" href="/faqs/supported-games/">
+        <h3 class="text-base font-medium text-foreground hover:text-primary">
+         Which F1 games does F1Laps support?
+        </h3>
+       </a>
+      </div>
+      <div class="mt-6 text-center">
+       <a class="inline-flex items-center text-primary hover:text-primary-hover font-medium" href="/faqs/">
+        View all FAQs
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="bg-background py-16 sm:py-20">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+     <div class="relative overflow-hidden rounded-2xl bg-primary dark:bg-background-subtle shadow-xl p-8 sm:p-12 text-center">
+      <div class="relative z-10">
+       <h2 class="text-3xl font-extrabold text-white mb-4">
+        Ready to Track Your F1 Gaming Progress?
+       </h2>
+       <p class="text-lg text-indigo-200 mb-8 max-w-2xl mx-auto">
+        Join 76,000+ racers using F1Laps to analyze telemetry, improve lap times, and dominate the leaderboards.
+       </p>
+       <div class="flex justify-center">
+        <a class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-primary bg-white rounded-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg" href="/profile/register/">
+         Start Tracking Free
+        </a>
+       </div>
+       <p class="mt-4 text-sm text-indigo-300">
+        No credit card required
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer class="bg-background-muted pt-14 pb-12 px-6">
+    <div class="text-sm text-foreground-muted px-4 sm:px-6 md:px-8 max-w-screen-lg xl:max-w-screen-xl mx-auto divide-y divide-border-muted">
+     <ul class="text-sm font-medium grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-y-10">
+      <li class="space-y-5 row-span-2">
+       <div class="text-xs font-semibold tracking-wide text-foreground uppercase">
+        F1Laps
+       </div>
+       <ul class="space-y-4">
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/">
+          Home
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/profile/register/">
+          Register
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/blog/">
+          Blog
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/resources/">
+          Data
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/faqs/">
+          FAQs
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="space-y-5 row-span-2">
+       <div class="text-xs font-semibold tracking-wide text-foreground uppercase">
+        Resources
+       </div>
+       <ul class="space-y-4">
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/setups/tracks/">
+          Setups
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/ai-difficulty-calculator/">
+          AI Difficulty Calculator
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/tracks/">
+          Tracks
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/laptimes/leaderboard/">
+          Leaderboard
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="http://www.f1-track-vectors.com/" target="_blanc">
+          F1 Track SVGs
+         </a>
+        </li>
+       </ul>
+      </li>
+      <li class="space-y-5 row-span-2">
+       <div class="text-xs font-semibold tracking-wide text-foreground uppercase">
+        More
+       </div>
+       <ul class="space-y-4">
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="https://www.f1laps.com/blog/join-the-f1laps-affiliate-program">
+          Affiliate Program
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/help/">
+          Help
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/terms-of-service/">
+          Terms of Service
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-foreground transition-colors duration-200" href="/privacy-policy/">
+          Privacy Policy
+         </a>
+        </li>
+        <li>
+         Partners:
+         <a class="hover:text-foreground transition-colors duration-200" href="https://indiequery.com/" target="_blank">
+          Indiequery
+         </a>
+         ,
+         <a class="hover:text-foreground transition-colors duration-200" href="https://img-hero.com" target="_blank">
+          imghero
+         </a>
+        </li>
+       </ul>
+      </li>
+     </ul>
+    </div>
+    <div class="py-10 px-4 sm:px-6 md:px-8 max-w-screen-lg xl:max-w-screen-xl mx-auto sm:flex">
+     <a class="inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-foreground-muted hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-foreground-muted" href="/blog/">
+      Read the F1Laps Blog
+     </a>
+     <a class="mt-3 sm:mt-0 sm:ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-foreground-muted hover:bg-foreground focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-foreground-muted" href="https://discord.gg/VufMkpKb7t" target="_blanc">
+      Join the F1Laps Discord
+     </a>
+    </div>
+    <div class="px-4 sm:px-6 md:px-8 max-w-screen-lg xl:max-w-screen-xl mx-auto">
+     <span class="text-xs text-foreground-muted">
+      All F1 and Codemasters assets are property of their respective owners. © 2025 F1Laps.com
+     </span>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NextBoiler - Generate Your Next.js Boilerplate in an Instant</title>
+</head>
+<body>
+  <body>
+   <header>
+    <nav class="fixed top-0 inset-x-0 z-50 w-full border-b backdrop-blur-md border-white/10 bg-zinc-950/40">
+     <div class="m-auto max-w-5xl px-6">
+      <div class="flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+       <div class="flex w-full justify-between lg:w-auto">
+        <a class="flex items-center space-x-2" href="/">
+         <span class="font-bold">
+          NEXTBOILER
+         </span>
+        </a>
+       </div>
+       <div class="bg-background in-data-[state=active]:block lg:in-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:p-0 lg:shadow-none shadow-none lg:bg-transparent">
+        <div class="lg:pr-4">
+         <ul class="space-y-6 text-base lg:flex lg:gap-8 lg:space-y-0 lg:text-sm">
+          <li>
+           <a class="text-muted-foreground hover:text-accent-foreground block duration-150" href="/#features">
+            <span>
+             Features
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-muted-foreground hover:text-accent-foreground block duration-150" href="/#how-it-works">
+            <span>
+             Solution
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-muted-foreground hover:text-accent-foreground block duration-150" href="pricing">
+            <span>
+             Pricing
+            </span>
+           </a>
+          </li>
+          <li>
+           <a class="text-muted-foreground hover:text-accent-foreground block duration-150" href="about">
+            <span>
+             About
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <a class="bg-primary text-primary-foreground text-sm hover:bg-primary/90 rounded-sm px-4 py-[2px] flex items-center gap-2" href="/builder">
+        Get Started
+       </a>
+      </div>
+     </div>
+    </nav>
+   </header>
+   <main class="overflow-hidden">
+    <section class="mb-16">
+     <div class="relative pt-24">
+      <div class="mx-auto max-w-7xl px-6">
+       <div class="max-w-3xl text-center sm:mx-auto lg:mr-auto lg:mt-0 lg:w-4/5">
+        <a class="rounded-(--radius) mx-auto flex w-fit items-center gap-2 border p-1 pr-3" href="/builder">
+         <span class="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">
+          Hot
+         </span>
+         <span class="text-sm">
+          Limited Time Offer
+         </span>
+         <span class="text-sm">
+          70% Off
+         </span>
+        </a>
+        <h1 class="mt-8 text-balance text-4xl font-semibold md:text-5xl xl:text-6xl xl:[line-height:1.125]">
+         Code
+         <span class="relative inline-block bg-transparent">
+          less
+         </span>
+         . Launch
+         <span class="relative inline-block bg-transparent">
+          faster
+         </span>
+         .
+        </h1>
+        <p class="mx-auto mt-8 hidden max-w-2xl text-wrap text-lg sm:block">
+         Save hours of setup time by generating a production-ready Next.js project in seconds including auth, database, payments, and more.
+        </p>
+        <p class="mx-auto mt-6 max-w-2xl text-wrap sm:hidden">
+         Highly customizable components for building modern websites and applications, with your personal spark.
+        </p>
+        <div class="mt-8">
+         <a class="cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8" href="/builder">
+          <span class="text-nowrap">
+           Start Building
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-background relative z-10 pb-16">
+     <div class="m-auto max-w-5xl px-6">
+      <h2 class="text-center text-lg font-medium">
+       Powered by all your favorite tech stacks
+      </h2>
+      <div class="mx-auto mt-12 flex max-w-4xl flex-wrap items-center justify-center gap-x-12 gap-y-8 sm:gap-x-16 sm:gap-y-12">
+       <img alt="Lemon Squeezy Logo" class="h-5 w-fit dark:invert" height="16" src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg" width="16"/>
+       <img alt="OpenAI Logo" class="h-6 w-fit dark:invert" height="32" src="https://html.tailus.io/blocks/customers/openai.svg" width="32"/>
+       <img alt="Tailwind CSS Logo" class="h-4 w-fit dark:invert" height="32" src="https://html.tailus.io/blocks/customers/tailwindcss.svg" width="32"/>
+      </div>
+     </div>
+    </section>
+    <section class="py-20" id="how-it-works">
+     <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+       <h2 class="text-3xl font-semibold sm:text-4xl">
+        How it works
+       </h2>
+       <p class="mt-4 text-muted-foreground">
+        Describe your project, choose integrations, and download a ready-to-run Next.js boilerplate with pre-built skeletons for your pages.
+       </p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+       <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <div class="text-sm text-muted-foreground">
+          Step 1
+         </div>
+         <h3 class="text-2xl font-semibold leading-none tracking-tight">
+          Configure
+         </h3>
+         <p class="text-sm text-muted-foreground">
+          Fill the builder with name, pages, tech stack, and extras.
+         </p>
+        </div>
+        <div class="p-6 pt-0">
+         <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <li>
+           Describe your project
+          </li>
+          <li>
+           Select Auth, DB &amp; Payments options
+          </li>
+          <li>
+           Add Pages to scaffold
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <div class="text-sm text-muted-foreground">
+          Step 2
+         </div>
+         <h3 class="text-2xl font-semibold leading-none tracking-tight">
+          Generate &amp; Download
+         </h3>
+         <p class="text-sm text-muted-foreground">
+          We package the project into a clean .zip ready to download
+         </p>
+        </div>
+        <div class="p-6 pt-0">
+         <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <li>
+           Includes packages.json and .env.example
+          </li>
+          <li>
+           Page skeletons generated
+          </li>
+          <li>
+           Runs with
+           <code>
+            npm/yarn install &amp;&amp; npm/yarn dev
+           </code>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative overflow-hidden">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <div class="text-sm text-muted-foreground">
+          Step 3
+         </div>
+         <h3 class="text-2xl font-semibold leading-none tracking-tight">
+          Build your billion $ idea
+         </h3>
+         <p class="text-sm text-muted-foreground">
+          All boring setups done, start building on top of existing skeletons
+         </p>
+        </div>
+        <div class="p-6 pt-0">
+         <ul class="mt-2 list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <li>
+           Replace placeholders and keys with your own
+          </li>
+          <li>
+           Customize the design to your liking
+          </li>
+          <li>
+           Add your own features and logic
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="border-t py-20" id="features">
+     <div class="mx-auto max-w-7xl px-6">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+       <h2 class="text-3xl font-semibold sm:text-4xl">
+        Features
+       </h2>
+       <p class="mt-4 text-muted-foreground">
+        Generate a production-ready Next.js project in seconds including auth, database, payments, page skeletons and more.
+       </p>
+      </div>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <h3 class="text-lg font-semibold">
+          Fast scaffolding
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          Generate a new codebase in minutes with a guided builder
+         </p>
+        </div>
+       </div>
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <h3 class="text-lg font-semibold">
+          Auth ready
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          We generate the authentication starter code of your selected provider for you
+         </p>
+        </div>
+       </div>
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <h3 class="text-lg font-semibold">
+          Database integrations
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          We give you all the necessary setups for your selected database
+         </p>
+        </div>
+       </div>
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <h3 class="text-lg font-semibold">
+          Payments
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          We do the heavy lifting for your selected payments provider
+         </p>
+        </div>
+       </div>
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <h3 class="text-lg font-semibold">
+          Emails
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          You get email setup out of the box. Just use it wherever you want
+         </p>
+        </div>
+       </div>
+       <div class="group relative rounded-lg border p-6">
+        <div class="relative">
+         <div class="flex items-center justify-between gap-2">
+          <span class="text-sm bg-white px-2 py-1 rounded-md text-[8px] text-black/80">
+           Coming Soon
+          </span>
+         </div>
+         <h3 class="text-lg font-semibold">
+          Analytics
+         </h3>
+         <p class="mt-2 text-sm text-muted-foreground">
+          Web Analytics for your website at the click of a button
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="border-t py-20">
+     <div class="mx-auto max-w-3xl px-6">
+      <div class="mb-8 text-center">
+       <h2 class="text-3xl font-semibold sm:text-4xl">
+        FAQ
+       </h2>
+       <p class="mt-4 text-muted-foreground">
+        Have another question? Contact us
+        <a class="text-primary underline" href="/contact">
+         here
+        </a>
+       </p>
+      </div>
+      <div class="w-full">
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180" id="radix-_R_1lautb_" type="button">
+          Is the generated project production-ready?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180" id="radix-_R_2lautb_" type="button">
+          What about environment variables?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180" id="radix-_R_3lautb_" type="button">
+          Can I choose App Router or Pages Router?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180" id="radix-_R_4lautb_" type="button">
+          Does it include example pages and APIs?
+         </button>
+        </h3>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="border-t">
+    <div class="mx-auto max-w-7xl px-6 py-16">
+     <div class="grid gap-10 lg:grid-cols-12">
+      <div class="lg:col-span-5">
+       <a class="text-xl font-semibold" href="/">
+        NextBoiler
+       </a>
+       <p class="text-muted-foreground mt-4 max-w-sm text-sm">
+        Generate production-ready Next.js boilerplates with auth, database, payments, page skeletons and more—in seconds.
+       </p>
+       <div class="mt-6 flex items-center gap-3 text-sm text-muted-foreground">
+        <span>
+         © 2025 NextBoiler
+        </span>
+        <a class="hover:text-foreground" href="tos">
+         Terms
+        </a>
+        <a class="hover:text-foreground" href="privacy">
+         Privacy
+        </a>
+       </div>
+      </div>
+      <div class="lg:col-span-4 grid grid-cols-2 gap-8 sm:grid-cols-3">
+       <div>
+        <h3 class="text-sm font-semibold">
+         Product
+        </h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted-foreground">
+         <li>
+          <a class="hover:text-foreground" href="#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-foreground" href="builder">
+           Builder
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-foreground" href="pricing">
+           Pricing
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold">
+         Company
+        </h3>
+        <ul class="mt-4 space-y-3 text-sm text-muted-foreground">
+         <li>
+          <a class="hover:text-foreground" href="about">
+           About
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-foreground" href="contact">
+           Contact
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CheatGPT — Your AI assistant for Students, Developers & Learning</title>
+</head>
+<body>
+  <body>
+   <div class="flex min-h-svh flex-col">
+    <div class="group/sidebar-wrapper has-data-[variant=inset]:bg-sidebar flex min-h-svh w-full bg-primary/5">
+     <div class="text-sidebar-foreground group peer hidden md:block">
+      <div class="fixed inset-y-0 z-10 hidden h-svh w-(--sidebar-width) transition-[left,right,width] duration-200 ease-linear md:flex start-0 group-data-[collapsible=offcanvas]:start-[calc(var(--sidebar-width)*-1)] p-2 group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]">
+       <div class="bg-sidebar group-data-[variant=floating]:border-sidebar-border flex h-full w-full flex-col group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:shadow-sm">
+        <div class="flex flex-col gap-2 p-2">
+         <ul class="flex w-full min-w-0 flex-col gap-1">
+          <li class="group/menu-item relative">
+           <a class="flex items-center text-2xl font-extrabold tracking-tight no-underline! justify-center" href="/">
+            <span class="text-foreground!">
+             Cheat
+            </span>
+            <span class="font-extrabold italic">
+             GPT
+            </span>
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="flex min-h-0 flex-1 flex-col gap-2 overflow-auto group-data-[collapsible=icon]:overflow-hidden">
+         <div class="relative flex w-full min-w-0 flex-col p-2">
+          <div class="w-full text-sm flex flex-col gap-2">
+           <ul class="flex w-full min-w-0 flex-col gap-1">
+            <li class="group/menu-item relative">
+             <button class="peer/menu-button ring-sidebar-ring active:bg-sidebar-accent active:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-start outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm" id="bits-c1" type="button">
+              <span>
+               Pricing
+              </span>
+             </button>
+            </li>
+            <li class="group/menu-item relative">
+             <button class="peer/menu-button ring-sidebar-ring active:bg-sidebar-accent active:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-start outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm" id="bits-c2" type="button">
+              <span>
+               Blog
+              </span>
+             </button>
+            </li>
+            <li class="group/menu-item relative">
+             <button class="peer/menu-button ring-sidebar-ring active:bg-sidebar-accent active:text-sidebar-accent-foreground data-[active=true]:bg-sidebar-accent data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-start outline-hidden transition-[width,height,padding] group-has-data-[sidebar=menu-action]/menu-item:pe-8 group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2! focus-visible:ring-2 disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:font-medium [&amp;&gt;span:last-child]:truncate [&amp;&gt;svg]:size-4 [&amp;&gt;svg]:shrink-0 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground h-8 text-sm" id="bits-c3" type="button">
+              <span>
+               Chat
+              </span>
+             </button>
+            </li>
+           </ul>
+          </div>
+         </div>
+        </div>
+        <div class="flex flex-col gap-2 p-2">
+         <div class="relative flex flex-col items-center gap-2">
+          <span class="text-subtitle">
+           Sign in with
+          </span>
+          <div class="flex w-full flex-row items-center justify-center gap-2">
+           <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 border-b-neutral-300 bg-background hover:not-aria-disabled:bg-accent hover:not-aria-disabled:text-accent-foreground border shadow-xs min-h-6 px-2 text-xs" type="button">
+            <img alt="Google" class="mr-2 h-4 w-4" src="/icons/google.svg"/>
+            Google
+           </button>
+           <span class="text-muted-foreground">
+            or
+           </span>
+           <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 border-b-neutral-300 bg-background hover:not-aria-disabled:bg-accent hover:not-aria-disabled:text-accent-foreground border shadow-xs min-h-6 px-2 text-xs" type="button">
+            Magic link
+           </button>
+          </div>
+         </div>
+         <footer class="events sticky bottom-0 -mt-1 w-full">
+          <div class="text-muted-foreground flex flex-col-reverse items-center justify-center gap-1 text-xs">
+           <div class="text-xs">
+            © 2025 CheatGPT | Build: about 10 hours ago
+           </div>
+           <div class="flex flex-wrap justify-center gap-3">
+            <a class="hover:text-foreground flex items-center gap-1 transition-colors" href="/terms">
+             Terms
+            </a>
+            <a class="hover:text-foreground flex items-center gap-1 transition-colors" href="/privacy">
+             Privacy
+            </a>
+            <a class="hover:text-foreground flex items-center gap-1 transition-colors" href="/refund">
+             Refund Policy
+            </a>
+            <a class="hover:text-foreground flex items-center gap-1 transition-colors text-primary" href="mailto:contact@cheatgpt.app">
+             Contact
+            </a>
+           </div>
+           <div class="flex gap-2">
+            <a class="hover:text-foreground hover:bg-accent text-foreground flex h-8 w-8 items-center justify-center rounded-full transition-colors" href="https://x.com/cheatgpt_app" target="_blank">
+             <img alt="X (Twitter)" height="12" src="/icons/x.svg" width="12"/>
+            </a>
+            <a class="hover:text-foreground hover:bg-accent text-foreground flex h-8 w-8 items-center justify-center rounded-full transition-colors" href="https://www.instagram.com/cheatgpt.app/" target="_blank">
+             <img alt="Instagram" height="12" src="/icons/instagram.svg" width="12"/>
+            </a>
+            <a class="hover:text-foreground hover:bg-accent text-foreground flex h-8 w-8 items-center justify-center rounded-full transition-colors" href="https://www.tiktok.com/@cheatgpt.app" target="_blank">
+             <img alt="TikTok" height="12" src="/icons/tiktok.svg" width="12"/>
+            </a>
+           </div>
+          </div>
+         </footer>
+        </div>
+       </div>
+      </div>
+     </div>
+     <main class="bg-background relative flex w-full flex-1 flex-col md:peer-data-[variant=inset]:m-2 md:peer-data-[variant=inset]:ms-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow-sm md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ms-2">
+      <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default transition-all duration-300 hover:not-aria-disabled:bg-accent hover:not-aria-disabled:text-accent-foreground min-h-9 w-9 text-xs sticky top-0 m-1" type="button">
+       <span class="sr-only">
+        Toggle Sidebar
+       </span>
+      </button>
+      <div class="flex flex-1 flex-col">
+       <div class="@container/main flex flex-1 flex-col gap-2">
+        <section class="svelte-rsmjm">
+         <ol class="sm:w-md! svelte-rsmjm">
+          <li class="sm:w-md! group pointer-events-auto bg-background text-foreground border-border shadow-lg p-4 text-sm rounded-md border data-[expanded=false][data-front=false]:opacity-0 *data-[expanded=false][data-front=false]:opacity-0 flex flex-row items-center justify-start gap-x-1.5 *:data-content:flex-1">
+           <div>
+            <div class="font-medium whitespace-pre-wrap">
+             Cookie Consent
+            </div>
+            <div class="group-[.toast]:text-muted-foreground whitespace-pre-wrap">
+             We use Microsoft Clarity for analytics.
+  Allow tracking?
+            </div>
+           </div>
+           <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-6 px-2 text-xs flex-shrink-0 self-end">
+            Reject
+           </button>
+           <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-6 px-2 text-xs flex-shrink-0 self-end">
+            Accept
+           </button>
+          </li>
+         </ol>
+        </section>
+        <main class="flex flex-1 flex-col">
+         <section class="section flex-1 flex-col items-center pt-32 md:pt-64">
+          <div class="container-wide">
+           <div class="mb-16 flex flex-col items-center text-center">
+            <h1 class="app-title text-foreground mb-6 max-w-3xl text-4xl font-extrabold md:text-5xl lg:text-6xl">
+             Your
+             <span class="text-primary">
+              AI-Powered
+             </span>
+             study assistant with Superpowers
+            </h1>
+            <p class="text-legend mb-10 max-w-2xl text-xl">
+             CheatGPT is a tool that allows you to cheat on
+             <sup class="text-primary text-xs italic">
+              ( or study for )
+             </sup>
+             your exams with AI
+            </p>
+            <div class="flex flex-col gap-4 sm:flex-row">
+             <a class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-10 px-5" href="/chat">
+              Go to Chat
+             </a>
+            </div>
+            <div class="text-muted-foreground/75 mt-2 text-xs">
+             <span>
+              🎓 Trusted by
+             </span>
+             <span>
+              students at Harvard, MIT, Stanford &amp; other top universities
+             </span>
+            </div>
+            <div class="mt-16 flex flex-row flex-wrap justify-center gap-4 md:gap-8 svelte-v41a5d">
+             <div class="animate-float-1 flex h-8 rotate-3 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="OpenAI" class="h-full svelte-v41a5d" src="/logos/openai.svg"/>
+             </div>
+             <div class="animate-float-2 flex h-8 -rotate-2 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="ClaudeAI" class="h-full svelte-v41a5d" src="/logos/claude.svg"/>
+             </div>
+             <div class="animate-float-3 flex h-10 rotate-1 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="GeminiAI" class="h-full svelte-v41a5d" src="/logos/gemini.svg"/>
+             </div>
+             <div class="animate-float-4 flex h-8 rotate-1 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="DeepSeek" class="h-full svelte-v41a5d" src="/logos/deepseek.svg"/>
+             </div>
+             <div class="animate-float-5 flex h-8 rotate-1 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="Grok" class="h-full svelte-v41a5d" src="/logos/grok.svg"/>
+             </div>
+             <div class="animate-float-6 flex h-8 rotate-1 flex-col items-center justify-center opacity-25 transition-opacity duration-300 hover:opacity-80 svelte-v41a5d">
+              <img alt="Meta" class="h-full svelte-v41a5d" src="/logos/meta.svg"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="section">
+          <div class="container-wide">
+           <h2 class="mb-12 w-full text-3xl font-extrabold tracking-tight sm:text-4xl text-left [&amp;&gt;*]:mr-1 [&amp;&gt;*]:ml-0">
+            A Secret Weapon at Elite Universities!
+           </h2>
+           <div class="scroller-container relative mt-6 h-[100px] max-w-6xl overflow-hidden opacity-50 svelte-18t5qbq">
+            <ul class="flex h-full gap-0 svelte-18t5qbq">
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="Massachusetts Institute of Technology (MIT)" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/MIT.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="Stanford University" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Stanford.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="Harvard University" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Harvard.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="University of Oxford" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Oxford.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="University of California, Berkeley (UC Berkeley)" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Berkeley.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="Columbia University" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Columbia.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="University of Chicago" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Chicago.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="National University of Singapore (NUS)" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/NUS.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="New York University (NYU)" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/NYU.webp"/>
+             </li>
+             <li class="h-[100px] w-[200px] svelte-18t5qbq">
+              <img alt="University of Texas at Austin" class="h-[100px] w-[200px] svelte-18t5qbq" src="universities/Texas.webp"/>
+             </li>
+            </ul>
+           </div>
+          </div>
+         </section>
+         <section class="section-muted">
+          <div class="container-wide">
+           <h2 class="mb-12 w-full text-3xl font-extrabold tracking-tight sm:text-4xl text-right [&amp;&gt;*]:mr-0 [&amp;&gt;*]:ml-1">
+            Why students choose us over ChatGPT
+           </h2>
+           <div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2 xl:mt-12 xl:grid-cols-3 xl:gap-16">
+            <div class="card flex flex-col items-center space-y-3 rounded-xl p-6 text-center">
+             <h3 class="text-lg font-bold">
+              $5 vs $60+/month
+             </h3>
+             <p class="text-muted-foreground text-sm">
+              One affordable subscription instead of paying for ChatGPT, Claude, and Gemini separately.
+             </p>
+            </div>
+            <div class="card flex flex-col items-center space-y-3 rounded-xl p-6 text-center">
+             <h3 class="text-lg font-bold">
+              Lightning-Fast
+             </h3>
+             <p class="text-muted-foreground text-sm">
+              Access high-speed models and API-powered responses that deliver results in seconds.
+             </p>
+            </div>
+            <div class="card flex flex-col items-center space-y-3 rounded-xl p-6 text-center">
+             <h3 class="text-lg font-bold">
+              All-in-One Platform
+             </h3>
+             <p class="text-muted-foreground text-sm">
+              Web search, PDF analysis, quiz creation, and multiple specialized modes in one place.
+             </p>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="section" id="pricing">
+          <div class="container-wide @container">
+           <h2 class="mb-12 w-full text-3xl font-extrabold tracking-tight sm:text-4xl text-center">
+            Pricing
+           </h2>
+           <div class="flex flex-col items-center gap-4">
+            <div class="mb-6 text-center">
+             <h2 class="app-title mb-2">
+              Try all features free for 2 days — $0 today
+             </h2>
+             <p class="text-muted-foreground max-w-lg text-base">
+              Faster replies, higher limits, lower costs.
+              <br/>
+              Cancel anytime.
+             </p>
+            </div>
+            <div class="flex flex-col gap-2 mb-4 w-[200px]" id="bits-c7">
+             <div class="bg-muted text-muted-foreground h-9 items-center justify-center rounded-lg p-[3px] grid w-full grid-cols-2" id="bits-c8">
+              <button class="data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4" id="bits-c9" type="button">
+               Monthly
+              </button>
+              <button class="data-[state=active]:bg-background dark:data-[state=active]:text-foreground focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring dark:data-[state=active]:border-input dark:data-[state=active]:bg-input/30 text-foreground dark:text-muted-foreground inline-flex h-[calc(100%-1px)] flex-1 items-center justify-center gap-1.5 rounded-md border border-transparent px-2 py-1 text-sm font-medium whitespace-nowrap transition-[color,box-shadow] focus-visible:ring-[3px] focus-visible:outline-1 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 [&amp;_svg:not([class*='size-'])]:size-4" id="bits-c10" type="button">
+               Annual
+              </button>
+             </div>
+            </div>
+            <div class="flex flex-row flex-wrap justify-center gap-8 lg:flex-nowrap @xl:flex-nowrap">
+             <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border py-6 shadow-sm w-full min-w-xs card-highlight">
+              <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 space-y-0">
+               <div class="flex items-center justify-between">
+                <div class="app-title capitalize-first text-foreground flex items-center gap-2">
+                 Pro
+                </div>
+                <span class="badge">
+                 Recommended
+                </span>
+               </div>
+               <p class="text-muted-foreground text-sm">
+                Unlock the full potential of AI
+               </p>
+               <div class="mt-2">
+                <div class="flex items-baseline">
+                 <span class="text-3xl font-bold">
+                  $5.00
+                 </span>
+                 <span class="text-muted-foreground text-base">
+                  /month
+                 </span>
+                </div>
+               </div>
+              </div>
+              <div class="px-6 flex-1 py-4">
+               <ul class="space-y-3">
+                <li class="icon-text">
+                 <span class="text-base">
+                  ~916 messages monthly*
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Access to all AI models
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Advanced chat modes
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Advanced tools &amp; features
+                 </span>
+                </li>
+               </ul>
+              </div>
+              <div class="items-center px-6 [.border-t]:pt-6 flex flex-col gap-2">
+               <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-9 px-4 py-2 w-full" type="button">
+                Start Free Trial
+               </button>
+               <span class="text-muted-foreground -mb-3 flex items-center justify-center gap-1 text-sm">
+                2 days free •
+                <span class="font-bold">
+                 $0 today
+                </span>
+                • Cancel anytime
+               </span>
+              </div>
+             </div>
+             <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border py-6 shadow-sm w-full min-w-xs">
+              <div class="@container/card-header grid auto-rows-min grid-rows-[auto_auto] items-start gap-1.5 px-6 has-data-[slot=card-action]:grid-cols-[1fr_auto] [.border-b]:pb-6 space-y-0">
+               <div class="flex items-center justify-between">
+                <div class="app-title capitalize-first text-foreground flex items-center gap-2">
+                 Basic
+                </div>
+               </div>
+               <p class="text-muted-foreground text-sm">
+                Enhanced features for regular use
+               </p>
+               <div class="mt-2">
+                <div class="flex items-baseline">
+                 <span class="text-3xl font-bold">
+                  $2.00
+                 </span>
+                 <span class="text-muted-foreground text-base">
+                  /month
+                 </span>
+                </div>
+               </div>
+              </div>
+              <div class="px-6 flex-1 py-4">
+               <ul class="space-y-3">
+                <li class="icon-text">
+                 <span class="text-base">
+                  ~366 messages monthly*
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Access to all AI models
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Advanced chat modes
+                 </span>
+                </li>
+                <li class="icon-text">
+                 <span class="text-base">
+                  Advanced tools &amp; features
+                 </span>
+                </li>
+               </ul>
+              </div>
+              <div class="items-center px-6 [.border-t]:pt-6 flex flex-col gap-2">
+               <button class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-9 px-4 py-2 w-full" type="button">
+                Start Free Trial
+               </button>
+               <span class="text-muted-foreground -mb-3 flex items-center justify-center gap-1 text-sm">
+                2 days free •
+                <span class="font-bold">
+                 $0 today
+                </span>
+                • Cancel anytime
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="mb-4 space-y-2 text-center">
+             <div class="text-muted-foreground flex items-center justify-center gap-1 text-sm">
+              <span>
+               💰 100% money-back guarantee • No auto-charge • Cancel anytime • No questions asked
+              </span>
+             </div>
+             <div class="flex items-center justify-center gap-1 text-sm text-orange-600">
+              🔥  started their free trial
+          today
+             </div>
+            </div>
+            <div class="text-muted-foreground max-w-2xl text-center text-sm">
+             <p>
+              * Message estimates are based on average model costs and typical usage (~1000 tokens per
+        conversation). Actual usage may vary depending on message length, chosen model, and
+        conversation context. See our
+              <a class="text-primary hover:underline" href="/terms">
+               Terms of Service
+              </a>
+              for detailed usage calculation.
+             </p>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="section">
+          <div class="container-wide">
+           <h2 class="mb-12 w-full text-3xl font-extrabold tracking-tight sm:text-4xl text-left [&amp;&gt;*]:mr-1 [&amp;&gt;*]:ml-0">
+            What our users say
+           </h2>
+           <div class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border py-6 shadow-sm">
+             <div class="px-6 flex h-full flex-col pt-6">
+              <p class="mb-4 flex-1 text-base italic">
+               "Really helpful for studying. The AI explains things in a way that makes sense to me."
+              </p>
+              <div class="icon-text gap-3">
+               <div class="avatar-muted h-10 w-10 font-bold">
+                SM
+               </div>
+               <div>
+                <p class="text-base font-medium">
+                 Sarah M.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border py-6 shadow-sm">
+             <div class="px-6 flex h-full flex-col pt-6">
+              <p class="mb-4 flex-1 text-base italic">
+               "Been using it for a few weeks now. Saves me a lot of time when preparing for exams."
+              </p>
+              <div class="icon-text gap-3">
+               <div class="avatar-muted h-10 w-10 font-bold">
+                AR
+               </div>
+               <div>
+                <p class="text-base font-medium">
+                 Alex R.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="bg-card text-card-foreground flex flex-col gap-2 rounded-xl border py-6 shadow-sm">
+             <div class="px-6 flex h-full flex-col pt-6">
+              <p class="mb-4 flex-1 text-base italic">
+               "Good tool for quick answers and clarifications. Definitely worth trying out."
+              </p>
+              <div class="icon-text gap-3">
+               <div class="avatar-muted h-10 w-10 font-bold">
+                JL
+               </div>
+               <div>
+                <p class="text-base font-medium">
+                 Jordan L.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </section>
+         <section class="section-muted">
+          <div class="container-wide">
+           <h2 class="mb-12 w-full text-3xl font-extrabold tracking-tight sm:text-4xl text-center">
+            Featured on
+           </h2>
+           <div class="mt-8 flex flex-row flex-wrap items-center justify-center gap-4 xl:mt-12">
+            <a href="https://www.producthunt.com/posts/cheatgpt-4?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-cheatgpt&amp;#0045;4" target="_blank">
+             <img alt="CheatGPT | Featured on Product Hunt" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=963221&amp;theme=light&amp;t=1747122484996" width="250"/>
+            </a>
+            <a href="https://theresanaiforthat.com/ai/cheatgpt/?ref=embed" target="_blank">
+             <img alt="CheatGPT | Featured on There's an AI for That" src="https://media.theresanaiforthat.com/featured3.png" width="250"/>
+            </a>
+            <a href="https://aitoptools.com/tool/gpt-4-enhanced-cheatgpt/" target="_blank">
+             <img alt="CheatGPT | Featured on AI Top Tools" src="https://aitoptools.com/emded-image.png" width="250"/>
+            </a>
+            <a href="https://www.aitoolnet.com/cheatgpt" target="_blank">
+             <img alt="CheatGPT | Featured on AI Tool Net" src="https://www.aitoolnet.com/static/assets/images/logo.svg" width="250"/>
+            </a>
+            <a href="https://www.futurepedia.io/tool/cheatgpt?utm_source=cheatgpt_embed" target="_blank">
+             <img alt="CheatGPT | Featured on Futurepedia" src="https://www.futurepedia.io/api/image-widget?toolId=bdc40ca1-87f8-48c6-a961-233cd122a609" width="250"/>
+            </a>
+            <a href="https://www.toolify.ai/tool/cheatgpt" target="_blank">
+             <img alt="CheatGPT | Featured on Toolify" class="rounded-sm bg-gray-200" src="https://cdn.toolify.ai/featured.svg" width="250"/>
+            </a>
+            <a href="https://www.theinsaneapp.com/tools/cheatgpt/" target="_blank">
+             <img alt="CheatGPT | Featured on The Insane App" src="/featured/theinsaneapp.webp" width="250"/>
+            </a>
+            <a href="https://softgist.com/tools/cheatgpt?ref=embed" target="_blank">
+             <img alt="CheatGPT | Featured on SoftGist" src="https://softgist.com/image/embed-featured-on-softgist-light.svg" width="250"/>
+            </a>
+            <a href="https://www.aitechsuite.com/tools/8072?ref=featured&amp;v=6685" target="_blank">
+             <img alt="CheatGPT | Featured on AI Tech Suite" src="https://aitsmarketing.s3.amazonaws.com/aits-verified-tool.svg?width=250" width="250"/>
+            </a>
+            <a href="https://www.aitoolsaver.com/tools/cheatgpt" target="_blank">
+             <img alt="Featured on AI Tool Saver Badge" src="https://www.aitoolsaver.com/images/featured-on-aitoolsaver-badge.png" width="250"/>
+            </a>
+           </div>
+          </div>
+         </section>
+         <section class="section">
+          <div class="container-wide">
+           <h2 class="w-full text-3xl font-extrabold tracking-tight sm:text-4xl mb-4 text-center">
+            🚀 Join 30,000+ students getting better results
+           </h2>
+           <p class="text-muted-foreground mb-8 text-center">
+            Try our free tier today and experience the difference.
+           </p>
+           <div class="flex flex-col items-center justify-center">
+            <a class="touch-manipulation focus-visible:ring-ring inline-flex text-wrap break-after-all items-center justify-center gap-2 rounded-md font-medium focus-visible:outline-none focus-visible:ring-1 aria-disabled:cursor-not-allowed aria-disabled:opacity-60 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 no-underline cursor-default relative transition-all duration-300 from-primary to-primary/80 hover:not-aria-disabled:from-primary/90 hover:not-aria-disabled:to-primary/70 text-primary-foreground bg-gradient-to-br shadow min-h-10 px-5" href="/chat">
+             Start your free trial
+            </a>
+           </div>
+          </div>
+         </section>
+        </main>
+       </div>
+      </div>
+     </main>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

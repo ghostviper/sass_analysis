@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OKstays: AI Hotel Search with Honest Rankings & Real Comfort</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen flex flex-col bg-gray-50">
+    <header class="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
+     <div class="container mx-auto px-4 h-14 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3" href="/auth/signin">
+        Sign In
+       </a>
+      </div>
+     </div>
+    </header>
+    <main class="flex-grow">
+     <div class="container mx-auto px-4 pb-0">
+      <div class="mt-10 mb-10 text-center md:mt-10">
+       <h1 class="text-3xl font-bold tracking-tight text-gray-900 md:text-4xl mb-2">
+        Search by Reality, Not Just Amenities
+       </h1>
+       <h2 class="text-lg font-medium text-gray-600 max-w-2xl mx-auto mb-2 md:text-xl">
+        Tired of noisy rooms, broken AC and uncomfy beds?
+       </h2>
+       <h2 class="text-[13px] text-gray-500 max-w-2xl mx-auto md:text-[15px]">
+        Find hotels that match your needs, comfort and style.
+       </h2>
+      </div>
+      <div class="max-w-5xl mx-auto mb-0">
+       <div class="rounded-lg border bg-card text-card-foreground shadow-md">
+        <div class="p-4 space-y-4">
+         <div class="flex flex-col md:flex-row gap-4 items-center">
+          <div class="flex items-center gap-2 w-full md:w-1/3">
+           <div class="flex-grow">
+            <button class="inline-flex items-center gap-2 whitespace-nowrap rounded-md text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full justify-between font-normal" type="button">
+             Where are you going?
+            </button>
+           </div>
+           <div class="md:hidden">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 h-10 shrink-0">
+             Filters
+            </button>
+           </div>
+          </div>
+          <div class="w-full md:flex-1">
+           <div class="flex flex-col md:flex-row md:items-baseline md:space-x-4 space-y-4 md:space-y-0 px-1">
+            <div class="flex-1">
+             <div class="flex items-baseline space-x-2 mb-2 mt-4">
+              <div class="flex-1 relative pt-2">
+               <div class="absolute top-[-16px] left-1/2 transform -translate-x-1/2 text-xs text-gray-600 whitespace-nowrap px-1 bg-transparent rounded z-[5] flex items-center">
+                $0 - $500 / night
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="flex-1">
+             <div class="flex items-baseline space-x-2 mb-2 mt-2">
+              <div class="flex-1 relative pt-2">
+               <div class="absolute top-[-16px] left-1/2 transform -translate-x-1/2 text-xs text-gray-600 whitespace-nowrap px-1 bg-transparent rounded z-[5] flex items-center">
+                8.0 - 10.0
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="hidden md:flex gap-2 md:gap-3 md:ml-auto">
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground px-4 py-2 h-10 shrink-0">
+            Filters
+           </button>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 h-10">
+            Search
+           </button>
+          </div>
+         </div>
+         <div class="pt-2 md:hidden">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full">
+           Search
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <section class="w-full pt-0 pb-20">
+       <div class="container mx-auto px-4 md:px-6">
+        <h3 class="text-xl font-bold text-center text-gray-800 mb-10">
+         Curated Picks for Your Next Trip
+        </h3>
+        <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-renovated-natural-light-romantic-clean-safe-english-speaking-multilingual-hotels-in-barcelona-with-rooftop-and-balcony-and-great-views-and-efficient-ac-and-comfy-beds-and-nice-shower?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Romantic &amp; Rooftop Views in Barcelona
+           </h6>
+           <p class="text-sm text-gray-200">
+            Top stays with romantic vibe, skyline views and terrace chill-outs.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-clean-bug-free-safe-walkable-romantic-hotels-in-paris-with-comfy-beds-and-nice-shower-and-transport-access-and-coffee-and-balcony-and-cultural-sites?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Elegant Paris Getaways with Café Culture
+           </h6>
+           <p class="text-sm text-gray-200">
+            Romantic rooms close to museums, boulangeries, and river walks.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-clean-walkable-natural-light-friendly-safe-hotels-in-istanbul-with-balcony-and-local-vibe-and-cultural-sites-and-local-cuisine-and-great-views-and-local-tips?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Historic Stays with Local Flavor in Istanbul
+           </h6>
+           <p class="text-sm text-gray-200">
+            Live among mosques, bazaars, and real neighborhoods.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-clean-bug-free-safe-walkable-friendly-renovated-hotels-in-new-york-with-comfy-beds-and-nice-shower-and-local-cuisine-and-shops-and-great-views-and-cultural-sites-and-transport-access?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Skyline Views &amp; Buzz in New York
+           </h6>
+           <p class="text-sm text-gray-200">
+            Stay close to the action with style, comfort, and great food.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-quiet-clean-safe-friendly-soundproof-english-speaking-private-hotels-in-tokyo-with-comfy-beds-and-efficient-ac-and-local-cuisine?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Peaceful and Foodie Tokyo Stays Amid the Buzz
+           </h6>
+           <p class="text-sm text-gray-200">
+            Find true calm and amazing food in the heart of the city.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-clean-bug-free-safe-walkable-homey-hotels-in-london-with-comfy-beds-and-nice-shower-and-local-vibe-and-parks-and-food-nearby-and-transport-access?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Charming &amp; Cozy London Escapes
+           </h6>
+           <p class="text-sm text-gray-200">
+            Boutique stays near markets, parks, and classic pubs.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-clean-bug-free-safe-renovated-soundproof-friendly-hotels-in-dubai-with-comfy-beds-and-nice-shower-and-business-area-and-great-views-and-pool-and-gym-and-housekeeping-and-room-service-and-airport-access-and-reliable-wifi-and-efficient-ac-and-24/7-reception?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Business &amp; Central Stays in Dubai
+           </h6>
+           <p class="text-sm text-gray-200">
+            Modern hotels in the city center with pool, gym and stunning views.
+           </p>
+          </div>
+         </a>
+         <a class="relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-transform duration-300 ease-in-out hover:-translate-y-2" href="/best-english-speaking-walkable-work-friendly-clean-hotels-in-chiang-mai-with-reliable-wifi-and-comfy-beds-and-efficient-ac-and-local-tips-and-laundry-and-bug-free?price_min=0&amp;price_max=1000&amp;score_min=8&amp;score_max=10">
+          <div class="relative h-60 flex flex-col justify-end p-6 text-white">
+           <h6 class="text-lg font-semibold mb-1">
+            Digital Nomad Favorites in Chiang Mai
+           </h6>
+           <p class="text-sm text-gray-200">
+            WiFi, comfort, and space to work and explore.
+           </p>
+          </div>
+         </a>
+        </div>
+       </div>
+      </section>
+      <section class="w-full pt-0 pb-24">
+       <div class="container mx-auto px-4 md:px-6">
+        <h3 class="text-xl font-bold text-center text-gray-800 mb-10">
+         Travel Sites Compare Prices.
+         <br/>
+         We Compare Comfort.
+        </h3>
+        <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Real Reviews, Real Scores
+          </h4>
+          <p class="text-[13px] text-muted-foreground">
+           We analyze thousands of reviews to calculate your personal match score for every hotel.
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           No Paid Placements, Ever
+          </h4>
+          <p class="text-[13px] text-muted-foreground">
+           Every hotel is ranked by your match percentage. Zero sponsored spots, zero fake scores.
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Filters That Actually Matter
+          </h4>
+          <p class="text-[13px] text-muted-foreground">
+           Not just location and stars. Filter by things like quiet rooms, natural light, walkable areas, comfy beds, and more.
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Book With Total Confidence
+          </h4>
+          <p class="text-[13px] text-muted-foreground">
+           Instant match percentage so you know the room will feel right when you walk in.
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="w-full pt-0 pb-24">
+       <div class="container mx-auto px-4 md:px-6">
+        <h3 class="text-xl font-bold text-center text-gray-800 mb-10">
+         Our Reach, Your Confidence
+        </h3>
+        <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Destinations Worldwide
+          </h4>
+          <p class="text-2xl font-bold text-gray-900">
+           <span>
+            87
+           </span>
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Hotels with Truth Score
+          </h4>
+          <p class="text-2xl font-bold text-gray-900">
+           <span>
+            30,960
+           </span>
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Real Features Evaluated
+          </h4>
+          <p class="text-2xl font-bold text-gray-900">
+           <span>
+            2,069,737
+           </span>
+          </p>
+         </div>
+         <div class="flex flex-col items-center text-center p-6 rounded-lg shadow-md bg-card">
+          <h4 class="text-[15px] font-medium mb-1">
+           Guest Reviews Analysed
+          </h4>
+          <p class="text-2xl font-bold text-gray-900">
+           <span>
+            38,021,321
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </main>
+    <footer class="bg-gray-900 text-white sticky bottom-0 w-full">
+     <div class="container mx-auto px-4 py-3">
+      <div class="flex flex-col md:flex-row items-center justify-between text-sm gap-2">
+       <div class="text-gray-400 text-center md:text-left">
+        © 2025 okstays.com. All rights reserved.
+       </div>
+       <div class="flex space-x-4">
+        <a class="text-gray-400 hover:text-white transition-colors" href="/">
+         Home
+        </a>
+        <a class="text-gray-400 hover:text-white transition-colors" href="/about">
+         About
+        </a>
+        <a class="text-gray-400 hover:text-white transition-colors" href="/contact">
+         Contact
+        </a>
+        <a class="text-gray-400 hover:text-white transition-colors" href="/terms">
+         Terms
+        </a>
+        <a class="text-gray-400 hover:text-white transition-colors" href="/privacy">
+         Privacy
+        </a>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

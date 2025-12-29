@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AppForge - Convert APIs to MCP Servers</title>
+</head>
+<body>
+  <body>
+   <header class="sticky top-0 z-50 w-full border-b border-slate-200 bg-white/95 backdrop-blur-sm">
+    <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+     <a class="flex items-center gap-2.5 font-bold text-xl text-slate-900 group" href="/">
+      <span class="font-display tracking-tight">
+       AppForge
+      </span>
+     </a>
+     <nav class="hidden md:flex items-center gap-1">
+     </nav>
+     <div class="flex items-center gap-2">
+      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 active:bg-slate-200 h-8 rounded-lg px-3.5 text-xs text-slate-600 hover:text-violet-600 hover:bg-violet-50 transition-colors flex items-center gap-2" href="/auth/login">
+       Sign In
+      </a>
+      <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md active:scale-[0.98] h-8 rounded-lg px-3.5 text-xs bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white shadow-md shadow-purple-500/25 hover:shadow-lg hover:shadow-purple-500/30 transition-all duration-200 flex items-center gap-2" href="/auth/signup">
+       Sign Up
+      </a>
+     </div>
+    </div>
+   </header>
+   <div class="min-h-screen bg-white overflow-x-hidden">
+    <main class="relative">
+     <div class="bg-gradient-to-r from-violet-100 via-purple-100 to-violet-100 shadow-sm relative overflow-hidden border-b border-violet-200">
+      <div class="container relative mx-auto px-6 py-4 text-center">
+       <p class="text-base md:text-lg font-bold flex items-center justify-center gap-3 flex-wrap">
+        <span class="inline-flex items-center gap-2 bg-violet-600 text-white px-3 py-1 rounded-full text-sm font-bold uppercase tracking-wide shadow-sm">
+         <span>
+          New
+         </span>
+        </span>
+        <span class="text-violet-900">
+         OpenAI App Marketplace launching soon
+        </span>
+        <span class="hidden sm:inline text-violet-400">
+         —
+        </span>
+        <span class="font-extrabold text-purple-700">
+         Be ready on Day 1
+        </span>
+       </p>
+      </div>
+     </div>
+     <section class="relative overflow-hidden hero-animated-bg min-h-[90vh] flex items-center">
+      <div class="container relative mx-auto px-6 lg:px-10 py-16 md:py-24">
+       <div class="flex flex-col gap-12 lg:gap-16">
+        <div class="transition-all duration-700 ease-out space-y-8 w-full text-center max-w-4xl mx-auto">
+         <div class="space-y-6">
+          <div class="inline-flex items-center rounded-full border duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs mb-2 bg-white/80 backdrop-blur-sm text-violet-700 border-violet-200 hover:bg-white px-5 py-2.5 font-semibold shadow-lg shadow-violet-200/50 transition-all hover:scale-105 hover:shadow-xl">
+           The OpenAI App Builder
+          </div>
+          <h1 class="text-4xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-5xl md:text-6xl lg:text-7xl">
+           Create OpenAI Apps
+           <span class="block text-gradient-animated mt-2">
+            from just a prompt
+           </span>
+          </h1>
+          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 sm:text-xl md:text-2xl">
+           No backend needed. Write a prompt, choose your UI widgets, and deploy a production-ready OpenAI app in minutes.
+          </p>
+         </div>
+         <div class="flex flex-col items-center gap-4 pt-4 sm:flex-row sm:justify-center">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md active:scale-[0.98] btn-shine h-14 w-full sm:w-auto px-10 text-base rounded-xl bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 shadow-xl shadow-purple-500/30 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/40 text-white font-semibold" href="/auth/login">
+           Start Building Free
+          </a>
+         </div>
+         <p class="text-sm font-medium text-slate-500 flex items-center justify-center gap-2">
+          <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
+           Build your first app in under 5 minutes
+          </span>
+         </p>
+        </div>
+        <div class="grid gap-4 grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto w-full">
+         <div class="transition-all duration-700 ease-out">
+          <div class="group text-center p-6 rounded-2xl glass-card hover-lift cursor-pointer border border-white/50">
+           <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="text-3xl font-bold bg-gradient-to-r from-violet-700 to-purple-700 bg-clip-text text-transparent counter-animate">
+             5 min
+            </span>
+           </div>
+           <p class="text-sm font-semibold text-slate-700 group-hover:text-violet-700 transition-colors">
+            Idea to App
+           </p>
+          </div>
+         </div>
+         <div class="transition-all duration-700 ease-out">
+          <div class="group text-center p-6 rounded-2xl glass-card hover-lift cursor-pointer border border-white/50">
+           <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="text-3xl font-bold bg-gradient-to-r from-violet-700 to-purple-700 bg-clip-text text-transparent counter-animate">
+             8+
+            </span>
+           </div>
+           <p class="text-sm font-semibold text-slate-700 group-hover:text-violet-700 transition-colors">
+            Widget Layouts
+           </p>
+          </div>
+         </div>
+         <div class="transition-all duration-700 ease-out">
+          <div class="group text-center p-6 rounded-2xl glass-card hover-lift cursor-pointer border border-white/50">
+           <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="text-3xl font-bold bg-gradient-to-r from-violet-700 to-purple-700 bg-clip-text text-transparent counter-animate">
+             0
+            </span>
+           </div>
+           <p class="text-sm font-semibold text-slate-700 group-hover:text-violet-700 transition-colors">
+            Backend Needed
+           </p>
+          </div>
+         </div>
+         <div class="transition-all duration-700 ease-out">
+          <div class="group text-center p-6 rounded-2xl glass-card hover-lift cursor-pointer border border-white/50">
+           <div class="flex items-center justify-center gap-3 mb-3">
+            <span class="text-3xl font-bold bg-gradient-to-r from-violet-700 to-purple-700 bg-clip-text text-transparent counter-animate">
+             100%
+            </span>
+           </div>
+           <p class="text-sm font-semibold text-slate-700 group-hover:text-violet-700 transition-colors">
+            Marketplace Ready
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="grid gap-6 sm:grid-cols-2 max-w-4xl mx-auto w-full">
+         <div class="transition-all duration-700 ease-out">
+          <a class="group relative rounded-2xl p-7 text-left glass-card hover-lift border-2 transition-all duration-300 border-violet-300 shadow-xl shadow-violet-200/50" href="/auth/login">
+           <div class="absolute top-4 right-4">
+            <div class="inline-flex items-center rounded-full font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary hover:bg-primary/90 px-2.5 py-0.5 text-xs bg-gradient-to-r from-violet-600 to-purple-600 text-white border-0 shadow-lg shadow-purple-500/30 animate-glow-pulse">
+             Magic
+            </div>
+           </div>
+           <div class="flex items-start gap-4">
+            <div class="flex-1 min-w-0">
+             <p class="text-xs font-bold uppercase tracking-wider text-violet-600 mb-1">
+              No Backend Needed
+             </p>
+             <p class="text-xl font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+              AI-Powered Apps
+             </p>
+             <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              Turn any idea into a working app. Your prompt becomes the backend - no API required.
+             </p>
+            </div>
+           </div>
+          </a>
+         </div>
+         <div class="transition-all duration-700 ease-out">
+          <a class="group relative rounded-2xl p-7 text-left glass-card hover-lift border-2 transition-all duration-300 border-white/50 hover:border-violet-300" href="/auth/login">
+           <div class="flex items-start gap-4">
+            <div class="flex-1 min-w-0">
+             <p class="text-xs font-bold uppercase tracking-wider text-violet-600 mb-1">
+              Connect Existing APIs
+             </p>
+             <p class="text-xl font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+              REST API Apps
+             </p>
+             <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+              Transform any REST API into a beautiful OpenAI app with rich UI widgets.
+             </p>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out max-w-7xl mx-auto w-full px-4">
+         <div class="text-center mb-8">
+          <div class="inline-flex items-center rounded-full border font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-4 bg-white/80 backdrop-blur-sm text-slate-700 border-slate-200 shadow-md px-4 py-2">
+           AI prompt to OpenAI apps
+          </div>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="rounded-3xl p-3 bg-gradient-to-br from-violet-200 via-purple-100 to-pink-100 border border-white shadow-2xl shadow-violet-200/50 hover-lift">
+           <p class="text-center text-sm font-semibold text-slate-700 mb-2">
+            Introducing Apps in ChatGPT
+           </p>
+          </div>
+          <div class="rounded-3xl p-3 bg-gradient-to-br from-violet-200 via-purple-100 to-pink-100 border border-white shadow-2xl shadow-violet-200/50 hover-lift">
+           <p class="text-center text-sm font-semibold text-slate-700 mb-2">
+            Rest API → Open AI apps
+           </p>
+          </div>
+          <div class="rounded-3xl p-3 bg-gradient-to-br from-violet-200 via-purple-100 to-pink-100 border border-white shadow-2xl shadow-violet-200/50 hover-lift">
+           <p class="text-center text-sm font-semibold text-slate-700 mb-2">
+            AI prompt → Open AI apps
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+       <div class="flex flex-col items-center gap-2 text-slate-400">
+        <span class="text-xs font-medium uppercase tracking-wider">
+         Scroll
+        </span>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-gradient-to-b from-white via-slate-50/50 to-white relative overflow-hidden">
+      <div class="container mx-auto px-6">
+       <div class="max-w-6xl mx-auto">
+        <div class="transition-all duration-700 ease-out text-center mb-16">
+         <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-5 bg-violet-100 text-violet-700 border-violet-200 px-5 py-2 font-semibold shadow-sm">
+          The Magic
+         </div>
+         <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">
+          Your Prompt Becomes the Backend
+         </h2>
+         <p class="text-lg md:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          No servers. No APIs. No coding. Just describe what you want, and AppForge creates a fully functional OpenAI app.
+         </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+         <div class="transition-all duration-700 ease-out">
+          <div class="space-y-6">
+           <div class="p-7 rounded-2xl bg-white border-2 border-slate-200 shadow-xl hover-lift">
+            <p class="text-xs font-bold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
+             You write:
+            </p>
+            <div class="p-5 rounded-xl bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200 font-mono text-sm shadow-inner">
+             <p class="text-slate-800 leading-relaxed">
+              "Analyze product reviews and return sentiment score, key pros, key cons, and a summary"
+             </p>
+            </div>
+           </div>
+           <div class="flex justify-center">
+            <div class="flex items-center gap-3 px-5 py-3 rounded-full bg-gradient-to-r from-violet-100 to-purple-100 text-violet-700 shadow-lg border border-violet-200">
+             <span class="text-sm font-bold">
+              AppForge Magic
+             </span>
+            </div>
+           </div>
+           <div class="p-7 rounded-2xl bg-gradient-to-br from-violet-50 via-purple-50 to-pink-50 border-2 border-violet-300 shadow-xl shadow-violet-100/50 hover-lift">
+            <p class="text-xs font-bold uppercase tracking-wider text-violet-700 mb-5 flex items-center gap-2">
+             You get:
+            </p>
+            <div class="space-y-4">
+             <div class="flex items-center gap-3 animate-fade-in-up">
+              <span class="text-slate-800 font-medium">
+               Working OpenAI app
+              </span>
+             </div>
+             <div class="flex items-center gap-3 animate-fade-in-up">
+              <span class="text-slate-800 font-medium">
+               Beautiful card UI widget
+              </span>
+             </div>
+             <div class="flex items-center gap-3 animate-fade-in-up">
+              <span class="text-slate-800 font-medium">
+               Deployment configs included
+              </span>
+             </div>
+             <div class="flex items-center gap-3 animate-fade-in-up">
+              <span class="text-slate-800 font-medium">
+               Marketplace-ready code
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="transition-all duration-700 ease-out">
+          <div class="grid grid-cols-2 gap-4">
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             🛒
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             E-commerce
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             Product search with carousels
+            </p>
+           </div>
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             ✈️
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             Travel
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             Hotel &amp; flight booking
+            </p>
+           </div>
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             📊
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             Analytics
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             Data dashboards
+            </p>
+           </div>
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             📰
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             Content
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             News &amp; article feeds
+            </p>
+           </div>
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             🎧
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             Support
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             Help desk bots
+            </p>
+           </div>
+           <div class="group p-6 rounded-2xl bg-white border-2 border-slate-200 shadow-lg hover:border-violet-300 hover:shadow-xl hover-lift cursor-pointer gradient-border-card">
+            <span class="text-4xl mb-4 block transform group-hover:scale-110 transition-transform duration-300">
+             💹
+            </span>
+            <p class="font-bold text-slate-900 group-hover:text-violet-700 transition-colors">
+             Finance
+            </p>
+            <p class="text-sm text-slate-600 mt-1">
+             Stock &amp; crypto trackers
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-gradient-to-b from-white via-violet-50/30 to-white relative overflow-hidden">
+      <div class="container mx-auto px-6 relative">
+       <div class="transition-all duration-700 ease-out text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-5 bg-white text-slate-700 border-slate-200 px-5 py-2 font-semibold shadow-lg">
+         OpenAI's App Design Principles
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">
+         Built for
+         <span class="text-violet-600">
+          Know
+         </span>
+         •
+         <span class="text-amber-600">
+          Do
+         </span>
+         •
+         <span class="text-emerald-600">
+          Show
+         </span>
+        </h2>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+         We follow OpenAI's guidance for creating great ChatGPT apps.
+        </p>
+       </div>
+       <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-violet-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Know
+          </h3>
+          <p class="text-slate-600 leading-relaxed text-base">
+           Give ChatGPT live context—inventory, metrics, or customer data—that the base model can't access.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-amber-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Do
+          </h3>
+          <p class="text-slate-600 leading-relaxed text-base">
+           Let users take actions directly in chat: create records, trigger workflows, make purchases.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-emerald-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-2xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Show
+          </h3>
+          <p class="text-slate-600 leading-relaxed text-base">
+           Display results beautifully with carousels, cards, and interactive widgets—not walls of text.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-white relative overflow-hidden">
+      <div class="container mx-auto px-6 relative">
+       <div class="transition-all duration-700 ease-out text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-5 bg-emerald-100 text-emerald-700 border-emerald-200 gap-2 px-5 py-2 font-semibold shadow-sm">
+         Simple Process
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">
+         Idea to App in 3 Steps
+        </h2>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+         Skip weeks of development. AppForge gets you from concept to deployed app in minutes.
+        </p>
+       </div>
+       <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <div class="transition-all duration-700 ease-out">
+         <div class="group relative rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl hover:shadow-2xl hover-lift card-spotlight">
+          <div class="flex items-center gap-4 mb-6">
+           <span class="text-5xl font-extrabold bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent">
+            01
+           </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Describe or Connect
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           Write a prompt to create AI-powered functionality, or connect an existing REST API.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group relative rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl hover:shadow-2xl hover-lift card-spotlight">
+          <div class="flex items-center gap-4 mb-6">
+           <span class="text-5xl font-extrabold bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent">
+            02
+           </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Design Your UI
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           Choose from 8+ OpenAI-aligned widgets: cards, carousels, grids, and fullscreen views.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group relative rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl hover:shadow-2xl hover-lift card-spotlight">
+          <div class="flex items-center gap-4 mb-6">
+           <span class="text-5xl font-extrabold bg-gradient-to-r from-violet-300 to-purple-300 bg-clip-text text-transparent">
+            03
+           </span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Deploy &amp; Launch
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           One-click deploy to Railway, Vercel, or Docker. Your app is marketplace-ready.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-gradient-to-b from-slate-50 via-violet-50/20 to-slate-50 relative overflow-hidden">
+      <div class="container mx-auto px-6 relative">
+       <div class="transition-all duration-700 ease-out text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-5 bg-violet-100 text-violet-700 border-violet-200 px-5 py-2 font-semibold shadow-sm">
+         Two Powerful Paths
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">
+         Create Apps Your Way
+        </h2>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+         Start from scratch with AI prompts, or connect your existing APIs.
+        </p>
+       </div>
+       <div class="grid gap-6 lg:grid-cols-2 max-w-5xl mx-auto">
+        <div class="transition-all duration-700 ease-out">
+         <div class="group relative rounded-2xl p-6 bg-white border shadow-sm hover:shadow-lg transition-all duration-300 border-violet-200 bg-gradient-to-br from-violet-50/50 to-white">
+          <div class="flex items-start gap-4 mb-4">
+           <div class="flex-1 min-w-0">
+            <p class="text-xs font-semibold uppercase tracking-wide mb-1 text-violet-600">
+             No Backend Needed
+            </p>
+            <h3 class="text-lg font-bold text-slate-900">
+             AI-Powered Apps
+            </h3>
+           </div>
+          </div>
+          <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+           Turn any idea into a working app. Your prompt becomes the backend - no API required.
+          </p>
+          <div class="space-y-2.5">
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             Prompt acts as your API
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             GPT-4o intelligence built-in
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             No coding required
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             Instant app generation
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group relative rounded-2xl p-6 bg-white border shadow-sm hover:shadow-lg transition-all duration-300 border-slate-200 hover:border-slate-300">
+          <div class="flex items-start gap-4 mb-4">
+           <div class="flex-1 min-w-0">
+            <p class="text-xs font-semibold uppercase tracking-wide mb-1 text-slate-500">
+             Connect Existing APIs
+            </p>
+            <h3 class="text-lg font-bold text-slate-900">
+             REST API Apps
+            </h3>
+           </div>
+          </div>
+          <p class="text-slate-600 text-sm mb-5 leading-relaxed">
+           Transform any REST API into a beautiful OpenAI app with rich UI widgets.
+          </p>
+          <div class="space-y-2.5">
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             Auto-detect API schema
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             Custom authentication
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             8+ widget layouts
+            </span>
+           </div>
+           <div class="flex items-center gap-2.5">
+            <span class="text-slate-600 text-sm">
+             Production-ready code
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-white relative overflow-hidden">
+      <div class="container mx-auto px-6">
+       <div class="transition-all duration-700 ease-out text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-5 bg-emerald-100 text-emerald-700 border-emerald-200 px-5 py-2 font-semibold shadow-sm">
+         Production Ready
+        </div>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6">
+         Everything You Need to Ship
+        </h2>
+        <p class="text-lg md:text-xl text-slate-600 leading-relaxed">
+         Beautiful UI, solid code, marketplace compliance—all out of the box.
+        </p>
+       </div>
+       <div class="grid gap-8 md:grid-cols-3 max-w-5xl mx-auto">
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-violet-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Rich UI Widgets
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           Cards, carousels, grids, and fullscreen layouts designed for ChatGPT.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-emerald-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Marketplace Ready
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           OpenAI-compliant apps ready to publish when the marketplace launches.
+          </p>
+         </div>
+        </div>
+        <div class="transition-all duration-700 ease-out">
+         <div class="group rounded-3xl p-8 bg-white border-2 border-slate-200 shadow-xl shadow-blue-200/50 hover:shadow-2xl hover-lift card-spotlight">
+          <h3 class="text-xl font-bold text-slate-900 mb-4 group-hover:text-violet-700 transition-colors">
+           Production Grade
+          </h3>
+          <p class="text-slate-600 leading-relaxed">
+           TypeScript, validation, error handling, and analytics built-in.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-28 bg-gradient-to-b from-slate-100 via-slate-50 to-white relative overflow-hidden">
+      <div class="container mx-auto px-6">
+       <div class="transition-all duration-700 ease-out max-w-5xl mx-auto">
+        <div class="relative overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-violet-600 via-purple-600 to-fuchsia-600 p-12 md:p-20 text-center text-white shadow-2xl shadow-violet-500/40">
+         <div class="relative">
+          <div class="inline-flex items-center rounded-full border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/90 text-xs mb-6 bg-white/20 text-white border-white/30 backdrop-blur-sm px-5 py-2 font-semibold shadow-lg">
+           Limited Time Opportunity
+          </div>
+          <h2 class="text-3xl md:text-4xl lg:text-6xl font-extrabold mb-6 leading-tight">
+           The OpenAI Marketplace
+           <span class="block mt-2">
+            is Coming
+           </span>
+          </h2>
+          <p class="text-xl md:text-2xl text-white/90 mb-12 max-w-2xl mx-auto leading-relaxed">
+           Early apps get the most visibility. Start building now and be ready to launch on Day 1.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-5 justify-center">
+           <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow-primary/20 hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md active:scale-[0.98] btn-shine h-16 px-12 bg-white text-violet-700 hover:bg-white/95 rounded-2xl font-bold text-lg shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300" href="/auth/login">
+            Start Building Now
+           </a>
+          </div>
+          <p class="mt-8 text-base text-white/80 font-medium flex items-center justify-center gap-3">
+           Free to start • No credit card required
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <footer class="border-t-2 border-slate-200 bg-white">
+      <div class="container mx-auto flex flex-col gap-8 px-6 py-12 md:flex-row md:items-center md:justify-between">
+       <div class="flex items-center gap-5">
+        <div>
+         <p class="text-lg font-bold text-slate-900">
+          AppForge
+         </p>
+         <p class="text-sm text-slate-600">
+          The OpenAI App Builder
+         </p>
+        </div>
+       </div>
+       <div class="flex flex-wrap items-center gap-10 text-sm">
+        <a class="font-medium text-slate-700 hover:text-violet-600 transition-colors underline-animate" href="/pricing">
+         Pricing
+        </a>
+        <a class="font-medium text-slate-700 hover:text-violet-600 transition-colors underline-animate flex items-center gap-2" href="mailto:support@appforgenow.com">
+         Support
+        </a>
+        <span class="text-slate-400 font-medium">
+         © 2025 AppForge. All rights reserved.
+        </span>
+       </div>
+      </div>
+     </footer>
+    </main>
+   </div>
+  </body>
+
+</body>
+</html>

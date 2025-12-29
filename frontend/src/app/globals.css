@@ -1,0 +1,710 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Light theme - Optimized for readability */
+  :root {
+    --background: 255 255 255;
+    --background-secondary: 250 251 252;
+    --background-tertiary: 244 246 248;
+    --surface: 255 255 255;
+    --surface-hover: 248 250 252;
+    --surface-border: 230 234 240;
+    /* Optimized text colors with better contrast */
+    --content-primary: 17 24 39;      /* gray-900 - high contrast */
+    --content-secondary: 55 65 81;    /* gray-700 - good readable */
+    --content-tertiary: 107 114 128;  /* gray-500 - secondary info */
+    --content-muted: 156 163 175;     /* gray-400 - decorative */
+  }
+
+  /* Dark theme - Balanced for eye comfort */
+  .dark {
+    --background: 9 14 25;
+    --background-secondary: 15 23 42;
+    --background-tertiary: 30 41 59;
+    --surface: 30 41 59;
+    --surface-hover: 51 65 85;
+    --surface-border: 51 65 81;
+    /* Optimized text colors - softer white for less eye strain */
+    --content-primary: 241 245 249;   /* slate-100 - soft white */
+    --content-secondary: 203 213 225; /* slate-300 - readable */
+    --content-tertiary: 148 163 184;  /* slate-400 - secondary */
+    --content-muted: 100 116 139;     /* slate-500 - muted */
+  }
+
+  * {
+    @apply border-surface-border;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-content-primary font-sans;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    min-height: 100vh;
+  }
+
+  /* Light theme background */
+  :root body {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.04), transparent),
+      linear-gradient(to bottom, rgb(255, 255, 255), rgb(250, 251, 252));
+    background-attachment: fixed;
+  }
+
+  /* Dark theme background */
+  .dark body {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.06), transparent),
+      linear-gradient(to bottom, #090e19, #0f172a);
+    background-attachment: fixed;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-surface-border/60 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-content-muted/50;
+  }
+
+  /* Text selection */
+  ::selection {
+    @apply bg-accent-primary/20 text-content-primary;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-semibold tracking-tight text-content-primary;
+  }
+
+  /* Monospace for numbers */
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer components {
+  /* Card styles */
+  .card {
+    @apply bg-surface/70 backdrop-blur-sm border border-surface-border rounded-xl p-5;
+    @apply shadow-card dark:shadow-card-dark transition-all duration-200;
+  }
+
+  .card-hover {
+    @apply hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:border-accent-primary/20 hover:bg-surface/90;
+  }
+
+  /* Glass effect */
+  .glass {
+    @apply bg-surface/40 backdrop-blur-md border border-white/5;
+  }
+
+  /* Gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-accent-primary via-accent-secondary to-market-blue-ocean bg-clip-text text-transparent;
+  }
+
+  /* Glow effects */
+  .glow-blue {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  }
+
+  /* Grid background */
+  .bg-grid {
+    background-size: 40px 40px;
+    background-image:
+      linear-gradient(to right, rgba(59, 130, 246, 0.02) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+  }
+
+  /* Diagonal grid background - modern SaaS style */
+  .bg-diagonal-grid {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-diagonal-grid::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(59, 130, 246, 0.02) 40px,
+        rgba(59, 130, 246, 0.02) 41px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(139, 92, 246, 0.015) 40px,
+        rgba(139, 92, 246, 0.015) 41px
+      );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dark .bg-diagonal-grid::before {
+    background-image:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 40px,
+        rgba(59, 130, 246, 0.04) 40px,
+        rgba(59, 130, 246, 0.04) 41px
+      ),
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 40px,
+        rgba(139, 92, 246, 0.03) 40px,
+        rgba(139, 92, 246, 0.03) 41px
+      );
+  }
+
+  .bg-diagonal-grid > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Gradient accent corners for assistant page */
+  .bg-assistant-glow {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-assistant-glow::after {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(59, 130, 246, 0.08) 0%,
+      rgba(139, 92, 246, 0.04) 40%,
+      transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .dark .bg-assistant-glow::after {
+    background: radial-gradient(
+      ellipse at center,
+      rgba(59, 130, 246, 0.12) 0%,
+      rgba(139, 92, 246, 0.06) 40%,
+      transparent 70%
+    );
+  }
+
+  .bg-assistant-glow > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ============================================
+     Decorative Card Patterns
+     ============================================ */
+
+  /* Pattern 1: Leaves - organic curved shapes */
+  .card-pattern-leaves {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-leaves::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 80px;
+    height: 80px;
+    background:
+      radial-gradient(ellipse 60% 40% at 70% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 30% 70%, rgba(34, 197, 94, 0.05) 0%, transparent 60%);
+    border-radius: 0 0 0 100%;
+    pointer-events: none;
+  }
+  .card-pattern-leaves::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
+    border-radius: 50% 50% 50% 0;
+    transform: rotate(-45deg);
+    pointer-events: none;
+  }
+
+  /* Pattern 2: Stars - scattered dots */
+  .card-pattern-stars {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-stars::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 2px, transparent 2px),
+      radial-gradient(circle at 75% 35%, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 90% 45%, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+      radial-gradient(circle at 65% 20%, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.06) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 80% 55%, rgba(139, 92, 246, 0.07) 0%, rgba(139, 92, 246, 0.07) 1px, transparent 1px);
+    pointer-events: none;
+  }
+  .card-pattern-stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(ellipse at 100% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  /* Pattern 3: Light rays - radial beams */
+  .card-pattern-light {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-light::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 150%;
+    height: 150%;
+    background: conic-gradient(
+      from 180deg at 100% 0%,
+      transparent 0deg,
+      rgba(251, 191, 36, 0.04) 15deg,
+      transparent 30deg,
+      rgba(251, 191, 36, 0.03) 45deg,
+      transparent 60deg,
+      rgba(251, 191, 36, 0.05) 75deg,
+      transparent 90deg
+    );
+    pointer-events: none;
+  }
+  .card-pattern-light::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(ellipse at 100% 0%, rgba(251, 191, 36, 0.12) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Pattern 4: Circles - overlapping circles */
+  .card-pattern-circles {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-circles::before {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 100px;
+    height: 100px;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 30%, rgba(59, 130, 246, 0.06) 31%, rgba(59, 130, 246, 0.06) 33%, transparent 34%),
+      radial-gradient(circle at 30% 70%, transparent 20%, rgba(59, 130, 246, 0.04) 21%, rgba(59, 130, 246, 0.04) 23%, transparent 24%),
+      radial-gradient(circle at 70% 30%, transparent 15%, rgba(59, 130, 246, 0.05) 16%, rgba(59, 130, 246, 0.05) 18%, transparent 19%);
+    pointer-events: none;
+  }
+  .card-pattern-circles::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(59, 130, 246, 0.05) 41%, rgba(59, 130, 246, 0.05) 45%, transparent 46%);
+    pointer-events: none;
+  }
+
+  /* Pattern 5: Grass - thin vertical lines */
+  .card-pattern-grass {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-grass::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 60px;
+    height: 50px;
+    background:
+      linear-gradient(95deg, transparent 49%, rgba(16, 185, 129, 0.1) 49%, rgba(16, 185, 129, 0.1) 51%, transparent 51%),
+      linear-gradient(85deg, transparent 49%, rgba(16, 185, 129, 0.07) 49%, rgba(16, 185, 129, 0.07) 51%, transparent 51%),
+      linear-gradient(100deg, transparent 49%, rgba(16, 185, 129, 0.08) 49%, rgba(16, 185, 129, 0.08) 51%, transparent 51%),
+      linear-gradient(80deg, transparent 49%, rgba(16, 185, 129, 0.06) 49%, rgba(16, 185, 129, 0.06) 51%, transparent 51%),
+      linear-gradient(92deg, transparent 49%, rgba(16, 185, 129, 0.09) 49%, rgba(16, 185, 129, 0.09) 51%, transparent 51%);
+    background-size: 12px 100%, 10px 100%, 14px 100%, 8px 100%, 11px 100%;
+    pointer-events: none;
+  }
+  .card-pattern-grass::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(ellipse at 100% 0%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Pattern 6: Ribbons - curved arc lines */
+  .card-pattern-ribbons {
+    position: relative;
+    overflow: hidden;
+  }
+  .card-pattern-ribbons::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background:
+      radial-gradient(circle at 50% 50%, transparent 35%, rgba(236, 72, 153, 0.04) 36%, rgba(236, 72, 153, 0.04) 37%, transparent 38%),
+      radial-gradient(circle at 50% 50%, transparent 50%, rgba(236, 72, 153, 0.03) 51%, rgba(236, 72, 153, 0.03) 52%, transparent 53%),
+      radial-gradient(circle at 50% 50%, transparent 65%, rgba(236, 72, 153, 0.025) 66%, rgba(236, 72, 153, 0.025) 67%, transparent 68%);
+    pointer-events: none;
+  }
+  .card-pattern-ribbons::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(ellipse at 100% 0%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Dark mode adjustments for patterns */
+  .dark .card-pattern-leaves::before {
+    background:
+      radial-gradient(ellipse 60% 40% at 70% 30%, rgba(34, 197, 94, 0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 30% 70%, rgba(34, 197, 94, 0.08) 0%, transparent 60%);
+  }
+  .dark .card-pattern-stars::before {
+    background-image:
+      radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.18) 0%, rgba(139, 92, 246, 0.18) 2px, transparent 2px),
+      radial-gradient(circle at 75% 35%, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 1.5px, transparent 1.5px),
+      radial-gradient(circle at 90% 45%, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 1px, transparent 1px),
+      radial-gradient(circle at 65% 20%, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 2.5px, transparent 2.5px),
+      radial-gradient(circle at 80% 55%, rgba(139, 92, 246, 0.11) 0%, rgba(139, 92, 246, 0.11) 1px, transparent 1px);
+  }
+  .dark .card-pattern-light::before {
+    background: conic-gradient(
+      from 180deg at 100% 0%,
+      transparent 0deg,
+      rgba(251, 191, 36, 0.06) 15deg,
+      transparent 30deg,
+      rgba(251, 191, 36, 0.05) 45deg,
+      transparent 60deg,
+      rgba(251, 191, 36, 0.07) 75deg,
+      transparent 90deg
+    );
+  }
+  .dark .card-pattern-circles::before {
+    background:
+      radial-gradient(circle at 50% 50%, transparent 30%, rgba(59, 130, 246, 0.1) 31%, rgba(59, 130, 246, 0.1) 33%, transparent 34%),
+      radial-gradient(circle at 30% 70%, transparent 20%, rgba(59, 130, 246, 0.07) 21%, rgba(59, 130, 246, 0.07) 23%, transparent 24%),
+      radial-gradient(circle at 70% 30%, transparent 15%, rgba(59, 130, 246, 0.08) 16%, rgba(59, 130, 246, 0.08) 18%, transparent 19%);
+  }
+  .dark .card-pattern-grass::before {
+    background:
+      linear-gradient(95deg, transparent 49%, rgba(16, 185, 129, 0.15) 49%, rgba(16, 185, 129, 0.15) 51%, transparent 51%),
+      linear-gradient(85deg, transparent 49%, rgba(16, 185, 129, 0.11) 49%, rgba(16, 185, 129, 0.11) 51%, transparent 51%),
+      linear-gradient(100deg, transparent 49%, rgba(16, 185, 129, 0.12) 49%, rgba(16, 185, 129, 0.12) 51%, transparent 51%),
+      linear-gradient(80deg, transparent 49%, rgba(16, 185, 129, 0.09) 49%, rgba(16, 185, 129, 0.09) 51%, transparent 51%),
+      linear-gradient(92deg, transparent 49%, rgba(16, 185, 129, 0.13) 49%, rgba(16, 185, 129, 0.13) 51%, transparent 51%);
+    background-size: 12px 100%, 10px 100%, 14px 100%, 8px 100%, 11px 100%;
+  }
+  .dark .card-pattern-ribbons::before {
+    background:
+      radial-gradient(circle at 50% 50%, transparent 35%, rgba(236, 72, 153, 0.07) 36%, rgba(236, 72, 153, 0.07) 37%, transparent 38%),
+      radial-gradient(circle at 50% 50%, transparent 50%, rgba(236, 72, 153, 0.05) 51%, rgba(236, 72, 153, 0.05) 52%, transparent 53%),
+      radial-gradient(circle at 50% 50%, transparent 65%, rgba(236, 72, 153, 0.04) 66%, rgba(236, 72, 153, 0.04) 67%, transparent 68%);
+  }
+
+  /* Score bar */
+  .score-bar {
+    @apply h-1.5 rounded-full overflow-hidden bg-background-tertiary;
+  }
+
+  .score-bar-fill {
+    @apply h-full rounded-full transition-all duration-700 ease-out;
+    animation: fillBar 0.8s ease-out forwards;
+  }
+
+  @keyframes fillBar {
+    from { width: 0; }
+  }
+
+  /* Data grid */
+  .data-grid {
+    @apply grid gap-4;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  /* Tag */
+  .tag {
+    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+
+  /* Skeleton */
+  .skeleton {
+    @apply animate-pulse bg-surface-border/50 rounded;
+  }
+
+  /* Typography classes */
+  .text-display {
+    @apply text-3xl md:text-4xl font-display font-bold tracking-tight text-content-primary;
+  }
+
+  .text-heading-lg {
+    @apply text-xl md:text-2xl font-display font-semibold tracking-tight text-content-primary;
+  }
+
+  .text-heading {
+    @apply text-lg font-display font-semibold tracking-tight text-content-primary;
+  }
+
+  .text-heading-sm {
+    @apply text-base font-medium text-content-primary;
+  }
+
+  .text-body {
+    @apply text-base text-content-secondary leading-relaxed;
+  }
+
+  .text-body-sm {
+    @apply text-sm text-content-secondary leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs text-content-tertiary;
+  }
+
+  .text-label {
+    @apply text-xs font-medium uppercase tracking-wider text-content-muted;
+  }
+
+  /* Page title */
+  .page-title {
+    @apply text-2xl md:text-3xl font-display font-bold tracking-tight text-content-primary;
+  }
+
+  .page-subtitle {
+    @apply text-sm text-content-tertiary mt-0.5;
+  }
+
+  /* Stat number */
+  .stat-number {
+    @apply text-2xl md:text-3xl font-display font-bold tracking-tight tabular-nums;
+  }
+
+  /* Nav link */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-content-secondary;
+    @apply hover:bg-surface hover:text-content-primary transition-colors;
+  }
+
+  .nav-link-active {
+    @apply bg-accent-primary/10 text-accent-primary;
+  }
+
+  /* Data table */
+  .data-table {
+    @apply w-full text-sm;
+  }
+
+  .data-table th {
+    @apply text-left text-xs font-medium uppercase tracking-wider text-content-muted py-3 px-4 border-b border-surface-border;
+  }
+
+  .data-table td {
+    @apply py-3 px-4 text-content-secondary border-b border-surface-border/50;
+  }
+
+  .data-table tr:hover td {
+    @apply bg-surface/30;
+  }
+
+  /* Button */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium;
+    @apply transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-accent-primary text-white hover:bg-accent-primary/90;
+  }
+
+  .btn-secondary {
+    @apply bg-surface text-content-secondary border border-surface-border;
+    @apply hover:bg-surface-hover hover:text-content-primary;
+  }
+
+  /* Input */
+  .input {
+    @apply w-full px-3 py-2 bg-background-secondary border border-surface-border rounded-lg;
+    @apply text-sm text-content-primary placeholder:text-content-muted;
+    @apply focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20;
+    @apply transition-colors;
+  }
+
+  /* Select */
+  .select {
+    @apply input appearance-none cursor-pointer pr-9;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.25rem;
+  }
+
+  /* Chat styles */
+  .chat-message-user {
+    @apply bg-accent-primary text-white rounded-2xl rounded-tr-sm;
+  }
+
+  .chat-message-assistant {
+    @apply bg-surface border border-surface-border rounded-2xl rounded-tl-sm;
+  }
+
+  /* Markdown prose */
+  .prose-chat {
+    @apply text-sm leading-relaxed text-content-secondary;
+  }
+
+  .prose-chat h2,
+  .prose-chat h3,
+  .prose-chat h4 {
+    @apply font-semibold text-content-primary mt-4 mb-2;
+  }
+
+  .prose-chat h2 { @apply text-base; }
+  .prose-chat h3 { @apply text-sm; }
+  .prose-chat h4 { @apply text-sm; }
+
+  .prose-chat p {
+    @apply my-2;
+  }
+
+  .prose-chat ul,
+  .prose-chat ol {
+    @apply my-2 space-y-1;
+  }
+
+  .prose-chat li {
+    @apply ml-4;
+  }
+
+  .prose-chat code {
+    @apply bg-background-tertiary/50 px-1.5 py-0.5 rounded text-xs font-mono;
+  }
+
+  .prose-chat pre {
+    @apply bg-background-tertiary/50 rounded-lg p-3 overflow-x-auto my-2;
+  }
+
+  .prose-chat pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .prose-chat blockquote {
+    @apply border-l-2 border-accent-primary/40 pl-3 my-2 text-content-tertiary italic;
+  }
+
+  .prose-chat table {
+    @apply w-full my-2;
+  }
+
+  .prose-chat th,
+  .prose-chat td {
+    @apply border border-surface-border/50 px-2 py-1 text-xs;
+  }
+
+  .prose-chat strong {
+    @apply font-semibold text-content-primary;
+  }
+
+  /* Typing cursor */
+  .typing-cursor::after {
+    content: '|';
+    @apply animate-pulse text-accent-primary;
+  }
+}
+
+@layer utilities {
+  /* Gradient border */
+  .border-gradient {
+    border: 1px solid transparent;
+    background:
+      linear-gradient(var(--tw-gradient-stops)) padding-box,
+      linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5)) border-box;
+  }
+
+  /* Text stroke */
+  .text-stroke {
+    -webkit-text-stroke: 1px currentColor;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Focus ring utility */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-accent-primary/30 focus:ring-offset-2 focus:ring-offset-background;
+  }
+}

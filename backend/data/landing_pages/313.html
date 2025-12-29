@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PaperChat - Customer support AI agents for business with human handover</title>
+</head>
+<body>
+  <body>
+   <div>
+    <div>
+     <header class="absolute top-0 left-0 w-full bg-white/50 lg:bg-transparent z-50">
+      <div class="p-4 lg:px-10 flex items-center justify-between max-w-[1440px] mx-auto">
+       <a href="/">
+        <img alt="PaperChatLogo" class="h-8 xmd:h-9" height="40" src="/home/assets/paperchat-logo2.svg" width="180"/>
+       </a>
+       <nav class="hidden lg:flex absolute left-1/2 transform -translate-x-1/2">
+        <ul class="flex items-center gap-9">
+         <li>
+          <a class="text-primary text-base hover:text-violet-700 transition-all duration-300" href="#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="text-primary text-base hover:text-violet-700 transition-all duration-300" href="/pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="text-primary text-base hover:text-violet-700 transition-all duration-300" href="#faq">
+           FAQ
+          </a>
+         </li>
+        </ul>
+       </nav>
+       <div class="hidden lg:flex lg:flex-row items-center gap-4">
+        <a class="bg-primary py-2 px-4 rounded-xl flex items-center gap-3 w-fit relative overflow-hidden" href="/signin">
+         <p class="text-sm text-white leading-[1.8em]">
+          Sign In
+         </p>
+        </a>
+       </div>
+      </div>
+      <div class="absolute top-[72px] left-0 w-full bg-white/50 backdrop-blur-md z-50 px-5 pb-3 transition-all duration-500 ease-in-out overflow-hidden max-h-0 opacity-0 py-0 lg:hidden">
+       <div class="flex flex-col gap-5 mb-8">
+        <a class="text-primary text-lg hover:text-violet-700 transition-all duration-300" href="#features">
+         Features
+        </a>
+        <a class="text-primary text-lg hover:text-violet-700 transition-all duration-300" href="/pricing">
+         Pricing
+        </a>
+        <a class="text-primary text-lg hover:text-violet-700 transition-all duration-300" href="#faq">
+         FAQ
+        </a>
+       </div>
+       <div class="w-fit">
+        <a class="bg-primary py-2 px-4 rounded-xl flex items-center gap-3 w-fit relative overflow-hidden" href="/signin">
+         <p class="text-sm text-white leading-[1.8em]">
+          Sign In
+         </p>
+        </a>
+       </div>
+      </div>
+     </header>
+     <section class="xxxl:px-[30px] xxxl:pt-5 relative bg-radial-fade">
+      <div class="pt-[120px] xmd:pt-[100px] px-10 flex flex-row items-center justify-center relative overflow-hidden xxxl:rounded-[32px] max-w-[1440px] mx-auto">
+       <div class="max-w-[890px] w-full flex flex-col gap-5 relative z-20 text-center">
+        <div class="pt-1 pb-5">
+         <div class="jsx-565158e68b4cfb15 relative w-full overflow-hidden">
+          <div class="jsx-565158e68b4cfb15 flex items-center gap-8 sm:gap-10 md:gap-12 px-4">
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Woocommerce" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/woocommerce.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Shopify" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/shopify.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Zapier" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/zapier.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Mailchimp" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/mailchimp.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Hubspot" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/hubspot.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="n8n" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/n8n.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Make" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/make.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Salesforce" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/salesforce.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Slack" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/slack.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Telegram" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/telegram.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Wix" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/wix-black.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Webflow" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/webflow-icon.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Framer" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/framer-icon.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Woocommerce" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/woocommerce.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Shopify" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/shopify.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Zapier" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/zapier.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Mailchimp" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/mailchimp.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Hubspot" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/hubspot.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="n8n" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/n8n.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Make" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/make.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Salesforce" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/salesforce.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Slack" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/slack.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Telegram" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/telegram.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Wix" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/wix-black.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Webflow" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/webflow-icon.svg" width="48"/>
+            </div>
+           </div>
+           <div class="jsx-565158e68b4cfb15 flex-shrink-0">
+            <div class="jsx-565158e68b4cfb15 flex items-center justify-center max-w-12 md:max-w-16">
+             <img alt="Framer" class="h-6 sm:h-7 md:h-8 w-auto max-w-full object-contain opacity-70" height="48" src="/icons/framer-icon.svg" width="48"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="flex flex-col gap-[2px] relative space-grotesk text-[42px] xmd:text-[64px] font-bold leading-[1.2em] text-primary">
+         <div class="">
+          customer support AI agents
+          <br/>
+          for business
+         </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 mb-5">
+         <div class="flex items-center gap-2">
+          <span class="text-primary text-base sm:text-lg">
+           Collect leads
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-primary text-base sm:text-lg">
+           Human handover
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-primary text-base sm:text-lg">
+           Sync with external tools
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span class="text-primary text-base sm:text-lg">
+           E-commerce
+          </span>
+         </div>
+        </div>
+        <div class="flex flex-col gap-3 items-center justify-center mb-28">
+         <a class="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-base font-medium rounded-lg hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02]" href="/signin">
+          <span>
+           Get started for free
+          </span>
+         </a>
+         <div class="flex flex-row gap-1 items-center">
+          <span>
+           No credit card required
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="px-5 pb-20 lg:pb-[100px]">
+      <div class="max-w-[1260px] w-full mx-auto space-y-14">
+       <div class="flex flex-col items-center text-center">
+        <div class="text-gradient_indigo-purple mb-4 font-semibold">
+         Webpages, Files, Text, etc.
+        </div>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-[40px]">
+         Custom trained on your own business
+        </h2>
+        <p class="mt-6 text-balance text-lg text-muted-foreground">
+         Your chatbot is trained on your files, website, knowledge base, or simply natural language text. It understands your products &amp; services and can make intelligent suggestions.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 xmd:grid-cols-3 gap-8">
+        <div class="bg-[#f6f7f9] rounded-2xl p-8 space-y-14">
+         <img alt="edit_icon" class="h-16" src="/home/assets/edit.avif"/>
+         <div class="space-y-3">
+          <h6 class="text-primary text-lg xmd:text-xl satoshi-b">
+           Trained on your data
+          </h6>
+          <p class="text-[#3b3b3b] text-base leading-[1.8em] satoshi-m">
+           Your chatbot is trained on your files, website, knowledge base, or simply natural language text. It understands your products &amp; services and can make intelligent suggestions.
+          </p>
+         </div>
+        </div>
+        <div class="bg-[#f6f7f9] rounded-2xl p-8 space-y-14">
+         <img alt="chart_icon" class="h-16" src="/home/assets/chart.avif"/>
+         <div class="space-y-3">
+          <h6 class="text-primary text-lg xmd:text-xl satoshi-b">
+           Analytics and reporting
+          </h6>
+          <p class="text-[#3b3b3b] text-base leading-[1.8em] satoshi-m">
+           Review chatbot conversations and use our advanced analytics to identify trends, uncover common user queries, and optimize chatbot performance.
+          </p>
+         </div>
+        </div>
+        <div class="bg-[#f6f7f9] rounded-2xl p-8 space-y-14">
+         <img alt="ai_modal_icon" class="h-16" src="/home/assets/ai_modal.avif"/>
+         <div class="space-y-3">
+          <h6 class="text-primary text-lg xmd:text-xl satoshi-b">
+           Multilingual AI models
+          </h6>
+          <p class="text-[#3b3b3b] text-base leading-[1.8em] satoshi-m">
+           Your chatbot can speak over 95 languages used by you and your customers. It can understand anything from complex queries to informal remarks, and respond in an appropriate manner.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="px-5 pb-[90px] lg:pb-[120px]">
+      <div class="max-w-[1260px] w-full mx-auto space-y-14">
+       <div class="flex flex-col items-center text-center">
+        <div class="text-gradient_indigo-purple mb-4 font-semibold">
+         Unlimited possibilities
+        </div>
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-[40px]">
+         No-code Integrations
+        </h2>
+        <p class="mt-6 text-balance text-lg text-muted-foreground">
+         Connect PaperChat to your favorite no-code platform to automate your workflows.
+        </p>
+       </div>
+       <div class="flex flex-wrap items-center justify-center gap-12 xmd:gap-16 lg:gap-20">
+        <div class="flex items-center justify-center transition-transform hover:scale-110">
+         <img alt="Zapier" class="h-8 xmd:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" src="/icons/zapier.svg"/>
+        </div>
+        <div class="flex items-center justify-center transition-transform hover:scale-110">
+         <img alt="n8n" class="h-8 xmd:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" src="/icons/n8n.svg"/>
+        </div>
+        <div class="flex items-center justify-center transition-transform hover:scale-110">
+         <img alt="Make" class="h-8 xmd:h-10 w-auto opacity-90 hover:opacity-100 transition-opacity" src="/icons/make.svg"/>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="pb-20 lg:pb-[100px]">
+      <div class="relative w-full py-20 xmd:py-24 flex justify-center items-center overflow-hidden bg-gray-50">
+       <div class="relative max-w-4xl w-full px-5 space-y-8 text-center z-10">
+        <div class="space-y-4">
+         <h1 class="text-gray-900 geist-f text-[40px] xmd:text-[48px] font-semibold leading-[1.1em] tracking-tight">
+          Ready to engage your customers?
+         </h1>
+         <p class="text-gray-600 text-[18px] xmd:text-[20px] leading-[1.6em] max-w-2xl mx-auto">
+          Boost sales, save resources and make your customers happy with your custom AI chatbot. No coding required.
+         </p>
+        </div>
+        <div class="flex justify-center gap-4 flex-wrap">
+         <a class="group inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-base font-medium rounded-lg hover:bg-gray-800 transition-all duration-200 hover:scale-[1.02]" href="/signin">
+          <span>
+           Start for free
+          </span>
+         </a>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="container max-w-4xl py-2" id="faq">
+      <div class="flex flex-col items-center text-center">
+       <div class="text-gradient_indigo-purple mb-4 font-semibold">
+        FAQ
+       </div>
+       <h2 class="font-heading text-3xl md:text-4xl lg:text-[40px]">
+        Frequently Asked Questions
+       </h2>
+       <p class="mt-6 text-balance text-lg text-muted-foreground">
+        Explore our comprehensive FAQ to find quick answers to common inquiries. If you need further assistance, don't hesitate to contact us for personalized help.
+       </p>
+      </div>
+      <div class="my-12 w-full">
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 text-left font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-[20px] max-sm:text-[16px]" id="radix-:R36jsv6kq:" type="button">
+          What is PaperChat?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 text-left font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-[20px] max-sm:text-[16px]" id="radix-:R56jsv6kq:" type="button">
+          Do I need a website?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 text-left font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-[20px] max-sm:text-[16px]" id="radix-:R76jsv6kq:" type="button">
+          Do I need an OpenAI API key?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 text-left font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-[20px] max-sm:text-[16px]" id="radix-:R96jsv6kq:" type="button">
+          Any hidden costs in the free plan?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b">
+        <h3 class="flex">
+         <button class="flex flex-1 items-center justify-between py-4 text-left font-medium transition-all hover:underline [&amp;[data-state=open]&gt;svg]:rotate-180 text-[20px] max-sm:text-[16px]" id="radix-:Rb6jsv6kq:" type="button">
+          Is there a trial period for the paid plans?
+         </button>
+        </h3>
+       </div>
+      </div>
+     </section>
+     <footer class="py-10 px-5 bg-gray-100">
+      <div class="max-w-[1260px] w-full mx-auto space-y-9 xmd:space-y-24">
+       <div class="flex flex-col xmd:flex-row justify-between gap-10">
+        <div class="lg:max-w-[326px] w-full space-y-12">
+         <div class="space-y-6">
+          <a href="/">
+           <img alt="PaperChat Logo" height="40" src="/home/assets/paperchat-logo2.svg" width="160"/>
+          </a>
+          <p class="text-gray-700 text-[16px] leading-[1.8]">
+           PaperChat - Customer support AI agents for lead generation.
+          </p>
+         </div>
+        </div>
+        <div class="max-w-[654px] w-full flex flex-col xmd:flex-row justify-between gap-5 text-sm">
+         <nav>
+          <h2 class="text-gray-700 font-bold mb-4 leading-[1.8]">
+           Resources
+          </h2>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="/guides">
+             Guides
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="/#faq">
+             FAQs
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Roadmap &amp; Feedback
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Contact Us
+            </a>
+           </li>
+          </ul>
+         </nav>
+         <nav>
+          <h2 class="text-gray-700 font-bold mb-4 leading-[1.8]">
+           Integrations
+          </h2>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Shopify integration
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Webflow integration
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Wix integration
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Framer integration
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="#">
+             Wordpress &amp; WooCommerce
+            </a>
+           </li>
+          </ul>
+         </nav>
+         <nav>
+          <h2 class="text-gray-700 font-bold mb-4 leading-[1.8]">
+           Company
+          </h2>
+          <ul class="space-y-3">
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="/privacy">
+             Privacy Policy
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="/terms">
+             Terms &amp; Conditions
+            </a>
+           </li>
+           <li>
+            <a class="text-primary leading-[1.8] transition-all duration-300 hover:text-violet-700" href="/pricing">
+             Pricing
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="space-y-6">
+        <hr class="border-t border-gray-300"/>
+        <div class="flex flex-col xmd:flex-row justify-between text-sm text-[#3b3b3b] gap-4">
+         <div>
+          <span>
+           Made with
+          </span>
+          in the EU.
+         </div>
+         <p>
+          © 2025 PaperChat. All rights reserved.
+         </p>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>IQMeals - Get personalized meal plans for your goal</title>
+</head>
+<body>
+  <body>
+   <main class="flex min-h-screen flex-col items-center">
+    <nav class="fixed left-0 right-0 top-0 z-50 flex transform flex-col items-center justify-between bg-background px-4 py-3 transition-all duration-500 ease-in-out md:py-4 lg:flex-row">
+     <div class="mx-auto max-w-screen-2xl w-full px-0 py-0 lg:px-6 lg:py-0">
+      <div class="flex w-full flex-row items-center justify-between">
+       <div class="flex items-center">
+        <a class="flex items-center gap-4" href="/#home">
+         <img alt="Sigla PlanFit" class="h-auto w-auto" height="36" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.8fdee64e.png&amp;w=384&amp;q=75" width="135"/>
+        </a>
+        <div class="hidden lg:block">
+         <div class="ml-10 flex items-baseline space-x-2">
+          <div class="w-full lg:w-auto">
+           <a class="whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:h-[1px] after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 flex w-full items-center justify-start rounded-none px-0 py-6 text-base after:bottom-0 lg:mx-auto lg:w-fit lg:justify-center lg:px-2 lg:py-0 lg:text-sm border-b border-border text-gray-400 after:w-full hover:text-white lg:border-0" href="/#home">
+            Home
+           </a>
+          </div>
+          <div class="w-full lg:w-auto">
+           <a class="whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:h-[1px] after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 flex w-full items-center justify-start rounded-none px-0 py-6 text-base after:bottom-0 lg:mx-auto lg:w-fit lg:justify-center lg:px-2 lg:py-0 lg:text-sm border-b border-border text-gray-400 after:w-full hover:text-white lg:border-0" href="/#help">
+            How it helps you
+           </a>
+          </div>
+          <div class="w-full lg:w-auto">
+           <a class="whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:h-[1px] hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 flex w-full items-center justify-start rounded-none px-0 py-6 text-base after:bottom-0 lg:mx-auto lg:w-fit lg:justify-center lg:px-2 lg:py-0 lg:text-sm after:w-full after:origin-bottom-left after:scale-x-100" href="/#works">
+            How it works
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="hidden transition delay-100 duration-300 lg:block">
+        <div class="flex items-center gap-3">
+         <a class="items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-primary-350 to-blue-300 hover:from-blue-300 hover:to-blue-300 text-background transition-all duration-500 ease-in-out font-sans px-4 inline-flex h-9 flex-1 border-primary-350 py-2" href="/download">
+          Try the App for free
+         </a>
+        </div>
+       </div>
+       <div class="lg:hidden">
+        <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary border border-border text-primary-foreground hover:bg-blue-500/20 h-10 px-4 py-2 w-28">
+         <span class="flex items-center gap-2">
+          Menu
+         </span>
+        </button>
+       </div>
+      </div>
+     </div>
+    </nav>
+    <div class="w-full pb-0 pt-16">
+     <div class="bg-primary-950">
+      <header class="relative flex flex-col bg-primary-950" id="home">
+       <div class="relative z-10">
+        <div class="z-10 flex transform flex-col items-center pb-60 pt-16 transition-all duration-1000 ease-in-out md:pt-24 translate-y-0 opacity-100">
+         <div class="max-w-screen-lg">
+          <h1 class="text-center font-serif text-4xl font-bold leading-[2.75rem] sm:leading-[3rem] md:text-4xl md:leading-[3.5rem] lg:text-6xl lg:leading-[5.3rem]">
+           Get personalized meal plans to
+           <br/>
+           <span class="relative mx-3 inline-block md:mx-4">
+            <span class="relative z-10 px-1.5">
+             achieve
+            </span>
+           </span>
+           your goal
+          </h1>
+          <p class="mt-10 text-center text-lg md:text-xl">
+           Stop worrying about
+           <span class="relative mx-1.5 inline-block">
+            <span class="relative z-10 px-1">
+             what
+            </span>
+           </span>
+           <br class="lg:hidden"/>
+           you should eat.
+          </p>
+          <div class="mt-12 flex flex-col items-center justify-center gap-6 md:mt-16 md:flex-row">
+           <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-primary-350 to-blue-300 hover:from-blue-300 hover:to-blue-300 text-background transition-all duration-500 ease-in-out font-sans h-12 rounded-md px-8 sm:px-10 text-base mt-20 sm:mt-28 !mt-0" href="/download">
+            Try the App for free
+           </a>
+           <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border hover:text-accent-foreground h-12 rounded-md px-8 sm:px-10 text-base bg-primary-900 border-gray-300 font-sans text-gray-300 hover:border-gray-200">
+            I want to learn more
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="mt-12 flex w-full transform justify-center bg-background transition-all duration-700 ease-in-out md:mt-20 opacity-100 md:scale-100">
+         <div class="-mt-60 flex h-full w-full max-w-screen-2xl justify-center">
+          <img alt="Preview IQMeals" class="h-full w-[400px] rounded-lg object-cover" height="990" src="/_next/image?url=https%3A%2F%2Fbgefmqefmboheirzxqvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmarketing%2Fpreviews%2Fmeal-plan-2-en.png&amp;w=3840&amp;q=75" width="2027"/>
+         </div>
+        </div>
+       </div>
+      </header>
+      <section class="w-full h-auto bg-background" id="help">
+       <div class="mx-auto max-w-screen-2xl px-6 py-10 lg:py-12 flex flex-col items-center !pb-20 !pt-12">
+        <h3 class="mb-6 text-center font-serif text-2xl sm:mb-10 sm:text-4xl">
+         You right now:
+        </h3>
+        <div class="flex flex-col gap-5">
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Are confused on what to eat to achieve your goal
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Are fed up with all the advice out there that's not applying to you
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Spend a good time calculating portions and calories
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Just want some guidence that suits you and doesn't break the bank...
+          </p>
+         </div>
+        </div>
+        <h3 class="mb-6 mt-16 text-center font-serif text-3xl sm:mb-10 sm:mt-24 sm:text-4xl">
+         You after IQ Meals:
+        </h3>
+        <div class="flex flex-col gap-5">
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Are confident with your meals as they are made specifically for you
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Know how long it will take to achieve your goal
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Have eliminated all portion calculations in your life
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Have a pre-made shopping list to not waste food
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           Learn how to cook by following the recipes
+          </p>
+         </div>
+         <div class="flex flex-row items-center gap-2">
+          <p class="text-lg md:text-xl">
+           See the progress in real time as you're making it
+          </p>
+         </div>
+        </div>
+        <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-primary-350 to-blue-300 hover:from-blue-300 hover:to-blue-300 text-background transition-all duration-500 ease-in-out font-sans h-12 rounded-md px-8 sm:px-10 text-base mt-20 sm:mt-28" href="/download">
+         Try the App for free
+        </a>
+       </div>
+      </section>
+      <section class="w-full relative h-auto min-h-screen" id="works">
+       <div class="mx-auto max-w-screen-2xl px-6 py-10 lg:py-12 relative flex flex-col items-center overflow-hidden !pb-0 pt-8">
+        <a class="flex items-center gap-4 z-10" href="/">
+         <img alt="Sigla PlanFit" class="h-auto w-auto" height="80" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.8fdee64e.png&amp;w=640&amp;q=75" width="300"/>
+        </a>
+        <h3 class="mb-12 mt-4 text-center font-serif text-3xl sm:text-5xl md:mb-36">
+         How it works:
+        </h3>
+        <div class="relative z-10 -ml-20 w-full font-sans md:ml-0 md:px-10">
+         <div class="relative mx-auto max-w-7xl pb-20">
+          <div class="flex justify-start pt-10 md:gap-10 md:pt-40 first:md:pt-0">
+           <div class="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
+            <div>
+             <h3 class="hidden text-xl font-bold text-white md:block md:pl-20 md:text-5xl">
+              Step 1
+             </h3>
+             <p class="mt-4 hidden text-xl font-semibold md:block md:pl-20">
+              We ask you a few questions to understand your goal
+             </p>
+            </div>
+           </div>
+           <div class="relative w-full pl-20 pr-4 md:pl-4">
+            <h3 class="mb-4 block text-left text-2xl font-bold text-white dark:text-white md:hidden">
+             Step 1
+            </h3>
+            <p class="mb-8 mt-4 block text-left text-xl font-semibold md:hidden md:pl-20">
+             We ask you a few questions to understand your goal
+            </p>
+            <div class="h-auto w-80">
+             <img alt="Set Your Goal" class="h-auto w-full rounded-lg" height="439" src="/_next/image?url=https%3A%2F%2Fbgefmqefmboheirzxqvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmarketing%2Fpreviews%2Fgoal-en.png&amp;w=1920&amp;q=75" width="893"/>
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-start pt-10 md:gap-10 md:pt-40 first:md:pt-0">
+           <div class="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
+            <div>
+             <h3 class="hidden text-xl font-bold text-white md:block md:pl-20 md:text-5xl">
+              Step 2
+             </h3>
+             <p class="mt-4 hidden text-xl font-semibold md:block md:pl-20">
+              Generate a meal plan for the entire week
+             </p>
+            </div>
+           </div>
+           <div class="relative w-full pl-20 pr-4 md:pl-4">
+            <h3 class="mb-4 block text-left text-2xl font-bold text-white dark:text-white md:hidden">
+             Step 2
+            </h3>
+            <p class="mb-8 mt-4 block text-left text-xl font-semibold md:hidden md:pl-20">
+             Generate a meal plan for the entire week
+            </p>
+            <div class="h-auto w-80">
+             <img alt="Generate Meal Plan" class="h-auto w-full rounded-lg" height="439" src="/_next/image?url=https%3A%2F%2Fbgefmqefmboheirzxqvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmarketing%2Fpreviews%2Fcreate-en.png&amp;w=1920&amp;q=75" width="893"/>
+            </div>
+           </div>
+          </div>
+          <div class="flex justify-start pt-10 md:gap-10 md:pt-40 first:md:pt-0">
+           <div class="sticky top-40 z-40 flex max-w-xs flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
+            <div>
+             <h3 class="hidden text-xl font-bold text-white md:block md:pl-20 md:text-5xl">
+              Step 3
+             </h3>
+             <p class="mt-4 hidden text-xl font-semibold md:block md:pl-20">
+              Follow the meals and log your progress
+             </p>
+            </div>
+           </div>
+           <div class="relative w-full pl-20 pr-4 md:pl-4">
+            <h3 class="mb-4 block text-left text-2xl font-bold text-white dark:text-white md:hidden">
+             Step 3
+            </h3>
+            <p class="mb-8 mt-4 block text-left text-xl font-semibold md:hidden md:pl-20">
+             Follow the meals and log your progress
+            </p>
+            <div class="h-auto w-80">
+             <img alt="View Meal Plan" class="h-auto w-full rounded-lg" height="439" src="/_next/image?url=https%3A%2F%2Fbgefmqefmboheirzxqvu.supabase.co%2Fstorage%2Fv1%2Fobject%2Fpublic%2Fmarketing%2Fpreviews%2Fmeal-plan-2-en.png&amp;w=1920&amp;q=75" width="893"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="w-full h-auto bg-primary-950">
+       <div class="mx-auto max-w-screen-2xl px-6 py-10 lg:py-12">
+        <h3 class="text-center text-2xl font-bold">
+         You get weekly:
+        </h3>
+        <div class="mx-auto mt-12 grid grid-cols-1 gap-4 md:max-w-screen-xl md:grid-cols-2 lg:grid-cols-3">
+         <div class="flex flex-col items-start transition-all duration-500 ease-in-out md:items-center translate-y-10 opacity-0">
+          <h4 class="mt-4 self-center text-lg font-bold">
+           A personalized plan
+          </h4>
+         </div>
+         <div class="flex flex-col items-start transition-all duration-500 ease-in-out md:items-center translate-y-10 opacity-0">
+          <h4 class="mt-4 self-center text-lg font-bold">
+           Recipes and How-to
+          </h4>
+         </div>
+         <div class="flex flex-col items-start transition-all duration-500 ease-in-out md:items-center translate-y-10 opacity-0">
+          <h4 class="mt-4 self-center text-lg font-bold">
+           A shopping list
+          </h4>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="w-full h-auto bg-gradient-to-t from-background to-primary-950 pb-12 lg:pb-32" id="cta">
+       <div class="mx-auto max-w-screen-2xl px-6 py-10 lg:py-12 flex flex-col items-center">
+        <div class="flex flex-col items-center transition-all duration-1000 ease-in-out translate-y-12 opacity-0">
+         <div class="flex flex-col items-center">
+          <a class="flex items-center gap-4" href="/">
+           <img alt="Sigla PlanFit" class="h-auto w-auto" height="80" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.8fdee64e.png&amp;w=640&amp;q=75" width="300"/>
+          </a>
+          <h2 class="mt-4 text-center font-serif text-2xl sm:text-3xl">
+           Say goodbye to guesswork and reach your goal
+           <br/>
+           See it for yourself.
+          </h2>
+         </div>
+        </div>
+        <a class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-gradient-to-r from-primary-350 to-blue-300 hover:from-blue-300 hover:to-blue-300 text-background transition-all duration-500 ease-in-out font-sans h-12 rounded-md px-8 sm:px-10 text-base mt-20 sm:mt-28 !mt-6 mb-6 md:!mt-10 md:mb-10" href="/download">
+         Try the App for free
+        </a>
+       </div>
+      </section>
+     </div>
+     <footer class="flex w-full flex-col items-center justify-between border-t border-primary px-4 py-4 lg:flex-row">
+      <div class="flex flex-col-reverse items-center gap-4 lg:flex-row">
+       <p class="text-sm text-gray-600">
+        © 2025 IQ Meals, UNTK Labs
+       </p>
+       <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary border border-border text-primary-foreground hover:bg-blue-500/20 h-10 px-4 py-2 font-sans" href="mailto:vlad@untklabs.com?subject=Intrebare despre PlanFit&amp;body=Salut Vlad,">
+        Write us
+       </a>
+      </div>
+      <div>
+       <div class="mt-4 flex flex-col items-center justify-center gap-2 lg:mt-0 lg:flex-row">
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:bottom-1 after:h-[1px] after:w-4/5 after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 px-4 py-2 text-sm font-normal text-gray-600 hover:text-white" href="/cookie-policy">
+         Cookie Policy
+        </a>
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:bottom-1 after:h-[1px] after:w-4/5 after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 px-4 py-2 text-sm font-normal text-gray-600 hover:text-white" href="/privacy-policy">
+         Privacy Policy
+        </a>
+        <a class="inline-flex items-center justify-center whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 relative after:absolute after:bg-white after:bottom-1 after:h-[1px] after:w-4/5 after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300 font-sans h-10 px-4 py-2 text-sm font-normal text-gray-600 hover:text-white text-sm" href="/terms-and-conditions">
+         Terms and Conditions
+        </a>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </main>
+  </body>
+
+</body>
+</html>

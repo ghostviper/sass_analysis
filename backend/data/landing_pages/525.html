@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>YouTube Video Clipping Tool | YT Clipper</title>
+</head>
+<body>
+  <body>
+   <div class="relative z-10">
+    <nav class="fixed top-0 left-0 right-0 w-full bg-black text-white">
+     <div class="container max-w-5xl px-4 lg:px-0 mx-auto">
+      <div class="flex justify-between items-center h-16">
+       <div class="shrink-0">
+        <a class="font-head text-2xl flex items-end" href="/">
+         <div class="flex items-center mx-auto gap-2">
+          <img alt="" class="h-11 w-11" src="/images/yt-clipper-logo.png"/>
+          <h1 class="font-head font-primary text-center leading-12 luckiest-guy">
+           YT CLIPPER
+          </h1>
+         </div>
+        </a>
+       </div>
+       <div class="hidden md:flex space-x-6">
+        <a class="hover:underline decoration-primary underline-offset-2 transition-all" href="/#pricing">
+         Pricing
+        </a>
+        <a class="hover:underline decoration-primary underline-offset-2 transition-all" href="/#faq">
+         FAQ
+        </a>
+        <a class="hover:underline decoration-primary underline-offset-2 transition-all" href="/blog">
+         Blog
+        </a>
+       </div>
+      </div>
+     </div>
+    </nav>
+   </div>
+   <div class="h-full">
+    <main class="pb-18 pt-12">
+     <section class="container max-w-5xl mx-auto px-4 lg:px-0 grid items-center gap-16 py-12 md:py-16">
+      <div class="min-h-[400px] pb-18 flex flex-col text-center gap-8 items-center justify-center" id="download">
+       <img alt="YT Clipper - YouTube Video Clipper and Downloader" class="h-24 w-24" src="./images/yt-clipper-logo.png"/>
+       <h1 class="font-head font-bold text-4xl max-w-2xl text-foreground lg:text-5xl">
+        YouTube Clips Without Full Video Downloads
+       </h1>
+       <p class="text-lg max-w-2xl text-muted-foreground">
+        Stop downloading full videos when you only need clips. Save time and storage, get the parts you want.
+       </p>
+       <p class="text-sm text-muted-foreground">
+        (Start clipping now, no payment or signup required)
+       </p>
+       <div class="flex max-w-md w-full gap-4">
+        <button class="font-head outline-hidden cursor-pointer duration-200 font-medium shadow-md hover:shadow-none bg-primary text-black border-2 border-black transition hover:translate-y-1 hover:bg-primary-hover px-4 py-1.5 text-base flex items-center w-full gap-2 justify-center">
+         <a class="flex flex-col" href="https://github.com/yt-clipper/yt-clipper-releases/releases/download/yt-clipper-v0.2.51/yt-clipper_0.2.51_aarch64.app.tar.gz" rel="noopener noreferrer" target="_blank">
+          <span class="flex gap-2 items-center justify-center">
+           MacOS
+          </span>
+          <span class="text-[10px] font-light font-sans">
+           (Apple Silicon)
+          </span>
+         </a>
+        </button>
+        <button class="font-head outline-hidden cursor-pointer duration-200 font-medium items-center shadow-md hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1 px-4 py-1.5 text-base flex w-full flex-col">
+         <a class="flex flex-col" href="https://github.com/yt-clipper/yt-clipper-releases/releases/download/yt-clipper-v0.2.51/yt-clipper_0.2.51_x64-setup.exe" rel="noopener noreferrer" target="_blank">
+          <span class="flex gap-2 items-center justify-center">
+           Windows
+          </span>
+          <span class="text-[10px] font-light font-sans">
+           (Windows 11)
+          </span>
+         </a>
+        </button>
+       </div>
+      </div>
+     </section>
+     <section class="w-full bg-primary overflow-hidden">
+      <div class="w-full bg-black text-white py-2 overflow-hidden">
+       <div class="whitespace-nowrap font-mono text-sm tracking-wider animate-marquee">
+        <span class="inline-block">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+        <span class="inline-block ml-8">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+       </div>
+      </div>
+      <div class="w-full flex flex-col items-center justify-center gap-5 py-20 px-4 lg:px-0 md:py-24">
+       <div class="text-center max-w-4xl mx-auto mb-8">
+        <h2 class="font-head lg:text-4xl text-2xl font-semibold">
+         From link to clip in seconds
+        </h2>
+        <p class="font-sans text-xl max-w-2xl mx-auto mt-4">
+         Get your clips in just 3 simple steps
+        </p>
+       </div>
+       <div class="relative w-full max-w-xl flex flex-col gap-5 items-center bg-white border-2 border-black p-7 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <div class="bg-white border-2 border-black flex-1 h-10 w-full px-3 flex items-center font-mono text-sm overflow-hidden">
+         <span class="text-gray-700 truncate">
+          https://www.youtube.com/watch?v=BsCZwGQMlms
+         </span>
+        </div>
+        <div class="w-full">
+         <div class="w-full bg-none text-card-foreground p-3 pb-0">
+          <div class="flex items-center justify-center text-xs mb-2 gap-2">
+           <div class="font-medium font-mono bg-gray-200 text-gray-700 px-2.5 py-1.5 text-sm">
+            Duration:
+            <span class="tabular-nums">
+             39s
+            </span>
+           </div>
+          </div>
+          <div class="flex items-center gap-3">
+           <div class="font-medium font-mono bg-gray-200 text-gray-700 px-2.5 py-1.5 text-sm">
+            Start:
+            <span class="tabular-nums">
+             0:09
+            </span>
+           </div>
+           <div class="font-medium font-mono bg-gray-200 text-gray-700 px-2.5 py-1.5 text-sm">
+            End:
+            <span class="tabular-nums">
+             0:48
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <button class="font-head outline-hidden cursor-pointer font-medium items-center shadow-md hover:shadow-none bg-primary text-black border-2 border-black hover:translate-y-1 hover:bg-primary-hover px-4 py-1.5 text-base flex gap-3 w-full transition-all duration-300 scale-95 brightness-90">
+         Clip Video
+        </button>
+       </div>
+      </div>
+      <div class="w-full bg-black text-white py-2 overflow-hidden">
+       <div class="whitespace-nowrap font-mono text-sm tracking-wider animate-marquee-reverse">
+        <span class="inline-block">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+        <span class="inline-block ml-8">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+       </div>
+      </div>
+     </section>
+     <section class="w-full py-20" id="features">
+      <div class="container max-w-5xl mx-auto px-4 lg:px-0 grid items-center gap-12">
+       <div class="text-center max-w-2xl mx-auto">
+        <h2 class="font-head lg:text-4xl text-2xl font-semibold">
+         A Better Way to Clip YouTube Videos
+        </h2>
+        <p class="font-sans text-xl mt-4">
+         Stop wrestling with clunky online tools and complex command lines. Here’s how YT Clipper makes video clipping simple and powerful.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="flex flex-col items-center text-center gap-4 bg-background border-2 border-black p-6">
+         <h3 class="font-head text-xl font-semibold">
+          Precision YouTube Clipper
+         </h3>
+         <p class="text-muted-foreground">
+          Tired of downloading huge files for just one scene? Our YouTube clipper lets you select the exact start and end times with a simple, intuitive timeline. Get only the part you need, every single time.
+         </p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4 bg-background border-2 border-black p-6">
+         <h3 class="font-head text-xl font-semibold">
+          High-Quality Clip Downloader
+         </h3>
+         <p class="text-muted-foreground">
+          As a powerful yt clip downloader, YT Clipper preserves the video quality. Download clips in various resolutions, up to 4K. Your content will look crisp and professional, free from the artifacts of online tools.
+         </p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4 bg-background border-2 border-black p-6">
+         <h3 class="font-head text-xl font-semibold">
+          Watermark &amp; Ad-Free
+         </h3>
+         <p class="text-muted-foreground">
+          Your creations should be your own. All clips are 100% free of watermarks and the app is completely ad-free, providing a clean and focused video clipping experience.
+         </p>
+        </div>
+        <div class="flex flex-col items-center text-center gap-4 bg-background border-2 border-black p-6">
+         <h3 class="font-head text-xl font-semibold">
+          Fast and Efficient
+         </h3>
+         <p class="text-muted-foreground">
+          Built as a native desktop app, YT Clipper is significantly faster than any online youtube video clipper. Process your clips in seconds, not minutes, and streamline your content workflow.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full bg-primary" id="pricing">
+      <div class="w-full bg-black text-white py-2 overflow-hidden">
+       <div class="whitespace-nowrap font-mono text-sm tracking-wider animate-marquee">
+        <span class="inline-block">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+        <span class="inline-block ml-8">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+       </div>
+      </div>
+      <div class="w-full flex flex-col items-center justify-center gap-5 py-20 px-4 lg:px-0 md:py-24">
+       <div class="text-center max-w-4xl mx-auto">
+        <h2 class="font-head lg:text-4xl text-2xl font-semibold">
+         Choose your plan
+        </h2>
+        <p class="font-sans text-xl max-w-2xl mx-auto mt-4">
+         Start free or get lifetime access to premium features with a simple one-time payment.
+        </p>
+       </div>
+       <div class="container max-w-5xl mx-auto my-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+         <div class="inline-block border-2 bg-background border-black transition-all hover:shadow-xs relative shadow-none py-8 px-6 w-full">
+          <div class="p-4">
+           <div class="mb-6">
+            <p class="font-sans text-xl font-medium mb-4">
+             Free Tier
+            </p>
+            <div class="flex items-baseline gap-2 mb-2">
+             <span class="font-head text-6xl">
+              £0.00
+             </span>
+            </div>
+            <p class="font-sans text-base mb-2">
+             No payment required
+            </p>
+           </div>
+           <div class="mb-6">
+            <p class="font-sans text-lg font-medium mb-4">
+             What's Included:
+            </p>
+            <ul class="space-y-2">
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               Video downloads 360p - 720p resolution.
+              </span>
+             </li>
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               No watermarks on your clips.
+              </span>
+             </li>
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               No ads.
+              </span>
+             </li>
+            </ul>
+           </div>
+           <button class="font-head outline-hidden cursor-pointer duration-200 font-medium flex items-center shadow-md hover:shadow-none bg-secondary shadow-primary text-secondary-foreground border-2 border-black transition hover:translate-y-1 px-4 py-1.5 text-base w-full">
+            <a href="#download">
+             Download Free
+            </a>
+           </button>
+          </div>
+         </div>
+         <div class="inline-block border-2 bg-background border-black transition-all hover:shadow-xs relative shadow-none py-8 px-6 w-full">
+          <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+           <span class="bg-primary border-black border-2 text-black px-4 py-1 text-sm font-medium">
+            Early Bird Offer
+           </span>
+          </div>
+          <div class="p-4">
+           <div class="mb-6">
+            <p class="font-sans text-xl font-medium mb-4">
+             Lifetime Access
+            </p>
+            <div class="flex flex-col md:flex-row items-baseline gap-4 mb-2">
+             <span class="font-head text-6xl">
+              £20.00
+             </span>
+             <span class="font-sans font-bold text-3xl line-through text-gray-500">
+              £30.00
+             </span>
+            </div>
+            <p class="font-sans text-base mb-2">
+             One time payment
+            </p>
+           </div>
+           <div class="mb-6">
+            <p class="font-sans text-lg font-medium mb-4">
+             What's Included:
+            </p>
+            <ul class="space-y-2">
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               Up to 4K resolution video downloads.
+              </span>
+             </li>
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               GIF creation.
+              </span>
+             </li>
+             <li class="flex font-sans items-center text-sm">
+              <span>
+               Lifetime access to all future updates.
+              </span>
+             </li>
+            </ul>
+           </div>
+           <a class="font-head outline-hidden cursor-pointer duration-200 font-medium flex items-center shadow-md hover:shadow-none bg-primary text-black border-2 border-black transition hover:translate-y-1 hover:bg-primary-hover px-4 py-1.5 text-base w-full" href="https://buy.stripe.com/eVqcN5gFl1m175ieGydEs01">
+            Buy Now!
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full bg-black text-white py-2 overflow-hidden">
+       <div class="whitespace-nowrap font-mono text-sm tracking-wider animate-marquee-reverse">
+        <span class="inline-block">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+        <span class="inline-block ml-8">
+         ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE  •  ✂️ • CLIP • 🎬 • SAVE • 🎞️ • SHARE
+        </span>
+       </div>
+      </div>
+     </section>
+     <section class="w-full" id="faq">
+      <div class="w-full max-w-5xl mx-auto px-4 lg:px-0 grid items-center gap-6 pb-8 pt-6 md:py-10">
+       <div class="text-center">
+        <h2 class="font-head lg:text-4xl text-xl font-semibold">
+         Frequently Asked Questions
+        </h2>
+        <p class="font-sans text-xl max-w-2xl mx-auto mt-4 mb-10">
+         Get answers to the most common questions.
+        </p>
+       </div>
+       <div class="w-full space-y-4">
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:R6mfnija:" type="button">
+           What is YT Clipper?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Ramfnija:" type="button">
+           How do I trim a YouTube video without downloading the whole thing?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Remfnija:" type="button">
+           Does YT Clipper keep the original video quality?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Rimfnija:" type="button">
+           Is YT Clipper free?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Rmmfnija:" type="button">
+           What operating systems does YT Clipper support?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Rqmfnija:" type="button">
+           What is the difference between YT Clipper and other YouTube downloaders?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:Rumfnija:" type="button">
+           What is the difference between YT Clipper and command line tools?
+          </button>
+         </h3>
+        </div>
+        <div class="border-2 bg-background text-foreground shadow-md hover:shadow-sm data-[state=open]:shadow-sm transition-all overflow-hidden">
+         <h3 class="flex">
+          <button class="flex flex-1 items-start justify-between px-4 py-2 font-head cursor-pointer focus:outline-hidden [&amp;[data-state=open]&gt;svg]:rotate-180 text-start" id="radix-:R12mfnija:" type="button">
+           Where do I get YT Clipper customer support?
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+   </div>
+   <footer class="bg-white border-t-2">
+    <div class="mx-auto max-w-5xl px-4 lg:px-0">
+     <div class="grid gap-10 py-8 sm:grid-cols-12">
+      <div class="space-y-2 sm:col-span-6 md:col-span-3">
+       <div>
+        <img alt="yt clipper logo" class="w-9 h-9" src="/images/yt-clipper-logo.png"/>
+       </div>
+       <div class="text-sm text-black">
+        The Easiest Way to Clip YouTube Videos
+       </div>
+      </div>
+      <div class="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
+       <h3 class="text-sm font-medium">
+        Quick Links
+       </h3>
+       <ul class="space-y-2 text-sm">
+        <li>
+         <a class="text-black transition hover:text-primary" href="/#pricing">
+          Pricing
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary" href="/#faq">
+          FAQs
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary" href="/privacy">
+          Privacy Policy
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary" href="/terms">
+          Terms of Service
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary" href="/blog">
+          Blog
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="space-y-2 sm:col-span-6 md:col-span-3">
+       <h3 class="text-sm font-medium">
+        Contact
+       </h3>
+       <ul class="space-y-2 text-sm">
+        <li class="text-black transition hover:text-primary">
+         info@yt-clipper.com
+        </li>
+       </ul>
+      </div>
+      <div class="space-y-2 sm:col-span-6 md:col-span-3">
+       <h3 class="text-sm font-medium">
+        Cool Projects
+       </h3>
+       <ul class="space-y-2 text-sm">
+        <li>
+         <a class="text-black transition hover:text-primary" href="https://www.text-2-ics.com/" target="_blank">
+          🗓️ Text 2 ICS
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary flex gap-1 items-center" href="https://takeout-tools.com" target="_blank">
+          Takeout Tools
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary flex gap-1 items-center" href="https://www.clippings.store/" target="_blank">
+          📖 Clippings Store
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary flex gap-1 items-center" href="https://www.trackinglanguages.com/" target="_blank">
+          🇪🇸 Tracking Languages
+         </a>
+        </li>
+        <li>
+         <a class="text-black transition hover:text-primary flex gap-1 items-center" href="https://www.qlock.in/" target="_blank">
+          🕰️ Qlockin
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </footer>
+   <section>
+   </section>
+   <button class="font-head outline-hidden cursor-pointer font-medium flex items-center shadow-md hover:shadow-none bg-transparent border-2 hover:translate-y-1 fixed bottom-4 right-5 z-50 h-auto min-w-fit gap-2 px-2 py-0.5 text-sm transition-all duration-100 hover:scale-105">
+    <span>
+     Feedback
+    </span>
+   </button>
+  </body>
+
+</body>
+</html>

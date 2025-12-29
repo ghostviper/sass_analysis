@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Timein.life – Messages for Later</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="flex min-h-screen flex-col">
+     <header class="fixed left-0 right-0 top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
+      <nav class="container mx-auto grid h-16 grid-cols-[auto,1fr,auto] md:grid-cols-[1fr,1fr,1fr] items-center px-4">
+       <a class="flex items-center gap-2" href="/">
+        <span class="text-xl font-medium tracking-tight text-foreground">
+         Timein.life
+        </span>
+       </a>
+       <div class="hidden items-center justify-center gap-6 md:flex">
+        <a class="text-sm transition-colors text-muted-foreground hover:text-foreground" href="/how-it-works">
+         How it works
+        </a>
+        <a class="text-sm transition-colors text-muted-foreground hover:text-foreground" href="/when">
+         When it matters
+        </a>
+       </div>
+       <div class="flex items-center justify-end gap-2">
+        <div class="hidden items-center gap-3 md:flex">
+         <div class="relative">
+          <button class="flex h-9 items-center gap-1.5 rounded-full bg-secondary px-3 text-sm text-secondary-foreground transition-colors hover:bg-secondary/80">
+           <span class="font-medium">
+            EN
+           </span>
+          </button>
+         </div>
+         <a href="/auth">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3">
+           Log in
+          </button>
+         </a>
+         <a href="/auth">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-9 rounded-md px-3">
+           Create a capsule
+          </button>
+         </a>
+        </div>
+       </div>
+      </nav>
+     </header>
+     <main class="flex-1 pt-16">
+      <div class="relative">
+       <section class="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden px-4">
+        <div class="relative z-10 mx-auto flex w-full max-w-5xl flex-col items-center text-center">
+         <div class="relative min-h-[7.5rem] w-full mt-[-20]">
+          <p class="mx-auto max-w-3xl px-2 text-4xl leading-snug font-medium tracking-tight text-foreground md:text-5xl md:leading-snug lg:max-w-6xl lg:text-8xl lg:leading-[1.15]">
+           Timein.life lets you prepare words
+          </p>
+         </div>
+        </div>
+       </section>
+       <section class="relative py-24 md:py-28">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-4xl text-center">
+          <h2 class="mb-6 text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+           One place. Many reasons.
+          </h2>
+          <p class="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground md:text-xl">
+           Create private capsules with words, photos, video and voice —
+           <br class="hidden md:block"/>
+           for yourself or for someone you care about.
+          </p>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+           <div class="group rounded-3xl border border-border bg-card p-6 text-left shadow-card transition-shadow hover:shadow-medium">
+            <h3 class="mb-2 text-base font-medium text-foreground">
+             For your child
+            </h3>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+             A message they’ll open on a future birthday.
+            </p>
+           </div>
+           <div class="group rounded-3xl border border-border bg-card p-6 text-left shadow-card transition-shadow hover:shadow-medium">
+            <h3 class="mb-2 text-base font-medium text-foreground">
+             For someone you love
+            </h3>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+             Words delivered when they’ll matter most.
+            </p>
+           </div>
+           <div class="group rounded-3xl border border-border bg-card p-6 text-left shadow-card transition-shadow hover:shadow-medium">
+            <h3 class="mb-2 text-base font-medium text-foreground">
+             For future you
+            </h3>
+            <p class="text-sm leading-relaxed text-muted-foreground">
+             A note from today — opened next year.
+            </p>
+           </div>
+          </div>
+          <p class="mx-auto mt-10 max-w-2xl text-center text-sm md:text-base text-muted-foreground">
+           Created for moments you can’t be present — but your words can.
+          </p>
+         </div>
+        </div>
+       </section>
+       <section class="relative pb-20">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-5xl">
+          <div class="mb-6 text-center text-xs uppercase tracking-[0.18em] text-muted-foreground">
+           Choose your meaning
+          </div>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-5">
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-primary/5 border-primary/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Life
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Milestones, turning points, letters for later.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-foreground/[0.03] border-border">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Family
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Traditions, stories, and future moments together.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-rose-500/5 border-rose-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Love
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Say it now. Open it on the right day.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-emerald-500/5 border-emerald-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Health
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Encouragement, recovery notes, gentle reminders.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-amber-500/5 border-amber-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Finances
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Plans, goals, and promises to your future self.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-sky-500/5 border-sky-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Career
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Ambitions, reflections, and next steps.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-indigo-500/5 border-indigo-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Travel
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Places, feelings, and moments worth keeping.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-violet-500/5 border-violet-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Memories
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Photos, voices, and moments you don’t want to lose.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-yellow-500/5 border-yellow-500/10">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Ideas
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Thoughts that deserve time to grow.
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="group relative overflow-hidden rounded-2xl border p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-medium backdrop-blur bg-card/40 border-border">
+            <div class="relative z-10 flex items-start gap-3">
+             <div class="min-w-0">
+              <div class="truncate text-sm font-medium text-foreground">
+               Custom
+              </div>
+              <div class="mt-1 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
+               Create your own category for any reason.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="relative py-16 md:py-20">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-5xl">
+          <div class="rounded-3xl border border-border bg-card/40 p-6 shadow-sm backdrop-blur md:p-10">
+           <div class="grid gap-8 md:grid-cols-2 md:items-center">
+            <div>
+             <div class="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+              What it is
+             </div>
+             <h3 class="mb-3 text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+              A capsule is a private space in time.
+             </h3>
+             <p class="text-base leading-relaxed text-muted-foreground md:text-lg">
+              Capture what matters — for yourself, or for someone you care about.
+             </p>
+             <p class="mt-4 text-sm text-muted-foreground">
+              Write it. Add media. Seal it. Open it when it matters.
+             </p>
+            </div>
+            <div class="grid grid-cols-2 gap-3 sm:gap-4">
+             <div class="group rounded-2xl border border-border bg-background/40 p-4 transition-all hover:-translate-y-0.5 hover:bg-background/60 hover:shadow-medium">
+              <div class="text-sm font-medium text-foreground">
+               Words
+              </div>
+              <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+               A note, a letter, a promise.
+              </div>
+             </div>
+             <div class="group rounded-2xl border border-border bg-background/40 p-4 transition-all hover:-translate-y-0.5 hover:bg-background/60 hover:shadow-medium">
+              <div class="text-sm font-medium text-foreground">
+               Photos
+              </div>
+              <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+               Moments you don’t want to lose.
+              </div>
+             </div>
+             <div class="group rounded-2xl border border-border bg-background/40 p-4 transition-all hover:-translate-y-0.5 hover:bg-background/60 hover:shadow-medium">
+              <div class="text-sm font-medium text-foreground">
+               Video
+              </div>
+              <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+               A message that feels alive.
+              </div>
+             </div>
+             <div class="group rounded-2xl border border-border bg-background/40 p-4 transition-all hover:-translate-y-0.5 hover:bg-background/60 hover:shadow-medium">
+              <div class="text-sm font-medium text-foreground">
+               Voice
+              </div>
+              <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+               The most human way to remember.
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="relative py-24">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-2xl text-center">
+          <p class="mb-6 text-lg leading-relaxed text-muted-foreground md:text-xl">
+           If this feels meaningful, you can start with a capsule of your own.
+          </p>
+          <div class="flex flex-col items-center gap-3">
+           <a href="/auth">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-10">
+             Create your first capsule
+            </button>
+           </a>
+           <span class="text-sm text-muted-foreground">
+            You don’t need to know everything yet.
+           </span>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="container mx-auto px-4 py-12">
+        <div class="mb-10 text-center">
+         <div class="mx-auto max-w-2xl">
+          <div class="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+           Real moments
+          </div>
+          <h2 class="mb-3 text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+           From the community
+          </h2>
+          <p class="text-base leading-relaxed text-muted-foreground md:text-lg">
+           A few public capsules — shared with permission.
+          </p>
+         </div>
+        </div>
+        <div class="mx-auto max-w-lg space-y-6">
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Arturmanczak #33
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A memory sealed for the right moment.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening later
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Dawid #49
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A private note—locked until the future arrives.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening in a few months
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Dawid #49
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            Something meaningful, saved beyond today.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening later this year
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Enya #17
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A capsule time won’t let you rush.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening later this year
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Grzegorz #74
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A message only the future should read.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening soon
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Zuzanna #89
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A moment preserved—untouched.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening this month
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Dawid #49
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A memory sealed for the right moment.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening later this year
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+         <div class="relative w-full snap-start overflow-hidden rounded-[28px]">
+          <div class="relative z-10 flex items-center justify-between px-5 pt-5">
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/85 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Sealed
+            </span>
+           </div>
+           <div class="inline-flex items-center gap-2 rounded-full bg-white/8 px-3 py-1.5 text-[11px] font-medium text-white/80 backdrop-blur-md shadow-[0_0_0_1px_rgba(255,255,255,.10)]">
+            <span>
+             Privacy‑first
+            </span>
+           </div>
+          </div>
+          <div class="relative z-10 flex h-full flex-col justify-center px-6 pb-10 text-center text-white">
+           <h2 class="mx-auto max-w-[22ch] text-[30px] font-semibold leading-[1.05] tracking-[-0.02em] md:text-4xl">
+            <span class="text-white">
+             Adrianna #56
+            </span>
+            <span class="text-white/70">
+             sealed a capsule
+            </span>
+           </h2>
+           <p class="mx-auto mt-4 max-w-md text-[15px] leading-relaxed text-white/72">
+            A private note—locked until the future arrives.
+           </p>
+           <div class="mx-auto mt-7 w-full max-w-sm rounded-2xl bg-white/6 p-5 backdrop-blur-xl shadow-[0_0_0_1px_rgba(255,255,255,.10),0_28px_90px_rgba(0,0,0,.55)]">
+            <p class="text-[11px] uppercase tracking-[0.24em] text-white/55">
+             Opens
+            </p>
+            <p class="mt-1 text-[26px] font-semibold text-white">
+             Opening soon
+            </p>
+            <p class="mt-3 text-xs leading-relaxed text-white/55">
+             Exact date &amp; content are hidden to protect privacy.
+            </p>
+           </div>
+           <p class="mx-auto mt-6 text-[11px] tracking-[0.18em] text-white/45">
+            TIMEIN.LIFE · MEMORY, SEALED.
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="relative pb-24">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-5xl">
+          <div class="rounded-3xl border border-border bg-card/40 p-6 shadow-none backdrop-blur md:p-10 md:shadow-sm">
+           <div class="mb-8 text-center">
+            <div class="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+             Trust
+            </div>
+            <h3 class="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+             Built for things that matter.
+            </h3>
+           </div>
+           <div class="grid gap-3 md:grid-cols-3 md:gap-4">
+            <div class="rounded-2xl border border-border bg-background/40 p-5">
+             <div class="text-sm font-medium text-foreground">
+              Private by default
+             </div>
+             <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+              Capsules are yours. You decide what happens to them.
+             </div>
+            </div>
+            <div class="rounded-2xl border border-border bg-background/40 p-5">
+             <div class="text-sm font-medium text-foreground">
+              You control time
+             </div>
+             <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+              Choose when a capsule can be opened — down to the day.
+             </div>
+            </div>
+            <div class="rounded-2xl border border-border bg-background/40 p-5">
+             <div class="text-sm font-medium text-foreground">
+              Nothing is public unless you choose
+             </div>
+             <div class="mt-1 text-xs leading-relaxed text-muted-foreground">
+              Sharing is optional. Privacy is the default.
+             </div>
+            </div>
+           </div>
+           <div class="mt-10 text-center">
+            <a class="inline-block" href="/auth">
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-10">
+              Create your first capsule
+             </button>
+            </a>
+            <div class="mt-3 text-sm text-muted-foreground">
+             No pressure. Keep it private — share only if you choose.
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="relative pb-24">
+        <div class="container mx-auto px-4">
+         <div class="mx-auto max-w-3xl">
+          <div class="mb-8 text-center">
+           <div class="mb-3 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+            FAQ
+           </div>
+           <h3 class="text-2xl font-medium tracking-tight text-foreground md:text-3xl">
+            A few things you might wonder
+           </h3>
+          </div>
+          <div class="space-y-3">
+           <details class="group rounded-2xl border border-border bg-card/40 p-5 shadow-none backdrop-blur md:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+             <span class="text-sm font-medium text-foreground md:text-base">
+              Are capsules private?
+             </span>
+            </summary>
+            <div class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+             Yes. Capsules are private by default. You decide if anything is shared.
+            </div>
+           </details>
+           <details class="group rounded-2xl border border-border bg-card/40 p-5 shadow-none backdrop-blur md:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+             <span class="text-sm font-medium text-foreground md:text-base">
+              What can I put inside a capsule?
+             </span>
+            </summary>
+            <div class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+             Words, photos, video and voice — whatever helps the moment feel real.
+            </div>
+           </details>
+           <details class="group rounded-2xl border border-border bg-card/40 p-5 shadow-none backdrop-blur md:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+             <span class="text-sm font-medium text-foreground md:text-base">
+              Can I create a capsule for someone else?
+             </span>
+            </summary>
+            <div class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+             Yes. You can gift a capsule and choose when it can be opened.
+            </div>
+           </details>
+           <details class="group rounded-2xl border border-border bg-card/40 p-5 shadow-none backdrop-blur md:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+             <span class="text-sm font-medium text-foreground md:text-base">
+              Can I change the open date later?
+             </span>
+            </summary>
+            <div class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+             Yes, until it’s opened. Once opened, it becomes part of that moment.
+            </div>
+           </details>
+           <details class="group rounded-2xl border border-border bg-card/40 p-5 shadow-none backdrop-blur md:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4">
+             <span class="text-sm font-medium text-foreground md:text-base">
+              Do I have to pick a category?
+             </span>
+            </summary>
+            <div class="mt-3 text-sm leading-relaxed text-muted-foreground md:text-base">
+             No. Categories are optional — you can also create your own.
+            </div>
+           </details>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+     </main>
+     <footer class="border-t border-border bg-background">
+      <div class="container mx-auto px-4 py-16">
+       <div class="mb-10 text-center">
+        <p class="mx-auto max-w-2xl text-2xl text-foreground font-semibold md:text-5xl">
+         Some words deserve the right moment.
+        </p>
+       </div>
+       <div class="flex flex-col items-center justify-between gap-6 text-sm text-muted-foreground sm:flex-row">
+        <p>
+         © 2025 Timein.life
+        </p>
+        <div class="flex gap-6">
+         <a class="transition-colors hover:text-foreground" href="/privacy">
+          Privacy
+         </a>
+         <a class="transition-colors hover:text-foreground" href="/terms">
+          Terms
+         </a>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+    <section>
+    </section>
+   </div>
+  </body>
+
+</body>
+</html>

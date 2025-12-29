@@ -1,0 +1,23 @@
+# Core
+fastapi==0.115.6
+uvicorn
+python-dotenv==1.0.1
+pydantic==2.10.4
+pydantic-settings==2.7.0
+
+# Database
+sqlalchemy==2.0.36
+aiosqlite==0.20.0
+
+# Crawler
+playwright==1.48.0
+beautifulsoup4==4.12.3
+lxml==5.3.0
+
+# AI Services
+claude-agent-sdk
+openai>=1.0.0
+
+# Utilities
+httpx==0.28.1
+asyncio==3.4.3

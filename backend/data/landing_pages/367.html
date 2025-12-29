@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ReelSpark - Easily create UGC Content for your apps in seconds using AI.</title>
+</head>
+<body>
+  <body>
+   <div class="container mx-auto px-5">
+    <div class="flex py-1.5 px-1 items-center border-b border-gray-50 dark:border-dark-800/50 justify-between">
+     <div class="w-4/12">
+      <a href="/">
+       <img alt="ReelSpark Logo" height="30" src="/assets/images/logo.svg" width="120"/>
+      </a>
+     </div>
+     <div class="w-4/12 hidden lg:flex justify-center">
+      <div class="hidden items-center space-x-0.5 lg:flex">
+       <ul class="w-full dark:text-gray-300 items-center flex-wrap flex">
+        <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+         <a class="transition-transform duration-500" href="/blog">
+          Blog
+         </a>
+        </li>
+        <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+         <a class="transition-transform duration-500" href="/pricing">
+          Pricing
+         </a>
+        </li>
+        <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+         <a class="transition-transform duration-500" href="/faq">
+          FAQ
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+     <div class="flex flex-1 items-center justify-end space-x-4">
+      <div class="hidden space-x-2 lg:flex">
+       <button class="inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 hover:bg-accent/50 hover:text-accent-foreground text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full">
+        <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-in">
+         <span class="flex w-full flex-1 items-center justify-center">
+          <span>
+           Sign In
+          </span>
+         </span>
+        </a>
+       </button>
+       <button class="inline-flex items-center justify-center font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full">
+        <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+         <span class="flex w-full flex-1 items-center justify-center">
+          <span class="flex items-center space-x-2">
+           <span>
+            Sign Up
+           </span>
+          </span>
+         </span>
+        </a>
+       </button>
+      </div>
+      <div class="flex lg:hidden">
+       <div class="hidden items-center space-x-0.5 lg:flex">
+        <ul class="w-full dark:text-gray-300 items-center flex-wrap flex">
+         <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+          <a class="transition-transform duration-500" href="/blog">
+           Blog
+          </a>
+         </li>
+         <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+          <a class="transition-transform duration-500" href="/pricing">
+           Pricing
+          </a>
+         </li>
+         <li class="flex items-center justify-center font-medium lg:justify-start rounded-lg text-sm transition colors transform active:translate-y-[2px] *:p-1 *:lg:px-2.5 *:w-full *:h-full *:flex *:items-center aria-disabled:cursor-not-allowed aria-disabled:opacity-50 active:text-current text-gray-600 dark:text-gray-300 hover:text-current dark:hover:text-white font-semibold">
+          <a class="transition-transform duration-500" href="/faq">
+           FAQ
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="flex max-w-fit fixed top-10 inset-x-0 mx-auto border border-gray-200 dark:border-white/[0.2] rounded-full dark:bg-black/80 bg-white/80 backdrop-blur-sm shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2 items-center justify-center space-x-4">
+    <a href="/">
+     <img alt="ReelSpark Logo" height="30" src="/assets/images/logo.svg" width="120"/>
+    </a>
+    <a class="relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500" href="/blog">
+     <span class="hidden sm:block text-sm">
+      Blog
+     </span>
+    </a>
+    <a class="relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500" href="/pricing">
+     <span class="hidden sm:block text-sm">
+      Pricing
+     </span>
+    </a>
+    <a class="relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500" href="/faq">
+     <span class="hidden sm:block text-sm">
+      FAQ
+     </span>
+    </a>
+    <a href="/auth/sign-in">
+     <button class="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors">
+      <span>
+       Login
+      </span>
+     </button>
+    </a>
+   </div>
+   <div class="flex flex-col space-y-16">
+    <div class="container mx-auto px-5">
+     <div class="my-12 flex flex-col items-center md:flex-row lg:my-16 mx-auto flex-1 justify-center animate-in fade-in duration-1000 slide-in-from-top-12">
+      <div class="flex w-full flex-1 flex-col items-center space-y-8">
+       <div class="group relative mx-auto max-w-fit flex-row justify-center rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40 flex items-center text-left">
+        🎉
+        <hr class="mx-2 h-4 w-px shrink-0 bg-gray-300"/>
+        <span class="inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
+         The simplest tool to boost your social reach is now live
+        </span>
+       </div>
+       <h1 class="text-center text-2xl md:text-4xl lg:text-5xl text-gray-600 dark:text-white flex flex-col font-heading font-medium xl:text-5xl 2xl:text-[5.2rem] px-4">
+        <span>
+         Automate video content &amp; posting
+        </span>
+        <span>
+         that drives
+         <span class="bg-gradient-to-br bg-clip-text text-transparent from-primary-400 to-primary-700 leading-[1.2]">
+          traffic to your apps
+         </span>
+        </span>
+       </h1>
+       <h2>
+        <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-center animate-in slide-in-from-top-12 duration-700 delay-700">
+         <span class="text-base md:text-lg lg:text-xl font-normal text-gray-500 max-w-2xl mx-auto mt-4 px-4">
+          Focus on scaling your app, not content creation. ReelSpark automates short form video creation and posting to boost your traffic.
+         </span>
+        </span>
+       </h2>
+       <div class="flex flex-col items-center space-y-4">
+        <div class="z-50 flex flex-col gap-6 w-full">
+         <div class="w-full">
+          <button class="group relative z-0 flex cursor-pointer items-center justify-center overflow-hidden whitespace-nowrap border border-white/10 px-6 py-3 text-white [background:var(--bg)] [border-radius:var(--radius)] dark:text-black transform-gpu transition-transform duration-300 ease-in-out active:translate-y-px w-full">
+           <span class="flex items-center justify-center space-x-2 w-full">
+            <span class="text-center text-sm font-medium leading-none tracking-tight text-white dark:from-white dark:to-slate-900/10 lg:text-lg whitespace-nowrap">
+             Start generating videos
+            </span>
+           </span>
+          </button>
+         </div>
+         <div class="flex w-full flex-col items-center space-y-6 md:flex-row md:space-x-8 md:space-y-0">
+          <div class="flex flex-row items-center justify-center">
+           <div class="group relative -mr-4">
+            <img alt="John Travon" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1599566150163-29194dcaad36%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D3387%26q%3D80&amp;w=256&amp;q=75" width="100"/>
+           </div>
+           <div class="group relative -mr-4">
+            <img alt="Robert Jay" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1535713875002-d1d0cf377fde%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8Mnx8YXZhdGFyfGVufDB8fDB8fHww%26auto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D60&amp;w=256&amp;q=75" width="100"/>
+           </div>
+           <div class="group relative -mr-4">
+            <img alt="Joy Reid" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1580489944761-15a19d654956%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8NXx8YXZhdGFyfGVufDB8fDB8fHww%26auto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D60&amp;w=256&amp;q=75" width="100"/>
+           </div>
+           <div class="group relative -mr-4">
+            <img alt="Emily Davidson" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1438761681033-6461ffad8d80%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8MTB8fGF2YXRhcnxlbnwwfHwwfHx8MA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D800%26q%3D60&amp;w=256&amp;q=75" width="100"/>
+           </div>
+           <div class="group relative -mr-4">
+            <img alt="Tyler Dylan Jr" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1472099645785-5658abf4ff4e%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D3540%26q%3D80&amp;w=256&amp;q=75" width="100"/>
+           </div>
+           <div class="group relative -mr-4">
+            <img alt="Destiny Sasha" class="relative !m-0 h-11 w-11 rounded-full border-2 border-muted object-cover object-top !p-0 transition duration-500 group-hover:z-30 group-hover:scale-105" height="100" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1544725176-7c40e5a71c5e%3Fixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%253D%253D%26auto%3Dformat%26fit%3Dcrop%26w%3D3534%26q%3D80&amp;w=256&amp;q=75" width="100"/>
+           </div>
+          </div>
+          <div class="flex flex-col items-start">
+           <span class="text-md font-semibold text-muted-foreground">
+            Trusted by builders and brands.
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="relative cursor-pointer group flex justify-center py-12 max-w-5xl mx-auto animate-in fade-in duration-1000 slide-in-from-top-16 fill-mode-both delay-300">
+      <div class="relative">
+       <img alt="App Demo" class="rounded-2xl group-hover:scale-[1.02] transition-transform shadow-[0_0_1000px_0] shadow-primary/40 animate-in fade-in zoom-in-50 delay-300 duration-1000 ease-out fill-mode-both" height="1824" src="/_next/image?url=%2Fassets%2Fimages%2Fdemo.png&amp;w=3840&amp;q=75" width="2688"/>
+      </div>
+     </div>
+    </div>
+    <div class="container mx-auto px-5">
+     <div class="flex flex-col w-full items-center justify-center space-y-16 py-8 md:py-16 md:justify-center md:items-center animate-in fade-in duration-700 delay-200" id="showcase">
+      <div class="flex flex-col items-center space-y-8 text-center px-4">
+       <h2 class="inline-flex w-auto items-center space-x-2 rounded-full bg-gradient-to-br dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 bg-clip-text px-4 py-2 text-center text-sm font-normal text-gray-500 dark:text-transparent shadow dark:shadow-dark-700 hover:scale-105 transition-transform duration-200">
+        <span>
+         Showcase
+        </span>
+       </h2>
+       <div class="flex flex-col space-y-2.5">
+        <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-2xl md:text-3xl lg:text-4xl">
+         Create, customize, and publish
+         <br class="hidden md:block"/>
+         <span class="block md:inline">
+          engaging app demos with 1-click
+         </span>
+        </h2>
+        <span class="text-sm md:text-base lg:text-lg font-medium text-muted-foreground max-w-xl px-4">
+         With ReelSpark, you can create, publish, and automate engaging app demos using realistic UGC AI avatars in just 1-click.
+        </span>
+       </div>
+      </div>
+      <div class="flex min-w-[300px] max-w-[100vw] px-5 overflow-x-scroll [&amp;::-webkit-scrollbar]:hidden gap-4 md:flex-row md:gap-6 md:items-center xl:justify-center xl:px-0 xl:min-w-[68rem] xl:max-w-[72rem]">
+       <div class="flex flex-col gap-3 items-center">
+        <div class="relative w-[200px] md:w-[200px] rounded-xl shadow-xl overflow-hidden cursor-pointer">
+         <div class="absolute top-2 left-2 flex items-center justify-center bg-white rounded-md z-10 px-1.5 py-1">
+          <span class="text-xs text-primary font-medium">
+           UGC Video
+          </span>
+         </div>
+         <div>
+          <div>
+           <img alt="Showcase 1" class="object-cover hover:scale-105 transition-all duration-300" src="/_next/image?url=%2Fassets%2Fimages%2Fugc%2F1.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col gap-3 items-center">
+        <div class="relative w-[200px] md:w-[200px] rounded-xl shadow-xl overflow-hidden cursor-pointer">
+         <div class="absolute top-2 left-2 flex items-center justify-center bg-white rounded-md z-10 px-1.5 py-1">
+          <span class="text-xs text-primary font-medium">
+           UGC Video
+          </span>
+         </div>
+         <div>
+          <div>
+           <img alt="Showcase 2" class="object-cover hover:scale-105 transition-all duration-300" src="/_next/image?url=%2Fassets%2Fimages%2Fugc%2F2.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col gap-3 items-center">
+        <div class="relative w-[200px] md:w-[200px] rounded-xl shadow-xl overflow-hidden cursor-pointer">
+         <div class="absolute top-2 left-2 flex items-center justify-center bg-white rounded-md z-10 px-1.5 py-1">
+          <span class="text-xs text-primary font-medium">
+           UGC Video
+          </span>
+         </div>
+         <div>
+          <div>
+           <img alt="Showcase 3" class="object-cover hover:scale-105 transition-all duration-300" src="/_next/image?url=%2Fassets%2Fimages%2Fugc%2F3.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col gap-3 items-center">
+        <div class="relative w-[200px] md:w-[200px] rounded-xl shadow-xl overflow-hidden cursor-pointer">
+         <div class="absolute top-2 left-2 flex items-center justify-center bg-white rounded-md z-10 px-1.5 py-1">
+          <span class="text-xs text-primary font-medium">
+           UGC Video
+          </span>
+         </div>
+         <div>
+          <div>
+           <img alt="Showcase 4" class="object-cover hover:scale-105 transition-all duration-300" src="/_next/image?url=%2Fassets%2Fimages%2Fugc%2F4.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="flex flex-col gap-3 items-center">
+        <div class="relative w-[200px] md:w-[200px] rounded-xl shadow-xl overflow-hidden cursor-pointer">
+         <div class="absolute top-2 left-2 flex items-center justify-center bg-white rounded-md z-10 px-1.5 py-1">
+          <span class="text-xs text-primary font-medium">
+           UGC Video
+          </span>
+         </div>
+         <div>
+          <div>
+           <img alt="Showcase 5" class="object-cover hover:scale-105 transition-all duration-300" src="/_next/image?url=%2Fassets%2Fimages%2Fugc%2F5.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container mx-auto px-5">
+     <div class="flex flex-col items-center justify-center space-y-24 py-16 px-4 md:px-20 animate-in fade-in duration-700 delay-300">
+      <div class="flex max-w-3xl flex-col items-center space-y-8 text-center">
+       <h2 class="inline-flex w-auto items-center space-x-2 rounded-full bg-gradient-to-br dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 bg-clip-text px-4 py-2 text-center text-sm font-normal text-gray-500 dark:text-transparent shadow dark:shadow-dark-700 hover:scale-105 transition-transform duration-200">
+        <span>
+         Features
+        </span>
+       </h2>
+       <div class="flex flex-col space-y-2.5">
+        <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-2xl md:text-3xl lg:text-4xl">
+         From idea to viral demos in under 60 seconds
+        </h2>
+        <h3>
+         <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg px-4">
+          No filming. No editing. Just describe your product, and we do the rest.
+         </span>
+        </h3>
+        <div class="w-full flex flex-col items-center justify-center pt-8">
+         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-3xl">
+          <div class="flex flex-col items-center text-center bg-white dark:bg-dark-900 rounded-xl border border-gray-100 dark:border-dark-700 p-4 shadow-md">
+           <span class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-0.5">
+            2 minutes
+           </span>
+           <span class="text-sm text-gray-500 mb-2">
+            Setup time
+           </span>
+           <span class="rounded-full bg-gray-50 dark:bg-dark-700 px-2 py-0.5 text-[11px] text-gray-500 font-medium">
+            vs. 40+ hours monthly
+           </span>
+          </div>
+          <div class="flex flex-col items-center text-center bg-white dark:bg-dark-900 rounded-xl border border-gray-100 dark:border-dark-700 p-4 shadow-md">
+           <span class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-0.5">
+            &lt;$0.50
+           </span>
+           <span class="text-sm text-gray-500 mb-2">
+            Per video
+           </span>
+           <span class="rounded-full bg-gray-50 dark:bg-dark-700 px-2 py-0.5 text-[11px] text-gray-500 font-medium">
+            vs. $500-2000 creators
+           </span>
+          </div>
+          <div class="flex flex-col items-center text-center bg-white dark:bg-dark-900 rounded-xl border border-gray-100 dark:border-dark-700 p-4 shadow-md">
+           <span class="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-0.5">
+            24/7
+           </span>
+           <span class="text-sm text-gray-500 mb-2">
+            Content scheduling
+           </span>
+           <span class="rounded-full bg-gray-50 dark:bg-dark-700 px-2 py-0.5 text-[11px] text-gray-500 font-medium">
+            vs. manual daily work
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="max-w-4xl w-full">
+       <div class="grid gap-8 md:gap-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          UGC Avatar Generation
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Generate realistic UGC avatars and bring them to life with the best AI models.
+         </div>
+        </div>
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          Viral Hook Generator
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Generate viral hooks for your app using the latest AI language models
+         </div>
+        </div>
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          Schedule Content
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Schedule and post content to your TikTok and YouTube accounts.
+         </div>
+        </div>
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          Carousel Maker
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Create engaging carousels with images and text for your TikTok posts.
+         </div>
+        </div>
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          Social Media Integrations
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Connect your TikTok and YouTube accounts to schedule and post content.
+         </div>
+        </div>
+        <div class="flex flex-col space-y-2 group hover:scale-105 transition-transform duration-300">
+         <h4 class="text-lg font-semibold">
+          Upload Products
+         </h4>
+         <div class="text-gray-500 dark:text-gray-400 text-sm">
+          Upload your product and let the AI interact, wear, hold, or use it.
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container mx-auto px-5">
+     <div class="flex flex-col space-y-24 px-4 md:px-8 lg:px-20">
+      <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-12 xl:space-x-24 space-y-8 lg:space-y-0">
+       <div class="flex flex-col space-y-8 w-full lg:w-6/12">
+        <div class="relative cursor-pointer group">
+         <div class="relative">
+          <img alt="Generate Content" class="rounded-2xl group-hover:scale-[1.02] transition-transform duration-300 shadow-lg w-full h-auto max-w-md mx-auto lg:max-w-none animate-in slide-in-from-left-8" height="743" src="/_next/image?url=%2Fassets%2Fimages%2Fdemo.png&amp;w=1920&amp;q=75" width="887"/>
+         </div>
+        </div>
+       </div>
+       <div class="flex w-full lg:w-6/12 justify-center lg:justify-start">
+        <div class="flex flex-col space-y-4 animate-in slide-in-from-right-8 duration-700">
+         <div class="group relative max-w-fit flex-row rounded-2xl bg-white/40 px-4 py-1.5 text-sm font-medium shadow-[inset_0_-8px_10px_#8fdfff1f] backdrop-blur-sm transition-shadow duration-500 ease-out [--bg-size:300%] hover:shadow-[inset_0_-5px_10px_#8fdfff3f] dark:bg-black/40 flex items-center justify-start text-left mx-0">
+          <span class="flex items-center">
+           🤑
+           <hr class="mx-2 h-4 w-px shrink-0 bg-gray-300"/>
+           <span class="inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent">
+            Save $1,000s on content creation
+           </span>
+          </span>
+         </div>
+         <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center text-xl md:text-2xl lg:text-3xl">
+          Generate Content on Demand
+         </h2>
+         <h3>
+          <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg">
+           Create unlimited UGC content instantly - save time and money
+          </span>
+         </h3>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="flex flex-col items-start py-4 px-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            UGC videos
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Realistic AI-generated UGC avatars
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Hook + demo videos
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Test different hooks combinations easily
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Unlimited variations
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Create hundreds of content combinations
+           </span>
+          </div>
+         </div>
+         <div>
+          <button class="inline-flex items-center justify-center font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full hover:scale-105 transition-transform duration-200 mt-6">
+           <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Generate content now
+              </span>
+             </span>
+            </span>
+           </a>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-12 xl:space-x-24 space-y-8 lg:space-y-0">
+       <div class="flex flex-col space-y-8 w-full lg:w-6/12">
+        <div class="flex flex-col space-y-4 animate-in slide-in-from-left-8 duration-700">
+         <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center text-xl md:text-2xl lg:text-3xl">
+          UGC Avatar Generator
+         </h2>
+         <h3>
+          <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg">
+           Generate UGC avatars and bring them to life with AI
+          </span>
+         </h3>
+        </div>
+        <div class="text-sm md:text-base">
+         Use the best AI models to create realistic UGC avatars and generate videos with them to drive more traffic to your products.
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+         <div class="flex flex-col items-start py-4 px-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+          <span class="font-semibold text-sm md:text-sm">
+           Realistic AI avatars
+          </span>
+          <span class="text-xs text-gray-500 mt-1">
+           Create lifelike avatars with AI
+          </span>
+         </div>
+         <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+          <span class="font-semibold text-sm md:text-sm">
+           Latest AI models
+          </span>
+          <span class="text-xs text-gray-500 mt-1">
+           Use cutting-edge AI video generation models
+          </span>
+         </div>
+         <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+          <span class="font-semibold text-sm md:text-sm">
+           Lifelike movements
+          </span>
+          <span class="text-xs text-gray-500 mt-1">
+           Natural, expressive avatar actions
+          </span>
+         </div>
+        </div>
+        <div>
+         <button class="inline-flex items-center justify-center font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full hover:scale-105 transition-transform duration-200 mt-6">
+          <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+           <span class="flex w-full flex-1 items-center justify-center">
+            <span class="flex space-x-2 items-center">
+             <span>
+              Generate UGC avatars now
+             </span>
+            </span>
+           </span>
+          </a>
+         </button>
+        </div>
+       </div>
+       <div class="flex w-full lg:w-6/12 justify-center lg:justify-start">
+        <div class="relative cursor-pointer group">
+         <div class="relative">
+          <img alt="Image-to-Video" class="rounded-2xl group-hover:scale-[1.02] transition-transform duration-300 shadow-lg w-full h-auto max-w-md mx-auto lg:max-w-none animate-in slide-in-from-right-8" height="683" src="/_next/image?url=%2Fassets%2Fimages%2Fimg2vid.png&amp;w=1920&amp;q=75" width="626"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-12 xl:space-x-24 space-y-8 lg:space-y-0">
+       <div class="flex flex-col space-y-8 w-full lg:w-6/12">
+        <div class="relative cursor-pointer group">
+         <div class="relative">
+          <img alt="Viral Hook Generator" class="rounded-2xl group-hover:scale-[1.02] transition-transform duration-300 shadow-lg w-full h-auto max-w-md mx-auto lg:max-w-none" height="683" src="/_next/image?url=%2Fassets%2Fimages%2Fhooks.png&amp;w=1920&amp;q=75" width="626"/>
+         </div>
+        </div>
+       </div>
+       <div class="flex w-full lg:w-6/12 justify-center lg:justify-start">
+        <div class="flex flex-col space-y-4 animate-in slide-in-from-right-8 duration-700">
+         <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center text-xl md:text-2xl lg:text-3xl">
+          Viral Hook Generator
+         </h2>
+         <h3>
+          <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg">
+           Generate viral hooks for your product demos using AI.
+          </span>
+         </h3>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="flex flex-col items-start py-4 px-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Product-specific
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Generate hooks tailored to your product
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Gen-z style
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Modern, viral-ready messaging to go viral
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Scroll stopping
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Formats that grab attention instantly
+           </span>
+          </div>
+         </div>
+         <div>
+          <button class="inline-flex items-center justify-center font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full hover:scale-105 transition-transform duration-200 mt-6">
+           <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Generate viral hooks now
+              </span>
+             </span>
+            </span>
+           </a>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-12 xl:space-x-24 space-y-8 lg:space-y-0">
+       <div class="flex flex-col space-y-8 w-full lg:w-6/12">
+        <div class="flex flex-col space-y-4 animate-in slide-in-from-left-8 duration-700">
+         <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center text-xl md:text-2xl lg:text-3xl">
+          Schedule Content
+         </h2>
+         <h3>
+          <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg">
+           Schedule your content to be posted at the best times
+          </span>
+         </h3>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="flex flex-col items-start py-4 px-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Calendar view
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Visualize and manage your scheduled posts
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Connect multiple accounts
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Schedule content across all your brands
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            YouTube and TikTok support
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Post to your favorite platforms automatically
+           </span>
+          </div>
+         </div>
+         <div>
+          <button class="inline-flex items-center justify-center font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full hover:scale-105 transition-transform duration-200 mt-6">
+           <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Start scheduling content
+              </span>
+             </span>
+            </span>
+           </a>
+          </button>
+         </div>
+        </div>
+       </div>
+       <div class="flex w-full lg:w-6/12 justify-center lg:justify-start">
+        <div class="relative cursor-pointer group">
+         <div class="relative">
+          <img alt="Schedule Content" class="rounded-2xl group-hover:scale-[1.02] transition-transform duration-300 shadow-lg w-full h-auto max-w-md mx-auto lg:max-w-none animate-in slide-in-from-right-8" height="743" src="/_next/image?url=%2Fassets%2Fimages%2Fschedule.png&amp;w=1920&amp;q=75" width="887"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="flex flex-col lg:flex-row items-center justify-between lg:space-x-12 xl:space-x-24 space-y-8 lg:space-y-0">
+       <div class="flex flex-col space-y-8 w-full lg:w-6/12">
+        <img alt="Carousel Maker" class="rounded-2xl shadow-lg hover:scale-105 transition-all duration-300 w-full h-auto max-w-md mx-auto lg:max-w-none" height="683" src="/_next/image?url=%2Fassets%2Fimages%2Fcarousels.png&amp;w=1920&amp;q=75" width="626"/>
+       </div>
+       <div class="flex w-full lg:w-6/12 justify-center lg:justify-start">
+        <div class="flex flex-col space-y-4 animate-in slide-in-from-right-8 duration-700">
+         <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 flex items-center text-xl md:text-2xl lg:text-3xl">
+          Carousel Maker
+         </h2>
+         <h3>
+          <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg">
+           Create engaging carousels posts for TikTok.
+          </span>
+         </h3>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+          <div class="flex flex-col items-start py-4 px-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Image-based
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Create carousels with images and text
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Trending templates
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Choose from 6+ trending templates
+           </span>
+          </div>
+          <div class="flex flex-col items-start p-4 rounded-lg bg-gray-50 dark:bg-dark-800 shadow group">
+           <span class="font-semibold text-sm md:text-sm">
+            Unlimited variations
+           </span>
+           <span class="text-xs text-gray-500 mt-1">
+            Create hundreds of content combinations
+           </span>
+          </div>
+         </div>
+         <div>
+          <button class="inline-flex items-center justify-center font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 rounded-full hover:scale-105 transition-transform duration-200 mt-6">
+           <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Generate viral hooks now
+              </span>
+             </span>
+            </span>
+           </a>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <hr class="w-full border border-gray-50 undefined dark:border-neutral-900"/>
+    <div class="container mx-auto px-5">
+     <div class="flex flex-col items-center justify-center py-16 space-y-16 px-4 md:px-8 lg:px-20 animate-in fade-in duration-700">
+      <div class="flex flex-col items-center space-y-8 text-center">
+       <h2 class="inline-flex w-auto items-center space-x-2 rounded-full bg-gradient-to-br dark:from-gray-200 dark:via-gray-400 dark:to-gray-700 bg-clip-text px-4 py-2 text-center text-sm font-normal text-gray-500 dark:text-transparent shadow dark:shadow-dark-700 hover:scale-105 transition-transform duration-200">
+        <span>
+         Honest pricing. No hidden fees.
+        </span>
+       </h2>
+       <div class="flex flex-col space-y-2.5">
+        <h2 class="font-heading scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0 text-2xl md:text-3xl lg:text-4xl px-4">
+         Ready to take your product demos to the next level?
+        </h2>
+        <h3>
+         <span class="flex flex-col space-y-1 bg-gradient-to-br text-xl lg:text-2xl dark:from-white dark:via-gray-300 dark:to-gray-400 bg-clip-text text-gray-500 font-normal dark:text-transparent text-sm md:text-base lg:text-lg px-4">
+          Get started on scaling your brand without breaking the bank.
+         </span>
+        </h3>
+       </div>
+      </div>
+      <div class="w-full">
+       <div class="flex flex-col space-y-12">
+        <div class="flex justify-center">
+         <div class="flex bg-gray-100 dark:bg-gray-800 rounded-full p-1">
+          <button class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 select-none text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-yellow-50 dark:hover:bg-gray-600" type="button">
+           <span class="flex w-full h-full items-center transition-transform duration-500 ease-out">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Monthly
+              </span>
+             </span>
+            </span>
+           </span>
+          </button>
+          <button class="inline-flex items-center justify-center ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 px-6 py-2 rounded-full text-sm font-medium transition-all duration-200 select-none bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm hover:bg-white dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-white" type="button">
+           <span class="flex w-full h-full items-center transition-transform duration-500 ease-out">
+            <span class="flex w-full flex-1 items-center justify-center">
+             <span class="flex space-x-2 items-center">
+              <span>
+               Yearly
+              </span>
+              <div class="flex items-center space-x-2 ml-2">
+               <div class="flex space-x-2 items-center font-medium rounded px-2 py-1 text-xs bg-yellow-300 dark:bg-yellow-100/10 text-yellow-800 rounded-full font-semibold border border-yellow-800">
+                Save
+                <b class="ml-1">
+                 20%
+                </b>
+               </div>
+              </div>
+             </span>
+            </span>
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:gap-6 lg:max-w-5xl xl:max-w-6xl mx-auto">
+         <div class="relative flex w-full flex-col rounded-xl p-6 xl:p-8 h-full transition-all duration-300 hover:shadow-lg border-gray-200 dark:border-gray-700 border-2 hover:border-gray-300 dark:hover:border-gray-600">
+          <div class="flex flex-col h-full">
+           <div class="flex flex-col space-y-2.5 mb-6">
+            <div class="flex items-center justify-between min-h-[2rem]">
+             <h3 class="font-heading scroll-m-20 text-2xl font-semibold tracking-tight flex items-center space-x-2">
+              <img alt="Starter" class="w-6 h-6" src="/assets/images/starter.png"/>
+              <b class="font-semibold">
+               Starter
+              </b>
+             </h3>
+            </div>
+           </div>
+           <div class="flex flex-col space-y-4 mb-6">
+            <div class="flex flex-col space-y-2">
+             <div class="flex flex-col space-y-2 p-4 bg-yellow-50 dark:bg-yellow-900/10 rounded-lg">
+              <div class="flex items-end space-x-2">
+               <div class="text-5xl font-bold">
+                $0
+               </div>
+               <span class="text-md font-medium text-gray-500 dark:text-gray-400">
+                for 3 days
+               </span>
+              </div>
+              <div class="flex items-baseline space-x-1">
+               <span class="text-sm text-gray-500 dark:text-gray-400">
+                then
+               </span>
+               <div class="flex items-baseline space-x-1">
+                <span class="text-xl font-semibold text-gray-900 dark:text-white">
+                 $16.58
+                </span>
+                <span class="text-sm text-gray-500 dark:text-gray-400">
+                 /month (Billed as
+                 <b class="text-primary font-medium">
+                  $199
+                 </b>
+                 )
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="flex-grow mb-6">
+            <div class="text-current">
+             <ul class="flex flex-col space-y-3">
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Generate 50 UGC videos per month
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Access 60+ AI avatars
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Publish directly to TikTok and YouTube
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Create custom AI avatars (30 images, 5 videos)
+               </span>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="mt-auto">
+           <div class="bottom-0 left-0 w-full p-0">
+            <button class="inline-flex items-center justify-center rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 w-full font-semibold">
+             <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up?utm_source=price_1SGQcFGXVRr0vskTyxS7gg96">
+              <span class="flex w-full flex-1 items-center justify-center">
+               <img alt="Starter" class="w-4 h-4 mr-2" src="/assets/images/starter.png"/>
+               Start 3-Day Free Trial
+              </span>
+             </a>
+            </button>
+           </div>
+          </div>
+         </div>
+         <div class="relative flex w-full flex-col rounded-xl p-6 xl:p-8 h-full transition-all duration-300 hover:shadow-lg border-primary-500 border-2 shadow-lg shadow-primary-500/20 bg-gradient-to-b from-primary-50/50 to-white dark:from-primary-900/20 dark:to-gray-800">
+          <div class="flex flex-col h-full">
+           <div class="flex flex-col space-y-2.5 mb-6">
+            <div class="flex items-center justify-between min-h-[2rem]">
+             <h3 class="font-heading scroll-m-20 text-2xl font-semibold tracking-tight flex items-center space-x-2">
+              <img alt="Growth" class="w-6 h-6" src="/assets/images/growth.png"/>
+              <b class="font-semibold">
+               Growth
+              </b>
+             </h3>
+             <div class="rounded-full py-1 px-3 text-xs font-medium flex items-center space-x-1 shrink-0 bg-yellow-300 dark:bg-yellow-900/10 dark:text-yellow-400 border border-yellow-800">
+              <span>
+               Most Popular
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex flex-col space-y-4 mb-6">
+            <div class="flex flex-col space-y-2">
+             <div class="flex flex-col space-y-1">
+              <div class="flex items-baseline space-x-1">
+               <span class="text-4xl font-bold text-gray-900 dark:text-white">
+                $41.58
+               </span>
+               <span class="text-sm text-gray-500 dark:text-gray-400">
+                /month
+               </span>
+              </div>
+              <span class="text-sm text-gray-500 dark:text-gray-400">
+               (Billed as
+               <span class="text-primary font-medium">
+                $499
+               </span>
+               )
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex-grow mb-6">
+            <div class="text-current">
+             <ul class="flex flex-col space-y-3">
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Everything in Starter +
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Generate 100 UGC videos per month
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Create custom AI avatars (120 images, 30 videos)
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Schedule + publish directly to both TikTok and YouTube
+               </span>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="mt-auto">
+           <div class="bottom-0 left-0 w-full p-0">
+            <button class="inline-flex items-center justify-center rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 w-full font-semibold bg-gradient-to-b from-yellow-400 to-yellow-500 text-primary hover:bg-primary/90">
+             <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up?utm_source=price_1SGQeiGXVRr0vskTfSPEha61">
+              <span class="flex w-full flex-1 items-center justify-center">
+               <img alt="Growth" class="w-4 h-4 mr-2" src="/assets/images/growth.png"/>
+               Start Growing Now
+              </span>
+             </a>
+            </button>
+           </div>
+          </div>
+         </div>
+         <div class="relative flex w-full flex-col rounded-xl p-6 xl:p-8 h-full transition-all duration-300 hover:shadow-lg border-gray-200 dark:border-gray-700 border-2 hover:border-gray-300 dark:hover:border-gray-600">
+          <div class="flex flex-col h-full">
+           <div class="flex flex-col space-y-2.5 mb-6">
+            <div class="flex items-center justify-between min-h-[2rem]">
+             <h3 class="font-heading scroll-m-20 text-2xl font-semibold tracking-tight flex items-center space-x-2">
+              <img alt="Scale" class="w-6 h-6" src="/assets/images/scale.png"/>
+              <b class="font-semibold">
+               Scale
+              </b>
+             </h3>
+            </div>
+           </div>
+           <div class="flex flex-col space-y-4 mb-6">
+            <div class="flex flex-col space-y-2">
+             <div class="flex flex-col space-y-1">
+              <div class="flex items-baseline space-x-1">
+               <span class="text-4xl font-bold text-gray-900 dark:text-white">
+                $76.00
+               </span>
+               <span class="text-sm text-gray-500 dark:text-gray-400">
+                /month
+               </span>
+              </div>
+              <span class="text-sm text-gray-500 dark:text-gray-400">
+               (Billed as
+               <span class="text-primary font-medium">
+                $912
+               </span>
+               )
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex-grow mb-6">
+            <div class="text-current">
+             <ul class="flex flex-col space-y-3">
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Everything in Growth +
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Generate 200 UGC videos per month
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Create custom AI avatars (240 images, 60 videos)
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Custom Integrations
+               </span>
+              </li>
+              <li class="flex items-start space-x-3 font-medium">
+               <span class="text-sm text-gray-700 dark:text-gray-200 leading-relaxed">
+                Priority support
+               </span>
+              </li>
+             </ul>
+            </div>
+           </div>
+          </div>
+          <div class="mt-auto">
+           <div class="bottom-0 left-0 w-full p-0">
+            <button class="inline-flex items-center justify-center rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4 w-full font-semibold">
+             <a class="flex w-full h-full items-center transition-transform duration-500 ease-out" href="/auth/sign-up?utm_source=price_1SGQgpGXVRr0vskTJD7xyR2y">
+              <span class="flex w-full flex-1 items-center justify-center">
+               <img alt="Scale" class="w-4 h-4 mr-2" src="/assets/images/scale.png"/>
+               Start Scaling Now
+              </span>
+             </a>
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="container mx-auto px-5">
+     <div class="flex h-full transform-gpu flex-col items-center justify-between gap-5 rounded-lg border border-neutral-200 bg-white [box-shadow:0_0_0_1px_rgba(0,0,0,.03),0_2px_4px_rgba(0,0,0,.05),0_12px_24px_rgba(0,0,0,.05)] dark:bg-transparent dark:backdrop-blur-md dark:[border:1px_solid_rgba(255,255,255,.1)] dark:[box-shadow:0_-20px_80px_-20px_#ffffff1f_inset] xl:flex-row">
+      <div class="flex w-full flex-col items-start justify-between gap-y-5 p-10 xl:h-full xl:w-1/2">
+       <h2 class="text-3xl font-semibold">
+        Start creating scroll-stopping product demos on TikTok and YouTube using ReelSpark.
+       </h2>
+       <a class="text-base font-normal text-gray-500 underline-offset-4 transition-all hover:underline" href="#showcase">
+        Check out our showcase
+       </a>
+      </div>
+      <div class="relative w-full overflow-hidden xl:w-1/2">
+       <div class="relative -right-[50px] -top-[100px] grid max-h-[450px] grid-cols-3 gap-5 [transform:rotate(-15deg)translateZ(10px);]">
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="giraffe" class="h-full w-full object-cover" src="/assets/images/examples/1.jpeg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="coffee mug" class="h-full w-full object-cover" src="/assets/images/examples/2.jpeg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="planets" class="h-full w-full object-cover" src="/assets/images/examples/3.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="mercury" class="h-full w-full object-cover" src="/assets/images/examples/4.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="goats" class="h-full w-full object-cover" src="/assets/images/examples/5.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="coffee" class="h-full w-full object-cover" src="/assets/images/examples/6.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="tacos" class="h-full w-full object-cover" src="/assets/images/examples/7.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="cheese" class="h-full w-full object-cover" src="/assets/images/examples/8.jpg"/>
+        </div>
+        <div class="flex flex-col items-center gap-y-2 rounded-md border bg-white/5 p-5">
+         <img alt="wine" class="h-full w-full object-cover" src="/assets/images/examples/9.jpg"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer class="py-8 lg:py-24">
+    <div class="container mx-auto px-5">
+     <div class="flex flex-col space-y-8 lg:flex-row lg:space-y-0">
+      <div class="flex w-full space-x-2 lg:w-4/12 xl:w-3/12 xl:space-x-6 2xl:space-x-8">
+       <div class="flex flex-col space-y-4">
+        <div>
+         <img alt="ReelSpark Logo" height="30" src="/assets/images/logo.svg" width="120"/>
+        </div>
+        <div>
+         <p class="text-sm text-gray-500 dark:text-gray-400">
+          Create UGC Ads in seconds using AI.
+         </p>
+        </div>
+        <div class="flex text-xs text-gray-500 dark:text-gray-400">
+         <p>
+          © Copyright 2025 ReelSpark. All Rights Reserved.
+         </p>
+        </div>
+       </div>
+      </div>
+      <div class="flex flex-col space-y-8 lg:space-x-6 lg:space-y-0 xl:space-x-16 2xl:space-x-20 w-full lg:flex-row lg:justify-end">
+       <div>
+        <div class="flex flex-col space-y-4">
+         <p>
+          <span class="font-semibold">
+           About
+          </span>
+         </p>
+         <ul class="flex flex-col space-y-4 text-gray-500 dark:text-gray-400">
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/blog">
+            Blog
+           </a>
+          </li>
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/contact">
+            Contact
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div>
+        <div class="flex flex-col space-y-4">
+         <p>
+          <span class="font-semibold">
+           Product
+          </span>
+         </p>
+         <ul class="flex flex-col space-y-4 text-gray-500 dark:text-gray-400">
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/auth/sign-up">
+            Create an account
+           </a>
+          </li>
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/pricing">
+            Pricing
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div>
+        <div class="flex flex-col space-y-4">
+         <p>
+          <span class="font-semibold">
+           Legal
+          </span>
+         </p>
+         <ul class="flex flex-col space-y-4 text-gray-500 dark:text-gray-400">
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/terms-of-service">
+            Terms of Service
+           </a>
+          </li>
+          <li class="text-sm [&amp;&gt;a]:transition-colors [&amp;&gt;a]:hover:text-gray-800 dark:[&amp;&gt;a]:hover:text-white">
+           <a href="/privacy-policy">
+            Privacy Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="flex flex-col space-y-4">
+        <div>
+         <span class="font-semibold">
+          Subscribe to our Newsletter
+         </span>
+         <div class="text-sm text-gray-500 dark:text-gray-400">
+          Get the latest updates from our team.
+         </div>
+        </div>
+        <div>
+         <form action="https://app.convertkit.com/forms//subscriptions" class="flex w-full flex-col justify-center space-y-2 lg:flex-row lg:space-x-1.5 lg:space-y-0" method="POST" target="_blank">
+          <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 w-full 2xl:w-60" name="email_address" placeholder="your@email.com" type="email"/>
+          <button class="inline-flex items-center justify-center rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 active:[&amp;&gt;*]:translate-y-0.5 bg-primary text-primary-foreground hover:bg-primary/90 text-sm h-10 [&amp;&gt;*]:py-2 [&amp;&gt;*]:px-4">
+           <span class="flex w-full h-full items-center transition-transform duration-500 ease-out">
+            <span class="flex w-full flex-1 items-center justify-center">
+             Subscribe
+            </span>
+           </span>
+          </button>
+         </form>
+        </div>
+       </div>
+       <a href="https://dang.ai/" target="_blank">
+        <img alt="Dang.ai" class="w-[100px] h-[34px]" height="54" src="https://cdn.prod.website-files.com/63d8afd87da01fb58ea3fbcb/6487e2868c6c8f93b4828827_dang-badge.png" width="150"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

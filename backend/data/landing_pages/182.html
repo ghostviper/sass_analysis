@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GOimagen</title>
+</head>
+<body>
+  <body>
+   <div>
+    <div class="navbar bg-transparent container mx-auto relative z-20">
+     <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl flex items-center gap-2" href="/">
+       <img alt="GOimagen logo" class="w-8 h-8" src="/logo.png"/>
+       GOimagen
+      </a>
+     </div>
+     <div class="flex-none">
+      <ul class="menu menu-horizontal px-1 hidden sm:flex font-bold text-lg">
+       <li class="md:mx-4">
+        <a class="border border-primary" href="/login/sign_up">
+         🎉 Free 50 credits on every signup!
+        </a>
+       </li>
+       <li class="md:mx-2">
+        <a href="/blog">
+         Blog
+        </a>
+       </li>
+       <li class="md:mx-2">
+        <a href="/pricing">
+         Pricing
+        </a>
+       </li>
+       <li class="md:mx-2">
+        <a href="/account">
+         Account
+        </a>
+       </li>
+       <li class="md:mx-2">
+        <div class="flex items-center gap-2">
+         <label class="swap swap-rotate svelte-1wz323">
+          <input class="sr-only svelte-1wz323" type="checkbox"/>
+         </label>
+        </div>
+       </li>
+      </ul>
+      <div class="dropdown dropdown-end sm:hidden">
+       <ul class="menu menu-lg dropdown-content mt-3 z-30 p-2 shadow-sm bg-base-100/90 backdrop-blur-sm rounded-box w-52 font-bold">
+        <li>
+         <a href="/blog">
+          Blog
+         </a>
+        </li>
+        <li>
+         <a href="/pricing">
+          Pricing
+         </a>
+        </li>
+        <li>
+         <a href="/account">
+          Account
+         </a>
+        </li>
+        <li>
+         <a href="/search">
+          Search
+         </a>
+        </li>
+        <li>
+         <div class="flex items-center justify-between px-4 py-2">
+          <span class="text-sm opacity-70">
+           Theme
+          </span>
+          <div class="flex items-center gap-2">
+           <label class="swap swap-rotate svelte-1wz323">
+            <input class="sr-only svelte-1wz323" type="checkbox"/>
+           </label>
+          </div>
+         </div>
+        </li>
+        <li>
+         <a class="border border-primary" href="/login/sign_up">
+          🎉 Free 50 credits on every signup!
+         </a>
+        </li>
+       </ul>
+      </div>
+     </div>
+    </div>
+    <div class="relative z-10">
+     <div class="min-h-screen flex flex-col items-center justify-center py-4 px-4 relative z-10 svelte-tln141">
+      <div class="w-full text-center flex-1 flex flex-col justify-center svelte-tln141">
+       <div class="max-w-4xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 px-2 svelte-tln141">
+        <div class="text-sm sm:text-base md:text-lg lg:text-xl font-display font-light bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-1 text-center svelte-tln141">
+         AI-Powered Content Creation
+        </div>
+        <div class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-display font-bold leading-tight text-center svelte-tln141">
+         Generate
+         <span class="underline decoration-secondary decoration-2 sm:decoration-3 md:decoration-4 lg:decoration-[6px] svelte-tln141">
+          images
+         </span>
+         ,
+         <span class="underline decoration-secondary decoration-2 sm:decoration-3 md:decoration-4 lg:decoration-[6px] svelte-tln141">
+          videos
+         </span>
+         , and
+         <span class="underline decoration-secondary decoration-2 sm:decoration-3 md:decoration-4 lg:decoration-[6px] svelte-tln141">
+          characters
+         </span>
+         <span class="svelte-tln141">
+          with every AI Model out there
+         </span>
+        </div>
+        <div class="text-sm sm:text-base md:text-lg font-body font-light max-w-3xl mx-auto text-center px-2 svelte-tln141">
+         Access powerful AI models powered by cutting-edge technology from
+          Google, Flux, Wan, Bria, Ideogram, our own proprietary uncensored
+          models,
+         <span class="relative inline-block svelte-tln141">
+          <button class="underline decoration-secondary decoration-[3px] hover:text-primary cursor-pointer font-bold svelte-tln141">
+           and more
+          </button>
+          <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-base-300 text-base-content rounded-lg p-4 shadow-xl opacity-0 invisible transition-all duration-200 w-72 sm:w-80 z-50 text-xs sm:text-sm max-w-[90vw] svelte-tln141">
+           <div class="font-semibold mb-2 svelte-tln141">
+            All Available AI Providers:
+           </div>
+           <div class="text-xs leading-relaxed svelte-tln141">
+            Flux, Kling Video, Wan, Veo, PlayAI, Recraft, MiniMax, Bria,
+                Bytedance, Google, HiDream, MMAudio, Ideogram, Stability AI, Aura,
+                Clarity Upscaler, Chatterbox, ElevenLabs, Sync Lipsync, Argil,
+                USO, Decart, VibeVoice, Sonauto, PixVerse, Infinitalk, Mirelo-AI,
+                NextStep, Qwen, Moonvalley, EchoMimic, X-AILab, Sky Raccoon, Image
+                Editing Utilities, LTX Video, Any-LLM, Easel AI, Calligrapher,
+                FFmpeg API, Vidu, ThinkSound, RIFE, FILM, Creatify, Luma Dream
+                Machine, Post-Processing filters
+           </div>
+          </div>
+         </span>
+         .
+        </div>
+        <div class="flex flex-col items-center gap-3 svelte-tln141">
+         <a class="svelte-tln141" href="/auth/google">
+          <button class="flex items-center justify-center gap-3 bg-white text-gray-700 border border-gray-300 rounded-lg px-4 py-3 sm:px-6 font-medium text-sm sm:text-base hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 shadow-sm hover:shadow-md w-full max-w-[280px] mx-auto font-display svelte-tln141">
+           Continue with Google
+          </button>
+         </a>
+         <a class="text-sm text-base-content/70 hover:text-base-content underline svelte-tln141" href="/login/sign_up">
+          signup with email instead
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="min-h-[60vh] relative z-10 svelte-tln141">
+      <div class="pt-20 pb-8 px-7 svelte-tln141">
+       <div class="max-w-lg mx-auto text-center svelte-tln141">
+        <div class="text-3xl md:text-5xl font-display font-light bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2 svelte-tln141">
+         Explore the Features
+        </div>
+        <div class="mt-4 text-xl font-display font-medium svelte-tln141">
+         Signup now for 50 free credits
+         <span class="underline decoration-secondary decoration-[3px] md:decoration-[4px] svelte-tln141">
+          with NO credit-card required
+         </span>
+        </div>
+       </div>
+       <div class="mt-12 max-w-7xl mx-auto svelte-tln141">
+        <div class="mb-8 svelte-tln141">
+         <div class="text-center mb-8 svelte-tln141">
+          <h3 class="text-2xl md:text-3xl font-display font-medium text-base-content mb-2 svelte-tln141">
+           Image Creation
+          </h3>
+          <p class="text-base-content/70 font-body text-lg svelte-tln141">
+           Transform ideas into stunning visuals
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center svelte-tln141">
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/generate-image">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Image Generator
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Create stunning, high-quality images from text prompts with total control and precision.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Generate Images
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/edit-image">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Image Editor
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Transform and edit images with precision controls and advanced AI tools.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Edit Images
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/upscale-image">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-green-500 to-emerald-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-success badge-sm font-medium text-white svelte-tln141">
+                NEW
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Image Upscaler
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Enhance images to 4K quality with Magnific AI and advanced upscaling technology.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Enhance Images
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/ai-suite">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full border-2 border-dashed border-base-content/20 hover:border-primary svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 flex items-center justify-center svelte-tln141">
+               <div class="text-center svelte-tln141">
+                <div class="text-xs font-medium text-base-content/60 group-hover:text-primary transition-colors duration-300 svelte-tln141">
+                 3 more tools
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow text-center svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               See All Image Creation Tools
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Explore all 6 tools in our image creation
+                        suite
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                View All Tools
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="mb-8 svelte-tln141">
+         <div class="text-center mb-8 svelte-tln141">
+          <h3 class="text-2xl md:text-3xl font-display font-medium text-base-content mb-2 svelte-tln141">
+           Video &amp; Animation
+          </h3>
+          <p class="text-base-content/70 font-body text-lg svelte-tln141">
+           Bring your content to life with motion
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center svelte-tln141">
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/create-video">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Video Generator
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Generate captivating videos and animations from text descriptions and images.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Create Videos
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/video-editor">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Video Editor
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Professional video editing made simple with AI-powered tools and effects.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Edit Videos
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/extend-video">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-violet-500 to-purple-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-success badge-sm font-medium text-white svelte-tln141">
+                NEW
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Video Extender
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Extend videos seamlessly with Magi AI models for longer content creation.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Extend Videos
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/ai-suite">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full border-2 border-dashed border-base-content/20 hover:border-primary svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 flex items-center justify-center svelte-tln141">
+               <div class="text-center svelte-tln141">
+                <div class="text-xs font-medium text-base-content/60 group-hover:text-primary transition-colors duration-300 svelte-tln141">
+                 2 more tools
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow text-center svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               See All Video &amp; Animation Tools
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Explore all 5 tools in our video &amp; animation
+                        suite
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                View All Tools
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="mb-8 svelte-tln141">
+         <div class="text-center mb-8 svelte-tln141">
+          <h3 class="text-2xl md:text-3xl font-display font-medium text-base-content mb-2 svelte-tln141">
+           Voice &amp; Music
+          </h3>
+          <p class="text-base-content/70 font-body text-lg svelte-tln141">
+           Professional audio for any project
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center svelte-tln141">
+          <div class="group relative block cursor-not-allowed w-full max-w-[280px] svelte-tln141">
+           <div class="card bg-base-200 transition-all duration-300 relative h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-success badge-sm font-medium svelte-tln141">
+                NEW
+               </div>
+              </div>
+              <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm z-10 svelte-tln141">
+               <div class="absolute top-3 left-3 svelte-tln141">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 svelte-tln141">
+                 <span class="text-white font-semibold text-xs tracking-wide svelte-tln141">
+                  COMING SOON
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 opacity-60 svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Voiceover
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed svelte-tln141">
+               Generate natural-sounding voiceovers with AI voices for any content.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/generate-song">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-pink-500 to-red-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-success badge-sm font-medium text-white svelte-tln141">
+                NEW
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Song Generator
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Create high-quality songs with custom or AI-generated lyrics and melodies.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Generate Music
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <div class="group relative block cursor-not-allowed w-full max-w-[280px] svelte-tln141">
+           <div class="card bg-base-200 transition-all duration-300 relative h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-yellow-500 to-orange-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm z-10 svelte-tln141">
+               <div class="absolute top-3 left-3 svelte-tln141">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 svelte-tln141">
+                 <span class="text-white font-semibold text-xs tracking-wide svelte-tln141">
+                  COMING SOON
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 opacity-60 svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Lip Sync
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed svelte-tln141">
+               Sync spoken audio perfectly with your videos for professional results.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/ai-suite">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full border-2 border-dashed border-base-content/20 hover:border-primary svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 flex items-center justify-center svelte-tln141">
+               <div class="text-center svelte-tln141">
+                <div class="text-xs font-medium text-base-content/60 group-hover:text-primary transition-colors duration-300 svelte-tln141">
+                 1 more tools
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow text-center svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               See All Voice &amp; Music Tools
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Explore all 4 tools in our voice &amp; music
+                        suite
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                View All Tools
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+        <div class="mb-8 svelte-tln141">
+         <div class="text-center mb-8 svelte-tln141">
+          <h3 class="text-2xl md:text-3xl font-display font-medium text-base-content mb-2 svelte-tln141">
+           Design &amp; Training
+          </h3>
+          <p class="text-base-content/70 font-body text-lg svelte-tln141">
+           Advanced tools for creators and businesses
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 justify-items-center svelte-tln141">
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/train-model">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-amber-500 to-orange-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-warning badge-sm font-medium text-white svelte-tln141">
+                PROFESSIONAL
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Model Training
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Train custom AI models with your data for personalized and branded content.
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                Train Models
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+          <div class="group relative block cursor-not-allowed w-full max-w-[280px] svelte-tln141">
+           <div class="card bg-base-200 transition-all duration-300 relative h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute top-3 right-3 svelte-tln141">
+               <div class="badge badge-success badge-sm font-medium svelte-tln141">
+                NEW
+               </div>
+              </div>
+              <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm z-10 svelte-tln141">
+               <div class="absolute top-3 left-3 svelte-tln141">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 svelte-tln141">
+                 <span class="text-white font-semibold text-xs tracking-wide svelte-tln141">
+                  COMING SOON
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 opacity-60 svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               AI Assistant
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed svelte-tln141">
+               Create anything in one simple chat with our comprehensive AI assistant.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="group relative block cursor-not-allowed w-full max-w-[280px] svelte-tln141">
+           <div class="card bg-base-200 transition-all duration-300 relative h-full svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-violet-500 to-purple-500 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 bg-gray-900/60 backdrop-blur-sm z-10 svelte-tln141">
+               <div class="absolute top-3 left-3 svelte-tln141">
+                <div class="bg-white/20 backdrop-blur-sm rounded-lg px-3 py-1.5 border border-white/30 svelte-tln141">
+                 <span class="text-white font-semibold text-xs tracking-wide svelte-tln141">
+                  COMING SOON
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 opacity-60 svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               Design Suite
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed svelte-tln141">
+               Complete design toolkit with advanced tools for professional creative work.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <a class="group relative block w-full max-w-[280px] svelte-tln141" href="/account/ai-suite">
+           <div class="card bg-base-200 hover:shadow-xl transition-all duration-300 group-hover:-translate-y-1 h-full border-2 border-dashed border-base-content/20 hover:border-primary svelte-tln141">
+            <div class="card-body p-0 svelte-tln141">
+             <div class="relative h-40 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-800 dark:to-gray-900 rounded-t-2xl overflow-hidden svelte-tln141">
+              <div class="absolute inset-0 flex items-center justify-center svelte-tln141">
+               <div class="text-center svelte-tln141">
+                <div class="text-xs font-medium text-base-content/60 group-hover:text-primary transition-colors duration-300 svelte-tln141">
+                 3 more tools
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="p-5 flex flex-col flex-grow text-center svelte-tln141">
+              <h3 class="text-lg font-display font-medium text-base-content mb-2 svelte-tln141">
+               See All Design &amp; Training Tools
+              </h3>
+              <p class="text-base-content/70 text-sm font-body leading-relaxed flex-grow mb-4 svelte-tln141">
+               Explore all 6 tools in our design &amp; training
+                        suite
+              </p>
+              <div class="mt-auto svelte-tln141">
+               <button class="btn btn-sm btn-outline btn-primary w-full font-display font-medium hover:btn-primary hover:scale-105 transition-all svelte-tln141">
+                View All Tools
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="min-h-[60vh] mt-12 relative z-10 svelte-tln141">
+      <div class="max-w-7xl mx-auto px-4 py-16 svelte-tln141">
+       <div class="text-center mb-12 svelte-tln141">
+        <div class="text-3xl md:text-5xl font-display font-light bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2 svelte-tln141">
+         See it in Action
+        </div>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center svelte-tln141">
+        <div class="order-2 lg:order-1 svelte-tln141">
+         <a class="block group svelte-tln141" href="/account">
+          <div class="hidden md:block svelte-tln141">
+           <div class="mockup-browser border border-primary shadow-2xl group-hover:shadow-3xl transition-all duration-300 group-hover:-translate-y-1 svelte-tln141">
+            <div class="mockup-browser-toolbar svelte-tln141">
+             <div class="input svelte-tln141">
+              GOimagen.com/account
+             </div>
+            </div>
+            <div class="bg-base-100 overflow-hidden svelte-tln141">
+             <img alt="Screenshot of GoImagen dashboard showing AI tools" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 svelte-tln141" src="/images/goimagen-dashboard.png"/>
+            </div>
+           </div>
+          </div>
+          <div class="md:hidden svelte-tln141">
+           <div class="card shadow-xl border border-primary overflow-hidden group-hover:shadow-2xl transition-all duration-300 svelte-tln141">
+            <img alt="Screenshot of GoImagen dashboard showing AI tools" class="w-full h-auto transition-transform duration-300 group-hover:scale-105 svelte-tln141" src="/images/goimagen-dashboard.png"/>
+           </div>
+          </div>
+         </a>
+        </div>
+        <div class="order-1 lg:order-2 svelte-tln141">
+         <div class="space-y-6 svelte-tln141">
+          <div class="text-lg md:text-xl font-body font-light svelte-tln141">
+           <span class="font-bold svelte-tln141">
+            GoImagen
+           </span>
+           provides access to
+           <span class="underline decoration-secondary decoration-[3px] svelte-tln141">
+            powerful AI models
+           </span>
+           from multiple providers including Google, ByteDance, Bria, Ideogram,
+              Flux, Wan, our own proprietary uncensored model, and
+           <span class="relative inline-block svelte-tln141">
+            <button class="underline decoration-secondary decoration-[3px] hover:text-primary cursor-pointer font-bold svelte-tln141">
+             many more
+            </button>
+            <div class="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-base-300 text-base-content rounded-lg p-4 shadow-xl opacity-0 invisible transition-all duration-200 w-72 sm:w-80 z-50 text-xs sm:text-sm max-w-[90vw] svelte-tln141">
+             <div class="font-semibold mb-2 svelte-tln141">
+              All Available AI Providers:
+             </div>
+             <div class="text-xs leading-relaxed svelte-tln141">
+              Flux, Kling Video, Wan, Veo, PlayAI, Recraft, MiniMax, Bria,
+                    Bytedance, Google, HiDream, MMAudio, Ideogram, Stability AI,
+                    Aura, Clarity Upscaler, Chatterbox, ElevenLabs, Sync Lipsync,
+                    Argil, USO, Decart, VibeVoice, Sonauto, PixVerse, Infinitalk,
+                    Mirelo-AI, NextStep, Qwen, Moonvalley, EchoMimic, X-AILab, Sky
+                    Raccoon, Image Editing Utilities, LTX Video, Any-LLM, Easel
+                    AI, Calligrapher, FFmpeg API, Vidu, ThinkSound, RIFE, FILM,
+                    Creatify, Luma Dream Machine, Post-Processing filters
+             </div>
+            </div>
+           </span>
+           .
+          </div>
+          <div class="text-lg md:text-xl font-body font-light svelte-tln141">
+           Create stunning images, amazing videos, and custom characters with
+              our
+           <span class="link font-bold svelte-tln141">
+            comprehensive AI suite
+           </span>
+           featuring advanced tools and flexible credit-based pricing.
+          </div>
+          <div class="pt-2 svelte-tln141">
+           <a class="svelte-tln141" href="/account">
+            <button class="btn btn-primary btn-wide font-display font-medium svelte-tln141">
+             Try GoImagen Now
+            </button>
+           </a>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="relative z-10">
+     <footer class="footer md:footer-horizontal p-10 gap-x-48 lg:gap-x-64 xl:gap-x-96 place-content-center text-base">
+      <nav>
+       <span class="footer-title opacity-80">
+        Explore
+       </span>
+       <a class="link link-hover mb-1" href="/">
+        Overview
+       </a>
+       <a class="link link-hover my-1" href="/pricing">
+        Pricing
+       </a>
+       <a class="link link-hover my-1" href="/blog">
+        Blog
+       </a>
+       <a class="link link-hover my-1" href="/contact_us">
+        Contact Us
+       </a>
+       <a class="link link-hover my-1" href="/login/sign_up">
+        Free Credits
+       </a>
+      </nav>
+      <aside>
+       <span class="footer-title opacity-80">
+        Contact us
+       </span>
+       <a class="max-w-[260px]" href="mailto:team@goimagen.com">
+        <div class="font-bold text-3xl mb-1">
+         GOimagen Team
+        </div>
+        <div class="font-medium mb-3">
+         Imagine? GOimagen
+        </div>
+        <div class="link text-sm font-bold mt-2">
+         team@goimagen.com
+        </div>
+       </a>
+      </aside>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

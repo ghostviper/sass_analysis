@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HuskyApp</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <div class="min-h-screen bg-white text-gray-900 flex flex-col">
+     <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-[#245EE3]/10">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="flex items-center justify-between h-20">
+        <div class="flex-shrink-0">
+         <img alt="HuskyApp Logo" class="h-10 w-auto" src="/logo.svg"/>
+        </div>
+        <nav class="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-8 flex-1 justify-center">
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#inicio">
+          Início
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#demo-apps">
+          Apps Demo
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#recursos">
+          Recursos
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#integracoes">
+          Integrações
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#depoimentos">
+          Depoimentos
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#precos">
+          Preços
+         </a>
+         <a class="text-sm lg:text-base text-[#374151] hover:text-[#245EE3] transition-colors whitespace-nowrap" href="#faq">
+          FAQ
+         </a>
+        </nav>
+        <div class="flex items-center gap-4">
+         <div class="hidden md:flex items-center gap-4">
+          <div>
+           <button class="inline-flex items-center justify-center whitespace-nowrap font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-background hover:text-accent-foreground h-10 text-sm lg:text-base px-6 lg:px-8 py-6 border-2 border-[#245EE3] text-[#245EE3] hover:bg-[#245EE3]/10 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300">
+            Login
+           </button>
+          </div>
+          <div>
+           <button class="justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-10 bg-[#245EE3] hover:bg-[#245EE3]/90 text-white font-medium px-6 lg:px-8 py-6 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300 flex items-center gap-2 text-sm lg:text-base">
+            <span class="flex items-center gap-2">
+             COMECE AGORA
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="flex md:hidden">
+          <button class="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-white border-2 border-[#245EE3] text-[#245EE3] hover:bg-[#245EE3]/5 transition-colors">
+           <span class="sr-only">
+            Abrir menu principal
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="md:hidden overflow-hidden bg-white border-t border-gray-100">
+       <div class="px-4 pt-2 pb-3 space-y-1">
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#inicio">
+         Início
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#demo-apps">
+         Apps Demo
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#recursos">
+         Recursos
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#integracoes">
+         Integrações
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#depoimentos">
+         Depoimentos
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#precos">
+         Preços
+        </a>
+        <a class="block px-3 py-2 text-[#374151] hover:text-[#245EE3] rounded-md transition-colors" href="#faq">
+         FAQ
+        </a>
+       </div>
+       <div class="px-4 py-3 space-y-2 border-t border-gray-100">
+        <div>
+         <button class="inline-flex items-center justify-center whitespace-nowrap font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-background hover:text-accent-foreground h-10 text-base px-8 py-6 border-2 border-[#245EE3] text-[#245EE3] hover:bg-[#245EE3]/10 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300 w-full">
+          Login
+         </button>
+        </div>
+        <div>
+         <button class="justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-10 bg-[#245EE3] hover:bg-[#245EE3]/90 text-white font-medium px-6 lg:px-8 py-6 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300 flex items-center gap-2 text-sm lg:text-base w-full">
+          <span class="flex items-center gap-2">
+           COMECE AGORA
+          </span>
+         </button>
+        </div>
+       </div>
+      </div>
+     </header>
+     <main>
+      <section class="relative px-4 pt-24 sm:pt-32 pb-4 sm:pb-0 overflow-hidden bg-gradient-to-b from-[#EEF6FF] to-white" id="inicio">
+       <div class="container mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-8">
+         <div class="flex flex-col items-center gap-4 sm:gap-6 mb-4 sm:mb-6">
+          <div class="inline-flex items-center gap-2 sm:gap-4 py-2 sm:py-3 px-3 sm:px-6 rounded-full bg-[#245EE3]/10 backdrop-blur-md shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,110,255,0.12)] w-full sm:w-auto justify-center">
+           <div class="flex -space-x-2 flex-shrink-0">
+            <div class="relative w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+             <img alt="Usuário 1" class="w-full h-full object-cover" height="32" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=80&amp;h=80&amp;auto=format&amp;fit=crop" width="32"/>
+            </div>
+            <div class="relative w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+             <img alt="Usuário 2" class="w-full h-full object-cover" height="32" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&amp;w=80&amp;h=80&amp;auto=format&amp;fit=crop" width="32"/>
+            </div>
+            <div class="relative w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-white shadow-sm">
+             <img alt="Usuário 3" class="w-full h-full object-cover" height="32" src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?q=80&amp;w=80&amp;h=80&amp;auto=format&amp;fit=crop" width="32"/>
+            </div>
+           </div>
+           <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+            <img alt="Google" class="w-4 sm:w-5 h-4 sm:h-5" height="20" src="/google.svg" width="20"/>
+            <span class="text-gray-700 text-xs sm:text-sm font-medium whitespace-nowrap">
+             +1000 avaliações
+            </span>
+           </div>
+          </div>
+          <div class="inline-flex items-center gap-2 py-2 px-4 rounded-full bg-[#245EE3]/10 text-[#245EE3] shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgba(0,110,255,0.12)] w-full sm:w-auto justify-center text-sm font-medium backdrop-blur-sm">
+           Potencialize Seu Negócio Digital
+          </div>
+         </div>
+         <div class="text-center max-w-3xl mx-auto">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+           Crie um
+           <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+            aplicativo
+           </span>
+           para o seu infoproduto em apenas 8 minutos.
+          </h1>
+          <p class="text-lg text-gray-600 mb-8">
+           Transforme suas ideias em aplicativos reais sem precisar programar. Nossa plataforma intuitiva permite que você crie, personalize e lance seu app em questão de minutos, aumentando suas vendas e diminuindo seus reembolsos.
+          </p>
+          <div class="flex flex-col items-center gap-8">
+           <div>
+            <button class="justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-10 bg-[#245EE3] hover:bg-[#245EE3]/90 text-white font-medium px-8 py-6 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300 flex items-center gap-2 text-sm lg:text-base">
+             CRIAR MEU APP AGORA
+            </button>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="py-16 bg-gradient-to-b from-white to-gray-50" id="demo-apps">
+       <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+         <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+          Veja nossos
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Apps Demonstrativos
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto mb-2">
+          Experimente a qualidade e funcionalidade dos aplicativos criados com o HuskyApp
+         </p>
+         <p class="text-md font-medium text-[#245EE3] bg-blue-50 inline-block px-4 py-2 rounded-full">
+          Acesse com o email: app@demonstrativo.com
+         </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+         <div class="flex flex-col items-center">
+          <div class="relative mb-6">
+           <div class="relative w-[280px] h-[560px] rounded-[36px] border-[10px] border-gray-900 overflow-hidden shadow-xl bg-white">
+            <img alt="Dog Influencer App" class="w-full h-full object-contain" src="/appdoginfluencer.png"/>
+           </div>
+          </div>
+          <h3 class="text-xl font-bold mb-4">
+           Dog Influencer
+          </h3>
+          <a class="justify-center whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-9 bg-[#245EE3] hover:bg-[#1a4bc0] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all duration-300" href="http://app.odoginfluencer.club/" rel="noopener noreferrer" target="_blank">
+           Acessar Demo
+          </a>
+         </div>
+         <div class="flex flex-col items-center">
+          <div class="relative mb-6">
+           <div class="relative w-[280px] h-[560px] rounded-[36px] border-[10px] border-gray-900 overflow-hidden shadow-xl bg-white">
+            <img alt="Pilates de la Pared App" class="w-full h-full object-contain" src="/apppilates.png"/>
+           </div>
+          </div>
+          <h3 class="text-xl font-bold mb-4">
+           Pilates de la Pared
+          </h3>
+          <a class="justify-center whitespace-nowrap text-sm font-medium focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow h-9 bg-[#245EE3] hover:bg-[#1a4bc0] text-white px-6 py-2 rounded-full flex items-center gap-2 transition-all duration-300" href="https://www.admin.husky-app.com/app/MTc0Njc5MTc3MjU4Mg==/login" rel="noopener noreferrer" target="_blank">
+           Acessar Demo
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative px-4 py-16 sm:py-24 overflow-hidden" id="recursos">
+       <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-8">
+         <h2 class="text-4xl md:text-5xl font-bold mb-3">
+          Recursos
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Poderosos
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Descubra os recursos exclusivos que tornam o HuskyApp a escolha ideal para infoprodutores. Tudo que você precisa para entregar uma experiência premium.
+         </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Personalização Total
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Seu app, sua marca! Customize cores, logo, domínio próprio e idiomas (PT, EN, ES, FR). Tenha controle absoluto sobre a identidade visual.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Hospedagem &amp; Vendas
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Armazene e comercialize seus produtos digitais diretamente no app. Ebooks, videoaulas e cursos em um só lugar, com total controle.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Comunidade Moderada
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Crie uma comunidade engajada com posts, comentários e interações. Sistema de moderação avançado para manter o ambiente seguro.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Notificações Push
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Envie notificações personalizadas diretamente para seus usuários. Aumente engajamento e retenção com comunicação instantânea.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Feed de Atualizações
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Publique novidades, lançamentos e conteúdos extras no formato feed como nas redes sociais. Mantenha seus usuários engajados e com alto valor percebido.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Alcance Internacional
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Expanda seu negócio globalmente com suporte a múltiplos idiomas. Conquiste novos mercados sem complexidade.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative px-4 pt-8 sm:pt-12 pb-12 sm:pb-16">
+       <div class="max-w-7xl mx-auto relative z-10">
+        <div class="text-center mb-8">
+         <h2 class="text-4xl md:text-5xl font-bold mb-3">
+          Perfeito para
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Criadores
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Eleve o valor dos seus produtos digitais e fortaleça sua marca com um app personalizado.
+         </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Infoprodutores
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Transforme seus ebooks e materiais digitais em uma experiência premium com app próprio
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Produtores de Conteúdo
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Disponibilize suas videoaulas e cursos em uma plataforma exclusiva e profissional
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Mentores
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Ofereça sua mentoria em um ambiente personalizado com sua identidade
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Podcasters
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Crie um app exclusivo para seu podcast com episódios, materiais extras e comunidade
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Coaches
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Entregue seu programa de coaching em uma plataforma moderna e personalizada
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group">
+          <div class="rounded-xl bg-card text-card-foreground shadow relative p-6 h-full bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="flex flex-col h-full">
+            <h3 class="text-xl font-semibold mb-2 text-gray-900 transition-colors duration-300 group-hover:text-[#245EE3]">
+             Especialistas
+            </h3>
+            <p class="text-gray-600 leading-relaxed transition-colors duration-300 group-hover:text-gray-700">
+             Monetize seu conhecimento com um aplicativo próprio para sua consultoria
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative py-16 sm:py-24 overflow-hidden bg-[#EEF6FF]" id="integracoes">
+       <div class="container mx-auto mb-12 px-4 text-center">
+        <div>
+         <h2 class="text-4xl md:text-5xl font-bold mb-4">
+          Integre com suas
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Plataformas Favoritas
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Conecte-se facilmente com as principais plataformas do mercado e expanda seu alcance
+         </p>
+        </div>
+       </div>
+       <div class="relative w-full">
+        <div class="flex space-x-4 animate-scroll-left-fast md:animate-scroll-left pb-4">
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Hotmart" class="w-full h-8 md:h-12 object-contain" src="/integrations/logohotmart.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kiwify" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokiwify.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Perfect Pay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoperfectpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cart Panda" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocartpanda.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Last Link" class="w-full h-8 md:h-12 object-contain" src="/integrations/logolastlink.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kirvano" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokirvano.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cakto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocakto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Eduzz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoeduzz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="B4You" class="w-full h-8 md:h-12 object-contain" src="/integrations/logob4you.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Disrupty" class="w-full h-8 md:h-12 object-contain" src="/integrations/logodisrupty.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Frendz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logofrendz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="MundPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logomundpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Payt" class="w-full h-8 md:h-12 object-contain" src="/integrations/logopayt.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Ticto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoticto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="TriboPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logotribopay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Yampi" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoyampi.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Hotmart" class="w-full h-8 md:h-12 object-contain" src="/integrations/logohotmart.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kiwify" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokiwify.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Perfect Pay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoperfectpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cart Panda" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocartpanda.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Last Link" class="w-full h-8 md:h-12 object-contain" src="/integrations/logolastlink.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kirvano" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokirvano.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cakto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocakto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Eduzz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoeduzz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="B4You" class="w-full h-8 md:h-12 object-contain" src="/integrations/logob4you.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Disrupty" class="w-full h-8 md:h-12 object-contain" src="/integrations/logodisrupty.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Frendz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logofrendz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="MundPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logomundpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Payt" class="w-full h-8 md:h-12 object-contain" src="/integrations/logopayt.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Ticto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoticto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="TriboPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logotribopay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Yampi" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoyampi.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Hotmart" class="w-full h-8 md:h-12 object-contain" src="/integrations/logohotmart.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kiwify" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokiwify.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Perfect Pay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoperfectpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cart Panda" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocartpanda.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Last Link" class="w-full h-8 md:h-12 object-contain" src="/integrations/logolastlink.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kirvano" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokirvano.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cakto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocakto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Eduzz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoeduzz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="B4You" class="w-full h-8 md:h-12 object-contain" src="/integrations/logob4you.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Disrupty" class="w-full h-8 md:h-12 object-contain" src="/integrations/logodisrupty.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Frendz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logofrendz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="MundPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logomundpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Payt" class="w-full h-8 md:h-12 object-contain" src="/integrations/logopayt.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Ticto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoticto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="TriboPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logotribopay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Yampi" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoyampi.png"/>
+          </div>
+         </div>
+        </div>
+        <div class="flex space-x-4 mt-4 md:mt-8 animate-scroll-right-fast md:animate-scroll-right pb-4">
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Last Link" class="w-full h-8 md:h-12 object-contain" src="/integrations/logolastlink.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kirvano" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokirvano.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cakto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocakto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Eduzz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoeduzz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="B4You" class="w-full h-8 md:h-12 object-contain" src="/integrations/logob4you.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Disrupty" class="w-full h-8 md:h-12 object-contain" src="/integrations/logodisrupty.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Frendz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logofrendz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="MundPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logomundpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Payt" class="w-full h-8 md:h-12 object-contain" src="/integrations/logopayt.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Ticto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoticto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="TriboPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logotribopay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Yampi" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoyampi.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Hotmart" class="w-full h-8 md:h-12 object-contain" src="/integrations/logohotmart.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kiwify" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokiwify.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Perfect Pay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoperfectpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cart Panda" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocartpanda.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Last Link" class="w-full h-8 md:h-12 object-contain" src="/integrations/logolastlink.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kirvano" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokirvano.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cakto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocakto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Eduzz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoeduzz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="B4You" class="w-full h-8 md:h-12 object-contain" src="/integrations/logob4you.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Disrupty" class="w-full h-8 md:h-12 object-contain" src="/integrations/logodisrupty.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Frendz" class="w-full h-8 md:h-12 object-contain" src="/integrations/logofrendz.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="MundPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logomundpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Payt" class="w-full h-8 md:h-12 object-contain" src="/integrations/logopayt.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Ticto" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoticto.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="TriboPay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logotribopay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Yampi" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoyampi.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Hotmart" class="w-full h-8 md:h-12 object-contain" src="/integrations/logohotmart.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Kiwify" class="w-full h-8 md:h-12 object-contain" src="/integrations/logokiwify.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Perfect Pay" class="w-full h-8 md:h-12 object-contain" src="/integrations/logoperfectpay.png"/>
+          </div>
+         </div>
+         <div class="rounded-xl bg-card text-card-foreground shadow group relative flex-none w-[160px] md:w-[200px] p-4 md:p-6 bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+          <div class="flex items-center justify-center h-full">
+           <img alt="Cart Panda" class="w-full h-8 md:h-12 object-contain" src="/integrations/logocartpanda.png"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative pt-8 sm:pt-12 pb-0 overflow-hidden" id="depoimentos">
+       <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+         <h2 class="text-4xl md:text-6xl font-bold mb-6 text-gray-900">
+          Resultados
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Comprovados
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Descubra como o HuskyApp está transformando negócios digitais
+         </p>
+        </div>
+       </div>
+       <div class="mb-0 w-screen relative left-[50%] right-[50%] -mx-[50vw]">
+        <div class="relative w-full overflow-hidden">
+         <div class="flex space-x-3 sm:space-x-6 pb-4 w-[300%] overflow-hidden animate-scroll-right">
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 1" class="w-full h-full object-contain" src="/testimonials/IMG_4738.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 2" class="w-full h-full object-contain" src="/testimonials/IMG_4739.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 3" class="w-full h-full object-contain" src="/testimonials/IMG_4740.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 4" class="w-full h-full object-contain" src="/testimonials/IMG_4741.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 5" class="w-full h-full object-contain" src="/testimonials/IMG_4742.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 6" class="w-full h-full object-contain" src="/testimonials/IMG_4743.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 7" class="w-full h-full object-contain" src="/testimonials/IMG_4744.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 8" class="w-full h-full object-contain" src="/testimonials/IMG_4745.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 9" class="w-full h-full object-contain" src="/testimonials/IMG_4746.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 10" class="w-full h-full object-contain" src="/testimonials/IMG_4747.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 11" class="w-full h-full object-contain" src="/testimonials/IMG_4748.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 12" class="w-full h-full object-contain" src="/testimonials/IMG_4749.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 13" class="w-full h-full object-contain" src="/testimonials/IMG_4750.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 14" class="w-full h-full object-contain" src="/testimonials/IMG_4751.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 15" class="w-full h-full object-contain" src="/testimonials/IMG_4738.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 16" class="w-full h-full object-contain" src="/testimonials/IMG_4739.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 17" class="w-full h-full object-contain" src="/testimonials/IMG_4740.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 18" class="w-full h-full object-contain" src="/testimonials/IMG_4741.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 19" class="w-full h-full object-contain" src="/testimonials/IMG_4742.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 20" class="w-full h-full object-contain" src="/testimonials/IMG_4743.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 21" class="w-full h-full object-contain" src="/testimonials/IMG_4744.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 22" class="w-full h-full object-contain" src="/testimonials/IMG_4745.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 23" class="w-full h-full object-contain" src="/testimonials/IMG_4746.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 24" class="w-full h-full object-contain" src="/testimonials/IMG_4747.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 25" class="w-full h-full object-contain" src="/testimonials/IMG_4748.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 26" class="w-full h-full object-contain" src="/testimonials/IMG_4749.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 27" class="w-full h-full object-contain" src="/testimonials/IMG_4750.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 28" class="w-full h-full object-contain" src="/testimonials/IMG_4751.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 29" class="w-full h-full object-contain" src="/testimonials/IMG_4738.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 30" class="w-full h-full object-contain" src="/testimonials/IMG_4739.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 31" class="w-full h-full object-contain" src="/testimonials/IMG_4740.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 32" class="w-full h-full object-contain" src="/testimonials/IMG_4741.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 33" class="w-full h-full object-contain" src="/testimonials/IMG_4742.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 34" class="w-full h-full object-contain" src="/testimonials/IMG_4743.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 35" class="w-full h-full object-contain" src="/testimonials/IMG_4744.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 36" class="w-full h-full object-contain" src="/testimonials/IMG_4745.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 37" class="w-full h-full object-contain" src="/testimonials/IMG_4746.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 38" class="w-full h-full object-contain" src="/testimonials/IMG_4747.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 39" class="w-full h-full object-contain" src="/testimonials/IMG_4748.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 40" class="w-full h-full object-contain" src="/testimonials/IMG_4749.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 41" class="w-full h-full object-contain" src="/testimonials/IMG_4750.PNG"/>
+           </div>
+          </div>
+          <div class="flex-none w-[180px] xs:w-[200px] sm:w-[240px] md:w-[260px] lg:w-[280px]">
+           <div class="group relative aspect-[1284/2345] rounded-xl overflow-hidden shadow-lg border border-gray-200 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer">
+            <img alt="Feedback de cliente 42" class="w-full h-full object-contain" src="/testimonials/IMG_4751.PNG"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative px-4 py-16 sm:py-24 overflow-hidden" id="precos">
+       <div class="container mx-auto px-4">
+        <div class="text-center mb-8">
+         <h2 class="text-4xl md:text-5xl font-bold mb-3">
+          Planos para cada
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Necessidade
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Escolha o plano ideal para seu negócio crescer com o HuskyApp.
+         </p>
+        </div>
+        <div class="flex justify-center mb-12">
+         <div class="bg-white backdrop-blur-lg rounded-full shadow-md p-1 flex">
+          <button class="px-6 py-2 rounded-full transition-all bg-[#245EE3] text-white shadow-md">
+           Mensal
+          </button>
+          <button class="px-6 py-2 rounded-full transition-all flex items-center bg-white text-gray-700 hover:bg-gray-100">
+           Anual
+          </button>
+         </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+         <div class="h-full">
+          <div class="h-full rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+           <div class="p-8 flex flex-col h-full">
+            <div>
+             <h3 class="text-xl font-semibold text-[#245EE3] mb-2">
+              Basic
+              <span class="ml-2 text-sm bg-green-100 text-green-700 px-6 py-2 rounded-full">
+               Teste 7 dias grátis
+              </span>
+             </h3>
+             <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-bold">
+               R$
+              </span>
+              <span class="text-5xl font-bold">
+               97,00
+              </span>
+              <span class="text-gray-600">
+               /mês
+              </span>
+             </div>
+            </div>
+            <div class="mt-8 flex-1">
+             <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                1 aplicativo
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                400 novos usuários por mês
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Produtos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Conteúdos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts no feed ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Notificações Push ilimitadas
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts na comunidade ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Suporte WhatsApp
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="mt-auto pt-8">
+             <div class="flex items-start gap-2 text-sm text-gray-500 mb-8">
+              <span>
+               Teste gratuito por 7 dias
+              </span>
+             </div>
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-12 text-base font-medium bg-[#245EE3] hover:bg-[#245EE3]/90 text-white shadow-lg shadow-[#245EE3]/20">
+              Testar Gratuitamente
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="h-full">
+          <div class="h-full rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+           <div class="h-8 -mt-4">
+            <div class="flex justify-center">
+             <div class="bg-[#245EE3] text-white px-4 py-1 rounded-full text-sm font-medium inline-flex items-center gap-1.5">
+              Recomendado
+             </div>
+            </div>
+           </div>
+           <div class="p-8 flex flex-col h-full">
+            <div>
+             <h3 class="text-xl font-semibold text-[#245EE3] mb-2">
+              Starter
+             </h3>
+             <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-bold">
+               R$
+              </span>
+              <span class="text-5xl font-bold">
+               197,00
+              </span>
+              <span class="text-gray-600">
+               /mês
+              </span>
+             </div>
+            </div>
+            <div class="mt-8 flex-1">
+             <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                3 aplicativos
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                1000 novos usuários por mês
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Produtos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Conteúdos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts no feed ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Notificações Push ilimitadas
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts na comunidade ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Suporte WhatsApp
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="mt-auto pt-8">
+             <div class="flex items-start gap-2 text-sm text-gray-500 mb-8">
+              <span>
+               R$ 0,25 por usuário adicional
+              </span>
+             </div>
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-12 text-base font-medium bg-[#245EE3] hover:bg-[#245EE3]/90 text-white shadow-lg shadow-[#245EE3]/20">
+              Selecionar
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="h-full">
+          <div class="h-full rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+           <div class="p-8 flex flex-col h-full">
+            <div>
+             <h3 class="text-xl font-semibold text-[#245EE3] mb-2">
+              Professional
+             </h3>
+             <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-bold">
+               R$
+              </span>
+              <span class="text-5xl font-bold">
+               397,00
+              </span>
+              <span class="text-gray-600">
+               /mês
+              </span>
+             </div>
+            </div>
+            <div class="mt-8 flex-1">
+             <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                6 aplicativos
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                3000 novos usuários por mês
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Produtos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Conteúdos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts no feed ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Notificações Push ilimitadas
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts na comunidade ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Suporte WhatsApp
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="mt-auto pt-8">
+             <div class="flex items-start gap-2 text-sm text-gray-500 mb-8">
+              <span>
+               R$ 0,25 por usuário adicional
+              </span>
+             </div>
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-12 text-base font-medium bg-[#245EE3] hover:bg-[#245EE3]/90 text-white shadow-lg shadow-[#245EE3]/20">
+              Selecionar
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="h-full">
+          <div class="h-full rounded-xl bg-white border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 flex flex-col">
+           <div class="p-8 flex flex-col h-full">
+            <div>
+             <h3 class="text-xl font-semibold text-[#245EE3] mb-2">
+              Business
+             </h3>
+             <div class="flex items-baseline gap-1">
+              <span class="text-3xl font-bold">
+               R$
+              </span>
+              <span class="text-5xl font-bold">
+               797,00
+              </span>
+              <span class="text-gray-600">
+               /mês
+              </span>
+             </div>
+            </div>
+            <div class="mt-8 flex-1">
+             <div class="space-y-4 mb-8">
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                12 aplicativos
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                8000 novos usuários por mês
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Produtos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Conteúdos ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts no feed ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Notificações Push ilimitadas
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Posts na comunidade ilimitados
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Suporte WhatsApp
+               </span>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-gray-600">
+                Consultoria personalizada
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="mt-auto pt-8">
+             <div class="flex items-start gap-2 text-sm text-gray-500 mb-8">
+              <span>
+               R$ 0,25 por usuário adicional
+              </span>
+             </div>
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 px-4 py-2 w-full h-12 text-base font-medium bg-[#245EE3] hover:bg-[#245EE3]/90 text-white shadow-lg shadow-[#245EE3]/20">
+              Selecionar
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative px-4 py-16 sm:py-24 overflow-hidden" id="faq">
+       <div class="container mx-auto">
+        <div class="text-center mb-12">
+         <div class="inline-flex items-center gap-2 mb-4 bg-[#245EE3]/10 text-[#245EE3] px-4 py-2 rounded-full text-sm font-medium">
+          FAQ
+         </div>
+         <h2 class="text-4xl md:text-5xl font-bold mb-3">
+          Dúvidas
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Frequentes
+          </span>
+         </h2>
+         <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Descubra como o HuskyApp pode transformar seus produtos digitais e elevar o valor da sua marca com um aplicativo personalizado.
+         </p>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-4">
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              Como o HuskyApp pode aumentar o valor dos meus produtos digitais?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              O HuskyApp transforma seus produtos digitais em uma experiência premium através de um aplicativo personalizado com sua marca. Além de oferecer uma plataforma exclusiva para seus clientes, você conta com recursos avançados como comunidade moderada, notificações push e suporte multilíngue, aumentando significativamente o valor percebido e real dos seus produtos.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              Quais tipos de conteúdo posso disponibilizar no app?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              O HuskyApp suporta diversos formatos de conteúdo digital, incluindo ebooks, videoaulas, cursos completos, mentorias e consultorias. Você pode organizar todo seu material em uma plataforma profissional e personalizada, com hospedagem integrada e controle total sobre a experiência do usuário.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              Como funciona a personalização do aplicativo?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              Você tem controle total sobre a identidade visual do seu app: cores, logo, domínio próprio e até mesmo o nome do aplicativo. Além disso, pode escolher entre diferentes idiomas (Português, Inglês, Espanhol e Francês), configurar banners promocionais e personalizar a navegação conforme suas necessidades.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              Como posso engajar minha comunidade através do app?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              O HuskyApp oferece um feed de atualizações para posts estratégicos, sistema de comunidade moderada para interações entre usuários, e notificações push personalizadas. Você pode criar posts, gerenciar comentários e manter sua audiência sempre engajada com novidades e conteúdos exclusivos.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              É possível expandir para mercados internacionais?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              Sim! O HuskyApp já vem preparado para alcance global com suporte a múltiplos idiomas (Português, Inglês, Espanhol e Francês). Você pode facilmente adaptar seu conteúdo e interface para diferentes mercados, expandindo seu negócio internacionalmente sem complicações.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <div class="group relative bg-gradient-to-b from-white/80 to-white/40 backdrop-blur-sm border border-white/20 transition-all duration-500 hover:shadow-[0_8px_30px_rgb(36,94,227,0.12)] hover:-translate-y-1">
+           <div class="p-6">
+            <div class="flex justify-between items-start gap-4">
+             <h3 class="text-lg font-medium text-gray-900">
+              Que tipo de suporte vocês oferecem?
+             </h3>
+            </div>
+            <div class="overflow-hidden">
+             <p class="text-gray-600 leading-relaxed">
+              Oferecemos configurações avançadas de suporte que você pode personalizar com sua própria marca. Seus usuários podem entrar em contato via Email ou WhatsApp diretamente pelo aplicativo, e você tem total controle sobre os canais de atendimento e experiência de suporte.
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="relative px-4 pt-4 sm:pt-8 pb-4 sm:pb-8 overflow-hidden bg-gradient-to-b from-[#EEF6FF] to-white">
+       <div class="container mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+         <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Pronto para
+          <span class="bg-gradient-to-r from-[#245EE3] via-[#245EE3]/80 to-[#245EE3]/60 bg-clip-text text-transparent">
+           Transformar
+          </span>
+          seu Negócio Digital?
+         </h2>
+         <p class="text-lg text-gray-600 mb-8">
+          Junte-se a milhares de criadores que já estão revolucionando a forma de entregar conteúdo digital.
+         </p>
+         <div class="flex flex-col items-center gap-8">
+          <div>
+           <button class="justify-center whitespace-nowrap focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 h-10 bg-[#245EE3] hover:bg-[#245EE3]/90 text-white font-medium px-8 py-6 rounded-xl shadow-lg hover:shadow-[#245EE3]/25 transition-all duration-300 flex items-center gap-2 text-sm lg:text-base">
+            CRIAR MEU APP AGORA
+           </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+     </main>
+     <footer class="bg-white border-t border-[#006eff]/10">
+      <div class="max-w-7xl mx-auto px-4 py-8 sm:py-12">
+       <div class="flex flex-col items-center text-center">
+        <div class="mb-6 flex flex-col items-center">
+         <img alt="HuskyApp Logo" class="h-8 w-auto mb-4" src="/logo.svg"/>
+         <p class="text-gray-600 max-w-sm">
+          Transforme sua presença digital com soluções inovadoras e personalizadas.
+         </p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-6 mb-6">
+         <a class="text-sm text-gray-600 hover:text-[#245ee3] transition-colors duration-300" href="#">
+          Termos de Uso
+         </a>
+         <a class="text-sm text-gray-600 hover:text-[#245ee3] transition-colors duration-300" href="#">
+          Política de Privacidade
+         </a>
+        </div>
+        <p class="text-[#64748b] text-sm">
+         © 2025 HuskyApp. Todos os direitos reservados.
+        </p>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

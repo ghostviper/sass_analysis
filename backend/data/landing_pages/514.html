@@ -1,0 +1,998 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Would You - The Discord Bot</title>
+</head>
+<body>
+  <body>
+   <a class="w-full px-8 py-3 text-center z-10 bg-brand-customPrimary text-white" href="/premium">
+    <b>
+     Would You Bot
+    </b>
+    • Upgrade your server with Premium
+   </a>
+   <div class="w-full relative min-h-dvh flex flex-col">
+    <nav class="sticky left-0 top-[1px] z-50 mb-8 flex h-auto w-full items-center justify-center py-6">
+     <div class="flex h-full w-full max-w-8xl items-center justify-between px-8 transition-all duration-300">
+      <div class="flex h-16 min-w-fit items-center justify-center rounded-[10px] border-2 border-foreground/5 bg-background-light/90 px-6 backdrop-blur">
+       <a class="flex items-center gap-6" href="/">
+        <img alt="Would You Logo" class="rounded-full" height="30" src="/Logo.svg" width="30"/>
+        <p class="text-xl font-bold text-foreground">
+         Would You
+        </p>
+       </a>
+      </div>
+      <div class="absolute flex items-center justify-center gap-6 rounded-[10px] border-2 border-foreground/5 bg-background-light/90 backdrop-blur md:static right-7 top-6 h-16 w-16 md:w-min transition-all duration-300">
+       <div class="hidden w-max gap-6 px-6 lg:px-10 md:flex items-center">
+        <a class="text-lg text-foreground/70 transition-all hover:text-foreground/90" href="/commands">
+         Commands
+        </a>
+        <a class="text-lg text-foreground/70 transition-all hover:text-foreground/90" href="/blog">
+         Blog
+        </a>
+        <a class="flex items-center gap-2 text-lg text-yellow-500 dark:text-yellow-500 transition-all hover:text-yellow-600 dark:hover:text-yellow-400" href="/premium">
+         Premium
+        </a>
+       </div>
+       <div class="mb-auto flex h-full w-full flex-col items-center justify-center gap-8 p-4 text-foreground md:hidden pointer-events-none opacity-0">
+        <a class="text-2xl text-foreground/70 transition-all hover:text-foreground/90" href="/commands">
+         Commands
+        </a>
+        <a class="text-2xl text-foreground/70 transition-all hover:text-foreground/90" href="/blog">
+         Blog
+        </a>
+        <a class="flex items-center gap-2 text-2xl text-yellow-500 dark:text-yellow-500 transition-all hover:text-yellow-600 dark:hover:text-yellow-400" href="/premium">
+         Premium
+        </a>
+        <a class="flex min-w-fit items-center justify-center gap-2 bg-indigo-500 px-4 py-2 leading-loose text-white transition-all duration-300 hover:bg-indigo-500/90 h-16 rounded-[10px] px-6" href="/login?redirect=%2F&amp;prompt=yes">
+         <span class="hidden lg:flex">
+          Login with Discord
+         </span>
+         <span class="flex lg:hidden">
+          Login
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="hidden h-16 min-w-fit items-center justify-center md:flex gap-1 p-1 rounded-xl border-2 border-foreground/5 bg-background-light/90 backdrop-blur">
+       <a class="flex min-w-fit items-center justify-center gap-2 bg-indigo-500 px-4 py-2 leading-loose text-white transition-all duration-300 hover:bg-indigo-500/90 h-full rounded-[8px] px-6" href="/login?redirect=%2F&amp;prompt=yes">
+        <span class="hidden lg:flex">
+         Login with Discord
+        </span>
+        <span class="flex lg:hidden">
+         Login
+        </span>
+       </a>
+      </div>
+     </div>
+    </nav>
+    <main class="flex w-full flex-col items-center overflow-x-hidden">
+     <section class="mt-0 sm:mt-16 lg:mt-28 flex w-full max-w-8xl flex-col items-center justify-between gap-16 px-8 text-center lg:flex-row lg:text-left">
+      <div class="flex flex-col items-center lg:block">
+       <h1 class="text-[2rem] sm:text-5xl md:text-6xl font-bold leading-normal mb-8">
+        Entertain Your
+        <br/>
+        <span class="text-brand-red-100 drop-shadow-red-glow">
+         Discord
+        </span>
+        <span class="text-brand-blue-100 drop-shadow-blue-glow">
+         Server
+        </span>
+       </h1>
+       <p class="text-lg text-neutral-700 dark:text-neutral-300">
+        Play fun and entertaining games with Would You, featuring user polls and customization. Play Would You Rather, Truth or Dare, Never Have I Ever, Higher or Lower, and What Would You Do!
+       </p>
+       <div class="flex flex-col lg:flex-row mt-8 items-center gap-4">
+        <div class="flex select-none flex-row">
+         <button class="group">
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background group-hover:scale-105 group-hover:z-50 transition-all">
+           <img alt="VoyceMe's Server Avatar" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/788125776423288862/aa7870cfd359bc13d0bcee8c2229f0a7.webp"/>
+          </span>
+         </button>
+         <button class="group -ml-3 z-[1]">
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background group-hover:scale-105 group-hover:z-50 transition-all">
+           <img alt="A Universal Time's Server Avatar" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/717072320321159178/9e8c90ab1713af67939d1fc60549e75f.webp"/>
+          </span>
+         </button>
+         <button class="group -ml-3 z-[2]">
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background group-hover:scale-105 group-hover:z-50 transition-all">
+           <img alt="Ticket Tool Support's Server Avatar" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/509192800865353738/a_36237c3fb10bf8745f8f00da30d4dcb3.gif"/>
+          </span>
+         </button>
+         <button class="group -ml-3 z-[3]">
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background group-hover:scale-105 group-hover:z-50 transition-all">
+           <img alt="StaaRcord's Server Avatar" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/682949286920585261/ed99b74c4cd1c67487f64db59c9e5408.webp"/>
+          </span>
+         </button>
+         <button class="group -ml-3 z-[4]">
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background group-hover:scale-105 group-hover:z-50 transition-all">
+           <img alt="Viggle's Server Avatar" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/1181076253172842537/b0b5c7a17230480cda325c9210f914e6.webp"/>
+          </span>
+         </button>
+         <button>
+          <span class="relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full border-[2px] border-background bg-background -ml-3 z-10">
+           <span class="flex h-full w-full items-center justify-center rounded-full bg-brand-customPrimary">
+            <span class="text-sm text-white">
+             +99
+            </span>
+           </span>
+          </span>
+         </button>
+        </div>
+        <span class="text-foreground/50">
+         Trusted by your favorite servers!
+        </span>
+       </div>
+       <a class="mt-8 flex w-fit justify-center" href="/invite" target="_blank">
+        <button class="flex items-center rounded-lg px-6 py-3 transition-all bg-brand-blue-100 hover:bg-brand-blue-200 text-white gap-2">
+         Unleash the Fun
+        </button>
+       </a>
+      </div>
+      <div>
+       <discord-messages class="mx-auto w-auto overflow-x-hidden rounded-lg text-left shadow sm:w-2/3 lg:w-auto">
+        <discord-message>
+         <discord-embed>
+          <discord-embed-description>
+           Would you rather have super strength or super speed?
+          </discord-embed-description>
+          <discord-embed-footer>
+           Requested by dominikdev | Type: General | ID: 64
+          </discord-embed-footer>
+         </discord-embed>
+         <discord-attachments>
+          <discord-action-row>
+           <discord-button type="secondary">
+            Results
+           </discord-button>
+          </discord-action-row>
+          <discord-action-row>
+           <discord-button type="primary">
+            New Question
+           </discord-button>
+          </discord-action-row>
+         </discord-attachments>
+        </discord-message>
+       </discord-messages>
+      </div>
+     </section>
+     <section class="mt-36" id="slider">
+      <div class="w-full bg-background-darker dark:bg-background-dark px-8 pb-12 text-center text-3xl md:text-4xl text-foreground md:-mt-20 md:pb-28">
+       <div class="w-dvw px-8 mx-auto">
+        <h2>
+         Trusted by
+         <span class="bg-gradient-brand bg-clip-text font-bold text-transparent">
+          30,900+
+         </span>
+         communities
+        </h2>
+        <h3 class="mt-4 text-xl md:text-2xl px-12">
+         keeping
+         <span class="bg-gradient-brand bg-clip-text font-bold text-transparent">
+          10,000,000+
+         </span>
+         users entertained
+        </h3>
+       </div>
+       <div class="w-dvw mx-auto overflow-x-hidden">
+        <div class="relative mx-auto my-auto mt-8 max-w-7xl overflow-hidden undefined">
+         <div class="rfm-marquee-container flex w-max items-center overflow-hidden">
+          <div class="rfm-marquee">
+           <div class="rfm-initial-child-container">
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/voyceme" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="VoyceMes server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/788125776423288862/aa7870cfd359bc13d0bcee8c2229f0a7.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 VoyceMe
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                5,589 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/aut" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="A Universal Times server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/717072320321159178/9e8c90ab1713af67939d1fc60549e75f.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 A Universal Time
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                859,802 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/tickettool" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Ticket Tool Supports server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/509192800865353738/a_36237c3fb10bf8745f8f00da30d4dcb3.gif"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Ticket Tool Support
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                128,922 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/staar" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="StaaRcords server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/682949286920585261/ed99b74c4cd1c67487f64db59c9e5408.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 StaaRcord
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                1,294 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/viggle" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Viggles server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/1181076253172842537/b0b5c7a17230480cda325c9210f914e6.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Viggle
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                4,188,848 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/altrax" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Wintraxs server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/415204527168290826/61b11de0a518bd292b7f150a22fe3064.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Wintrax
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                59,949 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/onwardgaming" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="OGR Network™s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/811120002157510666/5b32c7866e71255a739fd620e7b27236.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 OGR Network™
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                10,957 Members
+               </p>
+              </div>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="rfm-marquee">
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/voyceme" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="VoyceMes server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/788125776423288862/aa7870cfd359bc13d0bcee8c2229f0a7.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                VoyceMe
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               5,589 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/aut" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="A Universal Times server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/717072320321159178/9e8c90ab1713af67939d1fc60549e75f.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                A Universal Time
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               859,802 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/tickettool" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Ticket Tool Supports server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/509192800865353738/a_36237c3fb10bf8745f8f00da30d4dcb3.gif"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Ticket Tool Support
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               128,922 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/staar" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="StaaRcords server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/682949286920585261/ed99b74c4cd1c67487f64db59c9e5408.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                StaaRcord
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               1,294 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/viggle" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Viggles server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/1181076253172842537/b0b5c7a17230480cda325c9210f914e6.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Viggle
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               4,188,848 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/altrax" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Wintraxs server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/415204527168290826/61b11de0a518bd292b7f150a22fe3064.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Wintrax
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               59,949 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/onwardgaming" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="OGR Network™s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/811120002157510666/5b32c7866e71255a739fd620e7b27236.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                OGR Network™
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               10,957 Members
+              </p>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="relative mx-auto my-auto mt-8 max-w-7xl overflow-hidden undefined">
+         <div class="rfm-marquee-container flex w-max items-center overflow-hidden">
+          <div class="rfm-marquee">
+           <div class="rfm-initial-child-container">
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/sebee" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="🎄Sebees server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/652737520227975189/d3790cb2382551782d784ec20bbcd4a6.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 🎄Sebee
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                68,147 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/coco-jones-1235270822663422012" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Coco Joness server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/1235270822663422012/8c0c81e038b8aa09c9d5bb5090ad3de9.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Coco Jones
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                1,441 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/crunchy" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Crunchy  🥐s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/522477306787397642/a_4d53fc75b4783d9b8b187c20c282f7ec.gif"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Crunchy  🥐
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                26,135 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/novaempire" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="𝙉𝙤𝙫𝙖 𝙀𝙢𝙥𝙞𝙧𝙚s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/684405426716147778/a_d024efe3ce9d9819dfd2858558a6033c.gif"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 𝙉𝙤𝙫𝙖 𝙀𝙢𝙥𝙞𝙧𝙚
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                1,710 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/ccc" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Content Creators Cabins server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/677565751741251585/a_6bbf741de913bc7d6cd538e120f23168.gif"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Content Creators Cabin
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                32,061 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/cdofficial" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Creative Destruction Officials server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/461917432576081925/9f909177feece1ef6b40565dfdc633a9.webp"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Creative Destruction Official
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                15,282 Members
+               </p>
+              </div>
+             </a>
+            </div>
+            <div class="rfm-child">
+             <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/hoboslayers" target="_blank">
+              <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+               <img alt="Hobo Slayerss server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/118986827355914240/a_62f01a8189f704798afb87a5d43f1ca2.gif"/>
+              </span>
+              <div>
+               <div class="relative flex items-center">
+                <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                 Hobo Slayers
+                </h4>
+               </div>
+               <p class="text-left text-sm text-foreground/60">
+                720 Members
+               </p>
+              </div>
+             </a>
+            </div>
+           </div>
+          </div>
+          <div class="rfm-marquee">
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/sebee" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="🎄Sebees server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/652737520227975189/d3790cb2382551782d784ec20bbcd4a6.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                🎄Sebee
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               68,147 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/coco-jones-1235270822663422012" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Coco Joness server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/1235270822663422012/8c0c81e038b8aa09c9d5bb5090ad3de9.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Coco Jones
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               1,441 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/crunchy" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Crunchy  🥐s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/522477306787397642/a_4d53fc75b4783d9b8b187c20c282f7ec.gif"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Crunchy  🥐
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               26,135 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/novaempire" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="𝙉𝙤𝙫𝙖 𝙀𝙢𝙥𝙞𝙧𝙚s server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/684405426716147778/a_d024efe3ce9d9819dfd2858558a6033c.gif"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                𝙉𝙤𝙫𝙖 𝙀𝙢𝙥𝙞𝙧𝙚
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               1,710 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/ccc" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Content Creators Cabins server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/677565751741251585/a_6bbf741de913bc7d6cd538e120f23168.gif"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Content Creators Cabin
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               32,061 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/cdofficial" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Creative Destruction Officials server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/461917432576081925/9f909177feece1ef6b40565dfdc633a9.webp"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Creative Destruction Official
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               15,282 Members
+              </p>
+             </div>
+            </a>
+           </div>
+           <div class="rfm-child">
+            <a class="mr-4 flex w-72 cursor-pointer items-center gap-4 rounded-lg bg-background p-4 transition-all hover:bg-hover-light" href="https://discord.gg/hoboslayers" target="_blank">
+             <span class="relative flex shrink-0 overflow-hidden rounded-lg size-16">
+              <img alt="Hobo Slayerss server icon" class="aspect-square h-full w-full" src="https://cdn.discordapp.com/icons/118986827355914240/a_62f01a8189f704798afb87a5d43f1ca2.gif"/>
+             </span>
+             <div>
+              <div class="relative flex items-center">
+               <h4 class="ml-2 max-w-[160px] overflow-hidden text-ellipsis whitespace-nowrap text-lg text-foreground">
+                Hobo Slayers
+               </h4>
+              </div>
+              <p class="text-left text-sm text-foreground/60">
+               720 Members
+              </p>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="mt-20 flex w-full max-w-8xl flex-col items-center gap-20 px-8 text-foreground">
+      <div class="flex flex-col items-center">
+       <h2 class="bg-gradient-brand bg-clip-text text-6xl font-bold text-transparent">
+        Features
+       </h2>
+       <h3 class="mt-4 text-center text-2xl">
+        What Does Would You Offer To Your Server?
+       </h3>
+      </div>
+      <div class="flex flex-col items-center gap-6 max-w-[300px] lg:max-w-8xl md:max-w-8xl sm:max-w-8xl">
+       <div class="flex w-full flex-col justify-between gap-8 md:flex-row md:gap-20 rounded-md max-w-[300px] lg:max-w-8xl md:max-w-8xl sm:max-w-8xl">
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2">
+         <h4 class="text-center text-3xl font-bold md:text-left">
+          Increase user engagement
+         </h4>
+         <p class="mx-auto text-center text-lg text-foreground/70 md:text-left">
+          Keep your community engaged and active with daily "Would You Rather" messages!
+         </p>
+        </div>
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2 rounded-md order-last md:order-first">
+         <discord-messages class="min-w-fit overflow-x-hidden rounded-lg shadow">
+          <discord-message>
+           <discord-mention type="role">
+            QOTD
+           </discord-mention>
+           <discord-embed>
+            <discord-embed-description>
+             Would you rather be able to control fire 🔥 or water 💧?
+            </discord-embed-description>
+            <discord-embed-footer>
+             Daily Message | Type: Mixed | ID: 34
+            </discord-embed-footer>
+           </discord-embed>
+           <discord-thread>
+            <discord-thread-message>
+             Wow that...
+            </discord-thread-message>
+           </discord-thread>
+          </discord-message>
+         </discord-messages>
+        </div>
+       </div>
+       <div class="flex w-full flex-col justify-between gap-8 md:flex-row md:gap-20 rounded-md max-w-[300px] lg:max-w-8xl md:max-w-8xl sm:max-w-8xl">
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2">
+         <h4 class="text-center text-3xl font-bold md:text-left">
+          Entertain your server
+         </h4>
+         <p class="text-center text-lg text-foreground/70 md:text-left">
+          Entertain your Discord server with fun and interactive games like Would You Rather, Truth or Dare, Never Have I Ever, Higher or Lower, and What Would You Do!
+         </p>
+        </div>
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2 rounded-md">
+         <discord-messages class="overflow-x-hidden rounded-lg shadow">
+          <discord-message>
+           <discord-embed>
+            <discord-embed-description>
+             Do you think that
+             <a href="https://media.gettyimages.com/id/172983250/de/foto/el-bolte.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=k_mRK-vNunI3_-Vj4PuZ1Ego3gritQdXNobiZIlzszU=" rel="noopener noreferrer" target="_blank">
+              <b>
+               Mcdonalds
+              </b>
+             </a>
+             has higher or lower searches than
+             <a href="https://www.flickr.com/photos/jeepersmedia/14148153870/in/photolist-nydZeq-nQDDp3-pdpSvU-g7LgY-o3o2jd-pcNHiK-o3cCTF-5WPCjg-nQ2NWU-f2zTHH-pcNMyi-nQ2NHY-pcNHte-pfrPLZ-8spnG2-5pW4Z-pfaUUH-2uoaCe-nRMfuF-oXXAPw-nPUyfN-pfpNHs-pfaWDV-pfrMUx-pfrMD2-oXWWcy-5WPCZP-so4g2-5WPBYk-5WTTfu-p5tWUQ-5WTSBW-d39Ks-KHuxQ-oN23na-ayyYGJ-8spkbH-7B9Qwt-z6GPjP-p5vZi6-fJofT-LwbCj-bwPBWn-e9VGDK-8ssDmf-ea2nUm-8spDep-PanEt-8spyZR-z6GNxD" rel="noopener noreferrer" target="_blank">
+              <b>
+               Wrestling
+              </b>
+             </a>
+             ?
+            </discord-embed-description>
+            <discord-embed-footer>
+             finndev | Game ID: 32c7b7c4-6e6a
+            </discord-embed-footer>
+           </discord-embed>
+           <discord-attachments>
+            <discord-action-row>
+             <discord-button type="success">
+              Higher
+             </discord-button>
+             <discord-button type="destructive">
+              Lower
+             </discord-button>
+            </discord-action-row>
+           </discord-attachments>
+          </discord-message>
+          <discord-message>
+           <discord-reply>
+            <p>
+             Click to see command
+            </p>
+           </discord-reply>
+           McDonalds probably has a lot more
+          </discord-message>
+          <discord-message>
+           Yep should be McDonalds
+          </discord-message>
+          <discord-message>
+           <discord-reply>
+            <p>
+             Yep should be McDonalds
+            </p>
+           </discord-reply>
+           Soooo, we gonna press higher?
+          </discord-message>
+          <discord-message>
+           Yep!
+          </discord-message>
+         </discord-messages>
+        </div>
+       </div>
+       <div class="flex w-full flex-col justify-between gap-8 md:flex-row md:gap-20 rounded-md max-w-[300px] lg:max-w-8xl md:max-w-8xl sm:max-w-8xl">
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2">
+         <h4 class="text-center text-3xl font-bold md:text-left">
+          Upgrade your server
+         </h4>
+         <p class="text-center text-lg text-foreground/70 md:text-left">
+          Upgrade your server with Would You, featuring a wide variety of games and customized questions.
+         </p>
+        </div>
+        <div class="mx-auto flex flex-col justify-center gap-2 sm:w-2/3 md:w-1/2 rounded-md order-last md:order-first">
+         <discord-messages class="overflow-x-hidden rounded-lg text-left shadow">
+          <discord-message>
+           <discord-embed>
+            <discord-embed-description>
+             Never have I ever had surgery.
+            </discord-embed-description>
+            <discord-embed-footer>
+             Requested by podskio | Type: NHIE | ID: 124
+            </discord-embed-footer>
+           </discord-embed>
+           <discord-attachments>
+            <discord-action-row>
+             <discord-button type="secondary">
+              Results
+             </discord-button>
+            </discord-action-row>
+            <discord-action-row>
+             <discord-button type="primary">
+              New Question
+             </discord-button>
+            </discord-action-row>
+           </discord-attachments>
+          </discord-message>
+          <discord-message class="hidden">
+           <discord-reply>
+            <p>
+             Click to see command
+            </p>
+           </discord-reply>
+           <p>
+            You've voted that you
+            <span class="font-bold">
+             have not done it
+            </span>
+            .
+           </p>
+          </discord-message>
+          <discord-message class="hidden">
+           <discord-reply>
+            <p>
+             Click to see command
+            </p>
+           </discord-reply>
+           <discord-embed>
+            <discord-embed-footer>
+             Would You | Page 1/2
+            </discord-embed-footer>
+           </discord-embed>
+           <discord-attachments>
+            <discord-action-row>
+             <discord-button type="secondary">
+              Invite Would You
+             </discord-button>
+            </discord-action-row>
+           </discord-attachments>
+          </discord-message>
+         </discord-messages>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="mt-36 w-full bg-hover-light px-9 py-12">
+      <h2 class="text-center text-5xl font-bold leading-normal text-foreground">
+       Keep Your Server Active with
+       <span class="bg-gradient-brand bg-clip-text font-bold text-transparent">
+        Would You
+       </span>
+      </h2>
+      <h3 class="mt-4 text-center text-xl text-foreground/70">
+       Invite To Your Server Now!
+      </h3>
+      <div class="mt-8 flex justify-center">
+       <a href="/invite" target="_blank">
+        <button class="flex items-center rounded-lg px-6 py-3 transition-all bg-brand-blue-100 hover:bg-brand-blue-200 text-white">
+         Invite
+        </button>
+       </a>
+      </div>
+     </section>
+    </main>
+    <footer class="mt-20 mx-auto w-full max-w-8xl px-8 py-8">
+     <div class="mb-8 flex flex-col justify-between gap-4 text-foreground/70 md:flex-row">
+      <div class="flex w-full flex-col items-center md:mr-4 md:items-start">
+       <div class="flex items-center text-xl font-bold text-foreground">
+        <img alt="Logo" class="rounded-full" height="40" src="/Logo.svg" width="40"/>
+        <p class="ml-3">
+         Would You
+        </p>
+       </div>
+       <p class="mt-4 text-center text-sm md:text-left">
+        © 2025
+        <a class="transition-all hover:text-foreground" href="https://rivo.gg/" target="_blank">
+         <b>
+          Rivo
+         </b>
+        </a>
+        . All rights reserved.
+       </p>
+       <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-1 mt-auto">
+        Manage Cookies
+       </button>
+       <a href="https://startupfa.me/s/would-you?utm_source=wouldyoubot.gg" target="_blank">
+        <img alt="Would You - Entertain Your Discord Server | Startup Fame" height="36" src="/_next/image?url=https%3A%2F%2Fstartupfa.me%2Fbadges%2Ffeatured-badge-small.webp&amp;w=640&amp;q=75" width="224"/>
+       </a>
+      </div>
+      <div class="flex w-full flex-col items-center md:items-start">
+       <h4 class="mb-2 text-lg font-bold text-foreground">
+        Recommended
+       </h4>
+       <div class="flex flex-col items-center gap-2 md:items-start">
+        <a class="transition-all hover:text-foreground" href="/" target="_self">
+         Home
+        </a>
+        <a class="transition-all hover:text-foreground" href="/commands" target="_self">
+         Commands
+        </a>
+        <a class="transition-all hover:text-foreground" href="/team" target="_self">
+         Team
+        </a>
+        <a class="transition-all hover:text-foreground" href="/reddit" target="_blank">
+         Reddit
+        </a>
+       </div>
+      </div>
+      <div class="flex w-full flex-col items-center md:items-start">
+       <h4 class="mb-2 text-lg font-bold text-foreground">
+        Links
+       </h4>
+       <div class="flex flex-col items-center gap-2 md:items-start">
+        <a class="transition-all hover:text-foreground" href="/discord" target="_blank">
+         Support Server
+        </a>
+        <a class="transition-all hover:text-foreground" href="/invite" target="_blank">
+         Invite
+        </a>
+        <a class="transition-all hover:text-foreground" href="/status" target="_self">
+         Status
+        </a>
+       </div>
+      </div>
+      <div class="flex w-full flex-col items-center md:items-start">
+       <h4 class="mb-2 text-lg font-bold text-foreground">
+        Legal
+       </h4>
+       <div class="flex flex-col items-center gap-2 md:items-start">
+        <a class="transition-all hover:text-foreground" href="/legal" target="_self">
+         Legal Notice
+        </a>
+        <a class="transition-all hover:text-foreground" href="/privacy" target="_self">
+         Privacy Policy
+        </a>
+        <a class="transition-all hover:text-foreground" href="/terms" target="_self">
+         Terms of Service
+        </a>
+        <a class="transition-all hover:text-foreground" href="/refunds" target="_self">
+         Refund Policy
+        </a>
+       </div>
+      </div>
+     </div>
+     <div>
+      <hr class="border border-foreground/10"/>
+      <p class="mt-8 text-center text-sm text-foreground/70">
+       Made with
+       <span class="text-brand-red-100">
+        ♥
+       </span>
+       by
+       <a class="text-foreground underline" href="/team">
+        Would You Team
+       </a>
+       &amp;
+       <a class="text-foreground underline" href="https://github.com/Would-You-Bot/website-app/graphs/contributors" target="_blank">
+        Contributors
+       </a>
+      </p>
+     </div>
+    </footer>
+   </div>
+   <div class="fixed inset-x-0 bottom-0 bg-hover-light shadow-md z-50">
+    <div class="max-w-8xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-8">
+     <div class="text-sm">
+      We use cookies to enhance your browsing experience and analyze our traffic.
+     </div>
+     <div class="flex flex-wrap justify-center sm:flex-nowrap gap-4">
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:text-accent-foreground px-4 py-2 h-10 hover:bg-foreground/5">
+       Customize
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 text-secondary-foreground px-4 py-2 h-10 bg-foreground/10 hover:bg-foreground/5">
+       Required Only
+      </button>
+      <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 px-4 py-2 h-10 bg-brand-blue-100 hover:bg-brand-blue-200 text-white">
+       Accept All
+      </button>
+     </div>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

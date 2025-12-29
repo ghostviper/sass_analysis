@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Prompt Case | Design Your Own Phone Case with AI</title>
+</head>
+<body>
+  <body>
+   <section id="navigation">
+    <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20">
+     <div class="pt-4">
+      <div class="grid w-full grid-cols-3 gap-4 lg:h-5 lg:gap-12">
+       <a href="/">
+        <span class="sr-only">
+         Back to home
+        </span>
+        <img alt="The Prompt Case" class="size-20" height="1024" src="/_image?href=%2F_astro%2Flogo.BNvr1RfV.png&amp;w=1024&amp;h=1024&amp;f=webp" width="1024"/>
+       </a>
+       <div class="lg:col-span-auto col-span-2 flex w-full items-center gap-2 lg:col-start-3">
+        <a class="text-base-900 hover:text-base-500 ml-auto text-xs" href="/community/designs">
+         Community designs
+        </a>
+        <div class="fixed inset-y-0 right-0 z-50 flex h-full w-full translate-x-full transform flex-col overflow-hidden transition-transform duration-300 lg:max-w-[26rem]" id="drawer">
+         <div class="shadow-normal ring-base-200 relative flex h-full flex-col bg-white ring-1">
+          <div class="border-base-200 flex flex-shrink-0 items-center justify-between border-b px-6 py-3">
+           <p class="text-sm font-semibold text-black uppercase">
+            Your cart
+           </p>
+          </div>
+          <div class="scrollbar-hide h-full flex-1 overflow-y-auto">
+           <form class="p-2 px-6 py-3">
+            <section>
+             <h2 class="sr-only" id="cart-heading">
+              Items in your shopping cart
+             </h2>
+            </section>
+           </form>
+          </div>
+          <div class="border-base-200 flex-shrink-0 border-t px-6 py-3">
+           <section>
+            <h2 class="sr-only" id="summary-heading">
+             Order summary
+            </h2>
+            <div>
+             <dl class="space-y-4">
+              <div class="flex items-center justify-between">
+               <dt class="text-base-900 text-base font-medium">
+                Subtotal
+               </dt>
+               <dd class="text-base-900 ml-4 text-base font-medium" id="cart-subtotal">
+                $59.00
+               </dd>
+              </div>
+             </dl>
+             <p class="text-sm text-base-600 mt-1">
+              Shipping and taxes will be calculated at checkout.
+             </p>
+            </div>
+            <a class="flex transition text-center rounded-full items-center duration-300 justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 bg-base-800 text-white hover:bg-base-700 focus:ring-base-900 h-9 px-6 py-3 text-sm mt-4 w-full" href="#" id="checkout-button" type="submit">
+             Checkout
+            </a>
+            <div class="mt-4 text-center">
+             <button class="text-accent-600 hover:text-accent-500 text-sm font-medium" id="continue-shopping-button">
+              Continue Shopping
+             </button>
+            </div>
+           </section>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <main class="grow">
+    <section>
+     <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20 py-12 lg:pt-40">
+      <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
+       <div class="text-balance">
+        <h1 class="text-5xl sm:text-4xl md:text-5xl lg:text-6xl text-base-900 font-serif font-medium tracking-tight italic">
+         Your Words. Your Case.
+        </h1>
+        <p class="text-base sm:text-lg md:text-xl text-base-500 mt-2 max-w-md">
+         Stop browsing endless designs. Use our AI to create a truly unique
+              phone case from a simple idea.
+        </p>
+        <div class="mt-8 flex flex-col gap-4 sm:flex-row">
+         <a class="flex transition text-center rounded-full items-center duration-300 justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 text-white bg-accent-500 hover:bg-accent-600 focus:ring-accent-600 h-10 px-8 py-4 text-base" href="/collections">
+          Create Your Case Now
+         </a>
+         <a class="flex transition text-center rounded-full items-center duration-300 justify-center focus:ring-2 focus:outline-none focus:ring-offset-2 text-base-950 bg-base-100 hover:text-accent-500 focus:ring-base-100 h-10 px-8 py-4 text-base" href="#how-it-works">
+          How It Works
+         </a>
+        </div>
+       </div>
+       <div class="bg-base-100 relative aspect-video w-full overflow-hidden rounded-lg border">
+        <video class="h-full w-full object-cover" id="hero-video">
+         <source src="https://assets.thepromptcase.com/videos/oPRqh4suiMTT2TWW.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="bg-base-100 absolute inset-0 flex cursor-pointer flex-col items-center justify-center transition-opacity hover:opacity-95" id="video-overlay">
+         <img alt="Video poster" class="absolute inset-0 h-full w-full object-cover" src="/images/placeholders/video-demo-poster.webp"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section id="how-it-works">
+     <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20 py-12 lg:py-20">
+      <div class="max-w-4xl text-balance">
+       <h2 class="text-4xl sm:text-3xl md:text-4xl lg:text-5xl text-base-900 font-serif font-medium italic">
+        From Idea to Case in 3 Simple Steps
+       </h2>
+      </div>
+      <div class="mt-12 grid grid-cols-1 gap-8 md:grid-cols-3">
+       <div>
+        <div class="bg-base-100 mb-4 flex size-12 items-center justify-center rounded-full">
+         <span class="text-base sm:text-lg md:text-xl text-base-900 font-semibold">
+          1
+         </span>
+        </div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         Place Your Order
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         First, select your phone model and the case type you want (like
+              clear, tough, or matte). This is the only "browsing" you'll do.
+        </p>
+       </div>
+       <div>
+        <div class="bg-base-100 mb-4 flex size-12 items-center justify-center rounded-full">
+         <span class="text-base sm:text-lg md:text-xl text-base-900 font-semibold">
+          2
+         </span>
+        </div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         Submit Your Prompt
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         After your order, you get access to our AI tool. Describe any idea:
+              "A fox reading a book in a forest," "Vintage floral pattern," or
+              "Cyberpunk city at night." You can even leave it blank for a total
+              surprise.
+        </p>
+       </div>
+       <div>
+        <div class="bg-base-100 mb-4 flex size-12 items-center justify-center rounded-full">
+         <span class="text-base sm:text-lg md:text-xl text-base-900 font-semibold">
+          3
+         </span>
+        </div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         Approve Your 1-of-1 Design
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         Our AI generates a design that is 100% unique to you. Love it? Send
+              it to print. Want to tweak it? Try another prompt. The choice is
+              yours.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section>
+     <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20 py-12 lg:py-20">
+      <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+       <div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         Tired of "Good Enough"?
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         Why scroll through thousands of generic designs you've seen
+              everywhere? Get the one design no one else has. The one you thought
+              of.
+        </p>
+       </div>
+       <div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         You Don't Need to Be an Artist
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         You just need an idea. Our AI tool acts as your personal designer,
+              turning any concept into a beautiful, high-resolution phone case. No
+              skills required.
+        </p>
+       </div>
+       <div>
+        <h3 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+         Share, Discover, or Keep it Secret
+        </h3>
+        <p class="text-base text-base-500 mt-2">
+         When you create a design you love, you can share it with our
+              community gallery for others to see and use. Or, keep it 100%
+              private. It's your call.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section>
+     <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20 py-12 lg:py-20">
+      <div class="max-w-4xl">
+       <h2 class="text-2xl sm:text-2xl md:text-3xl lg:text-4xl text-base-900 font-serif font-medium italic">
+        Why We Exist
+       </h2>
+       <p class="text-base sm:text-lg md:text-xl text-base-500 mt-4">
+        We started The Prompt Case because we believe your most personal
+            device deserves a truly personal case. We got tired of the endless
+            scrolling and the same-old designs. We're here to give you the tools
+            to create something that is, without a doubt, 100% you.
+       </p>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="relative overflow-hidden">
+    <div class="mx-auto max-w-screen 2xl:max-w-[1400px] px-8 lg:px-20 py-12">
+     <div class="grid items-start gap-6 md:grid-cols-5">
+      <div class="flex items-center gap-2 lg:col-span-2">
+       <img alt="The Prompt Case" class="text-base-900 size-8" height="1024" src="/_image?href=%2F_astro%2Flogo.BNvr1RfV.png&amp;w=1024&amp;h=1024&amp;f=webp" width="1024"/>
+       <p class="text-xs text-base-500">
+        © Copyright The Prompt Case
+        <span id="year">
+         2025
+        </span>
+       </p>
+      </div>
+      <nav>
+      </nav>
+      <nav>
+       <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-base-900 font-serif italic">
+        Navigation
+       </h3>
+       <ul class="mt-4 space-y-3 text-xs">
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/orders/design">
+          Design your case
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/collections">
+          Collections
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="https://auth.thepromptcase.com">
+          My account
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/helpcenter">
+          Helpcenter
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/contact">
+          Contact
+         </a>
+        </li>
+       </ul>
+      </nav>
+      <nav>
+       <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl text-base-900 font-serif italic">
+        Resources
+       </h3>
+       <ul class="mt-4 space-y-3 text-xs">
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/info/privacy">
+          Privacy
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/info/terms">
+          Terms
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/info/cookies">
+          Cookies
+         </a>
+        </li>
+        <li>
+         <a class="hover:text-base-500 text-base-500" href="/info/shipping-and-refund">
+          Shipping and Refund
+         </a>
+        </li>
+       </ul>
+      </nav>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

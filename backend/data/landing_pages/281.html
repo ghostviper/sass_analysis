@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MYNX - Multi-AI Chat Hub</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <section>
+    </section>
+    <div class="min-h-screen bg-background">
+     <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 transition-all duration-300">
+      <nav class="backdrop-blur-xl border border-border/50 rounded-full px-4 md:px-6 py-3 shadow-lg transition-all duration-300 bg-background/30">
+       <div class="flex items-center justify-between">
+        <a class="absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:translate-x-0" href="/">
+         <img alt="MYNX" class="h-8 w-auto object-fill" src="/lovable-uploads/ea3c73c2-c8a1-4358-9b2d-ec609f19b7f4.png"/>
+        </a>
+        <div class="hidden md:flex items-center gap-2 flex-1 justify-center">
+         <a href="/affiliate">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full">
+           Affiliate Program
+          </button>
+         </a>
+         <a href="/subscription">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full">
+           Prices
+          </button>
+         </a>
+         <a href="/features">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 rounded-full">
+           Features
+          </button>
+         </a>
+        </div>
+       </div>
+      </nav>
+     </header>
+     <section class="pt-32 pb-20 px-4">
+      <div class="container mx-auto max-w-6xl text-center">
+       <div class="flex flex-col md:flex-row items-center justify-center gap-4 mb-4">
+        <div class="px-4 py-2 rounded-full glass-card border border-primary/30">
+         <span class="text-sm font-mono text-primary">
+          Multi-AI Chat Hub
+         </span>
+        </div>
+        <a class="scale-90 md:scale-100" href="https://www.producthunt.com/products/multi-ai-chat-hub?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-multi-ai-chat-hub" rel="noopener noreferrer" target="_blank">
+         <img alt="Multi-AI Chat Hub - Every AI Model. Switch models without losing context | Product Hunt" class="w-[225px] h-[48px] md:w-[250px] md:h-[54px]" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1031381&amp;theme=light&amp;t=1761741684424"/>
+        </a>
+       </div>
+       <h1 class="text-6xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
+        One Interface.
+        <br/>
+        Every AI Model.
+       </h1>
+       <p class="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
+        Chat with GPT, Claude, Gemini, Mistral, and more. Switch models seamlessly without losing context.
+       </p>
+       <div class="flex gap-4 justify-center items-center flex-wrap">
+        <a href="/subscription">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 terminal-shadow text-lg px-8">
+          Start Chatting
+         </button>
+        </a>
+       </div>
+       <div class="mt-12 flex flex-wrap gap-3 justify-center">
+        <div class="px-4 py-2 glass-card rounded-lg border border-border/50 text-sm font-mono text-muted-foreground relative flex items-center gap-2">
+         <img alt="GPT" class="w-5 h-5" src="data:image/svg+xml,%3csvg%20width='520'%20height='520'%20viewBox='0%200%20520%20520'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M203.073%20195.014V149.337C203.073%20145.49%20204.517%20142.604%20207.881%20140.683L299.718%2087.7938C312.219%2080.5819%20327.124%2077.218%20342.508%2077.218C400.204%2077.218%20436.748%20121.934%20436.748%20169.532C436.748%20172.897%20436.748%20176.744%20436.266%20180.591L341.065%20124.816C335.296%20121.452%20329.524%20121.452%20323.755%20124.816L203.073%20195.014ZM417.514%20372.915V263.769C417.514%20257.036%20414.627%20252.228%20408.859%20248.863L288.176%20178.665L327.602%20156.066C330.967%20154.145%20333.853%20154.145%20337.218%20156.066L429.055%20208.955C455.501%20224.342%20473.289%20257.036%20473.289%20288.767C473.289%20325.307%20451.654%20358.966%20417.514%20372.911V372.915ZM174.705%20276.753L135.279%20253.676C131.915%20251.755%20130.471%20248.868%20130.471%20245.021V139.244C130.471%2087.7988%20169.897%2048.8505%20223.268%2048.8505C243.465%2048.8505%20262.213%2055.5834%20278.083%2067.6031L183.364%20122.417C177.596%20125.781%20174.71%20130.589%20174.71%20137.323V276.757L174.705%20276.753ZM259.569%20325.795L203.073%20294.062V226.751L259.569%20195.019L316.062%20226.751V294.062L259.569%20325.795ZM295.87%20471.963C275.674%20471.963%20256.927%20465.23%20241.056%20453.211L335.774%20398.396C341.543%20395.032%20344.429%20390.224%20344.429%20383.49V244.056L384.338%20267.134C387.702%20269.055%20389.146%20271.94%20389.146%20275.788V381.566C389.146%20433.011%20349.237%20471.959%20295.87%20471.959V471.963ZM181.917%20364.743L90.0797%20311.855C63.6331%20296.466%2045.8455%20263.774%2045.8455%20232.041C45.8455%20195.019%2067.9631%20161.843%20102.098%20147.899V257.523C102.098%20264.256%20104.985%20269.064%20110.753%20272.428L230.958%20342.143L191.532%20364.743C188.168%20366.664%20185.281%20366.664%20181.917%20364.743ZM176.631%20443.595C122.299%20443.595%2082.3908%20402.726%2082.3908%20352.241C82.3908%20348.394%2082.8728%20344.547%2083.3508%20340.7L178.07%20395.514C183.838%20398.879%20189.611%20398.879%20195.379%20395.514L316.062%20325.8V371.477C316.062%20375.324%20314.619%20378.21%20311.254%20380.131L219.417%20433.02C206.916%20440.231%20192.01%20443.595%20176.626%20443.595H176.631ZM295.87%20500.809C354.049%20500.809%20402.608%20459.461%20413.671%20404.647C467.521%20390.702%20502.139%20340.217%20502.139%20288.772C502.139%20255.114%20487.717%20222.421%20461.752%20198.861C464.156%20188.763%20465.599%20178.665%20465.599%20168.572C465.599%2099.8176%20409.824%2048.3675%20345.394%2048.3675C332.415%2048.3675%20319.914%2050.2885%20307.412%2054.6184C285.772%2033.4618%20255.962%2020%20223.268%2020C165.09%2020%20116.531%2061.3473%20105.468%20116.161C51.6184%20130.106%2017%20180.591%2017%20232.036C17%20265.695%2031.4227%20298.387%2057.3873%20321.948C54.9833%20332.045%2053.5403%20342.143%2053.5403%20352.237C53.5403%20420.992%20109.315%20472.441%20173.744%20472.441C186.724%20472.441%20199.226%20470.52%20211.727%20466.19C233.362%20487.347%20263.173%20500.809%20295.87%20500.809Z'%20fill='black'/%3e%3c/svg%3e"/>
+         GPT
+        </div>
+        <div class="px-4 py-2 glass-card rounded-lg border border-border/50 text-sm font-mono text-muted-foreground relative flex items-center gap-2">
+         <img alt="Claude" class="w-5 h-5" src="data:image/png;base64,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"/>
+         Claude
+        </div>
+        <div class="px-4 py-2 glass-card rounded-lg border border-border/50 text-sm font-mono text-muted-foreground relative flex items-center gap-2">
+         <img alt="Gemini" class="w-5 h-5" src="/assets/gemini-2025-BxwVdUkw.png"/>
+         Gemini
+        </div>
+        <div class="px-4 py-2 glass-card rounded-lg border border-border/50 text-sm font-mono text-muted-foreground relative flex items-center gap-2">
+         <img alt="Mistral" class="w-5 h-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAYAAACj9mr/AAAAAXNSR0IArs4c6QAABKRJREFUeJzt18GK1lUcx+Hz2pTjaBFJm6jUEMyVtRGqpdA15LLW3UAX4SW0tkWrIIggkKCiNhlpYhhR0KoIHMyByqYr+NjqpynPcwHf83I482H+m7XW/hq0d/n1yflxh176eHO/fwOjvP+7OHC/fwDw/yUQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIG2ttb6ePODalZsvTu6fOrZzfXL/1sVXzk3uTzty/otPho8YvZ8Lb554eXL/06s3L0/uf//d7snJ/ZPPHboxub9Za+1PHrB78bXJef7DE+c/2wwf4f08xHxiAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQNqstS5NHnDp7VNnJvfPPLPzzeT+g25/987nk/sf3dh9dXL/9PGd5yf3jz918OfJ/QfdZq21P3nA7++M9gEY5BMDSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEA0tZa6+rkATe+vXVycv/E44/9MLn/2PFH35rcf/bClXcn9z88d+yFyf3TT27/OLnv/u9u+v43a639yQN+feP05Py4p9+7thk+wv3fhfu/v3xiAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggLS11vpj8oC9P+/sTO5vP3Jgb3L/Hhi9/9t//zN6/4e2Dtye3L8HRu//t9t/jd7/0YNbo+9/a611ePKA7Z8m19daa/YP4B44Mjl+7P3rk/MPg9H3f/SX6X/SZ9+/TwwgCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIW2utDyYP+PLW3tnJ/bOHt7+a3Oeh5/3fxb9ZZGZ4gztzmwAAAABJRU5ErkJggg=="/>
+         Mistral
+        </div>
+        <div class="px-4 py-2 glass-card rounded-lg border border-border/50 text-sm font-mono text-muted-foreground relative flex items-center gap-2">
+         <img alt="Perplexity" class="w-5 h-5" src="/assets/perplexity-B-pdL-0z.png"/>
+         Perplexity
+         <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-[10px] px-1.5 py-0">
+          Coming Soon
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4">
+     </section>
+     <section class="py-8 px-4">
+      <div class="container mx-auto max-w-6xl flex justify-center">
+       <a href="https://peerpush.net/p/mynx-multi-ai-chat-hub" rel="noopener" target="_blank">
+        <img alt="MYNX - Multi-AI Chat Hub badge" src="https://peerpush.net/p/mynx-multi-ai-chat-hub/badge.png"/>
+       </a>
+      </div>
+     </section>
+     <section class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="glass-card p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all">
+         <h3 class="text-xl font-semibold mb-3">
+          Real-time Switching
+         </h3>
+         <p class="text-muted-foreground">
+          Switch between AI models mid-conversation without losing context or restarting your chat.
+         </p>
+        </div>
+        <div class="glass-card p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all">
+         <h3 class="text-xl font-semibold mb-3">
+          Multi-Model Access
+         </h3>
+         <p class="text-muted-foreground">
+          Access the latest AI models from OpenAI, Anthropic, Google, and more in one unified interface.
+         </p>
+        </div>
+        <div class="glass-card p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all">
+         <h3 class="text-xl font-semibold mb-3">
+          Secure &amp; Private
+         </h3>
+         <p class="text-muted-foreground">
+          Your conversations are encrypted and stored securely.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+       <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4">
+         How MYNX Works
+        </h2>
+        <p class="text-xl text-muted-foreground">
+         Access multiple AI models through one unified platform
+        </p>
+       </div>
+       <div class="relative">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+         <div class="glass-card p-6 rounded-2xl border border-border/50">
+          <h3 class="text-xl font-semibold mb-4 text-center text-primary">
+           Text Models
+          </h3>
+          <div class="space-y-3">
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-primary/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="GPT logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20width='520'%20height='520'%20viewBox='0%200%20520%20520'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M203.073%20195.014V149.337C203.073%20145.49%20204.517%20142.604%20207.881%20140.683L299.718%2087.7938C312.219%2080.5819%20327.124%2077.218%20342.508%2077.218C400.204%2077.218%20436.748%20121.934%20436.748%20169.532C436.748%20172.897%20436.748%20176.744%20436.266%20180.591L341.065%20124.816C335.296%20121.452%20329.524%20121.452%20323.755%20124.816L203.073%20195.014ZM417.514%20372.915V263.769C417.514%20257.036%20414.627%20252.228%20408.859%20248.863L288.176%20178.665L327.602%20156.066C330.967%20154.145%20333.853%20154.145%20337.218%20156.066L429.055%20208.955C455.501%20224.342%20473.289%20257.036%20473.289%20288.767C473.289%20325.307%20451.654%20358.966%20417.514%20372.911V372.915ZM174.705%20276.753L135.279%20253.676C131.915%20251.755%20130.471%20248.868%20130.471%20245.021V139.244C130.471%2087.7988%20169.897%2048.8505%20223.268%2048.8505C243.465%2048.8505%20262.213%2055.5834%20278.083%2067.6031L183.364%20122.417C177.596%20125.781%20174.71%20130.589%20174.71%20137.323V276.757L174.705%20276.753ZM259.569%20325.795L203.073%20294.062V226.751L259.569%20195.019L316.062%20226.751V294.062L259.569%20325.795ZM295.87%20471.963C275.674%20471.963%20256.927%20465.23%20241.056%20453.211L335.774%20398.396C341.543%20395.032%20344.429%20390.224%20344.429%20383.49V244.056L384.338%20267.134C387.702%20269.055%20389.146%20271.94%20389.146%20275.788V381.566C389.146%20433.011%20349.237%20471.959%20295.87%20471.959V471.963ZM181.917%20364.743L90.0797%20311.855C63.6331%20296.466%2045.8455%20263.774%2045.8455%20232.041C45.8455%20195.019%2067.9631%20161.843%20102.098%20147.899V257.523C102.098%20264.256%20104.985%20269.064%20110.753%20272.428L230.958%20342.143L191.532%20364.743C188.168%20366.664%20185.281%20366.664%20181.917%20364.743ZM176.631%20443.595C122.299%20443.595%2082.3908%20402.726%2082.3908%20352.241C82.3908%20348.394%2082.8728%20344.547%2083.3508%20340.7L178.07%20395.514C183.838%20398.879%20189.611%20398.879%20195.379%20395.514L316.062%20325.8V371.477C316.062%20375.324%20314.619%20378.21%20311.254%20380.131L219.417%20433.02C206.916%20440.231%20192.01%20443.595%20176.626%20443.595H176.631ZM295.87%20500.809C354.049%20500.809%20402.608%20459.461%20413.671%20404.647C467.521%20390.702%20502.139%20340.217%20502.139%20288.772C502.139%20255.114%20487.717%20222.421%20461.752%20198.861C464.156%20188.763%20465.599%20178.665%20465.599%20168.572C465.599%2099.8176%20409.824%2048.3675%20345.394%2048.3675C332.415%2048.3675%20319.914%2050.2885%20307.412%2054.6184C285.772%2033.4618%20255.962%2020%20223.268%2020C165.09%2020%20116.531%2061.3473%20105.468%20116.161C51.6184%20130.106%2017%20180.591%2017%20232.036C17%20265.695%2031.4227%20298.387%2057.3873%20321.948C54.9833%20332.045%2053.5403%20342.143%2053.5403%20352.237C53.5403%20420.992%20109.315%20472.441%20173.744%20472.441C186.724%20472.441%20199.226%20470.52%20211.727%20466.19C233.362%20487.347%20263.173%20500.809%20295.87%20500.809Z'%20fill='black'/%3e%3c/svg%3e"/>
+              <span class="font-medium">
+               GPT
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $20/month
+             </span>
+            </div>
+           </div>
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-primary/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Claude logo" class="w-5 h-5 object-contain" src="data:image/png;base64,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"/>
+              <span class="font-medium">
+               Claude
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $20/month
+             </span>
+            </div>
+           </div>
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-primary/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Gemini logo" class="w-5 h-5 object-contain" src="/assets/gemini-2025-BxwVdUkw.png"/>
+              <span class="font-medium">
+               Gemini
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $20/month
+             </span>
+            </div>
+           </div>
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-primary/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Mistral logo" class="w-5 h-5 object-contain" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAYAAACj9mr/AAAAAXNSR0IArs4c6QAABKRJREFUeJzt18GK1lUcx+Hz2pTjaBFJm6jUEMyVtRGqpdA15LLW3UAX4SW0tkWrIIggkKCiNhlpYhhR0KoIHMyByqYr+NjqpynPcwHf83I482H+m7XW/hq0d/n1yflxh176eHO/fwOjvP+7OHC/fwDw/yUQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIG2ttb6ePODalZsvTu6fOrZzfXL/1sVXzk3uTzty/otPho8YvZ8Lb554eXL/06s3L0/uf//d7snJ/ZPPHboxub9Za+1PHrB78bXJef7DE+c/2wwf4f08xHxiAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQNqstS5NHnDp7VNnJvfPPLPzzeT+g25/987nk/sf3dh9dXL/9PGd5yf3jz918OfJ/QfdZq21P3nA7++M9gEY5BMDSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEA0tZa6+rkATe+vXVycv/E44/9MLn/2PFH35rcf/bClXcn9z88d+yFyf3TT27/OLnv/u9u+v43a639yQN+feP05Py4p9+7thk+wv3fhfu/v3xiAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggLS11vpj8oC9P+/sTO5vP3Jgb3L/Hhi9/9t//zN6/4e2Dtye3L8HRu//t9t/jd7/0YNbo+9/a611ePKA7Z8m19daa/YP4B44Mjl+7P3rk/MPg9H3f/SX6X/SZ9+/TwwgCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIAgEkgQCSQABJIIAkEEASCCAJBJAEAkgCASSBAJJAAEkggCQQQBIIIAkEkAQCSAIBJIEAkkAASSCAJBBAEgggCQSQBAJIW2utDyYP+PLW3tnJ/bOHt7+a3Oeh5/3fxb9ZZGZ4gztzmwAAAABJRU5ErkJggg=="/>
+              <span class="font-medium">
+               Mistral
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $15/month
+             </span>
+            </div>
+           </div>
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-primary/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Grok logo" class="w-5 h-5 object-contain" src="data:image/svg+xml,%3csvg%20width='1024'%20height='1024'%20viewBox='0%200%201024%201024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M395.479%20633.828L735.91%20381.105C752.599%20368.715%20776.454%20373.548%20784.406%20392.792C826.26%20494.285%20807.561%20616.253%20724.288%20699.996C641.016%20783.739%20525.151%20802.104%20419.247%20760.277L303.556%20814.143C469.49%20928.202%20670.987%20899.995%20796.901%20773.282C896.776%20672.843%20927.708%20535.937%20898.785%20412.476L899.047%20412.739C857.105%20231.37%20909.358%20158.874%201016.4%2010.6326C1018.93%207.11771%201021.47%203.60279%201024%200L883.144%20141.651V141.212L395.392%20633.916'%20fill='%230A0A0A'/%3e%3cpath%20d='M325.226%20695.251C206.128%20580.84%20226.662%20403.776%20328.285%20301.668C403.431%20226.097%20526.549%20195.254%20634.026%20240.596L749.454%20186.994C728.657%20171.88%20702.007%20155.623%20671.424%20144.2C533.19%2086.9942%20367.693%20115.465%20255.323%20228.382C147.234%20337.081%20113.244%20504.215%20171.613%20646.833C215.216%20753.423%20143.739%20828.818%2071.7385%20904.916C46.2237%20931.893%2020.6216%20958.87%200%20987.429L325.139%20695.339'%20fill='%230A0A0A'/%3e%3c/svg%3e"/>
+              <span class="font-medium">
+               Grok
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $30/month
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="glass-card p-6 rounded-2xl border border-border/50">
+          <h3 class="text-xl font-semibold mb-4 text-center text-accent">
+           Image Models
+          </h3>
+          <div class="space-y-3">
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-accent/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Fal.ai logo" class="w-5 h-5 object-contain" src="/assets/falai-CNhrI8ms.png"/>
+              <span class="font-medium">
+               Fal.ai
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $20/month
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="glass-card p-6 rounded-2xl border border-border/50">
+          <h3 class="text-xl font-semibold mb-4 text-center text-destructive">
+           Video Models
+          </h3>
+          <div class="space-y-3">
+           <div class="glass-card p-3 rounded-lg border border-border/30 hover:border-destructive/50 transition-all">
+            <div class="flex items-center justify-between">
+             <div class="flex items-center gap-2">
+              <img alt="Fal.ai logo" class="w-5 h-5 object-contain" src="/assets/falai-CNhrI8ms.png"/>
+              <span class="font-medium">
+               Fal.ai
+              </span>
+             </div>
+             <span class="text-sm text-muted-foreground">
+              $20/month
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="flex justify-center mt-16 md:mt-24">
+         <div class="glass-card p-8 rounded-2xl border-2 border-primary terminal-shadow max-w-sm w-full">
+          <div class="text-center">
+           <div class="w-16 h-16 rounded-full bg-gradient-to-br from-primary via-accent to-destructive mx-auto mb-4 flex items-center justify-center p-2">
+            <img alt="MYNX logo" class="w-full h-full object-contain" src="/assets/mynx-logo-D-W3fUkH.png"/>
+           </div>
+           <h3 class="text-3xl font-bold mb-2">
+            MYNX
+           </h3>
+           <p class="text-muted-foreground mb-4">
+            All-in-One AI Platform
+           </p>
+           <div class="flex items-baseline justify-center gap-2">
+            <span class="text-4xl font-bold text-primary">
+             $8
+            </span>
+            <span class="text-muted-foreground">
+             /month
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4 bg-secondary/20">
+      <div class="container mx-auto max-w-6xl">
+       <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">
+         Choose Your Plan
+        </h2>
+        <p class="text-xl text-muted-foreground">
+         Get access to all premium AI models and tools
+        </p>
+       </div>
+       <div class="grid md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div class="glass-card p-8 rounded-2xl border border-border/50 hover:border-border/30 transition-all">
+         <div class="mb-6">
+          <h3 class="text-2xl font-bold mb-2">
+           Free
+          </h3>
+          <div class="flex items-baseline gap-2">
+           <span class="text-4xl font-bold text-primary">
+            $0
+           </span>
+          </div>
+         </div>
+         <ul class="space-y-3">
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            5,000 total words (lifetime)
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Basic text models
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Chat organization
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Gems (prompt templates)
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="glass-card p-8 rounded-2xl border border-accent/50 hover:border-accent transition-all">
+         <div class="mb-6">
+          <div class="flex items-center gap-2 mb-2">
+           <h3 class="text-2xl font-bold">
+            Starter
+           </h3>
+           <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 bg-accent/10 text-accent border-accent/20 text-[10px]">
+            New
+           </div>
+          </div>
+          <div class="flex items-baseline gap-2">
+           <span class="text-4xl font-bold text-accent">
+            $8
+           </span>
+           <span class="text-muted-foreground">
+            /month
+           </span>
+          </div>
+         </div>
+         <ul class="space-y-3 mb-6">
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            All text models
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Standard Usage Limits
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Projects for chat organization
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Gems (prompt templates)
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            1 user
+           </span>
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+          Subscribe
+         </button>
+        </div>
+        <div class="glass-card p-8 rounded-2xl border border-border/50 hover:border-primary/50 transition-all">
+         <div class="mb-6">
+          <h3 class="text-2xl font-bold mb-2">
+           Solo
+          </h3>
+          <div class="flex items-baseline gap-2">
+           <span class="text-4xl font-bold text-primary">
+            $20
+           </span>
+           <span class="text-muted-foreground">
+            /month
+           </span>
+          </div>
+         </div>
+         <ul class="space-y-3">
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            All premium AI models &amp; tools
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Standard Usage Limits
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Projects for chat organization
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Gems (prompt templates)
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm">
+            Single user
+           </span>
+          </li>
+         </ul>
+        </div>
+        <div class="glass-card p-8 rounded-2xl border-2 border-primary relative">
+         <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span class="bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+           Recommended
+          </span>
+         </div>
+         <div class="mb-6">
+          <h3 class="text-2xl font-bold mb-2">
+           Team
+          </h3>
+          <div class="flex items-baseline gap-2">
+           <span class="text-4xl font-bold text-primary">
+            $40
+           </span>
+           <span class="text-muted-foreground">
+            /month
+           </span>
+          </div>
+         </div>
+         <ul class="space-y-3">
+          <li class="flex items-start gap-2">
+           <span class="text-sm font-semibold">
+            All premium AI models &amp; tools
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm font-semibold">
+            3× More Usage
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm font-semibold">
+            Projects for chat organization
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm font-semibold">
+            Gems (prompt templates)
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 ml-1 bg-accent/10 text-accent border-accent/20 text-[10px]">
+             New
+            </div>
+           </span>
+          </li>
+          <li class="flex items-start gap-2">
+           <span class="text-sm font-semibold">
+            Up to 5 users
+           </span>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="flex justify-center mt-12">
+        <a href="/subscription">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 terminal-shadow text-lg px-12">
+          View Plans &amp; Subscribe
+         </button>
+        </a>
+       </div>
+      </div>
+     </section>
+     <section class="py-20 px-4">
+      <div class="container mx-auto max-w-6xl">
+       <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">
+         What people are saying ⭐
+        </h2>
+        <p class="text-lg text-muted-foreground">
+         Real feedback from users across different platforms.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 1" class="w-full h-auto object-contain" src="/assets/review-ph-1-CLtNRHyI.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 2" class="w-full h-auto object-contain" src="/assets/review-ph-2-DCWXM7MM.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 3" class="w-full h-auto object-contain" src="/assets/review-ph-3-Bts9a3zs.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 4" class="w-full h-auto object-contain" src="/assets/review-ph-4-DW2qSl-j.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 5" class="w-full h-auto object-contain" src="/assets/review-ph-5-BkDy4KaW.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 6" class="w-full h-auto object-contain" src="/assets/review-reddit-1-Bv_t6WTc.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 7" class="w-full h-auto object-contain" src="/assets/auth-review-3-dvqve7AT.jpg"/>
+        </div>
+        <div class="glass-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 transition-all animate-fade-in shadow-lg">
+         <img alt="User review 8" class="w-full h-auto object-contain" src="/assets/review-reddit-3-B08zU6rv.jpg"/>
+        </div>
+       </div>
+       <p class="text-center text-sm text-muted-foreground">
+        From our community ❤️
+       </p>
+      </div>
+     </section>
+     <section class="py-20 px-4">
+      <div class="container mx-auto max-w-4xl">
+       <div class="glass-card p-12 rounded-3xl border border-primary/30 terminal-shadow text-center">
+        <h2 class="text-4xl font-bold mb-4">
+         Ready to experience the future?
+        </h2>
+        <p class="text-xl text-muted-foreground mb-8">
+         Join some of the users already using MYNX for their AI conversations
+        </p>
+        <a href="/chat">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8">
+          Get Started Free
+         </button>
+        </a>
+       </div>
+      </div>
+     </section>
+     <footer class="border-t border-border/50 py-8 px-4">
+      <div class="container mx-auto text-center">
+       <div class="flex justify-center gap-6 mb-4 flex-wrap">
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/about">
+         About Us
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/features">
+         Features
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/blog">
+         Blog
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/faq">
+         FAQ
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/contact">
+         Contact
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/privacy">
+         Privacy Policy
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/terms">
+         Terms of Service
+        </a>
+        <a class="text-sm text-muted-foreground hover:text-primary transition-colors" href="/affiliate">
+         Affiliate Program
+        </a>
+       </div>
+       <img alt="MYNX" class="h-12 w-auto mb-2 mx-auto" src="/assets/mynx-logo-D-W3fUkH.png"/>
+       <p class="text-sm text-muted-foreground">
+        © 2025 MYNX. All rights reserved.
+       </p>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

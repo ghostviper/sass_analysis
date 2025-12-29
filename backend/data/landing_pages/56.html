@@ -1,0 +1,2263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recover Failed Stripe Payments on Auto-Pilot - BetterRetain AI</title>
+</head>
+<body>
+  <body>
+   <div class="cky-btn-revisit-wrapper cky-revisit-hide cky-revisit-bottom-left">
+    <button class="cky-btn-revisit">
+     <img alt="Revisit consent button" src="https://cdn-cookieyes.com/assets/images/revisit.svg"/>
+    </button>
+   </div>
+   <div class="cky-consent-container cky-box-bottom-right">
+    <div class="cky-consent-bar">
+     <div class="cky-notice">
+      <p class="cky-title">
+       We value your privacy
+      </p>
+      <div class="cky-notice-group">
+       <div class="cky-notice-des">
+        <p>
+         We use cookies to enhance your browsing experience, serve personalised ads or content, and analyse our traffic. By clicking "Accept All", you consent to our use of cookies.
+        </p>
+       </div>
+       <div class="cky-notice-btn-wrapper">
+        <button class="cky-btn cky-btn-customize">
+         Customise
+        </button>
+        <button class="cky-btn cky-btn-reject">
+         Reject All
+        </button>
+        <button class="cky-btn cky-btn-accept">
+         Accept All
+        </button>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="cky-modal">
+    <div class="cky-preference-center">
+     <div class="cky-preference-header">
+      <span class="cky-preference-title">
+       Customise Consent Preferences
+      </span>
+      <button class="cky-btn-close">
+       <img alt="Close" src="https://cdn-cookieyes.com/assets/images/close.svg"/>
+      </button>
+     </div>
+     <div class="cky-preference-body-wrapper">
+      <div class="cky-preference-content-wrapper">
+       <p>
+        We use cookies to help you navigate efficiently and perform certain functions. You will find detailed information about all cookies under each consent category below.
+       </p>
+       <p>
+        The cookies that are categorised as "Necessary" are stored on your browser as they are essential for enabling the basic functionalities of the site. ...
+        <button class="cky-show-desc-btn">
+         Show more
+        </button>
+       </p>
+      </div>
+      <div class="cky-accordion-wrapper">
+       <div class="cky-accordion" id="ckyDetailCategorynecessary">
+        <div class="cky-accordion-item">
+         <div class="cky-accordion-header-wrapper">
+          <div class="cky-accordion-header">
+           <button class="cky-accordion-btn">
+            Necessary
+           </button>
+           <span class="cky-always-active">
+            Always Active
+           </span>
+          </div>
+          <div class="cky-accordion-header-des">
+           <p>
+            Necessary cookies are required to enable the basic features of this site, such as providing secure log-in or adjusting your consent preferences. These cookies do not store any personally identifiable data.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="cky-accordion-body">
+         <div class="cky-audit-table">
+          <ul class="cky-cookie-des-table">
+           <li>
+            <div>
+             Cookie
+            </div>
+            <div>
+             wpEmojiSettingsSupports
+            </div>
+           </li>
+           <li>
+            <div>
+             Duration
+            </div>
+            <div>
+             session
+            </div>
+           </li>
+           <li>
+            <div>
+             Description
+            </div>
+            <div>
+             WordPress sets this cookie when a user interacts with emojis on a WordPress site.  It helps determine if the user's browser can display emojis properly.
+            </div>
+           </li>
+          </ul>
+          <ul class="cky-cookie-des-table">
+           <li>
+            <div>
+             Cookie
+            </div>
+            <div>
+             cookieyes-consent
+            </div>
+           </li>
+           <li>
+            <div>
+             Duration
+            </div>
+            <div>
+             1 year
+            </div>
+           </li>
+           <li>
+            <div>
+             Description
+            </div>
+            <div>
+             CookieYes sets this cookie to remember users' consent preferences so that their preferences are respected on subsequent visits to this site. It does not collect or store any personal information about the site visitors.
+            </div>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="cky-accordion" id="ckyDetailCategoryfunctional">
+        <div class="cky-accordion-item">
+         <div class="cky-accordion-header-wrapper">
+          <div class="cky-accordion-header">
+           <button class="cky-accordion-btn">
+            Functional
+           </button>
+          </div>
+          <div class="cky-accordion-header-des">
+           <p>
+            Functional cookies help perform certain functionalities like sharing the content of the website on social media platforms, collecting feedback, and other third-party features.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="cky-accordion-body">
+         <div class="cky-audit-table">
+          <p class="cky-empty-cookies-text">
+           No cookies to display.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="cky-accordion" id="ckyDetailCategoryanalytics">
+        <div class="cky-accordion-item">
+         <div class="cky-accordion-header-wrapper">
+          <div class="cky-accordion-header">
+           <button class="cky-accordion-btn">
+            Analytics
+           </button>
+           <div class="cky-switch">
+            <input id="ckySwitchanalytics" type="checkbox"/>
+           </div>
+          </div>
+          <div class="cky-accordion-header-des">
+           <p>
+            Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics such as the number of visitors, bounce rate, traffic source, etc.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="cky-accordion-body">
+         <div class="cky-audit-table">
+          <ul class="cky-cookie-des-table">
+           <li>
+            <div>
+             Cookie
+            </div>
+            <div>
+             _ga_*
+            </div>
+           </li>
+           <li>
+            <div>
+             Duration
+            </div>
+            <div>
+             1 year 1 month 4 days
+            </div>
+           </li>
+           <li>
+            <div>
+             Description
+            </div>
+            <div>
+             Google Analytics sets this cookie to store and count page views.
+            </div>
+           </li>
+          </ul>
+          <ul class="cky-cookie-des-table">
+           <li>
+            <div>
+             Cookie
+            </div>
+            <div>
+             _ga
+            </div>
+           </li>
+           <li>
+            <div>
+             Duration
+            </div>
+            <div>
+             1 year 1 month 4 days
+            </div>
+           </li>
+           <li>
+            <div>
+             Description
+            </div>
+            <div>
+             Google Analytics sets this cookie to calculate visitor, session and campaign data and track site usage for the site's analytics report. The cookie stores information anonymously and assigns a randomly generated number to recognise unique visitors.
+            </div>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+       <div class="cky-accordion" id="ckyDetailCategoryperformance">
+        <div class="cky-accordion-item">
+         <div class="cky-accordion-header-wrapper">
+          <div class="cky-accordion-header">
+           <button class="cky-accordion-btn">
+            Performance
+           </button>
+          </div>
+          <div class="cky-accordion-header-des">
+           <p>
+            Performance cookies are used to understand and analyse the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="cky-accordion-body">
+         <div class="cky-audit-table">
+          <p class="cky-empty-cookies-text">
+           No cookies to display.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="cky-accordion" id="ckyDetailCategoryadvertisement">
+        <div class="cky-accordion-item">
+         <div class="cky-accordion-header-wrapper">
+          <div class="cky-accordion-header">
+           <button class="cky-accordion-btn">
+            Advertisement
+           </button>
+          </div>
+          <div class="cky-accordion-header-des">
+           <p>
+            Advertisement cookies are used to provide visitors with customised advertisements based on the pages you visited previously and to analyse the effectiveness of the ad campaigns.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="cky-accordion-body">
+         <div class="cky-audit-table">
+          <p class="cky-empty-cookies-text">
+           No cookies to display.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="cky-footer-wrapper">
+      <div class="cky-prefrence-btn-wrapper">
+       <button class="cky-btn cky-btn-reject">
+        Reject All
+       </button>
+       <button class="cky-btn cky-btn-preferences">
+        Save My Preferences
+       </button>
+       <button class="cky-btn cky-btn-accept">
+        Accept All
+       </button>
+      </div>
+      <div>
+       Powered by
+       <a href="https://www.cookieyes.com/product/cookie-consent" rel="noopener" target="_blank">
+        <img alt="Cookieyes logo" src="https://cdn-cookieyes.com/assets/images/poweredbtcky.svg"/>
+       </a>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div class="site" id="page">
+    <header class="site-header sticky-header" id="site-header">
+     <div class="site-header-wrapper">
+      <div class="ekit-template-content-markup ekit-template-content-header ekit-template-content-theme-support">
+       <div class="elementor elementor-831">
+        <div class="elementor-element elementor-element-c5e5893 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+         <div class="e-con-inner">
+          <div class="elementor-element elementor-element-53aebfd e-flex e-con-boxed e-con e-child">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-aaadc27 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-117d3b18 elementor-widget elementor-widget-kd_site_logo">
+              <div class="elementor-widget-container">
+               <div class="site-logo-wrapper">
+                <a class="site-logo" href="https://betterretain.com">
+                 <span class="primary-logo">
+                  <img alt="" class="attachment-large size-large wp-image-21614" height="44" src="https://betterretain.com/wp-content/uploads/2024/09/betterretain-logo.svg" width="170"/>
+                 </span>
+                </a>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-0545fa0 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-512709c4 elementor-widget elementor-widget-ekit-nav-menu">
+              <div class="elementor-widget-container">
+               <nav class="ekit-wid-con ekit_menu_responsive_tablet">
+                <div class="elementskit-menu-container elementskit-menu-offcanvas-elements elementskit-navbar-nav-default ekit-nav-menu-one-page-no ekit-nav-dropdown-hover" id="ekit-megamenu-main-menu">
+                 <ul class="elementskit-navbar-nav elementskit-menu-po-right submenu-click-on-" id="menu-main-menu">
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-890 nav-item elementskit-mobile-builder-content" id="menu-item-890">
+                   <a class="ekit-menu-nav-link" href="https://betterretain.com/pricing/">
+                    Pricing
+                   </a>
+                  </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-888 nav-item elementskit-mobile-builder-content" id="menu-item-888">
+                   <a class="ekit-menu-nav-link" href="https://betterretain.com/blog/">
+                    Blog
+                   </a>
+                  </li>
+                  <li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-21820 nav-item elementskit-mobile-builder-content" id="menu-item-21820">
+                   <a class="ekit-menu-nav-link" href="/contact/#demo">
+                    Request a Demo
+                   </a>
+                  </li>
+                  <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-889 nav-item elementskit-mobile-builder-content" id="menu-item-889">
+                   <a class="ekit-menu-nav-link" href="https://betterretain.com/contact/">
+                    Contact Us
+                   </a>
+                  </li>
+                 </ul>
+                 <div class="elementskit-nav-identity-panel">
+                  <button class="elementskit-menu-close elementskit-menu-toggler" type="button">
+                   X
+                  </button>
+                 </div>
+                </div>
+               </nav>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-1130be1 e-con-full elementor-hidden-tablet elementor-hidden-mobile e-flex e-con e-child">
+             <div class="elementor-element elementor-element-179c6b7 elementor-align-center elementor-widget elementor-widget-elementskit-button">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-btn-wraper">
+                 <a class="elementskit-btn whitespace--normal" href="https://app.betterretain.com/login" id="" target="_blank">
+                  <span class="button-wrapper">
+                   <span>
+                    Login
+                   </span>
+                  </span>
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-30f30ea elementor-align-center elementor-widget elementor-widget-elementskit-button">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-btn-wraper">
+                 <a class="elementskit-btn whitespace--normal" href="https://app.betterretain.com/register" id="" target="_blank">
+                  <span class="button-wrapper">
+                   <span>
+                    Register now
+                   </span>
+                  </span>
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <div class="site-content" id="content">
+     <div class="content-area" id="primary">
+      <main class="site-main" id="main">
+       <article class="post-9 page type-page status-publish has-post-thumbnail hentry" id="post-9">
+        <div class="entry-content">
+         <div class="elementor elementor-9">
+          <div class="elementor-element elementor-element-f09a6e4 hero-section e-con-full e-flex e-con e-parent e-lazyloaded">
+           <div class="elementor-element elementor-element-30a878f e-con-full e-flex e-con e-child">
+            <div class="elementor-element elementor-element-fd6ceae e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-10700d3 animated-fast elementor-widget__width-initial elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                 <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                  Reduce Subscription Cancel Rates
+                 </h6>
+                 <h1 class="ekit-heading--title elementskit-section-title">
+                  Recover
+                  <span>
+                   <span>
+                    Failed Stripe
+                   </span>
+                  </span>
+                  Payments on Auto-Pilot
+                 </h1>
+                 <div class="ekit-heading__description">
+                  <p>
+                   BetterRetain AI helps you
+                   <strong>
+                    automatically recover
+                   </strong>
+                   failed renewal payments on Stripe subscriptions with our
+                   <em>
+                    Smart Retries System
+                   </em>
+                   .
+                  </p>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-cb3d6ce elementor-absolute animated-fast elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image animated fadeInDown">
+              <div class="elementor-widget-container">
+               <img alt="" class="attachment-full size-full wp-image-21260" height="31" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-3.svg" width="32"/>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-cf11481 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-fa4c261 e-flex e-con-boxed e-con e-child">
+              <div class="e-con-inner">
+               <div class="elementor-element elementor-element-61566ea elementor-align-left elementor-widget__width-auto animated-fast elementor-widget elementor-widget-elementskit-button animated pulse">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <div class="ekit-btn-wraper">
+                   <a class="elementskit-btn whitespace--normal" href="https://app.betterretain.com/register" id="" target="_blank">
+                    <span class="button-wrapper">
+                     <span>
+                      Register for Early Access (free)
+                     </span>
+                    </span>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-2d9d576 elementor-widget__width-auto animated-fast elementor-hidden-mobile elementor-hidden-desktop elementor-hidden-tablet elementor-invisible elementor-widget elementor-widget-elementskit-video">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <div class="video-content">
+                   <a class="ekit-video-popup ekit-video-popup-btn" href="https://www.youtube.com/embed/w03-ddqY-AE?feature=oembed?playlist=w03-ddqY-AE&amp;mute=1&amp;autoplay=1&amp;loop=no&amp;controls=1&amp;start=0&amp;end=" rel="noopener" target="_blank">
+                    <span>
+                     How it works
+                    </span>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-ad4ed7c e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-0b677b1 hero-image-wrap e-flex e-con-boxed e-con e-child">
+              <div class="e-con-inner">
+               <div class="elementor-element elementor-element-0072e9c elementor-absolute animated-fast elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image animated fadeInUp">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-large size-large wp-image-21390" height="482" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-user-6.png" width="153"/>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-f3c3042 elementor-absolute animated-fast elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image animated fadeInUp">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-large size-large wp-image-21381" height="230" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-user-4.png" width="74"/>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-a13040c elementor-absolute animated-fast elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image animated fadeInUp">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-large size-large wp-image-21380" height="528" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-user-3.png" width="283"/>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-688d284 elementor-absolute animated-fast elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image animated fadeInUp">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-large size-large wp-image-21379" height="166" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-user-2.png" width="226"/>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-777413a animated-fast hero-image elementor-widget elementor-widget-image animated fadeInUp">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-full size-full wp-image-22075" height="2130" src="https://betterretain.com/wp-content/uploads/2024/09/BR-Dashboard-1.png" width="4320"/>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-7611d94 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-11978667 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-4beb2d30 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-17a2730 animated-fast elementor-widget__width-initial elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="ekit-heading elementskit-section-title-wraper text_left ekit_heading_tablet- ekit_heading_mobile-">
+                  <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                   Minimize your subscription churn rate
+                  </h6>
+                  <h2 class="ekit-heading--title elementskit-section-title">
+                   Don't miss a
+                   <span>
+                    <span>
+                     failed payment
+                    </span>
+                   </span>
+                   again
+                  </h2>
+                  <div class="ekit-heading__description">
+                   <p>
+                    Seamlessly recover lost revenue with Stripe-integrated payment retries and personalized customer outreach.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-47013146 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-295c4128 animated-fast elementor-widget elementor-widget-elementskit-simple-tab animated fadeInUp">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="elementkit-tab-wraper">
+                  <ul class="nav nav-tabs elementkit-tab-nav elementskit_tab_border_bottm elementskit_tab_border_bottm elementskit-fullwidth-tab">
+                   <li class="elementkit-nav-item elementor-repeater-item-7dd36af">
+                    <a class="elementkit-nav-link active show top-pos" href="#Content-7dd36af6874f6b78a1f4" id="content-7dd36af6874f6b78a1f4-tab">
+                     <span class="elementskit-tab-title">
+                      For SaaS
+                     </span>
+                    </a>
+                   </li>
+                   <li class="elementkit-nav-item elementor-repeater-item-c54bcd2">
+                    <a class="elementkit-nav-link top-pos" href="#Content-c54bcd26874f6b78a1f4" id="content-c54bcd26874f6b78a1f4-tab">
+                     <span class="elementskit-tab-title">
+                      e-Commerce
+                     </span>
+                    </a>
+                   </li>
+                   <li class="elementkit-nav-item elementor-repeater-item-a8aada2">
+                    <a class="elementkit-nav-link top-pos" href="#Content-a8aada26874f6b78a1f4" id="content-a8aada26874f6b78a1f4-tab">
+                     <span class="elementskit-tab-title">
+                      Non Profits
+                     </span>
+                    </a>
+                   </li>
+                  </ul>
+                  <div class="tab-content elementkit-tab-content">
+                   <div class="tab-pane elementkit-tab-pane elementor-repeater-item-7dd36af active show" id="content-7dd36af6874f6b78a1f4">
+                    <div class="animated fadeIn">
+                     <p>
+                      BetterRetain AI is a game-changer for SaaS businesses dealing with recurring (failed) payments. When a customer’s payment doesn’t go through, it automatically retries on a regular schedule, addressing common card issues like expiration or insufficient funds.
+                     </p>
+                    </div>
+                   </div>
+                   <div class="tab-pane elementkit-tab-pane elementor-repeater-item-c54bcd2" id="content-c54bcd26874f6b78a1f4">
+                    <div class="animated fadeIn">
+                     <p class="p1">
+                      For eCommerce businesses offering subscription-based products, BetterRetain ensures customers don’t lose access to their recurring orders due to failed payments.
+                     </p>
+                     <p class="p1">
+                      When a customer’s payment for a subscription box, a product refill, or a membership plan fails—whether due to an expired card, insufficient funds, or other issues—BetterRetain automatically retries the payment at strategic intervals.
+                     </p>
+                    </div>
+                   </div>
+                   <div class="tab-pane elementkit-tab-pane elementor-repeater-item-a8aada2" id="content-a8aada26874f6b78a1f4">
+                    <div class="animated fadeIn">
+                     <p>
+                      BetterRetain ensures that valuable donations continue to flow smoothly. By automatically retrying failed payments and sending personalized reminders to update payment information, BetterRetain helps recover lost contributions with minimal effort.
+                     </p>
+                     <p>
+                      This seamless process helps maintain a steady stream of funds, reduces donor churn, and allows nonprofits to focus on their mission rather than managing payment issues.
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-6dee7f4 elementor-absolute animated-fast elementor-widget elementor-widget-image animated fadeInUp">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-full size-full wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-323143a5 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-721edb48 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-4dab7614 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-78650187 animated-fast elementor-widget elementor-widget-elementskit-funfact animated fadeInUp">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="elementskit-funfact text-left">
+                  <div class="elementskit-funfact-inner">
+                   <div class="funfact-content">
+                    <div class="number-percentage-wraper">
+                     $
+                     <span class="number-percentage odometer odometer-auto-theme">
+                      <div class="odometer-inside">
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            3
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            0
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-formatting-mark">
+                        ,
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            0
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            0
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            0
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                      </div>
+                     </span>
+                     <span class="super">
+                      +
+                     </span>
+                    </div>
+                    <h4 class="funfact-title">
+                     Failed Payments Served
+                    </h4>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-a8e5080 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-6f1d42e animated-fast elementor-widget elementor-widget-elementskit-funfact animated fadeInUp">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="elementskit-funfact text-left">
+                  <div class="elementskit-funfact-inner">
+                   <div class="funfact-content">
+                    <div class="number-percentage-wraper">
+                     <span class="number-percentage odometer odometer-auto-theme">
+                      <div class="odometer-inside">
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            6
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            0
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                      </div>
+                     </span>
+                     <span class="super">
+                      %
+                     </span>
+                    </div>
+                    <h4 class="funfact-title">
+                     Reduced Cancellations
+                    </h4>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-a04b3e8 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-45866cb animated-fast elementor-widget elementor-widget-elementskit-funfact animated fadeInUp">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="elementskit-funfact text-left">
+                  <div class="elementskit-funfact-inner">
+                   <div class="funfact-content">
+                    <div class="number-percentage-wraper">
+                     <span class="number-percentage odometer odometer-auto-theme">
+                      <div class="odometer-inside">
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            2
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            5
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                      </div>
+                     </span>
+                     <span class="super">
+                      %
+                     </span>
+                    </div>
+                    <h4 class="funfact-title">
+                     Engagement Increase
+                    </h4>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-c3db92b e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-5d99788 animated-fast elementor-widget elementor-widget-elementskit-funfact animated fadeInUp">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="elementskit-funfact text-left">
+                  <div class="elementskit-funfact-inner">
+                   <div class="funfact-content">
+                    <div class="number-percentage-wraper">
+                     <span class="number-percentage odometer odometer-auto-theme">
+                      <div class="odometer-inside">
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            9
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                       <span class="odometer-digit">
+                        <span class="odometer-digit-spacer">
+                         8
+                        </span>
+                        <span class="odometer-digit-inner">
+                         <span class="odometer-ribbon">
+                          <span class="odometer-ribbon-inner">
+                           <span class="odometer-value">
+                            8
+                           </span>
+                          </span>
+                         </span>
+                        </span>
+                       </span>
+                      </div>
+                     </span>
+                     <span class="super">
+                      %
+                     </span>
+                    </div>
+                    <h4 class="funfact-title">
+                     Customer Satisfaction
+                    </h4>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-496c73c elementor-absolute animated-fast elementor-widget elementor-widget-image animated fadeInUp">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-full size-full wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-1922efb5 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-4c34fd0d e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+             <div class="elementor-element elementor-element-5bee5123 animated-fast elementor-widget elementor-widget-image animated fadeInUp">
+              <div class="elementor-widget-container">
+               <img alt="" class="attachment-full size-full wp-image-22079" height="1572" src="https://betterretain.com/wp-content/uploads/2024/09/BR-Home-Email-logs.png" width="1674"/>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-2dc02816 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-2188f12b elementor-widget__width-initial animated-fast elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-heading elementskit-section-title-wraper text_left ekit_heading_tablet- ekit_heading_mobile-">
+                 <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                  Experience the Power of BetterRetain
+                 </h6>
+                 <h2 class="ekit-heading--title elementskit-section-title">
+                  What BetterRetain AI Can
+                  <span>
+                   <span>
+                    Do for You
+                   </span>
+                  </span>
+                 </h2>
+                 <div class="ekit-heading__description">
+                  <p>
+                   BetterRetain simplifies payment recovery for subscriptions by automatically retrying failed payments &amp; addressing common card errors like expired cards or insufficient funds.
+                  </p>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-2a03e006 e-con-full animated-fast e-flex e-con e-child animated fadeIn">
+              <div class="elementor-element elementor-element-13076d7 keydesign-h6 elementor-widget elementor-widget-elementskit-stylish-list">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <ul class="ekit-stylish-list">
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-9176c3a">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Weekly Email Reports
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-0718d0d">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Automated Payment Recovery
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-aa8aca8">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Personalized Reminders
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-b4e5723">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Stripe Integration
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+              <div class="elementor-element elementor-element-1897fc61 keydesign-h6 elementor-widget elementor-widget-elementskit-stylish-list">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <ul class="ekit-stylish-list">
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-9176c3a">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Real-Time Analytics
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-aa8aca8">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Customizable Retry Schedules
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                  <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-62a6846">
+                   <div class="ekit-stylish-list-content">
+                    <div class="ekit-stylish-list-content-text">
+                     <span class="ekit-stylish-list-content-title">
+                      Reduced Cancellations
+                     </span>
+                    </div>
+                   </div>
+                  </li>
+                 </ul>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-d87d6bf elementor-align-left animated-fast elementor-widget elementor-widget-elementskit-button animated pulse">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-btn-wraper">
+                 <a class="elementskit-btn whitespace--normal" href="https://app.betterretain.com/register" id="" target="_blank">
+                  <span class="button-wrapper">
+                   <span>
+                    Get started
+                   </span>
+                  </span>
+                 </a>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-50316137 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-176cd56c e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-3d82a765 animated-fast elementor-widget__width-initial elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+              <div class="elementor-widget-container">
+               <div class="ekit-wid-con">
+                <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-text_left">
+                 <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                  Flawless Integration
+                 </h6>
+                 <h2 class="ekit-heading--title elementskit-section-title">
+                  Integrate effortlessly with your
+                  <span>
+                   <span>
+                    favorite tools
+                   </span>
+                  </span>
+                 </h2>
+                 <div class="ekit-heading__description">
+                  <p>
+                   Connect effortlessly with these essential tools to enhance your payment recovery and customer churn/dunning experience.
+                  </p>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-2e37b4fe e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-677bc842 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-5f9d08db e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+               <div class="elementor-element elementor-element-633b662f elementor-widget__width-initial elementor-widget elementor-widget-elementskit-image-swap">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <a class="ekit-image-swap ekit-image-swap--bottom-to-top" href="#">
+                   <img alt="" class="attachment-full size-full wp-image-21656" height="149" src="https://betterretain.com/wp-content/uploads/2024/09/stripe.svg" width="360"/>
+                   <img alt="" class="attachment-full size-full wp-image-21656" height="149" src="https://betterretain.com/wp-content/uploads/2024/09/stripe.svg" width="360"/>
+                  </a>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="elementor-element elementor-element-32e07678 e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+               <div class="elementor-element elementor-element-516b0a34 elementor-widget__width-initial elementor-widget elementor-widget-elementskit-image-swap">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <a class="ekit-image-swap ekit-image-swap--bottom-to-top" href="#">
+                   <img alt="" class="attachment-full size-full wp-image-21654" height="166" src="https://betterretain.com/wp-content/uploads/2024/09/gmail.png" width="640"/>
+                   <img alt="" class="attachment-full size-full wp-image-21654" height="166" src="https://betterretain.com/wp-content/uploads/2024/09/gmail.png" width="640"/>
+                  </a>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="elementor-element elementor-element-85f0653 e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+               <div class="elementor-element elementor-element-3d8a2b1 elementor-widget__width-initial elementor-widget elementor-widget-elementskit-image-swap">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <a class="ekit-image-swap ekit-image-swap--bottom-to-top" href="#">
+                   <img alt="" class="attachment-full size-full wp-image-21660" height="127" src="https://betterretain.com/wp-content/uploads/2024/09/slack.svg" width="498"/>
+                   <img alt="" class="attachment-full size-full wp-image-21660" height="127" src="https://betterretain.com/wp-content/uploads/2024/09/slack.svg" width="498"/>
+                  </a>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="elementor-element elementor-element-ba4492b e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+               <div class="elementor-element elementor-element-b7f8da1 elementor-widget__width-initial elementor-widget elementor-widget-elementskit-image-swap">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <a class="ekit-image-swap ekit-image-swap--bottom-to-top" href="#">
+                   <img alt="" class="attachment-full size-full wp-image-21661" height="104" src="https://betterretain.com/wp-content/uploads/2024/09/outlook.svg" width="722"/>
+                   <img alt="" class="attachment-full size-full wp-image-21661" height="104" src="https://betterretain.com/wp-content/uploads/2024/09/outlook.svg" width="722"/>
+                  </a>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-499c4eae e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-49b5b0b elementor-absolute animated-fast elementor-widget elementor-widget-image animated fadeInUp">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-thumbnail size-thumbnail wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-48f99f3 elementor-absolute animated-fast elementor-widget elementor-widget-image animated fadeInUp">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-full size-full wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-2eae5af3 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-50f54495 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-1601801b animated-fast elementor-widget__width-initial elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-text_left">
+                  <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                   The Impact of BetterRetain
+                  </h6>
+                  <h2 class="ekit-heading--title elementskit-section-title">
+                   How BetterRetain AI
+                   <span>
+                    <span>
+                     Makes a Difference
+                    </span>
+                   </span>
+                  </h2>
+                  <div class="ekit-heading__description">
+                   <p>
+                    Know how businesses like yours have transformed their payment recovery processes and improved customer retention with us.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="elementor-element elementor-element-2dd15b44 e-flex e-con-boxed e-con e-child">
+              <div class="e-con-inner">
+               <div class="elementor-element elementor-element-d9745e5 elementor-absolute elementor-hidden-tablet elementor-hidden-mobile elementor-widget elementor-widget-image">
+                <div class="elementor-widget-container">
+                 <img alt="" class="attachment-thumbnail size-thumbnail wp-image-21117" height="31" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-1.svg" width="32"/>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-fcc3d25 e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+                <div class="elementor-element elementor-element-67ecfc43 e-con-full e-flex e-con e-child">
+                 <div class="elementor-element elementor-element-572064d6 elementor-widget elementor-widget-heading">
+                  <div class="elementor-widget-container">
+                   <h4 class="elementor-heading-title elementor-size-default">
+                    Before using BetterRetain, we struggled with managing failed payments and customer churn.
+
+  Now, the automated retries and timely reminders have significantly improved our recovery rates and kept our subscribers happy. Highly recommended!
+                   </h4>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-adeb903 e-con-full e-flex e-con e-child">
+                  <div class="elementor-element elementor-element-55758c22 elementor-widget elementor-widget-image">
+                   <div class="elementor-widget-container">
+                    <img alt="" class="attachment-large size-large wp-image-21508" height="120" src="https://betterretain.com/wp-content/uploads/2023/10/review2.jpg" width="120"/>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-3ec09b8 elementor-widget elementor-widget-elementskit-heading">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-heading elementskit-section-title-wraper ekit_heading_tablet-text_left ekit_heading_mobile-">
+                      <h5 class="ekit-heading--title elementskit-section-title">
+                       Frederic Hill
+                      </h5>
+                      <div class="ekit-heading__description">
+                       <p>
+                        Founder &amp; CEO
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-d4ea8c2 elementor-widget elementor-widget-elementskit-funfact">
+                  <div class="elementor-widget-container">
+                   <div class="ekit-wid-con">
+                    <div class="elementskit-funfact text-left">
+                     <div class="elementskit-funfact-inner">
+                      <div class="funfact-content">
+                       <div class="number-percentage-wraper">
+                        <span class="number-percentage odometer odometer-auto-theme">
+                         <div class="odometer-inside">
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               7
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               2
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                         </div>
+                        </span>
+                        %
+                       </div>
+                       <h3 class="funfact-title">
+                        failed payments recovered in the 1st month
+                       </h3>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-4a15bcbe e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+                <div class="elementor-element elementor-element-73a30942 e-con-full e-flex e-con e-child">
+                 <div class="elementor-element elementor-element-60166bae elementor-widget elementor-widget-heading">
+                  <div class="elementor-widget-container">
+                   <h4 class="elementor-heading-title elementor-size-default">
+                    The system's ability to address card errors and automate retries has drastically reduced our manual workload &amp; improved our revenue recovery. Our customer engagement has also increased thanks to the personalized reminders. It's a must-have tool for any subscription business.
+                   </h4>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-4b9cc00a e-con-full e-flex e-con e-child">
+                  <div class="elementor-element elementor-element-1ca28bcb elementor-widget elementor-widget-image">
+                   <div class="elementor-widget-container">
+                    <img alt="" class="attachment-large size-large wp-image-21507" height="120" src="https://betterretain.com/wp-content/uploads/2023/10/review1.jpg" width="120"/>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-25995054 elementor-widget elementor-widget-elementskit-heading">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-heading elementskit-section-title-wraper ekit_heading_tablet-text_left ekit_heading_mobile-">
+                      <h5 class="ekit-heading--title elementskit-section-title">
+                       Safaa Sampson
+                      </h5>
+                      <div class="ekit-heading__description">
+                       <p>
+                        Account Executive
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-200724af elementor-widget elementor-widget-elementskit-funfact">
+                  <div class="elementor-widget-container">
+                   <div class="ekit-wid-con">
+                    <div class="elementskit-funfact text-left">
+                     <div class="elementskit-funfact-inner">
+                      <div class="funfact-content">
+                       <div class="number-percentage-wraper">
+                        $
+                        <span class="number-percentage odometer odometer-auto-theme">
+                         <div class="odometer-inside">
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               4
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                          <span class="odometer-formatting-mark">
+                           ,
+                          </span>
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               0
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               0
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               0
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                         </div>
+                        </span>
+                        +
+                       </div>
+                       <h3 class="funfact-title">
+                        worth of failed payments recovered
+                       </h3>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-4625a8c8 e-con-full animated-fast e-flex e-con e-child animated fadeInUp">
+                <div class="elementor-element elementor-element-766c631d e-con-full e-flex e-con e-child">
+                 <div class="elementor-element elementor-element-5db26c8 elementor-widget elementor-widget-heading">
+                  <div class="elementor-widget-container">
+                   <h4 class="elementor-heading-title elementor-size-default">
+                    We were facing frequent issues with failed payments and customer cancellations, but BetterRetain changed that. The automated payment recovery process and integration with our existing tools made everything smoother. BetterRetain is invaluable to our operations.
+                   </h4>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-547f288c e-con-full e-flex e-con e-child">
+                  <div class="elementor-element elementor-element-40dd1d4 elementor-widget elementor-widget-image">
+                   <div class="elementor-widget-container">
+                    <img alt="" class="attachment-large size-large wp-image-21509" height="120" src="https://betterretain.com/wp-content/uploads/2023/10/review4.jpg" width="120"/>
+                   </div>
+                  </div>
+                  <div class="elementor-element elementor-element-49b275dc elementor-widget elementor-widget-elementskit-heading">
+                   <div class="elementor-widget-container">
+                    <div class="ekit-wid-con">
+                     <div class="ekit-heading elementskit-section-title-wraper ekit_heading_tablet-text_left ekit_heading_mobile-">
+                      <h5 class="ekit-heading--title elementskit-section-title">
+                       Brendan Buck
+                      </h5>
+                      <div class="ekit-heading__description">
+                       <p>
+                        Marketing Manager
+                       </p>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                 <div class="elementor-element elementor-element-1b4c689e elementor-widget elementor-widget-elementskit-funfact">
+                  <div class="elementor-widget-container">
+                   <div class="ekit-wid-con">
+                    <div class="elementskit-funfact text-left">
+                     <div class="elementskit-funfact-inner">
+                      <div class="funfact-content">
+                       <div class="number-percentage-wraper">
+                        +
+                        <span class="number-percentage odometer odometer-auto-theme">
+                         <div class="odometer-inside">
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               5
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                          <span class="odometer-digit">
+                           <span class="odometer-digit-spacer">
+                            8
+                           </span>
+                           <span class="odometer-digit-inner">
+                            <span class="odometer-ribbon">
+                             <span class="odometer-ribbon-inner">
+                              <span class="odometer-value">
+                               4
+                              </span>
+                             </span>
+                            </span>
+                           </span>
+                          </span>
+                         </div>
+                        </span>
+                        %
+                       </div>
+                       <h3 class="funfact-title">
+                        Increase in customer retention
+                       </h3>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-5b533938 e-flex e-con-boxed e-con e-parent e-lazyloaded">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-3a2e2b95 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-4f4524e5 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-2fbae2b2 animated-fast elementor-widget__width-initial elementor-widget elementor-widget-elementskit-heading animated fadeIn">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-text_left">
+                  <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                   Latest News
+                  </h6>
+                  <h2 class="ekit-heading--title elementskit-section-title">
+                   News and
+                   <span>
+                    <span>
+                     stories
+                    </span>
+                   </span>
+                   center
+                  </h2>
+                  <div class="ekit-heading__description">
+                   <p>
+                    Explore insightful content that keeps you ahead of the curve of customer retention.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-34bf5b72 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-43dc7e0b e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-50efa2db elementor-widget elementor-widget-elementskit-blog-posts">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="row post-items ekit-blog-posts-content wihout-masonry" id="post-items--50efa2db">
+                  <div class="col-lg-4 col-md-6">
+                   <div class="elementskit-post-image-card">
+                    <div class="elementskit-entry-header">
+                     <a class="elementskit-entry-thumb" href="https://betterretain.com/common-failed-subscription-payment-reasons/">
+                      <img alt="How to Address Common Failed Subscription Payment Issues and Improve Recovery (9 Steps)" src="https://betterretain.com/wp-content/uploads/2023/08/marketing-blog-1.jpg"/>
+                     </a>
+                    </div>
+                    <div class="elementskit-post-body">
+                     <h2 class="entry-title">
+                      <a href="https://betterretain.com/common-failed-subscription-payment-reasons/">
+                       How to Address Common Failed Subscription Payment Issues and Improve Recovery (9 Steps)
+                      </a>
+                     </h2>
+                     <p>
+                      When evaluating potential agencies, consider their expertise in various aspects of branding and design.
+                     </p>
+                     <div class="btn-wraper">
+                      <a class="elementskit-btn whitespace--normal" href="https://betterretain.com/common-failed-subscription-payment-reasons/">
+                       <span class="button-wrapper">
+                        <span>
+                         Read more
+                        </span>
+                       </span>
+                      </a>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                   <div class="elementskit-post-image-card">
+                    <div class="elementskit-entry-header">
+                     <a class="elementskit-entry-thumb" href="https://betterretain.com/how-to-handle-payment-failures-for-subscription-businesses/">
+                      <img alt="How to Handle Payment Failures? Top Strategies for SaaS and Subscription Businesses" src="https://betterretain.com/wp-content/uploads/2023/08/marketing-blog-2.jpg"/>
+                     </a>
+                    </div>
+                    <div class="elementskit-post-body">
+                     <h2 class="entry-title">
+                      <a href="https://betterretain.com/how-to-handle-payment-failures-for-subscription-businesses/">
+                       How to Handle Payment Failures? Top Strategies for SaaS and Subscription Businesses
+                      </a>
+                     </h2>
+                     <p>
+                      The concept of a multi-brand system has gained traction, allowing businesses to manage various brands.
+                     </p>
+                     <div class="btn-wraper">
+                      <a class="elementskit-btn whitespace--normal" href="https://betterretain.com/how-to-handle-payment-failures-for-subscription-businesses/">
+                       <span class="button-wrapper">
+                        <span>
+                         Read more
+                        </span>
+                       </span>
+                      </a>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div class="col-lg-4 col-md-6">
+                   <div class="elementskit-post-image-card">
+                    <div class="elementskit-entry-header">
+                     <a class="elementskit-entry-thumb" href="https://betterretain.com/guide-to-reducing-subscription-churn/">
+                      <img alt="Ultimate 6-Step Guide to Reducing Subscription Churn (How Automated Payment Recovery Can Help)" src="https://betterretain.com/wp-content/uploads/2023/08/marketing-blog-3.jpg"/>
+                     </a>
+                    </div>
+                    <div class="elementskit-post-body">
+                     <h2 class="entry-title">
+                      <a href="https://betterretain.com/guide-to-reducing-subscription-churn/">
+                       Ultimate 6-Step Guide to Reducing Subscription Churn (How Automated Payment Recovery Can Help)
+                      </a>
+                     </h2>
+                     <p>
+                      A well-defined statement helps participants focus their creativity and ensures everyone is on the same page.
+                     </p>
+                     <div class="btn-wraper">
+                      <a class="elementskit-btn whitespace--normal" href="https://betterretain.com/guide-to-reducing-subscription-churn/">
+                       <span class="button-wrapper">
+                        <span>
+                         Read more
+                        </span>
+                       </span>
+                      </a>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-2e728929 e-flex e-con-boxed e-con e-parent">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-4b841271 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-36249779 e-con-full e-flex e-con e-child">
+              <div class="elementor-element elementor-element-1b4c7a4c animated-fast elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-elementskit-heading">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-">
+                  <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                   Pricing
+                  </h6>
+                  <h2 class="ekit-heading--title elementskit-section-title">
+                   Flexible
+                   <span>
+                    <span>
+                     pricing plans.
+                    </span>
+                   </span>
+                   Any scale.
+                  </h2>
+                  <div class="ekit-heading__description">
+                   <p>
+                    Whether you're an individual, a small team, or a growing enterprise, we have a plan that aligns perfectly with your goals.
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-33acd9d e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-732799b e-con-full animated-fast e-flex elementor-invisible e-con e-child">
+              <div class="elementor-element elementor-element-210658c elementor-widget elementor-widget-elementskit-advanced-toggle">
+               <div class="elementor-widget-container">
+                <div class="ekit-wid-con">
+                 <div class="ekit-slide-toggle-wraper">
+                  <div class="ekit-switch-nav-wraper-outer">
+                   <label class="nav nav-tabs ekit-slide-toggle" id="nav-tab-210658c">
+                    <a class="nav-item nav-link elementskit-switch-nav-link elementskit-switch-nav-link-1 active elementor-repeater-item-ed823ec" href="#content-ed823ec6874f6b7e5f3e" id="content-ed823ec6874f6b7e5f3e-tab">
+                     <span class="elementskit-tab-title">
+                      Monthly
+                     </span>
+                    </a>
+                    <input class="ekit-custom-control-input" type="checkbox"/>
+                    <a class="nav-item nav-link elementskit-switch-nav-link elementskit-switch-nav-link-2 elementor-repeater-item-a43fd2c" href="#content-a43fd2c6874f6b7e5f3e" id="content-a43fd2c6874f6b7e5f3e-tab">
+                     <span class="elementskit-tab-title">
+                      Annually
+                     </span>
+                    </a>
+                   </label>
+                  </div>
+                  <div class="tab-content" id="nav-tabContent-210658c">
+                   <div class="tab-pane fade ekit-toggle-switch-content elementor-repeater-item-ed823ec active show" id="content-ed823ec6874f6b7e5f3e">
+                    <div class="animated fadeIn">
+                     <div class="widgetarea_warper widgetarea_warper_editable">
+                      <div class="widgetarea_warper_edit">
+                       <span>
+                        Edit Content
+                       </span>
+                      </div>
+                      <div class="ekit-widget-area-container">
+                       <div class="elementor elementor-863">
+                        <div class="elementor-element elementor-element-71a88a8 e-con-full e-flex e-con e-child">
+                         <div class="elementor-element elementor-element-b1ee79c e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-329195e elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainLite
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Cutting-edge recovery for businesses just getting started.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 19
+                                </span>
+                                <sub class="period">
+                                 /month
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Recover upto 5 failed payments
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect 1 Stripe account
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-abe325d">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-b23a51b">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                         <div class="elementor-element elementor-element-1571592 e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-f872fe2 elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainPro
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Powerful payment recovery for growing businesses ready to scale.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 39
+                                </span>
+                                <sub class="period">
+                                 /month
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Recover upto 15 failed payments
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect upto 3 Stripe accounts
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-c029054">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-ca65ac7">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                         <div class="elementor-element elementor-element-598527f e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-1134176 elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainMax
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Master every aspect of payment recovery with no limits.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 129
+                                </span>
+                                <sub class="period">
+                                 /month
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Unlimited payment recoveries
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect upto 5 Stripe accounts
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-c029054">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-ca65ac7">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                   <div class="tab-pane fade ekit-toggle-switch-content elementor-repeater-item-a43fd2c" id="content-a43fd2c6874f6b7e5f3e">
+                    <div class="animated fadeIn">
+                     <div class="widgetarea_warper widgetarea_warper_editable">
+                      <div class="widgetarea_warper_edit">
+                       <span>
+                        Edit Content
+                       </span>
+                      </div>
+                      <div class="ekit-widget-area-container">
+                       <div class="elementor elementor-867">
+                        <div class="elementor-element elementor-element-863e557 e-con-full e-flex e-con e-parent">
+                         <div class="elementor-element elementor-element-35e364fe e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-3ae5a87c elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainLite
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Cutting-edge recovery for businesses just getting started.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 12
+                                </span>
+                                <sub class="period">
+                                 /month (billed annually)
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Recover upto 5 failed payments
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect 1 Stripe account
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-abe325d">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-b23a51b">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                         <div class="elementor-element elementor-element-327a8b1a e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-e4c3c72 elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainPro
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Powerful payment recovery for growing businesses ready to scale.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 29
+                                </span>
+                                <sub class="period">
+                                 /month (billed annually)
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Recover upto 15 failed payments
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect upto 3 Stripe accounts
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-c029054">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-ca65ac7">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                         <div class="elementor-element elementor-element-2e7af765 e-con-full e-flex e-con e-child">
+                          <div class="elementor-element elementor-element-fce7444 elementor-widget elementor-widget-elementskit-pricing">
+                           <div class="elementor-widget-container">
+                            <div class="ekit-wid-con">
+                             <div class="elementskit-single-pricing">
+                              <div class="elementskit-pricing-header">
+                               <h4 class="elementskit-pricing-title">
+                                RetainMax
+                               </h4>
+                               <p class="elementskit-pricing-subtitle">
+                                Master every aspect of payment recovery with no limits.
+                               </p>
+                              </div>
+                              <div class="elementskit-pricing-price-wraper has-tag">
+                               <span class="elementskit-pricing-price">
+                                <sup class="currency">
+                                 $
+                                </sup>
+                                <span>
+                                 99
+                                </span>
+                                <sub class="period">
+                                 /month (billed annually)
+                                </sub>
+                               </span>
+                              </div>
+                              <div class="elementskit-pricing-content">
+                               <ul class="elementskit-pricing-lists">
+                                <li class="elementor-repeater-item-d17ce97">
+                                 Unlimited payment recoveries
+                                </li>
+                                <li class="elementor-repeater-item-7812a8f">
+                                 Connect upto 5 Stripe accounts
+                                </li>
+                                <li class="elementor-repeater-item-69854b9">
+                                 Automated retry for failed payments
+                                </li>
+                                <li class="elementor-repeater-item-cd474dc">
+                                 Email reports for insights
+                                </li>
+                                <li class="elementor-repeater-item-5abe9de">
+                                 Support
+                                </li>
+                                <li class="elementor-repeater-item-c029054">
+                                 Custom retry schedules
+                                </li>
+                                <li class="elementor-repeater-item-ca65ac7">
+                                 Customer emails on payment failures
+                                </li>
+                               </ul>
+                              </div>
+                              <div class="elementskit-pricing-btn-wraper">
+                               <a class="elementskit-pricing-btn ekit-pricing-btn-icon-pos-" href="/contact/">
+                                Get Early Access
+                               </a>
+                              </div>
+                             </div>
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-3c1501fb e-flex e-con-boxed e-con e-parent">
+           <div class="e-con-inner">
+            <div class="elementor-element elementor-element-518c06c3 e-con-full e-flex e-con e-child">
+             <div class="elementor-element elementor-element-6c356cec e-con-full animated-fast e-flex elementor-invisible e-con e-child">
+              <div class="elementor-element elementor-element-d6f8acc e-con-full e-flex e-con e-child">
+               <div class="elementor-element elementor-element-cc35e09 animated-fast elementor-widget__width-initial elementor-invisible elementor-widget elementor-widget-elementskit-heading">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <div class="ekit-heading elementskit-section-title-wraper text_center ekit_heading_tablet- ekit_heading_mobile-text_left">
+                   <h6 class="elementskit-section-subtitle ekit-heading__subtitle-has-border">
+                    Try BetterRetain AI for Free
+                   </h6>
+                   <h2 class="ekit-heading--title elementskit-section-title">
+                    Get Your First
+                    <span>
+                     <span>
+                      Payment Recovery
+                     </span>
+                    </span>
+                    Free — No Strings Attached!
+                   </h2>
+                   <div class="ekit-heading__description">
+                    <p>
+                     Experience BetterRetain with a free payment recovery. See how our automated system helps you recover lost revenue and improve customer retention with no commitment.
+                    </p>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="elementor-element elementor-element-328e5037 elementor-widget__width-auto animated-fast elementor-align-center elementor-invisible elementor-widget elementor-widget-elementskit-button">
+                <div class="elementor-widget-container">
+                 <div class="ekit-wid-con">
+                  <div class="ekit-btn-wraper">
+                   <a class="elementskit-btn whitespace--normal" href="https://app.betterretain.com/register" id="" target="_blank">
+                    <span class="button-wrapper">
+                     <span>
+                      Register for Early Access
+                     </span>
+                    </span>
+                   </a>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-79162cb elementor-absolute animated-fast elementor-invisible elementor-widget elementor-widget-image">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-thumbnail size-thumbnail wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-d30f5f4 elementor-absolute animated-fast elementor-invisible elementor-widget elementor-widget-image">
+             <div class="elementor-widget-container">
+              <img alt="" class="attachment-thumbnail size-thumbnail wp-image-21118" height="211" src="https://betterretain.com/wp-content/uploads/2023/10/sierra-marketing-shape-2.svg" width="211"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </article>
+      </main>
+     </div>
+    </div>
+    <footer class="site-footer footer-position-default" id="site-footer">
+     <div class="ekit-template-content-markup ekit-template-content-footer ekit-template-content-theme-support">
+      <div class="elementor elementor-832">
+       <div class="elementor-element elementor-element-7738c7aa e-flex e-con-boxed e-con e-parent">
+        <div class="e-con-inner">
+         <div class="elementor-element elementor-element-5a1f37b0 e-con-full e-flex e-con e-child">
+          <div class="elementor-element elementor-element-78e3616e e-con-full e-flex e-con e-child">
+           <div class="elementor-element elementor-element-2f64fe99 e-con-full e-flex e-con e-child">
+            <div class="elementor-element elementor-element-5bea5d3a invert-img elementor-widget elementor-widget-image">
+             <div class="elementor-widget-container">
+              <a href="https://betterretain.com">
+               <img alt="" class="attachment-full size-full wp-image-21614" height="44" src="https://betterretain.com/wp-content/uploads/2024/09/betterretain-logo.svg" width="170"/>
+              </a>
+             </div>
+            </div>
+            <div class="elementor-element elementor-element-5c9bad5d elementor-widget__width-initial elementor-widget elementor-widget-heading">
+             <div class="elementor-widget-container">
+              <p class="elementor-heading-title elementor-size-default">
+               BetterRetain handles failed payments effortlessly with automated retries, reminders, and support for common issues like card declines and expired accounts. Keep your subscribers and revenue intact.
+               <br/>
+               <br/>
+               It's time to recover failed payments before you lose subscribers.
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="elementor-element elementor-element-134f1a2f e-con-full e-flex e-con e-child">
+            <div class="elementor-element elementor-element-93db01c elementor-widget elementor-widget-elementskit-stylish-list">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <ul class="ekit-stylish-list">
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-8421664">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Pricing
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-99eb4b2">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Blog
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-428ad5d">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Privacy Policy
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-3652896">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Terms &amp; Conditions
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-706b2f1">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Refund Policy
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-3e37c78">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Contact Us
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-1b2199f">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Request a Demo
+                   </span>
+                  </div>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="elementor-element elementor-element-6958c3e7 e-con-full e-flex e-con e-child">
+            <div class="elementor-element elementor-element-37d12c6 elementor-widget elementor-widget-elementskit-stylish-list">
+             <div class="elementor-widget-container">
+              <div class="ekit-wid-con">
+               <ul class="ekit-stylish-list">
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-1b2199f">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Login
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-8421664">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Register now
+                   </span>
+                  </div>
+                 </div>
+                </li>
+                <li class="ekit-stylish-list-content-wrapper elementor-repeater-item-3e37c78">
+                 <div class="ekit-stylish-list-content">
+                  <div class="ekit-stylish-list-content-text">
+                   <span class="ekit-stylish-list-content-title">
+                    Help &amp; Support
+                   </span>
+                  </div>
+                 </div>
+                </li>
+               </ul>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="elementor-element elementor-element-17b2a549 e-con-full e-flex e-con e-child">
+           <div class="elementor-element elementor-element-52070a6e e-con-full e-flex e-con e-child">
+            <div class="elementor-element elementor-element-43fa9315 elementor-widget elementor-widget-text-editor">
+             <div class="elementor-widget-container">
+              © 2025
+              <a href="https://betterretain.com">
+               BetterRetain
+              </a>
+              . All Rights Reserved.
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

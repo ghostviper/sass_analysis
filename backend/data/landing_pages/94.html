@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chronoid | Automatic Time Tracking & Productivity for macOS</title>
+</head>
+<body>
+  <body>
+   <main class="flex flex-1 flex-col" id="nd-home-layout">
+    <header class="fixed w-full top-0 z-50 backdrop-blur-lg bg-gray-900/50">
+     <nav class="flex items-center justify-between p-6 md:px-8">
+      <div class="flex md:flex-1">
+       <a class="-m-1.5 p-1.5 flex items-center gap-2" href="/">
+        <span class="sr-only">
+         Chronoid
+        </span>
+        <img alt="Chronoid app icon - time tracking application logo" class="h-8 w-auto" height="32" src="data:image/webp;base64,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" width="32"/>
+        <span class="text-white font-bold">
+         Chronoid
+        </span>
+       </a>
+      </div>
+      <div class="flex md:hidden">
+       <button class="gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive hover:text-accent-foreground dark:hover:bg-accent/50 size-9 -m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400 hover:bg-transparent" type="button">
+        <span class="sr-only">
+         Open main menu
+        </span>
+       </button>
+      </div>
+      <div class="hidden md:flex md:gap-x-12">
+       <a class="text-sm/6 font-semibold text-white" href="/#features">
+        Features
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="/#testimonials">
+        Testimonials
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="/pricing">
+        Pricing
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="/#faq">
+        FAQ
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="/blog">
+        Blog
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="https://chronoid.canny.io/changelog" target="_blank">
+        Changelog
+       </a>
+       <a class="text-sm/6 font-semibold text-white" href="https://buy.chronoid.app/affiliates" target="_blank">
+        Affiliates
+       </a>
+      </div>
+      <div class="hidden md:flex md:flex-1 md:justify-end">
+       <a class="justify-center whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 shadow-lg inline-flex items-center gap-2 rounded-full text-shadow-2xs text-white bg-amber-700 p-2 px-6 font-semibold transition-all hover:bg-amber-600" href="https://vustudio.lemonsqueezy.com/buy/46fcae38-9f8c-45f2-88ce-742d856a704d" rel="noopener noreferrer" target="_blank">
+        Buy now
+        <span>
+         →
+        </span>
+       </a>
+      </div>
+     </nav>
+    </header>
+    <div class="relative isolate overflow-hidden bg-gray-900">
+     <div class="relative isolate pt-32">
+      <div class="py-24 sm:py-32 lg:pb-40">
+       <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-3xl text-center">
+         <h1 class="text-3xl font-semibold tracking-tight text-balance text-white sm:text-5xl lg:text-7xl">
+          Tracks your time, Boost your
+          <span class="text-indigo-500">
+           productivity
+          </span>
+         </h1>
+         <p class="mt-8 text-base font-medium text-pretty text-gray-400 sm:text-lg lg:text-xl/8">
+          AI-powered automatic categorization. Built-in focus tools. Your data stays local.
+         </p>
+         <div class="mt-10 hidden sm:flex items-center justify-center gap-x-6">
+          <a class="flex rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500" href="https://download.chronoid.app/Chronoid-latest.dmg" rel="noopener noreferrer" target="_blank">
+           Download Free Trial
+          </a>
+          <a class="text-sm/6 font-semibold text-white" href="https://discord.gg/KMgcfe3wes" rel="noopener noreferrer" target="_blank">
+           Join our Discord
+           <span>
+            →
+           </span>
+          </a>
+         </div>
+         <div class="mt-10 sm:hidden">
+          <form class="w-full max-w-sm mx-auto rounded-2xl bg-gray-800 p-4 shadow-xl">
+           <div class="space-y-3">
+            <input class="w-full h-12 px-4 text-base rounded-lg bg-white text-gray-900 placeholder:text-gray-500 border-0 focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50" placeholder="Email address" type="email" value=""/>
+            <button class="w-full h-12 flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="submit">
+             <span>
+              Send download link
+             </span>
+            </button>
+           </div>
+          </form>
+          <div class="mt-4 text-center">
+           <a class="text-sm/6 font-semibold text-white" href="https://discord.gg/KMgcfe3wes" rel="noopener noreferrer" target="_blank">
+            Join our Discord
+            <span>
+             →
+            </span>
+           </a>
+          </div>
+         </div>
+        </div>
+        <video class="mt-16 rounded-2xl xl:rounded-4xl overflow-hidden bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24" height="1442" width="2432">
+         <source src="/videos/output-web.mp4" type="video/mp4"/>
+        </video>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="features">
+     <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-20 sm:px-10 sm:py-24 lg:py-24 xl:px-24">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5 lg:items-center lg:gap-y-0">
+       <div class="lg:row-start-2 lg:max-w-md col-span-2">
+        <h2 class="text-2xl font-semibold tracking-tight text-balance text-white sm:text-3xl lg:text-4xl">
+         Automatic tracking that just works
+        </h2>
+        <p class="mt-6 text-lg/8 text-gray-300">
+         Set it and forget it. Chronoid automatically tracks what you're working on without getting in your way. No timers to start or stop.
+        </p>
+       </div>
+       <img alt="Product screenshot" class="relative -z-20 max-w-xl min-w-full xl:rounded-3xl shadow-xl lg:row-span-5 lg:w-5xl lg:max-w-none" height="614" src="/assets/track-data-CcAH4zwV.png" width="1024"/>
+       <div class="max-w-xl col-span-2 lg:row-start-3 lg:mt-10 lg:max-w-md lg:border-t lg:border-white/10 lg:pt-10">
+        <dl class="max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Tracks
+          </dt>
+          <dd class="inline">
+           apps, websites, and documents
+          </dd>
+         </div>
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Detects
+          </dt>
+          <dd class="inline">
+           when you're idle or away
+          </dd>
+         </div>
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Zero
+          </dt>
+          <dd class="inline">
+           setup required
+          </dd>
+         </div>
+        </dl>
+       </div>
+      </div>
+     </div>
+     <div class="overflow-hidden relative isolate bg-gray-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-8xl px-6 lg:px-8">
+       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <div class="lg:ml-auto col-span-2 lg:pt-4 lg:pl-4">
+         <div class="lg:max-w-lg">
+          <p class="mt-2 text-2xl font-semibold tracking-tight text-pretty text-white sm:text-3xl lg:text-5xl">
+           Chat with your data
+          </p>
+          <p class="mt-6 text-lg/8 text-gray-300">
+           Chat directly with your activity data to uncover patterns, find time drains, and get personalized productivity insights. Ask questions like "What distracted me most this week?" or "When am I most productive?"
+          </p>
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-300">
+             Ask
+            </dt>
+            <dd class="inline">
+             any questions
+            </dd>
+           </div>
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-300">
+             Support.
+            </dt>
+            <dd class="inline">
+             local or cloud providers
+            </dd>
+           </div>
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-white">
+             Understand
+            </dt>
+            <dd class="inline">
+             your work patterns
+            </dd>
+           </div>
+          </dl>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="relative isolate overflow-hidden bg-gray-900 px-6 py-20 sm:px-10 sm:py-24 lg:py-24 xl:px-24">
+      <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-4 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5 lg:items-center lg:gap-y-0">
+       <div class="lg:row-start-2 lg:max-w-md col-span-2">
+        <h2 class="text-2xl font-semibold tracking-tight text-balance text-white sm:text-3xl lg:text-4xl">
+         Beautiful charts and insights
+        </h2>
+        <p class="mt-6 text-lg/8 text-gray-300">
+         See where your time actually goes with clear, interactive charts. Spot productivity patterns and focus trends without overwhelming complexity.
+        </p>
+       </div>
+       <img alt="Product screenshot" class="relative -z-20 sm:max-w-3xl min-w-full xl:rounded-3xl shadow-xl lg:row-span-5" height="640" src="/assets/stats-view-BtoSGxRW.png" width="1024"/>
+       <div class="max-w-xl col-span-2 lg:row-start-3 lg:mt-10 lg:max-w-md lg:border-t lg:border-white/10 lg:pt-10">
+        <dl class="max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Know
+          </dt>
+          <dd class="inline">
+           your most productive days, hours
+          </dd>
+         </div>
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Understand
+          </dt>
+          <dd class="inline">
+           your productivity throughout the day
+          </dd>
+         </div>
+         <div class="relative">
+          <dt class="ml-9 inline-block font-semibold text-white">
+           Top
+          </dt>
+          <dd class="inline">
+           apps and projects
+          </dd>
+         </div>
+        </dl>
+       </div>
+      </div>
+     </div>
+     <div class="overflow-hidden relative isolate bg-gray-900 py-24 sm:py-32">
+      <div class="mx-auto max-w-8xl px-6 lg:px-8">
+       <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-5">
+        <div class="lg:ml-auto col-span-2 lg:pt-4 lg:pl-4">
+         <div class="lg:max-w-lg">
+          <p class="mt-2 text-2xl font-semibold tracking-tight text-pretty text-white sm:text-3xl lg:text-5xl">
+           Focus tools built right in
+          </p>
+          <p class="mt-6 text-lg/8 text-gray-300">
+           Block distracting websites when you need to focus. Set schedules or block manually. No need for separate apps - it's all integrated.
+          </p>
+          <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-300 lg:max-w-none">
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-300">
+             Block
+            </dt>
+            <dd class="inline">
+             websites on demand
+            </dd>
+           </div>
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-gray-300">
+             Scheduled
+            </dt>
+            <dd class="inline">
+             focus sessions
+            </dd>
+           </div>
+           <div class="relative pl-9">
+            <dt class="inline font-semibold text-white">
+             Pomodoro
+            </dt>
+            <dd class="inline">
+             technique to maximize focus
+            </dd>
+           </div>
+          </dl>
+         </div>
+        </div>
+        <div class="col-span-3 flex items-start justify-end lg:order-first">
+         <div class="relative w-full max-w-none group perspective-[1200px] transform-3d">
+          <img alt="Chronoid Pomodoro timer interface showing focus session countdown" class="absolute inset-0 w-full h-full rounded-2xl 2xl:rounded-3xl transition-all duration-700 ease-out z-0 -translate-x-5 translate-y-5 -rotate-3 [box-shadow:0_25px_50px_-12px_rgba(99,102,241,0.3),0_20px_40px_-20px_rgba(0,0,0,0.6)] group-hover:z-20 group-hover:translate-x-[-10px] group-hover:translate-y-[10px] group-hover:rotate-[-2deg] group-hover:shadow-[0_40px_100px_-20px_rgba(99,102,241,0.5),0_30px_60px_-30px_rgba(0,0,0,0.8)]" height="640" src="/assets/pomodoro-BbUkTPqn.png" width="1024"/>
+          <img alt="Chronoid website blocker settings panel for focus management" class="relative w-full rounded-2xl 2xl:rounded-3xl transition-all duration-700 ease-out z-10 [box-shadow:0_30px_60px_-15px_rgba(99,102,241,0.4),0_25px_50px_-25px_rgba(0,0,0,0.7)] group-hover:z-0 group-hover:translate-x-[60px] group-hover:translate-y-[-60px] group-hover:rotate-[10deg] group-hover:scale-90 group-hover:opacity-95 group-hover:shadow-[0_20px_40px_-15px_rgba(99,102,241,0.3)]" height="640" src="/assets/web-blocker-CYOJK6si.png" width="1024"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="relative isolate py-32 bg-gray-900" id="testimonials">
+     <div class="relative">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+       <div class="mx-auto max-w-2xl sm:text-center">
+        <h2 class="text-base/7 font-semibold text-white">
+         Testimonials
+        </h2>
+        <p class="mt-2 text-2xl font-semibold tracking-tight text-pretty text-white sm:text-3xl lg:text-5xl sm:text-balance">
+         Early customers love it
+        </p>
+       </div>
+       <div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 text-sm/6 text-gray-900 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
+        <figure class="sm:col-span-2 rounded-2xl bg-gray-200 sm:shadow-lg sm:ring-1 sm:ring-gray-900/5 xl:col-start-2 xl:row-end-1">
+         <blockquote class="p-12 text-xl/8 font-semibold tracking-tight text-gray-900">
+          <p>
+           “Chronoid has helped me work better by automatically showing where my time goes, so I can quickly see which tasks are productive and which are not. This has made it much easier to cut down on distractions and focus on what matters, saving me time and helping me stay on track. ”
+          </p>
+         </blockquote>
+         <figcaption class="flex items-center gap-x-4 border-t border-gray-900/10 px-6 py-4">
+          <img alt="Denis Nguyen profile photo" class="size-10 flex-none rounded-full bg-gray-50" height="40" src="/images/ronni-cantadore.jpg" width="40"/>
+          <div class="flex-auto">
+           <div class="font-semibold">
+            Denis Nguyen
+           </div>
+           <div class="text-gray-600">
+            @blot
+           </div>
+          </div>
+         </figcaption>
+        </figure>
+        <div class="space-y-8 xl:contents xl:space-y-0">
+         <div class="space-y-8 xl:row-span-2">
+          <figure class="rounded-2xl bg-gray-200 p-6 shadow-lg ring-1 ring-gray-900/5">
+           <blockquote class="text-gray-900">
+            <p>
+             “Chronoid is amazing! It's a great way to see how I am using my time with very little effort on my part. The Pomodoro Timer and Web Blocker also keep me productive all day.”
+            </p>
+           </blockquote>
+           <figcaption class="mt-6 flex items-center gap-x-4">
+            <img alt="WILLIAM avatar" class="size-10 rounded-full bg-gray-50" height="40" src="/images/will-avatar.jpeg" width="40"/>
+            <div>
+             <div class="font-semibold">
+              William Grant
+             </div>
+             <div class="text-gray-600">
+              @yougotwill
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+          <figure class="rounded-2xl bg-gray-200 p-6 shadow-lg ring-1 ring-gray-900/5">
+           <blockquote class="text-gray-900">
+            <p>
+             “It is very useful application that shows you how much time you spend on certain applications during the day. It keeps the track of time spent on websites, applications, work on your computer,... So very useful if you need that kind on information. Probably very useful for parents if they want to keep track of what their kids are doing on computer :)”
+            </p>
+           </blockquote>
+           <figcaption class="mt-6 flex items-center gap-x-4">
+            <img alt="Sandi K profile photo" class="size-10 rounded-full bg-gray-50" height="40" src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80" width="40"/>
+            <div>
+             <div class="font-semibold">
+              Sandi K
+             </div>
+             <div class="text-gray-600">
+              @sandiK
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+         </div>
+         <div class="space-y-8 xl:row-start-1">
+          <figure class="rounded-2xl bg-gray-200 p-6 shadow-lg ring-1 ring-gray-900/5">
+           <blockquote class="text-gray-900">
+            <p>
+             “I always struggled with managing study sessions. Chronoid didn’t just track time — it gave me AI-powered reports that helped me structure my day more effectively, reducing burnout and increasing consistency.”
+            </p>
+           </blockquote>
+           <figcaption class="mt-6 flex items-center gap-x-4">
+            <img alt="MOHAMMED SADIK avatar" class="size-10 rounded-full bg-gray-50" height="40" src="/images/sadik-avatar.jpg" width="40"/>
+            <div>
+             <div class="font-semibold">
+              MOHAMMED SADIK
+             </div>
+             <div class="text-gray-600">
+              @SadikBuilds
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+         </div>
+        </div>
+        <div class="space-y-8 xl:contents xl:space-y-0">
+         <div class="space-y-8 xl:row-start-1">
+          <figure class="rounded-2xl bg-gray-200 p-6 shadow-lg ring-1 ring-gray-900/5">
+           <blockquote class="text-gray-900">
+            <p>
+             “As a freelancer, Chronoid is my goto software to track all my work, automatically without timer.”
+            </p>
+           </blockquote>
+           <figcaption class="mt-6 flex items-center gap-x-4">
+            <img alt="Vu Nguyen, creator of Chronoid" class="size-10 rounded-full bg-gray-50" height="40" src="/images/vu.jpeg" width="40"/>
+            <div>
+             <div class="font-semibold">
+              Vu Nguyen
+             </div>
+             <div class="text-gray-600">
+              @vunguyendev
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+         </div>
+         <div class="space-y-8 xl:row-span-2">
+          <figure class="rounded-2xl bg-gray-200 p-6 shadow-lg ring-1 ring-gray-900/5">
+           <blockquote class="text-gray-900">
+            <p>
+             “With abandonware an inevitable consequence of continuous computer development, Chronoid came along at exactly the right time to replace an older time monitor that is no longer updated. Chronoid does exactly what I need: keeps track of every front-most window without any input from me and then adds up all windows I select to give me exactly the total I spent on a project for a client, during any time period. No subscription, no remote data collection, not interaction at all until I’m ready. Just what I want. And the author has been very responsive to suggestions for improvements and bug fixes. I'm very happy to use Chronoid. ”
+            </p>
+           </blockquote>
+           <figcaption class="mt-6 flex items-center gap-x-4">
+            <img alt="Matthew Stevens avatar" class="size-10 rounded-full bg-gray-50" height="40" src="/images/MLS-avatar.jpg" width="40"/>
+            <div>
+             <div class="font-semibold">
+              Matthew Stevens
+             </div>
+             <div class="text-gray-600">
+              @matthewstevens
+             </div>
+            </div>
+           </figcaption>
+          </figure>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="mx-auto py-24 max-w-7xl px-6 sm:py-56 lg:px-8 relative" id="faq">
+     <div class="mx-auto max-w-4xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-white sm:text-3xl lg:text-5xl">
+       Frequently asked questions
+      </h2>
+      <div class="mt-16">
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«R6id36»" type="button">
+          How does the AI chat work with privacy?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«Raid36»" type="button">
+          What exactly does Chronoid track?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«Reid36»" type="button">
+          Do I need to start/stop timers manually?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«Riid36»" type="button">
+          Can I try it before buying?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«Rmid36»" type="button">
+          What happens after I buy?
+         </button>
+        </h3>
+       </div>
+       <div class="border-b last:border-b-0 border-gray-900/10 dark:border-gray-100/10">
+        <h3 class="flex">
+         <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-white hover:text-gray-300 text-base/7 font-semibold py-6" id="radix-«Rqid36»" type="button">
+          How does automatic categorization work?
+         </button>
+        </h3>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="bg-indigo-200">
+     <div class="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8">
+      <h2 class="max-w-2xl text-2xl font-semibold tracking-tight text-gray-900 sm:text-3xl lg:text-5xl">
+       Start your free 14-day trial
+      </h2>
+      <div class="mt-10 hidden sm:flex flex-col items-center gap-x-6 lg:mt-0 lg:shrink-0">
+       <a class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" href="https://download.chronoid.app/Chronoid-latest.dmg" rel="noopener noreferrer" target="_blank">
+        Download Now
+       </a>
+       <p class="mt-2 text-gray-600 text-sm">
+        Intel &amp; Apple Silicon · macOS 12+
+       </p>
+      </div>
+      <div class="mt-10 sm:hidden">
+       <form class="w-full max-w-sm mx-auto rounded-2xl bg-gray-800 p-4 shadow-xl">
+        <div class="space-y-3">
+         <input class="w-full h-12 px-4 text-base rounded-lg bg-white text-gray-900 placeholder:text-gray-500 border-0 focus:outline-none focus:ring-2 focus:ring-orange-500 disabled:opacity-50" placeholder="Email address" type="email" value=""/>
+         <button class="w-full h-12 flex items-center justify-center gap-2 rounded-lg bg-orange-500 hover:bg-orange-600 text-white font-semibold text-base transition-colors disabled:opacity-50 disabled:cursor-not-allowed" type="submit">
+          <span>
+           Send download link
+          </span>
+         </button>
+        </div>
+       </form>
+      </div>
+     </div>
+    </div>
+    <footer class="border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+     <div class="mx-auto max-w-7xl px-6 py-12 lg:px-8">
+      <div class="grid grid-cols-2 gap-8 md:grid-cols-4 lg:gap-12">
+       <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+         Comparisons
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/chronoid-vs-rescuetime">
+           Chronoid vs RescueTime
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/chronoid-vs-timing">
+           Chronoid vs Timing
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/chronoid-vs-toggl">
+           Chronoid vs Toggl
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/rescuetime-alternatives-mac">
+           RescueTime Alternatives
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/timing-alternatives-mac">
+           Timing Alternatives
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/best-automatic-time-tracking-mac">
+           Best Automatic Trackers
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+         Support
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="https://chronoid.canny.io/feature-requests" rel="noopener noreferrer" target="_blank">
+           Request new feature
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/docs">
+           Documentation
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+         Legal
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/privacy">
+           Privacy policy
+          </a>
+         </li>
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="/terms">
+           Terms of service
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-4">
+         Connect
+        </h3>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-sm text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white" href="https://x.com/vunguyendev" rel="noopener noreferrer" target="_blank">
+           Twitter
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="mt-12 border-t border-gray-200 dark:border-gray-800 pt-8">
+       <p class="text-sm text-center text-gray-600 dark:text-gray-400">
+        © 2025 Chronoid. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </main>
+  </body>
+
+</body>
+</html>

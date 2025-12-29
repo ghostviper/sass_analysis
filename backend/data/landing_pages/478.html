@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Production-ready SaaS UI for Next.js | UIforSaaS</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen relative bg-background text-foreground">
+    <header class="relative z-50 border-b border-transparent bg-transparent">
+     <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a class="flex items-center gap-2 font-semibold text-foreground" href="/">
+       <img alt="UIforSaaS" class="h-6 w-6 dark:invert" height="24" src="/sunrise.svg" width="24"/>
+       <span class="hidden sm:inline tracking-tight">
+        UIforSaaS
+       </span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+       <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="#components">
+        Components
+       </a>
+       <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs/templates">
+        Templates
+       </a>
+       <a class="text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs">
+        Docs
+       </a>
+      </nav>
+      <div class="flex items-center gap-2">
+       <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-foreground text-background hover:bg-foreground/90 shadow-[0_6px_30px_-12px_rgba(0,0,0,0.45)] h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5" href="/docs">
+        Get Started
+       </a>
+      </div>
+     </div>
+    </header>
+    <main class="relative z-10 pt-16">
+     <section class="relative overflow-hidden">
+      <div class="mx-auto max-w-6xl px-4 pt-10 pb-12 sm:px-6 sm:pt-14 sm:pb-16 md:pt-18 md:pb-20 lg:pt-20 lg:pb-24">
+       <div class="mx-auto max-w-4xl text-center">
+        <h1 class="text-3xl font-semibold tracking-tight text-foreground leading-[1.05] sm:text-5xl sm:leading-tight md:text-6xl lg:text-7xl [text-wrap:balance]">
+         Stop pretending
+         <span class="bg-gradient-to-r from-primary via-[#7de4ff] to-primary bg-clip-text text-transparent">
+          you enjoy Figma.
+         </span>
+        </h1>
+        <p class="mx-auto mt-4 max-w-2xl text-base text-muted-foreground sm:mt-6 sm:text-lg md:text-xl [text-wrap:balance]">
+         Billing, dashboards, launchpad, and data grid templates for React + Tailwind. Looks like Dribbble, lives in your editor.
+        </p>
+        <div class="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-foreground text-background hover:bg-foreground/90 shadow-[0_6px_30px_-12px_rgba(0,0,0,0.45)] rounded-md has-[&gt;svg]:px-4 h-12 w-full max-w-[420px] px-6 text-base sm:w-auto sm:px-8" href="/docs">
+          Browse free blocks
+         </a>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border border-border/70 bg-card/70 text-foreground shadow-xs hover:bg-card/90 hover:text-foreground rounded-md has-[&gt;svg]:px-4 h-12 w-full max-w-[420px] px-6 text-base sm:w-auto sm:px-8">
+          Preview components
+         </button>
+        </div>
+        <div class="mt-10 grid grid-cols-1 justify-items-center gap-x-8 gap-y-3 text-sm text-muted-foreground sm:mt-12 sm:grid-cols-2 sm:justify-items-start lg:flex lg:flex-wrap lg:justify-center lg:gap-y-4">
+         <div class="flex items-center justify-center sm:justify-start gap-2">
+          <span>
+           TypeScript-ready
+          </span>
+         </div>
+         <div class="flex items-center justify-center sm:justify-start gap-2">
+          <span>
+           Dark mode built-in
+          </span>
+         </div>
+         <div class="flex items-center justify-center sm:justify-start gap-2">
+          <span>
+           Accessible components
+          </span>
+         </div>
+         <div class="flex items-center justify-center sm:justify-start gap-2">
+          <span>
+           One-time purchase
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="mt-12 sm:mt-14 md:mt-16">
+        <div class="relative mx-auto max-w-5xl px-1 sm:px-4">
+         <div class="relative rounded-2xl border border-border/60 bg-[radial-gradient(circle_at_30%_20%,rgba(148,121,255,0.18),transparent_35%),radial-gradient(circle_at_70%_10%,rgba(60,215,224,0.16),transparent_32%),rgba(12,12,20,0.9)] shadow-[0_30px_120px_-50px_rgba(0,0,0,0.9)] overflow-hidden">
+          <div class="relative aspect-video">
+           <video class="absolute inset-0 h-full w-full object-cover">
+            <source src="/Coding.mp4" type="video/mp4"/>
+           </video>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-12 md:py-16">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+       <p class="text-base font-medium text-primary mb-3">
+        Who it's built for
+       </p>
+       <ul class="space-y-2 text-base text-muted-foreground">
+        <li>
+         • SaaS founders who want a clean UI without hiring designers
+        </li>
+        <li>
+         • Indie hackers tired of rebuilding the same components
+        </li>
+        <li>
+         • Developers using Next.js + shadcn/ui who want better defaults
+        </li>
+       </ul>
+      </div>
+     </section>
+     <div>
+      <section class="py-24 md:py-32" id="components">
+       <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-16">
+         <p class="text-sm font-medium text-primary mb-3">
+          What you get
+         </p>
+         <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+          The essentials every SaaS needs
+         </h2>
+         <p class="text-muted-foreground max-w-xl mx-auto">
+          Pricing tables. Team invites. Usage meters. Data tables.
+          <br class="hidden sm:block"/>
+          The building blocks you keep rebuilding. Now you don’t have to.
+         </p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-4">
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300 md:row-span-2" href="/docs/components/billing/pricing-table">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              Billing
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              7
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Clear pricing tables, simple checkout flows, usage meters, and invoices that make sense.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300" href="/docs/components/user-management/team-invitation">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              User Management
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              6
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Teams, roles, sessions, API keys, and org switching — built the right way.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300" href="/docs/components/onboarding/setup-wizard">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              Onboarding
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              6
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Setup wizards, checklists, product tours, and empty states that guide users, not confuse them.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300" href="/docs/components/data/data-table">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              Data &amp; Analytics
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              6
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Clean tables, simple charts, notifications, and activity feeds — no clutter, just clarity.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300" href="/docs/components/ai-assist/command-palette">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              AI-Assist
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              6
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Command palette, prompt inputs, streaming responses, chat, and content generation that feel native.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+         <a class="group relative p-6 md:p-8 rounded-2xl border border-border/70 bg-[#0f0f18]/80 backdrop-blur-sm hover:bg-primary/8 hover:border-primary/60 hover:shadow-[0_25px_80px_-50px_rgba(245,78,0,0.55)] transition-all duration-300" href="/docs/templates">
+          <div class="relative flex flex-col h-full">
+           <div class="flex-1">
+            <div class="flex items-center gap-2 mb-2">
+             <h3 class="text-lg font-semibold text-foreground">
+              Templates
+             </h3>
+             <span class="text-xs text-muted-foreground bg-[#161624] px-2 py-0.5 rounded-full border border-border/60">
+              5
+             </span>
+            </div>
+            <p class="text-sm text-muted-foreground leading-relaxed">
+             Full-page layouts for dashboards, billing, launch planning, and the new TanStack data grid.
+            </p>
+           </div>
+           <div class="flex items-center gap-1.5 mt-6 text-sm text-muted-foreground group-hover:text-primary transition-colors">
+            View components
+           </div>
+          </div>
+         </a>
+        </div>
+        <div class="text-center mt-12">
+         <a class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors" href="/docs/components/billing/pricing-table">
+          Open component docs
+         </a>
+        </div>
+       </div>
+      </section>
+     </div>
+     <section class="py-24 md:py-32 border-t border-border/40">
+      <div class="max-w-6xl mx-auto px-4">
+       <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+        <div>
+         <p class="text-sm font-medium text-primary mb-3">
+          Why I built this
+         </p>
+         <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+          Because ChatGPT components look like ChatGPT components
+         </h2>
+         <p class="text-muted-foreground leading-relaxed">
+          Your users can tell when a UI feels generic. I've shipped 3 SaaS products. These components are the billing pages, dashboards, and onboarding flows I use in real apps — cleaned up and ready to drop into your Next.js project.
+         </p>
+        </div>
+        <div class="grid gap-4">
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           Copy, paste, and ship in minutes
+          </span>
+         </div>
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           TypeScript-first so it fits real SaaS codebases
+          </span>
+         </div>
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           Dark mode designed, not just inverted colors
+          </span>
+         </div>
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           Works out of the box with shadcn/ui
+          </span>
+         </div>
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           Accessible patterns so more people can use your app
+          </span>
+         </div>
+         <div class="flex items-center gap-3 p-4 rounded-xl border border-border/50 bg-card/30">
+          <span class="text-sm text-foreground">
+           Responsive layouts that work on desktop and mobile
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 border-t border-border/40">
+      <div class="max-w-4xl mx-auto px-4">
+       <div class="text-center mb-12">
+        <p class="text-sm font-medium text-primary mb-3">
+         How it works
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4" id="how-it-works-heading">
+         Go from purchase to production-ready in 3 steps
+        </h2>
+        <p class="text-muted-foreground max-w-xl mx-auto">
+         No new tools. No learning curve. Just components that fit the stack you already use.
+        </p>
+       </div>
+       <div class="grid gap-6 md:gap-8">
+        <div class="flex gap-4">
+         <div>
+          <p class="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+           Step 1
+          </p>
+          <h3 class="font-medium text-foreground mb-1">
+           Add the components to your Next.js project
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Install shadcn/ui (if you haven’t already), drop the files in, and use them like any other React component.
+          </p>
+         </div>
+        </div>
+        <div class="flex gap-4">
+         <div>
+          <p class="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+           Step 2
+          </p>
+          <h3 class="font-medium text-foreground mb-1">
+           Update the text and styling
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Replace the copy, tweak the colors, and match your brand. Everything is simple JSX and Tailwind.
+          </p>
+         </div>
+        </div>
+        <div class="flex gap-4">
+         <div>
+          <p class="text-xs uppercase tracking-wide text-muted-foreground mb-1">
+           Step 3
+          </p>
+          <h3 class="font-medium text-foreground mb-1">
+           Ship a polished SaaS UI fast
+          </h3>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Skip the slow parts. Launch billing pages, onboarding flows, and dashboards in a fraction of the time.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-32 border-t border-border/40">
+      <div class="max-w-3xl mx-auto px-4">
+       <div class="text-center mb-16">
+        <p class="text-sm font-medium text-primary mb-3">
+         FAQ
+        </p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+         Common questions
+        </h2>
+       </div>
+       <div class="space-y-4">
+        <div>
+         <div class="border border-border/50 rounded-xl overflow-hidden">
+          <button class="flex w-full items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors" type="button">
+           <span class="font-medium text-foreground">
+            What do I actually get?
+           </span>
+          </button>
+         </div>
+        </div>
+        <div>
+         <div class="border border-border/50 rounded-xl overflow-hidden">
+          <button class="flex w-full items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors" type="button">
+           <span class="font-medium text-foreground">
+            Do I need shadcn/ui?
+           </span>
+          </button>
+         </div>
+        </div>
+        <div>
+         <div class="border border-border/50 rounded-xl overflow-hidden">
+          <button class="flex w-full items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors" type="button">
+           <span class="font-medium text-foreground">
+            Can I use this for client projects?
+           </span>
+          </button>
+         </div>
+        </div>
+        <div>
+         <div class="border border-border/50 rounded-xl overflow-hidden">
+          <button class="flex w-full items-center justify-between p-5 text-left hover:bg-muted/30 transition-colors" type="button">
+           <span class="font-medium text-foreground">
+            Why is it priced this low?
+           </span>
+          </button>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="relative z-10 py-10 border-t border-border/60 bg-gradient-to-b from-transparent via-[#14120b] to-[#0f0c06]">
+     <div class="max-w-6xl mx-auto px-4">
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+       <div class="flex items-center gap-2 text-muted-foreground">
+        <img alt="UIforSaaS" class="h-5 w-5 dark:invert opacity-60" height="20" src="/sunrise.svg" width="20"/>
+        <span class="text-sm">
+         UIforSaaS
+        </span>
+       </div>
+       <nav class="flex items-center gap-6 text-sm text-muted-foreground">
+        <a class="hover:text-foreground transition-colors" href="#components">
+         Components
+        </a>
+        <a class="hover:text-foreground transition-colors" href="/docs">
+         Docs
+        </a>
+       </nav>
+       <p class="text-sm text-muted-foreground">
+        by
+        <a class="hover:text-foreground transition-colors" href="https://twitter.com/florin_dev" rel="noopener noreferrer" target="_blank">
+         @florin_dev
+        </a>
+       </p>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <title>
+    Production-ready SaaS UI for Next.js | UIforSaaS
+   </title>
+  </body>
+
+</body>
+</html>

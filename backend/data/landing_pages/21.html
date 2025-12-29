@@ -1,0 +1,2762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AIOSCOP - AI SEO Optimization Platform | Track & Optimize for ChatGPT, Claude, Gemini</title>
+</head>
+<body>
+  <body>
+   <main class="min-h-screen bg-background antialiased">
+    <div class="sticky top-0 z-50 w-full flex items-center justify-center py-3 sm:py-4 px-2 sm:px-4 bg-transparent backdrop-blur-none border-b border-transparent">
+     <nav class="w-full max-w-7xl bg-white/90 backdrop-blur-xs rounded-[189px] shadow-xs px-3 sm:px-6 lg:px-8 py-3 sm:py-4 flex items-center justify-between gap-2 sm:gap-4 lg:gap-8">
+      <a class="flex items-center shrink-0 gap-2 min-w-0" href="/">
+       <img alt="AIOSCOP Logo" class="h-5 sm:h-6 w-auto" src="/AIOSCOP.svg"/>
+      </a>
+      <div class="hidden md:flex items-center gap-6 flex-1 justify-center">
+       <a href="/">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         Main
+        </button>
+       </a>
+       <a href="/agents">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         Agents
+        </button>
+       </a>
+       <a href="/ecommerce">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         E-Commerce
+        </button>
+       </a>
+       <a href="/agencies">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         Agencies
+        </button>
+       </a>
+       <a href="/pricing">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         Pricing
+        </button>
+       </a>
+       <a href="/blog">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-9 rounded-md px-3 hover:bg-transparent">
+         Articles
+        </button>
+       </a>
+      </div>
+      <div class="flex items-center gap-1.5 sm:gap-2 lg:gap-3 shrink-0">
+       <a class="items-center justify-center gap-2 font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md text-xs sm:text-sm px-2 sm:px-3 h-8 sm:h-9 whitespace-nowrap hidden" href="/login">
+        Sign In
+       </a>
+       <a class="inline-flex items-center justify-center gap-2 ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 rounded-full bg-blue-600 text-white hover:bg-blue-700 border border-blue-700 shadow-xs text-xs sm:text-sm px-2 sm:px-4 h-8 sm:h-9 whitespace-nowrap font-medium" href="/login">
+        Getting Started
+       </a>
+      </div>
+     </nav>
+    </div>
+    <section class="relative isolate overflow-hidden bg-background pt-14 lg:pt-20 pb-16 sm:pb-24">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center text-center max-w-5xl mx-auto mb-16 sm:mb-24">
+       <div class="inline-flex items-center gap-2 rounded-full border bg-background/60 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-md mb-8 hover:bg-muted/50 transition-colors cursor-default shadow-xs group">
+        <span class="font-medium">
+         New: Generative Engine Optimization 2.0
+        </span>
+       </div>
+       <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[0.95]">
+        Rank #1 in
+        <br class="hidden sm:block"/>
+        <span class="text-transparent bg-clip-text bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600 animate-gradient-x pb-2">
+         Artificial Intelligence
+        </span>
+       </h1>
+       <p class="text-base sm:text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
+        Stop fighting for blue links.
+        <span class="font-semibold text-foreground">
+         AIOSCOP
+        </span>
+        helps you track, analyze, and optimize your brand's visibility across ChatGPT, Claude, Gemini, and Perplexity.
+       </p>
+       <div class="w-full max-w-md flex flex-col items-center gap-6">
+        <div class="flex flex-col sm:flex-row w-full max-w-lg items-center gap-3 px-0 py-4 mt-0.5 mb-0.5 bg-white/50 backdrop-blur-xs border-0 rounded-[7px] shadow-xs transition-all hover:shadow-md hover:bg-white/80">
+         <div class="relative flex-1 w-full">
+          <input class="flex w-full rounded-md border px-3 py-2 ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-hidden focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 h-12 pl-10 border-gray-200 bg-white focus-visible:ring-1 focus-visible:ring-primary/30 text-base" placeholder="Enter your website URL" type="url" value=""/>
+         </div>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 rounded-md h-12 px-8 w-full sm:w-auto bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20 transition-all hover:scale-[1.02] active:scale-[0.98] font-semibold">
+          Check Now
+         </button>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+         <div class="flex items-center gap-2">
+          <span>
+           No credit card required
+          </span>
+         </div>
+         <div class="flex items-center gap-2">
+          <span>
+           7-day free trial
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="mt-16 w-full max-w-5xl mx-auto px-6">
+        <p class="text-xs font-bold mb-10 uppercase tracking-[0.2em] text-center">
+         Trusted by industry leaders
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 items-center justify-items-center">
+         <a class="group w-full flex justify-center hover:scale-105 transition-transform duration-300" href="https://landing.scoutium.com/" rel="noopener noreferrer" target="_blank">
+          <div class="relative h-8 sm:h-10 w-32 sm:w-40">
+           <img alt="Scoutium" class="object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-all" src="/_next/image?url=%2Flogos%2Fscoutium.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </a>
+         <a class="group w-full flex justify-center hover:scale-105 transition-transform duration-300" href="https://egaranti.com/" rel="noopener noreferrer" target="_blank">
+          <div class="relative h-10 sm:h-12 w-36 sm:w-44">
+           <img alt="eGaranti" class="object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-all" src="/_next/image?url=%2Flogos%2Fegaranti-logo-1.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </a>
+         <a class="group w-full flex justify-center hover:scale-105 transition-transform duration-300" href="https://mediazonehq.com/" rel="noopener noreferrer" target="_blank">
+          <div class="relative h-8 sm:h-10 w-32 sm:w-40">
+           <img alt="Mediazone" class="object-contain opacity-90 group-hover:opacity-100 transition-all" src="/_next/image?url=%2Flogos%2Fmzglogo.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </a>
+         <a class="group w-full flex justify-center hover:scale-105 transition-transform duration-300" href="https://bgts.com/tr/" rel="noopener noreferrer" target="_blank">
+          <div class="relative h-10 sm:h-12 w-24 sm:w-28">
+           <img alt="BGTS" class="object-contain mix-blend-multiply opacity-90 group-hover:opacity-100 transition-all" src="/_next/image?url=%2Flogos%2Fbgts.png&amp;w=3840&amp;q=75"/>
+          </div>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="hidden sm:block relative mx-auto max-w-[90%] sm:max-w-full perspective-1000">
+       <div class="relative rounded-xl sm:rounded-2xl border bg-background shadow-2xl overflow-hidden ring-1 ring-slate-900/5 transform rotate-x-2 transition-transform duration-700 hover:rotate-x-0">
+        <div class="p-1 sm:p-2 bg-muted/20 backdrop-blur-xs">
+         <div class="relative w-full max-w-none mx-auto bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-2xl flex min-h-[800px]">
+          <div class="hidden sm:block absolute top-2 left-1/2 -translate-x-1/2 z-50 bg-slate-900/5 text-slate-500 text-[10px] font-medium px-3 py-1 rounded-full border border-slate-200/60 backdrop-blur-[2px] pointer-events-none select-none">
+           Demo Preview • Not the detailed real dashboard
+          </div>
+          <div class="w-64 bg-white border-r border-slate-200 hidden lg:flex flex-col">
+           <div class="p-6 border-b border-slate-100">
+            <div class="flex items-center gap-2 mb-6">
+             <img alt="AIOSCOP" class="h-6 w-auto" src="/AIOSCOP.svg"/>
+            </div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">
+             Active Domain
+            </div>
+            <div class="flex items-center justify-between px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-300 transition-colors">
+             <div class="flex items-center gap-2 overflow-hidden">
+              <span class="text-sm font-medium text-slate-900 truncate">
+               demowebsite.com
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex-1 overflow-y-auto py-6 px-4 space-y-8">
+            <div>
+             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+              Track
+             </div>
+             <nav class="space-y-1">
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all bg-blue-50 text-blue-700">
+               Dashboard
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Prompts
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Rank Lookup
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Competitor Search
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               GEO Insights
+              </div>
+             </nav>
+            </div>
+            <div>
+             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+              Shopping
+             </div>
+             <nav class="space-y-1">
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Track Products
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Manage Mentions
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Generate Description
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Product Competitors
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Referred Marketplaces
+              </div>
+             </nav>
+            </div>
+            <div>
+             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+              Optimize
+             </div>
+             <nav class="space-y-1">
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Pages
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Content Optimizer
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               JSON-LD Manager
+              </div>
+             </nav>
+            </div>
+            <div>
+             <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3 px-2">
+              Support
+             </div>
+             <nav class="space-y-1">
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Documentation
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Schedule Meeting
+              </div>
+              <div class="group flex items-center px-3 py-2 text-sm font-medium rounded-lg cursor-pointer transition-all text-slate-600 hover:bg-slate-50 hover:text-slate-900">
+               Settings
+              </div>
+             </nav>
+            </div>
+           </div>
+           <div class="p-4 border-t border-slate-200">
+            <div class="flex items-center gap-3 px-2 py-2">
+             <div class="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700 font-bold text-xs">
+              DU
+             </div>
+             <div class="flex-1 overflow-hidden">
+              <div class="text-sm font-medium text-slate-900 truncate">
+               Demo User
+              </div>
+              <div class="inline-flex items-center rounded-full py-0.5 font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-[10px] h-4 px-1.5 bg-green-100 text-green-700 border-0">
+               Admin
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="flex-1 flex flex-col bg-slate-50/50">
+           <div class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-8 sticky top-0 z-10">
+            <h1 class="text-2xl font-bold text-slate-900">
+             Dashboard
+            </h1>
+            <div class="flex items-center gap-3">
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white gap-2">
+              Add Website
+             </button>
+             <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 gap-2">
+              Download
+             </button>
+            </div>
+           </div>
+           <div class="flex-1 overflow-y-auto p-8">
+            <div class="flex overflow-x-auto pb-4 gap-4 lg:grid lg:grid-cols-3 xl:grid-cols-5 lg:overflow-visible lg:pb-0 mb-8 [&amp;::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+             <div class="rounded-lg border text-card-foreground min-w-[200px] lg:min-w-0 border-slate-200 shadow-xs bg-white">
+              <div class="p-4">
+               <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+                 Average AIO Score
+                </div>
+               </div>
+               <div class="text-2xl font-bold text-slate-900 mb-1">
+                45
+               </div>
+               <div class="flex flex-col gap-1">
+                <div class="text-xs font-medium flex items-center gap-1 text-red-600">
+                 50.4%
+                </div>
+                <div class="text-[11px] text-slate-400 leading-tight truncate">
+                 4 total pages
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="rounded-lg border text-card-foreground min-w-[200px] lg:min-w-0 border-slate-200 shadow-xs bg-white">
+              <div class="p-4">
+               <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+                 Optimization Rate
+                </div>
+               </div>
+               <div class="text-2xl font-bold text-slate-900 mb-1">
+                0%
+               </div>
+               <div class="flex flex-col gap-1">
+                <div class="text-[11px] text-slate-400 leading-tight truncate">
+                 0 of 4 pages
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="rounded-lg border text-card-foreground min-w-[200px] lg:min-w-0 border-slate-200 shadow-xs bg-white">
+              <div class="p-4">
+               <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+                 AI Visibility
+                </div>
+               </div>
+               <div class="text-2xl font-bold text-slate-900 mb-1">
+                48%
+               </div>
+               <div class="flex flex-col gap-1">
+                <div class="text-xs font-medium flex items-center gap-1 text-red-600">
+                 50.4%
+                </div>
+                <div class="text-[11px] text-slate-400 leading-tight truncate">
+                 Across all tracked keywords
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="rounded-lg border text-card-foreground min-w-[200px] lg:min-w-0 border-slate-200 shadow-xs bg-white">
+              <div class="p-4">
+               <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+                 Active Keywords
+                </div>
+               </div>
+               <div class="text-2xl font-bold text-slate-900 mb-1">
+                3
+               </div>
+               <div class="flex flex-col gap-1">
+                <div class="text-[11px] text-slate-400 leading-tight truncate">
+                 3 total keywords
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="rounded-lg border text-card-foreground min-w-[200px] lg:min-w-0 border-slate-200 shadow-xs bg-white">
+              <div class="p-4">
+               <div class="flex items-center justify-between mb-2">
+                <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider truncate">
+                 Total Domains
+                </div>
+               </div>
+               <div class="text-2xl font-bold text-slate-900 mb-1">
+                14
+               </div>
+               <div class="flex flex-col gap-1">
+                <div class="text-[11px] text-slate-400 leading-tight truncate">
+                 Websites tracked
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="rounded-lg border text-card-foreground border-slate-200 shadow-xs bg-white mb-8">
+             <div class="border-b border-slate-100">
+              <div class="flex items-center px-6">
+               <button class="py-4 px-4 text-sm font-medium border-b-2 transition-colors border-blue-600 text-blue-600">
+                AI Visibility
+               </button>
+               <button class="py-4 px-4 text-sm font-medium border-b-2 transition-colors border-transparent text-slate-500 hover:text-slate-700">
+                Page Scores
+               </button>
+               <button class="py-4 px-4 text-sm font-medium border-b-2 transition-colors border-transparent text-slate-500 hover:text-slate-700">
+                Domain Performance
+               </button>
+              </div>
+             </div>
+             <div class="p-6">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+               <div class="flex items-center gap-2">
+                <h3 class="text-lg font-bold text-slate-900">
+                 AI Visibility Trend
+                </h3>
+               </div>
+               <div class="flex flex-wrap items-center gap-3">
+                <div class="flex bg-slate-100 p-1 rounded-lg">
+                 <button class="px-3 py-1 text-xs font-medium rounded-md transition-all text-slate-500 hover:text-slate-700">
+                  Hourly
+                 </button>
+                 <button class="px-3 py-1 text-xs font-medium rounded-md transition-all bg-white text-slate-900 shadow-xs">
+                  Daily
+                 </button>
+                 <button class="px-3 py-1 text-xs font-medium rounded-md transition-all text-slate-500 hover:text-slate-700">
+                  Monthly
+                 </button>
+                </div>
+               </div>
+              </div>
+              <div class="flex gap-4 mb-6">
+               <div class="w-48">
+                <div class="flex items-center justify-between px-3 py-2 border border-slate-200 rounded-lg bg-white text-sm text-slate-600">
+                 <div class="flex items-center gap-2">
+                  <span>
+                   All Domains
+                  </span>
+                 </div>
+                </div>
+               </div>
+               <div class="w-48">
+                <div class="flex items-center justify-between px-3 py-2 border border-slate-200 rounded-lg bg-white text-sm text-slate-600">
+                 <div class="flex items-center gap-2">
+                  <span>
+                   All Keywords
+                  </span>
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 mt-6 text-xs text-slate-500">
+               <div class="flex items-center gap-1.5">
+                <span>
+                 ChatGPT
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5">
+                <span>
+                 Deepseek
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5">
+                <span>
+                 Claude
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5">
+                <span>
+                 Gemini
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5">
+                <span>
+                 Grok
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5">
+                <span>
+                 Average
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-8">
+             <div class="rounded-lg border text-card-foreground border-slate-200 shadow-xs bg-white">
+              <div class="space-y-1.5 p-6 flex flex-row items-center justify-between pb-2">
+               <div class="flex items-center gap-2">
+                <h3 class="tracking-tight text-lg font-bold text-slate-900">
+                 Top Performing Keywords
+                </h3>
+               </div>
+               <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 text-xs font-medium text-slate-600 hover:text-slate-900">
+                View All
+               </button>
+              </div>
+              <div class="p-6 pt-4">
+               <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                 <div>
+                  <div class="font-medium text-slate-900">
+                   ai seo tools
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   2.4k Vol • High Diff
+                  </div>
+                 </div>
+                 <div class="text-right">
+                  <div class="font-bold text-slate-900">
+                   87/100
+                  </div>
+                  <div class="text-xs text-green-600">
+                   AIO Score
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center justify-between">
+                 <div>
+                  <div class="font-medium text-slate-900">
+                   generative engine optimization
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   850 Vol • Med Diff
+                  </div>
+                 </div>
+                 <div class="text-right">
+                  <div class="font-bold text-slate-900">
+                   92/100
+                  </div>
+                  <div class="text-xs text-green-600">
+                   AIO Score
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center justify-between">
+                 <div>
+                  <div class="font-medium text-slate-900">
+                   chatgpt ranking
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   1.2k Vol • Med Diff
+                  </div>
+                 </div>
+                 <div class="text-right">
+                  <div class="font-bold text-slate-900">
+                   78/100
+                  </div>
+                  <div class="text-xs text-green-600">
+                   AIO Score
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="rounded-lg border text-card-foreground border-slate-200 shadow-xs bg-white">
+              <div class="space-y-1.5 p-6 flex flex-row items-center justify-between pb-2">
+               <div class="flex items-center gap-2">
+                <h3 class="tracking-tight text-lg font-bold text-slate-900">
+                 Quick Insights &amp; Actions
+                </h3>
+               </div>
+               <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 rounded-md px-3 text-xs font-medium text-slate-600 hover:text-slate-900">
+                View All
+               </button>
+              </div>
+              <div class="p-6 pt-4">
+               <div class="space-y-4">
+                <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                 <div>
+                  <div class="text-sm font-medium text-slate-900">
+                   Missing Schema Markup
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   Product schema missing on pricing page
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                 <div>
+                  <div class="text-sm font-medium text-slate-900">
+                   Content Gap
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   Competitors rank for 'AI trends 2025'
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-start gap-3 p-3 bg-slate-50 rounded-lg border border-slate-100">
+                 <div>
+                  <div class="text-sm font-medium text-slate-900">
+                   Keyword Opportunity
+                  </div>
+                  <div class="text-xs text-slate-500">
+                   'AI marketing' has low competition
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-12 sm:py-16 border-y bg-muted/20">
+     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+       <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-4 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider bg-background">
+        In-Product Demo
+       </div>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+        Watch AIOSCOP in Action
+       </h2>
+       <p class="text-base sm:text-lg text-muted-foreground leading-relaxed">
+        See the interactive dashboard experience from setup to insights in under two minutes.
+       </p>
+      </div>
+      <div class="relative overflow-hidden rounded-2xl border bg-black shadow-2xl ring-1 ring-black/5">
+       <video class="relative w-full h-full aspect-video rounded-2xl">
+        <source src="/video1.mp4" type="video/mp4">
+         Your browser does not support the video tag.
+        </source>
+       </video>
+      </div>
+     </div>
+    </section>
+    <section class="py-12 sm:py-16 border-b">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-xs font-medium text-muted-foreground mb-6 sm:mb-10 uppercase tracking-wider px-4">
+       Optimized for all major AI platforms
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-6 sm:gap-x-8 sm:gap-y-8">
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="ChatGPT" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/chatgpt-6.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         ChatGPT
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Claude" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/claude-logo.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Claude
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Gemini" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/google-bard-1.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Gemini
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="DeepSeek" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/deepseek-2.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         DeepSeek
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Grok" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/grok-1.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Grok
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Mistral AI" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/mistral-color.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Mistral AI
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Gemma" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/gemma-color.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Gemma
+        </span>
+       </div>
+       <div class="flex items-center gap-2 sm:gap-3 px-3 sm:px-4 py-2 sm:py-3 group">
+        <img alt="Kimi AI" class="shrink-0 opacity-70 group-hover:opacity-100 transition-opacity duration-200 sm:w-14 sm:h-14" height="40" src="/kimi-color.svg" width="40"/>
+        <span class="text-sm sm:text-base font-semibold text-foreground whitespace-nowrap">
+         Kimi AI
+        </span>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 sm:py-32 bg-background text-foreground relative overflow-hidden">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+       <div class="max-w-2xl">
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-8 text-foreground">
+         Your customers aren't
+         <span class="text-gray-400">
+          Googling
+         </span>
+         anymore.
+        </h2>
+        <p class="text-xl text-muted-foreground mb-10 leading-relaxed">
+         They're asking AI for purchase decisions. If your brand isn't being recommended by ChatGPT, Claude, and Gemini, you're invisible to 50% of your potential market.
+        </p>
+        <div class="space-y-6">
+         <div class="flex items-start gap-4">
+          <div>
+           <h3 class="text-xl font-semibold mb-2 text-foreground">
+            Conversational Search
+           </h3>
+           <p class="text-muted-foreground">
+            Users trust direct answers from AI over scrolling through blue links.
+           </p>
+          </div>
+         </div>
+         <div class="flex items-start gap-4">
+          <div>
+           <h3 class="text-xl font-semibold mb-2 text-foreground">
+            Generative Engine Optimization
+           </h3>
+           <p class="text-muted-foreground">
+            GEO puts you at the center of every buying decision made on AI platforms.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="relative mx-auto w-full max-w-md lg:max-w-full">
+        <div class="absolute -top-4 right-4 z-20">
+         <span class="px-3 py-1 rounded-full text-xs font-medium border shadow-xs transition-colors duration-300 uppercase tracking-wider bg-white text-orange-600 border-orange-200">
+          E-commerce
+         </span>
+        </div>
+        <div class="relative rounded-2xl border border-border bg-white shadow-2xl overflow-hidden h-[480px] flex flex-col">
+         <div class="flex items-center justify-between px-4 py-3 border-b border-border bg-muted/30 shrink-0">
+          <div class="text-xs font-medium text-muted-foreground">
+           AI Assistant
+          </div>
+         </div>
+         <div class="p-6 space-y-6 font-sans flex-1 overflow-hidden relative">
+          <div class="flex justify-end transition-all duration-500 ease-in-out translate-y-0">
+           <div class="bg-blue-600 text-white px-4 py-2.5 rounded-2xl rounded-tr-sm max-w-[90%] text-sm sm:text-base shadow-xs relative">
+            Top rated running shoes for marathon training 2025
+           </div>
+          </div>
+          <div class="flex gap-3 transition-all duration-500 delay-100 opacity-100 translate-y-0">
+           <div class="shrink-0 w-8 h-8 rounded-full bg-linear-to-br from-green-400 to-blue-500 flex items-center justify-center text-xs font-bold text-white shadow-xs mt-1">
+            AI
+           </div>
+           <div class="space-y-2 max-w-[90%]">
+            <div class="bg-muted/30 text-foreground px-4 py-3 rounded-2xl rounded-tl-sm border border-border text-sm sm:text-base leading-relaxed">
+             <div class="animate-in fade-in duration-500">
+              <p class="mb-2">
+               For marathon training in 2025, the top AI-recommended choices are:
+              </p>
+              <ul class="list-disc pl-4 space-y-1 text-muted-foreground">
+               <li>
+                <span class="font-semibold text-foreground">
+                 Nike Alphafly 3
+                </span>
+                - Best for speed and energy return
+               </li>
+               <li>
+                <span class="font-semibold text-foreground">
+                 Adidas Adizero Pro 3
+                </span>
+                - Excellent long-distance comfort
+               </li>
+               <li>
+                <span class="font-semibold text-foreground">
+                 Saucony Endorphin Pro 4
+                </span>
+                - Great versatility
+               </li>
+              </ul>
+              <p class="mt-2 text-sm">
+               Runners frequently mention these brands for durability and performance.
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="p-4 border-t border-border bg-muted/30 shrink-0 z-10">
+          <div class="h-10 bg-white rounded-lg border border-input w-full shadow-xs flex items-center px-3 text-sm text-muted-foreground">
+           Ask anything...
+          </div>
+         </div>
+        </div>
+        <div class="absolute -bottom-6 -right-6 bg-white text-foreground p-4 rounded-xl shadow-xl border border-border hidden sm:block transform rotate-3 hover:rotate-0 transition-transform duration-300 z-30">
+         <div class="flex items-center gap-3">
+          <div class="flex -space-x-3">
+           <img alt="User" class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&amp;h=64&amp;q=80&amp;fit=crop&amp;auto=format"/>
+           <img alt="User" class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=64&amp;h=64&amp;q=80&amp;fit=crop&amp;auto=format"/>
+           <img alt="User" class="w-8 h-8 rounded-full border-2 border-white object-cover" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=64&amp;h=64&amp;q=80&amp;fit=crop&amp;auto=format"/>
+          </div>
+          <div class="text-sm font-bold">
+           <div>
+            Used by 10+
+           </div>
+           <div class="text-xs text-muted-foreground">
+            Marketing Teams
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-32 bg-linear-to-b from-slate-50 to-white relative overflow-hidden">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 items-end mb-20">
+       <div>
+        <div class="flex items-center gap-2 mb-8">
+         <span class="text-blue-600 font-mono text-xs tracking-wider uppercase">
+          AI Agents
+         </span>
+        </div>
+        <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[0.95]">
+         Agents and Automatic
+         <span class="block text-blue-600 mt-2">
+          Optimization Pipeline.
+         </span>
+        </h2>
+       </div>
+       <div class="lg:pb-2">
+        <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+         Deploy intelligent AI agents that continuously monitor, analyze, and optimize your content for maximum visibility across all AI platforms.
+        </p>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+       <div class="group relative bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
+        <div class="mt-4">
+         <span class="font-mono text-sm text-slate-400 mb-4 block group-hover:text-blue-600 transition-colors duration-300">
+          01
+         </span>
+         <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+          Intelligent Agents
+         </h3>
+         <p class="text-slate-600 leading-relaxed mb-6">
+          AI-powered agents continuously monitor your content performance across ChatGPT, Claude, Gemini, and more.
+         </p>
+         <div class="flex items-center text-blue-600 font-medium text-sm group-hover:gap-2 transition-all duration-300">
+          <span>
+           Learn more
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="group relative bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
+        <div class="mt-4">
+         <span class="font-mono text-sm text-slate-400 mb-4 block group-hover:text-purple-600 transition-colors duration-300">
+          02
+         </span>
+         <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+          Auto-Optimization
+         </h3>
+         <p class="text-slate-600 leading-relaxed mb-6">
+          Automatically rewrite and enhance your content based on real-time performance data and AI model preferences.
+         </p>
+         <div class="flex items-center text-purple-600 font-medium text-sm group-hover:gap-2 transition-all duration-300">
+          <span>
+           Learn more
+          </span>
+         </div>
+        </div>
+       </div>
+       <div class="group relative bg-white rounded-2xl p-8 border border-slate-200 hover:border-blue-300 hover:shadow-xl transition-all duration-300">
+        <div class="mt-4">
+         <span class="font-mono text-sm text-slate-400 mb-4 block group-hover:text-emerald-600 transition-colors duration-300">
+          03
+         </span>
+         <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+          Real-Time Analytics
+         </h3>
+         <p class="text-slate-600 leading-relaxed mb-6">
+          Track visibility improvements, ranking changes, and conversion metrics as optimizations are applied.
+         </p>
+         <div class="flex items-center text-emerald-600 font-medium text-sm group-hover:gap-2 transition-all duration-300">
+          <span>
+           Learn more
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white rounded-3xl p-12 border border-slate-200 shadow-lg">
+       <div class="text-center mb-12">
+        <h3 class="text-3xl font-bold text-slate-900 mb-4">
+         Optimization Pipeline
+        </h3>
+        <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+         Our agents follow a systematic approach to ensure your content reaches maximum visibility
+        </p>
+       </div>
+       <div class="grid md:grid-cols-4 gap-6 relative">
+        <div class="relative z-10 text-center">
+         <h4 class="font-semibold text-slate-900 mb-2">
+          Monitor
+         </h4>
+         <p class="text-sm text-slate-600">
+          Continuous tracking across AI platforms
+         </p>
+        </div>
+        <div class="relative z-10 text-center">
+         <h4 class="font-semibold text-slate-900 mb-2">
+          Analyze
+         </h4>
+         <p class="text-sm text-slate-600">
+          AI agents identify optimization opportunities
+         </p>
+        </div>
+        <div class="relative z-10 text-center">
+         <h4 class="font-semibold text-slate-900 mb-2">
+          Optimize
+         </h4>
+         <p class="text-sm text-slate-600">
+          Automatic content enhancement and rewriting
+         </p>
+        </div>
+        <div class="relative z-10 text-center">
+         <h4 class="font-semibold text-slate-900 mb-2">
+          Verify
+         </h4>
+         <p class="text-sm text-slate-600">
+          Measure improvements and iterate
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-32 bg-white relative">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-16 items-end mb-16">
+       <div>
+        <div class="flex items-center gap-2 mb-8">
+         <span class="text-blue-600 font-mono text-xs tracking-wider uppercase">
+          Shopping Intelligence
+         </span>
+        </div>
+        <h2 class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-slate-900 leading-[0.95]">
+         Boost visibility in
+         <span class="block text-blue-600 mt-2">
+          ChatGPT Shopping.
+         </span>
+        </h2>
+       </div>
+       <div class="lg:pb-2">
+        <p class="text-xl text-slate-600 leading-relaxed max-w-lg">
+         See how your products are showing up in ChatGPT Shopping, improve their placement, and drive more traffic and conversions.
+        </p>
+       </div>
+      </div>
+      <div class="mb-24 pt-8 border-t border-slate-100">
+       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12 items-center justify-items-center grayscale opacity-60 hover:opacity-100 transition-opacity duration-500">
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.amazon.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-10 w-28 mt-4">
+          <img alt="Amazon" class="object-contain" src="/logos/amazon.svg"/>
+         </div>
+        </a>
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.trendyol.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-8 w-32">
+          <img alt="Trendyol" class="object-contain" src="/logos/trendyol.svg"/>
+         </div>
+        </a>
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.shopify.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-8 w-32">
+          <img alt="Shopify" class="object-contain" src="/logos/shopify.svg"/>
+         </div>
+        </a>
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.shopier.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-8 w-32">
+          <img alt="Shopier" class="object-contain" src="/_next/image?url=%2Flogos%2Fshopier.png&amp;w=3840&amp;q=75"/>
+         </div>
+        </a>
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.etsy.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-8 w-20">
+          <img alt="Etsy" class="object-contain" src="/logos/etsy.svg"/>
+         </div>
+        </a>
+        <a class="hover:scale-105 transition-transform duration-300 flex justify-center w-full" href="https://www.temu.com" rel="noopener noreferrer" target="_blank">
+         <div class="relative h-8 w-24">
+          <img alt="Temu" class="object-contain" src="/_next/image?url=%2Flogos%2Ftemu.png&amp;w=3840&amp;q=75"/>
+         </div>
+        </a>
+       </div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-12 border-t border-slate-200 pt-12">
+       <div class="group cursor-default">
+        <span class="font-mono text-sm text-slate-400 mb-6 block group-hover:text-blue-600 transition-colors duration-300">
+         01
+        </span>
+        <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+         Shopping Visibility
+        </h3>
+        <p class="text-slate-600 leading-relaxed">
+         Track baseline visibility when users trigger shopping intents in chat.
+        </p>
+       </div>
+       <div class="group cursor-default">
+        <span class="font-mono text-sm text-slate-400 mb-6 block group-hover:text-blue-600 transition-colors duration-300">
+         02
+        </span>
+        <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+         Smart Attributes
+        </h3>
+        <p class="text-slate-600 leading-relaxed">
+         Understand how Answer Engines analyze and categorize your product attributes.
+        </p>
+       </div>
+       <div class="group cursor-default">
+        <span class="font-mono text-sm text-slate-400 mb-6 block group-hover:text-blue-600 transition-colors duration-300">
+         03
+        </span>
+        <h3 class="text-2xl font-semibold text-slate-900 mb-4 group-hover:translate-x-1 transition-transform duration-300">
+         Sentiment Analysis
+        </h3>
+        <p class="text-slate-600 leading-relaxed">
+         Analyze how AI models perceive and describe your brand to shoppers.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 sm:py-24 lg:py-32 bg-background border-y overflow-hidden relative">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
+       <div class="lg:col-span-2 space-y-8">
+        <div>
+         <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 mb-4 px-3 py-1 text-xs font-medium uppercase tracking-wider text-blue-600 border-blue-200 bg-blue-50">
+          Market Shift
+         </div>
+         <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-foreground mb-6 leading-tight">
+          The Great Migration from
+          <span class="text-muted-foreground line-through decoration-red-400/50">
+           Search
+          </span>
+          to
+          <span class="text-blue-600">
+           Answers
+          </span>
+         </h2>
+         <p class="text-lg text-muted-foreground leading-relaxed">
+          Traditional search traffic is dropping. Users are now turning to AI models for complex decisions, product research, and direct answers.
+         </p>
+        </div>
+        <div class="grid grid-cols-1 gap-6">
+         <div class="flex items-start gap-4 p-4 rounded-xl bg-card border shadow-xs hover:shadow-md transition-all group">
+          <div>
+           <div class="text-2xl font-bold text-foreground">
+            1 Billion+
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Monthly active users across AI platforms by June 2025
+           </div>
+          </div>
+         </div>
+         <div class="flex items-start gap-4 p-4 rounded-xl bg-card border shadow-xs hover:shadow-md transition-all group">
+          <div>
+           <div class="text-2xl font-bold text-foreground">
+            3x Higher
+           </div>
+           <div class="text-sm text-muted-foreground">
+            Conversion intent on AI answers vs. traditional links
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="lg:col-span-3 hidden sm:block">
+        <div class="relative">
+         <div class="border text-card-foreground bg-card border-border shadow-2xl overflow-hidden rounded-xl ring-1 ring-black/5">
+          <div class="border-b border-border p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-muted/20">
+           <div class="flex items-center gap-3">
+            <div>
+             <h3 class="font-semibold text-foreground text-sm sm:text-base">
+              Platform Market Share
+             </h3>
+             <p class="text-xs text-muted-foreground flex items-center gap-1.5">
+              Live Analytics
+             </p>
+            </div>
+           </div>
+           <div class="flex items-center gap-2">
+            <div class="hidden sm:flex items-center gap-1 bg-background border rounded-md px-2 py-1.5 shadow-xs">
+             <span class="text-xs font-medium">
+              Oct 2024 - Oct 2025
+             </span>
+            </div>
+           </div>
+          </div>
+          <div class="p-4 sm:p-8 bg-card">
+           <div class="grid grid-cols-3 gap-2 sm:gap-4 mb-6 pb-6 border-b border-border border-dashed">
+            <div class="space-y-1 text-center sm:text-left">
+             <div class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide truncate">
+              Total Users
+             </div>
+             <div class="text-lg sm:text-3xl font-bold text-foreground tracking-tight">
+              1.2B
+             </div>
+             <div class="text-[10px] sm:text-xs font-medium text-emerald-600 flex items-center justify-center sm:justify-start bg-emerald-50 w-fit mx-auto sm:mx-0 px-1.5 py-0.5 rounded">
+              +14.2%
+             </div>
+            </div>
+            <div class="space-y-1 text-center sm:text-left">
+             <div class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide truncate">
+              Avg. Engage
+             </div>
+             <div class="text-lg sm:text-3xl font-bold text-foreground tracking-tight">
+              18m
+             </div>
+             <div class="text-[10px] sm:text-xs font-medium text-emerald-600 flex items-center justify-center sm:justify-start bg-emerald-50 w-fit mx-auto sm:mx-0 px-1.5 py-0.5 rounded">
+              +5.4%
+             </div>
+            </div>
+            <div class="space-y-1 text-center sm:text-left">
+             <div class="text-[10px] sm:text-xs font-medium text-muted-foreground uppercase tracking-wide truncate">
+              Search Shift
+             </div>
+             <div class="text-lg sm:text-3xl font-bold text-foreground tracking-tight">
+              42%
+             </div>
+             <div class="text-[10px] sm:text-xs font-medium text-emerald-600 flex items-center justify-center sm:justify-start bg-emerald-50 w-fit mx-auto sm:mx-0 px-1.5 py-0.5 rounded">
+              +8.1%
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="bg-muted/30 px-6 py-3 border-t border-border flex flex-col sm:flex-row justify-between items-center text-xs gap-2">
+           <div class="flex items-center text-muted-foreground">
+            <span>
+             Last updated: 12 mins ago
+            </span>
+           </div>
+           <div class="flex items-center gap-4 text-muted-foreground">
+            <span class="hover:text-foreground cursor-pointer transition-colors">
+             View Full Report
+            </span>
+            <span class="hover:text-foreground cursor-pointer transition-colors">
+             Export CSV
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-background border-y">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-12 sm:mb-16 lg:mb-20 px-4">
+       <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-muted/40 border-border/60">
+        Live Rankings
+       </div>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+        Rank Up Your AI Listings
+       </h2>
+       <p class="text-base sm:text-lg leading-6 sm:leading-7 text-muted-foreground">
+        See how top brands are ranking across AI platforms in real-time
+       </p>
+      </div>
+      <div class="max-w-6xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+       <div class="hidden lg:block">
+        <div class="rounded-lg text-card-foreground border border-blue-100 overflow-hidden shadow-[0_4px_24px_rgba(37,99,235,0.06)] bg-white">
+         <div class="overflow-x-auto">
+          <table class="w-full">
+           <thead>
+            <tr class="border-b border-blue-100 bg-blue-50/50">
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              Rank
+             </th>
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              Keyword
+             </th>
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              Domain
+             </th>
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              AI Mentions
+             </th>
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              Platforms
+             </th>
+             <th class="text-left py-5 px-8 text-xs font-semibold text-blue-900 uppercase tracking-wider">
+              Trend
+             </th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               best luxury apartments NYC
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               luxuryhomes.com
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               3,247
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="ChatGPT" class="object-contain" height="16" src="/chatgpt-6.svg" width="16"/>
+                ChatGPT
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Claude" class="object-contain" height="16" src="/claude-logo.svg" width="16"/>
+                Claude
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +52%
+               </span>
+              </div>
+             </td>
+            </tr>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                2
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               top cocktail bars near me
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               nightlife-guide.com
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               2,458
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="ChatGPT" class="object-contain" height="16" src="/chatgpt-6.svg" width="16"/>
+                ChatGPT
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Gemini" class="object-contain" height="16" src="/google-bard-1.svg" width="16"/>
+                Gemini
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +45%
+               </span>
+              </div>
+             </td>
+            </tr>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                3
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               best art museums families
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               museumexplorer.com
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               2,134
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Claude" class="object-contain" height="16" src="/claude-logo.svg" width="16"/>
+                Claude
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Gemini" class="object-contain" height="16" src="/google-bard-1.svg" width="16"/>
+                Gemini
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +38%
+               </span>
+              </div>
+             </td>
+            </tr>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                4
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               beachfront hotels with spa
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               beachresorts.io
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               2,876
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="ChatGPT" class="object-contain" height="16" src="/chatgpt-6.svg" width="16"/>
+                ChatGPT
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Claude" class="object-contain" height="16" src="/claude-logo.svg" width="16"/>
+                Claude
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +61%
+               </span>
+              </div>
+             </td>
+            </tr>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                5
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               cheap flights to Tokyo
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               skytravel.com
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               3,589
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="ChatGPT" class="object-contain" height="16" src="/chatgpt-6.svg" width="16"/>
+                ChatGPT
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Gemini" class="object-contain" height="16" src="/google-bard-1.svg" width="16"/>
+                Gemini
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +48%
+               </span>
+              </div>
+             </td>
+            </tr>
+            <tr class="border-b border-[#E5ECFF] hover:bg-blue-50/30 transition-colors duration-150 group">
+             <td class="py-6 px-8">
+              <div class="flex items-center">
+               <span class="text-2xl font-bold text-foreground">
+                6
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-[#1E3A8A] group-hover:underline transition-all">
+               bus tours Paris Amsterdam
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="text-sm text-muted-foreground">
+               eurobus.travel
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="font-bold text-foreground text-xl">
+               1,842
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex flex-wrap gap-2">
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Claude" class="object-contain" height="16" src="/claude-logo.svg" width="16"/>
+                Claude
+               </span>
+               <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                <img alt="Gemini" class="object-contain" height="16" src="/google-bard-1.svg" width="16"/>
+                Gemini
+               </span>
+               <span class="px-3 py-1.5 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+                +1
+               </span>
+              </div>
+             </td>
+             <td class="py-6 px-8">
+              <div class="flex items-center gap-2">
+               <span class="font-semibold text-emerald-600">
+                +33%
+               </span>
+              </div>
+             </td>
+            </tr>
+           </tbody>
+          </table>
+         </div>
+        </div>
+       </div>
+       <div class="lg:hidden space-y-4">
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #1
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +52%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           best luxury apartments NYC
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           luxuryhomes.com
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            3,247
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="ChatGPT" class="object-contain" height="14" src="/chatgpt-6.svg" width="14"/>
+             ChatGPT
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Claude" class="object-contain" height="14" src="/claude-logo.svg" width="14"/>
+             Claude
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Gemini" class="object-contain" height="14" src="/google-bard-1.svg" width="14"/>
+             Gemini
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #2
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +45%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           top cocktail bars near me
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           nightlife-guide.com
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            2,458
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="ChatGPT" class="object-contain" height="14" src="/chatgpt-6.svg" width="14"/>
+             ChatGPT
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Gemini" class="object-contain" height="14" src="/google-bard-1.svg" width="14"/>
+             Gemini
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="DeepSeek" class="object-contain" height="14" src="/deepseek-2.svg" width="14"/>
+             DeepSeek
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #3
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +38%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           best art museums families
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           museumexplorer.com
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            2,134
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Claude" class="object-contain" height="14" src="/claude-logo.svg" width="14"/>
+             Claude
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Gemini" class="object-contain" height="14" src="/google-bard-1.svg" width="14"/>
+             Gemini
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             Mistral
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #4
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +61%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           beachfront hotels with spa
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           beachresorts.io
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            2,876
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="ChatGPT" class="object-contain" height="14" src="/chatgpt-6.svg" width="14"/>
+             ChatGPT
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Claude" class="object-contain" height="14" src="/claude-logo.svg" width="14"/>
+             Claude
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Grok" class="object-contain" height="14" src="/grok-1.svg" width="14"/>
+             Grok
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #5
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +48%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           cheap flights to Tokyo
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           skytravel.com
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            3,589
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="ChatGPT" class="object-contain" height="14" src="/chatgpt-6.svg" width="14"/>
+             ChatGPT
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Gemini" class="object-contain" height="14" src="/google-bard-1.svg" width="14"/>
+             Gemini
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="DeepSeek" class="object-contain" height="14" src="/deepseek-2.svg" width="14"/>
+             DeepSeek
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg text-card-foreground shadow-xs border border-blue-100 bg-white">
+         <div class="p-4 sm:p-5">
+          <div class="flex items-start justify-between mb-3">
+           <div class="flex items-center gap-3">
+            <span class="text-2xl font-bold text-foreground">
+             #6
+            </span>
+            <div class="flex items-center gap-1">
+             <span class="text-sm font-semibold text-emerald-600">
+              +33%
+             </span>
+            </div>
+           </div>
+          </div>
+          <h3 class="font-bold text-[#1E3A8A] text-sm sm:text-base mb-2 leading-snug">
+           bus tours Paris Amsterdam
+          </h3>
+          <p class="text-xs sm:text-sm text-muted-foreground mb-4">
+           eurobus.travel
+          </p>
+          <div class="flex items-center justify-between mb-3 pb-3 border-b border-blue-100">
+           <span class="text-xs text-muted-foreground">
+            AI Mentions
+           </span>
+           <span class="font-bold text-foreground text-lg">
+            1,842
+           </span>
+          </div>
+          <div>
+           <span class="text-xs text-muted-foreground mb-2 block">
+            Platforms
+           </span>
+           <div class="flex flex-wrap gap-2">
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Claude" class="object-contain" height="14" src="/claude-logo.svg" width="14"/>
+             Claude
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             <img alt="Gemini" class="object-contain" height="14" src="/google-bard-1.svg" width="14"/>
+             Gemini
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#EFF6FF] text-[#1E3A8A] text-xs font-semibold rounded-full">
+             Kimi
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 sm:py-20 lg:py-24 bg-background border-y" id="pricing">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-12 sm:mb-16">
+       <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-muted/40 border-border/60">
+        Pricing
+       </div>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4 sm:mb-5">
+        Choose Your Plan
+       </h2>
+       <p class="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-6">
+        Straightforward monthly or annual billing. No free trials—just transparent pricing.
+       </p>
+       <div class="inline-flex items-center rounded-full border border-border/60 bg-muted/30 p-1 text-sm font-medium shadow-xs">
+        <button class="px-4 py-2 rounded-full transition-all bg-background text-foreground shadow-sm">
+         Monthly
+        </button>
+        <button class="px-4 py-2 rounded-full transition-all text-muted-foreground">
+         Annual
+         <span class="ml-1 text-primary text-xs font-semibold">
+          (save)
+         </span>
+        </button>
+       </div>
+      </div>
+      <div class="grid gap-8 sm:gap-6 lg:gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:max-w-6xl mx-auto mb-16">
+       <div class="rounded-lg border text-card-foreground relative transition-all duration-500 ease-out group h-full flex flex-col hover:shadow-2xl hover:-translate-y-2 bg-white border-border/60 hover:border-blue-600/40 shadow-md z-0">
+        <div class="flex flex-col space-y-1.5 p-6 pb-6 pt-8 relative">
+         <h3 class="tracking-tight text-2xl sm:text-3xl font-bold text-foreground mb-3 leading-tight">
+          Enterprise Plan
+         </h3>
+         <p class="text-base text-muted-foreground leading-relaxed">
+          Advanced features for growing businesses and agencies
+         </p>
+        </div>
+        <div class="px-6 pb-6 -mt-2">
+         <div class="mb-2 flex items-baseline gap-1">
+          <span class="text-5xl sm:text-6xl font-bold text-foreground tracking-tight">
+           $129.99
+          </span>
+          <span class="text-lg font-medium text-muted-foreground">
+           /month
+          </span>
+         </div>
+        </div>
+        <div class="p-6 pt-0 px-6 pb-8 grow flex flex-col">
+         <ul class="space-y-4 mb-8 grow">
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            3 Domains Monitoring
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Track up to 75 keywords
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            All 8 AI platforms
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Track up to 15 Competitors
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Premium Widgets &amp; Custom Reporting
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Priority Support
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Hire Manager add-on available (+$499)
+           </span>
+          </li>
+         </ul>
+         <div class="mb-4 rounded-lg border border-primary/60 bg-primary/5 p-3 text-left shadow-xs">
+          <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary">
+           Add-on
+           <span class="text-foreground font-bold">
+            +$499 /mo
+           </span>
+          </div>
+          <p class="mt-2 text-sm font-semibold text-foreground">
+           Hire Manager (hands-on management)
+          </p>
+          <p class="text-xs text-primary/80">
+           Dedicated manager for setup, optimization, and reporting.
+          </p>
+         </div>
+         <a class="w-full" href="/pricing?interval=monthly">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 w-full h-12 sm:h-14 text-base font-bold transition-all duration-300 group/btn rounded-xl shadow-xs hover:scale-[1.02] active:scale-[0.98] bg-slate-900 hover:bg-slate-800 text-white hover:shadow-lg">
+           View pricing
+          </button>
+         </a>
+        </div>
+       </div>
+       <div class="rounded-lg text-card-foreground relative transition-all duration-500 ease-out group h-full flex flex-col hover:shadow-2xl hover:-translate-y-2 bg-blue-50/50 border-blue-600 border-2 shadow-xl lg:scale-[1.05] ring-4 ring-blue-600/10 z-10">
+        <div class="absolute -top-5 inset-x-0 flex justify-center">
+         <div class="inline-flex items-center transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest shadow-lg shadow-blue-600/30 border-0 rounded-full">
+          Most Popular
+         </div>
+        </div>
+        <div class="flex flex-col space-y-1.5 p-6 pb-6 pt-8 relative">
+         <h3 class="tracking-tight text-2xl sm:text-3xl font-bold text-foreground mb-3 leading-tight">
+          Startup Plan
+         </h3>
+         <p class="text-base text-muted-foreground leading-relaxed">
+          Perfect for small businesses getting started with AI optimization
+         </p>
+        </div>
+        <div class="px-6 pb-6 -mt-2">
+         <div class="mb-2 flex items-baseline gap-1">
+          <span class="text-5xl sm:text-6xl font-bold text-foreground tracking-tight">
+           $79.99
+          </span>
+          <span class="text-lg font-medium text-muted-foreground">
+           /month
+          </span>
+         </div>
+        </div>
+        <div class="p-6 pt-0 px-6 pb-8 grow flex flex-col">
+         <ul class="space-y-4 mb-8 grow">
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            1 Domain Monitoring
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Track up to 10 keywords
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Monitor 3 AI platforms
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Track up to 5 Competitors
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Standard Widgets &amp; Analytics Dashboard
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Email support
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Hire Manager add-on available (+$499)
+           </span>
+          </li>
+         </ul>
+         <div class="mb-4 rounded-lg border border-primary/60 bg-primary/5 p-3 text-left shadow-xs">
+          <div class="inline-flex items-center gap-2 rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary">
+           Add-on
+           <span class="text-foreground font-bold">
+            +$499 /mo
+           </span>
+          </div>
+          <p class="mt-2 text-sm font-semibold text-foreground">
+           Hire Manager (hands-on management)
+          </p>
+          <p class="text-xs text-primary/80">
+           Dedicated manager for setup, optimization, and reporting.
+          </p>
+         </div>
+         <a class="w-full" href="/pricing?interval=monthly">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 w-full h-12 sm:h-14 text-base font-bold transition-all duration-300 group/btn rounded-xl shadow-xs hover:scale-[1.02] active:scale-[0.98] bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 hover:shadow-blue-600/40">
+           View pricing
+          </button>
+         </a>
+        </div>
+       </div>
+       <div class="rounded-lg border text-card-foreground relative transition-all duration-500 ease-out group h-full flex flex-col hover:shadow-2xl hover:-translate-y-2 bg-white border-border/60 hover:border-blue-600/40 shadow-md z-0">
+        <div class="flex flex-col space-y-1.5 p-6 pb-6 pt-8 relative">
+         <h3 class="tracking-tight text-2xl sm:text-3xl font-bold text-foreground mb-3 leading-tight">
+          Agency Plan
+         </h3>
+         <p class="text-base text-muted-foreground leading-relaxed">
+          Custom solutions for agencies managing multiple clients
+         </p>
+        </div>
+        <div class="px-6 pb-6 -mt-2">
+         <div class="mb-2 flex items-baseline gap-1">
+          <span class="text-5xl sm:text-6xl font-bold text-foreground tracking-tight">
+           Custom
+          </span>
+         </div>
+        </div>
+        <div class="p-6 pt-0 px-6 pb-8 grow flex flex-col">
+         <ul class="space-y-4 mb-8 grow">
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Everything in Enterprise
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Multi-client management
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            White-label dashboard
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Dedicated account manager
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            Custom integrations
+           </span>
+          </li>
+          <li class="flex items-start gap-3 group/item">
+           <span class="text-sm sm:text-base text-foreground leading-relaxed font-medium">
+            SLA guarantees
+           </span>
+          </li>
+         </ul>
+         <a class="w-full" href="/pricing?interval=monthly">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 px-4 py-2 w-full h-12 sm:h-14 text-base font-bold transition-all duration-300 group/btn rounded-xl shadow-xs hover:scale-[1.02] active:scale-[0.98] bg-white border-2 border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-900">
+           Contact Sales
+          </button>
+         </a>
+        </div>
+       </div>
+      </div>
+      <div class="mt-12 sm:mt-16 text-center">
+       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
+        <div class="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-muted/30">
+         <span>
+          Cancel anytime
+         </span>
+        </div>
+        <div class="flex items-center gap-2.5 px-4 py-2 rounded-lg bg-muted/30">
+         <span>
+          14-day money-back guarantee
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 bg-muted/30">
+     <div class="container px-4 md:px-6 mx-auto max-w-7xl">
+      <div class="flex flex-col items-center justify-center space-y-4 text-center mb-16">
+       <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-background/50 backdrop-blur-xs border-border/60">
+        Features
+       </div>
+       <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl">
+        Everything you need to
+        <br class="hidden sm:block"/>
+        dominate AI search.
+       </h2>
+       <p class="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+        Comprehensive tools to track, analyze, and optimize your brand's presence across the new search landscape.
+       </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-8 max-w-7xl mx-auto">
+       <div class="rounded-lg border text-card-foreground shadow-xs md:col-span-2 row-span-2 overflow-hidden border-border/50 bg-linear-to-br from-background to-muted/50 relative group">
+        <div class="flex flex-col space-y-1.5 p-6 relative z-10">
+         <h3 class="font-semibold tracking-tight text-2xl sm:text-3xl">
+          Global AI Visibility Tracking
+         </h3>
+         <p class="text-muted-foreground text-lg mt-2 max-w-md">
+          Monitor your brand's recommendation rate across ChatGPT, Claude, Gemini, and Perplexity in real-time.
+         </p>
+        </div>
+        <div class="p-6 pt-0 relative z-10 mt-8">
+         <div class="rounded-xl border bg-background/50 backdrop-blur-xs p-4 shadow-xs">
+          <div class="space-y-4">
+           <div class="flex items-center justify-between">
+            <span class="text-sm font-medium">
+             Share of Voice
+            </span>
+            <span class="text-sm font-bold text-green-500">
+             +12.5%
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rounded-lg border text-card-foreground shadow-xs md:col-span-1 row-span-1 overflow-hidden border-border/50 bg-background hover:shadow-lg transition-all">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <h3 class="text-2xl font-semibold leading-none tracking-tight">
+          Auto-Optimization
+         </h3>
+         <p class="text-sm text-muted-foreground">
+          One-click suggestions to make your content AI-readable.
+         </p>
+        </div>
+        <div class="p-6 pt-0">
+         <div class="space-y-2">
+          <div class="flex items-center gap-2 text-sm">
+           <span class="text-muted-foreground">
+            Structured Data
+           </span>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+           <span class="text-muted-foreground">
+            Context Injection
+           </span>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+           <span class="text-muted-foreground">
+            Entity Linking
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rounded-lg border text-card-foreground shadow-xs md:col-span-1 row-span-1 overflow-hidden border-border/50 bg-background hover:shadow-lg transition-all">
+        <div class="flex flex-col space-y-1.5 p-6">
+         <h3 class="text-2xl font-semibold leading-none tracking-tight">
+          Deep Query Analysis
+         </h3>
+         <p class="text-sm text-muted-foreground">
+          Understand how users are phrasing questions to AI models.
+         </p>
+        </div>
+        <div class="p-6 pt-0">
+         <div class="flex flex-wrap gap-2">
+          <div class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-orange-500/10 text-orange-700 hover:bg-orange-500/20 border-0">
+           "Best CRM for startups?"
+          </div>
+          <div class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-orange-500/10 text-orange-700 hover:bg-orange-500/20 border-0">
+           "Compare A vs B"
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="rounded-lg border text-card-foreground shadow-xs md:col-span-3 overflow-hidden border-border/50 bg-linear-to-r from-background to-muted/30">
+        <div class="grid md:grid-cols-2 gap-6 p-6">
+         <div class="flex flex-col justify-center">
+          <h3 class="text-2xl font-bold mb-2">
+           Spy on Competitors
+          </h3>
+          <p class="text-muted-foreground mb-6">
+           See exactly where your competitors are ranking in AI responses and uncover their optimization strategies.
+          </p>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-fit group">
+           Analyze Competitors
+          </button>
+         </div>
+         <div class="relative h-48 md:h-auto bg-card rounded-lg border shadow-xs p-4 flex items-center justify-center">
+          <div class="w-full space-y-3">
+           <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+             <span class="font-semibold">
+              You
+             </span>
+            </div>
+            <span class="font-bold text-green-600">
+             #1 (45%)
+            </span>
+           </div>
+           <div class="flex items-center justify-between mt-4">
+            <div class="flex items-center gap-2">
+             <span class="text-muted-foreground">
+              Competitor A
+             </span>
+            </div>
+            <span class="font-medium">
+             #2 (28%)
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 sm:py-32 bg-linear-to-b from-white to-slate-50/50 border-y relative overflow-hidden" id="how-it-works">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="mx-auto max-w-3xl text-center mb-20 sm:mb-24 px-4">
+       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-primary text-xs font-semibold uppercase tracking-wider mb-6">
+        Simple Workflow
+       </div>
+       <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
+        From Setup to
+        <span class="text-blue-600">
+         Success
+        </span>
+       </h2>
+       <p class="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        We've streamlined the complex process of Generative Engine Optimization into four simple, actionable steps.
+       </p>
+      </div>
+      <div class="mx-auto max-w-6xl">
+       <div class="hidden lg:grid lg:grid-cols-4 gap-8 mb-16 relative">
+        <div class="relative group pt-4">
+         <div class="relative z-10 flex flex-col items-center text-center">
+          <h3 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+           Connect Domain
+          </h3>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+           Add your website. We'll automatically discover and crawl your pages.
+          </p>
+         </div>
+        </div>
+        <div class="relative group pt-4">
+         <div class="relative z-10 flex flex-col items-center text-center">
+          <h3 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+           AI Analysis
+          </h3>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+           Advanced scoring across 5 dimensions: identity, structure, content, and more.
+          </p>
+         </div>
+        </div>
+        <div class="relative group pt-4">
+         <div class="relative z-10 flex flex-col items-center text-center">
+          <h3 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+           Auto-Optimize
+          </h3>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+           Get instant recommendations and auto-enhance content for better AI visibility.
+          </p>
+         </div>
+        </div>
+        <div class="relative group pt-4">
+         <div class="relative z-10 flex flex-col items-center text-center">
+          <h3 class="text-xl font-bold mb-3 text-foreground group-hover:text-primary transition-colors">
+           Track &amp; Grow
+          </h3>
+          <p class="text-sm leading-relaxed text-muted-foreground">
+           Monitor visibility across 8 AI platforms with real-time insights and alerts.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="lg:hidden space-y-0 max-w-lg mx-auto relative pl-8 border-l-2 border-slate-100">
+        <div class="relative pb-12 last:pb-0">
+         <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-4 mb-4">
+           <h3 class="text-lg font-bold text-foreground">
+            Connect Domain
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Add your website. We'll automatically discover and crawl your pages.
+          </p>
+         </div>
+        </div>
+        <div class="relative pb-12 last:pb-0">
+         <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-4 mb-4">
+           <h3 class="text-lg font-bold text-foreground">
+            AI Analysis
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Advanced scoring across 5 dimensions: identity, structure, content, and more.
+          </p>
+         </div>
+        </div>
+        <div class="relative pb-12 last:pb-0">
+         <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-4 mb-4">
+           <h3 class="text-lg font-bold text-foreground">
+            Auto-Optimize
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Get instant recommendations and auto-enhance content for better AI visibility.
+          </p>
+         </div>
+        </div>
+        <div class="relative pb-12 last:pb-0">
+         <div class="bg-white rounded-xl p-6 border border-slate-100 shadow-xs hover:shadow-md transition-shadow">
+          <div class="flex items-center gap-4 mb-4">
+           <h3 class="text-lg font-bold text-foreground">
+            Track &amp; Grow
+           </h3>
+          </div>
+          <p class="text-sm text-muted-foreground leading-relaxed">
+           Monitor visibility across 8 AI platforms with real-time insights and alerts.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="text-center mt-20">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 text-slate-600 text-sm font-medium mb-8">
+         Join 2,000+ marketers optimizing for AI
+        </div>
+        <div class="flex justify-center">
+         <button class="inline-flex items-center justify-center gap-2 ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md h-14 px-8 text-base font-semibold whitespace-nowrap">
+          Start Free Analysis
+         </button>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 sm:py-32 relative overflow-hidden border-y bg-white text-slate-900">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+       <div class="max-w-2xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 border border-blue-200 text-blue-700 text-xs font-semibold uppercase tracking-wider mb-8">
+         For Agencies &amp; Teams
+        </div>
+        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-slate-900 mb-6 leading-[1.1]">
+         Scale AI Optimization for
+         <span class="text-blue-600">
+          Every Client.
+         </span>
+        </h2>
+        <p class="text-lg sm:text-xl text-slate-600 mb-10 leading-relaxed">
+         Manage unlimited client accounts from a single, powerful command center. White-label reports, API access, and enterprise-grade security built for scale.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4">
+         <a href="https://calendly.com/aioscop/30min" rel="noopener noreferrer" target="_blank">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-11 rounded-md px-8 bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg shadow-blue-600/20">
+           Book Enterprise Demo
+          </button>
+         </a>
+        </div>
+        <div class="mt-12 pt-12 border-t border-slate-200 grid grid-cols-3 gap-8">
+         <div>
+          <div class="text-3xl font-bold text-slate-900 mb-1">
+           100+
+          </div>
+          <div class="text-sm text-slate-600">
+           Agencies
+          </div>
+         </div>
+         <div>
+          <div class="text-3xl font-bold text-slate-900 mb-1">
+           50k+
+          </div>
+          <div class="text-sm text-slate-600">
+           Keywords Tracked
+          </div>
+         </div>
+         <div>
+          <div class="text-3xl font-bold text-slate-900 mb-1">
+           99.9%
+          </div>
+          <div class="text-sm text-slate-600">
+           Uptime SLA
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="grid sm:grid-cols-2 gap-6">
+        <div class="rounded-lg border text-card-foreground shadow-xs bg-white border-slate-200 hover:border-blue-500 hover:shadow-lg transition-all duration-300 group">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-xl text-slate-900">
+           White-Label Ready
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-slate-600 text-sm leading-relaxed">
+           Custom domains, branded PDF reports, and client portals that look like your own product.
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-xs bg-white border-slate-200 hover:border-purple-500 hover:shadow-lg transition-all duration-300 group">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-xl text-slate-900">
+           Team Management
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-slate-600 text-sm leading-relaxed">
+           Granular permissions, role-based access control (RBAC), and audit logs for compliance.
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-xs bg-white border-slate-200 hover:border-emerald-500 hover:shadow-lg transition-all duration-300 group">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-xl text-slate-900">
+           API Access
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-slate-600 text-sm leading-relaxed">
+           Full REST API to integrate AI ranking data directly into your internal dashboards or tools.
+          </p>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-xs bg-white border-slate-200 hover:border-orange-500 hover:shadow-lg transition-all duration-300 group">
+         <div class="flex flex-col space-y-1.5 p-6">
+          <h3 class="font-semibold tracking-tight text-xl text-slate-900">
+           Enterprise Security
+          </h3>
+         </div>
+         <div class="p-6 pt-0">
+          <p class="text-slate-600 text-sm leading-relaxed">
+           SOC 2 Type II compliant infrastructure, SSO/SAML support, and priority support channels.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 sm:py-24 lg:py-32 bg-background border-y">
+     <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-3xl text-center mb-12 sm:mb-16 lg:mb-20 px-4">
+       <div class="inline-flex items-center rounded-full border transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-6 px-4 py-1.5 text-xs font-semibold tracking-wider uppercase bg-muted/40 border-border/60">
+        FAQ
+       </div>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-4">
+        Everything you need to know
+       </h2>
+       <p class="text-base sm:text-lg leading-6 sm:leading-7 text-muted-foreground">
+        Common questions about our AI optimization platform
+       </p>
+      </div>
+      <div class="px-2 sm:px-0">
+       <div class="max-w-3xl mx-auto">
+        <div class="space-y-4">
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-blue-600/30 shadow-md">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Basics
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold transition-colors text-blue-900">
+             How is 'AI Optimization' different from traditional Google SEO?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[1fr] opacity-100">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             Traditional SEO targets Google's algorithm to rank blue links. AI Optimization targets Large Language Models (LLMs) like ChatGPT and Claude to ensure your brand is cited in direct answers. We focus on 'Answerability', schema depth, and semantic authority rather than just backlinks and keywords.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Coverage
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             Which AI platforms does AIOSCOP track and optimize for?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             We provide real-time visibility tracking and optimization insights for the top 8 AI models: ChatGPT (OpenAI), Claude (Anthropic), Google Gemini, Perplexity, Microsoft Copilot (Bing), DeepSeek, Meta Llama, and Mistral. We constantly update our index as new models gain market share.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Technical
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             Does this require installing code on my website?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             No installation is required for tracking. You simply enter your domain and keywords. For optimization, we provide a dashboard of recommendations (schema changes, content structure updates) that you or your developer can implement. We also offer a WordPress plugin for automatic implementation.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Performance
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             How do you measure 'success' if there are no rankings?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             We track 'Share of Voice' and 'Recommendation Rate'. Instead of a rank position (1-10), we measure how often your brand is mentioned in answers to relevant queries (e.g., 'Top 3 CRM tools'). We also track sentiment—whether the AI recommends you positively or negatively.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Results
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             How long does it take to see results in AI answers?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             It varies by platform. 'Live' engines like Perplexity and Bing Chat can reflect changes in days. 'Static' models like base ChatGPT can take weeks or months until their knowledge cutoff updates or they access live browsing data. Our strategies target both types of retrieval.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Security
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             Is my data shared with competitors?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             Absolutely not. Your tracking data, strategy configurations, and content drafts are encrypted and strictly private. We adhere to SOC 2 Type II standards. We do, however, provide you with public data about your competitors' visibility for benchmarking.
+            </p>
+           </div>
+          </div>
+         </div>
+         <div class="group border rounded-2xl bg-white transition-all duration-200 border-border hover:border-blue-600/30 hover:shadow-xs">
+          <button class="w-full px-6 py-5 text-left flex items-start gap-4 touch-manipulation">
+           <div class="flex-1">
+            <div class="flex items-center gap-3 mb-1">
+             <span class="text-xs font-bold text-blue-600 uppercase tracking-wider bg-blue-50 px-2 py-0.5 rounded-full">
+              Pricing
+             </span>
+            </div>
+            <span class="text-base sm:text-lg font-semibold text-slate-900 transition-colors">
+             What happens after my 7-day free trial?
+            </span>
+           </div>
+          </button>
+          <div class="grid transition-all duration-300 ease-in-out overflow-hidden grid-rows-[0fr] opacity-0">
+           <div class="min-h-0 px-6 pb-6 pl-15">
+            <p class="text-base leading-relaxed text-slate-600">
+             If you love the platform, you can choose a plan starting at $79/month. If not, your account will be paused until you decide to upgrade. We never charge your card without explicit permission.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 sm:py-32 bg-background border-y relative overflow-hidden">
+     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
+      <div class="mx-auto max-w-3xl text-center mb-16 sm:mb-20 px-4">
+       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-semibold uppercase tracking-wide mb-4">
+        <span>
+         Latest Articles
+        </span>
+       </div>
+       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-6">
+        Mastering AI Search
+       </h2>
+       <p class="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+        Deep dives, strategies, and guides to help you rank higher in ChatGPT, Claude, Gemini, and more.
+       </p>
+      </div>
+      <div class="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
+       <div class="lg:col-span-1">
+        <a class="group block h-full" href="/blog/ultimate-guide-to-ai-engine-optimization-geo">
+         <div class="rounded-lg border text-card-foreground shadow-xs h-full border-border/50 bg-card hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col ring-1 ring-black/5">
+          <div class="relative h-64 sm:h-96 overflow-hidden">
+           <img alt="The Ultimate Guide to AI Engine Optimization (GEO)" class="object-cover transition-transform duration-500 group-hover:scale-105" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1677442136019-21780ecad995%3Fq%3D80%26w%3D2532%26auto%3Dformat%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+           <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 hover:bg-primary/80 absolute top-4 left-4 backdrop-blur-md border-white/20 text-white bg-linear-to-r from-blue-500 to-cyan-500 opacity-90">
+            Optimization
+           </div>
+          </div>
+          <div class="flex flex-col space-y-1.5 flex-1 p-6 sm:p-8">
+           <div class="flex items-center gap-2 text-sm text-muted-foreground font-medium mb-4">
+            <time>
+             March 10, 2025
+            </time>
+            <span class="text-muted-foreground/50">
+             •
+            </span>
+            <span>
+             12 min read
+            </span>
+           </div>
+           <h3 class="tracking-tight text-2xl sm:text-4xl font-bold text-foreground group-hover:text-blue-600 transition-colors leading-tight mb-4">
+            The Ultimate Guide to AI Engine Optimization (GEO)
+           </h3>
+           <p class="text-base sm:text-lg text-muted-foreground leading-relaxed line-clamp-3">
+            Learn the core principles of optimizing your content for Generative Engine Optimization to rank in ChatGPT, Gemini, and Claude.
+           </p>
+          </div>
+          <div class="p-6 sm:p-8 pt-0 mt-auto">
+           <div class="flex items-center text-sm font-semibold text-blue-600">
+            Read Article
+           </div>
+          </div>
+         </div>
+        </a>
+       </div>
+       <div class="lg:col-span-1 flex flex-col gap-6">
+        <a class="group" href="/blog/structuring-content-for-llms-json-ld">
+         <div class="rounded-lg border text-card-foreground shadow-xs border-border/50 bg-card hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-row h-full ring-1 ring-black/5">
+          <div class="relative w-1/3 sm:w-48 shrink-0 overflow-hidden">
+           <img alt="Structuring Content for LLMs: JSON-LD and Semantic HTML" class="object-cover transition-transform duration-500 group-hover:scale-105" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1555949963-ff9fe0c870eb%3Fq%3D80%26w%3D2670%26auto%3Dformat%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+          </div>
+          <div class="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+           <div class="flex items-center gap-2 text-xs text-muted-foreground font-medium mb-2">
+            <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-[10px] px-1.5 py-0 h-5">
+             Technical SEO
+            </div>
+            <span>
+             •
+            </span>
+            <span>
+             8 min read
+            </span>
+           </div>
+           <h3 class="text-lg sm:text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors leading-tight mb-2 line-clamp-2">
+            Structuring Content for LLMs: JSON-LD and Semantic HTML
+           </h3>
+           <p class="text-sm text-muted-foreground line-clamp-2 mb-auto">
+            Why structured data is the most important signal for Large Language Models and how to implement it correctly.
+           </p>
+          </div>
+         </div>
+        </a>
+        <a class="group" href="/blog/how-to-rank-in-google-sge-bing-chat">
+         <div class="rounded-lg border text-card-foreground shadow-xs border-border/50 bg-card hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-row h-full ring-1 ring-black/5">
+          <div class="relative w-1/3 sm:w-48 shrink-0 overflow-hidden">
+           <img alt="How to Rank in Google SGE and Bing Chat" class="object-cover transition-transform duration-500 group-hover:scale-105" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1616469829581-73993eb86b02%3Fq%3D80%26w%3D2670%26auto%3Dformat%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+          </div>
+          <div class="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+           <div class="flex items-center gap-2 text-xs text-muted-foreground font-medium mb-2">
+            <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-[10px] px-1.5 py-0 h-5">
+             Strategy
+            </div>
+            <span>
+             •
+            </span>
+            <span>
+             10 min read
+            </span>
+           </div>
+           <h3 class="text-lg sm:text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors leading-tight mb-2 line-clamp-2">
+            How to Rank in Google SGE and Bing Chat
+           </h3>
+           <p class="text-sm text-muted-foreground line-clamp-2 mb-auto">
+            Specific strategies for the new search generative experiences and how they differ from traditional SERP features.
+           </p>
+          </div>
+         </div>
+        </a>
+        <a class="group" href="/blog/voice-search-vs-ai-search-optimization">
+         <div class="rounded-lg border text-card-foreground shadow-xs border-border/50 bg-card hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-row h-full ring-1 ring-black/5">
+          <div class="relative w-1/3 sm:w-48 shrink-0 overflow-hidden">
+           <img alt="Voice Search vs. AI Search: Optimization Strategies" class="object-cover transition-transform duration-500 group-hover:scale-105" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1620712943543-bcc4688e7485%3Fq%3D80%26w%3D2670%26auto%3Dformat%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+          </div>
+          <div class="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+           <div class="flex items-center gap-2 text-xs text-muted-foreground font-medium mb-2">
+            <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-[10px] px-1.5 py-0 h-5">
+             AI Search
+            </div>
+            <span>
+             •
+            </span>
+            <span>
+             7 min read
+            </span>
+           </div>
+           <h3 class="text-lg sm:text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors leading-tight mb-2 line-clamp-2">
+            Voice Search vs. AI Search: Optimization Strategies
+           </h3>
+           <p class="text-sm text-muted-foreground line-clamp-2 mb-auto">
+            Understanding the nuances between optimizing for voice assistants and chat-based AI models.
+           </p>
+          </div>
+         </div>
+        </a>
+        <a class="group" href="/blog/measuring-ai-visibility-metrics-that-matter">
+         <div class="rounded-lg border text-card-foreground shadow-xs border-border/50 bg-card hover:shadow-lg transition-all duration-300 overflow-hidden flex flex-row h-full ring-1 ring-black/5">
+          <div class="relative w-1/3 sm:w-48 shrink-0 overflow-hidden">
+           <img alt="Measuring AI Visibility: Metrics That Matter" class="object-cover transition-transform duration-500 group-hover:scale-105" src="/_next/image?url=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1551288049-bebda4e38f71%3Fq%3D80%26w%3D2670%26auto%3Dformat%26fit%3Dcrop&amp;w=3840&amp;q=75"/>
+          </div>
+          <div class="flex-1 p-4 sm:p-6 flex flex-col justify-center">
+           <div class="flex items-center gap-2 text-xs text-muted-foreground font-medium mb-2">
+            <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80 text-[10px] px-1.5 py-0 h-5">
+             Analytics
+            </div>
+            <span>
+             •
+            </span>
+            <span>
+             9 min read
+            </span>
+           </div>
+           <h3 class="text-lg sm:text-xl font-bold text-foreground group-hover:text-blue-600 transition-colors leading-tight mb-2 line-clamp-2">
+            Measuring AI Visibility: Metrics That Matter
+           </h3>
+           <p class="text-sm text-muted-foreground line-clamp-2 mb-auto">
+            Traditional SEO metrics don't apply to LLMs. Here are the new KPIs you need to track for AI success.
+           </p>
+          </div>
+         </div>
+        </a>
+       </div>
+      </div>
+      <div class="text-center mt-16">
+       <a class="inline-flex items-center gap-2 px-8 py-4 bg-white border border-gray-200 text-foreground rounded-full font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all shadow-xs hover:shadow-md" href="/blog">
+        View All Articles
+       </a>
+      </div>
+     </div>
+    </section>
+    <section class="relative py-24 sm:py-32 overflow-hidden bg-background">
+     <div class="mx-auto max-w-5xl px-4 sm:px-6 relative z-10">
+      <div class="relative rounded-[2.5rem] overflow-hidden bg-white shadow-2xl shadow-slate-200/50 border border-slate-100">
+       <div class="relative px-6 py-16 sm:px-12 sm:py-20 flex flex-col items-center text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-slate-600 text-xs font-medium uppercase tracking-wider mb-8 hover:bg-slate-100 transition-colors cursor-default">
+         Limited Time Offer
+        </div>
+        <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-slate-900 mb-6 max-w-3xl leading-[1.1]">
+         Ready to dominate
+         <br class="hidden sm:block"/>
+         <span class="text-blue-600">
+          AI Search Results?
+         </span>
+        </h2>
+        <p class="text-lg sm:text-xl text-slate-600 max-w-2xl leading-relaxed mb-10">
+         Join 2,000+ forward-thinking brands tracking their visibility on ChatGPT, Claude, and Gemini. Start your 7-day free trial today.
+        </p>
+        <div class="w-full max-w-md flex flex-col items-center gap-8">
+         <button class="inline-flex items-center justify-center gap-2 ring-offset-background transition-colors focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md h-14 px-8 text-base font-semibold whitespace-nowrap">
+          Start Free Trial
+         </button>
+         <div class="flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-slate-500">
+          <div class="flex items-center gap-2">
+           <span>
+            No credit card required
+           </span>
+          </div>
+          <div class="flex items-center gap-2">
+           <span>
+            7-day free trial
+           </span>
+          </div>
+          <div class="flex items-center gap-2">
+           <span>
+            Cancel anytime
+           </span>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="border-t bg-background">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+     <div class="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
+      <div class="flex items-center gap-3">
+       <a class="flex items-center" href="/">
+        <img alt="AIOSCOP Logo" class="h-5 w-auto" src="/AIOSCOP.svg"/>
+       </a>
+       <span class="text-xs text-muted-foreground">
+        © 2025 AIOSCOP
+       </span>
+      </div>
+      <nav class="flex items-center gap-6 text-xs text-muted-foreground">
+       <a class="hover:text-foreground transition-colors" href="/privacy">
+        Privacy Policy
+       </a>
+       <a class="hover:text-foreground transition-colors" href="/terms">
+        Terms
+       </a>
+       <a class="hover:text-foreground transition-colors" href="https://paffstudios.com" rel="noopener noreferrer" target="_blank">
+        Powered by Paff Studios Company
+       </a>
+      </nav>
+     </div>
+    </div>
+   </footer>
+   <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans">
+    <div class="relative group">
+     <span class="absolute -top-12 right-0 bg-white dark:bg-slate-800 text-foreground text-xs px-3 py-1.5 rounded-xl shadow-lg border border-border/50 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none translate-y-2 group-hover:translate-y-0 flex items-center gap-1.5">
+      Ask AI Assistant
+     </span>
+    </div>
+   </div>
+   <section>
+   </section>
+   <span id="recharts_measurement_span">
+    0
+   </span>
+  </body>
+
+</body>
+</html>

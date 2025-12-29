@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TorneoPro - Crea y Gestiona Torneos de Fútbol en Minutos</title>
+</head>
+<body>
+  <body>
+   <header class="fixed top-0 z-50 h-20 w-full px-4 lg:px-[100px] py-2">
+    <nav class="bg-black/50 backdrop-blur-md border border-white/5 shadow-sm flex items-center w-full justify-between px-4 py-2 rounded-xl">
+     <div class="flex gap-16">
+      <img alt="Logo de TorneoPro" class="h-6" src="../../logo-dark.webp"/>
+      <ul class="items-center gap-10 hidden lg:flex">
+       <li class="text-white rounded-lg text-sm font-[400] transition-colors">
+        <a href="/">
+         <h2>
+          Inicio
+         </h2>
+        </a>
+       </li>
+       <li class="text-neutral-300 hover:text-white rounded-lg text-sm font-[400] transition-colors">
+        <a href="https://www.torneopro.app">
+         <h2>
+          Competiciones
+         </h2>
+        </a>
+       </li>
+       <li class="text-neutral-300 hover:text-white rounded-lg text-sm font-[400] transition-colors">
+        <a href="#planes">
+         <h2>
+          Planes
+         </h2>
+        </a>
+       </li>
+       <li class="text-neutral-300 hover:text-white rounded-lg text-sm font-[400] transition-colors">
+        <a href="/preguntas-frecuentes">
+         <h2>
+          Preguntas frecuentes
+         </h2>
+        </a>
+       </li>
+       <li class="text-neutral-300 hover:text-white rounded-lg text-sm font-[400] transition-colors">
+        <a href="https://docs.torneopro.app">
+         <h2>
+          Ayuda
+         </h2>
+        </a>
+       </li>
+      </ul>
+     </div>
+     <ul class="items-center gap-6 hidden lg:flex">
+      <li class="text-neutral-300 hover:text-white rounded-lg text-sm font-[400] transition-colors">
+       <a href="https://auth.torneopro.app/auth/signin">
+        <h2>
+         Ingresar
+        </h2>
+       </a>
+      </li>
+      <li class="cursor-pointer rounded-lg font-medium bg-white transition-colors px-4 py-2 text-sm hover:text-neutral-900 text-neutral-600 hover:bg-neutral-100">
+       <a href="https://auth.torneopro.app/auth/signup">
+        <h2>
+         Crear cuenta
+        </h2>
+       </a>
+      </li>
+     </ul>
+     <section class="block lg:hidden">
+      <astro-island>
+       <section>
+       </section>
+      </astro-island>
+     </section>
+    </nav>
+   </header>
+   <main>
+    <section class="relative overflow-hidden lg:h-dvh bg-black/90 px-[20px] py-20 md:gap-4 md:px-[100px] md:pt-32">
+     <section class="relative z-10 order-2 flex flex-col text-center items-center justify-center gap-8 pt-2 lg:pt-0">
+      <a class="bg-emerald-950 no-underline group cursor-pointer relative shadow-2xl shadow-zinc-900 rounded-lg p-px text-xs font-semibold leading-6 text-neutral-200 hover:text-white transition-colors inline-block" href="#reglamento">
+       <div class="relative flex space-x-2 items-center z-10 rounded-lg bg-zinc-950 py-0.5 px-2.5 ring-1 ring-white/10">
+        <span>
+         ChatPDF en TorneoPro
+        </span>
+       </div>
+      </a>
+      <h1 class="animate-gradient-x max-w-4xl bg-gradient-to-r from-green-300 via-emerald-500 to-green-500 bg-clip-text text-3xl font-bold tracking-tight text-transparent md:text-[46px]">
+       Crea y gestiona tus torneos deportivos en minutos
+      </h1>
+      <p class="max-w-2xl text-xs font-medium text-neutral-400 md:text-lg">
+       Nuestra plataforma te ofrece funcionalidades para el registro de participantes, generación de
+        calendarios, gestión de resultados y mucho más.
+      </p>
+      <div class="relative z-10 mt-4 flex w-full justify-center gap-4 md:flex-row">
+       <a class="group relative text-base" href="https://auth.torneopro.app/auth/signin">
+        <span class="bg-white text-black relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+         <span class="relative text-xs md:text-base">
+          Crear torneo
+         </span>
+        </span>
+       </a>
+       <a class="group relative text-base" href="https://www.torneopro.app">
+        <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+         <span class="relative text-xs md:text-base">
+          Ver competiciones
+         </span>
+        </span>
+       </a>
+      </div>
+     </section>
+    </section>
+    <section class="relative bg-black/90 px-2 md:px-[100px] pb-12 pt-44 lg:pt-[30rem]">
+     <div class="absolute z-10 left-1/2 -translate-x-1/2 -top-10 lg:-top-48 w-full">
+      <img alt="home-page" class="aspect-video w-4/5 mx-auto animate-fade-in pointer-events-none select-none" src="/home-page.webp"/>
+     </div>
+     <h2 class="text-sm uppercase tracking-tight mb-2 font-bold text-neutral-400 text-center">
+      Por qué elegir TorneoPro
+     </h2>
+     <h2 class="text-xl lg:text-4xl font-bold text-neutral-100 text-center pb-12">
+      Simplifica la gestión de tu torneo
+     </h2>
+     <div class="grid grid-cols-1 border border-neutral-700 py-10 lg:py-20 rounded-2xl items-center lg:grid-cols-2 text-neutral-100 gap-12 px-6 max-w-7xl mx-auto">
+      <div class="space-y-12">
+       <div class="space-y-6">
+        <div class="text-3xl lg:text-5xl font-bold leading-tight">
+         Automatiza la gestión
+        </div>
+        <p class="text-xl text-gray-400">
+         Una plataforma completa para la organización de torneos y competiciones deportivas.
+        </p>
+       </div>
+       <div class="flex flex-col gap-8 items-start" id="features">
+        <article class="flex flex-col gap-3">
+         <div class="flex items-center gap-3 text-lg transition-colors group cursor-pointer hover:text-white text-white">
+          <hr class="w-1 h-6 group-hover:bg-white bg-white"/>
+          <h3 class="text-neutral-200 lg:text-inherit">
+           Inscripciones masivas
+          </h3>
+         </div>
+         <section class="flex lg:hidden justify-center items-center">
+          <div class="animate-glowing z-10 opacity-85 overflow-hidden rounded-md border border-emerald-600">
+           <video class="w-[500px] aspect-video motion-reduce:hidden">
+            <source src="/videos/inscriptions.mp4" type="video/mp4">
+            </source>
+           </video>
+          </div>
+         </section>
+        </article>
+        <article class="flex flex-col gap-3">
+         <div class="flex items-center gap-3 text-lg transition-colors group cursor-pointer hover:text-white text-neutral-400">
+          <hr class="w-1 h-6 bg-neutral-400 group-hover:bg-white"/>
+          <h3 class="text-neutral-200 lg:text-inherit">
+           Generación inteligente de calendarios
+          </h3>
+         </div>
+         <section class="flex lg:hidden justify-center items-center">
+          <div class="animate-glowing z-10 opacity-85 overflow-hidden rounded-md border border-emerald-600">
+           <video class="w-[500px] aspect-video motion-reduce:hidden">
+            <source src="/videos/fixtures.mp4" type="video/mp4">
+            </source>
+           </video>
+          </div>
+         </section>
+        </article>
+        <article class="flex flex-col gap-3">
+         <div class="flex items-center gap-3 text-lg transition-colors group cursor-pointer hover:text-white text-neutral-400">
+          <hr class="w-1 h-6 bg-neutral-400 group-hover:bg-white"/>
+          <h3 class="text-neutral-200 lg:text-inherit">
+           Estadísticas en tiempo real
+          </h3>
+         </div>
+         <section class="flex lg:hidden justify-center items-center">
+          <div class="animate-glowing z-10 opacity-85 overflow-hidden rounded-md border border-emerald-600">
+           <video class="w-[500px] aspect-video motion-reduce:hidden">
+            <source src="/videos/stats.mp4" type="video/mp4">
+            </source>
+           </video>
+          </div>
+         </section>
+        </article>
+        <article class="flex flex-col gap-3">
+         <div class="flex items-center gap-3 text-lg transition-colors group cursor-pointer hover:text-white text-neutral-400">
+          <hr class="w-1 h-6 bg-neutral-400 group-hover:bg-white"/>
+          <h3 class="text-neutral-200 lg:text-inherit">
+           Marketing digital integrado
+          </h3>
+         </div>
+         <section class="flex lg:hidden justify-center items-center">
+          <div class="animate-glowing z-10 opacity-85 overflow-hidden rounded-md border border-emerald-600">
+           <video class="w-[500px] aspect-video motion-reduce:hidden">
+            <source src="/videos/marketing.mp4" type="video/mp4">
+            </source>
+           </video>
+          </div>
+         </section>
+        </article>
+       </div>
+      </div>
+      <section class="hidden lg:flex justify-center items-center">
+       <div class="animate-glowing z-10 opacity-85 overflow-hidden rounded-xl border-2 border-emerald-600">
+        <video class="w-[500px] aspect-video video-visible" id="video-desktop">
+         <source class="video-visible" src="/videos/inscriptions.mp4" type="video/mp4">
+         </source>
+        </video>
+       </div>
+      </section>
+     </div>
+    </section>
+    <section class="relative bg-black px-2 md:px-[100px] pt-12">
+     <div class="pt-16 grid md:grid-cols-2 gap-12">
+      <div class="space-y-4">
+       <h3 class="text-xl md:text-2xl font-medium text-white">
+        Flexibilidad total en tu calendario
+       </h3>
+       <p class="text-gray-400 text-lg">
+        Crea semanas libres moviendo jornadas completas con un clic y ajusta fechas de todo el
+          calendario.
+       </p>
+       <div class="w-full relative opacity-95">
+        <img alt="Jornadas" class="w-full object-contain" src="/jor.png"/>
+       </div>
+      </div>
+      <div class="space-y-4">
+       <h3 class="text-xl md:text-2xl font-medium text-white">
+        Personalización sin límites
+       </h3>
+       <p class="text-gray-400 text-lg">
+        Configura la duración de los partidos y actualiza las sedes de manera masiva.
+       </p>
+       <div class="space-y-6">
+        <div class="w-full relative opacity-95">
+         <img alt="Jornadas" class="w-full object-contain" src="/time.png"/>
+        </div>
+        <div class="w-full relative opacity-95">
+         <img alt="Jornadas" class="w-full object-contain" src="/stadium.png"/>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="relative bg-black px-2 md:px-[100px] py-12 flex flex-col items-center" id="reglamento">
+     <div class="bg-gradient-to-r relative z-10 animate-gradient-x from-green-500 via-emerald-600 to-green-600 text-white px-4 py-1 rounded-md text-sm font-medium mb-12">
+      Asistente Virtual
+     </div>
+     <h2 class="text-xl md:text-5xl font-semibold text-center max-w-4xl leading-tight mb-8 text-neutral-50">
+      Respuestas instantáneas a tus
+      <br/>
+      consultas reglamentarias
+     </h2>
+     <p class="text-gray-400 text-center max-w-4xl text-sm lg:text-lg leading-relaxed mb-16">
+      Ahorra tiempo y evita malentendidos con respuestas instantáneas sobre el reglamento. Perfecto
+      para árbitros, jugadores y personal administrativo que necesitan claridad en las reglas.
+     </p>
+     <div class="w-full">
+      <img alt="home-page" class="aspect-video w-full rounded-2xl object-contain mx-auto" src="/chat.webp"/>
+     </div>
+    </section>
+    <section class="relative bg-white/90 px-[20px] pb-[150px] pt-40 md:px-[100px] lg:pb-[234px]">
+     <section class="flex flex-col items-center gap-12">
+      <p class="max-w-[700px] text-center text-base font-normal text-neutral-600 md:text-xl">
+       <strong>
+        TorneoPro
+       </strong>
+       es una plataforma que te permite crear torneos de manera fácil y rápida.
+        Automatiza el proceso y olvídate de los papeles y las planillas.
+      </p>
+      <h2 class="text-5xl font-bold text-emerald-700 text-center">
+       Deportes en TorneoPro
+      </h2>
+      <div class="flex w-full flex-wrap justify-center gap-16">
+       <article class="flex w-[25%] flex-col items-center">
+        <img alt="Fútbol" class="h-36 w-48 object-contain hover:animate-bounce" src="/ball.png"/>
+        <span class="text-xl font-semibold text-neutral-900">
+         Fútbol
+        </span>
+       </article>
+       <p class="inline-flex w-full justify-center text-xs font-light underline">
+        Próximamente más deportes
+       </p>
+      </div>
+     </section>
+    </section>
+    <section class="relative z-20 mx-[20px] md:mx-[100px]">
+     <section class="absolute left-0 right-0 top-[-84px] m-auto flex flex-col items-center justify-between gap-8 rounded-lg bg-emerald-700 p-6 text-center md:flex-row md:p-8 md:text-start lg:p-12">
+      <div class="lg:text-lg">
+       <p class="font-[700] text-white">
+        ¿Todo listo para comenzar?
+       </p>
+       <p class="hidden font-[700] text-white md:block">
+        Prueba TorneoPro ahora
+       </p>
+      </div>
+      <a class="group relative text-base" href="https://auth.torneopro.app/auth/signin">
+       <span class="bg-white text-black relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+        <span class="relative text-xs md:text-base">
+         Crear un torneo
+        </span>
+       </span>
+      </a>
+     </section>
+    </section>
+    <section class="relative bg-gray-50 px-[20px] py-24 md:px-[100px] md:py-40" id="planes">
+     <h2 class="mb-8 w-full text-center text-2xl lg:text-5xl font-bold text-neutral-800">
+      Tenemos estos planes para ti
+     </h2>
+     <p class="my-8 text-center text-lg font-normal text-neutral-500">
+      Prueba
+      <strong class="text-neutral-600">
+       TorneoPro
+      </strong>
+      de forma gratuita y actualiza cuando quieras
+     </p>
+     <aside class="flex justify-center">
+      <astro-island>
+       <section class="mb-10 flex space-x-2 overflow-auto z-40 rounded-2xl bg-emerald-700 px-1 md:space-x-2">
+        <div class="relative cursor-pointer">
+         <div class="relative z-50 p-2 text-sm transition-colors duration-0 md:duration-300 font-medium text-emerald-700">
+          Mensual
+         </div>
+        </div>
+        <div class="relative cursor-pointer">
+         <div class="relative z-50 p-2 text-sm transition-colors duration-0 md:duration-300 text-white">
+          Anual
+         </div>
+        </div>
+       </section>
+      </astro-island>
+     </aside>
+     <section class="flex w-full flex-col items-center justify-center gap-4 md:flex-row md:gap-0">
+      <section class="flex-grow-1 group relative z-40 flex w-full overflow-hidden rounded-xl bg-white object-cover p-8 ring-2 ring-black/20 transition-[width] duration-700 ease-out hover:bg-gray-100 hover:contrast-125 md:-ml-2 md:min-h-[570px] md:w-[21%] md:hover:w-[420px]">
+       <div class="flex flex-col items-start justify-between gap-8">
+        <div class="flex flex-col gap-8">
+         <div class="flex flex-col gap-4">
+          <p class="w-full text-xl font-bold text-emerald-700">
+           Gratis
+          </p>
+          <p class="line-clamp-1 text-sm text-neutral-600 group-hover:line-clamp-2">
+           Para pequeños torneos, torneos rápidos y corta duración.
+          </p>
+          <astro-island>
+           <div class="space-y-1">
+            <div class="relative text-start">
+             <span class="text-3xl font-bold text-start">
+              $0
+             </span>
+            </div>
+           </div>
+          </astro-island>
+         </div>
+         <div class="hidden flex-col gap-6 md:flex">
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            50 jugadores
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Administración de equipos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Calendarios automáticos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Estadísticas completas
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Página personalizada y publicidad integrada
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="transition-opacity duration-700 md:opacity-0 md:group-hover:opacity-100">
+         <div class="hidden md:block">
+          <a class="group relative text-base" href="https://auth.torneopro.app/auth/signup">
+           <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Probar gratis
+            </span>
+           </span>
+          </a>
+         </div>
+         <div class="block md:hidden">
+          <a class="group relative text-base" href="https://auth.torneopro.app/auth/signup">
+           <span class="bg-black text-white relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Probar gratis
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="flex-grow-1 group relative z-40 flex w-full overflow-hidden rounded-xl bg-white object-cover p-8 ring-2 ring-black/20 transition-[width] duration-700 ease-out hover:bg-gray-100 hover:contrast-125 md:-ml-2 md:min-h-[570px] md:w-[21%] md:hover:w-[420px]">
+       <div class="flex flex-col items-start justify-between gap-8">
+        <div class="flex flex-col gap-8">
+         <div class="flex flex-col gap-4">
+          <p class="w-full text-xl font-bold text-emerald-700">
+           Básico
+          </p>
+          <p class="line-clamp-1 text-sm text-neutral-600 group-hover:line-clamp-2">
+           Para torneos de barrio, equipos escolares, torneos locales y grupos recreativos.
+          </p>
+          <astro-island>
+           <div class="space-y-1">
+            <div class="relative text-start">
+             <span class="text-3xl font-bold text-start">
+              $7
+             </span>
+             <span class="text-xs font-medium ml-1">
+              cada mes
+             </span>
+            </div>
+           </div>
+          </astro-island>
+         </div>
+         <div class="hidden flex-col gap-6 md:flex">
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            200 jugadores
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Administración de equipos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Calendarios automáticos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Estadísticas completas
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Página personalizada y publicidad integrada
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="transition-opacity duration-700 md:opacity-0 md:group-hover:opacity-100">
+         <div class="hidden md:block">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+         <div class="block md:hidden">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-black text-white relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="flex-grow-1 group relative z-40 flex w-full overflow-hidden rounded-xl bg-white object-cover p-8 ring-2 ring-black/20 transition-[width] duration-700 ease-out hover:bg-gray-100 hover:contrast-125 md:-ml-2 md:min-h-[570px] md:w-[21%] md:hover:w-[420px]">
+       <span class="absolute bottom-0 right-0 z-50 m-4 flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/20 px-4 py-2 text-center text-xs font-bold leading-4 text-emerald-700 group-hover:hidden md:left-0">
+        Más
+        <br/>
+        popular
+       </span>
+       <div class="flex flex-col items-start justify-between gap-8">
+        <div class="flex flex-col gap-8">
+         <div class="flex flex-col gap-4">
+          <p class="w-full text-xl font-bold text-emerald-700">
+           Amateur
+          </p>
+          <p class="line-clamp-1 text-sm text-neutral-600 group-hover:line-clamp-2">
+           Para ligas municipales, torneos interescolares y complejos deportivos en crecimiento.
+          </p>
+          <astro-island>
+           <div class="space-y-1">
+            <div class="relative text-start">
+             <span class="text-3xl font-bold text-start">
+              $15
+             </span>
+             <span class="text-xs font-medium ml-1">
+              cada mes
+             </span>
+            </div>
+           </div>
+          </astro-island>
+         </div>
+         <div class="hidden flex-col gap-6 md:flex">
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            500 jugadores
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Administración de equipos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Calendarios automáticos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Estadísticas completas
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Página personalizada y publicidad integrada
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="transition-opacity duration-700 md:opacity-0 md:group-hover:opacity-100">
+         <div class="hidden md:block">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+         <div class="block md:hidden">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-black text-white relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="flex-grow-1 group relative z-40 flex w-full overflow-hidden rounded-xl bg-white object-cover p-8 ring-2 ring-black/20 transition-[width] duration-700 ease-out hover:bg-gray-100 hover:contrast-125 md:-ml-2 md:min-h-[570px] md:w-[21%] md:hover:w-[420px]">
+       <div class="flex flex-col items-start justify-between gap-8">
+        <div class="flex flex-col gap-8">
+         <div class="flex flex-col gap-4">
+          <p class="w-full text-xl font-bold text-emerald-700">
+           Pro
+          </p>
+          <p class="line-clamp-1 text-sm text-neutral-600 group-hover:line-clamp-2">
+           Para ligas regionales, torneos departamentales y organizaciones deportivas establecidas.
+          </p>
+          <astro-island>
+           <div class="space-y-1">
+            <div class="relative text-start">
+             <span class="text-3xl font-bold text-start">
+              $29
+             </span>
+             <span class="text-xs font-medium ml-1">
+              cada mes
+             </span>
+            </div>
+           </div>
+          </astro-island>
+         </div>
+         <div class="hidden flex-col gap-6 md:flex">
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            800 jugadores
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Administración de equipos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Calendarios automáticos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Estadísticas completas
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Página personalizada y publicidad integrada
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="transition-opacity duration-700 md:opacity-0 md:group-hover:opacity-100">
+         <div class="hidden md:block">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+         <div class="block md:hidden">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-black text-white relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="flex-grow-1 group relative z-40 flex w-full overflow-hidden rounded-xl bg-white object-cover p-8 ring-2 ring-black/20 transition-[width] duration-700 ease-out hover:bg-gray-100 hover:contrast-125 md:-ml-2 md:min-h-[570px] md:w-[21%] md:hover:w-[420px]">
+       <div class="flex flex-col items-start justify-between gap-8">
+        <div class="flex flex-col gap-8">
+         <div class="flex flex-col gap-4">
+          <p class="w-full text-xl font-bold text-emerald-700">
+           Élite
+          </p>
+          <p class="line-clamp-1 text-sm text-neutral-600 group-hover:line-clamp-2">
+           Para ligas profesionales, torneos nacionales y organizaciones de alto rendimiento.
+          </p>
+          <astro-island>
+           <div class="space-y-1">
+            <div class="relative text-start">
+             <span class="text-3xl font-bold text-start">
+              $59
+             </span>
+             <span class="text-xs font-medium ml-1">
+              cada mes
+             </span>
+            </div>
+           </div>
+          </astro-island>
+         </div>
+         <div class="hidden flex-col gap-6 md:flex">
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            1500 jugadores
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Administración de equipos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Calendarios automáticos
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Estadísticas completas
+           </p>
+          </div>
+          <div class="flex items-center gap-2 text-neutral-800">
+           <p class="line-clamp-2 w-[250px] text-sm font-normal group-hover:line-clamp-2">
+            Página personalizada y publicidad integrada
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="transition-opacity duration-700 md:opacity-0 md:group-hover:opacity-100">
+         <div class="hidden md:block">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-transparent text-neutral-200 relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+         <div class="block md:hidden">
+          <a class="group relative text-base" href="/planes">
+           <span class="bg-black text-white relative z-10 block overflow-hidden rounded-md md:rounded-lg px-4 md:px-8 py-1.5 md:py-3 font-normal leading-tight ring-1 ring-white/40 transition-colors duration-300 ease-out group-hover:text-neutral-200">
+            <span class="relative text-xs md:text-base">
+             Ver detalles
+            </span>
+           </span>
+          </a>
+         </div>
+        </div>
+       </div>
+      </section>
+     </section>
+    </section>
+    <section class="my-16 px-[20px] text-center md:my-32 md:px-[100px]">
+     <h2 class="mb-8 w-full text-center text-2xl lg:text-5xl font-bold text-neutral-900">
+      Nuestros usuarios
+     </h2>
+     <p class="text-lg font-normal text-neutral-500">
+      Echa un vistazo a los usuarios de
+      <strong class="text-neutral-700">
+       TorneoPro
+      </strong>
+     </p>
+     <astro-island>
+      <div class="flex items-center gap-1 py-1 mt-12">
+       <div class="flex-grow-0 min-w-0 w-full">
+        <div class="flicking-viewport">
+         <div class="flicking-camera">
+          <a class="flex-none mr-2 hover:opacity-80 transition-opacity cursor-pointer snap-start min-h-24 p-1 md:p-2 min-w-32 max-w-32 md:max-w-40" href="https://www.torneopro.app/liga-parroquial-esperanza">
+           <div class="flex flex-col items-center justify-center text-center gap-1.5">
+            <div>
+             <img alt="Liga Deportiva Parroquial La Esperanza" class="lg:w-16 lg:h-16 w-12 h-12 object-contain" src="/clients/ldple.webp"/>
+            </div>
+            <p class="text-xs tracking-tight text-wrap leading-snug">
+             Liga Deportiva Parroquial La Esperanza
+            </p>
+           </div>
+          </a>
+          <a class="flex-none mr-2 hover:opacity-80 transition-opacity cursor-pointer snap-start min-h-24 p-1 md:p-2 min-w-32 max-w-32 md:max-w-40" href="https://www.torneopro.app/pawkar-peguche">
+           <div class="flex flex-col items-center justify-center text-center gap-1.5">
+            <div>
+             <img alt="Pawkar Raymi Peguche 2025" class="lg:w-16 lg:h-16 w-12 h-12 object-contain" src="/clients/raymi.webp"/>
+            </div>
+            <p class="text-xs tracking-tight text-wrap leading-snug">
+             Pawkar Raymi Peguche 2025
+            </p>
+           </div>
+          </a>
+          <a class="flex-none mr-2 hover:opacity-80 transition-opacity cursor-pointer snap-start min-h-24 p-1 md:p-2 min-w-32 max-w-32 md:max-w-40" href="https://www.torneopro.app/cancha-golazo">
+           <div class="flex flex-col items-center justify-center text-center gap-1.5">
+            <div>
+             <img alt="Cancha El Golazo" class="lg:w-16 lg:h-16 w-12 h-12 object-contain" src="/clients/golazo.webp"/>
+            </div>
+            <p class="text-xs tracking-tight text-wrap leading-snug">
+             Cancha El Golazo
+            </p>
+           </div>
+          </a>
+          <a class="flex-none mr-2 hover:opacity-80 transition-opacity cursor-pointer snap-start min-h-24 p-1 md:p-2 min-w-32 max-w-32 md:max-w-40" href="https://www.torneopro.app/liga-nacional-infanto-juvenil">
+           <div class="flex flex-col items-center justify-center text-center gap-1.5">
+            <div>
+             <img alt="Liga Nacional Infanto Juvenil" class="lg:w-16 lg:h-16 w-12 h-12 object-contain" src="/clients/comfa.webp"/>
+            </div>
+            <p class="text-xs tracking-tight text-wrap leading-snug">
+             Liga Nacional Infanto Juvenil
+            </p>
+           </div>
+          </a>
+          <a class="flex-none mr-2 hover:opacity-80 transition-opacity cursor-pointer snap-start min-h-24 p-1 md:p-2 min-w-32 max-w-32 md:max-w-40" href="https://www.torneopro.app/comunidad-cubinche-2025">
+           <div class="flex flex-col items-center justify-center text-center gap-1.5">
+            <div>
+             <img alt="Comunidad Cubinche" class="lg:w-16 lg:h-16 w-12 h-12 object-contain" src="/clients/cubinche.webp"/>
+            </div>
+            <p class="text-xs tracking-tight text-wrap leading-snug">
+             Comunidad Cubinche
+            </p>
+           </div>
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </astro-island>
+    </section>
+   </main>
+   <footer class="bg-neutral-50">
+    <div class="mx-auto max-w-screen-xl space-y-8 px-4 py-16 sm:px-6 lg:space-y-16 lg:px-8">
+     <div class="grid grid-cols-1 gap-8 lg:grid-cols-[min-content_1fr_200px]">
+      <div>
+       <img alt="Logo de TorneoPro" class="h-6" src="../../logo-light.webp"/>
+       <ul class="mt-8 flex gap-6">
+        <li>
+         <a class="text-gray-700 transition hover:opacity-75" href="https://www.facebook.com/torneoproo" rel="noreferrer" target="_blank">
+          <span class="sr-only">
+           Facebook
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-700 transition hover:opacity-75" href="https://www.instagram.com/torneopro_" rel="noreferrer" target="_blank">
+          <span class="sr-only">
+           Instagram
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-700 transition hover:opacity-75" href="https://twitter.com/torneopro_" rel="noreferrer" target="_blank">
+          <span class="sr-only">
+           Twitter
+          </span>
+         </a>
+        </li>
+        <li>
+         <a class="text-gray-700 transition hover:opacity-75" href="https://www.youtube.com/@TorneoPro" rel="noreferrer" target="_blank">
+          <span class="sr-only">
+           Youtube
+          </span>
+         </a>
+        </li>
+       </ul>
+      </div>
+      <div class="w-full flex lg:justify-end items-center">
+       <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
+        <div>
+         <p class="font-medium text-gray-900">
+          Recursos
+         </p>
+         <ul class="mt-6 space-y-4 text-sm">
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://web.torneopro.app/preguntas-frecuentes">
+            Preguntas frecuentes (FAQ)
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://wa.me/5930981657629">
+            Soporte en línea
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <p class="font-medium text-gray-900">
+          Enlaces Rápidos
+         </p>
+         <ul class="mt-6 space-y-4 text-sm">
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://web.torneopro.app/">
+            Inicio
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://www.torneopro.app/">
+            Ver torneos
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://auth.torneopro.app/auth/signin">
+            Iniciar sesión
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://wa.me/5930981657629">
+            Contáctanos
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://web.torneopro.app/planes">
+            Precios y planes
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <p class="font-medium text-gray-900">
+          Contacto
+         </p>
+         <ul class="mt-6 space-y-4 text-sm">
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://docs.torneopro.app">
+            Centro de ayuda
+           </a>
+          </li>
+          <li>
+           <a class="text-gray-700 transition hover:opacity-75" href="https://wa.me/5930981657629">
+            Chat en vivo
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="flex justify-center">
+       <a class="inline-flex items-center justify-center rounded-md font-medium text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground h-9 px-4 py-2" href="https://status.torneopro.app/" rel="noopener noreferrer" target="_blank">
+        <span class="ml-2">
+         All systems operational
+        </span>
+       </a>
+      </div>
+     </div>
+     <div class="flex justify-between">
+      <p class="text-xs text-gray-500">
+       © 2023. TorneoPro. All rights reserved.
+      </p>
+      <span class="text-xs text-gray-500 sm:text-center">
+       Desarrollado por
+       <a class="text-emerald-700 hover:underline" href="https://jhon.vercel.app" rel="noreferrer" target="_blank">
+        @JhonLescano.
+       </a>
+      </span>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

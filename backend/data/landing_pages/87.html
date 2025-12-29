@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatGPShort - AI Video Generation Platform</title>
+</head>
+<body>
+  <body>
+   <parameter name="author">
+    <div id="root">
+     <section>
+     </section>
+     <div>
+      <div class="min-h-screen">
+       <header class="sticky top-0 z-50 h-14 bg-[#070914]/80 backdrop-blur-xl supports-[backdrop-filter]:bg-[#070914]/60">
+        <div class="container mx-auto px-6">
+         <nav class="flex items-center justify-between h-14">
+          <button class="flex items-center gap-2 min-w-0">
+           <img alt="ChatGPShort Logo" class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 animate-float" height="40" src="/images/logo-star.png" width="40"/>
+           <span class="text-base sm:text-lg md:text-xl font-bold tracking-tight font-sora whitespace-nowrap">
+            ChatGPShort
+           </span>
+          </button>
+          <div class="hidden md:flex items-center gap-8 text-base font-medium">
+           <button class="hover:text-foreground transition-colors text-muted-foreground">
+            Home
+           </button>
+           <a class="hover:text-foreground transition-colors text-muted-foreground" href="/dashboard">
+            Dashboard
+           </a>
+           <button class="hover:text-foreground transition-colors text-muted-foreground">
+            Features
+           </button>
+           <a class="hover:text-foreground transition-colors text-muted-foreground" href="/pricing">
+            Pricing
+           </a>
+          </div>
+          <div class="flex items-center gap-2">
+           <div class="hidden sm:block">
+            <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground h-9 rounded-md gap-2 px-2 sm:px-3" id="radix-:r4:" type="button">
+             <span class="hidden xs:inline">
+              🇺🇸
+             </span>
+            </button>
+           </div>
+          </div>
+         </nav>
+        </div>
+       </header>
+       <main>
+        <section class="relative min-h-[78vh] flex items-center justify-center overflow-hidden" id="main-content">
+         <div class="relative container mx-auto px-6 py-16 text-center">
+          <div class="max-w-4xl mx-auto space-y-8 animate-fade-in">
+           <h1 class="font-extrabold tracking-tight gradient-text font-montserrat">
+            Create viral Sora 2 videos in one prompt
+           </h1>
+           <p class="text-lg md:text-xl max-w-3xl mx-auto leading-relaxed gradient-text">
+            Write what you imagine, your ideas deserve to become amazing videos.
+           </p>
+           <div class="max-w-3xl mx-auto space-y-4">
+            <div class="input-wrap relative rounded-[18px]">
+             <div class="relative flex flex-col gap-3 group">
+              <div class="flex items-center justify-between gap-3 pb-3">
+               <div class="hidden md:flex items-center gap-3">
+                <div class="relative">
+                 <button class="flex items-center gap-1.5 rounded-lg transition-all duration-200 px-3 py-2 bg-transparent hover:bg-white/5">
+                  <span class="text-sm text-white/60">
+                   Model:
+                  </span>
+                  <span class="font-medium text-white whitespace-nowrap text-sm">
+                   Standard
+                  </span>
+                 </button>
+                </div>
+                <div class="relative">
+                 <button class="flex items-center gap-1.5 rounded-lg transition-all duration-200 px-3 py-2 bg-transparent hover:bg-white/5">
+                  <span class="text-sm text-white/60">
+                   Duration:
+                  </span>
+                  <span class="font-medium text-white whitespace-nowrap text-sm">
+                   8 seconds
+                  </span>
+                 </button>
+                </div>
+               </div>
+              </div>
+              <div class="flex gap-2 items-start">
+               <input class="hidden" id="image-upload" type="file"/>
+               <div class="flex-1">
+                <textarea class="flex rounded-md border-input text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 w-full bg-transparent border-0 px-2 py-1.5 focus-visible:ring-0 focus-visible:ring-offset-0 font-inter resize-none min-h-[44px] max-h-[120px] overflow-y-auto leading-5" placeholder="">A grandmother breakdancing in a supermarket, 80s s</textarea>
+               </div>
+              </div>
+              <div class="flex flex-col md:flex-row items-stretch md:items-center md:justify-between gap-3 pt-3 border-t border-white/10">
+               <div class="hidden md:block">
+                <div class="relative">
+                 <button class="flex items-center gap-1.5 rounded-lg transition-all duration-200 px-3 py-2 bg-transparent hover:bg-white/5">
+                  <span class="text-sm text-white/60">
+                   Format:
+                  </span>
+                  <span class="font-medium text-white whitespace-nowrap text-sm">
+                   Portrait (9:16)
+                  </span>
+                 </button>
+                </div>
+               </div>
+               <button class="btn-generate-cta flex items-center justify-center gap-2 px-6 py-2.5 rounded-lg text-sm md:text-base font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed group relative overflow-hidden w-full md:w-auto" title="Describe your video...">
+                <span>
+                 Generate
+                </span>
+               </button>
+              </div>
+             </div>
+            </div>
+            <div class="space-y-3">
+             <div class="p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg">
+              <div class="flex items-start gap-2">
+               <div class="text-xs text-foreground/90 space-y-1">
+                <p class="font-semibold">
+                 ✨ Powered by OpenAI Sora 2 Official Guidelines
+                </p>
+                <p class="text-foreground/70">
+                 Following Sora 2 best practices:
+                 <strong>
+                  shorter, natural prompts
+                 </strong>
+                 (50-150 words) focused on key visuals and emotion. This generates
+                 <strong>
+                  more photorealistic and dynamic videos
+                 </strong>
+                 .
+                </p>
+               </div>
+              </div>
+             </div>
+             <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3 w-full sm:w-auto">
+              Enhance with AI
+             </button>
+            </div>
+           </div>
+           <div class="flex items-center justify-center mt-8">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 px-4 py-2 btn-examples-premium text-lg h-auto font-bold group">
+             View Examples
+            </button>
+           </div>
+           <div class="flex items-center justify-center mt-6 animate-fade-in">
+            <div class="glass px-4 py-4 sm:px-6 sm:py-3 rounded-2xl border border-white/10 backdrop-blur-sm">
+             <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+              <div class="bg-white/5 border-2 border-white/20 rounded-full px-3 py-2 backdrop-blur-sm">
+               <div class="flex items-center -space-x-2 sm:-space-x-3">
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/anime-1.png"/>
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/cat-2.png"/>
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/dog-3.png"/>
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/fantasy-4.png"/>
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/space-2.png"/>
+                <img alt="Creator" class="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-[#0B1220] shadow-lg" src="/images/avatars/food-1.png"/>
+               </div>
+              </div>
+              <div class="flex flex-col gap-1 items-center sm:items-start">
+               <p class="text-sm sm:text-base font-semibold text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                Trusted by
+                <span class="text-white font-bold">
+                 17,000+
+                </span>
+                creators
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="relative overflow-hidden py-10 scroll-mt-20" id="examples">
+         <div class="relative z-10 container mx-auto px-6">
+          <div class="text-center mb-10">
+           <div class="inline-block mb-4">
+            <div class="glass rounded-2xl px-6 py-3">
+             <span class="text-sm font-semibold text-primary">
+              ✨ AI Creations
+             </span>
+            </div>
+           </div>
+           <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white via-white to-white/70">
+            See What's Possible
+           </h2>
+           <p class="text-zinc-400 max-w-2xl mx-auto">
+            Discover what you can create with ChatGPShort
+           </p>
+          </div>
+          <div class="w-full max-w-7xl mx-auto relative">
+           <div class="overflow-hidden">
+            <div class="flex -ml-4">
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute inset-0 flex items-center justify-center bg-zinc-900">
+                  <p class="text-white/70 text-sm">
+                   Video unavailable
+                  </p>
+                 </div>
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Cool Yeti" class="aspect-square h-full w-full" src="/images/avatars/monster-1.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    451.2K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    5.2K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    1.0K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "Sam kissing the adorable star"
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute inset-0 flex items-center justify-center bg-zinc-900">
+                  <p class="text-white/70 text-sm">
+                   Video unavailable
+                  </p>
+                 </div>
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Kawaii Mummy" class="aspect-square h-full w-full" src="/images/avatars/monster-5.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    169.0K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    1.5K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    3.6K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A beautiful kawaii Japanese girl happily shows a cute star toy that she loves in a bright and cheerful atmosphere"
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute inset-0 flex items-center justify-center bg-zinc-900">
+                  <p class="text-white/70 text-sm">
+                   Video unavailable
+                  </p>
+                 </div>
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Avocado" class="aspect-square h-full w-full" src="/images/avatars/food-6.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    164.5K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    8.9K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    1.2K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A bodybuilder doctor examines a frail elderly patient. Suddenly, with comic force, he lifts her and sets her down abruptly. The old lady, unperturbed, smiles and assures everything is fine. Bright light and quirky atmosphere."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute inset-0 flex items-center justify-center bg-zinc-900">
+                  <p class="text-white/70 text-sm">
+                   Video unavailable
+                  </p>
+                 </div>
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Black Hole" class="aspect-square h-full w-full" src="/images/avatars/kawaii-obj-8.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    199.1K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    3.3K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    4.2K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "Two raccoons face off in an epic lightsaber battle. The animals fight with determination, their glowing sabers create light trails in darkness. Intense cinematic atmosphere with colorful light effects."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute inset-0 flex items-center justify-center bg-zinc-900">
+                  <p class="text-white/70 text-sm">
+                   Video unavailable
+                  </p>
+                 </div>
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Sweet Zombie" class="aspect-square h-full w-full" src="/images/avatars/monster-3.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    446.8K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    7.6K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    3.4K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A new mom and dad, speaking tenderly in Spanish, admire their newborn baby in a hospital room. Suddenly, the baby, with impossibly quick movements, begins to run and swiftly escapes the room. Camera tracks the baby's surprisingly agile escape with a slightly chaotic feel."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Neko" class="aspect-square h-full w-full" src="/images/avatars/anime-6.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    383.4K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    2.0K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    809
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A chimpanzee in a Halloween costume bangs on a suburban front door, its voice digitally distorted: "I'm counting to three! Open up, or I shoot!" The door creaks open to reveal a tiny chihuahua wearing a miniature soldier's helmet and holding a toy rifle. The chimpanzee, startled, pauses before the chihuahua bravely fires its toy rifle in self-defense. Intense, comedic atmosphere with a dramatic close-up on the chihuahua's determined face."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Derpy Husky" class="aspect-square h-full w-full" src="/images/avatars/dog-4.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    435.1K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    4.6K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    3.7K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A beautiful woman with a soft, small face, wearing a white dress, her face covered in mud, records a first-person TikTok video. She looks into the camera and talks about how much she needs someone — asking them to go on ChatGPShort to save her."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Cute Robot" class="aspect-square h-full w-full" src="/images/avatars/retro-gaming-4.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    96.3K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    9.9K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    4.2K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A monkey crashes into a beautiful French redhead streamer's live stream and climbs on her head. She is amazed and shocked."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="UFO" class="aspect-square h-full w-full" src="/images/avatars/space-5.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    318.9K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    639
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    874
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A determined dog shoots at a suburban house door. Comedic and intense scene with dramatic close-up."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Griffin" class="aspect-square h-full w-full" src="/images/avatars/fantasy-6.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    194.1K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    9.7K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    3.5K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "Lightsaber battle between a real chimpanzee and a chihuahua standing on its legs, comedic style, filmed by an English girl vlogging and showing herself to the camera. She films with her phone and moves closer to the fight."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Grumpy Bulldog" class="aspect-square h-full w-full" src="/images/avatars/dog-7.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    283.7K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    527
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    484
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A rhinoceros stands before a house door meowing like a cat. A grandmother opens the door with curiosity. Suddenly, the rhinoceros projects a powerful explosive blue laser beam that illuminates the entire scene. Spectacular visual effects with intense blue light and smoke. Comedic and surreal scene with perfect timing."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+             <div class="min-w-0 shrink-0 grow-0 pl-4 basis-[360px] sm:basis-[320px] lg:basis-[300px]">
+              <div class="group">
+               <div class="relative rounded-2xl overflow-hidden border border-border/50 transition-all duration-300">
+                <div class="h-[520px] w-full relative bg-black">
+                 <div class="absolute right-2 bottom-20 flex flex-col items-center gap-4 z-10">
+                  <span class="relative flex shrink-0 overflow-hidden rounded-full w-10 h-10 border-2 border-white shadow-lg transition-transform duration-150 hover:scale-110">
+                   <img alt="Avocado" class="aspect-square h-full w-full" src="/images/avatars/food-6.png"/>
+                  </span>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    252.3K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    1.1K
+                   </span>
+                  </button>
+                  <button class="flex flex-col items-center gap-0.5 transition-transform duration-150 hover:scale-110">
+                   <span class="text-[10px] font-semibold text-white">
+                    1.8K
+                   </span>
+                  </button>
+                 </div>
+                 <div class="absolute bottom-0 left-0 right-0 p-2">
+                  <div class="flex items-center justify-between">
+                   <span class="text-xs font-bold text-white">
+                    @ChatGPShort
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="mt-4 px-1">
+                <div class="glass rounded-xl p-4 border border-border/50">
+                 <p class="text-[10px] font-semibold text-primary/80 text-center mb-2 uppercase tracking-wide">
+                  Description
+                 </p>
+                 <p class="text-xs text-center text-zinc-300 leading-relaxed">
+                  "A woman prepares food for her cat. Suddenly, a giant floating cat appears in her house. The massive feline destroys everything in its path. Spectacular visual effects with debris and comedic chaos."
+                 </p>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full top-1/2 -translate-y-1/2 carousel-arrow-premium left-2 md:left-4 lg:-left-12 z-30 select-none">
+            <span class="sr-only">
+             Previous slide
+            </span>
+           </button>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground absolute h-8 w-8 rounded-full top-1/2 -translate-y-1/2 carousel-arrow-premium right-2 md:right-4 lg:-right-12 z-30 select-none">
+            <span class="sr-only">
+             Next slide
+            </span>
+           </button>
+          </div>
+         </div>
+        </section>
+        <section class="py-16 md:py-20">
+         <div class="container mx-auto px-6">
+          <h2 class="text-2xl md:text-4xl font-bold text-center mb-12">
+           A Complete Platform
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              Infinite Styles
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Anime, Realistic, Cartoon, Sci-Fi...
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              AI Enhancement
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Professional prompts automatically
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              Auto Suggestions
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Optimal parameters in real-time
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              AI Assistant
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Intelligent creative chat
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              Fast Generation
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Videos ready in seconds
+             </p>
+            </div>
+           </div>
+           <div class="group relative p-6 rounded-2xl border border-border/50 bg-card/30 backdrop-blur-sm hover:border-primary/30 transition-all duration-300 hover:scale-105 hover:shadow-glow">
+            <div class="relative space-y-3">
+             <h3 class="text-lg font-semibold text-foreground">
+              Full Control
+             </h3>
+             <p class="text-sm text-muted-foreground leading-relaxed">
+              Adjustable format, duration, quality
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="py-20 md:py-32" id="features">
+         <div class="container mx-auto px-6">
+          <div class="text-center mb-20 space-y-4">
+           <h2 class="text-3xl md:text-5xl font-bold">
+            Advanced Features
+           </h2>
+           <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Everything you need to create exceptional videos
+           </p>
+          </div>
+          <div class="space-y-24 md:space-y-40">
+           <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
+            <div class="order-1 space-y-6 animate-fade-in">
+             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+              <span class="text-xs font-semibold text-primary uppercase tracking-wider">
+               Feature 1
+              </span>
+             </div>
+             <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              Unlimited Styles for Every Vision
+             </h3>
+             <p class="text-base md:text-lg text-foreground/70 leading-relaxed">
+              From epic cinematic to natural realism, vibrant anime to Sci-Fi futurism. Every style you can imagine to transform your video aesthetics. Explore infinite creative possibilities and find the perfect style for your message.
+             </p>
+             <div class="flex items-center gap-2 pt-2">
+              <p class="text-sm text-muted-foreground font-medium">
+               Powered by Sora 2 Pro - high quality rendering
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
+            <div class="order-2 md:order-1 animate-fade-in">
+             <div class="w-full max-w-3xl mx-auto">
+              <div class="relative">
+               <div class="hidden md:flex items-center justify-between">
+                <div class="flex items-center flex-1">
+                 <div class="relative flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-500 border-border/30 bg-card/20">
+                  <div class="text-center space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Your Idea
+                   </h4>
+                   <p class="text-xs transition-opacity duration-500 opacity-0">
+                    Write what you imagine
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center flex-1">
+                 <div class="relative flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-500 border-purple-500/30 bg-purple-500/10 scale-110 shadow-lg">
+                  <div class="text-center space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-foreground">
+                    AI Enhancement
+                   </h4>
+                   <p class="text-xs transition-opacity duration-500 text-muted-foreground opacity-100">
+                    AI enriches your prompt
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center flex-1">
+                 <div class="relative flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="text-center space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Suggestions
+                   </h4>
+                   <p class="text-xs transition-opacity duration-500 opacity-0">
+                    Optimal parameters suggested
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center flex-1">
+                 <div class="relative flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="text-center space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Generation
+                   </h4>
+                   <p class="text-xs transition-opacity duration-500 opacity-0">
+                    Sora 2 creates your video
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="flex items-center flex-1">
+                 <div class="relative flex flex-col items-center gap-3 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="text-center space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Result
+                   </h4>
+                   <p class="text-xs transition-opacity duration-500 opacity-0">
+                    Video ready to share
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="md:hidden space-y-4">
+                <div class="relative">
+                 <div class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 border-border/30 bg-card/20">
+                  <div class="flex-1 space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Your Idea
+                   </h4>
+                   <p class="text-xs text-muted-foreground">
+                    Write what you imagine
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="relative">
+                 <div class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 border-purple-500/30 bg-purple-500/10 scale-105 shadow-lg">
+                  <div class="flex-1 space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-foreground">
+                    AI Enhancement
+                   </h4>
+                   <p class="text-xs text-muted-foreground">
+                    AI enriches your prompt
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="relative">
+                 <div class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="flex-1 space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Suggestions
+                   </h4>
+                   <p class="text-xs text-muted-foreground">
+                    Optimal parameters suggested
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="relative">
+                 <div class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="flex-1 space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Generation
+                   </h4>
+                   <p class="text-xs text-muted-foreground">
+                    Sora 2 creates your video
+                   </p>
+                  </div>
+                 </div>
+                </div>
+                <div class="relative">
+                 <div class="flex items-center gap-4 p-4 rounded-xl border transition-all duration-500 border-border/20 bg-card/10">
+                  <div class="flex-1 space-y-1">
+                   <h4 class="text-sm font-semibold transition-colors duration-500 text-muted-foreground">
+                    Result
+                   </h4>
+                   <p class="text-xs text-muted-foreground">
+                    Video ready to share
+                   </p>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-6 animate-fade-in">
+             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+              <span class="text-xs font-semibold text-primary uppercase tracking-wider">
+               Feature 2
+              </span>
+             </div>
+             <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              From Idea to Video in 3 Clicks
+             </h3>
+             <p class="text-base md:text-lg text-foreground/70 leading-relaxed">
+              Our artificial intelligence automatically transforms your simple ideas into optimized professional prompts. It analyzes your intent, suggests the best technical parameters, and generates your video. No need to be an expert - let AI do the creative work.
+             </p>
+             <div class="flex items-center gap-2 pt-2">
+              <p class="text-sm text-muted-foreground font-medium">
+               Complete AI workflow - Gemini 2.5 Flash &amp; Sora 2
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
+            <div class="order-2 animate-fade-in">
+             <div class="max-w-md mx-auto space-y-6 p-6 rounded-2xl bg-gradient-to-br from-background/40 to-background/20 backdrop-blur-sm border border-white/10">
+              <div class="space-y-5">
+               <div class="space-y-3">
+                <label class="text-sm font-medium text-foreground/80">
+                 Format Label
+                </label>
+                <div class="grid grid-cols-2 gap-3">
+                 <button class="relative p-4 rounded-xl border transition-all duration-300 border-white/20 bg-gradient-to-br from-[#0B1220]/80 to-[#1a2845]/60 shadow-[0_4px_16px_rgba(59,130,246,0.15),inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md">
+                  <div class="flex flex-col items-center gap-2">
+                   <div class="text-center">
+                    <p class="text-xs font-semibold text-foreground">
+                     Landscape
+                    </p>
+                    <p class="text-xs text-muted-foreground/60">
+                     16:9
+                    </p>
+                   </div>
+                  </div>
+                 </button>
+                 <button class="relative p-4 rounded-xl border transition-all duration-300 border-border/50 bg-card/20 hover:border-border hover:bg-card/30">
+                  <div class="flex flex-col items-center gap-2">
+                   <div class="text-center">
+                    <p class="text-xs font-semibold text-muted-foreground">
+                     Portrait
+                    </p>
+                    <p class="text-xs text-muted-foreground/60">
+                     9:16
+                    </p>
+                   </div>
+                  </div>
+                 </button>
+                </div>
+               </div>
+               <div class="space-y-3">
+                <div class="flex items-center justify-between">
+                 <label class="text-sm font-medium text-foreground/80">
+                  Duration Label
+                 </label>
+                 <span class="text-sm font-semibold text-blue-200/90">
+                  8s
+                 </span>
+                </div>
+                <div class="flex gap-2">
+                 <button class="flex-1 py-2.5 rounded-lg border transition-all duration-300 border-border/50 bg-card/20 text-muted-foreground hover:border-border hover:bg-card/30">
+                  4s
+                 </button>
+                 <button class="flex-1 py-2.5 rounded-lg border transition-all duration-300 border-white/20 bg-gradient-to-br from-[#0B1220]/80 to-[#1a2845]/60 text-blue-100 font-semibold shadow-[0_4px_16px_rgba(59,130,246,0.15),inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md">
+                  8s
+                 </button>
+                 <button class="flex-1 py-2.5 rounded-lg border transition-all duration-300 border-border/50 bg-card/20 text-muted-foreground hover:border-border hover:bg-card/30">
+                  12s
+                 </button>
+                </div>
+               </div>
+               <div class="space-y-3">
+                <label class="text-sm font-medium text-foreground/80">
+                 Model Label
+                </label>
+                <div class="grid grid-cols-2 gap-3">
+                 <button class="relative p-4 rounded-xl border transition-all duration-300 border-white/20 bg-gradient-to-br from-[#0B1220]/80 to-[#1a2845]/60 shadow-[0_4px_16px_rgba(59,130,246,0.15),inset_0_1px_1px_rgba(255,255,255,0.05)] backdrop-blur-md">
+                  <div class="flex items-center gap-3">
+                   <div class="flex-1 text-left">
+                    <p class="text-sm font-semibold text-foreground">
+                     Sora 2
+                    </p>
+                    <p class="text-xs text-muted-foreground">
+                     Standard Version
+                    </p>
+                   </div>
+                  </div>
+                 </button>
+                 <button class="relative p-4 rounded-xl border transition-all duration-300 border-border/50 bg-card/20 hover:border-border hover:bg-card/30">
+                  <div class="flex items-center gap-3">
+                   <div class="flex-1 text-left">
+                    <p class="text-sm font-semibold text-muted-foreground">
+                     Sora 2 Pro
+                    </p>
+                    <p class="text-xs text-muted-foreground">
+                     Max Quality
+                    </p>
+                   </div>
+                  </div>
+                 </button>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="order-1 space-y-6 animate-fade-in">
+             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+              <span class="text-xs font-semibold text-primary uppercase tracking-wider">
+               Feature 3
+              </span>
+             </div>
+             <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              Customize Every Detail
+             </h3>
+             <p class="text-base md:text-lg text-foreground/70 leading-relaxed">
+              Master format, duration, quality, and style according to your needs. Optimize for TikTok (9:16), YouTube (16:9), or Instagram (1:1). Adjust duration from 4 to 12 seconds. Choose between Sora 2 (standard) or Sora 2 Pro (maximum quality). Total control, professional results.
+             </p>
+             <div class="flex items-center gap-2 pt-2">
+              <p class="text-sm text-muted-foreground font-medium">
+               High-precision professional controls
+              </p>
+             </div>
+            </div>
+           </div>
+           <div class="grid md:grid-cols-2 gap-12 md:gap-16 items-center max-w-7xl mx-auto">
+            <div class="order-2 md:order-1 animate-fade-in">
+             <div class="max-w-xl mx-auto space-y-4 relative">
+              <div class="absolute -top-6 -left-6 z-10 animate-fade-in">
+               <div class="relative star-float">
+                <img alt="Cosmi - Assistant IA" class="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain drop-shadow-2xl" src="/images/ai-assistant-clean.png?v=2"/>
+               </div>
+              </div>
+              <div class="bg-card/30 backdrop-blur-sm rounded-2xl p-6 space-y-4 border border-border/50 shadow-xl">
+               <div class="flex gap-3 animate-fade-in justify-end">
+                <div class="max-w-[75%] px-4 py-3 rounded-2xl bg-primary/15 text-foreground border border-primary/30 rounded-tr-sm">
+                 <p class="text-sm leading-relaxed">
+                  I want to create a video of a cat in space
+                 </p>
+                </div>
+                <img alt="User" class="shrink-0 w-8 h-8 rounded-full object-cover border-2 border-primary/30" src="/images/avatars/anime-1.png"/>
+               </div>
+               <div class="flex gap-3 animate-fade-in justify-start">
+                <img alt="Cosmi" class="shrink-0 w-8 h-8 rounded-full object-cover" src="/images/ai-assistant-clean.png?v=2"/>
+                <div class="max-w-[75%] px-4 py-3 rounded-2xl bg-card/50 text-foreground/90 border border-border/40 rounded-tl-sm backdrop-blur-sm">
+                 <p class="text-sm leading-relaxed">
+                  Great idea! I recommend anime style for more visual impact. Want to add details?
+                 </p>
+                </div>
+               </div>
+               <div class="flex gap-3 animate-fade-in justify-end">
+                <div class="max-w-[75%] px-4 py-3 rounded-2xl bg-primary/15 text-foreground border border-primary/30 rounded-tr-sm">
+                 <p class="text-sm leading-relaxed">
+                  Yes, with stars and a pizza
+                 </p>
+                </div>
+                <img alt="User" class="shrink-0 w-8 h-8 rounded-full object-cover border-2 border-primary/30" src="/images/avatars/anime-1.png"/>
+               </div>
+               <div class="flex gap-3 animate-fade-in justify-start">
+                <img alt="Cosmi" class="shrink-0 w-8 h-8 rounded-full object-cover" src="/images/ai-assistant-clean.png?v=2"/>
+                <div class="max-w-[75%] px-4 py-3 rounded-2xl bg-card/50 text-foreground/90 border border-border/40 rounded-tl-sm backdrop-blur-sm">
+                 <p class="text-sm leading-relaxed">
+                  Perfect! Here's an optimized prompt: "Astronaut cat floating in starry space, eating a giant pizza, vibrant anime style, colorful planets in background"
+                 </p>
+                </div>
+               </div>
+              </div>
+              <div class="flex flex-wrap gap-2 justify-center">
+               <button class="px-4 py-2 rounded-full bg-card/30 border border-border/50 text-xs font-medium text-muted-foreground hover:bg-card/50 hover:border-primary/30 hover:text-foreground transition-all duration-300 flex items-center gap-1.5">
+                What duration?
+               </button>
+               <button class="px-4 py-2 rounded-full bg-card/30 border border-border/50 text-xs font-medium text-muted-foreground hover:bg-card/50 hover:border-primary/30 hover:text-foreground transition-all duration-300 flex items-center gap-1.5">
+                Which format?
+               </button>
+               <button class="px-4 py-2 rounded-full bg-card/30 border border-border/50 text-xs font-medium text-muted-foreground hover:bg-card/50 hover:border-primary/30 hover:text-foreground transition-all duration-300 flex items-center gap-1.5">
+                Improve my prompt
+               </button>
+              </div>
+             </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-6 animate-fade-in">
+             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20">
+              <span class="text-xs font-semibold text-primary uppercase tracking-wider">
+               Feature 4
+              </span>
+             </div>
+             <h3 class="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+              Chat with Cosmi, Your AI Video Assistant
+             </h3>
+             <p class="text-base md:text-lg text-foreground/70 leading-relaxed">
+              Need inspiration or advice? Cosmi is your conversational AI assistant that answers your questions, refines your creative ideas, and guides you to the perfect video. Natural interaction, smart suggestions, professional results. Your creative partner available 24/7.
+             </p>
+             <div class="flex items-center gap-2 pt-2">
+              <p class="text-sm text-muted-foreground font-medium">
+               Gemini 2.5 Flash AI - natural conversation
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+        <section class="py-20">
+         <div class="container mx-auto px-6">
+          <div class="glass glass-hover rounded-2xl p-6 flex flex-col md:flex-row items-center justify-between gap-6">
+           <div class="flex-1">
+            <h2 class="text-2xl md:text-3xl font-bold mb-2">
+             Ready to create magic?
+            </h2>
+            <p class="text-muted-foreground">
+             Start generating stunning AI videos today. No credit card required.
+            </p>
+           </div>
+           <button class="btn-cta-dark-premium shrink-0">
+            Start now
+           </button>
+          </div>
+         </div>
+        </section>
+       </main>
+       <footer class="py-8 mt-20 border-t border-border/40">
+        <div class="container mx-auto px-6">
+         <div class="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <div class="flex items-center gap-2">
+           <span class="font-semibold">
+            ChatGPShort
+           </span>
+          </div>
+          <p>
+           © 2025 ChatGPShort SAS. All rights reserved
+          </p>
+          <div class="flex items-center gap-6">
+           <a class="hover:text-primary transition-colors" href="/terms">
+            Terms
+           </a>
+           <a class="hover:text-primary transition-colors" href="/privacy">
+            Privacy
+           </a>
+           <a class="hover:text-primary transition-colors" href="/cookies">
+            Cookies
+           </a>
+           <a class="hover:text-primary transition-colors" href="/refunds">
+            Refunds
+           </a>
+           <a class="hover:text-primary transition-colors" href="mailto:support@chatgpshort.com">
+            Contact
+           </a>
+          </div>
+         </div>
+        </div>
+       </footer>
+      </div>
+     </div>
+     <div class="fixed bottom-0 left-0 right-0 z-50 p-4 bg-card/30 backdrop-blur-lg border-t border-border shadow-2xl">
+      <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+       <div class="flex-1">
+        <div class="flex items-center gap-2 mb-1">
+         <h3 class="font-semibold">
+          This site uses cookies
+         </h3>
+        </div>
+        <p class="text-sm text-muted-foreground">
+         We use essential and analytical cookies to improve your experience.
+         <a class="underline hover:text-primary" href="/cookies">
+          Learn more
+         </a>
+        </p>
+       </div>
+       <div class="flex items-center gap-2">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+         Essential only
+        </button>
+        <button class="btn-glass h-10 px-4 py-2 rounded-md text-sm font-medium">
+         Accept all
+        </button>
+       </div>
+      </div>
+     </div>
+     <button class="!fixed !bottom-6 !right-6 !z-[99999] bg-transparent border-0 p-0 cursor-pointer motion-safe:animate-cloud-drift motion-reduce:animate-none will-change-transform transition-transform duration-700 hover:scale-[1.02]">
+      <img alt="Cosmi" class="w-24 h-24 object-contain drop-shadow-[0_12px_32px_rgba(58,141,255,.5)] hover:drop-shadow-[0_16px_40px_rgba(58,141,255,.7)]" src="/images/ai-assistant-clean.png"/>
+     </button>
+    </div>
+   </parameter>
+  </body>
+
+</body>
+</html>

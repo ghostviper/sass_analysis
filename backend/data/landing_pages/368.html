@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RemixMart - AI-Powered Image Generation & Remixing Platform</title>
+</head>
+<body>
+  <body>
+   <div class="flex min-h-screen flex-col">
+    <main class="relative flex-1">
+     <div class="min-h-screen bg-gray-900 text-white">
+      <header class="fixed top-0 z-50 w-full p-4 transition-all duration-300 ease-in-out translate-y-0 opacity-100">
+       <nav class="container mx-auto flex items-center justify-between rounded-full p-4 transition-colors duration-300 bg-white/10 backdrop-blur-lg">
+        <a class="flex items-center gap-2 focus:outline-none rounded" href="/">
+         <span class="text-xl font-bold tracking-tight text-white">
+          RemixMart
+         </span>
+        </a>
+        <div class="hidden md:flex items-center justify-center flex-1">
+         <div class="flex items-center gap-10 translate-x-9">
+          <a class="text-sm font-medium focus:outline-none rounded px-2 py-1 transition-colors text-gray-300 hover:text-white" href="#features">
+           Features
+          </a>
+          <a class="text-sm font-medium focus:outline-none rounded px-2 py-1 transition-colors text-gray-300 hover:text-white" href="#live">
+           Live Generations
+          </a>
+          <a class="text-sm font-medium focus:outline-none rounded px-2 py-1 transition-colors text-gray-300 hover:text-white" href="#pricing">
+           Pricing
+          </a>
+          <a class="text-sm font-medium focus:outline-none rounded px-2 py-1 transition-colors text-gray-300 hover:text-white" href="/about">
+           About Us
+          </a>
+         </div>
+        </div>
+        <div class="flex items-center gap-4">
+         <a class="hidden md:block" href="/login">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent h-9 px-4 py-2 text-white hover:text-gray-300 focus:outline-none">
+           Login
+          </button>
+         </a>
+         <a href="/signup">
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 px-4 py-2 bg-gray-800 text-white hover:bg-gray-900 focus:outline-none">
+           Get Started
+          </button>
+         </a>
+        </div>
+       </nav>
+      </header>
+      <div class="fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out opacity-0 invisible" id="mobile-menu">
+       <div class="relative h-full flex flex-col">
+        <div class="flex items-center justify-between p-6 border-b border-gray-100">
+         <span class="text-2xl font-bold text-gray-900">
+          RemixMart
+         </span>
+        </div>
+        <nav class="flex-1 flex flex-col justify-center px-6">
+         <div class="space-y-8">
+          <a class="block text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 focus:outline-none rounded px-2 py-1" href="#features">
+           Features
+          </a>
+          <a class="block text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 focus:outline-none rounded px-2 py-1" href="#live">
+           Live Generations
+          </a>
+          <a class="block text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 focus:outline-none rounded px-2 py-1" href="#pricing">
+           Pricing
+          </a>
+          <a class="block text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 focus:outline-none rounded px-2 py-1" href="/about">
+           About Us
+          </a>
+          <a class="block text-3xl font-semibold text-gray-900 hover:text-gray-600 transition-colors duration-200 focus:outline-none rounded px-2 py-1" href="/login">
+           Login
+          </a>
+         </div>
+        </nav>
+        <div class="p-6 border-t border-gray-100">
+         <div class="flex items-center justify-center space-x-6">
+          <a class="text-gray-600 hover:text-gray-900 font-medium transition-colors focus:outline-none rounded px-2 py-1" href="/login">
+           Login
+          </a>
+          <a class="text-gray-600 hover:text-gray-900 font-medium transition-colors focus:outline-none rounded px-2 py-1" href="/signup">
+           Sign Up
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <section>
+       <div class="VideoHero_heroContainer__Tak7r" id="hero">
+        <div class="VideoHero_stickyWrapper__AVCw0">
+         <div class="hero-text absolute top-[30%] left-1/2 text-center text-gray-800" id="hero-description">
+          <h1 class="text-3xl md:text-4xl font-bold mb-4">
+           AI image and video generation
+           <br/>
+           with community
+          </h1>
+          <div class="mt-12">
+           <p class="text-xs uppercase tracking-widest text-gray-500">
+            Use Top AI Models by
+           </p>
+           <div class="mt-2">
+            <div class="relative flex h-full w-full flex-col items-center justify-center overflow-hidden">
+             <div class="w-full max-w-[90%] md:max-w-[60%] [mask-image:linear-gradient(to_right,transparent,white_20%,white_80%,transparent)]">
+              <div class="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:20s]">
+               <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="OpenAI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/openai.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Google logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/google.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Flux logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/flux.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Runway logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/runway.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Stability AI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/stability.svg" width="112"/>
+                </div>
+               </div>
+               <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="OpenAI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/openai.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Google logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/google.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Flux logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/flux.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Runway logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/runway.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Stability AI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/stability.svg" width="112"/>
+                </div>
+               </div>
+               <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="OpenAI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/openai.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Google logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/google.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Flux logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/flux.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Runway logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/runway.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Stability AI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/stability.svg" width="112"/>
+                </div>
+               </div>
+               <div class="flex shrink-0 justify-around [gap:var(--gap)] animate-marquee flex-row group-hover:[animation-play-state:paused]">
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="OpenAI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/openai.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Google logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/google.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Flux logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/flux.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Runway logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/runway.svg" width="112"/>
+                </div>
+                <div class="h-16 w-28 px-4 mx-4 flex items-center justify-center">
+                 <img alt="Stability AI logo" class="h-10 object-contain filter grayscale brightness-0" height="40" src="/logos/stability.svg" width="112"/>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="absolute bottom-4 right-4 z-10">
+          <p class="text-[10px] text-white/60 italic">
+           *Background Generated on Remix Mart
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section>
+       <section class="AppScreenshotSection_section__i77OO" id="screenshot">
+        <div class="flex flex-col overflow-hidden">
+         <div class="h-[40rem] md:h-[60rem] flex items-center justify-center relative p-1 md:p-20">
+          <div class="py-3 md:py-6 w-full relative">
+           <div class="div max-w-5xl mx-auto text-center">
+            <h1 class="text-4xl font-semibold text-white">
+             Experience the future of
+             <br/>
+             <span class="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+              AI Creations
+             </span>
+            </h1>
+           </div>
+           <div class="max-w-5xl -mt-12 md:-mt-12 mx-auto h-[26rem] md:h-[40rem] w-full">
+            <div class="w-full h-full md:h-auto md:max-h-[40rem]">
+             <img alt="RemixMart AI Application Interface" class="mx-auto rounded-2xl w-full h-full object-contain" src="/app-screenshot.jpeg"/>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="AppScreenshotSection_container__0_BLm">
+         <div class="max-w-7xl mx-auto">
+          <div class="bg-gray-900 text-white py-6 md:py-12 -mt-8 md:mt-0">
+           <div class="max-w-2xl mx-auto text-center">
+            <div class="flex justify-center items-center mb-6">
+             <div class="z-10 flex -space-x-4 rtl:space-x-reverse">
+              <img alt="Avatar 1" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=10" width="40"/>
+              <img alt="Avatar 2" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=12" width="40"/>
+              <img alt="Avatar 3" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=43" width="40"/>
+              <img alt="Avatar 4" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=64" width="40"/>
+              <img alt="Avatar 5" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=55" width="40"/>
+              <a class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black" href="">
+               +100
+              </a>
+             </div>
+            </div>
+            <p class="text-lg text-gray-400 mb-6">
+             Ready to unleash your creative magic? Join thousands of artists and creators.
+            </p>
+            <a href="/signup">
+             <button class="relative cursor-pointer group transition-all animate-rainbow inline-flex items-center justify-center gap-2 shrink-0 rounded-sm outline-none aria-invalid:border-destructive text-sm font-medium whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 border-0 bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-primary-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] h-12 px-8 py-4">
+              Start Creating Now
+             </button>
+            </a>
+            <p class="text-green-400 mt-4 text-sm">
+             <span class="mr-2">
+              🎁
+             </span>
+             Enjoy free credits on signup
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </section>
+      <main class="relative z-10 flex-1 bg-gray-900" id="main-content">
+       <section>
+        <section class="bg-gray-900 py-16 md:py-24" id="features">
+         <div class="container mx-auto px-4 md:px-6">
+          <div class="mx-auto max-w-3xl text-center">
+           <h2 class="text-3xl font-bold tracking-tight sm:text-4xl" id="features-heading">
+            Why You'll Love RemixMart
+           </h2>
+           <p class="mt-4 text-lg text-gray-400" id="features-description">
+            A unique blend of cutting-edge AI, community, and creative freedom.
+           </p>
+          </div>
+          <div class="mt-16">
+           <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 max-w-7xl mx-auto w-full">
+            <section class="mx-auto w-full relative rounded-2xl overflow-hidden col-span-1 lg:col-span-2 h-full bg-indigo-900 min-h-[500px] lg:min-h-[300px]">
+             <div class="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden">
+              <div class="h-full px-4 py-20 sm:px-10">
+               <div class="max-w-xs">
+                <h2 class="text-left text-balance text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                 Your AI Universe.
+                </h2>
+                <p class="mt-4 text-left text-base/6 text-neutral-200">
+                 Access elite models from OpenAI, Google, Runway, Flux and more. Your vision, multiplied. From photorealism to pure fantasy, unlocked.
+                </p>
+               </div>
+               <img alt="models available on Remix Mart" class="absolute -right-4 lg:-right-[10%] -bottom-10 object-contain rounded-2xl" height="450" src="/features/models.png" width="450"/>
+              </div>
+             </div>
+            </section>
+            <section class="mx-auto w-full relative rounded-2xl overflow-hidden col-span-1 min-h-[300px] bg-blue-900">
+             <div class="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden">
+              <div class="h-full px-4 py-20 sm:px-10">
+               <h2 class="max-w-80 text-left text-balance text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                One-Click Remix.
+               </h2>
+               <p class="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+                Love it? Remix it. Transform any image with your own creative twist.
+               </p>
+              </div>
+             </div>
+            </section>
+            <section class="mx-auto w-full relative rounded-2xl overflow-hidden col-span-1 min-h-[300px] bg-zinc-900">
+             <div class="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden">
+              <div class="h-full px-4 py-20 sm:px-10">
+               <h2 class="max-w-80 text-left text-balance text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                Prompt Privacy.
+               </h2>
+               <p class="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+                Your best ideas stay yours. Create with confidence, knowing your prompts are always protected.
+               </p>
+              </div>
+             </div>
+            </section>
+            <section class="mx-auto w-full rounded-2xl col-span-1 lg:col-span-2 h-full bg-black min-h-[500px] lg:min-h-[300px] relative overflow-hidden">
+             <div class="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden">
+              <div class="h-full px-4 py-20 sm:px-10">
+               <div class="relative z-10 max-w-xs">
+                <h2 class="text-left text-balance text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                 High-Quality AI Videos.
+                </h2>
+                <p class="mt-4 text-left text-base/6 text-neutral-200">
+                 Text-to-Video and Image-to-Video. Transform any prompt or picture into high-quality video. Your ideas, now in motion.
+                </p>
+               </div>
+               <div class="absolute bottom-2 right-2 z-10">
+                <p class="text-[10px] text-white/30 italic">
+                 *Video by Runway model
+                </p>
+               </div>
+              </div>
+             </div>
+            </section>
+            <section class="mx-auto w-full relative rounded-2xl overflow-hidden col-span-1 lg:col-span-3 bg-blue-900 min-h-[500px] lg:min-h-[600px] xl:min-h-[300px]">
+             <div class="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,255,255,0.5),rgba(255,255,255,0))] sm:mx-0 sm:rounded-2xl overflow-hidden">
+              <div class="h-full px-4 py-20 sm:px-10">
+               <div class="max-w-sm">
+                <h2 class="max-w-sm md:max-w-lg text-left text-balance text-xl md:text-xl lg:text-3xl font-semibold tracking-[-0.015em] text-white">
+                 Join the Creative Vanguard.
+                </h2>
+                <p class="mt-4 max-w-[26rem] text-left text-base/6 text-neutral-200">
+                 Don't just create! Collaborate. Connect with top AI artists and innovators. Sign up and start your journey.
+                </p>
+               </div>
+              </div>
+             </div>
+            </section>
+           </div>
+          </div>
+         </div>
+        </section>
+       </section>
+       <section>
+        <section class="py-16 md:py-24" id="live">
+         <div class="container mx-auto px-4 md:px-6">
+          <div class="mt-12">
+           <section class="LiveGenerationsGrid_section__PFT39">
+            <div class="LiveGenerationsGrid_container__4Ci_F">
+             <div class="text-center mb-12">
+              <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+               Live from the feed
+              </h2>
+              <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+               See what the community is creating right now.
+              </p>
+             </div>
+             <div class="LiveGenerationsGrid_gridContainer__DP5Ir">
+              <div class="LiveGenerationsGrid_gridFrame__Q_5VJ">
+               <div class="LiveGenerationsGrid_browserHeader__EoM5l">
+                <div class="LiveGenerationsGrid_urlBar__crULb">
+                 <div class="LiveGenerationsGrid_urlInput__6gkZ1">
+                  remixmart.com
+                 </div>
+                 <div class="LiveGenerationsGrid_liveBadge__gKbjY">
+                  Live
+                 </div>
+                </div>
+               </div>
+               <div class="w-full mt-2">
+                <div class="relative">
+                 <div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="Redbull in an ocean. Cinematic ad." class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F83728ee4-a70e-4db0-2979-12f35fc19100%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         remixmart
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="make the weather snow" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F81f2e3ba-c809-45a2-112f-79eba346de00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         parth
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="hyper-realistic instagram-style festival portrait of a beautiful young woman with long blonde hair with soft rose undertones, clear round glasses, natural glowy makeup, soft dewy skin, subtle blush, glossy neutral lips, wearing layered pearl and gold necklaces and a low neckline top, standing in warm golden hour light, background showing dreamy music festival scene with blurred colorful lights, soft bokeh, pastel sunset sky with pink and lavender tones, gentle breeze in her hair, expression calm, playful, confident, slightly parted lips, looking at the camera as if caught mid-smile, cinematic depth of field, ultra high resolution, warm and dreamy aesthetic, natural candid vibe, no heavy filters" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F49da4c1d-0754-4e56-9328-20b308099400%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         parth
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="create a scary image. the setting is in a victorian living room. the ghost of a victorian woman stands in the living room, which is ghostly blue. she wears a white embroidered victorian gown she also wears a giant white chiffon veil, which hides her entire body, from her head and face down to her wrists and gown's hem. she also has pale skin, shadowy stern eyes, and dark hair tied in a bun. she's a tall, ethereal mysterious and beautiful ghost. on the floor is a scared woman. she wears a dark blue nightgown, also has pale skin and long reddish brown hair. the ghost raises her cold bony veiled arms as huge veiled white sheets fly around the living room, summoning them like ghosts. the woman in the blue nightgown has a scared expression on her face. windows are open, letting in wind and fog as curtains sway eerily. moonlight enters the room as well. fog swirls around the ghost's hem. the ghost looks at the scared woman with regal taunt on her face. (make it live action cinematic, not painted. make it look like it was done by a pro)" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F3e6d065a-e6a6-4ab7-97ef-c3dcae438400%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         parth
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="I need a professional and cinematic-looking real image for this blog title: Why does every project feel urgent when no one’s sure who’s actually free?" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F83e5981f-dfe4-47e6-d5ac-75475eb87a00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         jewelprincess
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="create an invite from color impex for the jewelerry arabia show at Exhibition World Bahrain, nov 25-26" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F2004f685-d5ba-489e-d7c0-c0d89be2b500%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         colorimpex
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="can you make a young professional brown model to wear the pair of earrings attached in the photo" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2Fcfa7a689-ffe9-482d-807d-aac20940fb00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         jewelprincess
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="A cinematic slow-motion shot of a person walking through an old European street at golden hour. Warm sunlight glows between buildings, soft film grain, gentle breeze, long shadows on cobblestone. The camera tracks smoothly from behind, bokeh lights in the background. Ultra-cinematic, 35mm film look, ambient calm mood, high detail, warm orange and teal color grade." class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F0ea85fa7-732e-4ab7-cdf3-0967be4ecc00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         hardik_manwani
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-transparent">
+                      <div class="aspect-video bg-transparent flex items-center justify-center min-h-[240px]">
+                       <div class="text-center p-4">
+                        <div class="text-4xl mb-2">
+                         🎬
+                        </div>
+                        <p class="text-sm text-muted-foreground">
+                         Video unavailable
+                        </p>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="Image Creation: A newspaper image paired with a woman and a story, using a randomized drawing style.
+
+  ※The woman's outfit today:
+
+  /Midnight Velvet Collection | Lace Triangle Bralette in Midnight Blue | Delicate French lace, openwork design at the chest, subtly sexy.
+
+  /High-Waist Silk Panties | High-Waisted ... November 24, 2025, the newspaper's masthead featured the subtitle &quot;Maitreya Agen Messiah Heavenly Classic Times&quot;.
+
+  ※Main report content:
+
+  &quot;The Punishment of Wildfire.&quot; Next to be punished are all the old officials.
+
+  →All suppressed truths will spontaneously combust when the time is right.
+
+  →The firelight will illuminate the rotting parts of everyone's heart.
+
+  →Internal consequences, external punishment.
+
+  →When the system is corrupt, it will inevitably collapse.
+
+  →When morality declines, the dam breaks.
+
+  →Fire punishes people, light calls people to awaken.
+
+  →The firelight illuminates the filth: where to rebuild, where to loosen, where to start anew.
+
+  ※The main report's visuals can also be presented in the background outside the newspaper.
+
+  ※Secondary newspaper reports:
+
+  /Trump impeachment: Impeachment proceedings begin, sparking large-scale protests.
+
+  /Green resigns: Indicates conflict with Trump and submits Epstein's release papers.
+
+  /Peace in Ukraine: New plan favors Russia, Kyiv objects." class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F3e02fed3-3e68-4e50-809c-2deee270a700%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         agen
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="mock up une image encadrée d'un! dessin d'un enfant" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2Fa13d2d4f-3f68-47f9-8947-9637d63d3700%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         walid
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          1
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="Christmas vibes in a beautiful european town" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2Fa09c0f9e-f0ef-4992-d292-e9617dfd0300%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         alexandra
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          1
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="Pablo Escobar in front of Burj Khalifa" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F5b589884-d41e-4c3c-f088-4e28b9c61c00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         remixmart
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="can you make a female using deodorant?" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F1b8fdd23-a511-471d-97e5-ffafea272000%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         octorikamanda
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="The same large brown tabby cat from the original photo, wearing a torn white vest and torn white shorts, standing beside her bicycle with her baby kitten. Both are holding a signboard that says ‘SUBSCRIBE’. They are crying emotionally, tears in their eyes, pleading for people to subscribe. Open sky background, bicycle next to them, dramatic emotional scene. Realistic cinematic ultra-HD 4K 3D portrait, detailed fur, expressive faces, dramatic lighting, lifelike textures." class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2Faa3624df-08af-453c-e0a2-3570ba554100%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         skylar47
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-transparent">
+                      <div class="aspect-video bg-transparent flex items-center justify-center min-h-[240px]">
+                       <div class="text-center p-4">
+                        <div class="text-4xl mb-2">
+                         🎬
+                        </div>
+                        <p class="text-sm text-muted-foreground">
+                         Video unavailable
+                        </p>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="A realistic portrait of a charismatic young girl in her early 20s, with a laid-back Santos beach vibe from Brazil – tanned skin from surfing and skating under the sun, messy sun-bleached hair, and a genuine, infectious smile that screams fun and humor. He's hyper casual: wearing a faded graphic t-shirt with a subtle space/universe print (like a galaxy or rocket), baggy cargo shorts, and worn-out skate sneakers, holding a skateboard under one arm as if he's just come from a surf session with friends. His eyes are captivating and engaging, with a spark of curiosity and confidence that draws people in, perfect for social media influencers – like he's about to share a story on Twitch or Instagram about exploring the cosmos, local spots in Santos, or hanging out for dinner with the crew. Background subtly shows a coastal urban scene: blurred palm trees, ocean waves, and street art, evoking a resilient spirit from a modest upbringing in the area, blending street smarts with a scientific, adventurous aura. High detail, photorealistic, natural lighting, 8k resolution, vibrant yet grounded colors." class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F55c508e3-a98c-4aba-ac09-0850cbde0100%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         skylar47
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="place this food plate (lamb leg inside) on a home kitchen stand
+  https://cdn.themart.gr/media/catalog/product/cache/6bb8be716c6717312122908579650d16/1/0/105330_2.jpg" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2Ff5d69bb0-7250-4d86-6b19-04a0e227eb00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         mits
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="car image" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F59306409-cb96-4aa3-180c-564a11197500%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         new
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                  <div>
+                   <div class="masonry-item p-0.5">
+                    <div class="group relative break-inside-avoid overflow-hidden cursor-pointer bg-transparent rounded-lg transition-all duration-300 ease-out hover:shadow-lg hover:shadow-black/10">
+                     <div class="relative overflow-hidden rounded-lg bg-muted">
+                      <img alt="a beautiful girl" class="w-full h-auto object-cover block select-none transition-all duration-700 ease-out opacity-100 scale-100 blur-0" height="800" src="https://www.remixmart.com/_next/image?url=https%3A%2F%2Fimagedelivery.net%2F50PR9oJjkc7U5NCIT34owQ%2F1ec5f0bf-83bb-4b22-1f95-ce843947ec00%2Fpublic&amp;w=1920&amp;q=85" width="800"/>
+                      <div class="absolute inset-0 flex flex-col justify-between p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                       <div class="flex flex-col gap-2">
+                        <button class="text-left text-sm font-medium hover:underline transition-all duration-200">
+                         abb
+                        </button>
+                        <div class="flex items-center gap-4 text-xs text-white/80">
+                         <span class="flex items-center gap-1">
+                          0
+                         </span>
+                         <span class="flex items-center gap-1">
+                          1
+                         </span>
+                        </div>
+                       </div>
+                      </div>
+                     </div>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+           </section>
+           <div class="bg-gray-900 text-white py-6 md:py-12 -mt-8 md:mt-0">
+            <div class="max-w-2xl mx-auto text-center">
+             <div class="flex justify-center items-center mb-6">
+              <div class="z-10 flex -space-x-4 rtl:space-x-reverse">
+               <img alt="Avatar 1" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=10" width="40"/>
+               <img alt="Avatar 2" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=12" width="40"/>
+               <img alt="Avatar 3" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=43" width="40"/>
+               <img alt="Avatar 4" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=64" width="40"/>
+               <img alt="Avatar 5" class="h-10 w-10 rounded-full border-2 border-white dark:border-gray-800" height="40" src="https://i.pravatar.cc/150?img=55" width="40"/>
+               <a class="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-black text-center text-xs font-medium text-white hover:bg-gray-600 dark:border-gray-800 dark:bg-white dark:text-black" href="">
+                +100
+               </a>
+              </div>
+             </div>
+             <p class="text-lg text-gray-400 mb-6">
+              Ready to bring your ideas to life?
+             </p>
+             <a href="/signup">
+              <button class="relative cursor-pointer group transition-all animate-rainbow inline-flex items-center justify-center gap-2 shrink-0 rounded-sm outline-none aria-invalid:border-destructive text-sm font-medium whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 hover:scale-105 hover:shadow-lg hover:shadow-yellow-500/30 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 [&amp;_svg]:shrink-0 border-0 bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] bg-[length:200%] text-primary-foreground [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.125rem)_solid_transparent] before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] before:[filter:blur(0.75rem)] dark:bg-[linear-gradient(#fff,#fff),linear-gradient(#fff_50%,rgba(255,255,255,0.6)_80%,rgba(0,0,0,0)),linear-gradient(90deg,var(--color-1),var(--color-5),var(--color-3),var(--color-4),var(--color-2))] h-12 px-8 py-4">
+               Start Creating for Free
+              </button>
+             </a>
+             <p class="text-green-400 mt-4 text-sm">
+              <span class="mr-2">
+               🎁
+              </span>
+              Enjoy free credits on signup
+             </p>
+            </div>
+           </div>
+          </div>
+         </div>
+        </section>
+       </section>
+       <section>
+        <div id="pricing">
+         <div class="w-full relative overflow-hidden min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 dark:from-gray-950 dark:via-gray-900 dark:to-black py-16 md:py-24">
+          <div class="relative w-full flex flex-col items-center px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+           <div class="mx-auto max-w-7xl flex flex-col items-center">
+            <div class="w-full lg:w-auto mx-auto max-w-4xl text-center mb-16">
+             <div class="relative">
+              <h2 class="font-display font-bold relative z-10 bg-gradient-to-r from-gray-900 via-gray-800 to-black bg-clip-text text-transparent dark:from-white dark:via-gray-200 dark:to-gray-300 opacity-0 transform translate3d(0, 32px, 0) drop-shadow-2xl tracking-tight text-4xl md:text-5xl lg:text-6xl">
+               Choose Your Creative Journey
+              </h2>
+             </div>
+             <div class="relative mt-8">
+              <p class="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto relative z-10 opacity-0 transform translate3d(0, 32px, 0) font-medium tracking-wide drop-shadow-sm text-base md:text-lg lg:text-xl">
+               Unlock the full potential of AI image generation with flexible plans designed for creators at every level
+              </p>
+             </div>
+            </div>
+            <div class="w-full lg:w-auto flex justify-center mb-8 opacity-0 transform translate3d(0, 32px, 0)">
+             <div class="inline-flex items-center px-4 py-2 text-xs bg-gradient-to-r from-orange-500/10 via-red-500/10 to-rose-500/10 text-gray-700 dark:text-gray-300 rounded-full font-medium backdrop-blur-xl border border-orange-200/30 dark:border-orange-700/30 shadow-lg shadow-orange-500/15 transition-all duration-300 ease-out will-change-transform hover:shadow-xl hover:shadow-orange-500/25 hover:scale-105 ring-1 ring-orange-100/20 dark:ring-orange-800/20">
+              <span class="tracking-wide">
+               Save 20% with annual billing
+              </span>
+             </div>
+            </div>
+            <div class="flex justify-center mb-12 opacity-0 transform translate3d(0, 32px, 0) mt-4">
+             <div class="grid gap-x-1 rounded-2xl p-1 text-center text-sm font-semibold leading-5 bg-white/70 dark:bg-gray-800/70 backdrop-blur-xl border border-white/20 dark:border-gray-700/50 shadow-xl transition-shadow duration-200 ease-out will-change-transform hover:shadow-2xl">
+              <p class="sr-only">
+               Payment frequency
+              </p>
+              <label class="bg-gradient-to-r from-gray-800 to-black text-white shadow-lg cursor-pointer rounded-xl px-8 py-3 transition-all duration-200 font-semibold" for="1">
+               Monthly
+               <button class="hidden" id="1" value="1">
+                Monthly
+               </button>
+              </label>
+              <label class="bg-transparent text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200 cursor-pointer rounded-xl px-8 py-3 transition-all duration-200 font-semibold" for="2">
+               Yearly
+               <button class="hidden" id="2" value="2">
+                Yearly
+               </button>
+              </label>
+             </div>
+            </div>
+            <div class="isolate mx-auto grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none select-none opacity-0 transform translate3d(0, 32px, 0) lg:grid-cols-3 mt-8 mb-16">
+             <div class="relative w-full max-w-sm mx-auto rounded-3xl p-8 group backdrop-blur-xl border transition-all duration-200 ease-out will-change-transform transform-gpu backface-visibility-hidden bg-white/70 dark:bg-gray-900/70 border-white/20 dark:border-gray-700/50 shadow-xl shadow-black/5 dark:shadow-black/20 hover:scale-[1.015] hover:shadow-2xl hover:shadow-black/10 dark:hover:shadow-black/30 hover:bg-white/80 dark:hover:bg-gray-900/80 hover:border-white/30 dark:hover:border-gray-600/60 hover:translate3d(0,-4px,0)">
+              <div class="relative z-10">
+               <div class="flex items-center gap-3 mb-2">
+                <h3 class="text-2xl font-display font-bold tracking-tight text-gray-900 dark:text-white" id="free">
+                 Free
+                </h3>
+                <div class="relative">
+                 <div class="relative bg-gradient-to-r from-red-600 to-red-500 text-white px-2.5 py-1 rounded-full shadow-lg transition-all duration-200 ease-out will-change-transform hover:shadow-xl hover:scale-105">
+                  <div class="flex items-center gap-1.5 text-xs font-bold">
+                   <span class="whitespace-nowrap">
+                    Limited Time
+                   </span>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <p class="text-sm leading-6 mb-6 text-gray-600 dark:text-gray-400">
+                Perfect for trying out our service
+               </p>
+               <div class="mb-8">
+                <div class="flex items-baseline gap-x-2">
+                 <span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  $0
+                 </span>
+                 <span class="text-sm font-medium text-gray-500 dark:text-gray-500">
+                  / month
+                 </span>
+                </div>
+               </div>
+               <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  20 free credits (20 images)
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  Access to basic models
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  Public generations only
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  Community support
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  Standard generation speed
+                 </span>
+                </li>
+               </ul>
+               <button class="w-full h-12 rounded-xl font-semibold group/button transition-all duration-150 ease-out will-change-transform ring-offset-background focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 flex items-center justify-center gap-2 relative overflow-hidden transform-gpu backface-visibility-hidden bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-100 shadow-lg hover:shadow-xl hover:scale-[1.015] active:scale-[0.985]">
+                <span class="relative z-10 transition-transform duration-100 ease-out group-hover/button:scale-[1.02] flex items-center justify-center gap-2">
+                 <span>
+                  Get Started
+                 </span>
+                </span>
+               </button>
+               <p class="text-center text-sm text-gray-500 dark:text-gray-400 mt-2">
+                No credit card required
+               </p>
+              </div>
+             </div>
+             <div class="relative w-full max-w-sm mx-auto rounded-3xl p-8 group backdrop-blur-xl border transition-all duration-200 ease-out will-change-transform transform-gpu backface-visibility-hidden bg-white/70 dark:bg-gray-900/70 border-white/20 dark:border-gray-700/50 hover:scale-[1.015] hover:bg-white/80 dark:hover:bg-gray-900/80 hover:border-white/30 dark:hover:border-gray-600/60 hover:translate3d(0,-4px,0) ring-2 ring-gray-500/50 dark:ring-gray-400/50 bg-gradient-to-br from-gray-50/80 via-white/70 to-gray-100/80 dark:from-gray-950/50 dark:via-gray-900/70 dark:to-black/50 shadow-2xl shadow-gray-500/20 dark:shadow-gray-400/20 hover:shadow-3xl hover:shadow-gray-500/30 dark:hover:shadow-gray-400/30">
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+               <div class="flex items-center gap-1.5 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 ease-out will-change-transform hover:shadow-xl hover:scale-105 bg-gradient-to-r from-gray-800 to-black">
+                Most Popular
+               </div>
+              </div>
+              <div class="relative z-10">
+               <div class="flex items-center gap-3 mb-2">
+                <h3 class="text-2xl font-display font-bold tracking-tight text-gray-900 dark:text-white" id="pro">
+                 Pro
+                </h3>
+               </div>
+               <p class="text-sm leading-6 mb-6 text-gray-600 dark:text-gray-400">
+                Unlock the full potential of AI creativity
+               </p>
+               <div class="mb-8">
+                <div class="flex items-baseline gap-x-2">
+                 <span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  $20
+                 </span>
+                 <span class="text-sm font-medium text-gray-500 dark:text-gray-500">
+                  / month
+                 </span>
+                </div>
+               </div>
+               <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  250 credits monthly (never expire)
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🔒 Prompt locking
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🧿 Private generations
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  ⚡ Up to 4 concurrent generations
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  ✨ Access to all premium models
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🎬 Access to video generation
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🎯 Priority support &amp; faster speeds
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🚀 First access to new features
+                 </span>
+                </li>
+               </ul>
+               <button class="w-full h-12 rounded-xl font-semibold group/button transition-all duration-150 ease-out will-change-transform ring-offset-background focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 flex items-center justify-center gap-2 relative overflow-hidden transform-gpu backface-visibility-hidden bg-gradient-to-r from-gray-800 to-black text-white hover:from-gray-700 hover:to-gray-900 shadow-lg shadow-gray-500/25 hover:shadow-xl hover:shadow-gray-500/30 hover:scale-[1.015] active:scale-[0.985]">
+                <span class="relative z-10 transition-transform duration-100 ease-out group-hover/button:scale-[1.02] flex items-center justify-center gap-2">
+                 <span>
+                  Upgrade to Pro Monthly
+                 </span>
+                </span>
+               </button>
+               <button class="w-full mt-3 h-10 rounded-xl font-medium transition-all duration-150 ease-out will-change-transform ring-offset-background focus-visible:outline-none transform-gpu backface-visibility-hidden bg-gray-50/80 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/60 border border-gray-200/60 dark:border-gray-700/40 hover:border-gray-300/80 dark:hover:border-gray-600/60 hover:text-gray-700 dark:hover:text-gray-300 hover:scale-[1.01] flex items-center justify-center gap-2 text-sm">
+                Pay with Crypto
+               </button>
+              </div>
+             </div>
+             <div class="relative w-full max-w-sm mx-auto rounded-3xl p-8 group backdrop-blur-xl border transition-all duration-200 ease-out will-change-transform transform-gpu backface-visibility-hidden bg-white/70 dark:bg-gray-900/70 border-white/20 dark:border-gray-700/50 hover:scale-[1.015] hover:bg-white/80 dark:hover:bg-gray-900/80 hover:border-white/30 dark:hover:border-gray-600/60 hover:translate3d(0,-4px,0) ring-2 ring-orange-500/50 dark:ring-orange-400/50 bg-gradient-to-br from-orange-50/80 via-white/70 to-red-50/80 dark:from-orange-950/50 dark:via-gray-900/70 dark:to-red-950/50 shadow-2xl shadow-orange-500/20 dark:shadow-orange-400/20 hover:shadow-3xl hover:shadow-orange-500/30 dark:hover:shadow-orange-400/30">
+              <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+               <div class="flex items-center gap-1.5 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg transition-all duration-200 ease-out will-change-transform hover:shadow-xl hover:scale-105 bg-gradient-to-r from-orange-600 to-red-600">
+                <span class="text-lg">
+                 ⚡
+                </span>
+                Power User
+               </div>
+              </div>
+              <div class="relative z-10">
+               <div class="flex items-center gap-3 mb-2">
+                <h3 class="text-2xl font-display font-bold tracking-tight text-gray-900 dark:text-white" id="creator">
+                 Creator
+                </h3>
+               </div>
+               <p class="text-sm leading-6 mb-6 text-gray-600 dark:text-gray-400">
+                🔥 For content creators who need maximum credits
+               </p>
+               <div class="mb-8">
+                <div class="flex items-baseline gap-x-2">
+                 <span class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  $40
+                 </span>
+                 <span class="text-sm font-medium text-gray-500 dark:text-gray-500">
+                  / month
+                 </span>
+                </div>
+               </div>
+               <ul class="space-y-3 mb-8">
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  500 credits monthly (never expire)
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🔒 Prompt locking
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🧿 Private generations
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  ⚡ Up to 4 concurrent generations
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  ✨ Access to all premium models
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🎬 Access to video generation
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🎯 Priority support &amp; faster speeds
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  🚀 First access to new features
+                 </span>
+                </li>
+                <li class="flex items-center gap-3 group/feature transition-transform duration-150 ease-out will-change-transform hover:translate3d(2px,0,0)">
+                 <span class="text-sm transition-transform duration-150 ease-out will-change-transform group-hover/feature:translate3d(4px,0,0) text-gray-700 dark:text-gray-300">
+                  💎 Creator-exclusive features
+                 </span>
+                </li>
+               </ul>
+               <button class="w-full h-12 rounded-xl font-semibold group/button transition-all duration-150 ease-out will-change-transform ring-offset-background focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 flex items-center justify-center gap-2 relative overflow-hidden transform-gpu backface-visibility-hidden bg-gradient-to-r from-orange-600 to-red-600 text-white hover:from-orange-700 hover:to-red-700 shadow-lg shadow-orange-500/25 hover:shadow-xl hover:shadow-orange-500/30 hover:scale-[1.015] active:scale-[0.985]">
+                <span class="relative z-10 transition-transform duration-100 ease-out group-hover/button:scale-[1.02] flex items-center justify-center gap-2">
+                 <span>
+                  Upgrade to Creator Monthly
+                 </span>
+                </span>
+               </button>
+               <button class="w-full mt-3 h-10 rounded-xl font-medium transition-all duration-150 ease-out will-change-transform ring-offset-background focus-visible:outline-none transform-gpu backface-visibility-hidden bg-gray-50/80 dark:bg-gray-800/50 text-gray-600 dark:text-gray-400 hover:bg-gray-100/80 dark:hover:bg-gray-700/60 border border-gray-200/60 dark:border-gray-700/40 hover:border-gray-300/80 dark:hover:border-gray-600/60 hover:text-gray-700 dark:hover:text-gray-300 hover:scale-[1.01] flex items-center justify-center gap-2 text-sm">
+                Pay with Crypto
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="w-full max-w-4xl mx-auto py-12 px-8">
+           <h2 class="text-3xl font-bold text-center mb-8 text-zinc-950 dark:text-zinc-50">
+            Frequently Asked Questions
+           </h2>
+           <div class="relative w-full">
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                What is RemixMart?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                How do credits work?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                Who owns the content I create?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                Can I use my creations for commercial purposes?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                Is there a free trial?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                Do my credits expire?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                Can I cancel my subscription?
+               </div>
+              </div>
+             </button>
+            </div>
+            <div class="overflow-hidden py-2">
+             <button class="group w-full py-0.5 text-left text-zinc-950 dark:text-zinc-50 group" type="button">
+              <div class="flex items-center">
+               <div class="ml-2 text-zinc-950 dark:text-zinc-50">
+                What makes RemixMart different?
+               </div>
+              </div>
+             </button>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <div class="bg-gray-800 border-t border-gray-700">
+        <div class="container mx-auto px-6 py-3">
+         <div class="flex flex-wrap items-center justify-between gap-6">
+          <div class="flex items-center gap-6">
+           <div class="flex items-center gap-1.5">
+            <span class="text-xs text-gray-400">
+             SSL Secured
+            </span>
+           </div>
+           <div class="flex items-center gap-1.5">
+            <span class="text-xs text-gray-400">
+             Payment Protected by
+            </span>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300">
+        <div class="container mx-auto px-6 py-20">
+         <div class="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          <div class="col-span-1 md:col-span-2 lg:col-span-1">
+           <a class="flex items-center gap-3 group" href="/">
+            <span class="text-2xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+             RemixMart
+            </span>
+           </a>
+           <p class="mt-6 max-w-xs text-sm text-gray-400 leading-relaxed">
+            The future of creative collaboration, where AI amplifies human creativity and empowers creators worldwide.
+           </p>
+          </div>
+          <div>
+           <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-200 mb-6">
+            Product
+           </h3>
+           <ul class="space-y-4">
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="#features">
+              Features
+             </a>
+            </li>
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="#pricing">
+              Pricing
+             </a>
+            </li>
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="#live">
+              Live Generations
+             </a>
+            </li>
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="/signup">
+              Get Started
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div>
+           <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-200 mb-6">
+            Company
+           </h3>
+           <ul class="space-y-4">
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="/about">
+              About Us
+             </a>
+            </li>
+           </ul>
+          </div>
+          <div>
+           <h3 class="text-sm font-semibold uppercase tracking-wider text-gray-200 mb-6">
+            Legal
+           </h3>
+           <ul class="space-y-4">
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="/terms">
+              Terms of Service
+             </a>
+            </li>
+            <li>
+             <a class="text-gray-400 transition-all duration-300 hover:text-white hover:translate-x-1 inline-block" href="/privacy">
+              Privacy Policy
+             </a>
+            </li>
+           </ul>
+          </div>
+         </div>
+         <div class="mt-20 border-t border-gray-800 pt-8 text-center">
+          <p class="text-sm text-gray-500">
+           © 2025 RemixMart. All rights reserved.
+          </p>
+          <p class="text-xs text-gray-600 mt-2">
+           Made with ❤️ for creators worldwide
+          </p>
+         </div>
+        </div>
+       </footer>
+      </main>
+     </div>
+    </main>
+   </div>
+  </body>
+
+</body>
+</html>

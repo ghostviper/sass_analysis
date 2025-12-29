@@ -1,0 +1,93 @@
+{
+  "common": {
+    "appName": "SaaS 分析",
+    "appSlogan": "产品机会洞察",
+    "dataSource": "数据来源：TrustMRR | 分析仅供参考",
+    "builtFor": "Built for Indie Hackers",
+    "search": "搜索产品...",
+    "dataUpdate": "数据更新",
+    "dataUpdateDesc": "分析数据每日自动更新",
+    "total": "共",
+    "items": "个",
+    "copied": "已复制",
+    "share": "分享"
+  },
+  "nav": {
+    "analysisModules": "分析模块",
+    "dashboard": "数据概览",
+    "dashboardDesc": "关键指标与榜单",
+    "categories": "赛道分析",
+    "categoriesDesc": "市场机会洞察",
+    "products": "产品库",
+    "productsDesc": "全部分析产品",
+    "leaderboard": "排行榜",
+    "leaderboardDesc": "Indie Hacker 榜单",
+    "assistant": "AI 分析助手",
+    "assistantDesc": "智能分析对话",
+    "about": "分析说明",
+    "new": "NEW"
+  },
+  "sidebar": {
+    "collapse": "收起侧边栏",
+    "expand": "展开侧边栏"
+  },
+  "theme": {
+    "light": "浅色模式",
+    "dark": "深色模式"
+  },
+  "language": {
+    "zh": "简体中文",
+    "en": "English"
+  },
+  "dashboard": {
+    "title": "市场概览",
+    "subtitle": "发现独立开发者的蓝海机会",
+    "totalProducts": "收录产品",
+    "analyzedProducts": "已分析产品",
+    "categories": "产品赛道",
+    "avgMrr": "平均 MRR"
+  },
+  "leaderboard": {
+    "title": "Indie Hacker 排行榜",
+    "stats": "{founders} 位开发者，总月收入 {revenue}",
+    "shareTitle": "Indie Hacker 排行榜",
+    "shareText": "发现最厉害的独立开发者！",
+    "shareList": "分享榜单",
+    "sort": "排序",
+    "noData": "暂无排行榜数据",
+    "dimensions": {
+      "total_revenue": "总收入",
+      "product_count": "产品数",
+      "avg_revenue": "平均收入",
+      "max_growth": "增长率",
+      "followers": "粉丝数"
+    },
+    "metrics": {
+      "products": "产品",
+      "monthlyRevenue": "月收入"
+    },
+    "units": {
+      "count": "{count} 个"
+    }
+  },
+  "assistant": {
+    "title": "AI 分析助手",
+    "subtitle": "通过智能对话探索 SaaS 产品和市场洞察",
+    "inputPlaceholder": "输入您的问题...",
+    "analysisMode": "分析模式",
+    "linkedProduct": "关联产品",
+    "modes": {
+      "general": "通用分析",
+      "generalDesc": "综合性的问题回答和分析",
+      "product": "产品分析",
+      "productDesc": "深度产品分析与竞品对比",
+      "market": "市场分析",
+      "marketDesc": "行业趋势与市场机会洞察"
+    },
+    "suggestedQuestions": {
+      "trends": "分析当前 SaaS 市场趋势",
+      "opportunity": "哪些赛道适合独立开发者",
+      "topProducts": "近期增长最快的产品"
+    }
+  }
+}

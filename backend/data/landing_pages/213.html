@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Innobytes - AI-Powered Creative Platform for Video, Image, Music & Voice Generation</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col lg:flex-row min-h-screen lg:h-screen lg:overflow-hidden overflow-x-hidden bg-[#141414] text-white font-sans">
+    <aside class="fixed lg:static inset-y-0 left-0 z-50 flex flex-col w-72 bg-[#1a1a1a] lg:bg-white/5 h-screen border-r border-white/10 lg:border-r-0 transform transition-transform duration-300 ease-in-out -translate-x-full lg:translate-x-0">
+     <div class="flex h-20 items-center justify-between gap-3 px-6 flex-shrink-0 border-b border-white/10 lg:border-b-0">
+      <div class="flex items-center gap-3">
+       <img alt="Innobytes Logo" class="object-contain" height="32" src="/_next/image?url=%2FLogo-no-bg.png&amp;w=64&amp;q=75" width="32"/>
+       <p class="text-lg font-bold text-[#f0c500] font-sans">
+        Innobytes
+       </p>
+      </div>
+     </div>
+     <nav class="relative flex-1 p-4 overflow-y-auto">
+      <button class="cursor-pointer mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-sm font-bold transition-all duration-200 ease-in-out font-sans bg-white/10 text-white">
+       <span>
+        Home
+       </span>
+      </button>
+      <button class="cursor-pointer mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-sm font-bold transition-all duration-200 ease-in-out font-sans text-white/60 hover:bg-white/5 hover:text-white">
+       <span>
+        AI Image
+       </span>
+      </button>
+      <button class="cursor-pointer mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-sm font-bold transition-all duration-200 ease-in-out font-sans text-white/60 hover:bg-white/5 hover:text-white">
+       <span>
+        AI Video
+       </span>
+      </button>
+      <button class="cursor-pointer mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-sm font-bold transition-all duration-200 ease-in-out font-sans text-white/60 hover:bg-white/5 hover:text-white">
+       <span>
+        AI Music
+       </span>
+      </button>
+      <button class="cursor-pointer mb-1 flex w-full items-center gap-3 rounded-lg px-4 py-2.5 text-left text-sm font-bold transition-all duration-200 ease-in-out font-sans text-white/60 hover:bg-white/5 hover:text-white">
+       <span>
+        AI Voicover
+       </span>
+      </button>
+      <div class="mt-6 border-t border-white/10 pt-4">
+       <div class="mb-3 px-4">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-white/50 font-sans">
+         Tools
+        </p>
+       </div>
+       <button class="cursor-pointer group flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left text-sm font-semibold transition-all duration-200 ease-in-out font-sans bg-white/5 text-white/90 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white">
+        <span class="flex-1">
+         AI Agent
+        </span>
+       </button>
+       <button class="cursor-pointer group flex w-full items-center gap-3 rounded-lg px-4 py-3 text-left text-sm font-semibold transition-all duration-200 ease-in-out font-sans mt-2 bg-white/5 text-white/90 border border-white/10 hover:bg-white/10 hover:border-white/20 hover:text-white">
+        <div class="relative h-6 w-6 flex-shrink-0">
+         <img alt="Shopify" class="object-contain transition-opacity duration-200" height="24" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/shopify-icon.png" width="24"/>
+        </div>
+        <span class="flex-1">
+         Connect Shopify
+        </span>
+       </button>
+      </div>
+     </nav>
+    </aside>
+    <div class="flex flex-1 flex-col lg:overflow-hidden overflow-x-hidden bg-[#141414]">
+     <header class="fixed top-0 left-0 right-0 z-[100] flex h-16 items-center justify-between border-b border-white/10 bg-[#141414] backdrop-blur-md px-4 sm:px-6 shadow-lg will-change-transform lg:relative lg:z-[100] lg:bg-[#141414] lg:border-[#141414] lg:shadow-none lg:backdrop-blur-none lg:overflow-visible">
+      <div class="flex items-center gap-2 sm:gap-4 ml-auto">
+       <a class="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#f0c500] px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-bold text-black transition hover:bg-[#ffd84f] font-sans" href="/pricing">
+        <span class="hidden sm:inline">
+         Subscribe Now
+        </span>
+        <span class="sm:hidden">
+         Subscribe
+        </span>
+       </a>
+       <a class="cursor-pointer hidden sm:block text-sm text-white/80 hover:text-white transition font-sans" href="/pricing">
+        Pricing
+       </a>
+       <button class="cursor-pointer rounded-full border border-white/25 px-4 py-2 text-sm font-bold text-white transition hover:border-white/45 hover:text-white hover:bg-white/5">
+        Sign In
+       </button>
+      </div>
+     </header>
+     <main class="flex-1 overflow-x-hidden bg-[#141414] relative lg:overflow-y-auto pt-20 lg:pt-4 p-4 sm:p-6 lg:p-8">
+      <h1 class="absolute w-px h-px -m-px overflow-hidden whitespace-nowrap border-0 p-0">
+       Innobytes - AI-Powered Creative Platform for Video, Image, Music &amp; Voice Generation
+      </h1>
+      <div class="relative w-full mx-auto max-w-7xl">
+       <div class="relative min-h-[400px] bg-[#141414]">
+        <div class="transition-opacity duration-150 ease-in-out opacity-100 relative z-10">
+         <div class="space-y-16 sm:space-y-20 lg:space-y-28 w-full overflow-x-hidden">
+          <div class="relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+           <div class="relative isolate w-full overflow-hidden rounded-xl sm:rounded-2xl min-h-[350px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[550px] bg-[#050505]">
+            <video class="absolute inset-0 h-full w-full object-cover rounded-xl sm:rounded-2xl transition-opacity duration-500 opacity-100">
+             <source src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/hero-bg.webm" type="video/webm">
+              <source src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/avatari/4.mp4" type="video/mp4">
+               Your browser does not support the video tag.
+              </source>
+             </source>
+            </video>
+            <div class="relative z-10 flex flex-col items-center justify-center text-center px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 xl:px-16 xl:py-24 h-full min-h-[350px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[550px]">
+             <span class="inline-flex items-center gap-1.5 sm:gap-2 rounded-full border border-white/30 px-3 sm:px-4 md:px-5 py-1 text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-white/80 mb-4 sm:mb-6 font-sans">
+              AI Video · AI Image · AI Voice
+             </span>
+             <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-3 sm:mb-4 md:mb-6 font-sans leading-tight max-w-4xl px-2">
+              Create any video you can imagine.
+             </h2>
+             <p class="text-sm sm:text-base md:text-lg lg:text-xl text-white/85 mb-6 sm:mb-8 md:mb-10 font-sans max-w-3xl px-4">
+              Get cutting-edge AI image and video, voiceovers, high-quality music, and more. The choice of 33M+ creators worldwide.
+             </p>
+             <button class="cursor-pointer rounded-full bg-[#f0c500] px-6 sm:px-8 md:px-10 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-bold text-black shadow-[0px_25px_55px_rgba(240,197,0,0.45)] transition hover:bg-[#ffd84f] hover:shadow-[0px_30px_60px_rgba(240,197,0,0.55)] font-sans inline-block">
+              Start Now
+             </button>
+            </div>
+           </div>
+          </div>
+          <div class="w-full">
+           <h1 class="mb-6 sm:mb-8 md:mb-12 text-3xl sm:text-4xl md:text-5xl font-bold text-white font-sans">
+            Get started with creative AI and tools
+           </h1>
+           <a class="cursor-pointer mb-6 sm:mb-8 md:mb-12 rounded-full bg-[#f0c500] px-5 sm:px-6 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-black transition hover:bg-[#ffd84f] hover:shadow-[0px_8px_20px_rgba(240,197,0,0.25)] font-sans inline-block" href="/pricing">
+            Subscribe Now
+           </a>
+           <div class="grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-3">
+            <div class="group relative cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-[16/9] w-full">
+              <img alt="AI Image" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" height="374" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/home/1.png" width="674"/>
+             </div>
+            </div>
+            <div class="group relative cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-[16/9] w-full">
+              <img alt="AI Video" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/home/2.png"/>
+             </div>
+            </div>
+            <div class="group relative cursor-pointer overflow-hidden rounded-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-[16/9] w-full">
+              <img alt="AI Voiceover" class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/home/3.png"/>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="w-full">
+           <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white font-sans">
+             Featured AI Models
+            </h2>
+            <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans whitespace-nowrap">
+             Explore all models &gt;
+            </button>
+           </div>
+           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="group relative rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-white/30 hover:bg-white/10">
+             <div class="relative h-[200px] w-full bg-black overflow-hidden">
+              <img alt="FLUX.2 Dev" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/api image/1.png"/>
+              <div class="absolute top-3 left-3 rounded-md bg-[#f0c500] px-2.5 py-1 text-xs font-bold text-black font-sans z-10">
+               NEW
+              </div>
+              <div class="absolute bottom-3 left-3">
+               <div class="rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5">
+                <span class="text-lg font-bold text-white font-sans">
+                 ▲
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+               <span class="text-white/60 text-sm">
+                ▲
+               </span>
+               <h3 class="text-lg font-semibold text-white font-sans">
+                FLUX.2 Dev
+               </h3>
+              </div>
+              <p class="text-sm text-white/70 font-sans leading-relaxed">
+               Fast image generation with photorealistic detail
+              </p>
+             </div>
+            </div>
+            <div class="group relative rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-white/30 hover:bg-white/10">
+             <div class="relative h-[200px] w-full bg-black overflow-hidden">
+              <img alt="Sora 2 Pro" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/api image/2.png"/>
+              <div class="absolute top-3 left-3 rounded-md bg-[#f0c500] px-2.5 py-1 text-xs font-bold text-black font-sans z-10">
+               NEW
+              </div>
+              <div class="absolute bottom-3 left-3">
+               <div class="rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5">
+                <span class="text-lg font-bold text-white font-sans">
+                 🌀
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+               <span class="text-white/60 text-sm">
+                🌀
+               </span>
+               <h3 class="text-lg font-semibold text-white font-sans">
+                Sora 2 Pro
+               </h3>
+              </div>
+              <p class="text-sm text-white/70 font-sans leading-relaxed">
+               Videos with sharp motion and precise prompt control
+              </p>
+             </div>
+            </div>
+            <div class="group relative rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-white/30 hover:bg-white/10">
+             <div class="relative h-[200px] w-full bg-black overflow-hidden">
+              <img alt="G Veo 3.1" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/api image/3.png"/>
+              <div class="absolute top-3 left-3 rounded-md bg-[#f0c500] px-2.5 py-1 text-xs font-bold text-black font-sans z-10">
+               NEW
+              </div>
+              <div class="absolute bottom-3 left-3">
+               <div class="rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5">
+                <span class="text-lg font-bold text-white font-sans">
+                 G
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+               <span class="text-white/60 text-sm">
+                G
+               </span>
+               <h3 class="text-lg font-semibold text-white font-sans">
+                G Veo 3.1
+               </h3>
+              </div>
+              <p class="text-sm text-white/70 font-sans leading-relaxed">
+               Flawless audio-video sync with style and character control
+              </p>
+             </div>
+            </div>
+            <div class="group relative rounded-xl border border-white/10 bg-white/5 overflow-hidden transition-all duration-300 hover:border-white/30 hover:bg-white/10">
+             <div class="relative h-[200px] w-full bg-black overflow-hidden">
+              <img alt="G Nano Banana" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/api image/4.png"/>
+              <div class="absolute bottom-3 left-3">
+               <div class="rounded-lg bg-white/20 backdrop-blur-sm px-3 py-1.5">
+                <span class="text-lg font-bold text-white font-sans">
+                 G
+                </span>
+               </div>
+              </div>
+             </div>
+             <div class="p-5">
+              <div class="flex items-center gap-2 mb-2">
+               <span class="text-white/60 text-sm">
+                G
+               </span>
+               <h3 class="text-lg font-semibold text-white font-sans">
+                G Nano Banana
+               </h3>
+              </div>
+              <p class="text-sm text-white/70 font-sans leading-relaxed">
+               Powerful image editing with perfect character consistency
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="w-full">
+           <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white font-sans">
+             Featured AI Avatars
+            </h2>
+            <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans whitespace-nowrap">
+             Explore all avatars &gt;
+            </button>
+           </div>
+           <div class="grid grid-cols-2 gap-3 sm:gap-4 sm:grid-cols-3 lg:grid-cols-6">
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 1" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/1.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 1
+              </p>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 2" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/2.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 2
+              </p>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 3" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/3.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 3
+              </p>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 4" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/4.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 4
+              </p>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 5" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/5.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 5
+              </p>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10">
+             <div class="relative aspect-square w-full bg-black">
+              <img alt="Avatar 6" class="absolute inset-0 h-full w-full object-cover" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/hero.mp4/people/6.png"/>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <p class="text-xs font-medium text-white">
+               Avatar 6
+              </p>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="w-full">
+           <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white font-sans">
+             Featured Videos
+            </h2>
+            <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans whitespace-nowrap">
+             Explore all videos &gt;
+            </button>
+           </div>
+           <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10 row-span-1 h-full w-full">
+             <div class="relative h-full w-full bg-black">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 rounded-md bg-black/90 px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold text-white backdrop-blur-md border border-white/20">
+               ► VIDEO
+              </div>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xs sm:text-sm font-semibold text-white">
+               Avatar Video 1
+              </h3>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10 row-span-2 h-full w-full">
+             <div class="relative h-full w-full bg-black">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 rounded-md bg-black/90 px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold text-white backdrop-blur-md border border-white/20">
+               ► VIDEO
+              </div>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xs sm:text-sm font-semibold text-white">
+               Avatar Video 2
+              </h3>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10 row-span-1 h-full w-full">
+             <div class="relative h-full w-full bg-black">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 rounded-md bg-black/90 px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold text-white backdrop-blur-md border border-white/20">
+               ► VIDEO
+              </div>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xs sm:text-sm font-semibold text-white">
+               Avatar Video 3
+              </h3>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10 row-span-1 h-full w-full">
+             <div class="relative h-full w-full bg-black">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 rounded-md bg-black/90 px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold text-white backdrop-blur-md border border-white/20">
+               ► VIDEO
+              </div>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xs sm:text-sm font-semibold text-white">
+               Avatar Video 4
+              </h3>
+             </div>
+            </div>
+            <div class="group relative overflow-hidden rounded-xl border border-white/10 bg-white/5 transition-all duration-300 hover:border-white/30 hover:shadow-2xl hover:shadow-[#f0c500]/10 row-span-1 h-full w-full">
+             <div class="relative h-full w-full bg-black">
+              <div class="absolute top-2 left-2 sm:top-3 sm:left-3 rounded-md bg-black/90 px-2 py-1 sm:px-3 sm:py-1.5 text-[10px] sm:text-xs font-bold text-white backdrop-blur-md border border-white/20">
+               ► VIDEO
+              </div>
+             </div>
+             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-black/80 to-transparent p-3 sm:p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              <h3 class="text-xs sm:text-sm font-semibold text-white">
+               Avatar Video 5
+              </h3>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="w-full">
+           <div class="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-0">
+            <h2 class="text-xl sm:text-2xl font-semibold text-white font-sans">
+             Discover music made by real artists
+            </h2>
+            <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans whitespace-nowrap">
+             Explore all music &gt;
+            </button>
+           </div>
+           <div class="flex gap-3 sm:gap-4 overflow-x-auto scrollbar-hide pb-4 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Kairos album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/1.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Kairos
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               idokay
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Cinematic Theme
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Funk around the Block album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/2.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Funk around the Block
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               BalloonPlanet
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Funk
+               </span>
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Pop
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Kissing the Moon album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/3.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Kissing the Moon
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               Skygaze
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Hip Hop
+               </span>
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Electronic
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Dinner album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/4.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Dinner
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               Just for Kicks
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Hip Hop
+               </span>
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Soul &amp; RnB
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Hold On - Instrumental version album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/5.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Hold On - Instrumental version
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               IamDayLight, Amaryllis
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Corporate
+               </span>
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Cinematic
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Eagle Flight album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/6.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Eagle Flight
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               Romeo
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Cinematic
+               </span>
+              </div>
+             </div>
+            </div>
+            <div class="cursor-pointer group flex-shrink-0 w-[160px] sm:w-[180px] md:w-[200px] space-y-2 sm:space-y-3 transition-all duration-300 hover:-translate-y-2">
+             <div class="relative aspect-square w-full rounded-xl overflow-hidden transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-[#f0c500]/20">
+              <img alt="Coffee Stop album cover" class="object-cover transition-transform duration-300 group-hover:scale-105" src="https://pub-5bf1525988344a378ed4fd5104ff7435.r2.dev/static/music.img/7.png"/>
+             </div>
+             <div class="space-y-1.5">
+              <h3 class="font-bold text-white text-base font-sans">
+               Coffee Stop
+              </h3>
+              <p class="text-sm text-white/70 font-sans">
+               Aves
+              </p>
+              <div class="flex flex-wrap gap-2">
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Jazz
+               </span>
+               <span class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/70 font-sans">
+                Lounge
+               </span>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="relative -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+           <div class="relative overflow-hidden rounded-xl sm:rounded-2xl min-h-[300px] sm:min-h-[350px] md:min-h-[400px] bg-[#050505]">
+            <video class="absolute inset-0 h-full w-full object-cover rounded-xl sm:rounded-2xl transition-opacity duration-500 opacity-100">
+             <source src="/hero.mp4/avatari/4.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+             </source>
+            </video>
+            <div class="relative z-10 flex flex-col justify-center px-4 py-8 sm:px-6 sm:py-12 md:px-8 md:py-16 lg:px-12 lg:py-20 xl:px-16 xl:py-24 h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px]">
+             <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-3 sm:mb-4 font-sans leading-tight max-w-2xl">
+              Create at your best with footage by world-class filmmakers
+             </h2>
+             <p class="text-base sm:text-lg text-white/90 mb-6 sm:mb-8 font-sans max-w-2xl">
+              Join the top global brands creating with Innobytes
+             </p>
+             <a class="self-start rounded-full bg-[#f0c500] px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4 text-sm sm:text-base font-bold text-black transition hover:bg-[#ffd84f] font-sans inline-block" href="/pricing">
+              Subscribe Now
+             </a>
+            </div>
+           </div>
+          </div>
+          <footer class="border-t border-white/10 pt-8 sm:pt-12 pb-6 sm:pb-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
+           <div class="grid grid-cols-1 gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-4 mb-8 sm:mb-12">
+            <div>
+             <h3 class="text-sm font-bold text-white mb-4 font-sans uppercase tracking-wider">
+              Products
+             </h3>
+             <ul class="space-y-3">
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                AI Video
+               </button>
+              </li>
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                AI Image
+               </button>
+              </li>
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                AI Music
+               </button>
+              </li>
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                AI Voicover
+               </button>
+              </li>
+             </ul>
+            </div>
+            <div>
+             <h3 class="text-sm font-bold text-white mb-4 font-sans uppercase tracking-wider">
+              Company
+             </h3>
+             <ul class="space-y-3">
+              <li>
+               <a class="text-sm text-white/70 hover:text-white transition font-sans" href="/pricing">
+                Pricing
+               </a>
+              </li>
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                Account
+               </button>
+              </li>
+              <li>
+               <button class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans">
+                Integrations
+               </button>
+              </li>
+              <li>
+               <a class="text-sm text-white/70 hover:text-white transition font-sans" href="/blog">
+                Blog
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div>
+             <h3 class="text-sm font-bold text-white mb-4 font-sans uppercase tracking-wider">
+              Legal
+             </h3>
+             <ul class="space-y-3">
+              <li>
+               <a class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans" href="/terms">
+                Terms of Service
+               </a>
+              </li>
+              <li>
+               <a class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans" href="/privacy">
+                Privacy Policy
+               </a>
+              </li>
+              <li>
+               <a class="cursor-pointer text-sm text-white/70 hover:text-white transition font-sans" href="/cookies">
+                Cookie Policy
+               </a>
+              </li>
+             </ul>
+            </div>
+            <div>
+             <h3 class="text-sm font-bold text-white mb-4 font-sans uppercase tracking-wider">
+              About
+             </h3>
+             <p class="text-sm text-white/70 mb-4 font-sans leading-relaxed">
+              Empowering creators with cutting-edge AI tools for video, image, music, and voice generation. Join millions of creators worldwide.
+             </p>
+            </div>
+           </div>
+           <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 border-t border-white/10">
+            <div class="flex items-center gap-2 text-sm text-white/60 font-sans">
+             <span>
+              © 2025 Innobytes. All rights reserved.
+             </span>
+            </div>
+           </div>
+          </footer>
+         </div>
+        </div>
+       </div>
+      </div>
+     </main>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

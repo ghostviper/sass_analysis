@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>learnhowtoprompt</title>
+</head>
+<body>
+  <body>
+   <div class="dark">
+    <div class="min-h-screen bg-background">
+     <div class="bg-gradient-to-tr from-custom-medium/20 via-custom-medium/10 to-transparent">
+      <section class="sticky top-0 z-50 bg-custom-dark/80 backdrop-blur-lg">
+       <nav class="flex items-center justify-between p-6 lg:px-16 max-w-6xl mx-auto">
+        <a class="flex items-center gap-2" href="/">
+         <img alt="Logo" height="32" src="/_next/image?url=%2Flogos%2Ficon.png&amp;w=64&amp;q=75" width="32"/>
+         <h1 class="hidden md:block text-xl text-white font-semibold">
+          learnhowtoprompt
+         </h1>
+        </a>
+        <ul class="hidden md:flex p-1.5 bg-gradient-to-r from-custom-medium/50 to-custom-dark/50 rounded-full border border-white/10 justify-start items-center overflow-hidden">
+         <a href="#how-it-works">
+          <li class="px-6 py-2 rounded-3xl transition-all duration-200 text-white text-sm bg-custom-medium border border-white/10">
+           How it works
+          </li>
+         </a>
+         <a href="#features">
+          <li class="px-6 py-2 rounded-3xl transition-all duration-200 text-white text-sm hover:bg-white/5">
+           Features
+          </li>
+         </a>
+         <a class="text-white" href="#pricing">
+          <li class="px-6 py-2 rounded-3xl transition-all duration-200 text-white text-sm hover:bg-white/5">
+           Pricing
+          </li>
+         </a>
+         <a href="#faq">
+          <li class="px-6 py-2 rounded-3xl transition-all duration-200 text-white text-sm hover:bg-white/5">
+           FAQ
+          </li>
+         </a>
+        </ul>
+        <div class="hidden md:flex gap-2 items-center">
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-9 px-4 py-2 has-[&gt;svg]:px-3 font-semibold border border-white/10 rounded-3xl bg-custom-dark text-white hover:bg-white/5" href="/auth/signin">
+          Login
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs h-9 px-4 py-2 has-[&gt;svg]:px-3 font-semibold bg-[#51FAAA] text-gray-900 rounded-3xl hover:bg-custom-green/90 hover:text-white hover:border-[#51FAAA]" href="/auth/signup">
+          Sign Up
+         </a>
+        </div>
+       </nav>
+      </section>
+      <section class="py-10">
+       <div class="mt-28 flex items-center justify-center px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
+          <span class="block">
+           Your Prompts Are
+           <span class="bg-[#51FAAA] text-gray-900 rounded">
+            Costing You,
+           </span>
+          </span>
+          <span class="block">
+           Time and Money
+          </span>
+         </h1>
+         <p class="text-sm sm:text-lg md:text-xl text-foreground max-w-xl mx-auto mb-8 leading-relaxed">
+          Master AI prompting for every platform and get 10x better outputs in half the time no trial and error required.
+         </p>
+         <div class="flex justify-center gap-2">
+          <a href="/auth/signin">
+           <button class="items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs px-4 py-2 has-[&gt;svg]:px-3 font-semibold h-12 border rounded-3xl bg-secondary text-secondary-foreground hidden md:block hover:bg-white/5">
+            Get Started
+           </button>
+          </a>
+          <button class="items-center justify-center gap-2 whitespace-nowrap text-sm transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive shadow-xs px-4 py-2 has-[&gt;svg]:px-3 font-semibold h-11 bg-[#51FAAA] text-gray-900 hidden md:block rounded-3xl hover:bg-custom-green/90 hover:text-white hover:border-[#51FAAA]">
+           See How It Works
+          </button>
+         </div>
+        </div>
+       </div>
+      </section>
+     </div>
+    </div>
+    <div class="bg-background py-16 md:py-24">
+     <div class="container mx-auto px-4 max-w-6xl text-center">
+      <div class="inline-flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2 mb-4">
+       <span class="text-[#51faaa] text-sm font-medium font-outfit">
+        Platforms
+       </span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-foreground mb-4">
+       <span class="block">
+        Supported
+       </span>
+       <span class="block">
+        Platforms
+       </span>
+      </h1>
+      <p class="mt-4 mb-12 text-muted-foreground max-w-2xl mx-auto">
+       howtoprompt works seamlessly with leading AI platforms, helping you create optimized prompts for your favorite tools.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-items-center">
+       <div class="flex flex-col items-center">
+        <img alt="Claude" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200" height="40" src="/_next/image?url=%2Fplatforms%2FClaude.png&amp;w=96&amp;q=75" width="40"/>
+        <p class="text-foreground mt-2 text-sm">
+         Claude
+        </p>
+       </div>
+       <div class="flex flex-col items-center">
+        <img alt="Cursor" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200" height="40" src="/_next/image?url=%2Fplatforms%2FCursor.jpg&amp;w=96&amp;q=75" width="40"/>
+        <p class="text-foreground mt-2 text-sm">
+         Cursor
+        </p>
+       </div>
+       <div class="flex flex-col items-center">
+        <img alt="Lovable" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200" height="40" src="/_next/image?url=%2Fplatforms%2FLovable.png&amp;w=96&amp;q=75" width="40"/>
+        <p class="text-foreground mt-2 text-sm">
+         Lovable
+        </p>
+       </div>
+       <div class="flex flex-col items-center">
+        <img alt="OpenAI" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200" height="40" src="/_next/image?url=%2Fplatforms%2FOpenAI.png&amp;w=96&amp;q=75" width="40"/>
+        <p class="text-foreground mt-2 text-sm">
+         OpenAI
+        </p>
+       </div>
+       <div class="flex flex-col items-center">
+        <img alt="v0" class="rounded-lg shadow-lg hover:scale-105 transition-transform duration-200" height="40" src="/_next/image?url=%2Fplatforms%2Fv0.png&amp;w=96&amp;q=75" width="40"/>
+        <p class="text-foreground mt-2 text-sm">
+         v0
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <section class="relative min-h-screen bg-background py-20 px-4 overflow-hidden" id="how-it-works">
+     <div class="max-w-6xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2 mb-4">
+       <span class="text-[#51faaa] text-sm font-medium font-outfit">
+        Process
+       </span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-foreground">
+       <span class="block">
+        How It Works
+       </span>
+      </h1>
+      <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">
+       Our simple 4-step process takes you from idea to perfect prompt in minutes.
+      </p>
+     </div>
+     <div class="max-w-6xl mx-auto">
+      <div class="relative grid grid-cols-1 md:grid-cols-2 gap-x-32 gap-y-24 items-center">
+       <div class="flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-110 cursor-pointer md:items-end md:text-right hover:-rotate-2">
+        <div class="undefined w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+         <img alt="Input" class="" height="100" src="/_next/image?url=%2Fhow%2Fone.png&amp;w=256&amp;q=75" width="100"/>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-3xl font-bold text-foreground">
+          Input
+         </h3>
+         <p class="text-muted-foreground max-w-xs leading-relaxed">
+          Describe what you need - from creative prompts to marketing ideas.
+         </p>
+        </div>
+       </div>
+       <div class="flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-110 cursor-pointer md:items-start md:text-left hover:rotate-2">
+        <div class="undefined w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+         <img alt="Process" class="" height="100" src="/_next/image?url=%2Fhow%2Ftwo.png&amp;w=256&amp;q=75" width="100"/>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-3xl font-bold text-foreground">
+          Process
+         </h3>
+         <p class="text-muted-foreground max-w-xs leading-relaxed">
+          The AI analyzes your request and generates tailored, high-quality prompts.
+         </p>
+        </div>
+       </div>
+       <div class="flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-110 cursor-pointer md:items-end md:text-right hover:rotate-2">
+        <div class="undefined w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+         <img alt="Refine" class="" height="100" src="/_next/image?url=%2Fhow%2Fthree.png&amp;w=256&amp;q=75" width="100"/>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-3xl font-bold text-foreground">
+          Refine
+         </h3>
+         <p class="text-muted-foreground max-w-xs leading-relaxed">
+          Make quick edits, or adjust prompt to match your exact vision.
+         </p>
+        </div>
+       </div>
+       <div class="flex flex-col items-center text-center space-y-4 transition-transform duration-300 hover:scale-110 cursor-pointer md:items-start md:text-left hover:-rotate-2">
+        <div class="undefined w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg">
+         <img alt="Create" class="" height="100" src="/_next/image?url=%2Fhow%2Ffour.png&amp;w=256&amp;q=75" width="100"/>
+        </div>
+        <div class="space-y-2">
+         <h3 class="text-3xl font-bold text-foreground">
+          Create
+         </h3>
+         <p class="text-muted-foreground max-w-xs leading-relaxed">
+          Copy your final prompt and bring your ideas to life.
+         </p>
+        </div>
+       </div>
+       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none hidden md:block">
+        <div class="relative">
+         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-2xl shadow-emerald-500/30">
+          <img alt="Logo" class="w-10 h-10" height="40" src="/_next/image?url=%2Flogo%2Flogo.png&amp;w=96&amp;q=75" width="40"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-background py-2 md:py-4" id="features">
+     <div class="mx-auto max-w-3xl lg:max-w-5xl px-6">
+      <div class="relative text-center">
+       <div class="inline-flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2 mb-4">
+        <span class="text-[#51faaa] text-sm font-medium font-outfit">
+         Features
+        </span>
+       </div>
+       <h1 class="text-4xl md:text-6xl mb-10 font-extrabold text-foreground">
+        <span class="block">
+         Our Features
+        </span>
+       </h1>
+       <div class="relative z-10 grid grid-cols-6 gap-3">
+        <div class="rounded-lg border text-card-foreground shadow-sm relative col-span-full flex overflow-hidden lg:col-span-2 bg-custom-medium/20 border-custom-medium/20">
+         <div class="p-6 relative m-auto size-fit pt-6">
+          <div class="relative flex h-24 w-56 items-center">
+           <span class="mx-auto block w-fit text-5xl font-semibold text-white">
+            100
+           </span>
+          </div>
+          <h2 class="mt-6 text-center text-3xl font-semibold text-white">
+           Prompt Templates
+          </h2>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-custom-medium/20 border-custom-medium/20">
+         <div class="p-6 pt-6">
+          <div class="relative z-10 mt-6 space-y-2 text-center">
+           <h2 class="text-lg font-medium text-white">
+            Enhance Your Prompts
+           </h2>
+           <p class="text-gray-300">
+            Transform basic prompts into powerful, effective ones with AI-driven enhancements tailored to your needs.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm relative col-span-full overflow-hidden sm:col-span-3 lg:col-span-2 bg-custom-medium/20 border-custom-medium/20">
+         <div class="p-6 pt-6">
+          <div class="relative z-10 mt-6 space-y-2 text-center">
+           <h2 class="text-lg font-medium text-white">
+            Learn Platform-Specific Prompting
+           </h2>
+           <p class="text-gray-300">
+            Master prompting techniques for ChatGPT, Claude, Midjourney, and more with tailored guides and examples.
+           </p>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm relative col-span-full overflow-hidden lg:col-span-3 bg-custom-medium/20 border-custom-medium/20">
+         <div class="p-6 grid h-full pt-6 sm:grid-cols-2">
+          <div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
+           <div class="space-y-2">
+            <h2 class="text-lg font-medium text-white">
+             Write Better Prompts Instantly
+            </h2>
+            <p class="text-gray-300">
+             Get instant feedback and suggestions to craft high-quality prompts that deliver results every time.
+            </p>
+           </div>
+          </div>
+          <div class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-custom-medium/30 sm:-my-6 sm:-mr-6">
+           <div class="relative flex h-full flex-col justify-center space-y-6 py-6">
+            <div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              ChatGPT
+             </span>
+             <div class="size-7 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/OpenAI.png"/>
+             </div>
+            </div>
+            <div class="relative ml-[calc(50%-1rem)] flex items-center gap-2">
+             <div class="size-8 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/Claude.png"/>
+             </div>
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              Claude
+             </span>
+            </div>
+            <div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              V0
+             </span>
+             <div class="size-7 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/v0.png"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground shadow-sm relative col-span-full overflow-hidden lg:col-span-3 bg-custom-medium/20 border-custom-medium/20">
+         <div class="p-6 grid h-full pt-6 sm:grid-cols-2">
+          <div class="relative z-10 flex flex-col justify-between space-y-12 lg:space-y-6">
+           <div class="space-y-2">
+            <h2 class="text-lg font-medium text-white">
+             Instant Prompt Generation
+            </h2>
+            <p class="text-gray-300">
+             Generate optimized prompts on the fly for any task, ensuring consistency and quality across platforms.
+            </p>
+           </div>
+          </div>
+          <div class="relative mt-6 before:absolute before:inset-0 before:mx-auto before:w-px before:bg-custom-medium/30 sm:-my-6 sm:-mr-6">
+           <div class="relative flex h-full flex-col justify-center space-y-6 py-6">
+            <div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              ChatGPT
+             </span>
+             <div class="size-7 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/OpenAI.png"/>
+             </div>
+            </div>
+            <div class="relative ml-[calc(50%-1rem)] flex items-center gap-2">
+             <div class="size-8 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/Claude.png"/>
+             </div>
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              Claude
+             </span>
+            </div>
+            <div class="relative flex w-[calc(50%+0.875rem)] items-center justify-end gap-2">
+             <span class="block h-fit rounded border border-custom-medium/30 bg-custom-medium/10 px-2 py-1 text-xs shadow-sm text-white">
+              V0
+             </span>
+             <div class="size-7 ring-4 ring-custom-dark">
+              <img alt="" class="size-full rounded-full" src="/platforms/v0.png"/>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-background py-20 px-4">
+     <div class="max-w-6xl mx-auto text-center mb-16">
+      <div class="inline-flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2 mb-4">
+       <span class="text-[#51faaa] text-sm font-medium font-outfit">
+        Testimonial
+       </span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-foreground">
+       <span class="block">
+        What Our Users Say
+       </span>
+      </h1>
+      <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">
+       Join thousands of creators, developers, and professionals who trust howtoprompt for their AI prompting needs.
+      </p>
+     </div>
+     <div class="max-w-4xl mx-auto">
+      <div class="bg-custom-medium/20 border border-custom-medium/20 rounded-2xl p-8 text-center">
+       <p class="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
+        "I used howtoprompt to create my prompts for my portfolio and I absolutely loved it. It was so easy to use and the prompts generated good results."
+       </p>
+       <div class="flex items-center justify-center space-x-4">
+        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-custom-green/30">
+         <img alt="Tino Nguruve" class="w-full h-full object-cover" height="64" src="/_next/image?url=%2Ftestimonial%2Ftino.jpeg&amp;w=128&amp;q=75" width="64"/>
+        </div>
+        <div class="text-left">
+         <h4 class="text-foreground font-semibold text-lg">
+          Tino Nguruve
+         </h4>
+         <p class="text-muted-foreground text-sm">
+          Product Specialist
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-background min-h-screen flex items-center justify-center p-4" id="pricing">
+     <div class="w-full max-w-md relative group">
+      <div class="relative bg-card border border-border rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300">
+       <div class="flex justify-center mb-6">
+        <div class="flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2">
+         <span class="text-sm font-semibold text-[#51faaa]">
+          🔥 Lifetime Deal
+         </span>
+        </div>
+       </div>
+       <div class="text-center mb-8">
+        <div class="flex items-baseline justify-center gap-2 mb-2">
+         <span class="text-6xl font-extrabold text-foreground">
+          $26
+         </span>
+         <div class="flex flex-col items-start">
+          <span class="text-lg text-muted-foreground line-through">
+           $36
+          </span>
+          <span class="text-sm text-muted-foreground">
+           once
+          </span>
+         </div>
+        </div>
+        <p class="text-muted-foreground text-sm">
+         No recurring charges • Cancel anytime
+        </p>
+       </div>
+       <button class="w-full mb-8 px-8 py-4 bg-gradient-to-r from-[#51faaa] to-[#3DD68C] text-background font-bold rounded-xl hover:shadow-lg hover:shadow-[#51faaa]/20 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]">
+        Get Lifetime Access →
+       </button>
+       <div class="space-y-4 mb-8">
+        <p class="text-sm font-semibold text-muted-foreground uppercase tracking-wide">
+         Everything Included
+        </p>
+        <ul class="space-y-3">
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Master prompt engineering fundamentals
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Learn advanced prompting techniques
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Access to 100+ real-world examples
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Interactive exercises &amp; challenges
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Certificate of completion
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Lifetime updates &amp; new content
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Community access
+          </span>
+         </li>
+         <li class="flex items-start gap-3">
+          <span class="text-foreground text-sm">
+           Priority email support
+          </span>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="bg-black py-16 md:py-32" id="faq">
+     <div class="mx-auto max-w-4xl px-6 text-center">
+      <div class="inline-flex items-center gap-2 bg-[rgba(81,250,170,0.1)] border border-[rgba(81,250,170,0.3)] rounded-full px-4 py-2 mb-4">
+       <span class="text-[#51faaa] text-sm font-medium font-outfit">
+        FAQ
+       </span>
+      </div>
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white">
+       <span class="block">
+        Frequently Asked
+       </span>
+       <span class="block">
+        Question
+       </span>
+      </h1>
+      <p class="mt-4 text-gray-400">
+       Answers to some of the most common questions about howtoprompt.
+      </p>
+      <div class="mt-12 space-y-4">
+       <div class="w-full">
+        <div class="flex w-full cursor-pointer items-center justify-between rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left shadow-lg transition-colors hover:bg-white/10" type="button">
+         <span class="text-lg font-medium text-white">
+          What is howtoprompt and how can it help me?
+         </span>
+        </div>
+       </div>
+       <div class="w-full">
+        <div class="flex w-full cursor-pointer items-center justify-between rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left shadow-lg transition-colors hover:bg-white/10" type="button">
+         <span class="text-lg font-medium text-white">
+          Does howtoprompt support platforms like Midjourney and DALL-E?
+         </span>
+        </div>
+       </div>
+       <div class="w-full">
+        <div class="flex w-full cursor-pointer items-center justify-between rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left shadow-lg transition-colors hover:bg-white/10" type="button">
+         <span class="text-lg font-medium text-white">
+          Are the prompt templates customizable?
+         </span>
+        </div>
+       </div>
+       <div class="w-full">
+        <div class="flex w-full cursor-pointer items-center justify-between rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left shadow-lg transition-colors hover:bg-white/10" type="button">
+         <span class="text-lg font-medium text-white">
+          Do I need a separate subscription for each AI platform?
+         </span>
+        </div>
+       </div>
+       <div class="w-full">
+        <div class="flex w-full cursor-pointer items-center justify-between rounded-xl border-2 border-white/20 bg-white/5 px-6 py-4 text-left shadow-lg transition-colors hover:bg-white/10" type="button">
+         <span class="text-lg font-medium text-white">
+          How is the prompt feedback generated?
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <footer class="bg-black text-white py-16">
+     <div class="container mx-auto px-6 max-w-6xl">
+      <div class="flex flex-col items-center text-center mb-16">
+       <div class="relative mb-6">
+        <div class="w-12 h-12 bg-[#2A2A2A] rounded-full flex items-center justify-center">
+         <div class="w-8 h-8 bg-[#51FAAA] rounded-full flex items-center justify-center">
+          <img alt="Logo" height="20" src="/_next/image?url=%2Flogo%2Flogo.png&amp;w=48&amp;q=75" width="20"/>
+         </div>
+        </div>
+       </div>
+       <h2 class="text-4xl md:text-5xl font-bold mb-4">
+        Create Better
+        <br/>
+        Prompts Today
+       </h2>
+       <p class="text-gray-400 max-w-md mb-8">
+        Join thousands of users using howtoprompt to build better products faster with multiple AI platforms.
+       </p>
+       <a class="bg-[#51FAAA] hover:bg-[#3ED89A] text-black font-medium px-6 py-3 rounded-full transition-all duration-200" href="/auth/signup">
+        Get Started
+       </a>
+      </div>
+      <hr class="border-white/10 mb-12"/>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+       <div>
+        <h3 class="font-semibold text-lg mb-4">
+         About howtoprompt
+        </h3>
+        <p class="text-gray-400 mb-6">
+         howtoprompt is a powerful AI prompt crafting tool designed to help you create, optimize, and manage effective prompts for various AI platforms. Save time and get consistent, high-quality results from your favorite AI tools.
+        </p>
+        <div class="mt-6">
+         <h4 class="font-medium text-white mb-3">
+          Hey Curious 👋
+         </h4>
+         <p class="text-gray-400">
+          I'm Fari, the creator of howtoprompt. You can follow my work on
+          <a class="text-[#51FAAA] hover:underline" href="https://x.com/fariraijames" rel="noopener noreferrer" target="_blank">
+           Twitter
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div>
+        <h3 class="font-semibold text-lg mb-4">
+         My Other Apps
+        </h3>
+        <ul class="space-y-6">
+         <li class="group">
+          <a class="block" href="https://linkgenie.one/" rel="noopener noreferrer" target="_blank">
+           <h4 class="text-white group-hover:text-[#51FAAA] font-medium mb-1 transition-colors">
+            LinkGenie
+           </h4>
+           <p class="text-gray-400 text-sm">
+            Smart link management platform for creators and businesses
+           </p>
+          </a>
+         </li>
+         <li class="group">
+          <a class="block" href="http://payfari.com/" rel="noopener noreferrer" target="_blank">
+           <h4 class="text-white group-hover:text-[#51FAAA] font-medium mb-1 transition-colors">
+            PayFari
+           </h4>
+           <p class="text-gray-400 text-sm">
+            Simplified payment solutions for digital creators
+           </p>
+          </a>
+         </li>
+         <li class="mt-8">
+          <div class="flex space-x-4">
+           <a class="text-gray-400 hover:text-white transition-colors" href="https://x.com/fariraijames" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             Twitter
+            </span>
+           </a>
+           <a class="text-gray-400 hover:text-white transition-colors" href="https://www.linkedin.com/in/fariraimasocha/" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             LinkedIn
+            </span>
+           </a>
+           <a class="text-gray-400 hover:text-white transition-colors" href="https://www.fariraimasocha.co.zw/" rel="noopener noreferrer" target="_blank">
+            <span class="sr-only">
+             Website
+            </span>
+           </a>
+          </div>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="text-center mt-12 pt-6 border-t border-white/10">
+       <p class="text-gray-500 text-sm">
+        © 2025 howtoprompt. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

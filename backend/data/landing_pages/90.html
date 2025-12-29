@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CheatMate - AI-Powered Chrome Extension for Online Exams</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen relative bg-gradient-to-br from-blue-50/80 via-indigo-50/60 to-purple-50/40">
+    <header class="fixed top-0 left-0 right-0 flex justify-between items-center w-[95%] sm:w-[85%] lg:w-[70%] max-w-6xl h-16 z-50 px-4 sm:px-8 mt-2 mx-auto bg-white rounded-2xl shadow-lg">
+     <img alt="CheatMate Logo" class="object-contain cursor-pointer sm:w-[160px] sm:h-[52px]" height="45" src="/logo.png" width="140"/>
+     <nav class="hidden md:flex items-center space-x-8">
+      <button class="text-gray-800 hover:text-gray-900 text-base font-medium">
+       How It Works
+      </button>
+      <button class="text-gray-800 hover:text-gray-900 text-base font-medium">
+       Undetectable
+      </button>
+      <a href="/pricing">
+       <button class="text-gray-800 hover:text-gray-900 text-base font-medium">
+        Pricing
+       </button>
+      </a>
+      <a href="https://chromewebstore.google.com/detail/cheatmate/pifapfmbofjgaenkhhipjhfacfmmhkcp" rel="noopener noreferrer" target="_blank">
+       <button class="text-gray-800 hover:text-gray-900 text-base font-medium">
+        Chrome Extension
+       </button>
+      </a>
+     </nav>
+     <a href="/login">
+      <button class="items-center justify-center gap-2 whitespace-nowrap rounded-md ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-10 px-4 py-2 hidden md:block bg-indigo-600 hover:bg-indigo-700 text-sm font-medium">
+       Try Now 50% Off
+      </button>
+     </a>
+    </header>
+    <main class="pt-20">
+     <section class="min-h-screen flex items-center justify-center px-2 sm:px-4 lg:px-6 relative overflow-hidden pt-24 pb-24 md:pt-32 md:pb-24">
+      <div class="mx-auto relative w-full max-w-7xl">
+       <div class="flex flex-col items-center gap-8 lg:gap-16">
+        <div class="w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+         <div class="flex-1 w-full lg:w-auto text-center lg:text-left">
+          <h1 class="font-bold mb-0 flex flex-col">
+           <span class="text-5xl xs:text-5xl md:text-6xl lg:text-6xl xl:text-7xl pb-4 sm:pb-6 lg:pb-8">
+            <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+             Instant Invisible
+            </span>
+            <span class="text-gray-900">
+             Homework Help
+            </span>
+           </span>
+           <span class="text-base sm:text-lg md:text-xl text-gray-600">
+            In Person, With Screenshare, Wherever You Need It
+           </span>
+          </h1>
+          <div class="mt-6 mb-10 w-full">
+           <a class="block w-full" href="/login">
+            <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground rounded-md bg-indigo-600 hover:bg-indigo-700 text-xl sm:text-2xl px-8 py-8 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-102 w-full backdrop-blur-sm border border-white/20 h-24">
+             Get Started 50% Off
+            </button>
+           </a>
+           <div class="flex flex-wrap items-center justify-center gap-x-2 gap-y-2 mt-6 text-xs sm:text-xs text-gray-600">
+            <div class="flex items-center gap-0.5">
+             <span>
+              Satisfaction Guaranteed
+             </span>
+            </div>
+            <span class="text-gray-400">
+             |
+            </span>
+            <div class="flex items-center gap-0.5">
+             <span>
+              Cancel Anytime
+             </span>
+            </div>
+            <span class="text-gray-400">
+             |
+            </span>
+            <div class="flex items-center gap-0.5">
+             <span>
+              24/7 Support
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="flex-1 w-full lg:w-auto max-w-2xl lg:max-w-xl">
+          <div class="rounded-2xl overflow-hidden bg-white aspect-[4/3]">
+           <img alt="CheatMate demo" class="w-full h-full object-cover object-left" src="/hero-demo.gif" title="CheatMate Demo"/>
+          </div>
+         </div>
+        </div>
+        <div class="w-full max-w-4xl">
+         <div class="text-center text-2xl sm:text-3xl font-bold text-black mb-8">
+          Works On:
+         </div>
+         <div class="overflow-hidden">
+          <div class="flex animate-scroll">
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Canvas" class="w-12 h-12 object-contain transition-all duration-300" src="/canvas.png" title="Canvas"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Blackboard" class="w-12 h-12 object-contain transition-all duration-300" src="/blackboard.png" title="Blackboard"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Brightspace" class="w-12 h-12 object-contain transition-all duration-300" src="/d2l.png" title="Brightspace"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="McGraw Hill" class="w-12 h-12 object-contain transition-all duration-300" src="/mcgraw.png" title="McGraw Hill"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Schoology" class="w-12 h-12 object-contain transition-all duration-300" src="/schoolgy.png" title="Schoology"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Google Classroom" class="w-12 h-12 object-contain transition-all duration-300" src="/googleclassroom.png" title="Google Classroom"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Moodle" class="w-12 h-12 object-contain transition-all duration-300" src="/moodle.png" title="Moodle"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Edmodo" class="w-12 h-12 object-contain transition-all duration-300" src="/edmodo.png" title="Edmodo"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Edulastic" class="w-12 h-12 object-contain transition-all duration-300" src="/edulastic.jpg" title="Edulastic"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Deltamath" class="w-12 h-12 object-contain transition-all duration-300" src="/deltamath.jpg" title="Deltamath"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="IXL" class="w-12 h-12 object-contain transition-all duration-300" src="/ixl.jpg" title="IXL"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Canvas" class="w-12 h-12 object-contain transition-all duration-300" src="/canvas.png" title="Canvas"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Blackboard" class="w-12 h-12 object-contain transition-all duration-300" src="/blackboard.png" title="Blackboard"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Brightspace" class="w-12 h-12 object-contain transition-all duration-300" src="/d2l.png" title="Brightspace"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="McGraw Hill" class="w-12 h-12 object-contain transition-all duration-300" src="/mcgraw.png" title="McGraw Hill"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Schoology" class="w-12 h-12 object-contain transition-all duration-300" src="/schoolgy.png" title="Schoology"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Google Classroom" class="w-12 h-12 object-contain transition-all duration-300" src="/googleclassroom.png" title="Google Classroom"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Moodle" class="w-12 h-12 object-contain transition-all duration-300" src="/moodle.png" title="Moodle"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Edmodo" class="w-12 h-12 object-contain transition-all duration-300" src="/edmodo.png" title="Edmodo"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Edulastic" class="w-12 h-12 object-contain transition-all duration-300" src="/edulastic.jpg" title="Edulastic"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="Deltamath" class="w-12 h-12 object-contain transition-all duration-300" src="/deltamath.jpg" title="Deltamath"/>
+           </div>
+           <div class="flex-shrink-0 mx-8">
+            <img alt="IXL" class="w-12 h-12 object-contain transition-all duration-300" src="/ixl.jpg" title="IXL"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="pt-0 pb-24 md:py-36 relative">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+       <div class="text-center mb-4 md:mb-8">
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4">
+         Ace Every Question
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 px-4 max-w-2xl mx-auto">
+         CheatMate scores 98% on average for every type of question
+        </p>
+       </div>
+       <div class="flex justify-center">
+        <div class="w-full max-w-4xl">
+         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="rounded-lg border text-card-foreground relative bg-white/70 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 select-none">
+           <div class="absolute -top-4 -left-4 flex flex-col items-center">
+            <span class="bg-white/80 px-2 py-1 rounded-full text-xs text-gray-700 drop-shadow-md">
+             Double Click Me
+            </span>
+           </div>
+           <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3 text-gray-900 text-center">
+             Multiple Choice
+            </h4>
+            <p class="mb-3 text-sm text-gray-700 text-center">
+             What is the derivative of (x + 1)² with respect to x?
+            </p>
+            <div class="space-y-1">
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" name="multipleChoice" type="radio"/>
+              <span class="text-gray-700">
+               A. 2x² + 4x - 2
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" name="multipleChoice" type="radio"/>
+              <span class="text-gray-700">
+               B. x² + 2x + 1
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" name="multipleChoice" type="radio"/>
+              <span class="text-gray-700">
+               C. 2x + 2
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" name="multipleChoice" type="radio"/>
+              <span class="text-gray-700">
+               D. 2x² - 4x + 2
+              </span>
+             </label>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground bg-white/70 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 select-none">
+           <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3 text-gray-900 text-center">
+             Multiple Select
+            </h4>
+            <p class="mb-3 text-sm text-gray-700 text-center">
+             Which organelles are involved in protein synthesis?
+            </p>
+            <div class="space-y-1">
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" type="checkbox"/>
+              <span class="text-gray-700">
+               A. Nucleus
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" type="checkbox"/>
+              <span class="text-gray-700">
+               B. Mitochondria
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" type="checkbox"/>
+              <span class="text-gray-700">
+               C. Ribosomes
+              </span>
+             </label>
+             <label class="flex items-center space-x-2 p-1 rounded cursor-pointer transition-colors text-xs hover:bg-gray-50">
+              <input class="w-3 h-3 flex-shrink-0" type="checkbox"/>
+              <span class="text-gray-700">
+               D. Cell wall
+              </span>
+             </label>
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground bg-white/70 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 select-none">
+           <div class="p-4 flex flex-col justify-center">
+            <h4 class="text-lg font-semibold mb-3 text-gray-900 text-center">
+             Fill in the Blank
+            </h4>
+            <div class="mb-3 flex justify-center">
+             <img alt="Graph" class="max-w-full h-auto rounded border" src="/graph.png"/>
+            </div>
+            <div class="text-sm text-gray-700 text-center">
+             The slope of the graph at x = 3 is
+             <input class="inline w-16 p-1 border rounded text-center focus:ring-2 focus:ring-blue-500 focus:border-transparent mx-1 border-gray-300" placeholder="____" type="text" value=""/>
+             .
+            </div>
+           </div>
+          </div>
+          <div class="rounded-lg border text-card-foreground bg-white/70 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 select-none">
+           <div class="p-4">
+            <h4 class="text-lg font-semibold mb-3 text-gray-900 text-center">
+             Matching
+            </h4>
+            <p class="mb-3 text-sm text-gray-700 text-center">
+             Match each molecule with its role in photosynthesis:
+            </p>
+            <div class="space-y-2">
+             <div class="flex items-center space-x-2 mb-1">
+              <span class="text-xs text-gray-700 w-16 flex-shrink-0 font-medium">
+               CO₂:
+              </span>
+              <select class="flex-1 min-w-0 p-1 border rounded text-xs focus:ring-2 focus:ring-blue-500 focus:border-transparent border-gray-300">
+               <option value="">
+                Select role...
+               </option>
+               <option value="Reactant in photosynthesis">
+                Reactant in photosynthesis
+               </option>
+               <option value="Product of photosynthesis">
+                Product of photosynthesis
+               </option>
+               <option value="Both reactant and product">
+                Both reactant and product
+               </option>
+               <option value="Primary energy storage molecule">
+                Primary energy storage molecule
+               </option>
+              </select>
+             </div>
+             <div class="flex items-center space-x-2 mb-1">
+              <span class="text-xs text-gray-700 w-16 flex-shrink-0 font-medium">
+               H₂O:
+              </span>
+              <select class="flex-1 min-w-0 p-1 border rounded text-xs focus:ring-2 focus:ring-blue-500 focus:border-transparent border-gray-300">
+               <option value="">
+                Select role...
+               </option>
+               <option value="Reactant in photosynthesis">
+                Reactant in photosynthesis
+               </option>
+               <option value="Product of photosynthesis">
+                Product of photosynthesis
+               </option>
+               <option value="Both reactant and product">
+                Both reactant and product
+               </option>
+               <option value="Primary energy storage molecule">
+                Primary energy storage molecule
+               </option>
+              </select>
+             </div>
+             <div class="flex items-center space-x-2 mb-1">
+              <span class="text-xs text-gray-700 w-16 flex-shrink-0 font-medium">
+               O₂:
+              </span>
+              <select class="flex-1 min-w-0 p-1 border rounded text-xs focus:ring-2 focus:ring-blue-500 focus:border-transparent border-gray-300">
+               <option value="">
+                Select role...
+               </option>
+               <option value="Reactant in photosynthesis">
+                Reactant in photosynthesis
+               </option>
+               <option value="Product of photosynthesis">
+                Product of photosynthesis
+               </option>
+               <option value="Both reactant and product">
+                Both reactant and product
+               </option>
+               <option value="Primary energy storage molecule">
+                Primary energy storage molecule
+               </option>
+              </select>
+             </div>
+             <div class="flex items-center space-x-2 mb-1">
+              <span class="text-xs text-gray-700 w-16 flex-shrink-0 font-medium">
+               C₆H₁₂O₆:
+              </span>
+              <select class="flex-1 min-w-0 p-1 border rounded text-xs focus:ring-2 focus:ring-blue-500 focus:border-transparent border-gray-300">
+               <option value="">
+                Select role...
+               </option>
+               <option value="Reactant in photosynthesis">
+                Reactant in photosynthesis
+               </option>
+               <option value="Product of photosynthesis">
+                Product of photosynthesis
+               </option>
+               <option value="Both reactant and product">
+                Both reactant and product
+               </option>
+               <option value="Primary energy storage molecule">
+                Primary energy storage molecule
+               </option>
+              </select>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-36 relative overflow-hidden" id="about">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+       <div class="text-center mb-4 md:mb-8">
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 px-4" id="about-heading">
+         Get Answers In Seconds
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 px-4 max-w-2xl mx-auto">
+         Stop wasting time studying, start spending time living
+        </p>
+       </div>
+       <div class="grid md:grid-cols-3 gap-8">
+        <div class="rounded-lg border text-card-foreground bg-white/60 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 hover:scale-102 hover:bg-white/70 group">
+         <div class="p-8 text-center">
+          <h3 class="text-4xl sm:text-3xl font-bold mb-4 text-gray-900">
+           Activate CheatMate
+          </h3>
+          <img alt="Demo of enabling CheatMate extension" class="w-full rounded-2xl shadow-2xl border border-white/20" src="/win-start-demo.gif" title="How to enable CheatMate"/>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground bg-white/60 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 hover:scale-102 hover:bg-white/70 group">
+         <div class="p-8 text-center">
+          <h3 class="text-4xl sm:text-3xl font-bold mb-4 text-gray-900">
+           Wait 15 Seconds
+          </h3>
+          <img alt="CheatMate initialization wait period" class="w-full rounded-2xl shadow-2xl border border-white/20" src="/waiting.gif" title="Wait for CheatMate to initialize"/>
+         </div>
+        </div>
+        <div class="rounded-lg border text-card-foreground bg-white/60 backdrop-blur-2xl border-white/40 shadow-2xl hover:shadow-3xl transition-all duration-200 hover:scale-102 hover:bg-white/70 group">
+         <div class="p-8 text-center">
+          <h3 class="text-4xl sm:text-3xl font-bold mb-4 text-gray-900">
+           Easiest 100% Ever
+          </h3>
+          <img alt="Double-click to get instant answers" class="w-full rounded-2xl shadow-2xl border border-white/20" src="/double-click.gif" title="Double-click to get instant answers"/>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 md:py-36 relative overflow-hidden" id="undetectable">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6 relative">
+       <div class="text-center mb-4 md:mb-8">
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900 mb-4 px-4" id="undetectable-heading">
+         100% Undetectable
+        </h2>
+        <p class="text-lg md:text-xl text-gray-600 px-4 max-w-2xl mx-auto">
+         CheatMate is completely invisible over screenshare and in person
+        </p>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-12 items-stretch">
+        <div class="w-full flex items-center justify-center lg:col-start-2 lg:col-span-2 lg:row-start-1">
+         <div class="w-full bg-gray-100 rounded-lg overflow-hidden aspect-video">
+          <img alt="Invisible Mode demonstration" class="w-full h-full object-cover" src="/hero-demo.gif"/>
+         </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4 lg:grid-cols-1 lg:col-span-1 lg:col-start-1 lg:row-start-1 h-full w-full">
+         <button class="w-full lg:flex-1 p-4 lg:p-6 rounded-lg border text-center lg:text-left transition-all aspect-square lg:aspect-auto bg-gray-100 text-gray-900 border-indigo-600 ring-2 ring-indigo-600">
+          <div class="flex flex-col items-center justify-center gap-2 h-full lg:flex-row lg:items-center lg:justify-start lg:gap-4">
+           <div class="">
+            <h3 class="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
+             Invisible Mode
+            </h3>
+            <p class="hidden lg:block text-base text-gray-600">
+             Completely invisible, even over screenshare.
+            </p>
+           </div>
+          </div>
+         </button>
+         <button class="w-full lg:flex-1 p-4 lg:p-6 rounded-lg border text-center lg:text-left transition-all aspect-square lg:aspect-auto bg-white text-gray-900 border-gray-200 hover:bg-gray-50">
+          <div class="flex flex-col items-center justify-center gap-2 h-full lg:flex-row lg:items-center lg:justify-start lg:gap-4">
+           <div class="">
+            <h3 class="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
+             Sneaky Mode
+            </h3>
+            <p class="hidden lg:block text-base text-gray-600">
+             A small loading indicator for in person exams.
+            </p>
+           </div>
+          </div>
+         </button>
+         <button class="w-full lg:flex-1 p-4 lg:p-6 rounded-lg border text-center lg:text-left transition-all aspect-square lg:aspect-auto bg-white text-gray-900 border-gray-200 hover:bg-gray-50">
+          <div class="flex flex-col items-center justify-center gap-2 h-full lg:flex-row lg:items-center lg:justify-start lg:gap-4">
+           <div class="">
+            <h3 class="font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
+             Homework Mode
+            </h3>
+            <p class="hidden lg:block text-base text-gray-600">
+             On screen loading for when you're doing homework.
+            </p>
+           </div>
+          </div>
+         </button>
+        </div>
+        <div class="lg:hidden w-full mt-0">
+         <div class="w-full rounded-lg border border-gray-200 bg-white p-4 sm:p-5 text-center">
+          <p class="text-lg sm:text-xl text-black">
+           Completely invisible, even over screenshare.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="py-24 md:py-36 px-4 flex justify-center">
+      <div class="text-card-foreground w-full max-w-2xl bg-white rounded-2xl shadow-2xl border border-white/20">
+       <div class="p-6 sm:p-8 text-center">
+        <div class="mb-3">
+         <span class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-lg text-xs sm:text-sm font-medium bg-yellow-100 text-yellow-800">
+          50% Off - Limited Time Offer
+         </span>
+        </div>
+        <div class="text-2xl md:text-4xl font-bold text-gray-900 mb-2">
+         Ready To Secure Your 4.0?
+        </div>
+        <div class="mb-3 text-center">
+         <div class="text-gray-500 line-through text-sm sm:text-base">
+          $19.99/month
+         </div>
+         <div class="text-gray-900 font-bold text-2xl sm:text-3xl">
+          $9.99/month
+         </div>
+        </div>
+        <a href="/login">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground h-11 rounded-md my-4 bg-indigo-600 hover:bg-indigo-700 text-lg md:text-xl px-8 py-4 shadow-2xl hover:shadow-3xl transition-all duration-200 transform hover:scale-102 w-full sm:w-auto">
+          Get Started 50% Off
+         </button>
+        </a>
+        <div class="text-xs sm:text-sm text-gray-600 mt-3">
+         Satisfaction Guarantee • Cancel Anytime
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="py-24 md:py-36 relative overflow-hidden" id="faq">
+      <div class="max-w-4xl mx-auto px-2 sm:px-4 lg:px-6">
+       <div class="text-center mb-8: mb-16">
+        <h2 class="text-5xl md:text-6xl font-bold text-gray-900" id="faq-heading">
+         Frequently Asked Questions
+        </h2>
+       </div>
+       <div class="space-y-4">
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           Is CheatMate really undetectable?
+          </h3>
+         </button>
+         <div class="px-6 pb-5 border-t border-gray-100" id="faq-answer-0">
+          <p class="text-gray-600 leading-relaxed pt-4">
+           Yes! CheatMate has zero visual footprint, doesn't interfere with browser tabs, 
+          and operates entirely in the background.
+          </p>
+         </div>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           What types of questions can CheatMate answer?
+          </h3>
+         </button>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           How fast is CheatMate?
+          </h3>
+         </button>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           What platforms can I use CheatMate on?
+          </h3>
+         </button>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           Is my data secure?
+          </h3>
+         </button>
+        </div>
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm overflow-hidden">
+         <button class="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+          <h3 class="text-lg font-semibold text-gray-900 pr-4">
+           How do I get started?
+          </h3>
+         </button>
+        </div>
+       </div>
+      </div>
+     </section>
+     <footer class="bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+       <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="sm:col-span-2 lg:col-span-1">
+         <div class="flex items-center mb-6">
+          <img alt="CheatMate Logo" class="object-contain cursor-pointer" height="45" src="/logo.png" width="140"/>
+         </div>
+         <p class="text-gray-400 leading-relaxed">
+          Invisible AI for Proctored Exams.
+         </p>
+        </div>
+        <div>
+         <h3 class="font-bold mb-6 text-white">
+          Product
+         </h3>
+         <nav>
+          <ul class="space-y-3 text-gray-400">
+           <li>
+            <button class="hover:text-white transition-colors block text-left">
+             Home
+            </button>
+           </li>
+           <li>
+            <button class="hover:text-white transition-colors block text-left">
+             Chrome Extension
+            </button>
+           </li>
+           <li>
+            <button class="hover:text-white transition-colors block text-left">
+             <a href="/blog">
+              Blog
+             </a>
+            </button>
+           </li>
+          </ul>
+         </nav>
+        </div>
+        <div>
+         <h3 class="font-bold mb-6 text-white">
+          Legal
+         </h3>
+         <nav>
+          <ul class="space-y-3 text-gray-400">
+           <li>
+            <a class="hover:text-white transition-colors block" href="/privacy">
+             Privacy Policy
+            </a>
+           </li>
+           <li>
+            <a class="hover:text-white transition-colors block" href="/terms">
+             Terms of Service
+            </a>
+           </li>
+          </ul>
+         </nav>
+        </div>
+       </div>
+       <div class="border-t border-gray-700 mt-12 pt-8 text-center text-gray-400">
+        <p>
+         © 2025 CheatMate. All rights reserved.
+        </p>
+       </div>
+      </div>
+     </footer>
+    </main>
+   </div>
+   <section>
+   </section>
+   <div class="fixed left-[50%] top-[50%] z-50 translate-x-[-50%] translate-y-[-50%] gap-4 border shadow-lg duration-200 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-[48%] data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-[48%] max-w-[600px] w-[95vw] sm:w-[90vw] max-h-[95vh] p-0 overflow-hidden rounded-xl sm:rounded-2xl bg-white flex flex-col" id="radix-«r0»">
+    <div class="overflow-y-auto flex-1 bg-white">
+     <div class="pt-8 px-6 pb-6 space-y-6">
+      <div>
+       <h4 class="text-3xl font-bold text-gray-900 mb-3 text-center">
+        Secure Your
+        <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+         Instant A
+        </span>
+       </h4>
+       <div class="rounded-2xl overflow-hidden bg-white h-[200px] flex items-center justify-center">
+        <img alt="CheatMate demo" class="w-full h-full object-cover object-left scale-125 origin-left" src="/hero-demo.gif" title="CheatMate Demo"/>
+       </div>
+      </div>
+      <div>
+       <div class="text-center mb-4">
+        <div class="text-2xl font-bold text-black">
+         We support
+         <span class="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          every platform
+         </span>
+        </div>
+        <div class="text-lg font-bold text-gray-600">
+         (yes all of them)
+        </div>
+       </div>
+       <div class="overflow-hidden">
+        <div class="flex animate-scroll">
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Canvas" class="w-10 h-10 object-contain transition-all duration-300" src="/canvas.png" title="Canvas"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Blackboard" class="w-10 h-10 object-contain transition-all duration-300" src="/blackboard.png" title="Blackboard"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Brightspace" class="w-10 h-10 object-contain transition-all duration-300" src="/d2l.png" title="Brightspace"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="McGraw Hill" class="w-10 h-10 object-contain transition-all duration-300" src="/mcgraw.png" title="McGraw Hill"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Schoology" class="w-10 h-10 object-contain transition-all duration-300" src="/schoolgy.png" title="Schoology"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Google Classroom" class="w-10 h-10 object-contain transition-all duration-300" src="/googleclassroom.png" title="Google Classroom"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Moodle" class="w-10 h-10 object-contain transition-all duration-300" src="/moodle.png" title="Moodle"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Edmodo" class="w-10 h-10 object-contain transition-all duration-300" src="/edmodo.png" title="Edmodo"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Edulastic" class="w-10 h-10 object-contain transition-all duration-300" src="/edulastic.jpg" title="Edulastic"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Deltamath" class="w-10 h-10 object-contain transition-all duration-300" src="/deltamath.jpg" title="Deltamath"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="IXL" class="w-10 h-10 object-contain transition-all duration-300" src="/ixl.jpg" title="IXL"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Canvas" class="w-10 h-10 object-contain transition-all duration-300" src="/canvas.png" title="Canvas"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Blackboard" class="w-10 h-10 object-contain transition-all duration-300" src="/blackboard.png" title="Blackboard"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Brightspace" class="w-10 h-10 object-contain transition-all duration-300" src="/d2l.png" title="Brightspace"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="McGraw Hill" class="w-10 h-10 object-contain transition-all duration-300" src="/mcgraw.png" title="McGraw Hill"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Schoology" class="w-10 h-10 object-contain transition-all duration-300" src="/schoolgy.png" title="Schoology"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Google Classroom" class="w-10 h-10 object-contain transition-all duration-300" src="/googleclassroom.png" title="Google Classroom"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Moodle" class="w-10 h-10 object-contain transition-all duration-300" src="/moodle.png" title="Moodle"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Edmodo" class="w-10 h-10 object-contain transition-all duration-300" src="/edmodo.png" title="Edmodo"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Edulastic" class="w-10 h-10 object-contain transition-all duration-300" src="/edulastic.jpg" title="Edulastic"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="Deltamath" class="w-10 h-10 object-contain transition-all duration-300" src="/deltamath.jpg" title="Deltamath"/>
+         </div>
+         <div class="flex-shrink-0 mx-6">
+          <img alt="IXL" class="w-10 h-10 object-contain transition-all duration-300" src="/ixl.jpg" title="IXL"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="py-4">
+       <div class="flex items-center mb-3">
+        <span class="uppercase text-xs tracking-wider text-gray-500 font-semibold">
+         Student Reviews
+        </span>
+       </div>
+       <div class="min-h-[120px] flex items-center">
+        <div class="w-full flex">
+         <div class="flex-1">
+          <div class="text-gray-900 text-lg leading-tight font-bold mb-3">
+           "didn't study all semester still got an A lol"
+          </div>
+          <div class="flex items-center">
+           <img alt="Daniel profile picture" class="w-10 h-10 rounded-full object-cover mr-3" height="40" src="/selfie2.jpg" width="40"/>
+           <div class="flex flex-col">
+            <div class="text-sm font-semibold text-gray-900">
+             Daniel
+            </div>
+            <div class="text-sm font-normal text-gray-500">
+             Arizona State U.
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="flex-shrink-0 border-t border-gray-200 bg-white px-6 py-4">
+     <div class="text-center mb-2">
+      <span class="text-lg font-bold text-gray-900">
+       Limited Time Offer
+      </span>
+     </div>
+     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 h-10 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-6 px-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-200 text-lg cursor-pointer">
+      Get Started 50% Off
+     </button>
+    </div>
+    <button class="absolute right-4 top-4 z-50 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground" type="button">
+     <span class="sr-only">
+      Close
+     </span>
+    </button>
+   </div>
+  </body>
+
+</body>
+</html>

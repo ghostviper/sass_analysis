@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HuntViral - Lifetime Youtube Outlier Hunter</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-[#0B0B0F] text-gray-100 font-sans selection:bg-orange-500 selection:text-white">
+    <header class="fixed top-0 left-0 right-0 z-50 bg-[#0B0B0F]/80 backdrop-blur-md border-b border-white/5">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+       <a class="flex items-center gap-2 group" href="/">
+        <div class="relative w-8 h-8 transition-transform group-hover:scale-110 duration-300">
+         <img alt="HuntViral Logo" class="object-contain" src="/images/huntviral.svg"/>
+        </div>
+        <span class="text-xl font-bold tracking-tight text-white group-hover:text-orange-500 transition-colors">
+         HuntViral
+        </span>
+       </a>
+       <div class="hidden md:flex items-center gap-8">
+        <nav class="flex gap-6 text-sm font-medium text-gray-400">
+         <a class="hover:text-white transition-colors" href="/#features">
+          Features
+         </a>
+         <a class="hover:text-white transition-colors" href="/#pricing">
+          Pricing
+         </a>
+         <a class="hover:text-white transition-colors" href="/#faq">
+          FAQ
+         </a>
+        </nav>
+        <div class="flex items-center gap-4">
+         <a class="text-sm font-medium text-gray-300 hover:text-white transition-colors" href="/api/auth/signin">
+          Log in
+         </a>
+         <a class="px-4 py-2 text-sm font-bold text-white bg-orange-600 rounded-lg hover:bg-orange-500 transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)]" href="/api/auth/signin?callbackUrl=/dashboard">
+          Get Lifetime Access
+         </a>
+        </div>
+       </div>
+       <div class="md:hidden">
+        <a class="px-4 py-2 text-sm font-bold text-white bg-orange-600 rounded-lg hover:bg-orange-500" href="/api/auth/signin?callbackUrl=/dashboard">
+         Get Access
+        </a>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main>
+     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+       <div class="text-center max-w-4xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-900/30 border border-orange-500/30 text-orange-400 text-sm font-medium mb-8 animate-opacity">
+         <span>
+          Stop paying monthly subscriptions for outlier tools
+         </span>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white mb-8 leading-tight">
+         Hunt Viral Videos
+         <br/>
+         <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">
+          Your Competitors Miss.
+         </span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+         The only YouTube Outlier Hunter with a
+         <span class="text-white font-semibold">
+          Lifetime Deal
+         </span>
+         . Bring Your Own Key, pay once, and hunt for viral inspiration forever.
+        </p>
+        <div class="flex flex-col items-center gap-8 mb-10">
+         <div class="flex flex-col sm:flex-row items-center justify-center gap-4 w-full">
+          <a class="w-full sm:w-auto px-8 py-4 text-lg font-bold text-white bg-orange-600 rounded-xl hover:bg-orange-500 transition-all shadow-[0_0_40px_rgba(234,88,12,0.4)] hover:shadow-[0_0_60px_rgba(234,88,12,0.6)] hover:-translate-y-1" href="/api/auth/signin?callbackUrl=/dashboard">
+           Get Lifetime Access - $39
+          </a>
+          <a class="w-full sm:w-auto px-8 py-4 text-lg font-medium text-gray-300 bg-white/5 border border-white/10 rounded-xl hover:bg-white/10 transition-colors" href="#logic">
+           Why copying fails
+          </a>
+         </div>
+         <div class="flex items-center justify-center gap-6 text-sm text-gray-500">
+          <div class="flex items-center gap-2">
+           <span>
+            One-time payment
+           </span>
+          </div>
+          <div class="flex items-center gap-2">
+           <span>
+            No monthly fees
+           </span>
+          </div>
+          <div class="flex items-center gap-2">
+           <span>
+            Free updates
+           </span>
+          </div>
+         </div>
+         <div class="flex flex-col md:flex-row justify-center items-center gap-3">
+          <div class="-space-x-5 flex">
+           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#0B0B0F]">
+            <img alt="User" class="object-cover" src="/_next/image?url=%2Fimages%2Fyoutuber.png&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#0B0B0F]">
+            <img alt="Nirusan" class="object-cover" src="/_next/image?url=%2Fimages%2FnirusanLogo.jpg&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#0B0B0F]">
+            <img alt="User" class="object-cover" src="/_next/image?url=%2Fimages%2Fyoutubeuse.png&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#0B0B0F]">
+            <img alt="Ambitio" class="object-cover" src="/_next/image?url=%2Fimages%2FambitioLogo.png&amp;w=3840&amp;q=75"/>
+           </div>
+           <div class="relative w-10 h-10 rounded-full overflow-hidden border-2 border-[#0B0B0F]">
+            <img alt="Jean-Solopreneur" class="object-cover" src="/_next/image?url=%2Fimages%2Fpdp%20YT%206.png&amp;w=3840&amp;q=75"/>
+           </div>
+          </div>
+          <div class="flex flex-col justify-center items-center md:items-start gap-0.5">
+           <div class="text-sm text-gray-400">
+            <span class="font-bold text-white">
+             24
+            </span>
+            youtubers hunting
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="relative mx-auto max-w-5xl mt-12 group">
+        <div class="relative w-full max-w-4xl mx-auto aspect-[16/9] bg-[#121212] rounded-xl border border-white/10 shadow-2xl overflow-hidden select-none">
+         <div class="absolute top-0 left-0 right-0 h-10 bg-[#1a1a1a] border-b border-white/5 flex items-center px-4 justify-between z-20">
+          <div class="text-xs text-gray-600 font-mono">
+           huntviral.com/dashboard
+          </div>
+         </div>
+         <div class="absolute inset-0 top-10 p-8 flex flex-col justify-center items-center">
+          <div class="relative w-full h-64 flex items-end justify-center gap-3 sm:gap-6 px-4">
+           <div class="w-12 sm:w-16 h-24 bg-gray-800/30 rounded-t-lg relative group transition-all duration-500 hover:bg-gray-700/30">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+             12k
+            </div>
+           </div>
+           <div class="w-12 sm:w-16 h-16 bg-gray-800/30 rounded-t-lg relative group transition-all duration-500 hover:bg-gray-700/30">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+             8k
+            </div>
+           </div>
+           <div class="w-12 sm:w-16 h-20 bg-gray-800/30 rounded-t-lg relative group transition-all duration-500 hover:bg-gray-700/30">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+             10k
+            </div>
+           </div>
+           <div class="relative w-16 sm:w-24 h-56 bg-gradient-to-t from-orange-900/50 to-orange-500 rounded-t-lg shadow-[0_0_30px_rgba(234,88,12,0.3)] animate-appearFromRight z-10">
+            <div class="absolute -top-16 left-1/2 -translate-x-1/2 bg-white text-black px-3 py-1.5 rounded-lg shadow-lg flex items-center gap-2 whitespace-nowrap animate-popup">
+             <span class="font-bold text-sm">
+              245k Views
+             </span>
+            </div>
+            <div class="absolute top-4 left-1/2 -translate-x-1/2 text-[10px] font-bold text-white/80 tracking-widest uppercase">
+             Outlier
+            </div>
+           </div>
+           <div class="w-12 sm:w-16 h-28 bg-gray-800/30 rounded-t-lg relative group transition-all duration-500 hover:bg-gray-700/30">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+             14k
+            </div>
+           </div>
+           <div class="w-12 sm:w-16 h-14 bg-gray-800/30 rounded-t-lg relative group transition-all duration-500 hover:bg-gray-700/30 hidden sm:block">
+            <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-gray-600 opacity-0 group-hover:opacity-100 transition-opacity">
+             7k
+            </div>
+           </div>
+           <div class="absolute bottom-[80px] left-0 right-0 border-t-2 border-dashed border-gray-700/50 flex items-center z-0">
+            <div class="bg-[#121212] px-2 text-xs text-gray-500 -mt-2.5 ml-2 flex items-center gap-2">
+             <span>
+              Channel Average
+             </span>
+             <span class="font-bold text-gray-400">
+              11k
+             </span>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F] relative overflow-hidden" id="logic">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+         The "Outlier" Logic
+        </h2>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+         Why copying big YouTubers doesn't work, and what you should do instead.
+        </p>
+       </div>
+       <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div class="relative p-8 rounded-2xl border border-white/5 bg-white/[0.02] group hover:border-red-500/30 transition-colors overflow-hidden">
+         <div class="absolute top-0 right-0 bg-red-500/10 text-red-500 text-xs font-bold px-3 py-1 rounded-bl-lg border-l border-b border-red-500/20">
+          THE TRAP
+         </div>
+         <div class="flex items-start gap-4 mb-6">
+          <div>
+           <h3 class="text-lg font-bold text-white">
+            Copying a "Guru"
+           </h3>
+           <p class="text-sm text-gray-400">
+            1M Subscribers Channel
+           </p>
+          </div>
+         </div>
+         <div class="space-y-4 mb-6">
+          <div class="p-4 rounded-lg bg-[#1a1a1a] border border-white/5 opacity-50">
+           <div class="flex justify-between items-center">
+            <span class="text-gray-500 text-sm">
+             Generic Vlog Topic
+            </span>
+            <span class="text-gray-500 font-mono text-xs">
+             100k views
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-start gap-3">
+          <p class="text-gray-400 text-sm leading-relaxed">
+           <span class="text-red-400 font-semibold">
+            Why it fails:
+           </span>
+           They have 1M subs. They get views because of
+           <strong>
+            who they are
+           </strong>
+           , not the topic. If you copy this, you get 10 views.
+          </p>
+         </div>
+        </div>
+        <div class="relative p-8 rounded-2xl border border-orange-500/30 bg-orange-500/[0.05] group overflow-hidden">
+         <div class="absolute top-0 right-0 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+          THE STRATEGY
+         </div>
+         <div class="flex items-start gap-4 mb-6">
+          <div>
+           <h3 class="text-lg font-bold text-white">
+            Hunting Outliers
+           </h3>
+           <p class="text-sm text-orange-200/70">
+            Small Channel (5k Subs)
+           </p>
+          </div>
+         </div>
+         <div class="space-y-4 mb-6">
+          <div class="p-4 rounded-lg bg-[#1a1a1a] border border-orange-500/30 relative overflow-hidden">
+           <div class="flex justify-between items-center">
+            <span class="text-white text-sm font-medium">
+             Specific Viral Concept
+            </span>
+            <span class="text-orange-500 font-bold font-mono text-sm flex items-center gap-1">
+             245k views
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="flex items-start gap-3">
+          <p class="text-gray-300 text-sm leading-relaxed">
+           <span class="text-orange-400 font-semibold">
+            Why it works:
+           </span>
+           This channel has only 5k subs but got 245k views. The
+           <strong>
+            TOPIC
+           </strong>
+           is viral, not the creator.
+           <span class="underline decoration-orange-500/50 underline-offset-2 text-white">
+            Copy this topic, and you ride the wave.
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F] border-y border-white/5 relative">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="relative bg-gradient-to-br from-[#121212] to-[#0f0f0f] p-8 md:p-12 rounded-3xl border border-white/10 shadow-2xl">
+        <div class="flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+         <div class="w-full md:w-1/2 relative group">
+          <div class="relative bg-[#1a1a1a] rounded-2xl p-2 border border-white/10 transform rotate-2 group-hover:rotate-0 transition-transform duration-500">
+           <div class="aspect-video bg-gray-900 rounded-xl overflow-hidden relative flex flex-col">
+            <div class="flex-1 p-4 flex items-end gap-1 relative">
+             <div class="w-1/6 h-[90%] bg-orange-500 rounded-t relative shadow-[0_0_15px_rgba(234,88,12,0.5)]">
+              <div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-white text-black text-[10px] font-bold px-2 py-0.5 rounded shadow">
+               43k Views
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="mt-3 text-center">
+            <span class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-2 py-1 rounded border border-green-500/30">
+             +43,000 Views Generated
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="w-full md:w-1/2 text-left">
+          <blockquote class="text-xl md:text-2xl font-medium text-white leading-relaxed mb-6">
+           "I used it to find a topic to get viral. I did
+           <span class="text-orange-400 font-bold decoration-orange-500/30 underline underline-offset-4">
+            43k views with one video
+           </span>
+           in 1 week starting with 0 subscriber."
+          </blockquote>
+          <div class="flex items-center gap-4">
+           <div class="w-12 h-12 bg-gray-700 rounded-full overflow-hidden">
+            <img alt="User Avatar" class="object-cover" height="48" src="/_next/image?url=%2Fimages%2Fpdp%20YT%206.png&amp;w=96&amp;q=75" width="48"/>
+           </div>
+           <div>
+            <div class="font-bold text-white">
+             Jean-Solopreneur
+            </div>
+            <div class="text-sm text-gray-500">
+             YouTuber
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F] relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+         Why rent your success?
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+         Most outlier tools trap you in a monthly subscription. We give you the keys to the kingdom.
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="relative p-8 rounded-2xl border border-white/5 bg-white/[0.02]">
+         <div class="flex items-center justify-between mb-8">
+          <h3 class="text-xl font-semibold text-gray-400">
+           Other Tools
+          </h3>
+         </div>
+         <div class="text-4xl font-bold text-gray-500 mb-2">
+          $39
+          <span class="text-lg font-normal">
+           /month
+          </span>
+         </div>
+         <p class="text-gray-500 mb-8 text-sm">
+          That's $468 per year. Every year.
+         </p>
+         <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 text-gray-400">
+           <span>
+            Limited searches per day
+           </span>
+          </li>
+          <li class="flex items-center gap-3 text-gray-400">
+           <span>
+            Stop paying, lose access
+           </span>
+          </li>
+          <li class="flex items-center gap-3 text-gray-400">
+           <span>
+            Price increases yearly
+           </span>
+          </li>
+         </ul>
+         <div class="w-full py-3 rounded-lg border border-white/5 text-center text-gray-500 text-sm">
+          Subscription Trap
+         </div>
+        </div>
+        <div class="relative p-8 rounded-2xl border border-orange-500/30 bg-orange-500/[0.05] overflow-hidden">
+         <div class="absolute top-0 right-0 bg-orange-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+          SMART CHOICE
+         </div>
+         <div class="flex items-center justify-between mb-8">
+          <h3 class="text-xl font-semibold text-white">
+           HuntViral
+          </h3>
+         </div>
+         <div class="text-4xl font-bold text-white mb-2">
+          $39
+          <span class="text-lg font-normal">
+           /once
+          </span>
+         </div>
+         <p class="text-orange-200/70 mb-8 text-sm">
+          Pay once. Hunt forever.
+         </p>
+         <ul class="space-y-4 mb-8">
+          <li class="flex items-center gap-3 text-white">
+           <span>
+            Unlimited searches (BYOK)
+           </span>
+          </li>
+          <li class="flex items-center gap-3 text-white">
+           <span>
+            Lifetime access included
+           </span>
+          </li>
+          <li class="flex items-center gap-3 text-white">
+           <span>
+            Free updates forever
+           </span>
+          </li>
+         </ul>
+         <button class="w-full py-3 rounded-lg bg-orange-600 text-white font-bold hover:bg-orange-500 transition-colors shadow-lg shadow-orange-900/20">
+          Get Lifetime Access
+         </button>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F] relative overflow-hidden" id="features">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+       <div class="text-center mb-20">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+         The Hunter's Toolkit
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+         Everything you need to find your next viral video idea, without the fluff.
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          True Outlier Detection
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          We don't just show popular videos. We identify videos that perform 2x, 5x, or 10x better than the creator's average. These are the concepts you want to steal.
+         </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          BYOK Model
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          Bring Your Own Key. Google gives you 10,000 units per day for free. That's enough to hunt for hours without paying us a cent for data.
+         </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          Surgical Filtering
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          Filter by Views, Subscribers count, Views Per Hour, and Published Date. Isolate small channels with massive hits.
+         </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          Global Hunter
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          Hunt in any country. Toggle regions to see what's viral in France, USA, Brazil, or Japan. Trends often start abroad.
+         </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          Keyword Deep Dive
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          Search specifically for 'AI automation' or 'Fitness tips' and find the exact outliers in that niche instantly.
+         </p>
+        </div>
+        <div class="p-8 rounded-2xl bg-white/[0.03] border border-white/5 hover:border-orange-500/50 hover:bg-white/[0.05] transition-all group">
+         <h3 class="text-xl font-bold text-white mb-3">
+          Zero-Lag Interface
+         </h3>
+         <p class="text-gray-400 leading-relaxed">
+          Built for speed. No bloated dashboards. Just pure data, instant results, and direct links to the videos.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F] relative" id="pricing">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+         Pay once. Hunt forever.
+        </h2>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+         No monthly fees. No hidden costs. Just pure viral hunting power.
+        </p>
+       </div>
+       <div class="relative max-w-lg mx-auto">
+        <div class="relative bg-[#121212] border border-white/10 rounded-2xl p-8 md:p-12 shadow-2xl">
+         <div class="absolute top-0 right-0 bg-orange-600 text-white text-xs font-bold px-4 py-2 rounded-bl-xl rounded-tr-xl uppercase tracking-wider">
+          Limited Offer
+         </div>
+         <h3 class="text-2xl font-bold text-white mb-2">
+          Lifetime access
+         </h3>
+         <div class="flex items-baseline gap-2 mb-6">
+          <span class="text-5xl font-extrabold text-white">
+           $39
+          </span>
+          <span class="text-xl text-gray-500 line-through">
+           $99
+          </span>
+         </div>
+         <p class="text-gray-400 mb-8">
+          Using your own free Youtube API Key.
+         </p>
+         <a class="w-full py-4 bg-orange-600 hover:bg-orange-500 text-white text-lg font-bold rounded-xl transition-all shadow-[0_0_20px_rgba(234,88,12,0.3)] hover:shadow-[0_0_30px_rgba(234,88,12,0.5)] hover:-translate-y-1 mb-8 block text-center" href="/api/auth/signin?callbackUrl=/dashboard">
+          Get Lifetime Access
+         </a>
+         <div class="space-y-4">
+          <p class="text-sm font-medium text-gray-500 uppercase tracking-wider mb-4">
+           What's included:
+          </p>
+          <div class="flex items-center gap-3">
+           <span class="text-gray-300 text-sm">
+            Youtube Outliers hunter feature (the main one)
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-gray-300 text-sm">
+            Filtering results by country
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-gray-300 text-sm">
+            Searching for ideas by keywords
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-gray-300 text-sm">
+            Lifetime access
+           </span>
+          </div>
+          <div class="flex items-center gap-3">
+           <span class="text-gray-300 text-sm">
+            Already available
+           </span>
+          </div>
+         </div>
+         <p class="mt-8 text-xs text-center text-gray-600">
+          One-time payment. VAT may apply depending on your location.
+         </p>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="py-24 bg-[#0B0B0F]" id="faq">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+       <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+         Frequently Asked Questions
+        </h2>
+       </div>
+       <div class="space-y-4">
+        <div class="border border-white/10 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:border-white/20">
+         <details class="group">
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+           <h3 class="text-lg font-medium text-white pr-8">
+            What does BYOK mean?
+           </h3>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+           BYOK stands for 'Bring Your Own Key'. HuntViral uses the official YouTube API to find videos. Instead of charging you monthly to cover our API costs, we let you use your own free Google API Key. It's free, easy to set up (we have a 2-minute tutorial), and gives you 10,000 units per day—enough for hours of hunting.
+          </div>
+         </details>
+        </div>
+        <div class="border border-white/10 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:border-white/20">
+         <details class="group">
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+           <h3 class="text-lg font-medium text-white pr-8">
+            Is this really a one-time payment?
+           </h3>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+           Yes. You pay $39 once and you get lifetime access to the current features and all future updates. No monthly subscriptions, no hidden fees.
+          </div>
+         </details>
+        </div>
+        <div class="border border-white/10 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:border-white/20">
+         <details class="group">
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+           <h3 class="text-lg font-medium text-white pr-8">
+            How does the outlier detection work?
+           </h3>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+           We analyze a channel's recent performance and compare each video's view count against their average. If a video has significantly more views than usual (e.g. 5x or 10x), we flag it as an outlier. These are the videos that went viral because of the topic or packaging, not just the creator's fame.
+          </div>
+         </details>
+        </div>
+        <div class="border border-white/10 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:border-white/20">
+         <details class="group">
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+           <h3 class="text-lg font-medium text-white pr-8">
+            Can I get a refund?
+           </h3>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+           Since this is a digital product with immediate access to our proprietary data algorithms, we generally do not offer refunds. However, if the software doesn't work as advertised and we can't fix it for you, we will issue a refund.
+          </div>
+         </details>
+        </div>
+        <div class="border border-white/10 rounded-xl bg-white/[0.02] overflow-hidden transition-all hover:border-white/20">
+         <details class="group">
+          <summary class="flex items-center justify-between cursor-pointer p-6">
+           <h3 class="text-lg font-medium text-white pr-8">
+            Do I get future updates?
+           </h3>
+          </summary>
+          <div class="px-6 pb-6 text-gray-400 leading-relaxed">
+           Absolutely. We are constantly improving our algorithms and adding new filters. You will get all future updates for free.
+          </div>
+         </details>
+        </div>
+       </div>
+      </div>
+     </section>
+    </main>
+    <footer class="bg-[#0B0B0F] border-t border-white/5 pt-16 pb-8">
+     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-12">
+       <div class="col-span-1 md:col-span-2">
+        <a class="flex items-center gap-2 mb-4" href="/">
+         <div class="relative w-8 h-8">
+          <img alt="HuntViral Logo" class="object-contain" src="/images/huntviral.svg"/>
+         </div>
+         <span class="text-xl font-bold text-white">
+          HuntViral
+         </span>
+        </a>
+        <p class="text-gray-500 text-sm max-w-xs mb-6">
+         Because your next YouTube viral deserves a good hunt. Find the best viral Youtube videos in your niche to take inspiration from.
+        </p>
+        <p class="text-gray-600 text-sm">
+         Copyright © 2025 - All rights reserved
+        </p>
+       </div>
+       <div>
+        <h4 class="font-bold text-white mb-4">
+         Product
+        </h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="#pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="#faq">
+           FAQ
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="/api/auth/signin">
+           Login
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-bold text-white mb-4">
+         Legal
+        </h4>
+        <ul class="space-y-2 text-sm text-gray-500">
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="/privacy-policy">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-orange-500 transition-colors" href="/tos">
+           Terms of Service
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

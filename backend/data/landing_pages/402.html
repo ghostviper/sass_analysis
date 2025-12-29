@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Video Generator | Text to Video - Create Videos from Text | Sisif</title>
+</head>
+<body>
+  <body>
+   <nav class="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
+    <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+     <div class="flex items-center justify-between h-16">
+      <div class="flex items-center">
+       <a class="flex items-center space-x-2" href="/">
+        <span class="text-xl font-bold text-foreground">
+         sisif
+        </span>
+       </a>
+      </div>
+      <div class="hidden md:flex items-center space-x-8">
+       <a class="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200" href="/featured/">
+        Featured Videos
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200" href="/api/">
+        API
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200" href="#pricing-section">
+        Pricing
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium transition-colors duration-200" href="/content/">
+        Blog
+       </a>
+      </div>
+      <div class="flex items-center space-x-3">
+       <a class="hidden sm:inline-flex text-muted-foreground hover:text-foreground font-medium transition-colors duration-200" href="/accounts/login/">
+        Sign In
+       </a>
+       <a class="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors duration-200" href="/accounts/signup/">
+        Start Free
+       </a>
+      </div>
+     </div>
+     <div class="hidden md:hidden border-t border-border py-4" id="mobile-menu">
+      <div class="flex flex-col space-y-3">
+       <a class="text-muted-foreground hover:text-foreground font-medium py-2" href="/featured/">
+        Featured Videos
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium py-2" href="/api/">
+        API
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium py-2" href="#pricing-section">
+        Pricing
+       </a>
+       <a class="text-muted-foreground hover:text-foreground font-medium py-2" href="/content/">
+        Blog
+       </a>
+       <div class="pt-3 border-t border-border">
+        <a class="block text-muted-foreground hover:text-foreground font-medium py-2" href="/accounts/login/">
+         Sign In
+        </a>
+        <a class="inline-flex items-center justify-center px-4 py-2 mt-2 text-sm font-semibold text-white bg-primary hover:bg-primary/90 rounded-lg transition-colors duration-200" href="/accounts/signup/">
+         Start Free
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <main class="flex-1">
+    <section class="bg-primary/5">
+     <div class="max-w-screen-xl mx-auto px-4 py-12 lg:px-6 lg:py-16">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+       <div class="space-y-6">
+        <div>
+         <h1 class="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+          AI Video Generator: Turn Text into
+          <span class="text-primary">
+           Stunning Videos
+          </span>
+          in Seconds
+         </h1>
+         <p class="mt-4 text-lg text-muted-foreground leading-relaxed">
+          Create professional AI-generated videos from simple text prompts using our advanced text-to-video generator. No video editing skills required. Perfect for TikTok, Instagram, YouTube, social media marketing, and creative projects.
+         </p>
+        </div>
+        <div class="flex items-center space-x-3">
+         <div class="flex -space-x-2">
+          <img alt="" class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=32&amp;h=32&amp;fit=crop&amp;crop=face"/>
+          <img alt="" class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&amp;h=32&amp;fit=crop&amp;crop=face"/>
+          <img alt="" class="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&amp;h=32&amp;fit=crop&amp;crop=face"/>
+         </div>
+         <span class="text-sm text-muted-foreground font-medium">
+          Trusted by 1,000+ creators
+         </span>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4">
+         <a class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-white bg-foreground rounded-xl hover:bg-foreground/90 shadow-lg hover:shadow-xl transition-all duration-200" href="/accounts/signup/">
+          Start Creating Free
+         </a>
+         <a class="inline-block transform hover:scale-105 transition-transform duration-200" href="https://www.producthunt.com/products/sisif-ai?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_source=badge-sisif-ai" target="_blank">
+          <img alt="Sisif.ai - Create viral Tiktoks, Instagram reels and Shorts in seconds! | Product Hunt" class="shadow-lg rounded-lg" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=978376&amp;theme=light&amp;t=1749896956734" width="250"/>
+         </a>
+        </div>
+        <div class="inline-flex items-center px-3 py-1 bg-success/10 text-success rounded-full text-sm font-medium">
+         15 free credits included - No credit card required
+        </div>
+       </div>
+       <div class="flex justify-center lg:justify-end">
+        <div class="relative max-w-md w-full">
+         <video class="w-full rounded-2xl shadow-2xl">
+          <source src="https://public.sisif.ai/f16bd621-868c-4566-8768-c5711b336c2c-e1.mp4" type="video/mp4">
+           Your browser does not support the video tag.
+          </source>
+         </video>
+         <div class="absolute -bottom-8 left-0 right-0 bg-card rounded-xl p-4 shadow-lg border border-border mx-2">
+          <div class="flex items-center justify-center space-x-2 mb-1">
+           <span class="text-sm font-medium text-foreground">
+            Generated in 30s
+           </span>
+          </div>
+          <p class="text-xs text-muted-foreground text-center">
+           From: "A cozy winter scene"
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-12 bg-background" id="demo-section">
+     <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+      <div class="text-center mb-8">
+       <h2 class="text-3xl font-bold text-foreground mb-3 sm:text-4xl">
+        AI Video Examples: See What's Possible with Text-to-Video
+       </h2>
+       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Real AI-generated videos created from simple text prompts using our text-to-video generator. Each professional video generated in under 60 seconds for TikTok, Instagram, YouTube, and social media.
+       </p>
+       <div class="mt-6">
+        <a class="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl" href="/featured/">
+         View Our Featured AI Videos
+        </a>
+       </div>
+      </div>
+      <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/f16bd621-868c-4566-8768-c5711b336c2c-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/0d34bf54-470d-48a5-854f-9994b17d0922-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/2c976ad7-4f67-46a6-9ce2-4872d0e4e171-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/a921ddff-5cfb-470c-b3d9-35f516c3768b-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/713be0d0-7f35-454a-b06a-dd0572780685-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/ad730aa8-7985-4c72-bf08-e8f1623add76-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/bf389dd4-6795-428b-8dd0-5dd3684e6132-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/4d895eaa-3ac8-4c64-b6ce-b9def68a8e31-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/92a7ded6-cc03-47b8-aebc-d9d0fff5251e-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/5e0ffc85-ebcc-4fb8-ba2b-1c8179a2ff5e-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/1c8596e5-bba3-4560-a663-16b5040713f8-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+       <div class="group relative bg-card border-border rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow">
+        <video class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+         <source src="https://public.sisif.ai/bd44808e-ed53-429d-9f0d-93b8ab1664da-e1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+         </source>
+        </video>
+        <div class="absolute bottom-2 left-2 bg-foreground bg-opacity-75 text-white text-xs px-2 py-1 rounded pointer-events-none">
+         AI Generated
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 bg-muted">
+     <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-20">
+       <h2 class="text-3xl font-bold text-foreground mb-6 sm:text-4xl">
+        Powerful API for Developers
+       </h2>
+       <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        Integrate AI video generation directly into your applications with our simple REST API. Generate videos programmatically at scale.
+       </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20">
+       <div class="bg-background rounded-xl p-6 shadow-sm border border-border">
+        <div class="flex items-start gap-4">
+         <div>
+          <h3 class="text-xl font-bold text-foreground mb-2">
+           Simple REST API Integration
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+           Easy-to-use REST endpoints with comprehensive documentation. Generate videos with a simple POST request in any programming language.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-background rounded-xl p-6 shadow-sm border border-border">
+        <div class="flex items-start gap-4">
+         <div>
+          <h3 class="text-xl font-bold text-foreground mb-2">
+           High-Performance &amp; Scalable
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+           Built for scale with rate limiting, authentication, and webhook support. Process thousands of video generation requests reliably.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-background rounded-xl p-6 shadow-sm border border-border">
+        <div class="flex items-start gap-4">
+         <div>
+          <h3 class="text-xl font-bold text-foreground mb-2">
+           Complete Documentation &amp; SDKs
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+           Comprehensive API documentation with TypeScript SDK, code examples, and interactive playground to get you started quickly.
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="bg-background rounded-xl p-6 shadow-sm border border-border">
+        <div class="flex items-start gap-4">
+         <div>
+          <h3 class="text-xl font-bold text-foreground mb-2">
+           Flexible Video Customization
+          </h3>
+          <p class="text-muted-foreground leading-relaxed">
+           Control video duration, resolution, and aspect ratios via API parameters. Perfect for automating content creation workflows.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mt-16 bg-card rounded-2xl p-8 overflow-hidden">
+       <div class="flex items-center justify-between mb-6">
+        <h3 class="text-xl font-bold text-white">
+         Quick Start Example
+        </h3>
+        <a class="inline-flex items-center px-4 py-2 text-sm font-medium text-foreground bg-white hover:bg-secondary rounded-lg transition-colors duration-200" href="/api/">
+         View Full Documentation
+        </a>
+       </div>
+       <div class="bg-foreground rounded-lg p-6 overflow-x-auto">
+        <pre class="text-success text-sm"><code>curl -X POST "https://api.sisif.ai/v1/videos/" \
+    -H "Authorization: Bearer YOUR_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d '{
+      "prompt": "A serene mountain landscape at sunset",
+      "duration": 10,
+      "resolution": "540x960"
+    }'</code></pre>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-24 bg-background">
+     <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-20">
+       <h2 class="text-3xl font-bold text-foreground mb-6 sm:text-4xl">
+        How to Create AI Videos in 3 Simple Steps
+       </h2>
+       <p class="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+        No technical skills or video editing experience required. Just describe what you want and our AI text-to-video generator will create it.
+       </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+       <div class="bg-card rounded-xl p-6 text-center shadow-sm border border-border">
+        <div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+         <span class="text-black text-lg font-bold">
+          1
+         </span>
+        </div>
+        <h3 class="text-lg font-bold text-foreground mb-3">
+         Write Your Text Prompt
+        </h3>
+        <p class="text-muted-foreground">
+         Describe the AI video you want in simple text. Be as creative as you like with your text-to-video prompt!
+        </p>
+       </div>
+       <div class="bg-card rounded-xl p-6 text-center shadow-sm border border-border">
+        <div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+         <span class="text-black text-lg font-bold">
+          2
+         </span>
+        </div>
+        <h3 class="text-lg font-bold text-foreground mb-3">
+         Choose Video Settings
+        </h3>
+        <p class="text-muted-foreground">
+         Select duration and resolution that fits your social media platform needs (TikTok, Instagram, YouTube).
+        </p>
+       </div>
+       <div class="bg-card rounded-xl p-6 text-center shadow-sm border border-border">
+        <div class="w-12 h-12 bg-primary/5 rounded-full flex items-center justify-center mx-auto mb-4">
+         <span class="text-black text-lg font-bold">
+          3
+         </span>
+        </div>
+        <h3 class="text-lg font-bold text-foreground mb-3">
+         Get Your AI Video
+        </h3>
+        <p class="text-muted-foreground">
+         Download your professional AI-generated video in seconds and share it on any social media platform.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 bg-gradient-to-br from-blue-600 to-indigo-700">
+     <div class="max-w-screen-xl mx-auto px-6 lg:px-8">
+      <div class="text-center">
+       <h2 class="text-3xl font-bold text-white mb-4 sm:text-4xl">
+        Stay Ahead with AI Video Trends
+       </h2>
+       <p class="text-xl text-primary-foreground max-w-3xl mx-auto leading-relaxed mb-8">
+        Get weekly AI video creation tips, feature updates, and exclusive guides delivered straight to your inbox. Join thousands of creators mastering the art of text-to-video generation.
+       </p>
+       <div class="max-w-md mx-auto">
+        <form action="/newsletter/signup/" class="flex flex-col sm:flex-row gap-4" method="post">
+         <input name="csrfmiddlewaretoken" type="hidden" value="CCkJwJqPVMUOaQgMVq0rm4J8mfflzza3iB29C7jICKunxCmy9XKHWDFamB7hLZpD"/>
+         <input class="flex-1 px-6 py-4 border-0 rounded-xl focus:outline-none focus:ring-4 focus:ring-white/30 text-foreground placeholder-gray-500 text-lg shadow-lg" name="email" placeholder="Enter your email address" type="email"/>
+         <button class="px-8 py-4 bg-background text-primary font-bold rounded-xl hover:bg-muted transition-all duration-200 text-lg shadow-lg hover:shadow-xl whitespace-nowrap disabled:opacity-50" type="submit">
+          Subscribe Free
+         </button>
+        </form>
+        <div class="mt-6 flex flex-col sm:flex-row items-center justify-center text-primary-foreground">
+         <div class="flex items-center gap-4">
+          <div class="flex">
+           <img alt="" class="w-6 h-6 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=24&amp;h=24&amp;fit=crop&amp;crop=face"/>
+           <img alt="" class="w-6 h-6 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=24&amp;h=24&amp;fit=crop&amp;crop=face"/>
+           <img alt="" class="w-6 h-6 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=24&amp;h=24&amp;fit=crop&amp;crop=face"/>
+          </div>
+          <span class="text-sm font-medium">
+           1,000+ creators subscribed
+          </span>
+         </div>
+         <div class="text-sm flex items-center gap-2 flex-wrap">
+          <span class="flex items-center gap-1">
+           No spam
+          </span>
+          <span class="flex items-center gap-1">
+           Unsubscribe anytime
+          </span>
+          <span class="flex items-center gap-1">
+           Weekly valuable content
+          </span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 bg-muted" id="pricing-section">
+     <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+      <div class="text-center mb-12">
+       <h2 class="text-3xl font-bold text-foreground mb-4 sm:text-4xl">
+        Simple, Transparent Pricing
+       </h2>
+       <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Start free, scale as you grow. Pay only for what you create.
+       </p>
+      </div>
+      <div class="max-w-md mx-auto">
+       <div class="bg-card rounded-2xl shadow-lg border border-border">
+        <div class="bg-primary px-6 py-6 rounded-t-2xl">
+         <div class="text-center text-black">
+          <h3 class="text-xl font-bold mb-2">
+           Start Free Today
+          </h3>
+          <div class="flex items-baseline justify-center gap-2">
+           <span class="text-4xl font-bold">
+            15
+           </span>
+           <span class="text-lg">
+            free credits
+           </span>
+          </div>
+         </div>
+        </div>
+        <div class="p-6">
+         <div class="space-y-4 mb-6">
+          <div class="flex items-start gap-3">
+           <span class="text-foreground text-sm leading-relaxed">
+            Create up to 10 videos (1.5 credits each at 180x320)
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-foreground text-sm leading-relaxed">
+            All resolution options (180x320, 360x640, 540x960)
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-foreground text-sm leading-relaxed">
+            Commercial use allowed
+           </span>
+          </div>
+          <div class="flex items-start gap-3">
+           <span class="text-foreground text-sm leading-relaxed">
+            No credit card required
+           </span>
+          </div>
+         </div>
+         <a class="w-full inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-black bg-primary hover:bg-primary/90 rounded-lg transition-colors duration-200" href="/accounts/signup/">
+          Get Started Free
+         </a>
+         <p class="text-center text-xs text-muted-foreground mt-3">
+          Need more credits?
+          <a class="text-primary hover:underline font-medium" href="/subscriptions/">
+           View subscription plans
+          </a>
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="py-16 bg-primary">
+     <div class="max-w-screen-xl mx-auto px-4 lg:px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4 text-black sm:text-4xl">
+       Ready to Create Your First AI Video?
+      </h2>
+      <p class="text-lg mb-8 text-black/80 max-w-2xl mx-auto leading-relaxed">
+       Join thousands of creators who are already using Sisif's AI video generator to transform text into stunning videos for TikTok, Instagram, YouTube, and social media.
+      </p>
+      <a class="inline-flex items-center justify-center px-8 py-4 text-lg font-semibold bg-background text-primary hover:bg-secondary rounded-xl shadow-lg hover:shadow-xl transition-all duration-200" href="/accounts/signup/">
+       Start Creating Now - It's Free
+      </a>
+     </div>
+    </section>
+   </main>
+   <footer class="bg-gray-900 dark:bg-black text-white">
+    <div class="max-w-screen-xl mx-auto px-4 lg:px-6">
+     <div class="py-12 lg:py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+       <div class="xl:col-span-1">
+        <div class="mb-6">
+         <h3 class="text-2xl font-bold text-white mb-3">
+          sisif
+         </h3>
+         <p class="text-gray-300 text-sm leading-relaxed">
+          Transform your ideas into stunning AI videos with just a text prompt. Create professional videos for TikTok, Instagram, YouTube, and social media in seconds.
+         </p>
+        </div>
+        <div class="mb-6">
+         <h4 class="text-sm font-semibold text-white mb-3 uppercase tracking-wider">
+          Follow Us
+         </h4>
+        </div>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         Product
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/">
+           AI Video Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/featured/">
+           Featured Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/accounts/signup/">
+           Get Started Free
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/pricing/">
+           Pricing
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         AI Generators
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/tiktok-generator/">
+           TikTok Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/instagram-generator/">
+           Instagram Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/youtube-generator/">
+           YouTube Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/facebook-generator/">
+           Facebook Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/twitter-generator/">
+           Twitter Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/linkedin-generator/">
+           LinkedIn Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/pinterest-generator/">
+           Pinterest Generator
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/snapchat-generator/">
+           Snapchat Generator
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         Use Cases
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/use-cases/social-media-marketing/">
+           Social Media Marketing
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/use-cases/travel-videos/">
+           Travel Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/use-cases/tiktok-videos/">
+           TikTok Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/use-cases/instagram-stories/">
+           Instagram Stories
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/use-cases/youtube-shorts/">
+           YouTube Shorts
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-restaurants/">
+           Restaurant Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-healthcare/">
+           Healthcare Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-education/">
+           Education Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-tourism/">
+           Tourism Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-e-commerce/">
+           E-commerce Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-real-estate/">
+           Real Estate Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-automotive/">
+           Automotive Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-fitness/">
+           Fitness Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-fashion/">
+           Fashion Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-beauty/">
+           Beauty Videos
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         Spanish Cities
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-madrid/">
+           Madrid Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-barcelona/">
+           Barcelona Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-valencia/">
+           Valencia Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-sevilla/">
+           Sevilla Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-bilbao/">
+           Bilbao Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-malaga/">
+           Malaga Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-zaragoza/">
+           Zaragoza Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-murcia/">
+           Murcia Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-palma/">
+           Palma Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/ai-videos-las-palmas/">
+           Las Palmas Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/automation/n8n/">
+           N8N Automation
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         Showcases
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <span class="text-gray-400 text-xs uppercase tracking-wide font-semibold">
+           Travel
+          </span>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/travel-ai-video-italy/">
+           🇮🇹 Italy Travel Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/travel-ai-video-paris/">
+           🇫🇷 Paris Travel Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/travel-ai-video-nyc/">
+           🗽 New York City Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/travel-ai-video-japan/">
+           🏯 Japan Travel Videos
+          </a>
+         </li>
+         <li class="pt-2">
+          <span class="text-gray-400 text-xs uppercase tracking-wide font-semibold">
+           Business
+          </span>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/business-marketing-videos/">
+           💼 Business Marketing
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/food-restaurant-videos/">
+           🍽️ Food &amp; Restaurant
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/fitness-wellness-videos/">
+           💪 Fitness &amp; Wellness
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/tiktok-stock-videos/">
+           📱 TikTok Stock Videos
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/showcases/tiktok-faceless-videos/">
+           🎭 TikTok Faceless Videos
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="text-sm font-semibold text-white mb-6 uppercase tracking-wider">
+         Support &amp; Legal
+        </h4>
+        <ul class="space-y-3">
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/content/">
+           Blog
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/support/">
+           Support Center
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="mailto:support@sisif.ai">
+           Contact Support
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/terms/">
+           Terms of Service
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/privacy/">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-gray-300 hover:text-white text-sm transition-colors duration-200" href="/sitemap/">
+           Sitemap
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+     </div>
+     <div class="border-t border-gray-800 py-8">
+      <div class="max-w-md mx-auto text-center">
+       <h4 class="text-lg font-semibold text-white mb-3">
+        Stay Updated
+       </h4>
+       <p class="text-gray-300 text-sm mb-4">
+        Get the latest AI video generation tips and product updates.
+       </p>
+       <form action="/newsletter/signup/" class="flex flex-col sm:flex-row gap-3" id="newsletter-form" method="post">
+        <input name="csrfmiddlewaretoken" type="hidden" value="CCkJwJqPVMUOaQgMVq0rm4J8mfflzza3iB29C7jICKunxCmy9XKHWDFamB7hLZpD"/>
+        <input class="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" id="newsletter-email" name="email" placeholder="Enter your email" type="email"/>
+        <button class="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-200 whitespace-nowrap" id="newsletter-submit" type="submit">
+         Subscribe
+        </button>
+       </form>
+      </div>
+     </div>
+     <div class="border-t border-gray-800 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+       <div class="text-gray-400 text-sm">
+        <p>
+         ©
+         <span id="copyright-year">
+          2025
+         </span>
+         sisif. 
+              All rights reserved.
+        </p>
+       </div>
+       <div class="flex items-center space-x-6 mt-4 md:mt-0">
+        <div class="flex items-center space-x-2 text-gray-400 text-xs">
+         <span>
+          All systems operational
+         </span>
+        </div>
+        <div class="flex items-center space-x-4">
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="/sitemap.xml">
+          XML
+         </a>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="/health/">
+          Status
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://aihubs.ai/" rel="noopener noreferrer" target="_blank" title="AiHubs - Discover The Best AI Tools">
+          AiHubs
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://game-sprunki.com/" rel="noopener noreferrer" target="_blank" title="Game Sprunki">
+          Game Sprunki
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://www.showmebest.ai" rel="noopener noreferrer" target="_blank" title="ShowMeBestAI">
+          ShowMeBestAI
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://submitaitools.org/" rel="noopener noreferrer" target="_blank" title="Submit AI Tools">
+          Submit AI Tools
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://www.toolpilot.ai" rel="noopener noreferrer" target="_blank" title="ToolPilot AI">
+          ToolPilot AI
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="text-gray-400 hover:text-white text-xs transition-colors duration-200" href="https://thatsmy.ai" rel="noopener noreferrer" target="_blank" title="Best and Latest AI Tools in 2025">
+          AI Nav Site
+         </a>
+         <span class="text-gray-400">
+          |
+         </span>
+         <a class="inline-block transform hover:scale-105 transition-transform duration-200" href="https://dang.ai/" rel="noopener noreferrer" target="_blank">
+          <img alt="Dang.ai" class="opacity-75 hover:opacity-100 transition-opacity duration-200" height="54" src="https://cdn.prod.website-files.com/63d8afd87da01fb58ea3fbcb/6487e2868c6c8f93b4828827_dang-badge.png" width="150"/>
+         </a>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

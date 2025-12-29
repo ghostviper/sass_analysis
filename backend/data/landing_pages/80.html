@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CartQL | GraphQL Shopping Cart API & MCP Server</title>
+</head>
+<body>
+  <body>
+   <div class="min-h-screen bg-black">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-black/50 border-b border-white/10">
+     <div class="max-w-4xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+       <span class="sr-only">
+        CartQL
+       </span>
+      </div>
+      <nav class="flex items-center gap-6">
+       <a class="text-sm text-white/30 hover:text-white transition-colors" href="#features">
+        Features
+       </a>
+       <a class="text-sm text-white/30 hover:text-white transition-colors" href="#pricing">
+        Pricing
+       </a>
+       <a class="hidden md:inline-block text-sm text-white/30 hover:text-white transition-colors" href="#faq">
+        FAQ
+       </a>
+       <a class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-8 rounded-md gap-1.5 px-3 has-[&gt;svg]:px-2.5" href="https://docs.cartql.com">
+        Docs
+       </a>
+      </nav>
+     </div>
+    </header>
+    <div class="bg-white/5">
+     <section class="max-w-4xl mx-auto px-6 pt-32 text-center">
+      <div class="w-full">
+       <h1 class="max-w-2xl mx-auto text-balance text-2xl font-semibold leading-[1.3] tracking-tight text-white sm:text-3xl md:text-5xl">
+        MCP and  GraphQL Shopping Cart API for modern commerce
+       </h1>
+       <p class="mt-4 max-w-[630px] mx-auto text-balance text-base font-medium leading-relaxed text-white/50 sm:mt-6">
+        Add a shopping cart to any site, app or agent with MCP, and GraphQL APIs. No replatforming required.
+       </p>
+      </div>
+      <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+       <a class="justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md has-[&gt;svg]:px-4 text-base group inline-flex items-center gap-2 px-5 py-2.5 font-medium transition-all duration-200 hover:shadow-md" href="https://api.cartql.com" target="_blank">
+        <span>
+         Get Started Free
+        </span>
+       </a>
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 text-base" href="https://docs.cartql.com" target="_blank">
+        Docs
+       </a>
+      </div>
+     </section>
+    </div>
+    <section class="hidden max-w-3xl mx-auto px-6 py-12">
+     <p class="text-center text-sm text-white/30 mb-8 font-medium">
+      Works with your favourite frontend framework
+     </p>
+    </section>
+    <section class="max-w-4xl mx-auto px-6 py-20" id="features">
+     <div class="text-center mb-14">
+      <p class="text-[#21cdde] font-mono text-sm font-medium leading-[150%] tracking-[0.6px] uppercase mb-3">
+       Shopping Cart API
+      </p>
+      <h2 class="max-w-xl mx-auto text-2xl font-semibold !leading-[1.3] tracking-tight text-white sm:text-3xl md:text-4xl">
+       Everything you need for
+       <br/>
+       cart and checkout
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto text-balance text-base font-medium leading-relaxed text-white/50">
+       Simple mutations for adding items, automatic totals with currency formatting, and flexible metadata.
+      </p>
+     </div>
+     <div class="mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Bring Your Own Inventory
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Use any existing product inventory system, no migration required.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Cart Operations
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Add, update, increment, or remove items with developer-friendly APIs.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Multi-Currency
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Support 100+ currencies with automatic formatting and symbols.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Custom Metadata
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Store any JSON data on carts or items to handle your needs.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Automatic Totals
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Subtotals, tax, and shipping are calculated automatically.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         14-Day Persistence
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Carts are automatically saved for two weeks after last activity.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Works Over HTTP
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Use any GraphQL client or library with the edge-based GraphQL API.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Works With AI
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         MCP lets AI agents add items and manage carts in natural language.
+        </p>
+       </div>
+       <div>
+        <h4 class="text-base font-semibold text-white leading-relaxed">
+         Webhooks
+        </h4>
+        <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+         Receive real-time events when carts are created, or abandoned.
+        </p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-6 py-20 relative" id="mcp">
+     <div class="text-center mb-14">
+      <p class="text-purple-500 font-mono text-sm font-medium leading-[150%] tracking-[0.6px] uppercase mb-3">
+       MCP Server
+      </p>
+      <h2 class="max-w-xl mx-auto text-2xl font-semibold !leading-[1.3] tracking-tight text-white sm:text-3xl md:text-4xl">
+       Power AI shopping agents with the Model Context Protocol
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto text-balance text-base font-medium leading-relaxed text-white/50">
+       Enable natural language shopping, automated cart management, and seamless checkout flows.
+      </p>
+     </div>
+     <div class="relative">
+      <div class="absolute -top-5 left-1/2 -translate-x-1/2 z-10 w-full max-w-sm px-6">
+       <div class="flex items-center gap-2 h-10 px-3 rounded-md border border-white/10 bg-white/5 backdrop-blur-sm shadow-lg">
+        <code class="text-sm font-mono text-white/70 flex-1">
+         https://api.cartql.com/mcp
+        </code>
+       </div>
+      </div>
+     </div>
+     <div class="mt-8 md:mt-16">
+      <div class="mt-8">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Agent-Powered Carts
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Let LLMs build and manage carts automatically.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Context-Aware Shopping
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Persistent carts for smarter conversations.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Bring Your Own Inventory
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Connect any product source to your AI workflows.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Evals &amp; Trackings
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Measure how well your agents perform and shop.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Reactive Automations
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Trigger workflows when AI takes action.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Multi-Agent Collaboration
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Let multiple agents share the same cart state.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-6 py-20" id="graphql">
+     <div class="text-center mb-14">
+      <p class="text-pink-500 font-mono text-sm font-medium leading-[150%] tracking-[0.6px] uppercase mb-3">
+       GraphQL API
+      </p>
+      <h2 class="max-w-xl mx-auto text-2xl font-semibold !leading-[1.3] tracking-tight text-white sm:text-3xl md:text-4xl">
+       Query with GraphQL
+       <br/>
+       from any client
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto text-balance text-base font-medium leading-relaxed text-white/50">
+       Full-featured GraphQL API that works over HTTP.
+       <br/>
+       Type-safe queries and mutations with any GraphQL client.
+      </p>
+     </div>
+     <div class="text-card-foreground gap-6 rounded-xl border bg-white/5 shadow-xs border-white/10 flex flex-col md:flex-row overflow-hidden py-0 relative">
+      <div class="md:w-1/3 p-6 flex flex-col justify-between">
+       <div class="md:hidden relative">
+        <select class="appearance-none bg-transparent text-white border border-white/10 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-pink-500/50 w-full">
+         <option class="bg-black" value="0">
+          Get cart
+         </option>
+         <option class="bg-black" value="1">
+          Add Item
+         </option>
+         <option class="bg-black" value="2">
+          Update Item
+         </option>
+         <option class="bg-black" value="3">
+          Remove Item
+         </option>
+         <option class="bg-black" value="4">
+          Set Cart Items
+         </option>
+         <option class="bg-black" value="5">
+          Custom Item Data
+         </option>
+         <option class="bg-black" value="6">
+          Currency Formatting
+         </option>
+         <option class="bg-black" value="7">
+          Empty Cart
+         </option>
+         <option class="bg-black" value="8">
+          Checkout
+         </option>
+        </select>
+       </div>
+       <div class="hidden md:block space-y-1">
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-pink-600 text-white">
+         Get cart
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Add Item
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Update Item
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Remove Item
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Set Cart Items
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Custom Item Data
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Currency Formatting
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Empty Cart
+        </button>
+        <button class="appearance-none py-2 px-3 border-none rounded w-full text-left inline-flex items-center focus:outline-none transition-colors text-sm bg-transparent text-white/70 hover:bg-white/5">
+         Checkout
+        </button>
+       </div>
+      </div>
+      <div class="md:w-2/3 relative flex flex-col bg-black/20 md:border-l md:border-white/10">
+       <div class="flex-1 overflow-auto p-6">
+        <div class="prprpr-202020">
+         <pre class="font-mono text-sm"><code class="text-white/70">query {
+    cart(
+      id: "cklez6u4qagw4un54tkd41b3z",
+      currency: {
+        code: GBP
+      }
+    ) {
+      ...CartWithItems
+    }
+  }
+
+  fragment CartWithItems on Cart {
+    ...CartInfo
+    items {
+      ...ItemInfo
+    }
+  }
+
+  fragment CartInfo on Cart {
+    id
+    email
+    isEmpty
+    abandoned
+    totalItems
+    totalUniqueItems
+    currency {
+      code
+      symbol
+    }
+    subTotal {
+      amount
+      formatted
+    }
+    shippingTotal {
+      amount
+      formatted
+    }
+    taxTotal {
+      amount
+      formatted
+    }
+    grandTotal {
+      amount
+      formatted
+    }
+    attributes {
+      key
+      value
+    }
+    notes
+    createdAt
+    updatedAt
+  }
+
+  fragment ItemInfo on CartItem {
+    id
+    name
+    description
+    images
+    quantity
+    attributes {
+      key
+      value
+    }
+    unitTotal {
+      amount
+      formatted
+    }
+    lineTotal {
+      amount
+      formatted
+    }
+    createdAt
+    updatedAt
+  }</code></pre>
+        </div>
+       </div>
+       <div class="border-t border-white/10 px-4 py-3 flex items-center justify-between gap-3">
+        <div class="flex items-center gap-2 h-10 px-3 rounded-md border border-white/10 bg-white/5">
+         <code class="text-sm font-mono text-white/70">
+          https://api.cartql.com
+         </code>
+        </div>
+        <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 rounded-md px-6 has-[&gt;svg]:px-4 text-base h-10" href="https://api.cartql.com/?query=query%20%7B%0A%20%20cart(%0A%20%20%20%20id%3A%20%22cklez6u4qagw4un54tkd41b3z%22%2C%0A%20%20%20%20currency%3A%20%7B%0A%20%20%20%20%20%20code%3A%20GBP%0A%20%20%20%20%7D%0A%20%20)%20%7B%0A%20%20%20%20...CartWithItems%0A%20%20%7D%0A%7D%0A%0Afragment%20CartWithItems%20on%20Cart%20%7B%0A%20%20...CartInfo%0A%20%20items%20%7B%0A%20%20%20%20...ItemInfo%0A%20%20%7D%0A%7D%0A%0Afragment%20CartInfo%20on%20Cart%20%7B%0A%20%20id%0A%20%20email%0A%20%20isEmpty%0A%20%20abandoned%0A%20%20totalItems%0A%20%20totalUniqueItems%0A%20%20currency%20%7B%0A%20%20%20%20code%0A%20%20%20%20symbol%0A%20%20%7D%0A%20%20subTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20shippingTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20taxTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20grandTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20attributes%20%7B%0A%20%20%20%20key%0A%20%20%20%20value%0A%20%20%7D%0A%20%20notes%0A%20%20createdAt%0A%20%20updatedAt%0A%7D%0A%0Afragment%20ItemInfo%20on%20CartItem%20%7B%0A%20%20id%0A%20%20name%0A%20%20description%0A%20%20images%0A%20%20quantity%0A%20%20attributes%20%7B%0A%20%20%20%20key%0A%20%20%20%20value%0A%20%20%7D%0A%20%20unitTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20lineTotal%20%7B%0A%20%20%20%20amount%0A%20%20%20%20formatted%0A%20%20%7D%0A%20%20createdAt%0A%20%20updatedAt%0A%7D" target="_blank">
+         Try using GraphiQL
+        </a>
+       </div>
+      </div>
+     </div>
+     <div class="mt-8 md:mt-16">
+      <div class="mt-8">
+       <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Works With Any Client
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Integrate with the tools you already use with GraphQL.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Type-Safe
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Use GraphQL Codegen and other tools to get full type safety.
+         </p>
+        </div>
+        <div>
+         <h4 class="text-base font-semibold text-white leading-relaxed">
+          Fast
+         </h4>
+         <p class="mt-2 text-pretty text-base text-white/50 leading-relaxed">
+          Globally distributed at the edge for low-latency queries anywhere.
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-6 py-20" id="pricing">
+     <div class="text-center mb-14">
+      <p class="text-[#21cdde] font-mono text-sm font-medium leading-[150%] tracking-[0.6px] uppercase mb-3">
+       Pricing
+      </p>
+      <h2 class="max-w-xl mx-auto text-2xl font-semibold !leading-[1.3] tracking-tight text-white sm:text-3xl md:text-4xl">
+       Pricing that scales with you
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto text-balance text-base font-medium leading-relaxed text-white/50">
+       <span class="font-medium text-white">
+        Start free.
+       </span>
+       Upgrade when you need webhooks,
+       <br/>
+       analytics, and priority support.
+      </p>
+     </div>
+     <div class="max-w-3xl mx-auto mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="flex-1 p-8 rounded-lg border border-white/10 bg-white/5">
+       <h3 class="text-xl font-semibold text-white">
+        Free
+       </h3>
+       <div class="mt-4 flex items-baseline">
+        <span class="text-base font-medium text-white/50">
+         $
+        </span>
+        <span class="text-4xl font-semibold text-white">
+         0
+        </span>
+        <span class="ml-2 text-sm text-white/50">
+         per month
+        </span>
+       </div>
+       <p class="mt-2 text-sm text-white/50">
+        Free, forever.
+       </p>
+       <div class="mt-8">
+        <p class="mb-4 text-base font-medium text-white">
+         What's included
+        </p>
+        <ul class="space-y-3">
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           GraphQL &amp; MCP APIs
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           No API keys needed
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Unlimited carts
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Multi-currency support
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Custom metadata
+          </span>
+         </li>
+        </ul>
+       </div>
+       <div class="mt-8">
+        <a class="justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary text-primary-foreground hover:bg-primary/90 h-10 rounded-md has-[&gt;svg]:px-4 text-base group inline-flex items-center gap-2 px-5 py-2.5 font-medium transition-all duration-200 hover:shadow-md" href="https://api.cartql.com" target="_blank">
+         <span>
+          Get Started Free
+         </span>
+        </a>
+       </div>
+      </div>
+      <div class="flex-1 p-8 rounded-lg border border-white/10 bg-white/5">
+       <h3 class="text-xl font-semibold text-white">
+        Pro
+       </h3>
+       <div class="mt-4 flex items-baseline">
+        <span class="text-base font-medium text-white/50">
+         $
+        </span>
+        <span class="text-4xl font-semibold text-white">
+         29
+        </span>
+        <span class="ml-2 text-sm text-white/50">
+         per month
+        </span>
+       </div>
+       <p class="mt-2 text-sm text-white/50">
+        For growing businesses.
+       </p>
+       <div class="mt-8">
+        <p class="mb-4 text-base font-medium text-white">
+         Everything in Free, plus
+        </p>
+        <ul class="space-y-3">
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Webhooks
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Priority support
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Analytics dashboard
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           99.9% uptime SLA
+          </span>
+         </li>
+         <li class="flex items-center gap-3">
+          <span class="text-sm font-medium text-white/70">
+           Custom rate limits
+          </span>
+         </li>
+        </ul>
+       </div>
+       <div class="mt-8">
+        <div class="inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium bg-white/5 text-white/50 border border-white/10">
+         <span>
+          Private Beta
+         </span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="max-w-2xl mx-auto px-6 py-24" id="faq">
+     <div class="text-center mb-14">
+      <p class="text-[#21cdde] font-mono text-sm font-medium leading-[150%] tracking-[0.6px] uppercase mb-3">
+       FAQ
+      </p>
+      <h2 class="max-w-xl mx-auto text-2xl font-semibold !leading-[1.3] tracking-tight text-white sm:text-3xl md:text-4xl">
+       Got a question?
+      </h2>
+      <p class="mt-6 max-w-2xl mx-auto text-balance text-base font-medium leading-relaxed text-white/50">
+       Everything you need to know about CartQL.
+      </p>
+     </div>
+     <div class="w-full">
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_d5brb_" type="button">
+         Do I need to migrate my existing inventory?
+        </button>
+       </h3>
+      </div>
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_l5brb_" type="button">
+         What GraphQL clients are supported?
+        </button>
+       </h3>
+      </div>
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_t5brb_" type="button">
+         Can I self-host CartQL?
+        </button>
+       </h3>
+      </div>
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_155brb_" type="button">
+         How does pricing work?
+        </button>
+       </h3>
+      </div>
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_1d5brb_" type="button">
+         What payment providers are supported?
+        </button>
+       </h3>
+      </div>
+      <div class="border-b last:border-b-0">
+       <h3 class="flex">
+        <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 text-left" id="radix-_R_1l5brb_" type="button">
+         Is there a limit on cart items or data?
+        </button>
+       </h3>
+      </div>
+     </div>
+    </section>
+    <section class="max-w-4xl mx-auto px-6 py-24">
+     <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-balance text-white">
+       Ready to build better commerce experiences?
+      </h2>
+      <p class="text-lg text-white/30 mb-8 text-balance">
+       Join developers who are shipping faster with CartQL's shopping cart API. GraphQL, MCP, and no backend required.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+       <a class="justify-center whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-primary hover:bg-primary/90 h-10 rounded-md has-[&gt;svg]:px-4 text-base group inline-flex items-center gap-2 px-5 py-2.5 font-medium transition-all duration-200 hover:shadow-md !bg-gradient-to-br !from-gray-100 !to-gray-200 text-black" href="https://api.cartql.com">
+        <span>
+         Get Started Free
+        </span>
+       </a>
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive border shadow-xs hover:bg-accent hover:text-accent-foreground dark:bg-input/30 dark:border-input dark:hover:bg-input/50 h-10 rounded-md px-6 has-[&gt;svg]:px-4 text-base bg-transparent" href="https://docs.cartql.com">
+        Documentation
+       </a>
+      </div>
+     </div>
+    </section>
+    <footer class="border-t border-white/10">
+     <div class="max-w-3xl mx-auto px-6 py-8 text-center text-sm text-white/30">
+      <p>
+       built by
+       <a class="text-white hover:text-white/50 transition-colors" href="https://twitter.com/notrab" rel="noopener noreferrer" target="_blank">
+        @notrab
+       </a>
+      </p>
+     </div>
+    </footer>
+   </div>
+  </body>
+
+</body>
+</html>

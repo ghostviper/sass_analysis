@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Palmalyze | Your palm says more than you think, decode it in seconds</title>
+</head>
+<body>
+  <body>
+   <div id="__nuxt">
+    <div class="min-h-screen flex flex-col">
+     <header class="sticky top-0 z-50 bg-base-100 shadow-lg border-b border-base-300">
+      <nav class="navbar mx-auto max-w-7xl sticky top-0 z-50">
+       <div class="navbar-start">
+        <div class="dropdown">
+         <ul class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li>
+           <a href="#features">
+            Features
+           </a>
+          </li>
+          <li>
+           <a href="#how-it-works">
+            How It Works
+           </a>
+          </li>
+          <li>
+           <a href="#pricing">
+            Pricing
+           </a>
+          </li>
+         </ul>
+        </div>
+        <a class="router-link-active router-link-exact-active flex items-center gap-2" href="/">
+         <img alt="Logo" class="w-8 h-8 rounded-sm" src="/images/Main-Logo.webp"/>
+         <p class="text-xl font-bold text-primary">
+          Palmalyze
+         </p>
+        </a>
+       </div>
+       <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+         <li>
+          <a class="hover:text-primary" href="#features">
+           Features
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-primary" href="#how-it-works">
+           How It Works
+          </a>
+         </li>
+         <li>
+          <a class="hover:text-primary" href="#pricing">
+           Pricing
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div class="navbar-end">
+        <a class="btn btn-primary" href="#upload">
+         Get Started
+        </a>
+       </div>
+      </nav>
+     </header>
+     <main class="flex-grow">
+      <div class="min-h-screen bg-base-100">
+       <section class="hero py-5 md:py-15 bg-gradient-to-br from-purple-600 via-pink-500 to-purple-700 relative overflow-hidden">
+        <div class="hero-content text-center text-white relative z-10 animate__animated animate__fadeIn">
+         <div class="max-w-4xl">
+          <div class="mb-8">
+           <div class="relative mb-6">
+            <div class="absolute inset-0 text-2xl md:text-5xl font-bold text-white blur-sm opacity-70">
+             Your palm says more than you think, decode it in seconds
+            </div>
+            <h1 class="relative text-2xl md:text-5xl font-bold drop-shadow-2xl">
+             <span class="bg-gradient-to-r from-yellow-200 via-white to-yellow-200 bg-clip-text text-transparent">
+              Your palm says more than you think, decode it in seconds
+             </span>
+            </h1>
+           </div>
+          </div>
+          <p class="text-md md:text-lg mb-8 text-white/90 max-w-2xl mx-auto drop-shadow-md">
+           Snap a photo of your palm and let AI reveal your traits, emotions, and life patterns,  beautifully visualized and instantly explained.
+          </p>
+          <p class="text-md hidden md:block md:text-lg mb-8 text-white/90 max-w-2xl mx-auto drop-shadow-md">
+           Perfect for overthinkers, deep feelers, and curious minds.
+          </p>
+          <div class="max-w-2xl mx-auto" id="upload">
+           <div class="card bg-base-100 shadow-xl animate__animated animate__fadeIn">
+            <div class="card-body">
+             <div class="form-control">
+              <label class="label">
+               <span class="label-text text-lg font-semibold">
+                Choose your palm photo
+               </span>
+              </label>
+              <div class="border-2 border-dashed border-primary/30 rounded-lg p-8 text-center hover:border-primary/60 transition-colors cursor-pointer bg-base-200/50">
+               <input class="hidden" type="file"/>
+               <div class="space-y-4">
+                <div>
+                 <p class="text-lg font-semibold text-base-content">
+                  Drop your palm photo here
+                 </p>
+                 <p class="text-base-content/60">
+                  or click to browse files
+                 </p>
+                </div>
+                <div class="text-sm text-base-content/50">
+                 Supports: JPG, PNG, HEIC, WEBP (Max 10MB)
+                </div>
+               </div>
+              </div>
+              <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+               <div class="text-center p-4 bg-base-200 rounded-lg">
+                <h4 class="font-semibold mb-1">
+                 Good Lighting
+                </h4>
+                <p class="text-sm text-base-content/60">
+                 Use natural light or bright indoor lighting
+                </p>
+               </div>
+               <div class="text-center p-4 bg-base-200 rounded-lg">
+                <h4 class="font-semibold mb-1">
+                 Open Palm
+                </h4>
+                <p class="text-sm text-base-content/60">
+                 Keep your palm flat and fingers spread
+                </p>
+               </div>
+               <div class="text-center p-4 bg-base-200 rounded-lg">
+                <h4 class="font-semibold mb-1">
+                 Close Distance
+                </h4>
+                <p class="text-sm text-base-content/60">
+                 Fill the frame with your palm
+                </p>
+               </div>
+              </div>
+              <div class="card-actions justify-center mt-8">
+               <button class="btn btn-primary btn-lg">
+                <img alt="Logo" class="w-7 h-7 rounded-sm mr-1" src="/images/Main-Logo.webp"/>
+                Start Free Analysis
+               </button>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-100" id="how-it-works">
+        <div class="container mx-auto px-4">
+         <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-base-content">
+           How It Works
+          </h2>
+          <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+           Begin your journey in three simple steps,  preview your palm’s secrets before unlocking the full report.
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="text-center">
+           <div class="badge badge-primary badge-lg mb-4">
+            1
+           </div>
+           <h3 class="text-xl font-bold mb-3">
+            Upload Photo
+           </h3>
+           <p class="text-base-content/70">
+            Take a clear photo of your palm using your phone or camera
+           </p>
+          </div>
+          <div class="text-center">
+           <div class="badge badge-secondary badge-lg mb-4">
+            2
+           </div>
+           <h3 class="text-xl font-bold mb-3">
+            AI Analysis
+           </h3>
+           <p class="text-base-content/70">
+            Our advanced AI analyzes your palm lines, mounts, and patterns
+           </p>
+          </div>
+          <div class="text-center">
+           <div class="badge badge-accent badge-lg mb-4">
+            3
+           </div>
+           <h3 class="text-xl font-bold mb-3">
+            Unlock Report
+           </h3>
+           <p class="text-base-content/70">
+            After previewing, unlock your full personalized palm reading as a beautiful downloadable report
+           </p>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-200" id="features">
+        <div class="container mx-auto px-4">
+         <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-base-content">
+           What You'll Discover
+          </h2>
+          <p class="text-lg text-base-content/70 max-w-2xl mx-auto">
+           Comprehensive palm reading covering all aspects of your life
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+           <div class="card-body text-center">
+            <h3 class="card-title justify-center mb-2">
+             Love &amp; Relationships
+            </h3>
+            <p class="text-base-content/70">
+             Discover your romantic compatibility and relationship patterns
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+           <div class="card-body text-center">
+            <h3 class="card-title justify-center mb-2">
+             Career &amp; Success
+            </h3>
+            <p class="text-base-content/70">
+             Uncover your professional strengths and career path
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+           <div class="card-body text-center">
+            <h3 class="card-title justify-center mb-2">
+             Personality Traits
+            </h3>
+            <p class="text-base-content/70">
+             Learn about your character, strengths, and hidden talents
+            </p>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow">
+           <div class="card-body text-center">
+            <h3 class="card-title justify-center mb-2">
+             Future Insights
+            </h3>
+            <p class="text-base-content/70">
+             Get glimpses into what the future may hold for you
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-100" id="pricing">
+        <div class="container mx-auto px-4">
+         <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-base-content">
+           Premium AI Palmistry Reading
+          </h2>
+         </div>
+         <div class="max-w-4xl mx-auto">
+          <div class="card bg-base-100 shadow-2xl border-2 border-primary">
+           <div class="card-body">
+            <div class="text-center mb-8">
+             <div class="badge badge-primary badge-lg mb-4">
+              Premium Reading
+             </div>
+             <h3 class="text-3xl font-bold mb-2">
+              Complete Palm Analysis
+             </h3>
+             <div class="flex text-primary mb-4 items-center justify-center gap-2">
+              <span class="text-2xl line-through">
+               $9
+              </span>
+              <span class="text-5xl font-bold">
+               $5
+              </span>
+             </div>
+             <p class="text-base-content/70 mb-2">
+              One-time payment • Instant delivery
+             </p>
+            </div>
+            <h4 class="text-lg font-semibold text-center text-base-content mb-4">
+             What’s Included
+            </h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+             <div class="space-y-4">
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Detailed Line Reading
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Covers all main palm lines — Life, Heart, and Head — plus unique ones like Marriage, Intuition, and Health lines.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Hand Shape &amp; Mounts
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Breaks down your hand type (Earth, Air, Fire, or Water) and palm mounts to reveal your traits and emotions.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Finger &amp; Nail Reading
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Looks at your finger length, shape, and nails to understand your mindset and creativity.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Health, Wealth &amp; Career
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Insights on your energy, financial potential, and work style based on key palm indicators.
+                </p>
+               </div>
+              </div>
+             </div>
+             <div class="space-y-4">
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Love &amp; Compatibility
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Reveals how you love, connect, and communicate in relationships — plus tips for better balance.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Life Path &amp; Timing
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Shows major life themes and turning points to help you spot upcoming opportunities and challenges.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Personalized Insights
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Gives tailored advice to help you grow in life, career, and relationships.
+                </p>
+               </div>
+              </div>
+              <div class="flex items-start gap-3">
+               <span class="text-success mt-1">
+                ✓
+               </span>
+               <div>
+                <h4 class="font-semibold">
+                 Downloadable PDF Report
+                </h4>
+                <p class="text-sm text-base-content/70">
+                 Get a clean, beautifully designed PDF of your palm reading to keep or share.
+                </p>
+               </div>
+              </div>
+             </div>
+            </div>
+            <p class="text-sm text-base-content/60 text-center mb-2">
+             ✨ You'll preview your palm scan results before unlocking the full report.
+            </p>
+            <div class="card-actions justify-center">
+             <a class="btn btn-primary btn-lg max-w-md" href="#upload">
+              Get My Complete Reading Now
+             </a>
+            </div>
+            <div class="card-actions justify-center mt-4">
+             <button class="btn btn-outline hidden md:inline-flex">
+              View Sample Report
+             </button>
+             <a class="btn btn-outline md:hidden" href="/sample_reading.pdf" rel="noopener" target="_self">
+              View Sample Report
+             </a>
+            </div>
+            <p class="text-xs text-base-content/50 mt-4 text-center">
+             Secure payment • Instant delivery
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-200" id="testimonials">
+        <div class="container mx-auto px-4">
+         <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-base-content">
+           What Our Users Say
+          </h2>
+          <p class="text-lg text-base-content/70">
+           Early users have discovered insights about themselves
+          </p>
+         </div>
+         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div class="card bg-base-100 shadow-lg">
+           <div class="card-body">
+            <p class="mb-4">
+             "The detailed line analysis was incredible! It revealed aspects of my personality I never knew existed. The career insights helped me make a major life decision."
+            </p>
+            <div class="flex items-center gap-3">
+             <div class="avatar placeholder">
+              <div class="bg-primary text-primary-content rounded-full w-10 content-center text-center font-bold">
+               <span class="text-sm">
+                M
+               </span>
+              </div>
+             </div>
+             <div>
+              <div class="font-semibold">
+               Margeret
+              </div>
+              <div class="text-sm text-base-content/60">
+               Marketing Executive
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-lg">
+           <div class="card-body">
+            <p class="mb-4">
+             "The love and compatibility section was spot-on! It helped me understand my relationship patterns and what I need in a partner. Worth every penny!"
+            </p>
+            <div class="flex items-center gap-3">
+             <div class="avatar placeholder">
+              <div class="bg-secondary text-secondary-content rounded-full w-10 content-center text-center font-bold">
+               <span class="text-sm">
+                D
+               </span>
+              </div>
+             </div>
+             <div>
+              <div class="font-semibold">
+               Dan
+              </div>
+              <div class="text-sm text-base-content/60">
+               Constrcution Manager
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="card bg-base-100 shadow-lg">
+           <div class="card-body">
+            <p class="mb-4">
+             "I was amazed by the accuracy of the health and wealth insights. The PDF report is beautifully designed and I refer to it often!"
+            </p>
+            <div class="flex items-center gap-3">
+             <div class="avatar placeholder">
+              <div class="bg-accent text-accent-content rounded-full w-10 content-center text-center font-bold">
+               <span class="text-sm">
+                F
+               </span>
+              </div>
+             </div>
+             <div>
+              <div class="font-semibold">
+               Fiona
+              </div>
+              <div class="text-sm text-base-content/60">
+               Teacher
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-100" id="faq">
+        <div class="container mx-auto px-4">
+         <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold mb-4 text-base-content">
+           FAQ
+          </h2>
+         </div>
+         <div class="max-w-3xl mx-auto">
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            What photo should I upload?
+           </div>
+           <div class="collapse-content">
+            <p>
+             Take a clear photo of your hand with your palm facing up. Make sure it’s bright, focused, and not covered by shadows.
+            </p>
+           </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            How accurate is it?
+           </div>
+           <div class="collapse-content">
+            <p>
+             The AI studies thousands of palm patterns to give you consistent insights. It’s based on palmistry but uses data to make it modern and reliable.
+            </p>
+           </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            How fast are the results?
+           </div>
+           <div class="collapse-content">
+            <p>
+             Instant! Upload your photo, make payment, and your palm reading appears within seconds.
+            </p>
+           </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            Can I download my reading?
+           </div>
+           <div class="collapse-content">
+            <p>
+             Yes, you can download a clean, well-designed PDF of your results right after your reading.
+            </p>
+           </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            Is my photo safe?
+           </div>
+           <div class="collapse-content">
+            <p>
+             Yes. Your photo is encrypted and auto-deleted after reading. We never save or share your data.
+            </p>
+           </div>
+          </div>
+          <div class="collapse collapse-plus bg-base-200 mb-4">
+           <input name="faq-accordion" type="checkbox"/>
+           <div class="collapse-title text-xl font-medium">
+            Do you offer refunds?
+           </div>
+           <div class="collapse-content">
+            <p>
+             Since readings are delivered instantly, we can’t issue refunds. Please be sure before you submit your photo.
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+       <section class="py-20 bg-base-200 from-primary via-secondary to-accent relative overflow-hidden">
+        <div class="container mx-auto px-4 text-center relative z-10">
+         <div class="max-w-4xl mx-auto">
+          <img alt="Logo" class="w-12 h-12 rounded-sm mb-6 mx-auto animate-bounce" src="/images/Main-Logo.webp"/>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white drop-shadow-2xl">
+           Your Palm Holds the Answers
+          </h2>
+          <p class="text-xl mb-8 text-white/90 drop-shadow-lg max-w-3xl mx-auto">
+           Don't let another day pass wondering about your future. Get instant insights about your love life, career, and destiny.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-6 justify-center items-center mb-8">
+           <a class="btn btn-primary btn-lg py-4 h-max shadow-2xl text-lg transform hover:scale-105 transition-transform" href="#upload">
+            Unlock My Palm Reading Now
+           </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto text-white/90 mb-6">
+           <div class="">
+            <div class="text-center">
+             <p class="font-semibold">
+              Instant Analysis
+             </p>
+             <p class="text-sm">
+              Results in under 30 seconds
+             </p>
+            </div>
+           </div>
+           <div>
+            <div class="text-center">
+             <p class="font-semibold">
+              Beautiful PDF Report
+             </p>
+             <p class="text-sm">
+              Download from results page
+             </p>
+            </div>
+           </div>
+           <div>
+            <div class="text-center">
+             <p class="font-semibold">
+              100% Secure
+             </p>
+             <p class="text-sm">
+              Your privacy protected
+             </p>
+            </div>
+           </div>
+          </div>
+          <p class="text-sm text-white/70">
+           One-time payment • Secure checkout • Loved by early customers
+          </p>
+         </div>
+        </div>
+       </section>
+       <dialog class="modal" id="showModal">
+        <div class="modal-box w-full max-w-3xl">
+         <form method="dialog">
+          <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
+           ✕
+          </button>
+         </form>
+         <h3 class="text-lg font-bold mb-4">
+          Sample Complete Palm Analysis Report
+         </h3>
+         <p class="text-sm mb-2 text-gray-400 italic">
+          Here's a preview of the report you'll receive,  personalized based on your hand.
+         </p>
+         <div class="mt-6 text-center">
+          <form method="dialog">
+           <button class="btn btn-primary">
+            Got it
+           </button>
+          </form>
+         </div>
+        </div>
+       </dialog>
+      </div>
+     </main>
+     <footer class="bg-gradient-to-b from-base-100 to-base-200 border-t border-base-300">
+      <div class="container mx-auto px-4 max-w-7xl py-12">
+       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-4">
+         <a class="router-link-active router-link-exact-active flex items-center gap-2" href="/">
+          <img alt="Logo" class="w-8 h-8 rounded-sm" src="/images/Main-Logo.webp"/>
+          <p class="text-xl font-bold text-primary">
+           Palmalyze
+          </p>
+         </a>
+         <div class="space-y-2">
+          <p class="text-sm text-base-content">
+           Your palm says more than you think, decode it in seconds
+          </p>
+          <p class="text-sm text-base-content/80">
+           © 2025 - All rights reserved
+          </p>
+         </div>
+         <a class="inline-flex cursor-pointer gap-1 rounded bg-white px-2 py-1 text-sm text-black ring-1 ring-black duration-200 hover:ring-blue-400" href="https://shipahe.ad" rel="noopener noreferrer" target="_blank">
+          Built with
+          <div class="flex gap-0.5">
+           <img alt="Logo" class="w-5" height="10" src="https://cdn.shipahe.ad/shipahead-logo.webp" width="10"/>
+           <span class="flex items-center gap-0.5 font-bold tracking-tight text-black">
+            ShipAhead
+           </span>
+          </div>
+         </a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+         <div class="space-y-3">
+          <h2 class="font-semibold text-base-content">
+           Links
+          </h2>
+          <ul class="space-y-2 text-sm">
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="#pricing">
+             Pricing
+            </a>
+           </li>
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="#faq">
+             FAQ
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="space-y-3">
+          <h2 class="font-semibold text-base-content">
+           Legal
+          </h2>
+          <ul class="space-y-2 text-sm">
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="/tos">
+             Terms of Services
+            </a>
+           </li>
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="/privacy-policy">
+             Privacy Policy
+            </a>
+           </li>
+          </ul>
+         </div>
+         <div class="space-y-3">
+          <h2 class="font-semibold text-base-content">
+           More
+          </h2>
+          <ul class="space-y-2 text-sm">
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="https://tom-han.com" rel="noopener noreferrer" target="_blank">
+             Tom Han
+            </a>
+           </li>
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="https://shipahe.ad" rel="noopener noreferrer" target="_blank">
+             ShipAhead
+            </a>
+           </li>
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="https://uni-convert.com" rel="noopener noreferrer" target="_blank">
+             UniConvert
+            </a>
+           </li>
+           <li>
+            <a class="text-base-content hover:text-accent-focus transition-colors" href="https://borderprep.com" rel="noopener noreferrer" target="_blank">
+             BorderPrep
+            </a>
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+     </footer>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>

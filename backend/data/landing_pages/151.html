@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fizible | AI Faceless Video Generator</title>
+</head>
+<body>
+  <body>
+   <div class="flex flex-col min-h-screen bg-slate-50 text-slate-900 selection:bg-purple-100 selection:text-purple-900 font-sans">
+    <div class="fixed top-6 inset-x-0 z-50 px-4 md:px-6">
+     <header class="max-w-5xl mx-auto w-full bg-white/80 backdrop-blur-xl border border-slate-200/60 rounded-full px-6 py-3 flex items-center justify-between relative group/header transition-all shadow-sm">
+      <a class="flex items-center gap-1 group cursor-pointer relative z-10" href="/">
+       <span class="font-black text-2xl text-slate-900 tracking-tighter uppercase leading-none -ml-1">
+        Fizible
+       </span>
+      </a>
+      <nav class="hidden md:flex items-center gap-8 relative z-10">
+       <a class="text-sm font-medium text-slate-900" href="/">
+        Home
+       </a>
+       <a class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="/pricing">
+        Pricing
+       </a>
+       <a class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#features">
+        Features
+       </a>
+       <a class="text-sm font-medium text-slate-500 hover:text-slate-900 transition-colors" href="#faq">
+        FAQ
+       </a>
+      </nav>
+      <div class="flex items-center gap-4 relative z-10 min-w-[100px] justify-end">
+       <a href="/login">
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive py-2 has-[&gt;svg]:px-3 bg-slate-900 text-white hover:bg-slate-800 font-semibold rounded-full px-5 h-9 text-xs transition-all shadow-lg shadow-slate-900/10">
+         Login
+        </button>
+       </a>
+      </div>
+     </header>
+    </div>
+    <main class="relative z-10 flex-grow flex flex-col items-center justify-center px-4 pt-48 pb-20 text-center max-w-4xl mx-auto w-full">
+     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-xs font-bold text-slate-900 mb-8 shadow-sm">
+      <span>
+       Viral Faceless Videos in Seconds
+      </span>
+     </div>
+     <h1 class="text-5xl sm:text-7xl font-black tracking-tight mb-6 text-slate-900">
+      Automate Your
+      <br/>
+      <span class="text-slate-400">
+       Content Empire.
+      </span>
+     </h1>
+     <p class="text-lg text-slate-500 mb-12 max-w-2xl mx-auto leading-relaxed font-medium">
+      Turn text prompts, Reddit stories, and news articles into viral TikToks, Reels, and Shorts instantly. No editing required.
+     </p>
+     <div class="text-card-foreground flex flex-col gap-6 border py-6 w-full max-w-2xl bg-white border-slate-200 shadow-2xl shadow-slate-200/50 overflow-hidden mb-20 rounded-[2rem]">
+      <div class="p-1">
+       <div class="flex flex-col gap-2 w-full">
+        <div class="bg-slate-50/50 border-b border-slate-100 px-4 py-3 flex items-center gap-2">
+         <div class="text-muted-foreground inline-flex w-fit items-center justify-center rounded-lg bg-transparent border-0 p-0 h-auto gap-1">
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 ring-offset-background transition-all hover:bg-muted/50 hover:text-foreground focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:shadow-sm text-xs px-3 py-1.5 h-auto rounded-full border border-transparent data-[state=active]:border-slate-200/60 data-[state=active]:text-slate-900 text-slate-500 font-medium" id="radix-_R_1hlfdb_-trigger-prompt" type="button">
+           Text Prompt
+          </button>
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 ring-offset-background transition-all hover:bg-muted/50 hover:text-foreground focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:shadow-sm text-xs px-3 py-1.5 h-auto rounded-full border border-transparent data-[state=active]:border-slate-200/60 data-[state=active]:text-slate-900 text-slate-500 font-medium" id="radix-_R_1hlfdb_-trigger-reddit" type="button">
+           Reddit Story
+          </button>
+          <button class="focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:outline-ring inline-flex items-center justify-center gap-2 ring-offset-background transition-all hover:bg-muted/50 hover:text-foreground focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-white data-[state=active]:shadow-sm text-xs px-3 py-1.5 h-auto rounded-full border border-transparent data-[state=active]:border-slate-200/60 data-[state=active]:text-slate-900 text-slate-500 font-medium" id="radix-_R_1hlfdb_-trigger-history" type="button">
+           History Fact
+          </button>
+         </div>
+        </div>
+        <div class="p-4 bg-white min-h-[120px] flex flex-col justify-center">
+         <div class="flex-1 outline-none mt-0" id="radix-_R_1hlfdb_-content-prompt">
+          <div class="flex gap-2">
+           <input class="file:text-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 w-full min-w-0 border px-3 py-1 shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm focus-visible:border-ring focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400 h-12 text-lg focus-visible:ring-slate-400 shadow-inner rounded-xl" placeholder="e.g. A scary story about a cabin in the woods..." value=""/>
+           <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive py-2 has-[&gt;svg]:px-3 h-12 px-6 bg-slate-900 hover:bg-slate-800 text-white font-bold transition-all rounded-xl shadow-lg shadow-slate-900/10">
+            Generate
+           </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="px-5 py-3 bg-slate-50 border-t border-slate-100 flex justify-between items-center text-xs text-slate-400 font-medium">
+       <div class="flex items-center gap-2">
+        <span>
+         HD 1080x1920 (9:16)
+        </span>
+       </div>
+       <div>
+        <span>
+         ~55s Duration
+        </span>
+       </div>
+      </div>
+     </div>
+     <div class="flex items-center justify-center gap-12 opacity-30 grayscale mb-32">
+      <span class="font-bold text-xl tracking-tighter text-slate-900">
+       TikTok
+      </span>
+      <span class="font-bold text-xl tracking-tighter text-slate-900">
+       YouTube Shorts
+      </span>
+      <span class="font-bold text-xl tracking-tighter text-slate-900">
+       Instagram Reels
+      </span>
+     </div>
+    </main>
+    <footer class="border-t border-slate-200 py-20 bg-white relative z-10 overflow-hidden">
+     <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+       <div class="col-span-1 md:col-span-1 space-y-6">
+        <div class="flex items-center gap-1">
+         <span class="font-black text-2xl text-slate-900 tracking-tighter uppercase leading-none -ml-1">
+          Fizible
+         </span>
+        </div>
+        <p class="text-slate-500 text-sm leading-relaxed max-w-xs font-medium">
+         The world's most powerful platform for generating viral faceless videos in seconds. Scale your content empire without lifting a finger.
+        </p>
+       </div>
+       <div>
+        <h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-slate-900">
+         Product
+        </h4>
+        <ul class="space-y-4">
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="/create">
+           Create Video
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="/pricing">
+           Pricing
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Showcase
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           API Docs
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-slate-900">
+         Company
+        </h4>
+        <ul class="space-y-4">
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           About Us
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Careers
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Privacy Policy
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Terms of Service
+          </a>
+         </li>
+        </ul>
+       </div>
+       <div>
+        <h4 class="font-bold text-sm uppercase tracking-widest mb-6 text-slate-900">
+         Support
+        </h4>
+        <ul class="space-y-4">
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Help Center
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Community
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Contact Us
+          </a>
+         </li>
+         <li>
+          <a class="text-slate-500 hover:text-slate-900 text-sm font-medium transition-colors" href="#">
+           Status
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-6">
+       <p class="text-slate-400 text-[11px] font-bold uppercase tracking-widest">
+        © 2025 Fizible AI. All rights reserved.
+       </p>
+       <div class="flex items-center gap-6">
+        <span class="text-[10px] font-black text-emerald-600 uppercase tracking-[0.2em] flex items-center gap-2">
+         All Systems Operational
+        </span>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

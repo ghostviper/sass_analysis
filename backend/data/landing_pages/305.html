@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ollamac Pro | Native macOS app for Ollama</title>
+</head>
+<body>
+  <body>
+   <div>
+    <div class="bg-white">
+     <header class="sticky top-0 z-40 bg-white shadow-sm lg:static lg:overflow-y-visible">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-2">
+       <div class="relative flex justify-between lg:gap-8">
+        <div class="flex">
+         <div class="flex flex-shrink-0 items-center">
+          <a class="flex gap-2 items-center text-xl text-black font-semibold rounded" href="/">
+           <img alt="Ollamac Pro logo" class="rounded-md" height="40" src="/_next/image?url=https%3A%2F%2Fovcqecuitnytwhgp.public.blob.vercel-storage.com%2Follamac%2Flogo-P8nb8HogPnfh7vXd9NitOSIBUKsuWj.webp&amp;w=96&amp;q=75" width="40"/>
+           Ollamac Pro
+          </a>
+         </div>
+        </div>
+        <div class="flex items-center md:absolute md:inset-y-0 md:right-0 lg:hidden">
+         <button class="relative -mx-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500" id="headlessui-popover-button-«R2abjb»" type="button">
+          <span class="sr-only">
+           Open menu
+          </span>
+         </button>
+        </div>
+        <div class="hidden lg:flex lg:justify-end gap-12 items-center">
+         <a class="hover:underline" href="/#features">
+          Features
+         </a>
+         <a class="hover:underline" href="/#pricing">
+          Pricing
+         </a>
+         <a class="hover:underline" href="/roadmap">
+          Roadmap
+         </a>
+         <a class="hover:underline" href="/docs">
+          Docs
+         </a>
+         <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-blue-600 text-white shadow hover:bg-blue-700 h-9 px-4 py-2" href="https://github.com/gregorym/ollamac-pro/releases/download/v1.3.4/Ollamac.Pro-v1.3.4.zip" rel="noopener noreferrer" target="_blank">
+          Download
+         </a>
+        </div>
+       </div>
+      </div>
+     </header>
+     <div class="relative isolate pt-2">
+      <div class="py-16 lg:pb-12">
+       <div class="mx-auto max-w-5xl px-6 lg:px-8">
+        <div class="mx-auto">
+         <div class="flex flex-col items-center mb-6">
+          <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 mb-4 text-sm px-4 py-2">
+           New: MCP Support Available!
+           <a class="ml-2 underline hover:no-underline" href="/docs/mcp/setup">
+            Learn more →
+           </a>
+          </div>
+         </div>
+         <div class="sm:text-center md:text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          <h1 class="inline-flex flex-wrap justify-center items-center">
+           Ollamac Pro
+          </h1>
+          <h2 class="text-[color(display-p3_0.792157_0.572549_0.188235)] bg-[rgba(255,215,0,0.3)] py-2 px-1 rounded relative inline-block z-1">
+           The native Mac app for Ollama
+          </h2>
+         </div>
+         <h3 class="italic text-sm text-slate-700 text-center">
+          The only Ollama app you will ever need on Mac
+         </h3>
+         <div class="mt-10 flex items-center justify-center gap-x-6">
+          <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-blue-600 text-white shadow hover:bg-blue-700 h-9 px-4 py-2" href="https://github.com/gregorym/ollamac-pro/releases/download/v1.3.4/Ollamac.Pro-v1.3.4.zip" rel="noopener noreferrer" target="_blank">
+           Download Ollamac Pro (Beta)
+          </a>
+         </div>
+         <p class="text-xs mt-1 text-gray-500 italic text-center">
+          Supports Mac Intel &amp; Apple Silicon. macOS 14+
+         </p>
+        </div>
+        <div class="mt-16 flow-root sm:mt-24">
+         <div class="relative -m-2 rounded-xl scale-125 lg:-m-4 lg:rounded-2xl lg:p-4">
+          <img alt="Ollamac Pro screenshot" src="https://ipfs.filebase.io/ipfs/QmZnGNUhPxVEpDTGBU4PKdHEbByiEbqmp6o2JfSq5nbcDB"/>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="mx-auto max-w-5xl px-6 lg:px-8 mt-12">
+       <section class="py-4">
+        <div class="container">
+         <div class="flex flex-col items-center text-center">
+          <p class="mb-6 max-w-4xl px-8 font-medium lg:text-3xl">
+           <a href="https://www.reddit.com/r/ollama/comments/1ld1bj1/comment/myyfe9v/" rel="noopener noreferrer" target="_blank">
+            “I use your app daily, it's great. Thank you.”
+           </a>
+          </p>
+          <div class="flex items-center gap-2 md:gap-4">
+           <span class="relative flex shrink-0 overflow-hidden rounded-full size-12 md:size-16">
+            <img alt="Mashm4n" class="aspect-square h-full w-full" src="https://deifkwefumgah.cloudfront.net/shadcnblocks/block/avatar-1.webp"/>
+           </span>
+           <div class="text-left">
+            <p class="text-sm font-medium md:text-base">
+             Mashm4n
+            </p>
+           </div>
+          </div>
+         </div>
+        </div>
+       </section>
+      </div>
+     </div>
+     <div class="relative mx-auto mt-12">
+      <div class="flex flex-col items-center space-y-2 cursor-pointer text-center" type="button">
+       <h3 class="text-xl font-bold">
+        How I use the Ollamac 👇
+       </h3>
+       <p class="text-gray-700 max-w-xl">
+        Here is a short demo of Ollamc Pro showing how I (app creator) personally use the app
+       </p>
+      </div>
+     </div>
+     <div class="mx-auto">
+      <div class="mt-10 flex items-center justify-center gap-x-6">
+       <a class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-blue-600 text-white shadow hover:bg-blue-700 h-9 px-4 py-2" href="https://github.com/gregorym/ollamac-pro/releases/download/v1.3.4/Ollamac.Pro-v1.3.4.zip" rel="noopener noreferrer" target="_blank">
+        Download Ollamac Pro (Beta)
+       </a>
+      </div>
+      <p class="text-xs mt-1 text-gray-500 italic text-center">
+       Supports Mac Intel &amp; Apple Silicon. macOS 14+
+      </p>
+     </div>
+     <div class="mx-auto max-w-6xl">
+      <div id="features">
+       <div class="mx-auto max-w-7xl px-4 py-16">
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 lg:gap-6">
+         <div class="rounded-xl border text-card-foreground shadow overflow-hidden transition-all duration-300 hover:shadow-xl bg-white hover:bg-gray-50 sm:col-span-2">
+          <div class="p-6 h-80 flex flex-row gap-6">
+           <div class="space-y-4 flex-1">
+            <h3 class="font-bold text-gray-900 leading-tight text-xl lg:text-2xl">
+             MCP (Model Context Protocol)
+            </h3>
+            <p class="text-sm lg:text-base text-gray-600 leading-relaxed">
+             Add local and remote MCP servers and give superpowers to your AI models.
+            </p>
+           </div>
+           <div class="flex items-center justify-center relative overflow-hidden rounded-lg flex-1">
+            <img alt="MCP (Model Context Protocol)" class="object-cover overflow-hidden h-full w-auto" src="https://ipfs.filebase.io/ipfs/QmRZekq299vPgnbBeWGWH25qPT5CPJcBdFiZv2V6cjuKsv"/>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-xl border text-card-foreground shadow overflow-hidden transition-all duration-300 hover:shadow-xl bg-white hover:bg-gray-50 sm:col-span-1">
+          <div class="p-6 h-80 flex flex-col">
+           <div class="space-y-4 flex-1">
+            <h3 class="font-bold text-gray-900 leading-tight text-xl lg:text-2xl">
+             Turn documents into conversations
+            </h3>
+            <p class="text-sm lg:text-base text-gray-600 leading-relaxed">
+             Ask questions and get insights from your PDFs. Your documents become searchable knowledge that stays completely private.
+            </p>
+           </div>
+           <div class="flex items-center justify-center relative overflow-hidden rounded-lg h-16">
+            <img alt="Turn documents into conversations" class="h-full w-auto object-contain" src="https://ipfs.filebase.io/ipfs/QmT8nhYDd2Sc839hBenEvs73uR1bNkXQhsh8fQ8mx5MrUg"/>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-xl border text-card-foreground shadow overflow-hidden transition-all duration-300 hover:shadow-xl bg-white hover:bg-gray-50 sm:col-span-1">
+          <div class="p-6 h-80 flex flex-col">
+           <div class="space-y-4 flex-1">
+            <h3 class="font-bold text-gray-900 leading-tight text-xl lg:text-2xl">
+             Understand images instantly
+            </h3>
+            <p class="text-sm lg:text-base text-gray-600 leading-relaxed">
+             Get detailed descriptions, extract text, and analyze visual content. Your AI assistant sees what you see and explains it clearly.
+            </p>
+           </div>
+           <div class="flex items-center justify-center relative overflow-hidden rounded-lg h-16">
+            <img alt="Understand images instantly" class="object-cover h-full" src="https://ipfs.filebase.io/ipfs/QmbgBnDagZGg5yCgZgh5UVs87z55SWXFfg9SxExHu9Tsau"/>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-xl border text-card-foreground shadow overflow-hidden transition-all duration-300 hover:shadow-xl bg-white hover:bg-gray-50 sm:col-span-2">
+          <div class="p-6 h-80 flex flex-row gap-6">
+           <div class="space-y-4 flex-1">
+            <h3 class="font-bold text-gray-900 leading-tight text-xl lg:text-2xl">
+             Scale from local to cloud effortlessly
+            </h3>
+            <p class="text-sm lg:text-base text-gray-600 leading-relaxed">
+             Start with local models for privacy, then seamlessly connect to powerful cloud servers when you need more performance. Switch between setups instantly.
+            </p>
+           </div>
+           <div class="flex items-center justify-center relative overflow-hidden rounded-lg flex-1">
+            <img alt="Scale from local to cloud effortlessly" class="object-cover overflow-hidden h-full w-auto" src="https://cdn.nft-generator.art/static/ollamac/screen1.png"/>
+           </div>
+          </div>
+         </div>
+         <div class="rounded-xl border text-card-foreground shadow overflow-hidden transition-all duration-300 hover:shadow-xl bg-white hover:bg-gray-50 sm:col-span-3">
+          <div class="p-6 h-80 flex flex-row gap-6">
+           <div class="space-y-4 flex-1">
+            <h3 class="font-bold text-gray-900 leading-tight text-xl lg:text-2xl">
+             Organize your chats with projects
+            </h3>
+            <p class="text-sm lg:text-base text-gray-600 leading-relaxed">
+             Create dedicated projects to keep your conversations organized and focused. Easily switch between different topics or clients without losing context.
+            </p>
+           </div>
+           <div class="flex items-center justify-center relative overflow-hidden rounded-lg flex-1">
+            <img alt="Organize your chats with projects" class="object-cover overflow-hidden h-full w-auto" src="https://ipfs.filebase.io/ipfs/QmYBMWTyvWL3gauNMCmsNZJXhLMJGi9YmnQyn2yQB22hpV"/>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="bg-white py-24 sm:py-32" id="pricing">
+       <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-4xl text-center">
+         <h2 class="text-base font-semibold leading-7 text-gray-900">
+          Pricing
+         </h2>
+         <p class="mt-2 text-5xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+          Pay once, use forever
+         </p>
+        </div>
+        <p class="mx-auto mt-6 text-center text-xl leading-8 text-gray-700">
+         Ollamac Pro is a one-time purchase. Pay once and use it forever. All features included.
+        </p>
+        <div class="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+         <div class="ring-1 ring-primary/50 rounded-3xl p-8 xl:p-10">
+          <div class="flex items-center justify-between gap-x-4">
+           <h3 class="text-gray-900 text-4xl font-semibold leading-8" id="price_1On3cIDnvVGqARiAagTwGjRv">
+            Standard
+           </h3>
+          </div>
+          <p class="mt-2 flex items-baseline gap-x-1">
+           <span class="text-3xl font-semibold tracking-tight text-gray-700">
+            $79
+           </span>
+          </p>
+          <p class="mt-4 text-sm leading-6 text-gray-600">
+           Pay-once, use forever.
+          </p>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-blue-600 text-white shadow hover:bg-blue-700 h-9 px-4 py-2 btn btn-full w-full btn-primary">
+           Purchase
+          </button>
+          <ul class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
+           <li class="flex gap-x-3">
+            1 macOS device
+           </li>
+           <li class="flex gap-x-3">
+            Pay once, use forever
+           </li>
+           <li class="flex gap-x-3">
+            All Ollamac Pro features
+           </li>
+           <li class="flex gap-x-3">
+            1 year of updates
+           </li>
+          </ul>
+         </div>
+         <div class="ring-1 ring-primary rounded-3xl p-8 xl:p-10">
+          <div class="flex items-center justify-between gap-x-4">
+           <h3 class="text-gray-900 text-4xl font-semibold leading-8" id="price_1On3cCDnvVGqARiAfmE051sm">
+            Extended
+           </h3>
+          </div>
+          <p class="mt-2 flex items-baseline gap-x-1">
+           <span class="text-3xl font-semibold tracking-tight text-gray-700">
+            $189
+           </span>
+          </p>
+          <p class="mt-4 text-sm leading-6 text-gray-600">
+           Great for multi-devices setups &amp; small teams.
+          </p>
+          <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-blue-600 text-white shadow hover:bg-blue-700 h-9 px-4 py-2 btn btn-full w-full btn-primary">
+           Purchase
+          </button>
+          <ul class="mt-8 space-y-3 text-sm leading-6 text-gray-600 xl:mt-10">
+           <li class="flex gap-x-3">
+            3 macOS devices
+           </li>
+           <li class="flex gap-x-3">
+            Pay once, use forever
+           </li>
+           <li class="flex gap-x-3">
+            All Ollamac Pro features
+           </li>
+           <li class="flex gap-x-3">
+            1 year of updates
+           </li>
+          </ul>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full max-w-4xl mx-auto px-4 pt-40 lg:px-10">
+       <h2 class="font-title relative z-[2] mx-auto text-[clamp(2rem,6vw,4.5rem)] font-black leading-none text-center mb-12">
+        <span class="motion-reduce:!opacity-100">
+         Frequently Asked Questions
+        </span>
+       </h2>
+       <div class="w-full space-y-4">
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R1nbjb»" type="button">
+           What is the roadmap?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R2nbjb»" type="button">
+           Do you support Latex rendering?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R3nbjb»" type="button">
+           What macOS version is required?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R4nbjb»" type="button">
+           Is it compatible with Windows?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R5nbjb»" type="button">
+           Is it available on the AppStore?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R6nbjb»" type="button">
+           Do you have an education discount?
+          </button>
+         </h3>
+        </div>
+        <div class="border border-gray-200 rounded-lg px-6 shadow-sm hover:shadow-md transition-shadow">
+         <h3 class="flex">
+          <button class="flex flex-1 items-center justify-between transition-all [&amp;[data-state=open]&gt;svg]:rotate-180 text-left text-lg font-semibold py-6 hover:no-underline" id="radix-«R7nbjb»" type="button">
+           How do I contact you?
+          </button>
+         </h3>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <footer class="bg-white">
+    <h2 class="sr-only" id="footer-heading">
+     Footer
+    </h2>
+    <div class="mx-auto max-w-5xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+      <img alt="Ollamac Pro logo" class="rounded-md" height="40" src="/_next/image?url=https%3A%2F%2Fovcqecuitnytwhgp.public.blob.vercel-storage.com%2Follamac%2Flogo-P8nb8HogPnfh7vXd9NitOSIBUKsuWj.webp&amp;w=96&amp;q=75" width="40"/>
+      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+       <div class="md:grid md:grid-cols-2 md:gap-8">
+        <div>
+         <h3 class="text-sm font-semibold leading-6 text-gray-900">
+          Pages
+         </h3>
+         <ul class="mt-6 space-y-4">
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="/">
+            Home
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="/roadmap">
+            Roadmap
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="/docs">
+            Docs
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="/#pricing">
+            Pricing
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div class="mt-10 md:mt-0">
+         <h3 class="text-sm font-semibold leading-6 text-gray-900">
+          Support
+         </h3>
+         <ul class="mt-6 space-y-4">
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="#">
+            Contact Us
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="md:grid md:grid-cols-2 md:gap-8">
+        <div class="mt-10 md:mt-0">
+         <h3 class="text-sm font-semibold leading-6 text-gray-900">
+          Legal
+         </h3>
+         <ul class="mt-6 space-y-4">
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="#">
+            Privacy
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="#">
+            Terms
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="text-sm font-semibold leading-6 text-gray-900">
+          Partners
+         </h3>
+         <ul class="mt-6 space-y-4">
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="/partners">
+            Partners
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="https://onemint.io">
+            OneMint
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="https://nft-generator.art">
+            NFT Art Generator
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="https://koroworld.com">
+            Koroworld
+           </a>
+          </li>
+          <li>
+           <a class="text-sm leading-6 text-gray-600 hover:text-gray-900" href="https://screens.farm">
+            Screens.farm
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </footer>
+  </body>
+
+</body>
+</html>

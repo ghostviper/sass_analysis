@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wittro</title>
+</head>
+<body>
+  <body>
+   <main class="relative min-h-screen w-full overflow-x-hidden">
+    <div class="fixed top-5 md:top-6 left-0 right-0 z-50 flex justify-center px-4">
+     <nav class="py-8 lg:py-4 mx-auto transition-all duration-300 rounded-3xl border w-full md:w-full lg:w-[65%]">
+      <div class="lg:px-8">
+       <div class="flex relative items-center justify-center">
+        <div class="absolute left-0 shrink-0">
+         <a class="flex items-center gap-3" href="/">
+          <img alt="Wittro" class="h-8 w-auto" height="32" src="/_next/image?url=%2Fimages%2Flogo.png&amp;w=64&amp;q=75" width="32"/>
+          <span class="text-xl font-semibold text-gray-900">
+           Wittro
+          </span>
+         </a>
+        </div>
+        <div class="hidden lg:flex">
+         <div>
+          <div class="">
+           <div class="flex items-center space-x-2">
+            <div class="rounded-3xl">
+             <a class="relative block px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium" href="#how-it-works">
+              How it works
+             </a>
+            </div>
+            <div class="rounded-3xl">
+             <a class="relative block px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium" href="#pricing">
+              Pricing
+             </a>
+            </div>
+            <div class="rounded-3xl">
+             <a class="relative block px-4 py-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium" href="#faq">
+              Questions
+             </a>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="absolute right-0">
+         <div class="hidden lg:flex items-center justify-end space-x-4 w-[180px]">
+          <a class="text-gray-600 hover:text-gray-900 transition-colors duration-200 text-sm font-medium" href="/auth?flow=signin">
+           Log In
+          </a>
+          <a class="bg-gray-900 text-white hover:bg-gray-800 px-4 py-2 rounded-xl text-sm font-medium transition-colors duration-200" href="/auth?flow=signup">
+           Sign Up
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </nav>
+    </div>
+    <div class="relative w-full">
+     <section class="h-screen w-full lg:p-4 overflow-hidden">
+      <div class="w-full h-full md:pt-30 flex flex-col items-center justify-center rounded-3xl bg-[#FDF3EF] bg-[url('/images/bg-mesh.png')] bg-cover bg-no-repeat">
+       <div class="flex flex-col items-center justify-center md:translate-y-4 p-4 md:p-0">
+        <div class="flex items-center gap-2 text-sm bg-white/80 rounded-2xl py-0.5 ps-3 pe-4.5 shadow-sm border border-gray-200 mb-4">
+         Works with
+         <div class="flex items-center gap-2">
+          <div class="-mr-4 relative group">
+           <img alt="Zoom" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_zoom.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+          <div class="-mr-4 relative group">
+           <img alt="Google Meet" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_meet.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+          <div class="-mr-4 relative group">
+           <img alt="CodeSignal" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_codesignal.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+          <div class="-mr-4 relative group">
+           <img alt="Microsoft Teams" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_teams.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+          <div class="-mr-4 relative group">
+           <img alt="HackerRank" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_hackerrank.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+          <div class="-mr-4 relative group">
+           <img alt="LeetCode" class="object-cover m-0! p-0! object-top rounded-2xl h-6 w-6 border-2 group-hover:scale-105 group-hover:z-30 border-background relative transition duration-500" height="100" src="/_next/image?url=%2Ficons%2Fico_leetcode.png&amp;w=256&amp;q=75" width="100"/>
+          </div>
+         </div>
+        </div>
+        <h1 class="text-3xl md:text-6xl font-bold text-center text-[#3B2B29] mb-6 leading-tight">
+         Invisible AI Assistant
+         <br class="hidden md:block"/>
+         for
+         <div class="absolute opacity-0 pointer-events-none">
+          <span class="font-bold text-[#934A40]">
+           Meetings
+          </span>
+          <span class="font-bold text-[#934A40]">
+           Interviews
+          </span>
+          <span class="font-bold text-[#934A40]">
+           Exams
+          </span>
+          <span class="font-bold text-[#934A40]">
+           Conversations
+          </span>
+         </div>
+         <span class="relative inline-block">
+          <span class="inline-block font-bold text-[#934A40]">
+           Exams
+          </span>
+         </span>
+        </h1>
+        <p class="text-base md:text-xl text-center text-[#3B2B29] max-w-2xl mb-10">
+         Undetectable desktop AI assistant app that takes interviews and meetings for you.
+        </p>
+        <div class="w-full md:w-auto flex flex-col md:flex-row gap-6">
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-11 px-6 has-[&gt;svg]:px-4 w-full md:w-auto bg-white py-6 shadow-lg/40 shadow-primary/60 hover:bg-white/90 text-primary rounded-lg font-bold transition-all duration-300 hover:scale-105 cursor-pointer">
+          Join Windows Waitlist
+         </button>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive text-primary-foreground hover:bg-primary/90 h-11 px-6 has-[&gt;svg]:px-4 w-full md:w-auto bg-primary py-6 shadow-lg shadow-primary/60 rounded-lg font-bold transition-all duration-300 hover:scale-105 cursor-pointer">
+          Download for Mac
+         </button>
+        </div>
+       </div>
+       <div class="hidden md:block relative w-full max-w-6xl overflow-hidden">
+        <img alt="Hero Image" class="w-full h-auto object-cover" height="1000" src="/_next/image?url=%2Fimages%2Fimg-hero-features.png&amp;w=3840&amp;q=75" width="1200"/>
+       </div>
+      </div>
+     </section>
+     <section class="md:h-screen lg:p-4" id="how-it-works">
+      <div class="w-full h-full flex items-center justify-center rounded-3xl relative bg-linear-to-b from-white via-gray-50/50 to-[#fff5f5] py-16 md:py-0 overflow-hidden px-4 lg:px-0">
+       <div class="max-w-6xl mx-auto relative">
+        <div class="flex flex-col gap-4 md:gap-8">
+         <span class="w-fit bg-white/90 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-3xl text-sm font-medium border border-gray-200 shadow-sm">
+          Simple, Easy, and Fast.
+         </span>
+         <h2 class="text-3xl md:text-5xl font-bold mb-4">
+          How does it work
+          <br/>
+          <span class="text-[#ff6b6b]">
+           In 3 Steps
+          </span>
+         </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+         <div class="bg-[#fff5f5] rounded-2xl p-6 relative overflow-hidden border border-gray-200">
+          <div class="absolute -right-8 -top-8 text-[250px] font-bold text-[#ff6b6b]/10">
+           1
+          </div>
+          <div class="aspect-square relative max-w-[500px] z-10">
+           <img alt="Drag &amp; drop" class="object-contain scale-110 md:scale-130 md:-translate-x-8 md:-translate-y-5" src="/_next/image?url=%2Fimages%2Fimg-steps-s1.png&amp;w=3840&amp;q=75"/>
+          </div>
+          <h3 class="text-2xl font-bold mb-2 z-10">
+           Drag &amp; drop
+          </h3>
+          <p class="text-gray-600 leading-relaxed z-10">
+           Drag Wittro to your applications folder to get started.
+          </p>
+         </div>
+         <div class="bg-[#fff5f5] rounded-2xl p-6 relative overflow-hidden border border-gray-200">
+          <div class="absolute -right-8 -top-8 text-[250px] font-bold text-[#ff6b6b]/10">
+           2
+          </div>
+          <div class="aspect-square relative max-w-[500px] z-10">
+           <img alt="Ask or let me see" class="object-contain scale-110 md:scale-130 md:-translate-x-8 md:-translate-y-5" src="/_next/image?url=%2Fimages%2Fimg-steps-s2.png&amp;w=3840&amp;q=75"/>
+          </div>
+          <h3 class="text-2xl font-bold mb-2 z-10">
+           Ask or let me see
+          </h3>
+          <p class="text-gray-600 leading-relaxed z-10">
+           Let Wittro see your screen and answer, or simply ask.
+          </p>
+         </div>
+         <div class="bg-[#fff5f5] rounded-2xl p-6 relative overflow-hidden border border-gray-200">
+          <div class="absolute -right-8 -top-8 text-[250px] font-bold text-[#ff6b6b]/10">
+           3
+          </div>
+          <div class="aspect-square relative max-w-[500px] z-10">
+           <img alt="Here's the answer" class="object-contain scale-110 md:scale-130 md:-translate-x-8 md:-translate-y-5" src="/_next/image?url=%2Fimages%2Fimg-steps-s3.png&amp;w=3840&amp;q=75"/>
+          </div>
+          <h3 class="text-2xl font-bold mb-2 z-10">
+           Here's the answer
+          </h3>
+          <p class="text-gray-600 leading-relaxed z-10">
+           Get a full and easy to understand answer that covers all the aspects of your question.
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="lg:h-screen w-full flex items-center justify-center overflow-hidden lg:p-4" id="pricing">
+      <div class="relative bg-black text-white rounded-3xl h-full w-full md:px-4 md:pb-6 pt-30 lg:pt-20">
+       <div class="w-full max-w-7xl mx-auto relative h-full flex flex-col items-center justify-center">
+        <div class="flex flex-col items-start md:items-center gap-2 lg:gap-4 mb-8 lg:mb-12">
+         <h2 class="text-2xl lg:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-neutral-100 via-neutral-300 to-neutral-500 text-left md:text-center w-full">
+          Choose your perfect plan
+         </h2>
+         <p class="text-white/70 text-left md:text-center max-w-xl w-full">
+          Find the plan that works for your needs.
+         </p>
+         <div class="flex w-full md:w-fit md:inline-flex items-center p-1.5 bg-white/5 backdrop-blur-md rounded-3xl border border-white/10 shadow-sm mt-4">
+          <button class="flex-1 md:flex-initial px-8 py-2.5 text-sm font-medium rounded-3xl transition-all duration-300 relative bg-white/20 text-white shadow-lg">
+           Monthly
+          </button>
+          <button class="flex-1 md:flex-initial px-8 py-2.5 text-sm font-medium rounded-3xl transition-all duration-300 relative text-white/60 hover:text-white">
+           Yearly
+           <span class="absolute -top-4 -right-5 bg-green-500 text-black text-xs font-semibold px-2 py-0.5 rounded-2xl shadow-lg">
+            Save 17%
+           </span>
+          </button>
+         </div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+         <div class="relative group backdrop-blur-md rounded-2xl transition-all duration-300 flex flex-col bg-white/5 border-white/5 border shadow-md hover:translate-y-0 hover:shadow-lg">
+          <div class="p-8 flex-1">
+           <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold text-white">
+             Free
+            </h3>
+           </div>
+           <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+             <span class="text-4xl font-bold text-white">
+              $0
+             </span>
+             <span class="text-sm text-white/60">
+              /month
+             </span>
+            </div>
+            <p class="mt-2 text-sm text-white/70">
+             Perfect for basic use
+            </p>
+           </div>
+           <div class="space-y-4">
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               100 assists per month
+              </div>
+              <div class="text-sm text-white/60">
+               This also includes screenshots
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Customizable
+              </div>
+              <div class="text-sm text-white/60">
+               Customize the model's personality, tone, and more
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Models selection
+              </div>
+              <div class="text-sm text-white/60">
+               Access to 100+ popular models (ChatGPT, Claude, Gemini, etc.)
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Audio support
+              </div>
+              <div class="text-sm text-white/60">
+               Wittro can answer based on what others say
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="p-8 pt-0 mt-auto">
+           <button class="inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive px-4 py-2 has-[&gt;svg]:px-3 w-full relative transition-all duration-300 h-12 bg-white/20 rounded-3xl hover:bg-white/30 text-white border border-white/10 hover:border-white/20 shadow-sm hover:shadow-md text-sm font-medium">
+            <span class="relative z-10 flex items-center justify-center gap-2">
+             Start Free
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="relative group backdrop-blur-md rounded-2xl transition-all duration-300 flex flex-col bg-linear-to-b from-white/10 to-transparent border-white/10 border shadow-xl hover:translate-y-0 hover:shadow-lg">
+          <div class="absolute -top-4 left-6">
+           <span class="inline-flex items-center justify-center border w-fit whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent [a&amp;]:hover:bg-primary/90 px-4 py-1.5 text-sm font-medium rounded-3xl bg-primary text-white border-none shadow-lg">
+            Most Popular
+           </span>
+          </div>
+          <div class="p-8 flex-1">
+           <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold text-white">
+             Pro
+            </h3>
+           </div>
+           <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+             <span class="text-4xl font-bold text-white">
+              $4.99
+             </span>
+             <span class="text-sm text-white/60">
+              /month
+             </span>
+            </div>
+            <p class="mt-2 text-sm text-white/70">
+             Ideal for occasional use
+            </p>
+           </div>
+           <div class="space-y-4">
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               500 assists per month
+              </div>
+              <div class="text-sm text-white/60">
+               More than enough for most users
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Customizable
+              </div>
+              <div class="text-sm text-white/60">
+               Customize the model's personality, tone, and more
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Access to premium models
+              </div>
+              <div class="text-sm text-white/60">
+               Access to the top tier of premium models (ChatGPT, Claude, Gemini, etc.)
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Audio support
+              </div>
+              <div class="text-sm text-white/60">
+               Wittro can answer based on what others say
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="p-8 pt-0 mt-auto">
+           <button class="inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive px-4 py-2 has-[&gt;svg]:px-3 w-full relative transition-all duration-300 h-12 bg-primary rounded-3xl hover:bg-primary/90 text-white shadow-[0_1px_15px_rgba(234,128,114,0.3)] hover:shadow-[0_1px_20px_rgba(234,128,114,0.4)] font-semibold text-base">
+            <span class="relative z-10 flex items-center justify-center gap-2">
+             Get Pro
+            </span>
+           </button>
+          </div>
+         </div>
+         <div class="relative group backdrop-blur-md rounded-2xl transition-all duration-300 flex flex-col bg-white/5 border-white/5 border shadow-md hover:translate-y-0 hover:shadow-lg">
+          <div class="p-8 flex-1">
+           <div class="flex items-center justify-between mb-6">
+            <h3 class="text-xl font-semibold text-white">
+             Max
+            </h3>
+           </div>
+           <div class="mb-6">
+            <div class="flex items-baseline gap-2">
+             <span class="text-4xl font-bold text-white">
+              $9.99
+             </span>
+             <span class="text-sm text-white/60">
+              /month
+             </span>
+            </div>
+            <p class="mt-2 text-sm text-white/70">
+             Ideal for frequent and professional use
+            </p>
+           </div>
+           <div class="space-y-4">
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               1000 assists per month
+              </div>
+              <div class="text-sm text-white/60">
+               More than enough for most users
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Customizable
+              </div>
+              <div class="text-sm text-white/60">
+               Customize the model's personality, tone, and more
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Access to premium models
+              </div>
+              <div class="text-sm text-white/60">
+               Access to the top tier of premium models (ChatGPT, Claude, Gemini, etc.)
+              </div>
+             </div>
+            </div>
+            <div class="flex gap-4">
+             <div>
+              <div class="text-sm font-medium text-white">
+               Audio support
+              </div>
+              <div class="text-sm text-white/60">
+               Wittro can answer based on what others say (coming soon)
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="p-8 pt-0 mt-auto">
+           <button class="inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive px-4 py-2 has-[&gt;svg]:px-3 w-full relative transition-all duration-300 h-12 bg-white/20 rounded-3xl hover:bg-white/30 text-white border border-white/10 hover:border-white/20 shadow-sm hover:shadow-md text-sm font-medium">
+            <span class="relative z-10 flex items-center justify-center gap-2">
+             Get Max
+            </span>
+           </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <section class="w-full pb-24 pt-34 px-4 md:px-8" id="faq">
+      <div class="max-w-7xl mx-auto">
+       <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold tracking-tight mb-4">
+         Frequently Asked Questions
+        </h2>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+         Get quick answers to common questions about Wittro's features, security, and support.
+        </p>
+       </div>
+       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div class="lg:col-span-4">
+         <div class="sticky top-24">
+          <div class="relative mb-6">
+           <input class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 pl-10" placeholder="Search questions..." type="text" value=""/>
+          </div>
+          <div class="space-y-2">
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors bg-primary text-primary-foreground">
+            All Questions
+           </button>
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors cursor-pointer hover:bg-muted">
+            Getting Started
+           </button>
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors cursor-pointer hover:bg-muted">
+            Security
+           </button>
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors cursor-pointer hover:bg-muted">
+            Features
+           </button>
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors cursor-pointer hover:bg-muted">
+            Compatibility
+           </button>
+           <button class="w-full text-left px-4 py-2 rounded-lg transition-colors cursor-pointer hover:bg-muted">
+            Support
+           </button>
+          </div>
+          <div class="mt-8 p-6 bg-primary/5 rounded-xl border border-primary/10">
+           <h3 class="font-semibold text-primary">
+            Still need help?
+           </h3>
+           <p class="mt-2 text-sm text-muted-foreground">
+            Can't find what you're looking for? Our support team is here to help 24/7.
+           </p>
+           <button class="mt-4 inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors">
+            Contact Support
+           </button>
+          </div>
+         </div>
+        </div>
+        <div class="lg:col-span-8">
+         <div>
+          <section class="w-full space-y-4">
+           <div class="w-full">
+            <div class="space-y-4">
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_1kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Getting Started
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  Can I use Wittro for free?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_2kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Getting Started
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  Does it work on all platforms?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_3kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Security
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  How is it undetectable?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_4kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Features
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  What makes Wittro different from other solutions?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_5kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Compatibility
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  What about Zoom's desktop app?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+             <div class="last:border-b-0 mb-4 rounded-xl bg-card text-card-foreground border border-border/60 shadow-sm dark:shadow-black/10">
+              <h3 class="flex">
+               <button class="focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md text-sm font-medium transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&amp;[data-state=open]&gt;svg]:rotate-180 px-6 py-4 text-left hover:no-underline hover:bg-secondary/40 cursor-pointer data-[state=open]:border-b data-[state=open]:border-border/60" id="radix-_R_6kqiav5tdb_" type="button">
+                <div class="flex flex-col gap-2">
+                 <span class="inline-flex items-center justify-center rounded-md border px-2 py-0.5 whitespace-nowrap shrink-0 [&amp;&gt;svg]:size-3 gap-1 [&amp;&gt;svg]:pointer-events-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive transition-[color,box-shadow] overflow-hidden border-transparent bg-secondary text-secondary-foreground [a&amp;]:hover:bg-secondary/90 w-fit text-xs font-normal">
+                  Support
+                 </span>
+                 <h3 class="text-lg font-medium text-foreground group-hover:text-primary">
+                  How can I contact support?
+                 </h3>
+                </div>
+               </button>
+              </h3>
+             </div>
+            </div>
+           </div>
+          </section>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+    </div>
+    <footer class="w-full bg-linear-to-br from-[#fbe4e6] via-[#f7cac9] to-[#f9e0e7] text-gray-800 pt-20 pb-8 px-6 md:px-12 relative rounded-t-[20px]">
+     <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-10 mb-12">
+       <div class="lg:col-span-2 flex flex-col items-start">
+        <div class="flex items-center justify-center gap-2 mb-4">
+         <img alt="Wittro Logo" height="50" src="/_next/image?url=%2Fimages%2Flogo.png&amp;w=128&amp;q=75" width="50"/>
+         <h2 class="text-3xl font-bold text-[#9B3031]">
+          Wittro
+         </h2>
+        </div>
+        <p class="text-gray-600 mb-6 max-w-md">
+         Interviews &amp; meetings never been easier. Join the meeting, Wittro will do the rest.
+        </p>
+       </div>
+       <div class="lg:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
+        <div>
+         <h3 class="font-bold text-lg mb-1 pb-2 border-b border-[#f7cac9]/60">
+          Links
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/auth">
+            Get Started
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="#pricing">
+            Pricing
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="#faq">
+            FAQ
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-bold text-lg mb-1 pb-2 border-b border-[#f7cac9]/60">
+          Support
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/help">
+            Help Center
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/resources">
+            Resources
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/status">
+            Status
+           </a>
+          </li>
+         </ul>
+        </div>
+        <div>
+         <h3 class="font-bold text-lg mb-1 pb-2 border-b border-[#f7cac9]/60">
+          Legal
+         </h3>
+         <ul class="space-y-3">
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/terms">
+            Terms of Service
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/privacy">
+            Privacy Policy
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/refund">
+            Refund Policy
+           </a>
+          </li>
+          <li>
+           <a class="hover:text-pink-600 transition-colors duration-200" href="/cancellation">
+            Cancellation Policy
+           </a>
+          </li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="pt-8 border-t border-[#f7cac9]/40 flex flex-col sm:flex-row justify-between items-center text-sm text-gray-500">
+       <p>
+        © 2025 Wittro. All rights reserved.
+       </p>
+      </div>
+     </div>
+    </footer>
+   </main>
+   <section>
+   </section>
+  </body>
+
+</body>
+</html>

@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UndetectedGPT - AI Humanizer & Undetectable Content Platform</title>
+</head>
+<body>
+  <body>
+   <nav class="fixed top-2 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-500 ease-in-out lg:min-w-[940px] sm:w-[85%] w-[95%] max-w-6xl">
+    <div class="rounded-full transition-all duration-500 bg-white/5 backdrop-blur-sm border border-white/10 shadow-lg shadow-black/10">
+     <div class="px-6 py-4 h-16">
+      <div class="flex items-center h-full">
+       <div class="flex-1">
+        <a class="flex items-center gap-2" href="/dashboard">
+         <img alt="UndetectedGPT Logo" class="w-6 h-6" height="32" src="/logos/logo.svg" width="32"/>
+         <div class="text-xl font-semibold">
+          <span class="text-neutral-100">
+           Undetected
+          </span>
+          <span class="text-neutral-100">
+           GPT
+          </span>
+         </div>
+        </a>
+       </div>
+       <div class="hidden lg:flex items-center space-x-2">
+        <a class="relative text-zinc-300 hover:text-zinc-100 px-3 py-2 rounded-2xl text-sm font-normal tracking-wide cursor-pointer group" href="/dashboard">
+         <span class="relative z-10">
+          Dashboard
+         </span>
+        </a>
+        <button class="relative text-zinc-300 hover:text-zinc-100 px-3 py-2 rounded-2xl text-sm font-normal tracking-wide cursor-pointer group">
+         <span class="relative z-10">
+          Pricing
+         </span>
+        </button>
+        <div class="relative">
+         <button class="relative text-zinc-300 hover:text-zinc-100 px-3 py-2 rounded-2xl text-sm font-normal tracking-wide cursor-pointer flex items-center gap-1 group">
+          <span class="relative z-10 flex items-center gap-1">
+           Products
+          </span>
+         </button>
+         <div class="absolute top-full right-0 mt-2 w-80 bg-black border border-neutral-800 rounded-2xl shadow-lg shadow-black/40 z-50 transition-all duration-200 ease-out origin-top opacity-0 scale-95 invisible">
+          <div class="py-3">
+           <a class="block mx-3 px-3 py-4 rounded-lg hover:bg-neutral-800/50 transition-all duration-200" href="/feature/humanizer">
+            <div class="flex items-center gap-3">
+             <div class="text-white font-normal text-base">
+              AI Humanizer
+             </div>
+            </div>
+            <div class="text-zinc-400 font-light text-sm mt-1 ml-7">
+             Convert AI text into undetectable human writing
+            </div>
+           </a>
+           <a class="block mx-3 px-3 py-4 rounded-lg hover:bg-neutral-800/50 transition-all duration-200" href="/feature/stealthwriter">
+            <div class="flex items-center gap-3">
+             <div class="text-white font-normal text-base">
+              AI Stealth Writer
+             </div>
+            </div>
+            <div class="text-zinc-400 font-light text-sm mt-1 ml-7">
+             Generate undetectable AI text instantly
+            </div>
+           </a>
+           <a class="block mx-3 px-3 py-4 rounded-lg hover:bg-neutral-800/50 transition-all duration-200" href="/feature/ai-detector">
+            <div class="flex items-center gap-3">
+             <div class="text-white font-normal text-base">
+              AI Detector
+             </div>
+            </div>
+            <div class="text-zinc-400 font-light text-sm mt-1 ml-7">
+             Detect AI-generated content with detailed analysis
+            </div>
+           </a>
+          </div>
+         </div>
+        </div>
+        <a class="relative text-zinc-300 hover:text-zinc-100 px-3 py-2 rounded-2xl text-sm font-normal tracking-wide flex items-center gap-2 whitespace-nowrap group" href="/affiliate">
+         <span class="relative z-10 flex items-center gap-2">
+          Affiliate Program
+          <span class="text-[10px] px-1 py-0.5 rounded-lg font-medium text-blue-200">
+           NEW
+          </span>
+         </span>
+        </a>
+       </div>
+       <div class="flex-1 flex justify-end items-center">
+        <div class="hidden lg:block">
+         <div class="flex items-center space-x-3">
+          <a class="relative bg-zinc-800 text-white font-medium text-sm px-5 py-2 rounded-xl hover:bg-zinc-700 transition-all duration-300 flex items-center gap-2.5 shadow-sm hover:shadow-md overflow-hidden group whitespace-nowrap" href="/signin">
+           <span class="relative z-10">
+            Log In
+           </span>
+          </a>
+          <a class="bg-zinc-100 text-zinc-900 font-medium text-sm px-5 py-2 rounded-xl hover:bg-white/90 transition-all duration-200 flex items-center gap-2.5 shadow-sm whitespace-nowrap" href="/humanizer">
+           Get Started
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </nav>
+   <div class="lg:hidden fixed inset-0 z-50 transition-all duration-500 ease-in-out opacity-0 invisible">
+    <div class="absolute top-0 left-0 w-full h-full bg-black shadow-2xl transform transition-transform duration-500 ease-in-out -translate-y-full">
+     <div class="flex flex-col h-full">
+      <div class="flex items-center justify-between p-6">
+       <div class="flex items-center gap-2">
+        <img alt="UndetectedGPT Logo" class="w-6 h-6" height="24" src="/logos/logo.svg" width="24"/>
+        <div class="text-xl font-semibold">
+         <span class="text-neutral-100">
+          Undetected
+         </span>
+         <span class="text-neutral-100">
+          GPT
+         </span>
+        </div>
+       </div>
+      </div>
+      <div class="flex-1 overflow-y-auto p-4 space-y-2">
+       <a class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium flex items-center justify-between transform -translate-x-8 opacity-0" href="/dashboard">
+        <span>
+         Dashboard
+        </span>
+       </a>
+       <a class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium flex items-center justify-between transform -translate-x-8 opacity-0" href="/feature/humanizer">
+        <span>
+         AI Humanizer
+        </span>
+       </a>
+       <a class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium flex items-center justify-between transform -translate-x-8 opacity-0" href="/feature/stealthwriter">
+        <span>
+         AI Stealth Writer
+        </span>
+       </a>
+       <a class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium flex items-center justify-between transform -translate-x-8 opacity-0" href="/feature/ai-detector">
+        <span>
+         AI Detector
+        </span>
+       </a>
+       <button class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium w-full text-left flex items-center justify-between transform -translate-x-8 opacity-0">
+        <span>
+         Pricing
+        </span>
+       </button>
+       <a class="group block text-white/90 hover:text-white rounded-lg px-3 py-2 transition-all duration-300 text-lg font-medium flex items-center justify-between transform -translate-x-8 opacity-0" href="/affiliate">
+        <div class="flex items-center gap-2">
+         <span>
+          Affiliate Program
+         </span>
+         <span class="text-[10px] px-1 py-0.5 rounded-lg font-medium text-blue-200">
+          NEW
+         </span>
+        </div>
+       </a>
+      </div>
+      <div class="p-6">
+       <div class="space-y-3">
+        <a class="w-full bg-white text-gray-900 font-medium text-sm px-5 py-3 rounded-xl hover:bg-white/90 transition-all duration-300 flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md" href="/humanizer">
+         Get Started
+        </a>
+        <a class="relative w-full bg-zinc-800 text-white font-medium text-sm px-5 py-3 rounded-xl hover:bg-zinc-700 transition-all duration-300 flex items-center justify-center gap-2.5 shadow-sm hover:shadow-md overflow-hidden group" href="/signin">
+         <span class="relative z-10">
+          Log In
+         </span>
+        </a>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <main>
+    <div class="flex flex-col relative font-inter">
+     <div class="flex flex-col min-h-screen w-full relative">
+      <div class="relative w-full max-w-full mx-auto px-3 sm:px-4 lg:px-4 xl:px-8 flex flex-col pt-12 md:pt-4">
+       <div class="flex-1 flex items-center justify-center p-2 sm:p-4 lg:p-6 relative">
+        <div class="w-full text-center z-10 relative mb-2 mt-12 sm:mt-20">
+         <div class="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-8 mb-8 sm:mb-12 mt-8">
+          <div class="relative overflow-hidden bg-transparent inline-flex h-auto w-auto p-[0.5px] text-xs sm:text-sm">
+           <div class="relative h-full w-full justify-center antialiased backdrop-blur-xl flex items-center gap-2 rounded-full border border-white/10 bg-zinc-900/70 px-2 py-1.5 text-xs sm:text-sm text-zinc-100">
+            <span class="rounded-full bg-white px-2 py-0.5 text-[10px] font-semibold uppercase text-black sm:text-[11px]">
+             New
+            </span>
+            <span class="text-gray-200 text-xs sm:text-sm font-normal">
+             Humanizer v2 now available! 👻
+            </span>
+           </div>
+          </div>
+          <div class="hidden md:flex items-center gap-3">
+           <div class="flex">
+            <div class="relative group">
+             <img alt="Customer" class="w-10 h-10 rounded-xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-12 relative hover:-translate-y-1 -rotate-1" height="40" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson1.ae34c168.jpeg&amp;w=96&amp;q=75" width="40"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Emma
+              </span>
+              <span class="text-gray-300">
+               Content Writer
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-3">
+             <img alt="Customer" class="w-10 h-10 rounded-xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-12 relative hover:-translate-y-1 rotate-2" height="40" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson2.c0eb3fa3.jpeg&amp;w=96&amp;q=75" width="40"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Sarah
+              </span>
+              <span class="text-gray-300">
+               Marketing Manager
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-3">
+             <img alt="Customer" class="w-10 h-10 rounded-xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-12 relative hover:-translate-y-1 -rotate-1" height="40" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson3.58420d13.jpeg&amp;w=96&amp;q=75" width="40"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Alex
+              </span>
+              <span class="text-gray-300">
+               Student
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-3">
+             <div class="w-10 h-10 rounded-xl border-2 border-gray-300 bg-purple-500 flex items-center justify-center text-white text-base transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-15 relative hover:-translate-y-1 rotate-1">
+              C
+             </div>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Chloe
+              </span>
+              <span class="text-gray-300">
+               Copywriter
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-3">
+             <img alt="Customer" class="w-10 h-10 rounded-xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-15 relative hover:-translate-y-1 -rotate-2" height="40" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson5.b43498b1.jpeg&amp;w=96&amp;q=75" width="40"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               James
+              </span>
+              <span class="text-gray-300">
+               Blogger
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-3">
+             <img alt="Customer" class="w-10 h-10 rounded-xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-12 relative hover:-translate-y-1 rotate-2" height="40" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson6.ab829db9.jpeg&amp;w=96&amp;q=75" width="40"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Michael
+              </span>
+              <span class="text-gray-300">
+               Freelancer
+              </span>
+             </div>
+            </div>
+           </div>
+           <div class="flex flex-col items-start gap-1">
+            <p class="text-white/80 text-xs transition-opacity duration-500 opacity-100">
+             Trusted by 8,565+
+            </p>
+           </div>
+          </div>
+         </div>
+         <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 text-white tracking-tight">
+          Make AI Content
+          <span class="relative inline-block">
+           <span class="font-medium absolute left-0 top-0">
+            Undetectable
+           </span>
+           <span class="font-medium absolute left-0 top-0">
+            Undetectable
+           </span>
+           <span class="font-medium absolute left-0 top-0">
+            Undetectable
+           </span>
+           <span class="font-medium relative">
+            Undetectable
+           </span>
+          </span>
+         </h1>
+         <p class="pb-8 mx-0 sm:mx-8 text-sm md:text-base lg:text-lg font-light text-neutral-400">
+          The leading platform to bypass AI detection.
+          <br class="md:hidden"/>
+          Human text, every time.
+         </p>
+         <div class="relative group inline-block mb-16 sm:mb-12 md:hidden">
+          <a href="/humanizer">
+           <button class="relative inline-flex items-center rounded-xl bg-zinc-800 text-white text-sm sm:text-sm py-3 px-6 sm:py-3 sm:px-6 shadow-lg font-medium mx-auto transition-all duration-300 overflow-hidden group">
+            <span class="relative z-10 flex items-center">
+             Humanize Now
+            </span>
+           </button>
+          </a>
+         </div>
+         <div class="hidden md:block">
+          <div class="mt-12 sm:mt-6 mb-0 w-full max-w-6xl mx-auto px-12">
+           <div class="bg-black rounded-3xl border border-zinc-800 flex flex-col gap-6 p-6">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+             <div class="flex items-center gap-4">
+              <div class="flex items-center gap-1.5">
+               <span class="text-sm text-zinc-400">
+                Tone
+               </span>
+               <div class="relative group">
+                <div class="absolute left-0 bottom-full mb-2 px-3 py-2 bg-zinc-900 text-zinc-200 text-xs rounded-lg whitespace-nowrap opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 pointer-events-none z-50 shadow-lg border border-zinc-700">
+                 Select a tone to adjust the style and voice of your humanized text
+                </div>
+               </div>
+              </div>
+              <div class="flex flex-wrap gap-2">
+               <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1.5 bg-white text-black border border-white">
+                Balanced
+               </button>
+               <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1.5 bg-zinc-800/50 text-zinc-300 border border-zinc-700/50 hover:bg-zinc-700/50 hover:border-zinc-600/50 hover:text-white cursor-pointer">
+                Casual
+               </button>
+               <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1.5 bg-zinc-800/30 text-zinc-600 border border-zinc-700/30 cursor-pointer">
+                Formal
+               </button>
+               <button class="px-4 py-2 rounded-xl text-sm font-medium transition-all duration-200 flex items-center gap-1.5 bg-zinc-800/30 text-zinc-600 border border-zinc-700/30 cursor-pointer">
+                Creative
+               </button>
+              </div>
+             </div>
+             <div class="flex items-center gap-6">
+              <div class="flex items-center gap-2">
+               <span class="text-sm text-zinc-600">
+                Ultra Stealth
+               </span>
+              </div>
+              <button class="flex items-center gap-2 px-3 py-2 -my-2 rounded-xl bg-transparent hover:bg-zinc-800/60 text-sm font-medium text-zinc-200 focus:outline-none transition-colors" id="radix-:R19lhcv9tkq:" type="button">
+               <span class="text-zinc-400 font-normal">
+                Model
+               </span>
+               <span>
+                v2
+               </span>
+              </button>
+             </div>
+            </div>
+            <div class="flex flex-col w-full">
+             <div class="w-full flex flex-col bg-zinc-800/50 backdrop-blur-xl rounded-2xl border border-zinc-800/50 relative min-h-[350px] lg:min-h-[350px]">
+              <div class="relative z-10 min-h-[280px] lg:min-h-[300px]">
+               <div class="absolute inset-0 flex items-center justify-center pointer-events-none select-none z-30">
+                <div class="flex items-center gap-2 text-zinc-500 text-sm">
+                 <span>
+                  Type or
+                 </span>
+                 <button class="flex items-center gap-1.5 font-medium bg-zinc-700/50 hover:bg-zinc-700/80 transition-colors px-3 py-1.5 rounded-full text-zinc-300 pointer-events-auto cursor-pointer">
+                  paste
+                 </button>
+                 <span>
+                  your text here
+                 </span>
+                </div>
+               </div>
+              </div>
+              <div class="px-6 py-4 border-t border-zinc-700/30">
+               <div class="flex items-center justify-between">
+                <div class="flex items-center gap-4 text-xs text-zinc-400">
+                 <span>
+                  0/150 words
+                 </span>
+                 <span>
+                  0/1250 characters
+                 </span>
+                </div>
+                <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 shadow h-9 bg-blue-600 border border-blue-500 hover:bg-blue-500 hover:border-blue-400 disabled:opacity-50 disabled:cursor-not-allowed px-4 py-2 rounded-xl text-white font-medium">
+                 <div class="flex items-center gap-2">
+                  Humanize Text
+                 </div>
+                </button>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="mt-0 sm:mt-8 flex-col items-center flex md:hidden">
+          <div class="flex flex-col sm:flex-row items-center mb-4">
+           <div class="flex mb-3 sm:mb-0">
+            <div class="relative group">
+             <img alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-12 relative hover:-translate-y-1 -rotate-1" height="56" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson1.ae34c168.jpeg&amp;w=128&amp;q=75" width="56"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Emma
+              </span>
+              <span class="text-gray-300">
+               Content Writer
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-4">
+             <img alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-12 relative hover:-translate-y-1 rotate-2" height="56" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson2.c0eb3fa3.jpeg&amp;w=128&amp;q=75" width="56"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Sarah
+              </span>
+              <span class="text-gray-300">
+               Marketing Manager
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-4">
+             <img alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-12 relative hover:-translate-y-1 -rotate-1" height="56" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson3.58420d13.jpeg&amp;w=128&amp;q=75" width="56"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Alex
+              </span>
+              <span class="text-gray-300">
+               Student
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-4">
+             <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 bg-purple-500 flex items-center justify-center text-white text-lg sm:text-xl transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-15 relative hover:-translate-y-1 rotate-1">
+              C
+             </div>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Chloe
+              </span>
+              <span class="text-gray-300">
+               Copywriter
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-4">
+             <img alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:rotate-15 relative hover:-translate-y-1 -rotate-2" height="56" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson5.b43498b1.jpeg&amp;w=128&amp;q=75" width="56"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               James
+              </span>
+              <span class="text-gray-300">
+               Blogger
+              </span>
+             </div>
+            </div>
+            <div class="relative group -ml-4">
+             <img alt="Customer" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl xl:rounded-2xl border-2 border-gray-300 transition-all duration-500 ease-out hover:z-10 hover:shadow-2xl hover:-rotate-12 relative hover:-translate-y-1 rotate-2" height="56" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fperson6.ab829db9.jpeg&amp;w=128&amp;q=75" width="56"/>
+             <div class="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-neutral-900/95 text-white text-xs px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 ease-out z-20 backdrop-blur-sm pointer-events-none whitespace-nowrap group-hover:scale-105 group-hover:-translate-y-1">
+              <span class="font-semibold">
+               Michael
+              </span>
+              <span class="text-gray-300">
+               Freelancer
+              </span>
+             </div>
+            </div>
+           </div>
+          </div>
+          <p class="text-white/80 text-sm transition-opacity duration-500 opacity-100">
+           Trusted by 8,565+ writers
+          </p>
+         </div>
+        </div>
+       </div>
+       <div class="mb-0 sm:mt-6 mt-10">
+        <div class="flex justify-center mb-4">
+         <p class="text-white/80 text-sm font-normal">
+          Beat All Detectors
+         </p>
+        </div>
+        <div class="flex justify-center">
+         <div class="relative overflow-hidden h-20 flex items-center justify-center w-full transition-all duration-1000 ease-out transform translate-y-0 opacity-100">
+          <div class="absolute flex items-center justify-center w-full transition-all duration-700 ease-out gap-8">
+           <img alt="GPTZero Logo - Bypass GPTZero Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fgptzero.avif&amp;w=384&amp;q=75" width="140"/>
+           <img alt="WinstonAI Logo - Bypass WinstonAI Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fwinstonai.avif&amp;w=384&amp;q=75" width="140"/>
+           <img alt="Grammarly Logo - Bypass Grammarly Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fgrammarly.webp&amp;w=384&amp;q=75" width="140"/>
+           <img alt="Scribbr Logo - Bypass Scribbr Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fscribbr.webp&amp;w=384&amp;q=75" width="140"/>
+           <img alt="OriginalityAI Logo - Bypass OriginalityAI Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Foriginality.avif&amp;w=384&amp;q=75" width="140"/>
+          </div>
+          <div class="absolute flex items-center justify-center w-full transition-all duration-700 ease-out gap-8">
+           <img alt="NoGPT Logo - Bypass NoGPT Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fnogpt.avif&amp;w=384&amp;q=75" width="140"/>
+           <img alt="CopyLeaks Logo - Bypass CopyLeaks Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fcopyleaks.avif&amp;w=384&amp;q=75" width="140"/>
+           <img alt="SaplingAI Logo - Bypass SaplingAI Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fsaplingai.webp&amp;w=384&amp;q=75" width="140"/>
+           <img alt="GPTZero Logo - Bypass GPTZero Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fgptzero.avif&amp;w=384&amp;q=75" width="140"/>
+           <img alt="CopyLeaks Logo - Bypass CopyLeaks Now" class="brightness-0 invert" height="100" src="/_next/image?url=%2Flogos%2Fcompetitors%2Fcopyleaks.avif&amp;w=384&amp;q=75" width="140"/>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-center">
+      <div class="jsx-efd2c3c310cf304d flex flex-col items-center w-full justify-center py-16 mt-10 relative overflow-hidden bg-black">
+       <div class="jsx-efd2c3c310cf304d relative z-10 flex flex-col items-center w-full max-w-[1400px] mx-auto">
+        <div class="jsx-efd2c3c310cf304d text-center px-8 sm:px-2">
+         <div class="jsx-efd2c3c310cf304d mb-3">
+          <span class="jsx-efd2c3c310cf304d text-xs sm:text-sm font-medium text-blue-400 inline-block">
+           FEATURES
+          </span>
+         </div>
+         <h2 class="jsx-efd2c3c310cf304d text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-6 tracking-tight">
+          Your Complete AI Detection Bypass Platform
+         </h2>
+         <p class="jsx-efd2c3c310cf304d text-sm sm:text-base md:text-base text-white/90 font-extralight max-w-[590px] mx-auto px-2">
+          Everything you need to create, transform, and verify undetectable AI content
+         </p>
+        </div>
+        <div class="jsx-efd2c3c310cf304d mt-8 w-full px-4 lg:px-0">
+         <div class="jsx-efd2c3c310cf304d max-w-[1150px] mx-auto">
+          <div class="jsx-efd2c3c310cf304d grid gap-4">
+           <div class="jsx-efd2c3c310cf304d grid grid-cols-1 sm:grid-cols-[minmax(0,_0.77fr)_minmax(0,_1.23fr)] sm:items-stretch gap-4">
+            <a class="block" href="/feature/humanizer">
+             <div class="aspect-square sm:aspect-[1.025/1] cursor-pointer relative overflow-hidden w-full rounded-2xl border border-zinc-800/60 bg-black shadow-lg sm:min-h-0">
+              <div class="relative z-10 flex h-full w-full flex-col">
+               <div class="px-8 pb-8">
+                <div class="text-2xl md:text-2xl lg:text-3xl font-medium mb-0.5 md:mb-1 tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-gray-400 via-gray-200 to-white">
+                 AI Humanizer
+                </div>
+                <div class="text-zinc-300/70 text-sm md:text-sm lg:text-base font-extralight leading-relaxed w-full truncate">
+                 From detectable to human in one click
+                </div>
+               </div>
+              </div>
+             </div>
+            </a>
+            <div class="aspect-square sm:aspect-auto sm:h-full relative overflow-hidden w-full rounded-2xl border border-zinc-800/60 bg-black shadow-lg sm:min-h-0">
+             <div class="relative z-10 flex h-full w-full flex-col">
+              <div class="flex-1 min-h-0 flex items-center justify-center px-4 py-3 sm:px-6 sm:py-4 pb-2 md:hidden">
+               <div class="w-full sm:max-w-md h-full max-h-56 sm:max-h-52 bg-neutral-800/40 rounded-xl border border-neutral-600/30 flex gap-2 sm:gap-2.5 p-2 sm:p-2.5 lg:p-3">
+                <div class="flex-1 flex flex-col gap-2">
+                 <div class="relative flex-1">
+                  <div class="bg-neutral-900/60 rounded-lg p-2 sm:p-2.5 lg:p-3 border border-neutral-700/40 h-full overflow-hidden">
+                   <p class="text-gray-400 text-[9px] sm:text-[10px] lg:text-xs leading-relaxed whitespace-pre-line hidden sm:block">
+                    The author's position is 
+  that raw computational power is just as crucial for reaching the singularity as breakthroughs in algorithms or neuroscience.
+                   </p>
+                   <p class="text-gray-400 text-[9px] sm:text-[10px] lg:text-xs leading-relaxed whitespace-pre-line block sm:hidden">
+                    The author's position is
+  that raw computational power is just as crucial for reaching the singularity as breakthroughs in algorithms or neuroscience. He accepts that Moore's Law can't keep scaling forever and expects chip performance to taper off around 2020.
+                   </p>
+                  </div>
+                  <div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 bg-neutral-700/50 rounded text-[8px] sm:text-[9px] text-gray-400 font-medium">
+                   INPUT
+                  </div>
+                  <div class="absolute bottom-1.5 right-2 text-[8px] sm:text-[9px] text-red-400 font-semibold">
+                   100% AI
+                  </div>
+                 </div>
+                 <button class="w-full py-1.5 sm:py-2 rounded-lg text-[10px] sm:text-xs font-medium transition-all duration-200 bg-blue-600 text-white border border-blue-500 hover:bg-blue-500 hover:border-blue-400 cursor-pointer">
+                  Humanize
+                 </button>
+                </div>
+                <div class="flex-1 relative">
+                 <div class="bg-neutral-900/60 rounded-lg p-2 sm:p-2.5 lg:p-3 border border-neutral-700/40 transition-all duration-300 h-full overflow-hidden">
+                  <div class="flex items-center justify-center h-full">
+                   <p class="text-gray-600 text-[9px] sm:text-[10px] leading-relaxed italic text-center px-2">
+                    Your humanized text will appear here...
+                   </p>
+                  </div>
+                 </div>
+                 <div class="absolute top-1.5 right-1.5 px-1.5 py-0.5 bg-neutral-700/50 rounded text-[8px] sm:text-[9px] text-gray-400 font-medium">
+                  OUTPUT
+                 </div>
+                </div>
+               </div>
+              </div>
+              <div class="hidden md:flex flex-1 min-h-0 items-center sm:items-start justify-center px-4 sm:px-0 pt-8 pb-4">
+               <div class="w-full sm:max-w-[90%] max-w-[100%] mx-auto">
+                <img alt="Undetectable By Design" class="w-full h-auto" height="1200" src="/assets/undetectableByDesignDesktop.png" width="2520"/>
+               </div>
+              </div>
+              <div class="px-8 pb-8 pt-4">
+               <div class="text-2xl md:text-2xl lg:text-3xl font-medium mb-0.5 md:mb-1 tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-gray-400 via-gray-200 to-white">
+                Undetectable By Design
+               </div>
+               <div class="text-zinc-300/70 text-sm md:text-sm lg:text-base font-extralight leading-relaxed w-full truncate">
+                Because you deserve peace of mind
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <div class="jsx-efd2c3c310cf304d grid grid-cols-1 sm:grid-cols-[minmax(0,_1.23fr)_minmax(0,_0.77fr)] sm:items-stretch gap-4">
+            <a class="block" href="/feature/stealthwriter">
+             <div class="aspect-square sm:aspect-auto sm:h-full cursor-pointer relative overflow-hidden w-full rounded-2xl border border-zinc-800/60 bg-black shadow-lg sm:min-h-0">
+              <div class="relative z-10 flex h-full w-full flex-col">
+               <div class="flex-1 relative flex items-center justify-between px-[clamp(0.75rem,2vw,1.25rem)] py-[clamp(0.85rem,2.5vw,1.4rem)] gap-4">
+                <div class="relative w-full max-w-[clamp(16rem,35vw,22rem)] h-[clamp(14rem,18vw,16rem)] sm:h-[clamp(10rem,18vw,12rem)] rounded-xl bg-black/[0.02] backdrop-blur-sm p-4 md:p-6 shadow-[0_35px_80px_-45px_rgba(15,23,42,0.95)] overflow-hidden">
+                 <div class="relative z-10 flex h-full flex-col justify-start gap-2 md:gap-3 text-transparent bg-clip-text bg-gradient-to-b from-white via-white/70 to-transparent">
+                  <h3 class="text-sm md:text-base font-medium tracking-tight">
+                   A flow that writes like you
+                  </h3>
+                  <p class="text-xs md:text-xs leading-relaxed">
+                   UndetectedGPT makes your writing sound more real and human by adding small details, tone changes, and natural flow that AI usually misses. It helps your text feel like it was written by you, not an AI.
+                  </p>
+                  <p class="text-xs md:text-xs leading-relaxed">
+                   With better rhythm, smoother pauses, and words that connect naturally, your ideas come across like a real conversation instead of a stiff computer response.
+                  </p>
+                 </div>
+                </div>
+                <div class="flex flex-col gap-2 -mt-6 sm:mt-0">
+                 <div class="relative -ml-0 lg:-ml-16 mt-6 sm:mt-6 lg:mt-6 rounded-xl bg-gradient-to-br from-zinc-900/30 to-zinc-900/10 backdrop-blur-sm px-4 lg:px-6 py-2 shadow-xl w-fit">
+                  <div class="flex items-center gap-2">
+                   <div class="relative w-10 h-10 lg:w-14 lg:h-14">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                     <span class="text-[0.65rem] sm:text-xs font-semibold text-white">
+                      11%
+                     </span>
+                    </div>
+                   </div>
+                   <div class="text-white font-medium text-xs">
+                    AI detected
+                   </div>
+                  </div>
+                 </div>
+                 <div class="relative -ml-16 lg:-ml-32 rounded-xl bg-gradient-to-br from-black/20 to-black/20 backdrop-blur-sm px-6 py-4 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.8)] w-52 lg:w-80">
+                  <div class="flex flex-col gap-3">
+                   <div class="text-white/70 font-medium text-xs">
+                    Length
+                   </div>
+                   <div class="inline-flex bg-neutral-700/40 rounded-full p-1">
+                    <button class="flex-1 px-4 py-1.5 rounded-full bg-white text-neutral-900 text-xs font-medium transition-all">
+                     small
+                    </button>
+                    <button class="flex-1 px-4 py-1.5 rounded-full text-white/70 text-xs font-medium hover:text-white transition-all hidden lg:flex">
+                     medium
+                    </button>
+                    <button class="flex-1 px-4 py-1.5 rounded-full text-white/70 text-xs font-medium hover:text-white transition-all">
+                     long
+                    </button>
+                   </div>
+                  </div>
+                  <div class="hidden md:flex flex-col gap-3 mt-4">
+                   <div class="text-white/70 font-medium text-xs">
+                    Style
+                   </div>
+                   <div class="inline-flex bg-neutral-700/40 rounded-full p-1">
+                    <button class="flex-1 px-4 py-1.5 rounded-full text-white/70 text-xs font-medium hover:text-white transition-all">
+                     Simple
+                    </button>
+                    <button class="flex-1 px-4 py-1.5 rounded-full bg-white text-neutral-900 text-xs font-medium transition-all hidden lg:flex">
+                     Balanced
+                    </button>
+                    <button class="flex-1 px-4 py-1.5 rounded-full bg-white lg:bg-transparent lg:text-white/70 text-neutral-900 text-xs font-medium hover:text-white transition-all">
+                     Complex
+                    </button>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="px-8 pb-8">
+                <div class="text-2xl md:text-2xl lg:text-3xl font-medium tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-gray-400 via-gray-200 to-white">
+                 Essay Writer
+                </div>
+                <div class="text-zinc-300/70 text-sm md:text-sm lg:text-base font-extralight leading-relaxed w-full truncate">
+                 <span class="hidden sm:inline">
+                  Generate undetectable content from prompts
+                 </span>
+                 <span class="inline sm:hidden">
+                  Generate undetectable content
+                 </span>
+                </div>
+               </div>
+              </div>
+             </div>
+            </a>
+            <a class="block" href="/feature/ai-detector">
+             <div class="aspect-square sm:aspect-[1.025/1] cursor-pointer relative overflow-hidden w-full rounded-2xl border border-zinc-800/60 bg-black shadow-lg sm:min-h-0">
+              <div class="relative z-10 flex h-full w-full flex-col">
+               <div class="flex-1 min-h-0 flex items-center justify-center px-6 py-4 sm:px-8 sm:py-6">
+                <div class="w-full h-full max-h-60 sm:max-h-64 bg-neutral-800/40 rounded-xl border border-neutral-600/30 overflow-hidden">
+                 <div class="relative w-full h-full overflow-hidden bg-neutral-950/50 group cursor-none touch-none">
+                  <div class="absolute inset-0 p-8 flex items-center justify-center">
+                   <p class="text-neutral-600 font-medium text-lg leading-relaxed text-center select-none max-w-md">
+                    Many students use AI humanizers, but not all tools effectively transform AI-generated text or ensure it remains undetectable.
+                   </p>
+                  </div>
+                  <div class="absolute z-20">
+                   <div class="relative w-full h-full rounded-full border border-white/30 shadow-[0_0_50px_-12px_rgba(255,255,255,0.5)] bg-neutral-900 overflow-hidden">
+                    <div class="absolute top-0 left-0 origin-top-left flex items-center justify-center p-8">
+                     <p class="text-white font-medium text-lg leading-relaxed text-center select-none max-w-md">
+                      Many students use AI humanizers, but not all tools effectively transform AI-generated text or ensure it remains undetectable.
+                     </p>
+                    </div>
+                   </div>
+                  </div>
+                 </div>
+                </div>
+               </div>
+               <div class="px-8 pb-8">
+                <div class="text-2xl md:text-2xl lg:text-3xl font-medium mb-0.5 md:mb-1 tracking-tight text-transparent bg-clip-text bg-gradient-to-t from-gray-400 via-gray-200 to-white">
+                 AI Detector
+                </div>
+                <div class="text-zinc-300/70 text-sm md:text-sm lg:text-base font-extralight leading-relaxed w-full truncate">
+                 Analyze text to detect AI-generated content
+                </div>
+               </div>
+              </div>
+             </div>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="jsx-2829f948ce7435f2 flex justify-center py-16 bg-black">
+      <div class="jsx-2829f948ce7435f2 w-full">
+       <div class="jsx-2829f948ce7435f2 text-center sm:mb-8 mb:4 px-8 sm:px-2">
+        <h2 class="jsx-2829f948ce7435f2 text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-6 tracking-tight">
+         Humanizing AI Text Has Never Been Easier
+        </h2>
+        <p class="jsx-2829f948ce7435f2 hidden sm:block text-sm sm:text-base font-extralight md:text-base text-white/90 max-w-[590px] mx-auto">
+         Paste, humanize, and beat AI detectors every time
+        </p>
+       </div>
+       <div class="jsx-2829f948ce7435f2 max-w-6xl mx-auto bg-black lg:rounded-2xl overflow-hidden lg:border lg:border-neutral-800">
+        <div class="jsx-2829f948ce7435f2 grid lg:grid-rows-2 lg:h-[1072px]">
+         <div class="jsx-2829f948ce7435f2 grid md:grid-cols-2 lg:border-b lg:border-neutral-800">
+          <div class="jsx-2829f948ce7435f2 p-4 md:p-8 md:border-r md:border-neutral-800 flex flex-col h-full min-h-[400px]">
+           <h3 class="jsx-2829f948ce7435f2 text-xl font-normal text-white mb-2 text-center md:text-left">
+            Humanizer
+           </h3>
+           <p class="jsx-2829f948ce7435f2 text-neutral-400 font-extralight text-sm mb-4 text-center md:text-left">
+            Transform AI text to human-like writing
+           </p>
+           <div class="jsx-2829f948ce7435f2 flex-1 flex items-center justify-center">
+            <div class="jsx-2829f948ce7435f2 relative w-full h-full rounded-2xl overflow-hidden">
+             <video class="jsx-2829f948ce7435f2 w-full h-full object-cover">
+              <source class="jsx-2829f948ce7435f2" src="/videos/1080pWebLow.mp4" type="video/mp4"/>
+             </video>
+            </div>
+           </div>
+          </div>
+          <div class="jsx-2829f948ce7435f2 p-4 md:p-8 flex flex-col h-full min-h-[400px]">
+           <h3 class="jsx-2829f948ce7435f2 text-xl font-normal text-white mb-2 text-center md:text-left">
+            Write With Confidence
+           </h3>
+           <p class="jsx-2829f948ce7435f2 text-neutral-400 font-extralight text-sm mb-4 text-center md:text-left">
+            Preserve quality and ensure complete undetectability
+           </p>
+           <div class="jsx-2829f948ce7435f2 flex-1 flex items-center justify-center px-0">
+            <div class="jsx-2829f948ce7435f2 relative bg-neutral-900/20 backdrop-blur-sm rounded-2xl border border-white/5 p-0 w-full h-full min-h-[25rem] overflow-hidden group">
+             <div class="jsx-2829f948ce7435f2 grid grid-cols-2 grid-rows-2 h-full">
+              <div class="jsx-2829f948ce7435f2 flex flex-col items-center justify-center p-6 transition-colors duration-300">
+               <h4 class="jsx-2829f948ce7435f2 text-neutral-200 text-sm font-medium mb-1">
+                Beat Detectors
+               </h4>
+               <p class="jsx-2829f948ce7435f2 text-neutral-500 text-xs">
+                Undetectable
+               </p>
+              </div>
+              <div class="jsx-2829f948ce7435f2 flex flex-col items-center justify-center p-6 transition-colors duration-300">
+               <h4 class="jsx-2829f948ce7435f2 text-neutral-200 text-sm font-medium mb-1">
+                Tone Selection
+               </h4>
+               <p class="jsx-2829f948ce7435f2 text-neutral-500 text-xs">
+                Human-like
+               </p>
+              </div>
+              <div class="jsx-2829f948ce7435f2 flex flex-col items-center justify-center p-6 transition-colors duration-300">
+               <h4 class="jsx-2829f948ce7435f2 text-neutral-200 text-sm font-medium mb-1">
+                Lightning Fast
+               </h4>
+               <p class="jsx-2829f948ce7435f2 text-neutral-500 text-xs">
+                Instant Results
+               </p>
+              </div>
+              <div class="jsx-2829f948ce7435f2 flex flex-col items-center justify-center p-6 transition-colors duration-300">
+               <h4 class="jsx-2829f948ce7435f2 text-neutral-200 text-sm font-medium mb-1">
+                SEO Ready
+               </h4>
+               <p class="jsx-2829f948ce7435f2 text-neutral-500 text-xs">
+                Optimized
+               </p>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+         </div>
+         <div class="jsx-2829f948ce7435f2 grid lg:grid-cols-3">
+          <div class="jsx-2829f948ce7435f2 p-4 md:p-8 lg:border-r lg:border-neutral-800 flex flex-col h-full min-h-[400px]">
+           <h4 class="jsx-2829f948ce7435f2 text-lg font-normal text-white mb-2 text-center lg:text-left">
+            Before vs After
+           </h4>
+           <p class="jsx-2829f948ce7435f2 text-neutral-400 font-extralight text-sm mb-4 text-center lg:text-left">
+            See the difference our humanizer makes
+           </p>
+           <div class="jsx-2829f948ce7435f2 flex-1 flex flex-col justify-center sm:px-0 px-0">
+            <div class="jsx-2829f948ce7435f2 relative bg-gradient-to-b from-neutral-950 via-neutral-900 to-neutral-950 p-4 rounded-2xl border border-neutral-900/70 overflow-hidden">
+             <div class="jsx-2829f948ce7435f2 relative w-full h-[21rem] bg-black/20 backdrop-blur-sm rounded-xl overflow-hidden shadow-inner cursor-ew-resize">
+              <div class="jsx-2829f948ce7435f2 absolute inset-0 bg-gradient-to-br from-red-500/10 via-red-400/5 to-red-600/8 backdrop-blur-sm flex items-center justify-center p-6">
+               <div class="jsx-2829f948ce7435f2 absolute top-3 left-3">
+                <span class="jsx-2829f948ce7435f2 text-red-400 font-semibold text-xs">
+                 99%
+                </span>
+                <span class="jsx-2829f948ce7435f2 text-neutral-300 font-semibold text-xs ml-1">
+                 AI
+                </span>
+               </div>
+               <div class="jsx-2829f948ce7435f2 text-red-300 text-sm text-center leading-relaxed font-medium">
+                The student's project demonstrates a solid foundation and clear understanding of the principles of development, and it's clear they invested considerable effort into making it user-friendly.
+               </div>
+              </div>
+              <div class="jsx-2829f948ce7435f2 absolute inset-0 bg-gradient-to-bl from-green-500/10 via-green-400/5 to-green-600/8 backdrop-blur-sm flex items-center justify-center p-6">
+               <div class="jsx-2829f948ce7435f2 absolute top-3 right-3">
+                <span class="jsx-2829f948ce7435f2 text-green-400 font-semibold text-xs">
+                 100%
+                </span>
+                <span class="jsx-2829f948ce7435f2 text-neutral-300 font-semibold text-xs ml-1">
+                 Human
+                </span>
+               </div>
+               <div class="jsx-2829f948ce7435f2 text-green-300 text-sm text-center leading-relaxed font-medium">
+                The student invested a lot of effort into their software project, it shows that they knew the principles of development and were willing to put in the effort to make it functional and user-friendly.
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="jsx-2829f948ce7435f2 p-4 md:p-8 lg:border-r lg:border-neutral-800 flex flex-col h-full min-h-[400px]">
+           <h4 class="jsx-2829f948ce7435f2 text-lg font-normal text-white mb-2 text-center lg:text-left">
+            Tone Selection
+           </h4>
+           <p class="jsx-2829f948ce7435f2 text-neutral-400 font-extralight text-sm mb-4 text-center lg:text-left">
+            Choose a writing style to match your audience
+           </p>
+           <div class="jsx-2829f948ce7435f2 flex-1 flex flex-col items-center justify-center px-0 sm:px-0">
+            <div class="jsx-2829f948ce7435f2 relative bg-neutral-700/30 rounded-2xl p-6 space-y-2 overflow-y-auto w-full">
+             <div class="jsx-2829f948ce7435f2 p-3 rounded-2xl cursor-pointer transition-all duration-200 bg-neutral-800/40 hover:bg-neutral-800/60">
+              <div class="jsx-2829f948ce7435f2 text-white font-medium text-sm">
+               Casual
+              </div>
+              <div class="jsx-2829f948ce7435f2 text-neutral-400 text-xs">
+               Relaxed, conversational
+              </div>
+             </div>
+             <div class="jsx-2829f948ce7435f2 p-3 rounded-2xl cursor-pointer transition-all duration-200 bg-neutral-700/70 border border-neutral-600">
+              <div class="jsx-2829f948ce7435f2 text-white font-medium text-sm">
+               Balanced
+              </div>
+              <div class="jsx-2829f948ce7435f2 text-neutral-400 text-xs">
+               Professional, natural
+              </div>
+             </div>
+             <div class="jsx-2829f948ce7435f2 p-3 rounded-2xl cursor-pointer transition-all duration-200 bg-neutral-800/40 hover:bg-neutral-800/60">
+              <div class="jsx-2829f948ce7435f2 text-white font-medium text-sm">
+               Technical
+              </div>
+              <div class="jsx-2829f948ce7435f2 text-neutral-400 text-xs">
+               Precise, detailed
+              </div>
+             </div>
+             <div class="jsx-2829f948ce7435f2 p-3 rounded-2xl cursor-pointer transition-all duration-200 bg-neutral-800/40 hover:bg-neutral-800/60">
+              <div class="jsx-2829f948ce7435f2 text-white font-medium text-sm">
+               Simple
+              </div>
+              <div class="jsx-2829f948ce7435f2 text-neutral-400 text-xs">
+               Clear, straightforward
+              </div>
+             </div>
+             <div class="jsx-2829f948ce7435f2 p-3 rounded-2xl cursor-pointer transition-all duration-200 bg-neutral-800/40 hover:bg-neutral-800/60">
+              <div class="jsx-2829f948ce7435f2 text-white font-medium text-sm">
+               Formal
+              </div>
+              <div class="jsx-2829f948ce7435f2 text-neutral-400 text-xs">
+               Professional, structured
+              </div>
+             </div>
+            </div>
+           </div>
+          </div>
+          <div class="jsx-2829f948ce7435f2 p-4 md:p-8 flex flex-col h-full min-h-[400px]">
+           <h4 class="jsx-2829f948ce7435f2 text-lg font-normal text-white mb-2 text-center lg:text-left">
+            Bypass AI Detectors
+           </h4>
+           <p class="jsx-2829f948ce7435f2 text-neutral-400 font-extralight text-sm mb-4 text-center lg:text-left">
+            Stay under the radar of AI detection tools
+           </p>
+           <div class="jsx-2829f948ce7435f2 flex-1 flex items-center justify-center">
+            <div class="jsx-2829f948ce7435f2 relative w-full h-[23rem] rounded-2xl overflow-hidden">
+             <video class="jsx-2829f948ce7435f2 w-full h-full object-cover">
+              <source class="jsx-2829f948ce7435f2" src="/videos/proofDemo1080pWebLow.mp4" type="video/mp4"/>
+             </video>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-center">
+      <div class="w-full py-10 sm:py-10 lg:py-16 lg:mt-2 bg-black relative overflow-hidden">
+       <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative rounded-2xl sm:rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-neutral-800/20 to-neutral-900/20 backdrop-blur-sm" id="stats-counters">
+         <div class="grid grid-cols-2 gap-0">
+          <div class="relative p-4 sm:p-6 lg:p-8 text-center">
+           <div class="relative">
+            <div class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3 tabular-nums">
+             <span class="inline-flex tabular-nums">
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                8
+               </span>
+              </span>
+              <span>
+               ,
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                5
+               </span>
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                6
+               </span>
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                5
+               </span>
+              </span>
+             </span>
+            </div>
+            <div class="text-gray-300 text-xs sm:text-sm font-medium mb-1 sm:mb-2">
+             Active Users
+            </div>
+            <div class="text-gray-400 text-xs">
+             Writers &amp; Students
+            </div>
+           </div>
+          </div>
+          <div class="relative p-4 sm:p-6 lg:p-8 text-center">
+           <div class="relative">
+            <div class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-semibold text-white mb-2 sm:mb-3 tabular-nums">
+             <span class="inline-flex tabular-nums">
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                3
+               </span>
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                0
+               </span>
+              </span>
+              <span>
+               ,
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                3
+               </span>
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                5
+               </span>
+              </span>
+              <span class="relative inline-block overflow-hidden h-[1em] tabular-nums">
+               <span class="block h-[1em] flex items-center justify-center">
+                4
+               </span>
+              </span>
+             </span>
+            </div>
+            <div class="text-gray-300 text-xs sm:text-sm font-medium mb-1 sm:mb-2">
+             Papers Processed
+            </div>
+            <div class="text-gray-400 text-xs">
+             Successfully Humanized
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <section class="py-12 md:py-16 px-4 md:px-6 bg-black">
+      <div class="max-w-6xl mx-auto">
+       <div class="text-center mb-3">
+        <span class="text-xs sm:text-sm font-medium text-blue-400 inline-block">
+         BENEFITS
+        </span>
+       </div>
+       <h2 class="text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white mb-6 tracking-tight">
+        AI That Writes Like a Human Should
+       </h2>
+       <p class="text-sm sm:text-base md:text-base font-extralight text-white/90 max-w-[660px] mx-auto px-4 mb-8 text-center">
+        UndetectedGPT works alongside you to help you craft authentic, undetectable writing, in a fraction of the time it usually takes. Welcome to the future of AI content.
+       </p>
+       <div class="relative grid grid-cols-1 md:grid-cols-2 gap-0">
+        <div class="flex flex-col items-center md:items-start py-6 md:py-8 px-6 md:px-4 lg:px-12 min-h-[350px] md:min-h-[400px]">
+         <div class="w-full flex items-center justify-center mb-6 md:mb-8 group h-[190px]">
+          <div class="relative w-full max-w-[240px] md:max-w-[280px] h-[100px] md:h-[120px]">
+           <div class="absolute left-0 top-1/2 -translate-y-1/2 w-[70px] md:w-[100px] h-[70px] md:h-[100px] bg-zinc-200 rounded-lg md:rounded-xl shadow-lg flex items-center justify-center transform -rotate-6 z-10 transition-all duration-300 md:group-hover:scale-110 md:group-hover:-rotate-12">
+            <img alt="GPTZero" class="object-contain grayscale brightness-0 w-[50px] md:w-[70px] h-[50px] md:h-[70px]" src="/logos/competitors/gptzero.webp"/>
+           </div>
+           <div class="absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-[70px] md:w-[100px] h-[70px] md:h-[100px] bg-zinc-200 rounded-lg md:rounded-xl shadow-lg flex items-center justify-center transform rotate-3 z-20 transition-all duration-300 md:group-hover:scale-110 md:group-hover:rotate-6">
+            <img alt="Turnitin" class="object-contain grayscale brightness-0 w-[50px] md:w-[70px] h-[50px] md:h-[70px]" src="/logos/competitors/turnitin.webp"/>
+           </div>
+           <div class="absolute right-0 top-1/2 -translate-y-1/2 w-[70px] md:w-[100px] h-[70px] md:h-[100px] bg-zinc-200 rounded-lg md:rounded-xl shadow-lg flex items-center justify-center transform -rotate-3 z-10 transition-all duration-300 md:group-hover:scale-110 md:group-hover:-rotate-6">
+            <img alt="ZeroGPT" class="object-contain grayscale brightness-0 w-[50px] md:w-[70px] h-[50px] md:h-[70px]" src="/logos/competitors/nogpt.webp"/>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl md:text-2xl font-medium text-white mb-1 md:mb-1 text-center md:text-left">
+           Undetectable AI writing
+          </h3>
+          <p class="text-sm md:text-base text-neutral-400 font-extralight leading-relaxed text-center md:text-left">
+           <span class="md:hidden">
+            Feel confident every piece of content passes undetected. We bypass GPTZero, Turnitin, and all major AI detectors.
+           </span>
+           <span class="hidden md:inline">
+            Stop stressing over AI detection. Feel confident every piece of content passes undetected. We bypass GPTZero, Turnitin, and all major AI detectors with industry-leading success rates.
+           </span>
+          </p>
+         </div>
+        </div>
+        <div class="flex flex-col items-center md:items-start py-6 md:py-8 px-6 md:px-4 lg:px-12 min-h-[350px] md:min-h-[400px]">
+         <div class="w-full flex items-center justify-center mb-6 md:mb-8 group h-[190px]">
+          <div class="relative w-full max-w-[360px] md:max-w-[400px] h-[200px] flex items-center justify-center gap-10 md:gap-16">
+           <div class="relative w-[140px] md:w-[160px] h-[120px] -translate-y-6 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-xl p-3 flex flex-col justify-center shadow-lg">
+            <div class="flex items-center justify-between mb-2">
+             <span class="text-[9px] font-medium text-zinc-500 uppercase tracking-wider">
+              Convert
+             </span>
+            </div>
+            <div class="text-[10px] text-zinc-400 font-medium">
+             Humanize AI Text
+            </div>
+           </div>
+           <div class="relative w-[140px] md:w-[160px] h-[120px] translate-y-6 bg-gradient-to-br from-zinc-900 to-black border border-zinc-800 rounded-xl p-3 flex flex-col justify-center shadow-lg">
+            <div class="flex items-center justify-between mb-2">
+             <span class="text-[9px] font-medium text-zinc-500 uppercase tracking-wider">
+              Create
+             </span>
+            </div>
+            <div class="text-[10px] text-zinc-400 font-medium">
+             Generate from Scratch
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl md:text-2xl font-medium text-white mb-1 md:mb-1 text-center md:text-left">
+           Better writing, faster
+          </h3>
+          <p class="text-sm md:text-base text-neutral-400 font-extralight leading-relaxed text-center md:text-left">
+           <span class="md:hidden">
+            Authentic, human-quality content. Transform AI-generated drafts or create from scratch with our Stealth Writer.
+           </span>
+           <span class="hidden md:inline">
+            Make your writing stand out with authentic, human-quality content. Transform AI-generated drafts or create from scratch with our Stealth Writer while maintaining your unique voice.
+           </span>
+          </p>
+         </div>
+        </div>
+        <div class="flex flex-col items-center md:items-start py-6 md:py-8 px-6 md:px-4 lg:px-12 min-h-[350px] md:min-h-[400px]">
+         <div class="w-full flex items-center justify-center mb-6 md:mb-8 group h-[190px]">
+          <div class="relative w-full max-w-[320px] md:max-w-[360px] h-[180px] bg-zinc-900/40 border border-zinc-800 rounded-xl overflow-hidden flex items-center justify-center p-6">
+           <div class="relative w-full font-medium text-lg sm:text-xl leading-snug">
+            <p class="text-transparent select-none">
+             In a world where AI detection is everywhere, a powerful humanizer isn't optional. It's essential for content that needs to pass authenticity checks.
+            </p>
+            <div class="absolute inset-0 text-white select-none">
+             In a world where AI detection is everywhere, a powerful humanizer isn't optional. It's essential for content that needs to pass authenticity checks.
+            </div>
+           </div>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl md:text-2xl font-medium text-white mb-1 md:mb-1 text-center md:text-left">
+           <span class="md:hidden">
+            AI for responsible writers
+           </span>
+           <span class="hidden md:inline">
+            Responsible AI for responsible writers
+           </span>
+          </h3>
+          <p class="text-sm md:text-base text-neutral-400 font-extralight leading-relaxed text-center md:text-left">
+           <span class="md:hidden">
+            Our AI Detector ensures peace of mind on every project, while our Humanizer guarantees undetectable results.
+           </span>
+           <span class="hidden md:inline">
+            Use AI without putting your reputation at stake. Our AI Detector ensures you get peace of mind on every project, while our Humanizer guarantees undetectable results.
+           </span>
+          </p>
+         </div>
+        </div>
+        <div class="flex flex-col items-center md:items-start py-6 md:py-8 px-6 md:px-4 lg:px-12 min-h-[350px] md:min-h-[400px]">
+         <div class="w-full flex items-center justify-center mb-6 md:mb-8 group h-[190px]">
+          <div class="relative w-full max-w-[320px] md:max-w-[380px] h-[140px] flex items-center justify-center gap-4 md:gap-8">
+           <a class="relative w-24 h-24 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:scale-110 hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group/item1 z-10 will-change-transform" href="/feature/humanizer">
+            <span class="text-xs font-medium text-zinc-400 group-hover/item1:text-white transition-colors">
+             Humanizer
+            </span>
+           </a>
+           <a class="relative w-24 h-24 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:scale-110 hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group/item2 z-10 will-change-transform" href="/feature/stealthwriter">
+            <span class="text-xs font-medium text-zinc-400 group-hover/item2:text-white transition-colors">
+             Writer
+            </span>
+           </a>
+           <a class="relative w-24 h-24 bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-2xl flex flex-col items-center justify-center gap-2 transition-all duration-300 hover:scale-110 hover:border-white/50 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group/item3 z-10 will-change-transform" href="/feature/ai-detector">
+            <span class="text-xs font-medium text-zinc-400 group-hover/item3:text-white transition-colors">
+             Detector
+            </span>
+           </a>
+          </div>
+         </div>
+         <div>
+          <h3 class="text-xl md:text-2xl font-medium text-white mb-1 md:mb-1 text-center md:text-left">
+           Built for your workflow
+          </h3>
+          <p class="text-sm md:text-base text-neutral-400 font-extralight leading-relaxed text-center md:text-left">
+           <span class="md:hidden">
+            Paste AI text to humanize it, generate undetectable content from prompts, or verify your work. All in one platform.
+           </span>
+           <span class="hidden md:inline">
+            Simple, powerful tools that work how you work. Paste AI text to humanize it, generate undetectable content from prompts, or verify your work. All in one integrated platform.
+           </span>
+          </p>
+         </div>
+        </div>
+       </div>
+      </div>
+     </section>
+     <div class="flex justify-center">
+      <div class="flex flex-col w-full py-16 relative font-inter">
+       <div class="relative w-full flex-1 flex flex-col">
+        <div class="flex-1 flex items-center justify-center p-8 sm:p-12 lg:p-16 relative">
+         <div class="bg-black/20 backdrop-blur-sm border border-white/10 rounded-3xl p-8 sm:p-12 lg:p-16 shadow-2xl max-w-4xl mx-auto">
+          <div class="text-center z-10 relative">
+           <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-medium mb-4 text-white tracking-tight">
+            Write with AI.
+            <br/>
+            Submit with
+            <span class="chrome-shine-smooth">
+             confidence
+            </span>
+            .
+           </h2>
+           <p class="pb-4 mx-4 sm:mx-8 text-sm md:text-base lg:text-lg font-light text-neutral-300 mb-2">
+            Stay under the radar with UndetectedGPT, and bypass all detectors
+           </p>
+           <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/dashboard">
+             <button class="relative inline-flex items-center rounded-xl bg-zinc-800 text-white text-sm sm:text-sm py-3 px-6 sm:py-3 sm:px-6 shadow-lg font-medium transition-all duration-300 overflow-hidden group">
+              <span class="relative z-10 flex items-center">
+               Get Started
+              </span>
+             </button>
+            </a>
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <div class="flex justify-center" id="faq">
+      <div class="w-full max-w-6xl mx-auto py-16 pt-20 px-4 lg:px-0">
+       <div class="flex flex-col lg:flex-row lg:items-start lg:space-x-12">
+        <div class="lg:w-1/2 mb-8 lg:mb-0">
+         <h2 class="text-2xl sm:text-3xl font-medium text-white mb-2 text-left pl-4 lg:text-left">
+          Frequently Asked Questions
+         </h2>
+         <p class="text-neutral-300 pl-4 text-sm sm:text-base text-left lg:text-left">
+          Have another question? Contact us on
+          <a class="text-white underline hover:text-white transition-colors duration-200" href="https://twitter.com/undetectedgpt" rel="noopener noreferrer" target="_blank">
+           X
+          </a>
+          or by
+          <a class="text-white underline hover:text-white transition-colors duration-200" href="mailto:contact@undetectedgpt.ai">
+           email
+          </a>
+          .
+         </p>
+        </div>
+        <div class="pl-4 lg:w-1/2">
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            What is undetectable AI?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-0">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            AI-generated content that does not get flagged by AI detectors like Turnitin, GPTZero, ZeroGPT, Scribbr, Originality, Grammarly, and more.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            How can I make sure my content is undetected?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-1">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Submit UndetectedGPT's output to different AI detectors to verify its effectiveness firsthand.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            What is Humanizing AI-generated text?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-2">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            The process of transforming AI-generated content to make it feel more human, allowing it to bypass all AI detectors effectively.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            What is UndetectedGPT?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-3">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            UndetectedGPT is the leading platform for creating undetectable AI content. Our suite includes an AI Humanizer, Stealth Writer, and AI Detector—designed to help writers, students, and professionals bypass GPTZero, Turnitin, Originality.ai, and other AI detection systems. UndetectedGPT provides reliable solutions trusted by thousands of users worldwide.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            Does UndetectedGPT work with ChatGPT, Claude, and other AI writing tools?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-4">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Yes, UndetectedGPT is compatible with all major AI writing tools including ChatGPT (GPT-3.5, GPT-4, GPT-5), Claude, Google Gemini, Llama, and other language models. Our platform is specifically designed to handle content from any AI source and transform it to bypass detection, regardless of which AI tool originally generated the text.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            How is this tool different from others?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-5">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            UndetectedGPT is specifically optimized to ensure AI-generated text appears natural, helping it stay undetected by AI detectors.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            Does UndetectedGPT really beat all AI detectors?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-6">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Yes, our models are rigorously tested against the latest AI detectors 24/7, ensuring we stay one step ahead.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            How can I get more humanizations?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-7">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            Visit our
+            <a class="text-neutral-300 underline hover:text-white transition-colors" href="/pricing">
+             Pricing
+            </a>
+            section to see our subscription and add-on plans.
+           </div>
+          </div>
+         </div>
+         <div class="bg-neutral-900/20 border border-neutral-800/90 rounded-xl mb-3 overflow-hidden backdrop-blur-sm transition-all duration-300 hover:border-neutral-700/60 hover:bg-neutral-900/30">
+          <button class="w-full flex justify-between items-center cursor-pointer group px-6 py-4 transition-all duration-300 hover:bg-beutral-800/20">
+           <h3 class="text-sm sm:text-base font-normal text-left text-white group-hover:text-neutral-100 transition-colors duration-300">
+            How long do I have to wait after purchasing add-ons?
+           </h3>
+          </button>
+          <div class="transition-all duration-500 ease-in-out max-h-0 opacity-0 pb-0" id="faq-answer-8">
+           <div class="px-6 text-left text-sm sm:text-base text-neutral-400 leading-relaxed">
+            All Boost and Humanization credits are added to your account instantly. If you experience any issues, please
+            <a class="text-neutral-300 underline hover:text-white transition-colors" href="/contact-us">
+             Contact Us
+            </a>
+            .
+           </div>
+          </div>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div id="legal">
+     <div class="bg-black w-full pb-12 text-neutral-400 font-inter">
+      <hr class="border-t border-zinc-800 w-full mb-8 sm:mb-12"/>
+      <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-12">
+       <div class="flex flex-col md:flex-row md:justify-between">
+        <div class="mb-8 md:mb-0 flex md:px-0 px-8 flex-col items-left md:items-start">
+         <div class="px-1 py-2 rounded-lg flex items-center">
+          <a href="/">
+           <img alt="UndetectedGPT Logo" class="w-8 h-8" src="/logos/logo.png"/>
+          </a>
+         </div>
+         <p class="text-sm text-left pr-12 md:text-left max-w-xs mb-4">
+          From AI generated content to human-like text in a single click
+         </p>
+         <p class="text-xs text-left">
+          © 2025 UndetectedGPT - All rights reserved.
+         </p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-y-6 gap-x-16 text-left px-8 md:px-0 flex-grow">
+         <div class="flex flex-col space-y-4">
+          <h4 class="text-white text-base font-semibold">
+           Legal
+          </h4>
+          <a class="hover:text-white text-sm" href="/legal/privacy-policy">
+           Privacy Policy
+          </a>
+          <a class="hover:text-white text-sm" href="/legal/terms-conditions">
+           Terms of Service
+          </a>
+         </div>
+         <div class="flex flex-col space-y-4">
+          <h4 class="text-white text-base font-semibold">
+           Product
+          </h4>
+          <a class="hover:text-white text-sm" href="/dashboard">
+           Dashboard
+          </a>
+          <a class="hover:text-white text-sm" href="/feature/humanizer">
+           AI Humanizer
+          </a>
+          <a class="hover:text-white text-sm" href="/feature/stealthwriter">
+           AI Stealth Writer
+          </a>
+          <a class="hover:text-white text-sm" href="/feature/ai-detector">
+           AI Detector
+          </a>
+         </div>
+         <div class="flex flex-col space-y-4">
+          <h4 class="text-white text-base font-semibold">
+           Support
+          </h4>
+          <a class="hover:text-white text-sm" href="/contact-us">
+           Contact Us
+          </a>
+          <a class="hover:text-white text-sm" href="mailto:contact@undetectedgpt.ai">
+           Email
+          </a>
+         </div>
+         <div class="flex flex-col space-y-4">
+          <h4 class="text-white text-base font-semibold">
+           Company
+          </h4>
+          <a class="hover:text-white text-sm" href="/pricing">
+           Pricing
+          </a>
+          <a class="hover:text-white text-sm" href="/about-us">
+           About Us
+          </a>
+          <a class="hover:text-white text-sm" href="/blog">
+           Blog
+          </a>
+          <a class="hover:text-white text-sm" href="/affiliate">
+           Affiliate Program
+          </a>
+         </div>
+        </div>
+       </div>
+      </div>
+      <div class="w-full pt-16 overflow-hidden">
+       <div class="text-center select-none">
+        <h1 class="bg-gradient-to-r from-zinc-800 via-white to-zinc-800 bg-clip-text text-transparent font-semibold leading-none tracking-tighter text-[11.5vw]">
+         UNDETECTEDGPT
+        </h1>
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+  </body>
+
+</body>
+</html>

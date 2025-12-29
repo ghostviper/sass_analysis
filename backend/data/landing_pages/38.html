@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AppTrends - Discover What's Trending</title>
+</head>
+<body>
+  <body>
+   <div id="root">
+    <section>
+    </section>
+    <div class="min-h-screen flex flex-col bg-background overflow-x-hidden">
+     <header class="fixed top-0 left-0 right-0 z-[60] w-full transition-all duration-300 bg-background/95 backdrop-blur-xl border-b border-border/50 shadow-sm">
+      <div class="container flex h-16 items-center justify-between">
+       <a class="flex items-center gap-2 group" href="/">
+        <img alt="AppTrends" class="h-8 w-8 rounded-lg shadow-sm group-hover:shadow-md transition-shadow" src="/assets/logo-C0h8Ed_c.png"/>
+        <div class="flex items-baseline">
+         <span class="text-xl font-bold tracking-tight">
+          App
+         </span>
+         <span class="text-xl font-bold tracking-tight text-primary">
+          Trends
+         </span>
+        </div>
+       </a>
+       <nav class="hidden md:flex items-center gap-6">
+        <a class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" href="/">
+         <span>
+          Trends
+         </span>
+        </a>
+        <a class="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors" href="/hot">
+         <span>
+          Hot
+         </span>
+        </a>
+        <div class="flex items-center gap-2 text-muted-foreground/50 cursor-not-allowed">
+         <span>
+          Keyword Tracking
+         </span>
+         <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-[10px] px-1.5 py-0 border-muted-foreground/30 text-muted-foreground/50">
+          Soon
+         </div>
+        </div>
+       </nav>
+       <div class="flex items-center gap-2">
+        <button class="inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:bg-accent hover:text-accent-foreground rounded-md h-8 gap-1.5 px-2" id="radix-:r0:" type="button">
+         <span class="text-xs font-medium uppercase">
+          en
+         </span>
+        </button>
+        <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary hover:bg-primary/90 h-9 rounded-md relative overflow-hidden bg-gradient-to-r from-primary to-primary/80 hover:from-primary/90 hover:to-primary text-primary-foreground font-medium px-5 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105">
+         Sign In
+        </button>
+       </div>
+      </div>
+     </header>
+     <main class="flex-1 pt-16">
+      <section class="relative min-h-[90vh] flex items-center overflow-hidden">
+       <div class="container px-4 py-12 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+         <div class="text-center lg:text-left">
+          <div class="items-center rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 mb-6 px-4 py-2 text-sm bg-primary/10 text-primary border-0 font-medium animate-fade-in inline-flex">
+           App Intelligence Platform
+          </div>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.1] animate-fade-in">
+           Analyze Mobile App Trends
+           <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-primary to-primary/70 mt-2">
+            Like a Pro
+           </span>
+          </h1>
+          <p class="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed animate-fade-in">
+           Track trending apps from App Store and Google Play. Discover opportunities before your competitors.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-in">
+           <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 text-primary-foreground rounded-md gap-2 text-base px-8 h-12 bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+            Start Free
+           </button>
+           <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground rounded-md gap-2 text-base px-8 h-12 hover:scale-105 transition-all duration-300">
+            View Pricing
+           </button>
+          </div>
+          <div class="flex items-center gap-6 mt-10 justify-center lg:justify-start animate-fade-in">
+           <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>
+             Start Free
+            </span>
+           </div>
+           <div class="flex items-center gap-2 text-sm text-muted-foreground">
+            <span>
+             No credit card required
+            </span>
+           </div>
+          </div>
+         </div>
+         <div class="relative">
+          <div class="relative bg-gradient-to-br from-background via-background to-muted/50 rounded-2xl p-4 border border-border/50 shadow-2xl">
+           <div class="flex items-center justify-between mb-4 px-2">
+            <div class="flex items-center gap-2">
+             <span class="text-xs font-medium text-trend-up">
+              Live
+             </span>
+            </div>
+            <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground text-[10px] gap-1.5 px-2 py-1">
+             <span class="text-sm">
+              🇹🇷
+             </span>
+             <span class="font-medium">
+              Hot Risers from Turkey
+             </span>
+            </div>
+           </div>
+           <div class="space-y-3">
+            <div class="group flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-transparent hover:border-primary/20 cursor-pointer transition-all duration-300 animate-fade-in">
+             <div class="relative shrink-0">
+              <img alt="Getcontact" class="h-14 w-14 rounded-xl object-cover shadow-sm ring-1 ring-border/30" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/71/a5/90/71a590fb-c5a7-73d3-cee2-f422c63fc766/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/512x512bb.png"/>
+              <div class="absolute -bottom-1 -right-1 text-sm">
+               🇹🇷
+              </div>
+             </div>
+             <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-0.5">
+               <h3 class="font-semibold text-sm truncate">
+                Getcontact
+               </h3>
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+               <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-[9px] px-1.5 py-0 h-4 bg-ios/10 text-ios">
+                iOS
+               </div>
+               <span class="text-[10px] text-muted-foreground capitalize">
+                utilities
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                •
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                Turkey
+               </span>
+              </div>
+             </div>
+             <div class="shrink-0 flex flex-col items-center justify-center ml-2">
+              <div class="flex flex-col items-center gap-0.5 bg-gradient-to-br from-trend-up/20 to-trend-up/5 px-3 py-2 rounded-xl border border-trend-up/20">
+               <div class="flex items-center gap-1 text-trend-up">
+                <span class="text-xs font-medium">
+                 +90
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5 text-sm font-bold">
+                <span class="text-muted-foreground">
+                 99
+                </span>
+                <span class="text-muted-foreground/60">
+                 →
+                </span>
+                <span class="text-foreground">
+                 9
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="group flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-transparent hover:border-primary/20 cursor-pointer transition-all duration-300 animate-fade-in">
+             <div class="relative shrink-0">
+              <img alt="Google Drive – online backup" class="h-14 w-14 rounded-xl object-cover shadow-sm ring-1 ring-border/30" src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ab/5e/01/ab5e0162-fa86-ff5f-325c-971012ccd2b8/drive_2020q4-0-1x_U007epad-0-0-0-1-0-0-0-0-85-220-0.png/512x512bb.png"/>
+              <div class="absolute -bottom-1 -right-1 text-sm">
+               🇹🇷
+              </div>
+             </div>
+             <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-0.5">
+               <h3 class="font-semibold text-sm truncate">
+                Google Drive – online backup
+               </h3>
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+               <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-[9px] px-1.5 py-0 h-4 bg-ios/10 text-ios">
+                iOS
+               </div>
+               <span class="text-[10px] text-muted-foreground capitalize">
+                productivity
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                •
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                Turkey
+               </span>
+              </div>
+             </div>
+             <div class="shrink-0 flex flex-col items-center justify-center ml-2">
+              <div class="flex flex-col items-center gap-0.5 bg-gradient-to-br from-trend-up/20 to-trend-up/5 px-3 py-2 rounded-xl border border-trend-up/20">
+               <div class="flex items-center gap-1 text-trend-up">
+                <span class="text-xs font-medium">
+                 +89
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5 text-sm font-bold">
+                <span class="text-muted-foreground">
+                 95
+                </span>
+                <span class="text-muted-foreground/60">
+                 →
+                </span>
+                <span class="text-foreground">
+                 6
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="group flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-transparent hover:border-primary/20 cursor-pointer transition-all duration-300 animate-fade-in">
+             <div class="relative shrink-0">
+              <img alt="Zoom Workplace" class="h-14 w-14 rounded-xl object-cover shadow-sm ring-1 ring-border/30" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/95/e8/d4/95e8d4fa-c024-1dc7-d119-a065550fcca3/AppIcon-0-0-1x_U007epad-0-1-0-0-85-220.png/512x512bb.png"/>
+              <div class="absolute -bottom-1 -right-1 text-sm">
+               🇹🇷
+              </div>
+             </div>
+             <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-0.5">
+               <h3 class="font-semibold text-sm truncate">
+                Zoom Workplace
+               </h3>
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+               <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-[9px] px-1.5 py-0 h-4 bg-ios/10 text-ios">
+                iOS
+               </div>
+               <span class="text-[10px] text-muted-foreground capitalize">
+                business
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                •
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                Turkey
+               </span>
+              </div>
+             </div>
+             <div class="shrink-0 flex flex-col items-center justify-center ml-2">
+              <div class="flex flex-col items-center gap-0.5 bg-gradient-to-br from-trend-up/20 to-trend-up/5 px-3 py-2 rounded-xl border border-trend-up/20">
+               <div class="flex items-center gap-1 text-trend-up">
+                <span class="text-xs font-medium">
+                 +99
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5 text-sm font-bold">
+                <span class="text-muted-foreground">
+                 100
+                </span>
+                <span class="text-muted-foreground/60">
+                 →
+                </span>
+                <span class="text-foreground">
+                 1
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+            <div class="group flex items-center gap-3 p-3 rounded-xl bg-muted/30 hover:bg-muted/50 border border-transparent hover:border-primary/20 cursor-pointer transition-all duration-300 animate-fade-in">
+             <div class="relative shrink-0">
+              <img alt="bitaksi - your closest taxi!" class="h-14 w-14 rounded-xl object-cover shadow-sm ring-1 ring-border/30" src="https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/9e/80/24/9e80244d-ba46-28d6-6004-f1343033d2fd/AppIcon-0-0-1x_U007ephone-0-9-0-sRGB-85-220.png/512x512bb.png"/>
+              <div class="absolute -bottom-1 -right-1 text-sm">
+               🇹🇷
+              </div>
+             </div>
+             <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2 mb-0.5">
+               <h3 class="font-semibold text-sm truncate">
+                bitaksi - your closest taxi!
+               </h3>
+              </div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+               <div class="inline-flex items-center rounded-full border font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 text-[9px] px-1.5 py-0 h-4 bg-ios/10 text-ios">
+                iOS
+               </div>
+               <span class="text-[10px] text-muted-foreground capitalize">
+                travel
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                •
+               </span>
+               <span class="text-[10px] text-muted-foreground">
+                Turkey
+               </span>
+              </div>
+             </div>
+             <div class="shrink-0 flex flex-col items-center justify-center ml-2">
+              <div class="flex flex-col items-center gap-0.5 bg-gradient-to-br from-trend-up/20 to-trend-up/5 px-3 py-2 rounded-xl border border-trend-up/20">
+               <div class="flex items-center gap-1 text-trend-up">
+                <span class="text-xs font-medium">
+                 +89
+                </span>
+               </div>
+               <div class="flex items-center gap-1.5 text-sm font-bold">
+                <span class="text-muted-foreground">
+                 94
+                </span>
+                <span class="text-muted-foreground/60">
+                 →
+                </span>
+                <span class="text-foreground">
+                 5
+                </span>
+               </div>
+              </div>
+             </div>
+            </div>
+           </div>
+           <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 hover:text-accent-foreground h-10 px-4 py-2 w-full mt-4 gap-2 text-sm hover:bg-primary/10">
+            View More
+           </button>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="border-y bg-muted/30 py-6 overflow-hidden">
+       <div class="flex animate-marquee gap-12 whitespace-nowrap">
+        <div class="flex gap-12 items-center">
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           2M+
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Apps Tracked
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           150+
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Countries Supported
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           6h
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Daily Updates
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           7 days
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Trend History
+          </span>
+         </div>
+        </div>
+        <div class="flex gap-12 items-center">
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           2M+
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Apps Tracked
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           150+
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Countries Supported
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           6h
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Daily Updates
+          </span>
+         </div>
+         <div class="flex items-center gap-3 px-6">
+          <span class="text-3xl font-bold text-primary">
+           7 days
+          </span>
+          <span class="text-sm text-muted-foreground">
+           Trend History
+          </span>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="container px-4 py-20">
+       <div class="max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+         <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-4">
+          Features
+         </div>
+         <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Everything You Need for App Analysis
+         </h2>
+         <p class="text-muted-foreground max-w-xl mx-auto">
+          Powerful tools to track, analyze, and discover mobile app trends
+         </p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+         <div class="rounded-lg border text-card-foreground shadow-sm group border-border/50 bg-background hover:border-primary/30 hover:shadow-xl transition-all duration-500 animate-fade-in overflow-hidden relative">
+          <div class="p-6 relative">
+           <h3 class="font-semibold mb-2">
+            Real-Time Trend Tracking
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Monitor app rankings and trend movements across all categories and countries in real-time.
+           </p>
+          </div>
+         </div>
+         <div class="rounded-lg border text-card-foreground shadow-sm group border-border/50 bg-background hover:border-primary/30 hover:shadow-xl transition-all duration-500 animate-fade-in overflow-hidden relative">
+          <div class="p-6 relative">
+           <h3 class="font-semibold mb-2">
+            Revenue Estimates
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Get algorithmic revenue estimates based on rankings, downloads, and monetization data.
+           </p>
+          </div>
+         </div>
+         <div class="rounded-lg border text-card-foreground shadow-sm group border-border/50 bg-background hover:border-primary/30 hover:shadow-xl transition-all duration-500 animate-fade-in overflow-hidden relative">
+          <div class="p-6 relative">
+           <h3 class="font-semibold mb-2">
+            Ad Intelligence
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Discover which ad networks apps are using and analyze their advertising strategies.
+           </p>
+          </div>
+         </div>
+         <div class="rounded-lg border text-card-foreground shadow-sm group border-border/50 bg-background hover:border-primary/30 hover:shadow-xl transition-all duration-500 animate-fade-in overflow-hidden relative">
+          <div class="p-6 relative">
+           <h3 class="font-semibold mb-2">
+            Global Coverage
+           </h3>
+           <p class="text-sm text-muted-foreground">
+            Track apps across 50+ countries with localized ranking data and insights.
+           </p>
+          </div>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="container px-4 py-20">
+       <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+         <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground mb-4">
+          Platform Support
+         </div>
+         <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Track Both Platforms
+         </h2>
+         <p class="text-muted-foreground">
+          Analyze iOS App Store and Google Play Store data from one place
+         </p>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 border-ios/20 hover:border-ios/50 transition-colors">
+          <div class="flex items-center gap-4 mb-4">
+           <div>
+            <h3 class="font-semibold text-lg">
+             App Store
+            </h3>
+            <p class="text-sm text-muted-foreground">
+             iOS apps
+            </p>
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Real-time ranking data via iTunes RSS feeds and Apple API integration
+          </p>
+         </div>
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 border-android/20 hover:border-android/50 transition-colors">
+          <div class="flex items-center gap-4 mb-4">
+           <div>
+            <h3 class="font-semibold text-lg">
+             Google Play
+            </h3>
+            <p class="text-sm text-muted-foreground">
+             Android apps
+            </p>
+           </div>
+          </div>
+          <p class="text-sm text-muted-foreground">
+           Play Store data and advanced scraping techniques for comprehensive Android analysis
+          </p>
+         </div>
+        </div>
+       </div>
+      </section>
+      <section class="container px-4 py-20" id="pricing">
+       <div class="text-center mb-12">
+        <div class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-secondary/80 mb-4 bg-primary/10 text-primary border-0">
+         Pricing
+        </div>
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+         Simple &amp; Transparent
+         <span class="text-primary">
+          Pricing
+         </span>
+        </h2>
+        <p class="text-muted-foreground max-w-xl mx-auto">
+         Choose the plan that fits your needs. Upgrade or cancel anytime.
+        </p>
+       </div>
+       <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+        <div class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 relative">
+         <div class="mb-6">
+          <h3 class="text-xl font-bold mb-1">
+           Free
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           Perfect to get started
+          </p>
+         </div>
+         <div class="mb-6">
+          <span class="text-4xl font-bold">
+           $0
+          </span>
+          <span class="text-muted-foreground">
+           /month
+          </span>
+         </div>
+         <ul class="space-y-3 mb-6">
+          <li class="flex items-center gap-2 text-sm">
+           10 searches / day
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           Basic ranking data
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           7-day trend history
+          </li>
+          <li class="flex items-center gap-2 text-sm text-muted-foreground">
+           Premium metrics
+          </li>
+          <li class="flex items-center gap-2 text-sm text-muted-foreground">
+           Ad Intelligence
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full">
+          Start Free
+         </button>
+        </div>
+        <div class="rounded-lg border bg-card text-card-foreground p-6 relative border-primary shadow-lg">
+         <div class="absolute -top-3 left-1/2 -translate-x-1/2">
+          <div class="inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-primary hover:bg-primary/80 bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0">
+           Most Popular
+          </div>
+         </div>
+         <div class="mb-6">
+          <h3 class="text-xl font-bold mb-1">
+           Pro
+          </h3>
+          <p class="text-sm text-muted-foreground">
+           For professionals
+          </p>
+         </div>
+         <div class="mb-6">
+          <span class="text-4xl font-bold">
+           $19
+          </span>
+          <span class="text-muted-foreground">
+           /month
+          </span>
+          <p class="text-xs text-muted-foreground mt-1">
+           or $199/year (save 13%)
+          </p>
+         </div>
+         <ul class="space-y-3 mb-6">
+          <li class="flex items-center gap-2 text-sm">
+           Unlimited searches
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           Premium metrics
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           Ad Intelligence (SDK detection)
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           All country data
+          </li>
+          <li class="flex items-center gap-2 text-sm">
+           Priority support
+          </li>
+         </ul>
+         <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600">
+          Upgrade to Pro
+         </button>
+        </div>
+       </div>
+      </section>
+      <section class="container px-4 py-20">
+       <div class="max-w-3xl mx-auto text-center">
+        <div class="relative">
+         <div class="rounded-lg border bg-card text-card-foreground shadow-sm relative p-8 md:p-12 border-primary/20 bg-gradient-to-br from-background to-muted/30">
+          <h2 class="text-2xl md:text-3xl font-bold mb-4">
+           Ready to Discover App Trends?
+          </h2>
+          <p class="text-muted-foreground mb-8 max-w-xl mx-auto">
+           Join thousands of developers and marketers using apptrends.io
+          </p>
+          <button class="inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 rounded-md gap-2 px-8 h-12 text-base shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300">
+           Get Started for Free
+          </button>
+         </div>
+        </div>
+       </div>
+      </section>
+      <footer class="border-t py-8 mt-auto">
+       <div class="container px-4">
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+         <div class="flex items-center gap-2">
+          <img alt="AppTrends" class="h-6 w-6 rounded-md" src="/assets/logo-C0h8Ed_c.png"/>
+          <span class="font-semibold">
+           App
+           <span class="text-primary">
+            Trends
+           </span>
+          </span>
+         </div>
+         <p class="text-sm text-muted-foreground">
+          © 2024 AppTrends. All rights reserved.
+         </p>
+        </div>
+       </div>
+      </footer>
+     </main>
+    </div>
+   </div>
+  </body>
+
+</body>
+</html>
