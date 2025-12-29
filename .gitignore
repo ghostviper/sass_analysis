@@ -54,7 +54,12 @@ test-results/
 # ===================
 # Data & Temp Files
 # ===================
-data/*.db
-data/html_snapshots/
+*.db
+data/
+backend/data/
 *.log
 *.tmp
+
+# Test files
+test_*.py
+!backend/tests/
