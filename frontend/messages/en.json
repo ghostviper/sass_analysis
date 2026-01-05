@@ -10,7 +10,17 @@
     "total": "Total",
     "items": "",
     "copied": "Copied",
-    "share": "Share"
+    "share": "Share",
+    "loading": "Loading...",
+    "error": "Failed to load",
+    "retry": "Reload",
+    "noData": "No data",
+    "noDescription": "No description",
+    "uncategorized": "Uncategorized",
+    "prevPage": "Previous",
+    "nextPage": "Next",
+    "monthlyRevenue": "MRR",
+    "followers": "Followers"
   },
   "nav": {
     "analysisModules": "Analytics",
@@ -53,7 +63,197 @@
     "totalProducts": "Total Products",
     "analyzedProducts": "Analyzed",
     "categories": "Categories",
-    "avgMrr": "Avg MRR"
+    "avgMrr": "Avg MRR",
+    "welcome": {
+      "title": "Discover Your Next Product Opportunity",
+      "subtitle": "Data-driven SaaS product analysis for indie hackers",
+      "filterTip": "Filter low-competition high-revenue products",
+      "analysisTip": "Analyze market types and opportunities"
+    },
+    "keyMetrics": "Key Metrics",
+    "opportunityRanking": "Opportunity Ranking TOP 5",
+    "opportunitySubtitle": "Quality products matching filter criteria",
+    "categoryAnalysis": "Category Analysis",
+    "categorySubtitle": "Discover blue ocean and emerging markets",
+    "quickAccess": "Quick Access",
+    "quickAccessCards": {
+      "categories": {
+        "title": "Categories",
+        "desc": "View market types and opportunity assessment"
+      },
+      "opportunities": {
+        "title": "Opportunities",
+        "desc": "Filter replicable products"
+      },
+      "products": {
+        "title": "Products",
+        "desc": "Browse all analyzed SaaS products"
+      }
+    },
+    "errorMessage": "Failed to load data. Please ensure backend service is running."
+  },
+  "products": {
+    "title": "Products",
+    "subtitle": "products",
+    "coverCategories": "covering",
+    "categoriesCount": "categories",
+    "allProducts": "All Products",
+    "opportunities": "Opportunities",
+    "allCategories": "All Categories",
+    "allCountries": "All Countries",
+    "gridView": "Grid View",
+    "listView": "List View",
+    "noProducts": "No products found matching criteria",
+    "noOpportunities": "No opportunity products available",
+    "productDriven": "Product-driven",
+    "smallBeautiful": "Small & Beautiful",
+    "comboMatch": "combo match",
+    "suitability": "Suitability",
+    "sort": {
+      "revenue": "Revenue",
+      "scrapedAt": "Added Date",
+      "name": "Name"
+    },
+    "order": {
+      "desc": "Descending",
+      "asc": "Ascending"
+    }
+  },
+  "categories": {
+    "title": "Category Analysis",
+    "stats": {
+      "total": "categories",
+      "blueOcean": "Blue Ocean",
+      "emerging": "Emerging",
+      "redOcean": "Red Ocean"
+    },
+    "filter": {
+      "all": "All"
+    },
+    "sort": {
+      "marketType": "Market Type",
+      "totalRevenue": "Total Revenue",
+      "medianRevenue": "Median Revenue",
+      "totalProjects": "Product Count",
+      "name": "Name"
+    },
+    "noCategories": "No categories found matching criteria",
+    "selectCategory": "Select a category to view details",
+    "detailMetrics": "Detailed Metrics",
+    "metrics": {
+      "totalProjects": "Product Count",
+      "totalRevenue": "Total Revenue",
+      "avgRevenue": "Average Revenue",
+      "medianRevenue": "Median Revenue",
+      "revenuePerProject": "Revenue per Product",
+      "top10Share": "TOP10 Share",
+      "top50Share": "TOP50 Share",
+      "revenueStdDev": "Revenue Std Dev",
+      "giniCoefficient": "Gini Coefficient"
+    },
+    "units": {
+      "products": "Products",
+      "median": "Median"
+    }
+  },
+  "assistant": {
+    "title": "SaaS Analysis Assistant",
+    "subtitle": "Product Insights · Trend Analysis · Opportunity Discovery",
+    "inputPlaceholder": "Ask me anything about SaaS products...",
+    "continueChat": "Continue asking...",
+    "analysisMode": "Analysis Mode",
+    "linkedProduct": "Linked Product",
+    "history": "Chat History",
+    "historyShort": "History",
+    "newChat": "New Chat",
+    "noHistory": "No chat history",
+    "channelExplore": "Channel Explore",
+    "selectedChannels": "{count} channels selected",
+    "selectDataSource": "Select data source channels",
+    "linkProduct": "Link Product",
+    "selectedProducts": "{count} products selected",
+    "addedLink": "Link added",
+    "existingProducts": "Existing Products",
+    "externalLink": "External Link",
+    "searchProducts": "Search product name...",
+    "noProducts": "No products",
+    "searching": "Searching...",
+    "enterUrl": "Enter product website or landing page",
+    "confirm": "Confirm",
+    "clearSelection": "Clear selection",
+    "cancelLink": "Cancel link",
+    "sendTip": "Press Enter to send · Shift + Enter for new line",
+    "scrollToLatest": "Scroll to latest",
+    "interrupted": "Interrupted",
+    "errorOccurred": "Sorry, an error occurred",
+    "errorRetry": "Sorry, an error occurred. Please try again later.",
+    "unknownError": "Unknown error",
+    "connectionFailed": "Connection failed",
+    "close": "Close",
+    "modes": {
+      "general": "General Analysis",
+      "generalDesc": "Comprehensive Q&A and analysis",
+      "product": "Product Analysis",
+      "productDesc": "Deep product analysis and comparison",
+      "market": "Market Analysis",
+      "marketDesc": "Industry trends and opportunities"
+    },
+    "suggestedQuestions": {
+      "trends": "Analyze current SaaS market trends",
+      "opportunity": "Which niches suit indie hackers",
+      "topProducts": "Top growing products recently"
+    },
+    "tools": {
+      "queryProducts": "Query product data",
+      "analyzeCategory": "Analyze market category",
+      "generateTrend": "Generate trend report",
+      "getLeaderboard": "Get leaderboard",
+      "analysisSteps": "Analysis Steps",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "allCompleted": "All completed",
+      "executing": "Executing...",
+      "waitingResult": "Waiting for result...",
+      "expand": "Expand all",
+      "collapse": "Collapse"
+    },
+    "thinking": {
+      "title": "Thinking Process",
+      "expand": "Expand",
+      "collapse": "Collapse"
+    },
+    "reply": "Reply",
+    "queryingData": "Querying data...",
+    "thinkingStatus": "Thinking...",
+    "actions": {
+      "copy": "Copy",
+      "helpful": "Helpful",
+      "notHelpful": "Not helpful",
+      "retry": "Retry",
+      "share": "Share"
+    },
+    "categories": {
+      "product": "Product Analysis",
+      "productDesc": "Deep analysis of product data, revenue, competitiveness",
+      "trend": "Industry Trends",
+      "trendDesc": "Insights on market opportunities and trends",
+      "career": "Direction Exploration",
+      "careerDesc": "Recommend directions based on your background"
+    },
+    "prompts": {
+      "product1": "What do products with MRR over $5000 have in common?",
+      "product2": "Which products have low tech complexity but good revenue?",
+      "product3": "What small and beautiful product cases are worth learning?",
+      "product4": "How to evaluate a product's replicability?",
+      "trend1": "What are the most promising SaaS niches right now?",
+      "trend2": "Which areas have less competition but potential?",
+      "trend3": "What opportunities remain in the AI tools space?",
+      "trend4": "What trends should indie hackers focus on in 2024?",
+      "career1": "What types of products suit indie hackers?",
+      "career2": "I'm a frontend developer, what SaaS should I build?",
+      "career3": "How to find product direction from personal pain points?",
+      "career4": "What to consider when building SaaS as a side project?"
+    }
   },
   "leaderboard": {
     "title": "Indie Hacker Leaderboard",
@@ -78,24 +278,12 @@
       "count": "{count}"
     }
   },
-  "assistant": {
-    "title": "AI Analysis Assistant",
-    "subtitle": "Explore SaaS products and market insights through intelligent conversation",
-    "inputPlaceholder": "Type your question...",
-    "analysisMode": "Analysis Mode",
-    "linkedProduct": "Linked Product",
-    "modes": {
-      "general": "General Analysis",
-      "generalDesc": "Comprehensive Q&A and analysis",
-      "product": "Product Analysis",
-      "productDesc": "Deep product analysis and comparison",
-      "market": "Market Analysis",
-      "marketDesc": "Industry trends and opportunities"
-    },
-    "suggestedQuestions": {
-      "trends": "Analyze current SaaS market trends",
-      "opportunity": "Which niches suit indie hackers",
-      "topProducts": "Top growing products recently"
-    }
+  "marketType": {
+    "blue_ocean": "Blue Ocean",
+    "emerging": "Emerging",
+    "moderate": "Moderate",
+    "concentrated": "Concentrated",
+    "red_ocean": "Red Ocean",
+    "weak_demand": "Weak Demand"
   }
 }

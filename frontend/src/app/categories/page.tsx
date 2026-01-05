@@ -7,6 +7,7 @@ import { MarketTypeBadge } from '@/components/ui/Badge'
 import { MarketRadarChart } from '@/components/charts/RadarChart'
 import { getCategoryAnalysis } from '@/lib/api'
 import { formatCurrency, formatNumber, formatPercent, cn } from '@/lib/utils'
+import { useLocale } from '@/contexts/LocaleContext'
 import { Layers, ArrowDownWideNarrow, ArrowUp, ArrowDown } from 'lucide-react'
 import type { CategoryAnalysis, MarketType } from '@/types'
 import { MARKET_TYPE_CONFIG } from '@/types'
@@ -15,6 +16,7 @@ type SortField = 'category' | 'total_projects' | 'total_revenue' | 'median_reven
 type SortOrder = 'asc' | 'desc'
 
 export default function CategoriesPage() {
+  const { t } = useLocale()
   const [categories, setCategories] = useState<CategoryAnalysis[]>([])
   const [loading, setLoading] = useState(true)
   const [filterType, setFilterType] = useState<MarketType | 'all'>('all')
@@ -94,11 +96,20 @@ export default function CategoriesPage() {
 
   // 市场类型筛选选项
   const filterOptions: { key: MarketType | 'all'; label: string }[] = [
-    { key: 'all', label: '全部' },
+    { key: 'all', label: t('categories.filter.all') },
     ...Object.entries(MARKET_TYPE_CONFIG).map(([key, config]) => ({
       key: key as MarketType,
-      label: config.label,
+      label: t(`marketType.${key}`),
     })),
+  ]
+
+  // 排序选项
+  const sortOptions: { value: SortField; label: string }[] = [
+    { value: 'market_type', label: t('categories.sort.marketType') },
+    { value: 'total_revenue', label: t('categories.sort.totalRevenue') },
+    { value: 'median_revenue', label: t('categories.sort.medianRevenue') },
+    { value: 'total_projects', label: t('categories.sort.totalProjects') },
+    { value: 'category', label: t('categories.sort.name') },
   ]
 
   return (
@@ -106,15 +117,17 @@ export default function CategoriesPage() {
       {/* 页面头部 - 统计信息整合在标题区 */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3">
-            <Layers className="text-accent-primary" />
-            赛道分析
+          <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3 tracking-tight">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500/15 to-accent-secondary/15 flex items-center justify-center ring-1 ring-brand-500/10">
+              <Layers className="h-5 w-5 text-brand-500" />
+            </div>
+            {t('categories.title')}
           </h1>
-          <p className="text-body mt-1">
-            共 <span className="font-medium text-content-primary">{stats.total}</span> 个赛道，
-            <span className="text-market-blue-ocean font-medium">{stats.blueOcean}</span> 蓝海，
-            <span className="text-market-emerging font-medium">{stats.emerging}</span> 新兴，
-            <span className="text-market-red-ocean font-medium">{stats.redOcean}</span> 红海
+          <p className="text-sm text-content-secondary mt-2 font-medium">
+            {t('common.total')} <span className="font-bold text-content-primary">{stats.total}</span> {t('categories.stats.total')}，
+            <span className="text-cyan-500 font-bold">{stats.blueOcean}</span> {t('categories.stats.blueOcean')}，
+            <span className="text-amber-500 font-bold">{stats.emerging}</span> {t('categories.stats.emerging')}，
+            <span className="text-rose-500 font-bold">{stats.redOcean}</span> {t('categories.stats.redOcean')}
           </p>
         </div>
       </div>
@@ -128,10 +141,10 @@ export default function CategoriesPage() {
               key={opt.key}
               onClick={() => setFilterType(opt.key)}
               className={cn(
-                'px-3 py-1.5 rounded-full text-sm font-medium transition-all',
+                'px-3.5 py-1.5 rounded-full text-sm font-semibold transition-all duration-200',
                 filterType === opt.key
-                  ? 'bg-accent-primary text-white'
-                  : 'bg-surface-border/50 text-content-secondary hover:bg-surface-border'
+                  ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-md shadow-brand-500/25'
+                  : 'bg-surface/80 text-content-secondary hover:bg-surface-hover hover:text-content-primary border border-surface-border/60'
               )}
             >
               {opt.label}
@@ -145,17 +158,17 @@ export default function CategoriesPage() {
           <select
             value={sortField}
             onChange={(e) => setSortField(e.target.value as SortField)}
-            className="select text-sm py-1.5"
+            className="select text-sm py-1.5 font-medium"
           >
-            <option value="market_type">市场类型</option>
-            <option value="total_revenue">总收入</option>
-            <option value="median_revenue">中位数收入</option>
-            <option value="total_projects">产品数量</option>
-            <option value="category">名称</option>
+            {sortOptions.map((opt) => (
+              <option key={opt.value} value={opt.value}>
+                {opt.label}
+              </option>
+            ))}
           </select>
           <button
             onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-            className="p-1.5 rounded hover:bg-surface-border/50 text-content-muted transition-colors"
+            className="p-1.5 rounded-lg hover:bg-surface/60 text-content-muted hover:text-content-primary transition-colors"
           >
             {sortOrder === 'asc' ? (
               <ArrowUp className="h-4 w-4" />
@@ -165,8 +178,8 @@ export default function CategoriesPage() {
           </button>
         </div>
 
-        <span className="text-caption">
-          共 {filteredAndSorted.length} 个
+        <span className="text-xs text-content-muted font-medium">
+          {t('common.total')} {filteredAndSorted.length} {t('common.items')}
         </span>
       </div>
 
@@ -195,7 +208,7 @@ export default function CategoriesPage() {
                 ))}
                 {filteredAndSorted.length === 0 && (
                   <div className="text-center py-12 text-content-muted">
-                    没有符合条件的赛道
+                    {t('categories.noCategories')}
                   </div>
                 )}
               </motion.div>
@@ -218,7 +231,7 @@ export default function CategoriesPage() {
               </motion.div>
             ) : (
               <Card className="text-center py-12 text-content-muted">
-                选择一个赛道查看详情
+                {t('categories.selectCategory')}
               </Card>
             )}
           </AnimatePresence>
@@ -236,6 +249,7 @@ interface CategoryRowProps {
 }
 
 function CategoryRow({ category, isSelected, onClick, index }: CategoryRowProps) {
+  const { t } = useLocale()
   return (
     <motion.div
       initial={{ opacity: 0, x: -10 }}
@@ -243,46 +257,46 @@ function CategoryRow({ category, isSelected, onClick, index }: CategoryRowProps)
       transition={{ duration: 0.2, delay: index * 0.02 }}
       onClick={onClick}
       className={cn(
-        'flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all',
-        'bg-surface border border-surface-border/50',
+        'flex items-center gap-4 p-4 rounded-xl cursor-pointer transition-all duration-200',
+        'bg-surface/70 backdrop-blur-sm border border-surface-border/50',
         isSelected
-          ? 'border-accent-primary/50 ring-1 ring-accent-primary/20'
-          : 'hover:border-surface-border hover:shadow-sm'
+          ? 'border-brand-500/50 ring-2 ring-brand-500/20 bg-brand-50/50 dark:bg-brand-950/20'
+          : 'hover:border-surface-border hover:shadow-sm hover:bg-surface/90'
       )}
     >
       <div className="min-w-0 flex-1">
         <div className="flex items-center gap-3 mb-1">
           <span className={cn(
-            'text-sm font-medium',
-            isSelected ? 'text-accent-primary' : 'text-content-primary'
+            'text-sm font-bold tracking-tight',
+            isSelected ? 'text-brand-600 dark:text-brand-400' : 'text-content-primary'
           )}>
             {category.category}
           </span>
           <MarketTypeBadge type={category.market_type} size="sm" />
         </div>
-        <p className="text-caption line-clamp-1">
+        <p className="text-xs text-content-tertiary line-clamp-1 font-medium">
           {category.market_type_reason}
         </p>
       </div>
 
       <div className="flex items-center gap-6 flex-shrink-0">
         <div className="text-right">
-          <div className="font-mono text-sm text-content-primary tabular-nums">
+          <div className="font-mono text-sm font-bold text-content-primary tabular-nums">
             {category.total_projects}
           </div>
-          <div className="text-caption">产品</div>
+          <div className="text-[11px] text-content-muted font-medium">{t('categories.units.products')}</div>
         </div>
         <div className="text-right">
-          <div className="font-mono text-sm text-content-primary tabular-nums">
+          <div className="font-mono text-sm font-bold text-content-primary tabular-nums">
             {formatCurrency(category.median_revenue)}
           </div>
-          <div className="text-caption">中位数</div>
+          <div className="text-[11px] text-content-muted font-medium">{t('categories.units.median')}</div>
         </div>
         <div className="text-right w-24">
-          <div className="font-mono font-medium text-content-primary tabular-nums">
+          <div className="font-mono text-sm font-bold text-brand-600 dark:text-brand-400 tabular-nums">
             {formatCurrency(category.total_revenue)}
           </div>
-          <div className="text-caption">总收入</div>
+          <div className="text-[11px] text-content-muted font-medium">{t('categories.metrics.totalRevenue')}</div>
         </div>
       </div>
     </motion.div>
@@ -294,19 +308,20 @@ interface CategoryDetailPanelProps {
 }
 
 function CategoryDetailPanel({ category }: CategoryDetailPanelProps) {
+  const { t } = useLocale()
   return (
     <div className="space-y-4">
       {/* 基本信息 */}
       <Card>
         <div className="flex items-start justify-between mb-4">
           <div>
-            <h2 className="text-heading-lg">
+            <h2 className="text-xl font-display font-bold text-content-primary tracking-tight">
               {category.category}
             </h2>
             <MarketTypeBadge type={category.market_type} size="md" className="mt-2" />
           </div>
         </div>
-        <p className="text-body-sm mb-4">
+        <p className="text-sm text-content-secondary leading-relaxed mb-4 font-medium">
           {category.market_type_reason}
         </p>
 
@@ -324,17 +339,17 @@ function CategoryDetailPanel({ category }: CategoryDetailPanelProps) {
 
       {/* 详细指标 */}
       <Card>
-        <CardHeader title="详细指标" />
+        <CardHeader title={t('categories.detailMetrics')} />
         <div className="space-y-3">
-          <MetricRow label="产品数量" value={formatNumber(category.total_projects)} />
-          <MetricRow label="总收入" value={formatCurrency(category.total_revenue)} />
-          <MetricRow label="平均收入" value={formatCurrency(category.avg_revenue)} />
-          <MetricRow label="中位数收入" value={formatCurrency(category.median_revenue)} highlight />
-          <MetricRow label="单项目收入" value={formatCurrency(category.revenue_per_project)} />
-          <MetricRow label="TOP10占比" value={formatPercent(category.top10_revenue_share)} />
-          <MetricRow label="TOP50占比" value={formatPercent(category.top50_revenue_share)} />
-          <MetricRow label="收入标准差" value={formatCurrency(category.revenue_std_dev)} />
-          <MetricRow label="基尼系数" value={category.gini_coefficient.toFixed(4)} />
+          <MetricRow label={t('categories.metrics.totalProjects')} value={formatNumber(category.total_projects)} />
+          <MetricRow label={t('categories.metrics.totalRevenue')} value={formatCurrency(category.total_revenue)} />
+          <MetricRow label={t('categories.metrics.avgRevenue')} value={formatCurrency(category.avg_revenue)} />
+          <MetricRow label={t('categories.metrics.medianRevenue')} value={formatCurrency(category.median_revenue)} highlight />
+          <MetricRow label={t('categories.metrics.revenuePerProject')} value={formatCurrency(category.revenue_per_project)} />
+          <MetricRow label={t('categories.metrics.top10Share')} value={formatPercent(category.top10_revenue_share)} />
+          <MetricRow label={t('categories.metrics.top50Share')} value={formatPercent(category.top50_revenue_share)} />
+          <MetricRow label={t('categories.metrics.revenueStdDev')} value={formatCurrency(category.revenue_std_dev)} />
+          <MetricRow label={t('categories.metrics.giniCoefficient')} value={category.gini_coefficient.toFixed(4)} />
         </div>
       </Card>
     </div>
@@ -343,9 +358,12 @@ function CategoryDetailPanel({ category }: CategoryDetailPanelProps) {
 
 function MetricRow({ label, value, highlight }: { label: string; value: string; highlight?: boolean }) {
   return (
-    <div className="flex items-center justify-between py-1">
-      <span className="text-caption">{label}</span>
-      <span className={`font-mono text-sm tabular-nums ${highlight ? 'text-accent-primary font-medium' : 'text-content-primary'}`}>
+    <div className="flex items-center justify-between py-1.5">
+      <span className="text-sm text-content-tertiary font-medium">{label}</span>
+      <span className={cn(
+        'font-mono text-sm tabular-nums',
+        highlight ? 'text-brand-600 dark:text-brand-400 font-bold' : 'text-content-primary font-semibold'
+      )}>
         {value}
       </span>
     </div>

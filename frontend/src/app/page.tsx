@@ -5,6 +5,7 @@ import { MetricsOverview, MetricsOverviewSkeleton } from '@/components/dashboard
 import { OpportunityRanking, OpportunityRankingSkeleton } from '@/components/dashboard/OpportunityRanking'
 import { CategoryOverview, CategoryOverviewSkeleton, MarketTypeDistribution } from '@/components/dashboard/CategoryOverview'
 import { Card, CardHeader } from '@/components/ui/Card'
+import { useLocale } from '@/contexts/LocaleContext'
 import {
   getDashboardStats,
   getOpportunityProducts,
@@ -14,6 +15,7 @@ import type { OpportunityProduct, CategoryAnalysis } from '@/types'
 import { Rocket, Lightbulb, TrendingUp } from 'lucide-react'
 
 export default function DashboardPage() {
+  const { t } = useLocale()
   const [loading, setLoading] = useState(true)
   const [stats, setStats] = useState<any>(null)
   const [opportunities, setOpportunities] = useState<OpportunityProduct[]>([])
@@ -35,27 +37,27 @@ export default function DashboardPage() {
         setCategories(categoriesData)
       } catch (err) {
         console.error('Failed to fetch dashboard data:', err)
-        setError('数据加载失败，请确保后端服务已启动')
+        setError(t('dashboard.errorMessage'))
       } finally {
         setLoading(false)
       }
     }
 
     fetchData()
-  }, [])
+  }, [t])
 
   if (error) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
         <Card className="text-center max-w-md">
           <div className="text-accent-danger text-4xl mb-4">⚠️</div>
-          <h2 className="text-xl font-semibold text-content-primary mb-2">加载失败</h2>
+          <h2 className="text-xl font-semibold text-content-primary mb-2">{t('common.error')}</h2>
           <p className="text-content-muted mb-4">{error}</p>
           <button
             onClick={() => window.location.reload()}
             className="btn btn-primary"
           >
-            重新加载
+            {t('common.retry')}
           </button>
         </Card>
       </div>
@@ -65,30 +67,35 @@ export default function DashboardPage() {
   return (
     <div className="space-y-6">
       {/* 欢迎横幅 */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-accent-primary/20 via-accent-secondary/10 to-market-blue-ocean/20 border border-accent-primary/20 p-6 md:p-8">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-primary/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-brand-500/10 via-brand-400/5 to-accent-secondary/10 border border-brand-500/20 p-6 md:p-8">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent-secondary/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
         <div className="relative">
-          <div className="flex items-center gap-3 mb-3">
-            <div className="w-12 h-12 rounded-xl bg-accent-primary/20 flex items-center justify-center">
-              <Rocket className="h-6 w-6 text-accent-primary" />
+          <div className="flex items-center gap-4 mb-4">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-brand-500 via-brand-600 to-accent-secondary flex items-center justify-center shadow-lg shadow-brand-500/20">
+              <Rocket className="h-7 w-7 text-white" />
             </div>
             <div>
-              <h1 className="text-display">
-                发现下一个产品机会
+              <h1 className="text-2xl md:text-3xl font-display font-bold tracking-tight bg-gradient-to-r from-content-primary via-content-primary to-brand-600 dark:to-brand-400 bg-clip-text text-transparent">
+                {t('dashboard.welcome.title')}
               </h1>
-              <p className="text-body-sm mt-1">
-                基于数据驱动的 SaaS 产品分析，为独立开发者提供洞察
+              <p className="text-sm text-content-secondary mt-1 font-medium">
+                {t('dashboard.welcome.subtitle')}
               </p>
             </div>
           </div>
-          <div className="flex flex-wrap gap-4 mt-4">
-            <div className="flex items-center gap-2 text-caption">
-              <Lightbulb className="h-4 w-4 text-accent-warning" />
-              <span>筛选低竞争高收益产品</span>
+          <div className="flex flex-wrap gap-4 mt-5">
+            <div className="flex items-center gap-2.5 text-sm text-content-secondary font-medium">
+              <div className="w-8 h-8 rounded-lg bg-amber-500/10 flex items-center justify-center">
+                <Lightbulb className="h-4 w-4 text-amber-500" />
+              </div>
+              <span>{t('dashboard.welcome.filterTip')}</span>
             </div>
-            <div className="flex items-center gap-2 text-caption">
-              <TrendingUp className="h-4 w-4 text-accent-success" />
-              <span>分析市场类型与机会</span>
+            <div className="flex items-center gap-2.5 text-sm text-content-secondary font-medium">
+              <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center">
+                <TrendingUp className="h-4 w-4 text-emerald-500" />
+              </div>
+              <span>{t('dashboard.welcome.analysisTip')}</span>
             </div>
           </div>
         </div>
@@ -96,8 +103,8 @@ export default function DashboardPage() {
 
       {/* 关键指标 */}
       <section>
-        <h2 className="text-heading mb-4">
-          关键指标
+        <h2 className="text-lg font-display font-bold text-content-primary mb-4 tracking-tight">
+          {t('dashboard.keyMetrics')}
         </h2>
         {loading ? (
           <MetricsOverviewSkeleton />
@@ -115,8 +122,8 @@ export default function DashboardPage() {
           ) : (
             <OpportunityRanking
               products={opportunities}
-              title="🔥 机会榜单 TOP 5"
-              subtitle="符合筛选条件的优质产品"
+              title={`🔥 ${t('dashboard.opportunityRanking')}`}
+              subtitle={t('dashboard.opportunitySubtitle')}
               limit={5}
             />
           )}
@@ -141,8 +148,8 @@ export default function DashboardPage() {
         ) : (
           <CategoryOverview
             categories={categories}
-            title="📊 赛道分析"
-            subtitle="发现蓝海与新兴市场"
+            title={`📊 ${t('dashboard.categoryAnalysis')}`}
+            subtitle={t('dashboard.categorySubtitle')}
             limit={8}
           />
         )}
@@ -150,29 +157,29 @@ export default function DashboardPage() {
 
       {/* 快速入口 */}
       <section>
-        <h2 className="text-heading mb-4">
-          快速入口
+        <h2 className="text-lg font-display font-bold text-content-primary mb-4 tracking-tight">
+          {t('dashboard.quickAccess')}
         </h2>
         <div className="grid md:grid-cols-3 gap-4">
           <QuickAccessCard
             href="/categories"
             icon="📈"
-            title="赛道分析"
-            description="查看所有赛道的市场类型和机会评估"
+            title={t('dashboard.quickAccessCards.categories.title')}
+            description={t('dashboard.quickAccessCards.categories.desc')}
             color="from-market-blue-ocean/20 to-market-blue-ocean/5"
           />
           <QuickAccessCard
             href="/products?filter=opportunities"
             icon="💡"
-            title="机会产品"
-            description="筛选符合条件的可复制产品"
+            title={t('dashboard.quickAccessCards.opportunities.title')}
+            description={t('dashboard.quickAccessCards.opportunities.desc')}
             color="from-accent-warning/20 to-accent-warning/5"
           />
           <QuickAccessCard
             href="/products"
             icon="📦"
-            title="产品库"
-            description="浏览所有已分析的 SaaS 产品"
+            title={t('dashboard.quickAccessCards.products.title')}
+            description={t('dashboard.quickAccessCards.products.desc')}
             color="from-accent-secondary/20 to-accent-secondary/5"
           />
         </div>
@@ -193,13 +200,13 @@ function QuickAccessCard({ href, icon, title, description, color }: QuickAccessC
   return (
     <a
       href={href}
-      className={`block p-6 rounded-xl bg-gradient-to-br ${color} border border-surface-border/50 hover:border-accent-primary/30 transition-all group`}
+      className={`block p-6 rounded-2xl bg-gradient-to-br ${color} border border-surface-border/50 hover:border-brand-500/30 hover:shadow-md transition-all duration-200 group`}
     >
       <div className="text-3xl mb-3">{icon}</div>
-      <h3 className="text-heading-sm group-hover:text-accent-primary transition-colors">
+      <h3 className="text-base font-bold text-content-primary group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors tracking-tight">
         {title}
       </h3>
-      <p className="text-caption mt-1.5">{description}</p>
+      <p className="text-sm text-content-tertiary mt-1.5 font-medium">{description}</p>
     </a>
   )
 }

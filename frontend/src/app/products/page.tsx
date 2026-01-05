@@ -8,6 +8,7 @@ import { Badge, MarketTypeBadge, ComplexityBadge } from '@/components/ui/Badge'
 import { ProductLogo } from '@/components/ui/ProductLogo'
 import { getStartups, getOpportunityProducts, getCategoryAnalysis, getCountries, type Country, type SortField, type SortOrder } from '@/lib/api'
 import { formatCurrency, cn } from '@/lib/utils'
+import { useLocale } from '@/contexts/LocaleContext'
 import {
   Filter,
   Search,
@@ -40,6 +41,7 @@ export default function ProductsPage() {
 function ProductsContent() {
   const searchParams = useSearchParams()
   const filterParam = searchParams.get('filter')
+  const { t } = useLocale()
 
   const [viewMode, setViewMode] = useState<ViewMode>(
     filterParam === 'opportunities' ? 'opportunities' : 'all'
@@ -109,9 +111,9 @@ function ProductsContent() {
 
   // 排序选项
   const sortOptions: { value: SortField; label: string }[] = [
-    { value: 'revenue_30d', label: '收入' },
-    { value: 'scraped_at', label: '收录时间' },
-    { value: 'name', label: '名称' },
+    { value: 'revenue_30d', label: t('products.sort.revenue') },
+    { value: 'scraped_at', label: t('products.sort.scrapedAt') },
+    { value: 'name', label: t('products.sort.name') },
   ]
 
   const toggleSortOrder = () => {
@@ -119,46 +121,48 @@ function ProductsContent() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       {/* 页面头部 - 统计信息整合在标题区 */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3">
-            <Package className="text-accent-primary" />
-            产品库
+          <h1 className="text-3xl font-display font-bold tracking-tight text-content-primary flex items-center gap-3">
+            <div className="p-2 rounded-xl bg-gradient-to-br from-brand-500/20 to-accent-secondary/20">
+              <Package className="h-6 w-6 text-brand-500" />
+            </div>
+            {t('products.title')}
           </h1>
-          <p className="text-body mt-1">
-            共 <span className="font-medium text-content-primary">{total}</span> 个产品，
+          <p className="text-content-secondary mt-2 text-base">
+            {t('common.total')} <span className="font-semibold text-brand-500">{total}</span> {t('products.subtitle')}
             {categories.length > 0 && (
-              <span>覆盖 <span className="font-medium text-content-primary">{categories.length}</span> 个分类</span>
+              <span className="text-content-tertiary">，{t('products.coverCategories')} <span className="font-semibold text-content-primary">{categories.length}</span> {t('products.categoriesCount')}</span>
             )}
           </p>
         </div>
 
         {/* 布局切换 */}
         {viewMode === 'all' && (
-          <div className="flex rounded-lg border border-surface-border p-0.5 self-start sm:self-auto">
+          <div className="flex rounded-xl border border-surface-border/60 bg-surface/50 backdrop-blur-sm p-1 self-start sm:self-auto shadow-sm">
             <button
               onClick={() => setLayoutMode('grid')}
               className={cn(
-                'p-2 rounded-md transition-colors',
+                'p-2.5 rounded-lg transition-all duration-200',
                 layoutMode === 'grid'
-                  ? 'bg-surface text-content-primary'
-                  : 'text-content-muted hover:text-content-secondary'
+                  ? 'bg-brand-500 text-white shadow-sm'
+                  : 'text-content-muted hover:text-content-primary hover:bg-surface-hover'
               )}
-              title="卡片视图"
+              title={t('products.gridView')}
             >
               <LayoutGrid className="h-4 w-4" />
             </button>
             <button
               onClick={() => setLayoutMode('list')}
               className={cn(
-                'p-2 rounded-md transition-colors',
+                'p-2.5 rounded-lg transition-all duration-200',
                 layoutMode === 'list'
-                  ? 'bg-surface text-content-primary'
-                  : 'text-content-muted hover:text-content-secondary'
+                  ? 'bg-brand-500 text-white shadow-sm'
+                  : 'text-content-muted hover:text-content-primary hover:bg-surface-hover'
               )}
-              title="列表视图"
+              title={t('products.listView')}
             >
               <List className="h-4 w-4" />
             </button>
@@ -175,37 +179,37 @@ function ProductsContent() {
             className={cn(
               'px-3 py-1.5 rounded-full text-sm font-medium transition-all',
               viewMode === 'all'
-                ? 'bg-accent-primary text-white'
+                ? 'bg-brand-500 text-white'
                 : 'bg-surface-border/50 text-content-secondary hover:bg-surface-border'
             )}
           >
-            全部产品
+            {t('products.allProducts')}
           </button>
           <button
             onClick={() => setViewMode('opportunities')}
             className={cn(
               'px-3 py-1.5 rounded-full text-sm font-medium transition-all flex items-center gap-1.5',
               viewMode === 'opportunities'
-                ? 'bg-accent-warning text-white'
+                ? 'bg-gradient-to-r from-amber-500 to-orange-500 text-white'
                 : 'bg-surface-border/50 text-content-secondary hover:bg-surface-border'
             )}
           >
             <Zap className="h-3 w-3" />
-            机会产品
+            {t('products.opportunities')}
           </button>
         </div>
 
         {/* 分类筛选 */}
         {viewMode === 'all' && (
           <>
-            <div className="flex items-center gap-2">
-              <Filter className="text-content-muted h-4 w-4" />
+            <div className="flex items-center gap-2 text-sm text-content-muted">
+              <Filter className="h-4 w-4" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
                 className="select text-sm py-1.5"
               >
-                <option value="all">全部分类</option>
+                <option value="all">{t('products.allCategories')}</option>
                 {categories.map((cat) => (
                   <option key={cat.id} value={cat.category}>
                     {cat.category} ({cat.total_projects})
@@ -215,14 +219,14 @@ function ProductsContent() {
             </div>
 
             {/* 国家筛选 */}
-            <div className="flex items-center gap-2">
-              <Globe className="text-content-muted h-4 w-4" />
+            <div className="flex items-center gap-2 text-sm text-content-muted">
+              <Globe className="h-4 w-4" />
               <select
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
                 className="select text-sm py-1.5"
               >
-                <option value="all">全部国家</option>
+                <option value="all">{t('products.allCountries')}</option>
                 {countries.map((country) => (
                   <option key={country.code} value={country.code}>
                     {country.name} ({country.count})
@@ -232,8 +236,8 @@ function ProductsContent() {
             </div>
 
             {/* 排序 */}
-            <div className="flex items-center gap-1">
-              <ArrowDownWideNarrow className="text-content-muted h-4 w-4" />
+            <div className="flex items-center gap-1 text-sm text-content-muted">
+              <ArrowDownWideNarrow className="h-4 w-4" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortField)}
@@ -248,7 +252,7 @@ function ProductsContent() {
               <button
                 onClick={toggleSortOrder}
                 className="p-1.5 rounded-md hover:bg-surface-border/50 transition-colors"
-                title={sortOrder === 'desc' ? '降序' : '升序'}
+                title={sortOrder === 'desc' ? t('products.order.desc') : t('products.order.asc')}
               >
                 {sortOrder === 'desc' ? (
                   <ArrowDown className="h-4 w-4 text-content-muted" />
@@ -263,7 +267,7 @@ function ProductsContent() {
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-content-muted h-4 w-4" />
               <input
                 type="text"
-                placeholder="搜索产品..."
+                placeholder={t('common.search')}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 className="input pl-10 py-1.5 text-sm"
@@ -273,7 +277,7 @@ function ProductsContent() {
         )}
 
         <span className="text-caption ml-auto">
-          共 {total} 个
+          {t('common.total')} {total} {t('common.items')}
         </span>
       </div>
 
@@ -316,22 +320,36 @@ function ProductsContent() {
 
       {/* 分页 */}
       {viewMode === 'all' && totalPages > 1 && (
-        <div className="flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-3 pt-4">
           <button
             onClick={() => setPage(p => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="btn btn-secondary"
+            className={cn(
+              'flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200',
+              'bg-surface/80 backdrop-blur-sm border border-surface-border/50',
+              'hover:border-brand-500/30 hover:shadow-sm',
+              'disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-surface-border/50 disabled:hover:shadow-none'
+            )}
           >
             <ChevronLeft className="h-4 w-4" />
+            {t('common.prevPage')}
           </button>
-          <span className="px-4 text-sm text-content-secondary">
-            {page} / {totalPages}
-          </span>
+          <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface/60 border border-surface-border/40">
+            <span className="text-sm font-semibold text-brand-500">{page}</span>
+            <span className="text-sm text-content-muted">/</span>
+            <span className="text-sm text-content-secondary">{totalPages}</span>
+          </div>
           <button
             onClick={() => setPage(p => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="btn btn-secondary"
+            className={cn(
+              'flex items-center gap-1.5 px-4 py-2.5 rounded-xl text-sm font-medium transition-all duration-200',
+              'bg-surface/80 backdrop-blur-sm border border-surface-border/50',
+              'hover:border-brand-500/30 hover:shadow-sm',
+              'disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:border-surface-border/50 disabled:hover:shadow-none'
+            )}
           >
+            {t('common.nextPage')}
             <ChevronRight className="h-4 w-4" />
           </button>
         </div>
@@ -351,15 +369,16 @@ function ProductList({ products, categories, layout }: ProductListProps) {
 
   if (products.length === 0) {
     return (
-      <div className="text-center py-12 text-content-muted rounded-xl bg-surface border border-surface-border/50">
-        没有找到符合条件的产品
+      <div className="text-center py-16 text-content-muted rounded-2xl bg-surface/60 backdrop-blur-sm border border-surface-border/40">
+        <div className="text-4xl mb-3">🔍</div>
+        <p className="text-base font-medium">没有找到符合条件的产品</p>
       </div>
     )
   }
 
   if (layout === 'list') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-3">
         {products.map((product, index) => {
           const categoryInfo = product.category ? categoryMap.get(product.category) : null
           return (
@@ -376,7 +395,7 @@ function ProductList({ products, categories, layout }: ProductListProps) {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {products.map((product, index) => {
         const categoryInfo = product.category ? categoryMap.get(product.category) : null
         return (
@@ -408,12 +427,12 @@ function ProductCard({ product, categoryInfo, index }: ProductCardProps) {
       <Link
         href={`/products/${product.slug}`}
         className={cn(
-          'block h-full p-4 rounded-xl transition-all',
-          'bg-surface border border-surface-border/50',
-          'hover:border-surface-border hover:shadow-sm'
+          'block h-full p-5 rounded-2xl transition-all duration-300',
+          'bg-surface/80 backdrop-blur-sm border border-surface-border/50',
+          'hover:border-brand-500/30 hover:shadow-lg hover:shadow-brand-500/5 hover:-translate-y-1'
         )}
       >
-        <div className="flex items-start gap-3 mb-3">
+        <div className="flex items-start gap-4 mb-4">
           <ProductLogo
             name={product.name}
             logoUrl={product.logo_url}
@@ -421,7 +440,7 @@ function ProductCard({ product, categoryInfo, index }: ProductCardProps) {
           />
           <div className="min-w-0 flex-1">
             <div className="flex items-start justify-between">
-              <h3 className="text-sm font-medium text-content-primary truncate">
+              <h3 className="text-base font-semibold text-content-primary truncate tracking-tight">
                 {product.name}
               </h3>
               {product.website_url && (
@@ -430,15 +449,15 @@ function ProductCard({ product, categoryInfo, index }: ProductCardProps) {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="text-content-muted hover:text-accent-primary ml-2 flex-shrink-0"
+                  className="text-content-muted hover:text-brand-500 ml-2 flex-shrink-0 transition-colors"
                 >
-                  <ExternalLink className="h-3 w-3" />
+                  <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               )}
             </div>
-            <div className="flex items-center gap-2 mt-1">
+            <div className="flex items-center gap-2 mt-1.5">
               {product.category && (
-                <span className="text-caption">{product.category}</span>
+                <span className="text-xs text-content-tertiary font-medium">{product.category}</span>
               )}
               {categoryInfo && (
                 <MarketTypeBadge type={categoryInfo.market_type} size="sm" showIcon={false} />
@@ -447,23 +466,23 @@ function ProductCard({ product, categoryInfo, index }: ProductCardProps) {
           </div>
         </div>
 
-        <p className="text-body-sm line-clamp-2 mb-4 min-h-[40px]">
+        <p className="text-sm text-content-secondary leading-relaxed line-clamp-2 mb-5 min-h-[40px]">
           {product.description || '暂无描述'}
         </p>
 
-        <div className="flex items-center justify-between pt-3 border-t border-surface-border/50">
+        <div className="flex items-center justify-between pt-4 border-t border-surface-border/40">
           <div>
-            <div className="font-mono font-medium text-content-primary tabular-nums">
+            <div className="font-mono font-bold text-lg text-content-primary tabular-nums tracking-tight">
               {formatCurrency(product.revenue_30d)}
             </div>
-            <div className="text-caption">月收入</div>
+            <div className="text-xs text-content-muted font-medium">月收入</div>
           </div>
           {product.twitter_followers && (
             <div className="text-right">
-              <div className="font-mono text-sm text-content-secondary tabular-nums">
+              <div className="font-mono text-sm font-semibold text-content-secondary tabular-nums">
                 {product.twitter_followers.toLocaleString()}
               </div>
-              <div className="text-caption">关注者</div>
+              <div className="text-xs text-content-muted font-medium">关注者</div>
             </div>
           )}
         </div>
@@ -482,9 +501,9 @@ function ProductRow({ product, categoryInfo, index }: ProductCardProps) {
       <Link
         href={`/products/${product.slug}`}
         className={cn(
-          'flex items-center gap-4 p-4 rounded-xl transition-all',
-          'bg-surface border border-surface-border/50',
-          'hover:border-surface-border hover:shadow-sm'
+          'flex items-center gap-4 p-4 rounded-xl transition-all duration-200',
+          'bg-surface/80 backdrop-blur-sm border border-surface-border/50',
+          'hover:border-brand-500/30 hover:shadow-md hover:shadow-brand-500/5'
         )}
       >
         <ProductLogo
@@ -495,14 +514,14 @@ function ProductRow({ product, categoryInfo, index }: ProductCardProps) {
 
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2">
-            <h3 className="text-sm font-medium text-content-primary truncate">
+            <h3 className="text-sm font-semibold text-content-primary truncate tracking-tight">
               {product.name}
             </h3>
             {categoryInfo && (
               <MarketTypeBadge type={categoryInfo.market_type} size="sm" showIcon={false} />
             )}
           </div>
-          <p className="text-caption truncate mt-0.5">
+          <p className="text-xs text-content-tertiary truncate mt-0.5">
             {product.category || '未分类'} · {product.description || '暂无描述'}
           </p>
         </div>
@@ -510,17 +529,17 @@ function ProductRow({ product, categoryInfo, index }: ProductCardProps) {
         <div className="flex items-center gap-6 flex-shrink-0">
           {product.twitter_followers && (
             <div className="text-right hidden sm:block">
-              <div className="font-mono text-sm text-content-secondary tabular-nums">
+              <div className="font-mono text-sm font-semibold text-content-secondary tabular-nums">
                 {product.twitter_followers.toLocaleString()}
               </div>
-              <div className="text-caption">关注者</div>
+              <div className="text-xs text-content-muted font-medium">关注者</div>
             </div>
           )}
-          <div className="text-right w-20">
-            <div className="font-mono font-medium text-content-primary tabular-nums">
+          <div className="text-right w-24">
+            <div className="font-mono font-bold text-content-primary tabular-nums">
               {formatCurrency(product.revenue_30d)}
             </div>
-            <div className="text-caption">月收入</div>
+            <div className="text-xs text-content-muted font-medium">月收入</div>
           </div>
         </div>
       </Link>
@@ -535,14 +554,15 @@ interface OpportunityProductListProps {
 function OpportunityProductList({ products }: OpportunityProductListProps) {
   if (products.length === 0) {
     return (
-      <div className="text-center py-12 text-content-muted rounded-xl bg-surface border border-surface-border/50">
-        暂无机会产品数据
+      <div className="text-center py-16 text-content-muted rounded-2xl bg-surface/60 backdrop-blur-sm border border-surface-border/40">
+        <div className="text-4xl mb-3">🔍</div>
+        <p className="text-base font-medium">暂无机会产品数据</p>
       </div>
     )
   }
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-3">
       {products.map((item, index) => (
         <OpportunityProductRow key={item.startup.id} item={item} rank={index + 1} />
       ))}
@@ -569,17 +589,18 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
       <Link
         href={`/products/${startup.slug}`}
         className={cn(
-          'flex items-center gap-4 p-4 rounded-xl transition-all',
-          'bg-surface border border-surface-border/50',
-          'hover:border-surface-border hover:shadow-sm',
-          isTop3 && 'border-accent-warning/20'
+          'flex items-center gap-4 p-5 rounded-2xl transition-all duration-300',
+          'bg-surface/80 backdrop-blur-sm border',
+          isTop3
+            ? 'border-amber-500/30 hover:border-amber-500/50 hover:shadow-lg hover:shadow-amber-500/10'
+            : 'border-surface-border/50 hover:border-brand-500/30 hover:shadow-md hover:shadow-brand-500/5'
         )}
       >
         <div className={cn(
-          'w-8 h-8 rounded-lg flex items-center justify-center font-display font-bold flex-shrink-0 text-sm',
+          'w-10 h-10 rounded-xl flex items-center justify-center font-display font-bold flex-shrink-0 text-base',
           isTop3
-            ? 'bg-gradient-to-br from-accent-warning to-accent-warning/70 text-background'
-            : 'bg-surface-border/50 text-content-muted'
+            ? 'bg-gradient-to-br from-amber-400 to-orange-500 text-white shadow-md shadow-amber-500/25'
+            : 'bg-surface-hover text-content-muted'
         )}>
           {rank}
         </div>
@@ -591,8 +612,8 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
         />
 
         <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <span className="text-sm font-medium text-content-primary">{startup.name}</span>
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="text-base font-semibold text-content-primary tracking-tight">{startup.name}</span>
             {analysis.is_product_driven && (
               <Badge variant="success" size="sm">
                 <Zap className="h-2.5 w-2.5" />
@@ -603,33 +624,33 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
               <Badge variant="info" size="sm">小而美</Badge>
             )}
           </div>
-          <div className="flex items-center gap-3 text-caption">
+          <div className="flex items-center gap-3 text-xs text-content-tertiary font-medium">
             <span>{startup.category || '未分类'}</span>
             {comboCount > 0 && (
-              <span className="flex items-center gap-1 text-accent-success">
+              <span className="flex items-center gap-1 text-emerald-500">
                 <Check className="h-3 w-3" />
                 {comboCount} 组合匹配
               </span>
             )}
-            <span>适合度 {analysis.individual_dev_suitability.toFixed(1)}/10</span>
+            <span className="text-content-muted">适合度 <span className="text-content-secondary font-semibold">{analysis.individual_dev_suitability.toFixed(1)}</span>/10</span>
           </div>
         </div>
 
-        <div className="flex items-center gap-2 flex-shrink-0 hidden md:flex">
+        <div className="flex items-center gap-3 flex-shrink-0 hidden md:flex">
           <ComplexityBadge level={analysis.tech_complexity_level} />
           {analysis.uses_llm_api && (
             <Badge variant="muted" size="sm">LLM</Badge>
           )}
         </div>
 
-        <div className="text-right flex-shrink-0 w-24">
+        <div className="text-right flex-shrink-0 w-28">
           <div className={cn(
-            'font-mono font-medium tabular-nums',
-            isTop3 ? 'text-accent-warning' : 'text-content-primary'
+            'font-mono font-bold text-lg tabular-nums tracking-tight',
+            isTop3 ? 'text-amber-500' : 'text-content-primary'
           )}>
             {formatCurrency(startup.revenue_30d)}
           </div>
-          <div className="text-caption">月收入</div>
+          <div className="text-xs text-content-muted font-medium">月收入</div>
         </div>
       </Link>
     </motion.div>
@@ -639,15 +660,15 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
 function ProductListSkeleton({ layout = 'grid' }: { layout?: LayoutMode }) {
   if (layout === 'list') {
     return (
-      <div className="space-y-2">
+      <div className="space-y-3">
         {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-surface border border-surface-border/50">
-            <div className="h-10 w-10 bg-surface-border rounded-lg animate-pulse" />
+          <div key={i} className="flex items-center gap-4 p-4 rounded-xl bg-surface/60 backdrop-blur-sm border border-surface-border/40">
+            <div className="h-10 w-10 bg-surface-border/50 rounded-xl animate-pulse" />
             <div className="flex-1">
-              <div className="h-4 w-32 bg-surface-border rounded animate-pulse mb-2" />
-              <div className="h-3 w-48 bg-surface-border rounded animate-pulse" />
+              <div className="h-4 w-32 bg-surface-border/50 rounded-lg animate-pulse mb-2" />
+              <div className="h-3 w-48 bg-surface-border/40 rounded-lg animate-pulse" />
             </div>
-            <div className="h-8 w-20 bg-surface-border rounded animate-pulse" />
+            <div className="h-8 w-24 bg-surface-border/50 rounded-lg animate-pulse" />
           </div>
         ))}
       </div>
@@ -655,20 +676,20 @@ function ProductListSkeleton({ layout = 'grid' }: { layout?: LayoutMode }) {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
       {Array.from({ length: 9 }).map((_, i) => (
-        <div key={i} className="p-4 rounded-xl bg-surface border border-surface-border/50">
-          <div className="flex items-start gap-3 mb-3">
-            <div className="h-10 w-10 bg-surface-border rounded-lg animate-pulse" />
+        <div key={i} className="p-5 rounded-2xl bg-surface/60 backdrop-blur-sm border border-surface-border/40">
+          <div className="flex items-start gap-4 mb-4">
+            <div className="h-10 w-10 bg-surface-border/50 rounded-xl animate-pulse" />
             <div className="flex-1">
-              <div className="h-4 w-24 bg-surface-border rounded animate-pulse mb-2" />
-              <div className="h-3 w-16 bg-surface-border rounded animate-pulse" />
+              <div className="h-4 w-28 bg-surface-border/50 rounded-lg animate-pulse mb-2" />
+              <div className="h-3 w-20 bg-surface-border/40 rounded-lg animate-pulse" />
             </div>
           </div>
-          <div className="h-10 bg-surface-border rounded animate-pulse mb-4" />
-          <div className="flex justify-between pt-3 border-t border-surface-border/50">
-            <div className="h-8 w-16 bg-surface-border rounded animate-pulse" />
-            <div className="h-8 w-12 bg-surface-border rounded animate-pulse" />
+          <div className="h-10 bg-surface-border/40 rounded-lg animate-pulse mb-5" />
+          <div className="flex justify-between pt-4 border-t border-surface-border/30">
+            <div className="h-10 w-20 bg-surface-border/50 rounded-lg animate-pulse" />
+            <div className="h-10 w-16 bg-surface-border/40 rounded-lg animate-pulse" />
           </div>
         </div>
       ))}

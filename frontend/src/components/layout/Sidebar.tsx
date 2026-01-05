@@ -185,23 +185,23 @@ export function Sidebar() {
       </nav>
 
       {/* User Profile Section */}
-      <div className="border-t border-surface-border px-3 py-3" ref={userMenuRef}>
+      <div className="px-3 py-2" ref={userMenuRef}>
         <div className="relative">
           <button
             onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
             className={cn(
               'group relative flex w-full items-center rounded-xl transition-all duration-200',
-              isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-3 p-2',
+              isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-2.5 px-2 py-1.5',
               'hover:bg-surface/80'
             )}
           >
             {/* Avatar */}
             <div className="relative shrink-0">
-              <div className="h-9 w-9 rounded-xl bg-gradient-brand flex items-center justify-center text-white text-sm font-semibold shadow-sm">
+              <div className="h-8 w-8 rounded-lg bg-gradient-brand flex items-center justify-center text-white text-xs font-semibold shadow-sm">
                 U
               </div>
               {/* Online indicator */}
-              <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-accent-success border-2 border-background-secondary" />
+              <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-accent-success border-2 border-background-secondary" />
             </div>
 
             {/* User info - only show when expanded */}
@@ -212,16 +212,16 @@ export function Sidebar() {
               )}
             >
               <div className="flex-1 text-left min-w-0">
-                <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap">
+                <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap leading-tight">
                   {t('nav.user') || 'User'}
                 </p>
-                <p className="text-xs text-content-muted truncate whitespace-nowrap">
+                <p className="text-[11px] text-content-muted truncate whitespace-nowrap leading-tight">
                   {t('nav.freeplan') || 'Free Plan'}
                 </p>
               </div>
               <ChevronUp
                 className={cn(
-                  'h-4 w-4 text-content-muted transition-transform duration-200 shrink-0',
+                  'h-3.5 w-3.5 text-content-muted transition-transform duration-200 shrink-0',
                   isUserMenuOpen && 'rotate-180'
                 )}
               />
