@@ -59,6 +59,7 @@ data/
 backend/data/
 *.log
 *.tmp
+*.html
 
 # Test files
 test_*.py
