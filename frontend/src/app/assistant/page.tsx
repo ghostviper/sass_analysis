@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faPaperPlane,
   faSpinner,
-  faChartLine,
-  faCompass,
   faMagnifyingGlass,
   faLink,
   faDatabase,
@@ -16,16 +14,32 @@ import {
   faPlus,
   faChevronDown,
   faCheck,
-  faSliders,
   faWandMagicSparkles,
   faClockRotateLeft,
   faTrash,
   faMessage,
+  faCompass,
 } from '@fortawesome/free-solid-svg-icons'
+import {
+  faRedditAlien,
+  faGoogle,
+  faProductHunt,
+  faHackerNews,
+} from '@fortawesome/free-brands-svg-icons'
 import { ChatMessage, MessageRole } from '@/components/assistant/ChatMessage'
 import { SuggestedPrompts } from '@/components/assistant/SuggestedPrompts'
 import { getStartups } from '@/lib/api'
 import type { Startup } from '@/types'
+
+// 渠道配置
+const CHANNELS = [
+  { id: 'reddit', name: 'Reddit', icon: faRedditAlien, color: '#FF4500' },
+  { id: 'indiehacker', name: 'IndieHackers', icon: faHackerNews, color: '#0E76A8' },
+  { id: 'producthunt', name: 'Product Hunt', icon: faProductHunt, color: '#DA552F' },
+  { id: 'google', name: 'Google', icon: faGoogle, color: '#4285F4' },
+] as const
+
+type ChannelId = typeof CHANNELS[number]['id']
 
 // 工具调用状态
 interface ToolStatus {
@@ -56,16 +70,34 @@ interface Message {
   toolStatus?: ToolStatus[]
   metrics?: MessageMetrics
   startTime?: number  // 开始时间戳，用于计算耗时
+  // 内容块数组 - 用于区分 thinking、text、tool 等不同类型的内容
+  contentBlocks?: ContentBlock[]
+}
+
+// 内容块类型 - 对应 Claude Agent SDK 的 content blocks
+type ContentBlockType = 'thinking' | 'text' | 'tool_use' | 'tool_result'
+
+interface ContentBlock {
+  type: ContentBlockType
+  content: string
+  // For tool blocks
+  toolName?: string
+  toolInput?: Record<string, unknown>
+  toolResult?: string
+  toolStatus?: 'running' | 'completed'
+  // For thinking blocks
+  isStreaming?: boolean
 }
 
 // SSE 事件类型
 interface StreamEvent {
-  type: 'text' | 'tool_start' | 'tool_end' | 'status' | 'done' | 'error'
+  type: 'text' | 'thinking' | 'tool_start' | 'tool_end' | 'status' | 'done' | 'error'
   content?: string
   tool_name?: string
   tool_input?: Record<string, unknown>
   tool_result?: string
   cost?: number
+  session_id?: string  // Backend session ID for multi-turn conversations
 }
 
 // 会话类型
@@ -73,55 +105,13 @@ interface ChatSession {
   id: string
   title: string
   messages: Message[]
-  mode: AnalysisMode
   context: {
     type: 'database' | 'url' | null
     value: string | null
   }
+  serverSessionId?: string  // Backend session ID for multi-turn conversations
   createdAt: Date
   updatedAt: Date
-}
-
-// 分析模式
-type AnalysisMode = 'product' | 'trend' | 'career' | null
-
-const modeConfig = {
-  product: {
-    icon: faMagnifyingGlass,
-    label: '产品分析',
-    description: '深度分析产品数据、收入、竞争力等',
-    placeholder: '描述你想分析的产品，或询问具体问题...',
-    prompts: [
-      '分析月收入超过 $5000 的产品有什么共同特点？',
-      '技术复杂度低但收入不错的产品有哪些？',
-      '有哪些小而美的产品案例值得学习？',
-      '如何评估一个产品的可复制性？',
-    ],
-  },
-  trend: {
-    icon: faChartLine,
-    label: '行业趋势',
-    description: '洞察赛道机会、市场动态与趋势',
-    placeholder: '询问行业趋势、市场机会...',
-    prompts: [
-      '当前最值得关注的 SaaS 赛道有哪些？',
-      '哪些领域竞争相对较小但有潜力？',
-      'AI 工具赛道还有哪些机会？',
-      '2024 年独立开发者应该关注什么趋势？',
-    ],
-  },
-  career: {
-    icon: faCompass,
-    label: '方向探索',
-    description: '根据你的背景推荐适合的方向',
-    placeholder: '描述你的背景和目标，我来帮你分析...',
-    prompts: [
-      '独立开发者适合做什么类型的产品？',
-      '我是前端开发，适合做什么 SaaS？',
-      '如何从个人痛点出发找到产品方向？',
-      '副业做 SaaS 需要注意什么？',
-    ],
-  },
 }
 
 export default function AssistantPage() {
@@ -130,29 +120,44 @@ export default function AssistantPage() {
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null)
   const [showHistory, setShowHistory] = useState(false)
 
+  // Backend session ID for multi-turn conversations (separate from UI session)
+  const [serverSessionId, setServerSessionId] = useState<string | null>(null)
+
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-  const [analysisMode, setAnalysisMode] = useState<AnalysisMode>(null)
+  const [showScrollToLatest, setShowScrollToLatest] = useState(false)
 
   // 上下文相关
   const [showContextMenu, setShowContextMenu] = useState(false)
   const [contextType, setContextType] = useState<'database' | 'url' | null>(null)
-  const [selectedProduct, setSelectedProduct] = useState<Startup | null>(null)
+  const [selectedProducts, setSelectedProducts] = useState<Startup[]>([])
   const [urlInput, setUrlInput] = useState('')
+
+  // 渠道探索
+  const [showChannelMenu, setShowChannelMenu] = useState(false)
+  const [selectedChannels, setSelectedChannels] = useState<ChannelId[]>([])
 
   // 产品搜索
   const [products, setProducts] = useState<Startup[]>([])
   const [productSearch, setProductSearch] = useState('')
   const [isSearching, setIsSearching] = useState(false)
 
-  // 模式选择菜单
-  const [showModeMenu, setShowModeMenu] = useState(false)
+  // 兼容旧代码的单选产品（用于显示）
+  const selectedProduct = selectedProducts.length > 0 ? selectedProducts[0] : null
+  const setSelectedProduct = (product: Startup | null) => {
+    if (product) {
+      setSelectedProducts([product])
+    } else {
+      setSelectedProducts([])
+    }
+  }
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
+  const messagesContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const contextMenuRef = useRef<HTMLDivElement>(null)
-  const modeMenuRef = useRef<HTMLDivElement>(null)
+  const channelMenuRef = useRef<HTMLDivElement>(null)
   const historyMenuRef = useRef<HTMLDivElement>(null)
 
   // 获取当前会话
@@ -164,8 +169,8 @@ export default function AssistantPage() {
       if (contextMenuRef.current && !contextMenuRef.current.contains(e.target as Node)) {
         setShowContextMenu(false)
       }
-      if (modeMenuRef.current && !modeMenuRef.current.contains(e.target as Node)) {
-        setShowModeMenu(false)
+      if (channelMenuRef.current && !channelMenuRef.current.contains(e.target as Node)) {
+        setShowChannelMenu(false)
       }
       if (historyMenuRef.current && !historyMenuRef.current.contains(e.target as Node)) {
         setShowHistory(false)
@@ -201,22 +206,47 @@ export default function AssistantPage() {
 
   // 滚动到底部
   const scrollToBottom = useCallback(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    if (messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTo({
+        top: messagesContainerRef.current.scrollHeight,
+        behavior: 'smooth'
+      })
+    } else {
+      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
+    }
+    setShowScrollToLatest(false)
   }, [])
 
   useEffect(() => {
     scrollToBottom()
   }, [messages, scrollToBottom])
 
+  // 监听用户滚动：如果用户向上滚动离开底部，则显示“回到底部”按钮
+  useEffect(() => {
+    const container = messagesContainerRef.current
+    if (!container) return
+
+    const handleScroll = () => {
+      const distanceFromBottom = container.scrollHeight - container.scrollTop - container.clientHeight
+      const isAwayFromBottom = distanceFromBottom > 120
+      setShowScrollToLatest(isAwayFromBottom)
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  }, [])
+
   // 调用后端 SSE 流式 API
   const streamFromBackend = async (
     userMessage: string,
     aiMessageId: string,
+    sessionId: string | null,  // Backend session ID for multi-turn
     onText: (text: string) => void,
+    onThinking: (thinking: string) => void,  // 思考内容回调
     onToolStart: (tool: ToolStatus) => void,
     onToolEnd: (toolName: string, result: string) => void,
     onError: (error: string) => void,
-    onDone: (cost?: number) => void
+    onDone: (cost?: number, newSessionId?: string) => void
   ): Promise<void> => {
     try {
       const response = await fetch('/api/chat/stream', {
@@ -224,7 +254,7 @@ export default function AssistantPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           message: userMessage,
-          mode: analysisMode,
+          session_id: sessionId,  // Pass session_id for multi-turn conversations
           context: contextType ? {
             type: contextType,
             value: contextType === 'database' ? selectedProduct?.name : urlInput
@@ -268,6 +298,11 @@ export default function AssistantPage() {
                     onText(event.content)
                   }
                   break
+                case 'thinking':
+                  if (event.content) {
+                    onThinking(event.content)
+                  }
+                  break
                 case 'tool_start':
                   if (event.tool_name) {
                     onToolStart({
@@ -286,8 +321,8 @@ export default function AssistantPage() {
                   onError(event.content || '未知错误')
                   break
                 case 'done':
-                  // 传递成本信息
-                  onDone(event.cost)
+                  // 传递成本信息和 session_id
+                  onDone(event.cost, event.session_id)
                   break
               }
             } catch {
@@ -305,8 +340,8 @@ export default function AssistantPage() {
   // 创建新会话
   const createNewSession = () => {
     setCurrentSessionId(null)
+    setServerSessionId(null)  // Reset backend session for new conversation
     setMessages([])
-    setAnalysisMode(null)
     setContextType(null)
     setSelectedProduct(null)
     setUrlInput('')
@@ -318,8 +353,8 @@ export default function AssistantPage() {
     const session = sessions.find(s => s.id === sessionId)
     if (session) {
       setCurrentSessionId(sessionId)
+      setServerSessionId(session.serverSessionId || null)  // Restore backend session
       setMessages(session.messages)
-      setAnalysisMode(session.mode)
       setContextType(session.context.type)
       // 恢复会话时，如果有产品名称，创建简化的产品对象用于显示
       if (session.context.type === 'database' && session.context.value) {
@@ -354,7 +389,6 @@ export default function AssistantPage() {
         id: Date.now().toString(),
         title: text.slice(0, 20) + (text.length > 20 ? '...' : ''),
         messages: [],
-        mode: analysisMode,
         context: {
           type: contextType,
           value: contextType === 'database' ? selectedProduct?.name || null : urlInput || null
@@ -405,44 +439,81 @@ export default function AssistantPage() {
     }]
     setMessages(messagesWithStreaming)
 
-    // 累积响应文本和成本
+    // 累积响应文本、思考内容和成本
     let accumulatedText = ''
+    let accumulatedThinking = ''
     let totalCost = 0
+    let newServerSessionId: string | undefined
+
+    // 辅助函数：更新消息的内容块
+    const updateContentBlocks = (msgId: string, updateFn: (blocks: ContentBlock[]) => ContentBlock[]) => {
+      setMessages(prev => prev.map(msg => {
+        if (msg.id !== msgId) return msg
+        const currentBlocks = msg.contentBlocks || []
+        return { ...msg, contentBlocks: updateFn(currentBlocks) }
+      }))
+    }
 
     try {
       await streamFromBackend(
         text,
         aiMessageId,
+        serverSessionId,  // Pass current backend session ID
         // onText - 处理文本流
         (textChunk) => {
           accumulatedText += textChunk
-          setMessages(prev => prev.map(msg =>
-            msg.id === aiMessageId ? { ...msg, content: accumulatedText } : msg
-          ))
+          setMessages(prev => prev.map(msg => {
+            if (msg.id !== aiMessageId) return msg
+            // 更新 content 用于兼容
+            const newMsg = { ...msg, content: accumulatedText }
+            // 更新或创建 text 内容块
+            const blocks = [...(msg.contentBlocks || [])]
+            const textBlockIndex = blocks.findIndex(b => b.type === 'text')
+            if (textBlockIndex >= 0) {
+              blocks[textBlockIndex] = { ...blocks[textBlockIndex], content: accumulatedText }
+            } else {
+              blocks.push({ type: 'text', content: accumulatedText })
+            }
+            newMsg.contentBlocks = blocks
+            return newMsg
+          }))
+        },
+        // onThinking - 处理思考流
+        (thinkingChunk) => {
+          accumulatedThinking += thinkingChunk
+          setMessages(prev => prev.map(msg => {
+            if (msg.id !== aiMessageId) return msg
+            // 更新或创建 thinking 内容块
+            const blocks = [...(msg.contentBlocks || [])]
+            const thinkingBlockIndex = blocks.findIndex(b => b.type === 'thinking')
+            if (thinkingBlockIndex >= 0) {
+              blocks[thinkingBlockIndex] = { ...blocks[thinkingBlockIndex], content: accumulatedThinking, isStreaming: true }
+            } else {
+              // thinking 块应该在最前面
+              blocks.unshift({ type: 'thinking', content: accumulatedThinking, isStreaming: true })
+            }
+            return { ...msg, contentBlocks: blocks }
+          }))
         },
         // onToolStart - 工具开始调用
         (tool) => {
           setMessages(prev => prev.map(msg => {
-            if (msg.id === aiMessageId) {
-              const existingTools = msg.toolStatus || []
-              return {
-                ...msg,
-                toolStatus: [...existingTools, tool]
-              }
+            if (msg.id !== aiMessageId) return msg
+            const existingTools = msg.toolStatus || []
+            return {
+              ...msg,
+              toolStatus: [...existingTools, tool]
             }
-            return msg
           }))
         },
         // onToolEnd - 工具调用完成
         (toolName, result) => {
           setMessages(prev => prev.map(msg => {
-            if (msg.id === aiMessageId) {
-              const updatedTools = (msg.toolStatus || []).map(t =>
-                t.name === toolName ? { ...t, status: 'completed' as const, result } : t
-              )
-              return { ...msg, toolStatus: updatedTools }
-            }
-            return msg
+            if (msg.id !== aiMessageId) return msg
+            const updatedTools = (msg.toolStatus || []).map(t =>
+              t.name === toolName ? { ...t, status: 'completed' as const, result } : t
+            )
+            return { ...msg, toolStatus: updatedTools }
           }))
         },
         // onError - 错误处理
@@ -454,30 +525,57 @@ export default function AssistantPage() {
           ))
         },
         // onDone - 完成处理
-        (cost) => {
+        (cost, returnedSessionId) => {
           totalCost = cost || 0
+          newServerSessionId = returnedSessionId
+          // 将仍在运行的工具标记为已完成，避免卡在旋转状态
+          setMessages(prev => prev.map(msg => {
+            if (msg.id !== aiMessageId) return msg
+            const updatedTools = (msg.toolStatus || []).map(t =>
+              t.status === 'running' ? { ...t, status: 'completed' as const } : t
+            )
+            return { ...msg, toolStatus: updatedTools }
+          }))
         }
       )
 
       // 标记流式传输完成，计算耗时
       const duration = (Date.now() - startTime) / 1000
+
+      // Update serverSessionId if we got a new one from the backend
+      if (newServerSessionId) {
+        setServerSessionId(newServerSessionId)
+      }
+
       setMessages(prev => {
-        const finalMessages = prev.map(msg =>
-          msg.id === aiMessageId
-            ? {
-                ...msg,
-                isStreaming: false,
-                metrics: {
-                  duration,
-                  cost: totalCost,
-                }
-              }
-            : msg
-        )
-        // 保存到会话
+        const finalMessages = prev.map(msg => {
+          if (msg.id !== aiMessageId) return msg
+          // 标记 thinking 块为非流式状态
+          const blocks = (msg.contentBlocks || []).map(block => {
+            if (block.type === 'thinking') {
+              return { ...block, isStreaming: false }
+            }
+            return block
+          })
+          return {
+            ...msg,
+            isStreaming: false,
+            contentBlocks: blocks,
+            metrics: {
+              duration,
+              cost: totalCost,
+            }
+          }
+        })
+        // 保存到会话 (including serverSessionId)
         setSessions(prevSessions => prevSessions.map(s =>
           s.id === sessionId
-            ? { ...s, messages: finalMessages, updatedAt: new Date() }
+            ? {
+                ...s,
+                messages: finalMessages,
+                serverSessionId: newServerSessionId || s.serverSessionId,
+                updatedAt: new Date()
+              }
             : s
         ))
         return finalMessages
@@ -499,8 +597,27 @@ export default function AssistantPage() {
   }
 
   const selectProduct = (product: Startup) => {
-    setSelectedProduct(product)
-    setShowContextMenu(false)
+    // 支持多选产品
+    setSelectedProducts(prev => {
+      const isSelected = prev.some(p => p.id === product.id)
+      if (isSelected) {
+        return prev.filter(p => p.id !== product.id)
+      } else {
+        return [...prev, product]
+      }
+    })
+  }
+
+  // 切换渠道选择
+  const toggleChannel = (channelId: ChannelId) => {
+    setSelectedChannels(prev => {
+      const isSelected = prev.includes(channelId)
+      if (isSelected) {
+        return prev.filter(id => id !== channelId)
+      } else {
+        return [...prev, channelId]
+      }
+    })
   }
 
   const confirmUrl = () => {
@@ -529,7 +646,6 @@ export default function AssistantPage() {
   }
 
   const hasMessages = messages.length > 0
-  const currentMode = analysisMode ? modeConfig[analysisMode] : null
   const hasContext = (contextType === 'database' && selectedProduct) || (contextType === 'url' && urlInput)
 
   return (
@@ -609,8 +725,8 @@ export default function AssistantPage() {
               </div>
             </div>
 
-            {/* 欢迎内容 - 垂直居中 */}
-            <div className="flex-1 flex flex-col items-center justify-center px-4 -mt-12">
+            {/* 欢迎内容 - 整体上移 */}
+            <div className="flex-1 flex flex-col items-center justify-center px-4 -mt-24">
               <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
                 {/* 标题区域 */}
                 <div className="flex items-center gap-3 mb-6">
@@ -636,7 +752,7 @@ export default function AssistantPage() {
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        placeholder={currentMode?.placeholder || '问我任何关于 SaaS 产品的问题...'}
+                        placeholder="问我任何关于 SaaS 产品的问题..."
                         className="flex-1 bg-transparent resize-none text-content-primary placeholder:text-content-muted focus:outline-none min-h-[72px] max-h-48 text-base leading-relaxed"
                         rows={3}
                         disabled={isLoading}
@@ -659,69 +775,90 @@ export default function AssistantPage() {
                       </button>
                     </div>
 
-                    {/* 底部工具栏 */}
+                    {/* 底部工具栏 - 渠道探索 + 关联产品 */}
                     <div className="flex items-center gap-2 px-4 pb-3">
-                      {/* 模式选择 */}
-                      <div className="relative" ref={modeMenuRef}>
+                      {/* 渠道探索 */}
+                      <div className="relative" ref={channelMenuRef}>
                         <button
-                          onClick={() => {
-                            setShowModeMenu(!showModeMenu)
-                            setShowContextMenu(false)
-                          }}
+                          onClick={() => setShowChannelMenu(!showChannelMenu)}
                           className={cn(
-                            'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all',
-                            currentMode
+                            'relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200',
+                            selectedChannels.length > 0
                               ? 'bg-accent-primary/10 text-accent-primary'
-                              : 'bg-surface hover:bg-surface-hover text-content-secondary'
+                              : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
                           )}
                         >
-                          <FontAwesomeIcon icon={currentMode?.icon || faSliders} className="h-3 w-3" />
-                          {currentMode?.label || '分析模式'}
+                          <FontAwesomeIcon icon={faCompass} className="h-3 w-3" />
+                          {selectedChannels.length > 0 ? `已选 ${selectedChannels.length} 个渠道` : '渠道探索'}
                           <FontAwesomeIcon
                             icon={faChevronDown}
-                            className={cn('h-2.5 w-2.5 opacity-60 transition-transform duration-200', showModeMenu && 'rotate-180')}
+                            className={cn('h-2 w-2 transition-transform duration-200', showChannelMenu && 'rotate-180')}
                           />
+                          {selectedChannels.length > 0 && (
+                            <span
+                              onClick={(e) => {
+                                e.stopPropagation()
+                                setSelectedChannels([])
+                              }}
+                              className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-content-muted hover:bg-content-secondary text-white rounded-full cursor-pointer transition-colors"
+                              title="清除选择"
+                            >
+                              <FontAwesomeIcon icon={faXmark} className="h-2 w-2" />
+                            </span>
+                          )}
                         </button>
 
-                        {showModeMenu && (
-                          <div className="absolute left-0 top-full mt-2 w-80 bg-background border border-surface-border rounded-xl shadow-xl z-20 overflow-hidden">
+                        {showChannelMenu && (
+                          <div className="absolute left-0 top-full mt-2 w-56 bg-background border border-surface-border rounded-xl shadow-xl z-20 overflow-hidden">
+                            <div className="p-2 border-b border-surface-border/50">
+                              <span className="text-xs text-content-muted px-2">选择数据来源渠道</span>
+                            </div>
                             <div className="p-2 space-y-1">
-                              {(Object.entries(modeConfig) as [AnalysisMode, typeof modeConfig.product][]).map(([key, config]) => (
-                                <button
-                                  key={key}
-                                  onClick={() => {
-                                    setAnalysisMode(key as AnalysisMode)
-                                    setShowModeMenu(false)
-                                  }}
-                                  className={cn(
-                                    'w-full flex items-center gap-3 px-3 py-3 rounded-lg text-left transition-all group',
-                                    analysisMode === key
-                                      ? 'bg-accent-primary/10'
-                                      : 'hover:bg-surface'
-                                  )}
-                                >
-                                  <div className={cn(
-                                    'w-9 h-9 rounded-lg flex items-center justify-center transition-colors',
-                                    analysisMode === key ? 'bg-accent-primary/20' : 'bg-surface group-hover:bg-surface-hover'
-                                  )}>
-                                    <FontAwesomeIcon
-                                      icon={config.icon}
+                              {CHANNELS.map((channel) => {
+                                const isSelected = selectedChannels.includes(channel.id)
+                                return (
+                                  <button
+                                    key={channel.id}
+                                    onClick={() => toggleChannel(channel.id)}
+                                    className={cn(
+                                      'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all',
+                                      isSelected
+                                        ? 'bg-accent-primary/10'
+                                        : 'hover:bg-surface'
+                                    )}
+                                  >
+                                    <div
                                       className={cn(
-                                        'h-4 w-4 transition-colors',
-                                        analysisMode === key ? 'text-accent-primary' : 'text-content-muted group-hover:text-content-secondary'
+                                        'w-7 h-7 rounded-lg flex items-center justify-center transition-all',
+                                        isSelected ? 'opacity-100' : 'opacity-50'
                                       )}
-                                    />
-                                  </div>
-                                  <div className="flex-1 min-w-0">
+                                      style={{ backgroundColor: isSelected ? `${channel.color}20` : undefined }}
+                                    >
+                                      <FontAwesomeIcon
+                                        icon={channel.icon}
+                                        className="h-4 w-4"
+                                        style={{ color: isSelected ? channel.color : undefined }}
+                                      />
+                                    </div>
+                                    <span className={cn(
+                                      'flex-1 text-sm',
+                                      isSelected ? 'text-content-primary font-medium' : 'text-content-secondary'
+                                    )}>
+                                      {channel.name}
+                                    </span>
                                     <div className={cn(
-                                      'text-sm font-medium',
-                                      analysisMode === key ? 'text-accent-primary' : 'text-content-primary'
-                                    )}>{config.label}</div>
-                                    <div className="text-xs text-content-muted mt-0.5">{config.description}</div>
-                                  </div>
-                                  {analysisMode === key && <FontAwesomeIcon icon={faCheck} className="h-3.5 w-3.5 text-accent-primary flex-shrink-0" />}
-                                </button>
-                              ))}
+                                      'w-4 h-4 rounded border-2 flex items-center justify-center transition-all',
+                                      isSelected
+                                        ? 'bg-accent-primary border-accent-primary'
+                                        : 'border-content-muted/30'
+                                    )}>
+                                      {isSelected && (
+                                        <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5 text-white" />
+                                      )}
+                                    </div>
+                                  </button>
+                                )
+                              })}
                             </div>
                           </div>
                         )}
@@ -732,23 +869,32 @@ export default function AssistantPage() {
                         <button
                           onClick={() => {
                             setShowContextMenu(!showContextMenu)
-                            setShowModeMenu(false)
                             if (!contextType) setContextType('database')
                           }}
                           className={cn(
-                            'relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all',
+                            'relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200',
                             hasContext
-                              ? 'bg-accent-success/15 text-accent-success'
-                              : 'bg-surface hover:bg-surface-hover text-content-secondary'
+                              ? 'bg-accent-success/10 text-accent-success'
+                              : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
                           )}
                         >
                           <FontAwesomeIcon icon={faLink} className="h-3 w-3" />
-                          {hasContext ? (contextType === 'database' ? selectedProduct?.name : '已添加链接') : '关联产品'}
+                          {hasContext
+                            ? (contextType === 'database'
+                                ? (selectedProducts.length > 1
+                                    ? `已选 ${selectedProducts.length} 个产品`
+                                    : selectedProduct?.name)
+                                : '已添加链接')
+                            : '关联产品'}
+                          <FontAwesomeIcon
+                            icon={faChevronDown}
+                            className={cn('h-2 w-2 transition-transform duration-200', showContextMenu && 'rotate-180')}
+                          />
                           {hasContext && (
                             <span
                               onClick={(e) => {
                                 e.stopPropagation()
-                                setSelectedProduct(null)
+                                setSelectedProducts([])
                                 setUrlInput('')
                                 setContextType(null)
                               }}
@@ -801,39 +947,54 @@ export default function AssistantPage() {
                                     />
                                   </div>
                                   <div className="max-h-48 overflow-y-auto space-y-0.5">
-                                    {products.length > 0 ? products.map((product) => (
-                                      <button
-                                        key={product.id}
-                                        onClick={() => selectProduct(product)}
-                                        className={cn(
-                                          'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all',
-                                          selectedProduct?.id === product.id ? 'bg-accent-primary/10 text-accent-primary' : 'hover:bg-surface text-content-primary'
-                                        )}
-                                      >
-                                        {/* 产品 Logo */}
-                                        <div className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 overflow-hidden">
-                                          {product.logo_url ? (
-                                            <img
-                                              src={product.logo_url}
-                                              alt={product.name}
-                                              className="w-full h-full object-cover"
-                                              onError={(e) => {
-                                                (e.target as HTMLImageElement).style.display = 'none';
-                                                (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
-                                              }}
-                                            />
-                                          ) : null}
+                                    {products.length > 0 ? products.map((product) => {
+                                      const isSelected = selectedProducts.some(p => p.id === product.id)
+                                      return (
+                                        <button
+                                          key={product.id}
+                                          onClick={() => selectProduct(product)}
+                                          className={cn(
+                                            'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all',
+                                            isSelected ? 'bg-accent-primary/10' : 'hover:bg-surface'
+                                          )}
+                                        >
+                                          {/* 产品 Logo */}
+                                          <div className="w-8 h-8 rounded-lg bg-surface flex items-center justify-center flex-shrink-0 overflow-hidden">
+                                            {product.logo_url ? (
+                                              <img
+                                                src={product.logo_url}
+                                                alt={product.name}
+                                                className="w-full h-full object-cover"
+                                                onError={(e) => {
+                                                  (e.target as HTMLImageElement).style.display = 'none';
+                                                  (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                                                }}
+                                              />
+                                            ) : null}
+                                            <span className={cn(
+                                              'text-xs font-medium text-content-muted',
+                                              product.logo_url && 'hidden'
+                                            )}>
+                                              {product.name.slice(0, 2).toUpperCase()}
+                                            </span>
+                                          </div>
                                           <span className={cn(
-                                            'text-xs font-medium text-content-muted',
-                                            product.logo_url && 'hidden'
+                                            'flex-1 text-sm truncate',
+                                            isSelected ? 'text-content-primary font-medium' : 'text-content-primary'
+                                          )}>{product.name}</span>
+                                          <div className={cn(
+                                            'w-4 h-4 rounded border-2 flex items-center justify-center transition-all flex-shrink-0',
+                                            isSelected
+                                              ? 'bg-accent-primary border-accent-primary'
+                                              : 'border-content-muted/30'
                                           )}>
-                                            {product.name.slice(0, 2).toUpperCase()}
-                                          </span>
-                                        </div>
-                                        <span className="flex-1 text-sm truncate">{product.name}</span>
-                                        {selectedProduct?.id === product.id && <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />}
-                                      </button>
-                                    )) : (
+                                            {isSelected && (
+                                              <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5 text-white" />
+                                            )}
+                                          </div>
+                                        </button>
+                                      )
+                                    }) : (
                                       <p className="text-xs text-content-muted text-center py-3">{isSearching ? '搜索中...' : '暂无产品'}</p>
                                     )}
                                   </div>
@@ -950,12 +1111,6 @@ export default function AssistantPage() {
 
                 <div className="h-4 w-px bg-surface-border" />
                 <div className="flex items-center gap-2">
-                  {currentMode && (
-                    <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-xs font-medium bg-accent-primary/10 text-accent-primary">
-                      <FontAwesomeIcon icon={currentMode.icon} className="h-3 w-3" />
-                      {currentMode.label}
-                    </span>
-                  )}
                   {hasContext && (
                     <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-xs font-medium bg-accent-success/10 text-accent-success">
                       <FontAwesomeIcon icon={contextType === 'database' ? faDatabase : faGlobe} className="h-3 w-3" />
@@ -974,7 +1129,7 @@ export default function AssistantPage() {
             </div>
 
             {/* 消息列表 */}
-            <div className="flex-1 overflow-y-auto px-4 py-4">
+            <div className="flex-1 overflow-y-auto px-4 py-4" ref={messagesContainerRef}>
               <div className="max-w-3xl mx-auto space-y-6">
                 {messages.map((message) => (
                   <ChatMessage
@@ -987,46 +1142,58 @@ export default function AssistantPage() {
               </div>
             </div>
 
-            {/* 固定底部输入区域 - 简洁样式 */}
-            <div className="px-4 py-4">
-              <div className="max-w-3xl mx-auto">
-                <div className="relative bg-surface/50 rounded-2xl border border-surface-border focus-within:border-accent-primary/50 focus-within:ring-2 focus-within:ring-accent-primary/20 transition-all">
-                  <div className="flex items-end gap-3 px-4 py-3">
-                    <textarea
-                      ref={inputRef}
-                      value={input}
-                      onChange={(e) => setInput(e.target.value)}
-                      onKeyDown={handleKeyDown}
-                      placeholder="继续提问..."
-                      className="flex-1 bg-transparent resize-none text-content-primary placeholder:text-content-muted focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed"
-                      rows={1}
-                      disabled={isLoading}
-                      onInput={(e) => {
-                        const target = e.target as HTMLTextAreaElement
-                        target.style.height = 'auto'
-                        target.style.height = Math.min(target.scrollHeight, 128) + 'px'
-                      }}
-                    />
-                    <button
-                      onClick={() => sendMessage()}
-                      disabled={!input.trim() || isLoading}
-                      className={cn(
-                        'flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all',
-                        input.trim() && !isLoading
-                          ? 'bg-accent-primary text-white hover:bg-accent-primary/90'
-                          : 'bg-surface-hover text-content-muted cursor-not-allowed'
-                      )}
-                    >
-                      {isLoading ? (
-                        <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
-                      ) : (
-                        <FontAwesomeIcon icon={faPaperPlane} className="h-4 w-4" />
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
+      {/* 固定底部输入区域 - 简洁样式 */}
+      <div className="px-4 py-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="relative bg-surface/50 rounded-2xl border border-surface-border focus-within:border-accent-primary/50 focus-within:ring-2 focus-within:ring-accent-primary/20 transition-all">
+            <div className="flex items-end gap-3 px-4 py-3">
+              <textarea
+                ref={inputRef}
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="继续提问..."
+                className="flex-1 bg-transparent resize-none text-content-primary placeholder:text-content-muted focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed"
+                rows={1}
+                disabled={isLoading}
+                onInput={(e) => {
+                  const target = e.target as HTMLTextAreaElement
+                  target.style.height = 'auto'
+                  target.style.height = Math.min(target.scrollHeight, 128) + 'px'
+                }}
+              />
+              <button
+                onClick={() => sendMessage()}
+                disabled={!input.trim() || isLoading}
+                className={cn(
+                  'flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all',
+                  input.trim() && !isLoading
+                    ? 'bg-accent-primary text-white hover:bg-accent-primary/90'
+                    : 'bg-surface-hover text-content-muted cursor-not-allowed'
+                )}
+              >
+                {isLoading ? (
+                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                ) : (
+                  <FontAwesomeIcon icon={faPaperPlane} className="h-4 w-4" />
+                )}
+              </button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* 回到最新输出按钮 */}
+      {showScrollToLatest && (
+        <button
+          type="button"
+          onClick={scrollToBottom}
+          className="fixed bottom-28 right-6 z-30 inline-flex items-center gap-2 rounded-full bg-accent-primary text-white px-3 py-2 shadow-lg hover:bg-accent-primary/90 transition-colors"
+        >
+          <FontAwesomeIcon icon={faChevronDown} className="h-4 w-4" />
+          <span className="text-sm">回到最新</span>
+        </button>
+      )}
           </div>
         )}
       </div>

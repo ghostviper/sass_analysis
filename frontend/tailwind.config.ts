@@ -48,31 +48,31 @@ const config: Config = {
       },
       // Typography system
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', '"Helvetica Neue"', 'Arial', '"Noto Sans SC"', 'sans-serif'],
-        display: ['Inter', 'system-ui', '-apple-system', '"Noto Sans SC"', 'sans-serif'],
+        sans: ['"DM Sans"', '"Noto Sans SC"', 'system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+        display: ['"DM Sans"', '"Noto Sans SC"', 'system-ui', '-apple-system', 'sans-serif'],
         mono: ['"JetBrains Mono"', '"SF Mono"', 'Monaco', 'Consolas', '"Liberation Mono"', 'monospace'],
       },
       fontSize: {
         // Caption / Small text
-        'xs': ['0.75rem', { lineHeight: '1rem', letterSpacing: '0.01em' }],
+        'xs': ['0.75rem', { lineHeight: '1.125rem', letterSpacing: '0.01em' }],
         // Body small
-        'sm': ['0.8125rem', { lineHeight: '1.25rem', letterSpacing: '0' }],
-        // Body default
-        'base': ['0.875rem', { lineHeight: '1.5rem', letterSpacing: '-0.01em' }],
+        'sm': ['0.8125rem', { lineHeight: '1.375rem', letterSpacing: '0' }],
+        // Body default - 加大到 15px
+        'base': ['0.9375rem', { lineHeight: '1.65', letterSpacing: '-0.01em' }],
         // Body large / Subheading
-        'lg': ['1rem', { lineHeight: '1.625rem', letterSpacing: '-0.01em' }],
+        'lg': ['1.0625rem', { lineHeight: '1.65', letterSpacing: '-0.01em' }],
         // Heading small
-        'xl': ['1.125rem', { lineHeight: '1.75rem', letterSpacing: '-0.02em' }],
+        'xl': ['1.1875rem', { lineHeight: '1.5', letterSpacing: '-0.02em' }],
         // Heading medium
-        '2xl': ['1.25rem', { lineHeight: '1.875rem', letterSpacing: '-0.02em' }],
+        '2xl': ['1.375rem', { lineHeight: '1.4', letterSpacing: '-0.02em' }],
         // Heading large
-        '3xl': ['1.5rem', { lineHeight: '2rem', letterSpacing: '-0.025em' }],
+        '3xl': ['1.625rem', { lineHeight: '1.35', letterSpacing: '-0.025em' }],
         // Display small
-        '4xl': ['1.875rem', { lineHeight: '2.25rem', letterSpacing: '-0.025em' }],
+        '4xl': ['2rem', { lineHeight: '1.3', letterSpacing: '-0.025em' }],
         // Display medium
-        '5xl': ['2.25rem', { lineHeight: '2.5rem', letterSpacing: '-0.03em' }],
+        '5xl': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.03em' }],
         // Display large
-        '6xl': ['3rem', { lineHeight: '3.25rem', letterSpacing: '-0.03em' }],
+        '6xl': ['3.25rem', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
       },
       fontWeight: {
         light: '300',

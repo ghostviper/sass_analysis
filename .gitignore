@@ -60,6 +60,7 @@ backend/data/
 *.log
 *.tmp
 *.html
+nul
 
 # Test files
 test_*.py

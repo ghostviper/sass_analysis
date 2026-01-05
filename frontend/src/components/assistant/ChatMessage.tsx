@@ -12,11 +12,28 @@ import {
   faChartLine,
   faTrophy,
   faLayerGroup,
+  faChevronDown,
+  faChevronUp,
 } from '@fortawesome/free-solid-svg-icons'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { Streamdown } from 'streamdown'
 
 export type MessageRole = 'user' | 'assistant'
+
+// 内容块类型 - 对应 Claude Agent SDK 的 content blocks
+type ContentBlockType = 'thinking' | 'text' | 'tool_use' | 'tool_result'
+
+interface ContentBlock {
+  type: ContentBlockType
+  content: string
+  // For tool blocks
+  toolName?: string
+  toolInput?: Record<string, unknown>
+  toolResult?: string
+  toolStatus?: 'running' | 'completed'
+  // For thinking blocks
+  isStreaming?: boolean
+}
 
 // 工具调用状态
 interface ToolStatus {
@@ -45,6 +62,8 @@ interface Message {
   isStreaming?: boolean
   toolStatus?: ToolStatus[]
   metrics?: MessageMetrics
+  // 内容块数组 - 用于区分 thinking、text、tool 等不同类型的内容
+  contentBlocks?: ContentBlock[]
 }
 
 interface ChatMessageProps {
@@ -60,82 +79,6 @@ const toolNameMap: Record<string, { label: string; icon: IconDefinition }> = {
   get_category_analysis: { label: '分析市场类目', icon: faLayerGroup },
   get_trend_report: { label: '生成趋势报告', icon: faChartLine },
   get_leaderboard: { label: '获取排行榜', icon: faTrophy },
-}
-
-// Streamdown 自定义组件样式
-const streamdownComponents = {
-  h1: ({ children }: { children: React.ReactNode }) => (
-    <h1 className="text-lg font-semibold text-content-primary mt-5 mb-3 first:mt-0">{children}</h1>
-  ),
-  h2: ({ children }: { children: React.ReactNode }) => (
-    <h2 className="text-base font-semibold text-content-primary mt-5 mb-3 first:mt-0">{children}</h2>
-  ),
-  h3: ({ children }: { children: React.ReactNode }) => (
-    <h3 className="text-sm font-semibold text-content-primary mt-4 mb-2 first:mt-0">{children}</h3>
-  ),
-  h4: ({ children }: { children: React.ReactNode }) => (
-    <h4 className="text-sm font-medium text-content-primary mt-3 mb-2 first:mt-0">{children}</h4>
-  ),
-  p: ({ children }: { children: React.ReactNode }) => (
-    <p className="text-sm text-content-secondary leading-relaxed my-2">{children}</p>
-  ),
-  ul: ({ children }: { children: React.ReactNode }) => (
-    <ul className="list-disc ml-5 my-2 space-y-1">{children}</ul>
-  ),
-  ol: ({ children }: { children: React.ReactNode }) => (
-    <ol className="list-decimal ml-5 my-2 space-y-1">{children}</ol>
-  ),
-  li: ({ children }: { children: React.ReactNode }) => (
-    <li className="text-sm text-content-secondary leading-relaxed">{children}</li>
-  ),
-  blockquote: ({ children }: { children: React.ReactNode }) => (
-    <blockquote className="border-l-3 border-accent-primary/40 pl-4 my-3 text-content-muted italic">
-      {children}
-    </blockquote>
-  ),
-  code: ({ children }: { children: React.ReactNode }) => (
-    <code className="bg-surface/50 px-1.5 py-0.5 rounded text-sm text-accent-primary font-mono">
-      {children}
-    </code>
-  ),
-  pre: ({ children }: { children: React.ReactNode }) => (
-    <pre className="bg-surface/50 rounded-lg p-4 overflow-x-auto my-3 border border-surface-border/30 text-sm">
-      {children}
-    </pre>
-  ),
-  a: ({ href, children }: { href?: string; children: React.ReactNode }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-accent-primary hover:text-accent-primary/80 underline underline-offset-2"
-    >
-      {children}
-    </a>
-  ),
-  strong: ({ children }: { children: React.ReactNode }) => (
-    <strong className="font-semibold text-content-primary">{children}</strong>
-  ),
-  em: ({ children }: { children: React.ReactNode }) => (
-    <em className="italic text-content-secondary">{children}</em>
-  ),
-  table: ({ children }: { children: React.ReactNode }) => (
-    <div className="overflow-x-auto my-3">
-      <table className="w-full text-sm border-collapse">{children}</table>
-    </div>
-  ),
-  thead: ({ children }: { children: React.ReactNode }) => (
-    <thead className="bg-surface/30">{children}</thead>
-  ),
-  th: ({ children }: { children: React.ReactNode }) => (
-    <th className="border border-surface-border/50 px-3 py-2 text-left font-medium text-content-primary">
-      {children}
-    </th>
-  ),
-  td: ({ children }: { children: React.ReactNode }) => (
-    <td className="border border-surface-border/50 px-3 py-2 text-content-secondary">{children}</td>
-  ),
-  hr: () => <hr className="my-4 border-surface-border/50" />,
 }
 
 // 现代风格 SVG 图标组件
@@ -199,6 +142,66 @@ const Icons = {
   ),
 }
 
+// 思考块图标
+const ThinkingIcon = () => (
+  <svg className="thinking-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 16v-4"/>
+    <path d="M12 8h.01"/>
+  </svg>
+)
+
+// 思考块组件
+function ThinkingBlock({
+  content,
+  isStreaming,
+}: {
+  content: string
+  isStreaming?: boolean
+}) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const previewLength = 150
+  const hasMore = content.length > previewLength
+
+  return (
+    <div data-chat-block="thinking" className={isStreaming ? 'streaming' : ''}>
+      <div
+        className="thinking-header"
+        onClick={() => setIsExpanded(!isExpanded)}
+      >
+        <ThinkingIcon />
+        <span>思考过程</span>
+        {isStreaming && (
+          <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+        )}
+        <span className="thinking-badge">
+          {isExpanded ? '收起' : '展开'}
+        </span>
+        <FontAwesomeIcon
+          icon={isExpanded ? faChevronUp : faChevronDown}
+          className="h-3 w-3 opacity-60"
+        />
+      </div>
+      {isExpanded && (
+        <div className="thinking-content">
+          <Streamdown isAnimating={isStreaming}>
+            {content}
+          </Streamdown>
+        </div>
+      )}
+    </div>
+  )
+}
+
+// 内容块分隔符
+function BlockSeparator({ label }: { label?: string }) {
+  return (
+    <div data-chat-block="separator">
+      {label && <span className="separator-label">{label}</span>}
+    </div>
+  )
+}
+
 // 操作按钮组件
 function ActionButton({
   icon,
@@ -233,6 +236,8 @@ function ActionButton({
 export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessageProps) {
   const [copied, setCopied] = useState(false)
   const [feedback, setFeedback] = useState<'like' | 'dislike' | null>(null)
+  const [toolsExpanded, setToolsExpanded] = useState(false)
+  const [expandedTools, setExpandedTools] = useState<Record<string, boolean>>({})
   const isUser = message.role === 'user'
 
   // 复制内容
@@ -258,7 +263,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
     return (
       <div className="flex justify-end gap-3">
         <div className="max-w-[75%] rounded-2xl rounded-tr-md px-4 py-3 bg-accent-primary text-white">
-          <div className="text-sm leading-relaxed whitespace-pre-wrap">
+          <div className="text-[0.9375rem] leading-[1.65] whitespace-pre-wrap">
             {message.content}
           </div>
           <div className="text-xs mt-2 text-white/60 text-right">
@@ -277,40 +282,129 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   const runningTool = message.toolStatus?.find(t => t.status === 'running')
   const completedToolsCount = message.toolStatus?.filter(t => t.status === 'completed').length || 0
   const isComplete = !message.isStreaming && message.content
+  const latestTool = message.toolStatus && message.toolStatus.length > 0
+    ? message.toolStatus[message.toolStatus.length - 1]
+    : undefined
 
-  // 获取当前显示的工具状态
-  // 只在流式传输过程中显示，消息完成后不显示
-  const getCurrentToolDisplay = () => {
-    // 消息已完成，不显示工具状态
-    if (isComplete) {
-      return null
-    }
+  // 工具调用时间线
+  const renderToolTimeline = () => {
+    if (!message.toolStatus || message.toolStatus.length === 0) return null
 
-    // 有正在运行的工具
-    if (runningTool) {
-      const toolInfo = toolNameMap[runningTool.name] || { label: runningTool.name, icon: faDatabase }
-      return (
-        <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium bg-accent-warning/10 text-accent-warning border border-accent-warning/20 animate-pulse">
-          <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
-          <span>{toolInfo.label}</span>
+    return (
+      <div className="mb-4 rounded-xl border border-surface-border/60 bg-surface/40 p-3 md:p-4 shadow-sm">
+        <div className="text-xs font-semibold text-content-secondary mb-2">分析步骤</div>
+        <div className="space-y-3">
+          {message.toolStatus.map((tool, idx) => {
+            const toolInfo = toolNameMap[tool.name] || { label: tool.name, icon: faDatabase }
+            const isRunningTool = tool.status === 'running'
+            const isDoneTool = tool.status === 'completed'
+            const toolKey = `${tool.name}-${idx}`
+            const isExpanded = expandedTools[toolKey]
+            const indicatorClass = isDoneTool
+              ? 'bg-accent-success border-accent-success/60'
+              : isRunningTool
+                ? 'bg-accent-warning border-accent-warning/60 animate-pulse'
+                : 'bg-surface-border'
+
+            return (
+              <div key={`${tool.name}-${idx}`} className="relative pl-7">
+                <div className="absolute left-2 top-3 bottom-0 w-px bg-surface-border/70" aria-hidden />
+                <div className={`absolute left-1 top-2 h-2.5 w-2.5 rounded-full border bg-surface ${indicatorClass}`} />
+                <div className="flex items-start gap-2">
+                  <div className={`mt-0.5 flex h-7 w-7 items-center justify-center rounded-lg bg-surface/60 text-accent-primary`}>
+                    <FontAwesomeIcon icon={toolInfo.icon} className="h-3.5 w-3.5" />
+                  </div>
+                  <div className="flex-1 space-y-1">
+                    <div className="flex items-center gap-2">
+                      <span className="inline-flex items-center justify-center px-2 py-0.5 text-[11px] rounded-full bg-surface/70 text-content-muted border border-surface-border/70">
+                        步骤 {idx + 1}
+                      </span>
+                      <span className="text-sm font-medium text-content-primary">{toolInfo.label}</span>
+                      {isRunningTool && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-warning">
+                          <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+                          进行中
+                        </span>
+                      )}
+                      {isDoneTool && (
+                        <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-success">
+                          <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+                          已完成
+                        </span>
+                      )}
+                    </div>
+                    {tool.result ? (
+                      <div className="rounded-lg bg-surface/50 border border-surface-border/50 p-2 text-xs text-content-secondary whitespace-pre-wrap leading-relaxed">
+                        {isExpanded || tool.result.length <= 300 ? tool.result : `${tool.result.slice(0, 300)}…`}
+                        {tool.result.length > 300 && (
+                          <button
+                            type="button"
+                            className="mt-1 block text-[11px] text-accent-primary hover:text-accent-primary/80"
+                            onClick={() => setExpandedTools(prev => ({ ...prev, [toolKey]: !isExpanded }))}
+                          >
+                            {isExpanded ? '收起结果' : '展开全部'}
+                          </button>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="text-xs text-content-muted/80">
+                        {isRunningTool ? '正在执行...' : '等待结果...'}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
-      )
-    }
-
-    // 工具已完成但还没有内容（等待 AI 生成回复）
-    if (completedToolsCount > 0 && !message.content && message.isStreaming) {
-      return (
-        <div className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium bg-accent-success/10 text-accent-success border border-accent-success/20">
-          <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
-          <span>已完成 {completedToolsCount} 项查询</span>
-        </div>
-      )
-    }
-
-    return null
+      </div>
+    )
   }
 
-  const toolDisplay = getCurrentToolDisplay()
+  const renderToolSummary = () => {
+    if (!latestTool) return null
+    const toolInfo = toolNameMap[latestTool.name] || { label: latestTool.name, icon: faDatabase }
+    const isRunningTool = latestTool.status === 'running'
+    const isDoneTool = latestTool.status === 'completed'
+
+    return (
+      <button
+        type="button"
+        onClick={() => setToolsExpanded(!toolsExpanded)}
+        className="mb-3 w-full rounded-lg border border-surface-border/60 bg-surface/40 px-3 py-2 text-left hover:border-accent-primary/40 transition-all shadow-sm"
+      >
+        <div className="flex items-center gap-2">
+          <div className="flex h-7 w-7 items-center justify-center rounded-md bg-surface/70 text-accent-primary">
+            <FontAwesomeIcon icon={toolInfo.icon} className="h-3.5 w-3.5" />
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="text-sm font-medium text-content-primary truncate">{toolInfo.label}</span>
+              {isRunningTool && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-warning">
+                  <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+                  进行中
+                </span>
+              )}
+              {isDoneTool && (
+                <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-success">
+                  <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+                  已完成
+                </span>
+              )}
+            </div>
+            <div className="text-xs text-content-muted/80 mt-0.5 truncate">
+              {latestTool.result ? latestTool.result : (isRunningTool ? '正在执行...' : '等待结果...')}
+            </div>
+          </div>
+          <FontAwesomeIcon
+            icon={toolsExpanded ? faChevronUp : faChevronDown}
+            className="h-3.5 w-3.5 text-content-muted/70"
+          />
+        </div>
+      </button>
+    )
+  }
 
   return (
     <div className="flex gap-3 group">
@@ -318,34 +412,64 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
         <FontAwesomeIcon icon={faRobot} className="h-4 w-4 text-accent-primary" />
       </div>
       <div className="flex-1 min-w-0 pt-1">
-        {/* 工具调用状态 - 只在进行中显示 */}
-        {toolDisplay && (
-          <div className="mb-3">
-            {toolDisplay}
-          </div>
+        {/* 工具调用摘要 / 时间线 */}
+        {hasActiveTools && (
+          <>
+            {renderToolSummary()}
+            {toolsExpanded && renderToolTimeline()}
+          </>
         )}
 
-        {/* 消息内容 - 使用 Streamdown 渲染 */}
-        {message.isStreaming && !message.content && runningTool ? (
-          <div className="flex items-center gap-2 text-content-muted">
-            <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
-            <span className="text-sm">正在查询数据...</span>
-          </div>
-        ) : message.isStreaming && !message.content ? (
-          <div className="flex items-center gap-2 text-content-muted">
-            <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
-            <span className="text-sm">正在思考...</span>
-          </div>
-        ) : message.content ? (
-          <div className="prose-chat text-content-secondary">
-            <Streamdown
-              isAnimating={message.isStreaming}
-              components={streamdownComponents}
-            >
-              {message.content}
-            </Streamdown>
-          </div>
-        ) : null}
+        {/* 消息内容 - 使用 contentBlocks 渲染不同类型的内容 */}
+        {(() => {
+          // 提取 thinking 和 text 内容块
+          const thinkingBlock = message.contentBlocks?.find(b => b.type === 'thinking')
+          const textBlock = message.contentBlocks?.find(b => b.type === 'text')
+          const hasThinking = thinkingBlock && thinkingBlock.content
+          const hasText = textBlock && textBlock.content
+
+          return (
+            <>
+              {/* 思考块 */}
+              {hasThinking && (
+                <ThinkingBlock
+                  content={thinkingBlock.content}
+                  isStreaming={thinkingBlock.isStreaming}
+                />
+              )}
+
+              {/* 思考和回复之间的分隔符 */}
+              {hasThinking && hasText && (
+                <BlockSeparator label="回复" />
+              )}
+
+              {/* 文本内容 */}
+              {hasText ? (
+                <div data-chat-block="text">
+                  <Streamdown isAnimating={message.isStreaming}>
+                    {textBlock.content}
+                  </Streamdown>
+                </div>
+              ) : message.isStreaming && !message.content && runningTool ? (
+                <div className="flex items-center gap-2 text-content-muted">
+                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                  <span className="text-sm">正在查询数据...</span>
+                </div>
+              ) : message.isStreaming && !message.content ? (
+                <div className="flex items-center gap-2 text-content-muted">
+                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                  <span className="text-sm">正在思考...</span>
+                </div>
+              ) : message.content ? (
+                <div data-chat-block="text">
+                  <Streamdown isAnimating={message.isStreaming}>
+                    {message.content}
+                  </Streamdown>
+                </div>
+              ) : null}
+            </>
+          )
+        })()}
 
         {/* 底部信息栏 */}
         <div className="flex items-center gap-4 mt-3">

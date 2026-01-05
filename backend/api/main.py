@@ -4,6 +4,18 @@ FastAPI Application Entry Point
 
 # NOTE: On Windows with Python 3.8+, ProactorEventLoop (default) is required for subprocess support.
 # Do NOT set WindowsSelectorEventLoopPolicy as it breaks subprocess on newer Python versions.
+import sys
+import asyncio
+
+# Ensure ProactorEventLoopPolicy on Windows so subprocess (Claude CLI) works
+if sys.platform == "win32":
+    try:
+        policy = asyncio.get_event_loop_policy()
+        if not isinstance(policy, asyncio.WindowsProactorEventLoopPolicy):
+            asyncio.set_event_loop_policy(asyncio.WindowsProactorEventLoopPolicy())
+    except Exception:
+        # Fallback silently; uvicorn will still attempt default policy
+        pass
 
 import os
 from pathlib import Path

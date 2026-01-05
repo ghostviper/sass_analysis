@@ -26,7 +26,8 @@
       "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && pnpm add next-themes\")",
       "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && dir src\\\\components\\\\ui\\\\Card.tsx\")",
       "mcp__context7__resolve-library-id",
-      "mcp__context7__get-library-docs"
+      "mcp__context7__get-library-docs",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && type package.json | findstr streamdown\")"
     ]
   }
 }

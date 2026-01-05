@@ -5,9 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faMagnifyingGlass,
   faChartLine,
-  faRocket,
-  faLightbulb,
-  faChevronDown,
+  faCompass,
 } from '@fortawesome/free-solid-svg-icons'
 import { cn } from '@/lib/utils'
 
@@ -15,11 +13,12 @@ interface SuggestedPromptsProps {
   onSelect: (prompt: string) => void
 }
 
-const suggestions = [
+const categories = [
   {
+    id: 'product',
     icon: faMagnifyingGlass,
-    shortText: '高收入产品',
-    color: 'from-blue-500 to-cyan-500',
+    label: '产品分析',
+    description: '深度分析产品数据、收入、竞争力等',
     prompts: [
       '分析月收入超过 $5000 的产品有什么共同特点？',
       '技术复杂度低但收入不错的产品有哪些？',
@@ -28,9 +27,10 @@ const suggestions = [
     ],
   },
   {
+    id: 'trend',
     icon: faChartLine,
-    shortText: '热门赛道',
-    color: 'from-purple-500 to-pink-500',
+    label: '行业趋势',
+    description: '洞察赛道机会、市场动态与趋势',
     prompts: [
       '当前最值得关注的 SaaS 赛道有哪些？',
       '哪些领域竞争相对较小但有潜力？',
@@ -39,9 +39,10 @@ const suggestions = [
     ],
   },
   {
-    icon: faRocket,
-    shortText: '适合独立开发',
-    color: 'from-amber-500 to-orange-500',
+    id: 'career',
+    icon: faCompass,
+    label: '方向探索',
+    description: '根据你的背景推荐适合的方向',
     prompts: [
       '独立开发者适合做什么类型的产品？',
       '我是前端开发，适合做什么 SaaS？',
@@ -49,99 +50,101 @@ const suggestions = [
       '副业做 SaaS 需要注意什么？',
     ],
   },
-  {
-    icon: faLightbulb,
-    shortText: '低门槛高收益',
-    color: 'from-emerald-500 to-teal-500',
-    prompts: [
-      '技术简单但收入不错的产品有什么特点？',
-      '有哪些一个人就能做的 SaaS 产品？',
-      '不需要复杂后端的产品有哪些？',
-      '快速验证产品想法的最佳方式？',
-    ],
-  },
 ]
 
 export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
-  const [expandedIndex, setExpandedIndex] = useState<number | null>(null)
+  const [expandedId, setExpandedId] = useState<string | null>(null)
 
-  const handleClick = (index: number) => {
-    setExpandedIndex(expandedIndex === index ? null : index)
+  const handleClick = (id: string) => {
+    setExpandedId(expandedId === id ? null : id)
   }
 
   const handlePromptSelect = (prompt: string) => {
     onSelect(prompt)
-    setExpandedIndex(null)
+    setExpandedId(null)
   }
 
+  const expandedCategory = categories.find(c => c.id === expandedId)
+
   return (
-    <div className="w-full min-h-[180px]">
-      {/* 标签按钮 */}
-      <div className="flex flex-wrap justify-center gap-2">
-        {suggestions.map((suggestion, index) => (
-          <button
-            key={index}
-            onClick={() => handleClick(index)}
-            className={cn(
-              'group inline-flex items-center gap-2 px-3.5 py-2 rounded-full border transition-all text-sm',
-              expandedIndex === index
-                ? 'bg-accent-primary/10 border-accent-primary/30 text-accent-primary'
-                : 'bg-surface/60 border-surface-border/50 text-content-secondary hover:bg-surface hover:border-accent-primary/30 hover:text-content-primary'
-            )}
-          >
-            <FontAwesomeIcon
-              icon={suggestion.icon}
+    <div className="w-full">
+      {/* 分类标签按钮 - 胶囊式设计 */}
+      <div className="flex flex-wrap justify-center gap-5">
+        {categories.map((category) => {
+          const isExpanded = expandedId === category.id
+          return (
+            <button
+              key={category.id}
+              onClick={() => handleClick(category.id)}
               className={cn(
-                'h-3.5 w-3.5 transition-colors',
-                expandedIndex === index ? 'text-accent-primary' : 'text-content-muted group-hover:text-accent-primary'
+                'group inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full transition-all duration-300 text-sm border cursor-pointer',
+                isExpanded
+                  ? 'bg-accent-primary/10 text-accent-primary border-accent-primary/30 shadow-md scale-[1.02]'
+                  : 'bg-surface border-surface-border text-content-secondary hover:border-accent-primary/40 hover:bg-accent-primary/5 hover:text-accent-primary hover:shadow-md'
               )}
-            />
-            <span>{suggestion.shortText}</span>
-            <FontAwesomeIcon
-              icon={faChevronDown}
-              className={cn(
-                'h-2.5 w-2.5 transition-transform duration-200',
-                expandedIndex === index ? 'rotate-180 text-accent-primary' : 'text-content-muted'
-              )}
-            />
-          </button>
-        ))}
+            >
+              <FontAwesomeIcon
+                icon={category.icon}
+                className={cn(
+                  'h-3.5 w-3.5 transition-all duration-300',
+                  isExpanded ? 'text-accent-primary' : 'text-content-muted group-hover:text-accent-primary'
+                )}
+              />
+              <span className="font-medium">{category.label}</span>
+            </button>
+          )
+        })}
       </div>
 
-      {/* 展开的问题面板 - 固定高度区域 */}
-      <div className="mt-4 min-h-[120px]">
+      {/* 展开的问题面板 - 与页面输入框风格一致 */}
+      <div className="relative mt-5 h-0">
         <div
           className={cn(
-            'transition-all duration-200 ease-out',
-            expandedIndex !== null ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2 pointer-events-none'
+            'absolute left-0 right-0 top-0 z-10',
+            'transition-all duration-300 ease-out origin-top',
+            expandedId !== null
+              ? 'opacity-100 scale-100 translate-y-0 pointer-events-auto'
+              : 'opacity-0 scale-95 -translate-y-3 pointer-events-none'
           )}
         >
-          {expandedIndex !== null && (
-            <div className="p-4 bg-background-secondary border border-surface-border rounded-xl shadow-lg">
-              <div className="flex items-center gap-2 mb-3">
-                <div className={cn(
-                  'w-6 h-6 rounded-lg flex items-center justify-center',
-                  `bg-gradient-to-br ${suggestions[expandedIndex].color}`
-                )}>
-                  <FontAwesomeIcon
-                    icon={suggestions[expandedIndex].icon}
-                    className="h-3 w-3 text-white"
-                  />
+          {expandedCategory && (
+            <div className="bg-surface/50 rounded-2xl border border-surface-border shadow-sm">
+              {/* 内容区域 */}
+              <div className="p-4">
+                {/* 标题区 - 简洁风格 */}
+                <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-surface-border/50">
+                  <div className="w-7 h-7 rounded-lg bg-background-tertiary flex items-center justify-center">
+                    <FontAwesomeIcon
+                      icon={expandedCategory.icon}
+                      className="h-3.5 w-3.5 text-content-secondary"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-medium text-content-primary">
+                      {expandedCategory.label}
+                    </h3>
+                    <p className="text-xs text-content-muted">
+                      {expandedCategory.description}
+                    </p>
+                  </div>
                 </div>
-                <span className="text-sm font-medium text-content-primary">
-                  {suggestions[expandedIndex].shortText} - 常见问题
-                </span>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {suggestions[expandedIndex].prompts.map((prompt, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handlePromptSelect(prompt)}
-                    className="text-left text-sm text-content-secondary hover:text-accent-primary px-3 py-2.5 rounded-lg bg-surface/60 hover:bg-surface border border-transparent hover:border-accent-primary/20 transition-all"
-                  >
-                    {prompt}
-                  </button>
-                ))}
+
+                {/* 问题列表 - 简洁卡片风格 */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {expandedCategory.prompts.map((prompt, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handlePromptSelect(prompt)}
+                      className={cn(
+                        'text-left text-sm px-3.5 py-2.5 rounded-xl transition-all duration-200',
+                        'bg-background-tertiary/50 hover:bg-background-tertiary',
+                        'text-content-secondary hover:text-content-primary'
+                      )}
+                    >
+                      {prompt}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           )}

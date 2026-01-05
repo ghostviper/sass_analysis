@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -666,10 +666,202 @@
     @apply font-semibold text-content-primary;
   }
 
+  /* Streamdown 全局字体样式 - 统一项目字体风格 */
+  [data-streamdown] {
+    @apply font-sans;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  /* Streamdown 标题 */
+  [data-streamdown="heading-1"] {
+    @apply text-xl font-display font-bold tracking-tight text-content-primary mt-6 mb-3;
+  }
+
+  [data-streamdown="heading-2"] {
+    @apply text-lg font-display font-bold tracking-tight text-content-primary mt-5 mb-2.5;
+  }
+
+  [data-streamdown="heading-3"] {
+    @apply text-base font-display font-semibold tracking-snug text-content-primary mt-4 mb-2;
+  }
+
+  [data-streamdown="heading-4"],
+  [data-streamdown="heading-5"],
+  [data-streamdown="heading-6"] {
+    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-3 mb-1.5;
+  }
+
+  /* Streamdown 段落和文本 */
+  [data-streamdown="paragraph"] {
+    @apply text-[0.9375rem] leading-[1.65] text-content-secondary my-2.5;
+  }
+
+  [data-streamdown="strong"] {
+    @apply font-bold text-content-primary;
+  }
+
+  [data-streamdown="emphasis"] {
+    @apply italic text-content-secondary;
+  }
+
+  [data-streamdown="link"] {
+    @apply text-accent-primary hover:text-accent-primary/80 underline underline-offset-2 transition-colors;
+  }
+
+  /* Streamdown 列表 */
+  [data-streamdown="ordered-list"],
+  [data-streamdown="unordered-list"] {
+    @apply my-2.5 ml-5 text-[0.9375rem] leading-[1.65] text-content-secondary;
+  }
+
+  [data-streamdown="ordered-list"] {
+    @apply list-decimal;
+  }
+
+  [data-streamdown="unordered-list"] {
+    @apply list-disc;
+  }
+
+  [data-streamdown="list-item"] {
+    @apply my-1.5;
+  }
+
+  /* Streamdown 代码 */
+  [data-streamdown="inline-code"] {
+    @apply font-mono text-[0.875rem] bg-surface/60 text-accent-primary px-1.5 py-0.5 rounded;
+  }
+
+  [data-streamdown="code-block"] {
+    @apply font-mono text-[0.875rem] bg-surface/50 rounded-lg border border-surface-border/40 overflow-hidden my-3;
+  }
+
+  [data-streamdown="code-block"] pre {
+    @apply p-4 overflow-x-auto;
+  }
+
+  [data-streamdown="code-block"] code {
+    @apply text-[0.875rem] leading-relaxed;
+  }
+
+  /* Streamdown 表格 */
+  [data-streamdown="table-wrapper"] {
+    @apply overflow-x-auto my-3 rounded-lg border border-surface-border/50;
+  }
+
+  [data-streamdown="table"] {
+    @apply w-full text-[0.9375rem] border-collapse;
+  }
+
+  [data-streamdown="table-header"] {
+    @apply bg-surface/50;
+  }
+
+  [data-streamdown="table-body"] {
+    @apply divide-y divide-surface-border/30;
+  }
+
+  [data-streamdown="table-row"] {
+    @apply hover:bg-surface/30 transition-colors;
+  }
+
+  [data-streamdown="table-header-cell"] {
+    @apply px-3 py-2.5 text-left text-sm font-semibold text-content-primary border-b border-surface-border/50;
+  }
+
+  [data-streamdown="table-cell"] {
+    @apply px-3 py-2.5 text-[0.9375rem] text-content-secondary;
+  }
+
+  /* Streamdown 引用块 */
+  [data-streamdown="blockquote"] {
+    @apply border-l-2 border-accent-primary/40 pl-4 my-3 text-content-tertiary italic text-[0.9375rem] leading-[1.65];
+  }
+
+  /* Streamdown 分隔线 */
+  [data-streamdown="horizontal-rule"] {
+    @apply my-4 border-surface-border/50;
+  }
+
   /* Typing cursor */
   .typing-cursor::after {
     content: '|';
     @apply animate-pulse text-accent-primary;
+  }
+
+  /* ============================================
+     Chat Content Blocks - Similar to Streamdown
+     ============================================ */
+
+  /* Base content block wrapper */
+  [data-chat-block] {
+    @apply relative;
+  }
+
+  /* Thinking block - collapsible with subtle styling */
+  [data-chat-block="thinking"] {
+    @apply my-3 rounded-xl border border-violet-500/20 bg-violet-500/5 overflow-hidden;
+  }
+
+  [data-chat-block="thinking"] .thinking-header {
+    @apply flex items-center gap-2 px-3 py-2.5 cursor-pointer select-none;
+    @apply text-xs font-medium text-violet-600 dark:text-violet-400;
+    @apply hover:bg-violet-500/10 transition-colors;
+  }
+
+  [data-chat-block="thinking"] .thinking-icon {
+    @apply w-4 h-4 text-violet-500 dark:text-violet-400;
+  }
+
+  [data-chat-block="thinking"] .thinking-content {
+    @apply px-3 pb-3 text-sm text-content-tertiary leading-relaxed;
+    @apply border-t border-violet-500/10 pt-2;
+  }
+
+  [data-chat-block="thinking"] .thinking-badge {
+    @apply ml-auto px-1.5 py-0.5 rounded text-[10px] font-medium;
+    @apply bg-violet-500/10 text-violet-600 dark:text-violet-400;
+  }
+
+  /* Text block - main response content */
+  [data-chat-block="text"] {
+    @apply text-content-secondary text-[0.9375rem] leading-[1.65];
+  }
+
+  /* Block separator - horizontal rule between blocks */
+  [data-chat-block="separator"] {
+    @apply my-4 flex items-center gap-3;
+  }
+
+  [data-chat-block="separator"]::before,
+  [data-chat-block="separator"]::after {
+    content: '';
+    @apply flex-1 h-px bg-gradient-to-r from-transparent via-surface-border/50 to-transparent;
+  }
+
+  [data-chat-block="separator"] .separator-label {
+    @apply text-[10px] font-medium uppercase tracking-wider text-content-muted/60;
+  }
+
+  /* Redacted thinking block */
+  [data-chat-block="redacted"] {
+    @apply my-3 px-3 py-2.5 rounded-lg;
+    @apply bg-amber-500/5 border border-amber-500/20;
+    @apply text-xs text-amber-600 dark:text-amber-400;
+    @apply flex items-center gap-2;
+  }
+
+  [data-chat-block="redacted"] .redacted-icon {
+    @apply w-4 h-4 opacity-70;
+  }
+
+  /* Animation for streaming blocks */
+  [data-chat-block].streaming {
+    @apply animate-pulse;
+  }
+
+  /* Dark mode adjustments */
+  .dark [data-chat-block="thinking"] {
+    @apply border-violet-400/20 bg-violet-400/5;
   }
 }
 

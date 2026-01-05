@@ -26,11 +26,13 @@ class ChatMessage(BaseModel):
 
 class ChatRequest(BaseModel):
     message: str
-    history: Optional[List[ChatMessage]] = []
+    session_id: Optional[str] = None  # Session ID for multi-turn conversations
+    history: Optional[List[ChatMessage]] = []  # Legacy field, kept for compatibility
 
 
 class ChatResponse(BaseModel):
     response: str
+    session_id: Optional[str] = None  # Return session_id for client to track
     sources: Optional[List[dict]] = None
 
 
@@ -77,18 +79,19 @@ async def chat(request: ChatRequest):
 
     Processes user questions about SaaS startups, market trends, and analysis.
     Claude Agent will automatically call appropriate tools to query data.
+    Supports multi-turn conversations via session_id.
 
     Args:
-        request: ChatRequest with message and optional history
+        request: ChatRequest with message and optional session_id
 
     Returns:
-        ChatResponse with complete AI response
+        ChatResponse with complete AI response and session_id
 
     Example:
         POST /api/chat
         {
             "message": "分析 AI 赛道的趋势",
-            "history": []
+            "session_id": null
         }
     """
     try:
@@ -97,16 +100,23 @@ async def chat(request: ChatRequest):
         if not agent:
             return ChatResponse(
                 response="请在 .env 文件中配置 ANTHROPIC_API_KEY 以启用 AI 分析功能。",
+                session_id=None,
                 sources=None
             )
 
         # Collect complete response from stream
         response_parts = []
-        async for chunk in agent.query_stream(request.message):
-            response_parts.append(chunk)
+        result_session_id = request.session_id
+
+        async for event in agent.query_stream_events(request.message, session_id=request.session_id):
+            if event.type == "text":
+                response_parts.append(event.content)
+            elif event.type == "done" and event.session_id:
+                result_session_id = event.session_id
 
         return ChatResponse(
             response=''.join(response_parts),
+            session_id=result_session_id,
             sources=None
         )
 
@@ -124,9 +134,10 @@ async def chat_stream(request: ChatRequest):
 
     Provides real-time streaming responses for better user experience.
     Compatible with Vercel AI SDK and other SSE clients.
+    Supports multi-turn conversations via session_id.
 
     Args:
-        request: ChatRequest with message and optional history
+        request: ChatRequest with message and optional session_id
 
     Returns:
         StreamingResponse with SSE events
@@ -136,14 +147,14 @@ async def chat_stream(request: ChatRequest):
         - tool_start: Tool call started {"type": "tool_start", "tool_name": "...", "tool_input": {...}}
         - tool_end: Tool call completed {"type": "tool_end", "tool_name": "...", "tool_result": "..."}
         - status: System status update {"type": "status", "content": "..."}
-        - done: Stream completed {"type": "done", "cost": 0.0}
+        - done: Stream completed {"type": "done", "cost": 0.0, "session_id": "..."}
         - error: Error occurred {"type": "error", "content": "..."}
 
     Example:
         POST /api/chat/stream
         {
             "message": "有哪些高收入的 SaaS 产品？",
-            "history": []
+            "session_id": null
         }
     """
     async def generate():
@@ -156,8 +167,8 @@ async def chat_stream(request: ChatRequest):
                 yield "data: [DONE]\n\n"
                 return
 
-            # Stream response with detailed events
-            async for event in agent.query_stream_events(request.message):
+            # Stream response with detailed events, passing session_id for multi-turn
+            async for event in agent.query_stream_events(request.message, session_id=request.session_id):
                 # Format as SSE event using StreamEvent.to_dict()
                 event_data = json.dumps(event.to_dict(), ensure_ascii=False)
                 yield f"data: {event_data}\n\n"
@@ -220,10 +231,12 @@ async def test_stream():
 async def chat_stream_debug(request: ChatRequest):
     """
     Debug version of streaming endpoint with console output.
+    Supports multi-turn conversations via session_id.
     """
     async def generate():
         try:
             print(f"\n[DEBUG] Starting stream for: {request.message[:50]}...", flush=True)
+            print(f"[DEBUG] Session ID: {request.session_id}", flush=True)
 
             agent = get_agent()
             if not agent:
@@ -232,7 +245,7 @@ async def chat_stream_debug(request: ChatRequest):
                 return
 
             event_count = 0
-            async for event in agent.query_stream_events(request.message):
+            async for event in agent.query_stream_events(request.message, session_id=request.session_id):
                 event_count += 1
                 event_dict = event.to_dict()
                 print(f"[DEBUG] Event #{event_count}: {event.type} - {str(event_dict)[:100]}...", flush=True)
