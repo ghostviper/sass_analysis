@@ -25,7 +25,15 @@
     "assistant": "AI Assistant",
     "assistantDesc": "Intelligent analysis chat",
     "about": "About",
-    "new": "NEW"
+    "new": "NEW",
+    "expandMenu": "Expand menu",
+    "collapseMenu": "Collapse menu",
+    "user": "User",
+    "freeplan": "Free Plan",
+    "settings": "Settings",
+    "help": "Help",
+    "upgrade": "Upgrade",
+    "logout": "Logout"
   },
   "sidebar": {
     "collapse": "Collapse sidebar",

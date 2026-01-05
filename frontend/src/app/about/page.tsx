@@ -2,13 +2,7 @@
 
 import { Card, CardHeader } from '@/components/ui/Card'
 import { MarketTypeBadge } from '@/components/ui/Badge'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faLightbulb,
-  faChartLine,
-  faCode,
-  faRocket,
-} from '@fortawesome/free-solid-svg-icons'
+import { Lightbulb, TrendingUp, Code, Rocket, LucideIcon } from 'lucide-react'
 import type { MarketType } from '@/types'
 
 export default function AboutPage() {
@@ -36,42 +30,42 @@ export default function AboutPage() {
               name: '产品成熟度',
               score: 'maturity_score',
               desc: '评估产品的完成度、功能完整性和用户体验。成熟的产品意味着已验证的需求。',
-              icon: faRocket,
+              icon: Rocket,
             },
             {
               name: '定位清晰度',
               score: 'positioning_clarity',
               desc: '目标用户是否明确，价值主张是否清晰。好的定位让用户一眼就知道产品能解决什么问题。',
-              icon: faLightbulb,
+              icon: Lightbulb,
             },
             {
               name: '痛点锋利度',
               score: 'pain_point_sharpness',
               desc: '解决的问题是否足够痛，用户是否有强烈的付费意愿。锋利的痛点意味着更高的转化率。',
-              icon: faChartLine,
+              icon: TrendingUp,
             },
             {
               name: '定价清晰度',
               score: 'pricing_clarity',
               desc: '价格体系是否清晰合理，用户是否容易理解和接受。清晰的定价减少决策摩擦。',
-              icon: faChartLine,
+              icon: TrendingUp,
             },
             {
               name: '转化友好度',
               score: 'conversion_friendliness',
               desc: '用户从了解到付费的路径是否顺畅，有无免费试用、清晰的CTA等。',
-              icon: faChartLine,
+              icon: TrendingUp,
             },
             {
               name: '可复制性',
               score: 'individual_replicability',
               desc: '独立开发者复制这个产品的难度如何，技术门槛、资源需求、时间成本等。',
-              icon: faCode,
+              icon: Code,
             },
           ].map((item) => (
             <div key={item.name} className="p-4 rounded-lg bg-background-secondary/50">
               <div className="flex items-center gap-2 mb-2">
-                <FontAwesomeIcon icon={item.icon} className="h-4 w-4 text-accent-primary" />
+                <item.icon className="h-4 w-4 text-accent-primary" />
                 <span className="font-medium text-content-primary">{item.name}</span>
               </div>
               <p className="text-sm text-content-muted">{item.desc}</p>

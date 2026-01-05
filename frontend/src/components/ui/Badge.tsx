@@ -1,16 +1,15 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faWater,
-  faRocket,
-  faScaleBalanced,
-  faCrown,
-  faFire,
-  faTriangleExclamation,
-  IconDefinition,
-} from '@fortawesome/free-solid-svg-icons'
+  Waves,
+  Rocket,
+  Scale,
+  Crown,
+  Flame,
+  AlertTriangle,
+  LucideIcon,
+} from 'lucide-react'
 import { MarketType, MARKET_TYPE_CONFIG } from '@/types'
 
 interface BadgeProps {
@@ -62,13 +61,13 @@ interface MarketTypeBadgeProps {
   className?: string
 }
 
-const marketIcons: Record<string, IconDefinition> = {
-  water: faWater,
-  rocket: faRocket,
-  'scale-balanced': faScaleBalanced,
-  crown: faCrown,
-  fire: faFire,
-  'triangle-exclamation': faTriangleExclamation,
+const marketIcons: Record<string, LucideIcon> = {
+  water: Waves,
+  rocket: Rocket,
+  'scale-balanced': Scale,
+  crown: Crown,
+  fire: Flame,
+  'triangle-exclamation': AlertTriangle,
 }
 
 export function MarketTypeBadge({
@@ -78,7 +77,7 @@ export function MarketTypeBadge({
   className,
 }: MarketTypeBadgeProps) {
   const config = MARKET_TYPE_CONFIG[type]
-  const icon = marketIcons[config.icon]
+  const Icon = marketIcons[config.icon]
 
   const colorStyles: Record<MarketType, string> = {
     blue_ocean: 'bg-market-blue-ocean/10 text-market-blue-ocean border border-market-blue-ocean/20',
@@ -103,8 +102,8 @@ export function MarketTypeBadge({
         className
       )}
     >
-      {showIcon && icon && (
-        <FontAwesomeIcon icon={icon} className="w-3 h-3" />
+      {showIcon && Icon && (
+        <Icon className="w-3 h-3" />
       )}
       {config.label}
     </span>

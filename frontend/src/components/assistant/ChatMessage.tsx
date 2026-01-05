@@ -2,20 +2,19 @@
 
 import { useState } from 'react'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faRobot,
-  faUser,
-  faSpinner,
-  faCheck,
-  faDatabase,
-  faChartLine,
-  faTrophy,
-  faLayerGroup,
-  faChevronDown,
-  faChevronUp,
-} from '@fortawesome/free-solid-svg-icons'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
+  Bot,
+  User,
+  Loader2,
+  Check,
+  Database,
+  TrendingUp,
+  Trophy,
+  Layers,
+  ChevronDown,
+  ChevronUp,
+} from 'lucide-react'
+import { LucideIcon } from 'lucide-react'
 import { Streamdown } from 'streamdown'
 
 export type MessageRole = 'user' | 'assistant'
@@ -74,11 +73,11 @@ interface ChatMessageProps {
 }
 
 // 工具名称映射
-const toolNameMap: Record<string, { label: string; icon: IconDefinition }> = {
-  query_startups: { label: '查询产品数据', icon: faDatabase },
-  get_category_analysis: { label: '分析市场类目', icon: faLayerGroup },
-  get_trend_report: { label: '生成趋势报告', icon: faChartLine },
-  get_leaderboard: { label: '获取排行榜', icon: faTrophy },
+const toolNameMap: Record<string, { label: string; icon: LucideIcon }> = {
+  query_startups: { label: '查询产品数据', icon: Database },
+  get_category_analysis: { label: '分析市场类目', icon: Layers },
+  get_trend_report: { label: '生成趋势报告', icon: TrendingUp },
+  get_leaderboard: { label: '获取排行榜', icon: Trophy },
 }
 
 // 现代风格 SVG 图标组件
@@ -172,15 +171,16 @@ function ThinkingBlock({
         <ThinkingIcon />
         <span>思考过程</span>
         {isStreaming && (
-          <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+          <Loader2 className="h-3 w-3 animate-spin" />
         )}
         <span className="thinking-badge">
           {isExpanded ? '收起' : '展开'}
         </span>
-        <FontAwesomeIcon
-          icon={isExpanded ? faChevronUp : faChevronDown}
-          className="h-3 w-3 opacity-60"
-        />
+        {isExpanded ? (
+          <ChevronUp className="h-3 w-3 opacity-60" />
+        ) : (
+          <ChevronDown className="h-3 w-3 opacity-60" />
+        )}
       </div>
       {isExpanded && (
         <div className="thinking-content">
@@ -224,7 +224,7 @@ function ActionButton({
         'hover:bg-surface-hover/80',
         active
           ? activeClass || 'text-accent-primary'
-          : 'text-content-muted/60 hover:text-content-secondary'
+          : 'text-content-muted hover:text-content-primary'
       )}
       title={label}
     >
@@ -262,16 +262,18 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
     // 用户消息 - 使用气泡样式，靠右
     return (
       <div className="flex justify-end gap-3">
-        <div className="max-w-[75%] rounded-2xl rounded-tr-md px-4 py-3 bg-accent-primary text-white">
-          <div className="text-[0.9375rem] leading-[1.65] whitespace-pre-wrap">
-            {message.content}
+        <div className="flex flex-col items-end gap-1">
+          <div className="max-w-[75%] rounded-2xl rounded-tr-md px-4 py-3 bg-accent-primary text-white">
+            <div className="text-[0.9375rem] leading-[1.65] whitespace-pre-wrap">
+              {message.content}
+            </div>
           </div>
-          <div className="text-xs mt-2 text-white/60 text-right">
+          <span className="text-[11px] text-content-muted/50 mr-1">
             {formatTime(message.timestamp)}
-          </div>
+          </span>
         </div>
         <div className="w-8 h-8 rounded-lg bg-accent-primary flex items-center justify-center flex-shrink-0">
-          <FontAwesomeIcon icon={faUser} className="h-4 w-4 text-white" />
+          <User className="h-4 w-4 text-white" />
         </div>
       </div>
     )
@@ -295,7 +297,8 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
         <div className="text-xs font-semibold text-content-secondary mb-2">分析步骤</div>
         <div className="space-y-3">
           {message.toolStatus.map((tool, idx) => {
-            const toolInfo = toolNameMap[tool.name] || { label: tool.name, icon: faDatabase }
+            const toolInfo = toolNameMap[tool.name] || { label: tool.name, icon: Database }
+            const ToolIcon = toolInfo.icon
             const isRunningTool = tool.status === 'running'
             const isDoneTool = tool.status === 'completed'
             const toolKey = `${tool.name}-${idx}`
@@ -312,7 +315,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                 <div className={`absolute left-1 top-2 h-2.5 w-2.5 rounded-full border bg-surface ${indicatorClass}`} />
                 <div className="flex items-start gap-2">
                   <div className={`mt-0.5 flex h-7 w-7 items-center justify-center rounded-lg bg-surface/60 text-accent-primary`}>
-                    <FontAwesomeIcon icon={toolInfo.icon} className="h-3.5 w-3.5" />
+                    <ToolIcon className="h-3.5 w-3.5" />
                   </div>
                   <div className="flex-1 space-y-1">
                     <div className="flex items-center gap-2">
@@ -322,13 +325,13 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                       <span className="text-sm font-medium text-content-primary">{toolInfo.label}</span>
                       {isRunningTool && (
                         <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-warning">
-                          <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+                          <Loader2 className="h-3 w-3 animate-spin" />
                           进行中
                         </span>
                       )}
                       {isDoneTool && (
                         <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-success">
-                          <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+                          <Check className="h-3 w-3" />
                           已完成
                         </span>
                       )}
@@ -363,7 +366,8 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
 
   const renderToolSummary = () => {
     if (!latestTool) return null
-    const toolInfo = toolNameMap[latestTool.name] || { label: latestTool.name, icon: faDatabase }
+    const toolInfo = toolNameMap[latestTool.name] || { label: latestTool.name, icon: Database }
+    const ToolIcon = toolInfo.icon
     const isRunningTool = latestTool.status === 'running'
     const isDoneTool = latestTool.status === 'completed'
 
@@ -375,20 +379,20 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
       >
         <div className="flex items-center gap-2">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-surface/70 text-accent-primary">
-            <FontAwesomeIcon icon={toolInfo.icon} className="h-3.5 w-3.5" />
+            <ToolIcon className="h-3.5 w-3.5" />
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2">
               <span className="text-sm font-medium text-content-primary truncate">{toolInfo.label}</span>
               {isRunningTool && (
                 <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-warning">
-                  <FontAwesomeIcon icon={faSpinner} className="h-3 w-3 animate-spin" />
+                  <Loader2 className="h-3 w-3 animate-spin" />
                   进行中
                 </span>
               )}
               {isDoneTool && (
                 <span className="inline-flex items-center gap-1 text-[11px] font-medium text-accent-success">
-                  <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+                  <Check className="h-3 w-3" />
                   已完成
                 </span>
               )}
@@ -397,10 +401,11 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
               {latestTool.result ? latestTool.result : (isRunningTool ? '正在执行...' : '等待结果...')}
             </div>
           </div>
-          <FontAwesomeIcon
-            icon={toolsExpanded ? faChevronUp : faChevronDown}
-            className="h-3.5 w-3.5 text-content-muted/70"
-          />
+          {toolsExpanded ? (
+            <ChevronUp className="h-3.5 w-3.5 text-content-muted/70" />
+          ) : (
+            <ChevronDown className="h-3.5 w-3.5 text-content-muted/70" />
+          )}
         </div>
       </button>
     )
@@ -409,7 +414,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   return (
     <div className="flex gap-3 group">
       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-primary/20 to-accent-secondary/20 flex items-center justify-center flex-shrink-0">
-        <FontAwesomeIcon icon={faRobot} className="h-4 w-4 text-accent-primary" />
+        <Bot className="h-4 w-4 text-accent-primary" />
       </div>
       <div className="flex-1 min-w-0 pt-1">
         {/* 工具调用摘要 / 时间线 */}
@@ -452,12 +457,12 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                 </div>
               ) : message.isStreaming && !message.content && runningTool ? (
                 <div className="flex items-center gap-2 text-content-muted">
-                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-4 w-4 animate-spin" />
                   <span className="text-sm">正在查询数据...</span>
                 </div>
               ) : message.isStreaming && !message.content ? (
                 <div className="flex items-center gap-2 text-content-muted">
-                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-4 w-4 animate-spin" />
                   <span className="text-sm">正在思考...</span>
                 </div>
               ) : message.content ? (

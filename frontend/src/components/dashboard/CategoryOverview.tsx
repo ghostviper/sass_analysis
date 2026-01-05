@@ -4,8 +4,7 @@ import Link from 'next/link'
 import { Card, CardHeader } from '@/components/ui/Card'
 import { MarketTypeBadge } from '@/components/ui/Badge'
 import { formatCurrency, formatNumber } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { ArrowRight } from 'lucide-react'
 import type { CategoryAnalysis, MarketType } from '@/types'
 
 interface CategoryOverviewProps {
@@ -50,7 +49,7 @@ export function CategoryOverview({
             className="flex items-center gap-1 text-sm text-accent-primary hover:underline"
           >
             查看全部
-            <FontAwesomeIcon icon={faArrowRight} className="h-3 w-3" />
+            <ArrowRight className="h-3 w-3" />
           </Link>
         }
       />

@@ -8,23 +8,22 @@ import { Badge, MarketTypeBadge, ComplexityBadge } from '@/components/ui/Badge'
 import { ProductLogo } from '@/components/ui/ProductLogo'
 import { getStartups, getOpportunityProducts, getCategoryAnalysis, getCountries, type Country, type SortField, type SortOrder } from '@/lib/api'
 import { formatCurrency, cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faFilter,
-  faMagnifyingGlass,
-  faChevronLeft,
-  faChevronRight,
-  faBolt,
-  faCheck,
-  faExternalLink,
-  faGrip,
-  faList,
-  faArrowDownWideShort,
-  faGlobe,
-  faBoxesStacked,
-  faArrowUp,
-  faArrowDown,
-} from '@fortawesome/free-solid-svg-icons'
+  Filter,
+  Search,
+  ChevronLeft,
+  ChevronRight,
+  Zap,
+  Check,
+  ExternalLink,
+  LayoutGrid,
+  List,
+  ArrowDownWideNarrow,
+  Globe,
+  Package,
+  ArrowUp,
+  ArrowDown,
+} from 'lucide-react'
 import type { Startup, OpportunityProduct, CategoryAnalysis } from '@/types'
 
 type ViewMode = 'all' | 'opportunities'
@@ -125,7 +124,7 @@ function ProductsContent() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3">
-            <FontAwesomeIcon icon={faBoxesStacked} className="text-accent-primary" />
+            <Package className="text-accent-primary" />
             产品库
           </h1>
           <p className="text-body mt-1">
@@ -149,7 +148,7 @@ function ProductsContent() {
               )}
               title="卡片视图"
             >
-              <FontAwesomeIcon icon={faGrip} className="h-4 w-4" />
+              <LayoutGrid className="h-4 w-4" />
             </button>
             <button
               onClick={() => setLayoutMode('list')}
@@ -161,7 +160,7 @@ function ProductsContent() {
               )}
               title="列表视图"
             >
-              <FontAwesomeIcon icon={faList} className="h-4 w-4" />
+              <List className="h-4 w-4" />
             </button>
           </div>
         )}
@@ -191,7 +190,7 @@ function ProductsContent() {
                 : 'bg-surface-border/50 text-content-secondary hover:bg-surface-border'
             )}
           >
-            <FontAwesomeIcon icon={faBolt} className="h-3 w-3" />
+            <Zap className="h-3 w-3" />
             机会产品
           </button>
         </div>
@@ -200,7 +199,7 @@ function ProductsContent() {
         {viewMode === 'all' && (
           <>
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faFilter} className="text-content-muted h-4 w-4" />
+              <Filter className="text-content-muted h-4 w-4" />
               <select
                 value={selectedCategory}
                 onChange={(e) => setSelectedCategory(e.target.value)}
@@ -217,7 +216,7 @@ function ProductsContent() {
 
             {/* 国家筛选 */}
             <div className="flex items-center gap-2">
-              <FontAwesomeIcon icon={faGlobe} className="text-content-muted h-4 w-4" />
+              <Globe className="text-content-muted h-4 w-4" />
               <select
                 value={selectedCountry}
                 onChange={(e) => setSelectedCountry(e.target.value)}
@@ -234,7 +233,7 @@ function ProductsContent() {
 
             {/* 排序 */}
             <div className="flex items-center gap-1">
-              <FontAwesomeIcon icon={faArrowDownWideShort} className="text-content-muted h-4 w-4" />
+              <ArrowDownWideNarrow className="text-content-muted h-4 w-4" />
               <select
                 value={sortBy}
                 onChange={(e) => setSortBy(e.target.value as SortField)}
@@ -251,19 +250,17 @@ function ProductsContent() {
                 className="p-1.5 rounded-md hover:bg-surface-border/50 transition-colors"
                 title={sortOrder === 'desc' ? '降序' : '升序'}
               >
-                <FontAwesomeIcon
-                  icon={sortOrder === 'desc' ? faArrowDown : faArrowUp}
-                  className="h-4 w-4 text-content-muted"
-                />
+                {sortOrder === 'desc' ? (
+                  <ArrowDown className="h-4 w-4 text-content-muted" />
+                ) : (
+                  <ArrowUp className="h-4 w-4 text-content-muted" />
+                )}
               </button>
             </div>
 
             {/* 搜索 */}
             <div className="relative flex-1 max-w-xs">
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="absolute left-3 top-1/2 -translate-y-1/2 text-content-muted h-4 w-4"
-              />
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-content-muted h-4 w-4" />
               <input
                 type="text"
                 placeholder="搜索产品..."
@@ -325,7 +322,7 @@ function ProductsContent() {
             disabled={page === 1}
             className="btn btn-secondary"
           >
-            <FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+            <ChevronLeft className="h-4 w-4" />
           </button>
           <span className="px-4 text-sm text-content-secondary">
             {page} / {totalPages}
@@ -335,7 +332,7 @@ function ProductsContent() {
             disabled={page === totalPages}
             className="btn btn-secondary"
           >
-            <FontAwesomeIcon icon={faChevronRight} className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4" />
           </button>
         </div>
       )}
@@ -435,7 +432,7 @@ function ProductCard({ product, categoryInfo, index }: ProductCardProps) {
                   onClick={(e) => e.stopPropagation()}
                   className="text-content-muted hover:text-accent-primary ml-2 flex-shrink-0"
                 >
-                  <FontAwesomeIcon icon={faExternalLink} className="h-3 w-3" />
+                  <ExternalLink className="h-3 w-3" />
                 </a>
               )}
             </div>
@@ -598,7 +595,7 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
             <span className="text-sm font-medium text-content-primary">{startup.name}</span>
             {analysis.is_product_driven && (
               <Badge variant="success" size="sm">
-                <FontAwesomeIcon icon={faBolt} className="h-2.5 w-2.5" />
+                <Zap className="h-2.5 w-2.5" />
                 产品驱动
               </Badge>
             )}
@@ -610,7 +607,7 @@ function OpportunityProductRow({ item, rank }: OpportunityProductRowProps) {
             <span>{startup.category || '未分类'}</span>
             {comboCount > 0 && (
               <span className="flex items-center gap-1 text-accent-success">
-                <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+                <Check className="h-3 w-3" />
                 {comboCount} 组合匹配
               </span>
             )}

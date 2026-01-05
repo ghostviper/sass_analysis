@@ -7,13 +7,7 @@ import { MarketTypeBadge } from '@/components/ui/Badge'
 import { MarketRadarChart } from '@/components/charts/RadarChart'
 import { getCategoryAnalysis } from '@/lib/api'
 import { formatCurrency, formatNumber, formatPercent, cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faLayerGroup,
-  faArrowDownWideShort,
-  faArrowUp,
-  faArrowDown,
-} from '@fortawesome/free-solid-svg-icons'
+import { Layers, ArrowDownWideNarrow, ArrowUp, ArrowDown } from 'lucide-react'
 import type { CategoryAnalysis, MarketType } from '@/types'
 import { MARKET_TYPE_CONFIG } from '@/types'
 
@@ -113,7 +107,7 @@ export default function CategoriesPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3">
-            <FontAwesomeIcon icon={faLayerGroup} className="text-accent-primary" />
+            <Layers className="text-accent-primary" />
             赛道分析
           </h1>
           <p className="text-body mt-1">
@@ -147,7 +141,7 @@ export default function CategoriesPage() {
 
         {/* 排序 */}
         <div className="flex items-center gap-2 text-sm text-content-muted ml-auto">
-          <FontAwesomeIcon icon={faArrowDownWideShort} className="h-4 w-4" />
+          <ArrowDownWideNarrow className="h-4 w-4" />
           <select
             value={sortField}
             onChange={(e) => setSortField(e.target.value as SortField)}
@@ -163,10 +157,11 @@ export default function CategoriesPage() {
             onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
             className="p-1.5 rounded hover:bg-surface-border/50 text-content-muted transition-colors"
           >
-            <FontAwesomeIcon
-              icon={sortOrder === 'asc' ? faArrowUp : faArrowDown}
-              className="h-4 w-4"
-            />
+            {sortOrder === 'asc' ? (
+              <ArrowUp className="h-4 w-4" />
+            ) : (
+              <ArrowDown className="h-4 w-4" />
+            )}
           </button>
         </div>
 

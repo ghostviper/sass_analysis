@@ -2,41 +2,61 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faPaperPlane,
-  faSpinner,
-  faMagnifyingGlass,
-  faLink,
-  faDatabase,
-  faGlobe,
-  faXmark,
-  faPlus,
-  faChevronDown,
-  faCheck,
-  faWandMagicSparkles,
-  faClockRotateLeft,
-  faTrash,
-  faMessage,
-  faCompass,
-} from '@fortawesome/free-solid-svg-icons'
-import {
-  faRedditAlien,
-  faGoogle,
-  faProductHunt,
-  faHackerNews,
-} from '@fortawesome/free-brands-svg-icons'
+  Send,
+  Loader2,
+  Search,
+  Link2,
+  Database,
+  Globe,
+  X,
+  Plus,
+  ChevronDown,
+  Check,
+  Sparkles,
+  History,
+  Trash2,
+  MessageSquare,
+  Compass,
+  Square,
+  RotateCcw,
+} from 'lucide-react'
 import { ChatMessage, MessageRole } from '@/components/assistant/ChatMessage'
 import { SuggestedPrompts } from '@/components/assistant/SuggestedPrompts'
 import { getStartups } from '@/lib/api'
 import type { Startup } from '@/types'
 
+// 渠道图标组件
+const RedditIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
+  </svg>
+)
+
+const IndieHackersIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M0 0h24v24H0V0zm3.18 6h2.1v12h-2.1V6zm5.88 0h2.1v12h-2.1V6zm5.88 0h2.1v12h-2.1V6z"/>
+  </svg>
+)
+
+const ProductHuntIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M13.604 8.4h-3.405V12h3.405c.995 0 1.801-.806 1.801-1.801 0-.993-.805-1.799-1.801-1.799zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.804c2.319 0 4.2 1.88 4.2 4.199 0 2.321-1.881 4.201-4.201 4.201z"/>
+  </svg>
+)
+
+const GoogleIcon = ({ className }: { className?: string }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+  </svg>
+)
+
 // 渠道配置
 const CHANNELS = [
-  { id: 'reddit', name: 'Reddit', icon: faRedditAlien, color: '#FF4500' },
-  { id: 'indiehacker', name: 'IndieHackers', icon: faHackerNews, color: '#0E76A8' },
-  { id: 'producthunt', name: 'Product Hunt', icon: faProductHunt, color: '#DA552F' },
-  { id: 'google', name: 'Google', icon: faGoogle, color: '#4285F4' },
+  { id: 'reddit', name: 'Reddit', Icon: RedditIcon, color: '#FF4500' },
+  { id: 'indiehacker', name: 'IndieHackers', Icon: IndieHackersIcon, color: '#0E76A8' },
+  { id: 'producthunt', name: 'Product Hunt', Icon: ProductHuntIcon, color: '#DA552F' },
+  { id: 'google', name: 'Google', Icon: GoogleIcon, color: '#4285F4' },
 ] as const
 
 type ChannelId = typeof CHANNELS[number]['id']
@@ -127,6 +147,10 @@ export default function AssistantPage() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showScrollToLatest, setShowScrollToLatest] = useState(false)
+
+  // 中断控制
+  const abortControllerRef = useRef<AbortController | null>(null)
+  const [isInterrupted, setIsInterrupted] = useState(false)
 
   // 上下文相关
   const [showContextMenu, setShowContextMenu] = useState(false)
@@ -246,7 +270,8 @@ export default function AssistantPage() {
     onToolStart: (tool: ToolStatus) => void,
     onToolEnd: (toolName: string, result: string) => void,
     onError: (error: string) => void,
-    onDone: (cost?: number, newSessionId?: string) => void
+    onDone: (cost?: number, newSessionId?: string) => void,
+    signal?: AbortSignal  // 添加中断信号
   ): Promise<void> => {
     try {
       const response = await fetch('/api/chat/stream', {
@@ -259,7 +284,8 @@ export default function AssistantPage() {
             type: contextType,
             value: contextType === 'database' ? selectedProduct?.name : urlInput
           } : undefined
-        })
+        }),
+        signal  // 传递中断信号
       })
 
       if (!response.ok) {
@@ -332,6 +358,11 @@ export default function AssistantPage() {
         }
       }
     } catch (error) {
+      // 检查是否是中断错误
+      if (error instanceof Error && error.name === 'AbortError') {
+        console.log('Request was interrupted')
+        return
+      }
       console.error('Stream error:', error)
       onError(error instanceof Error ? error.message : '连接失败')
     }
@@ -339,6 +370,10 @@ export default function AssistantPage() {
 
   // 创建新会话
   const createNewSession = () => {
+    // 如果正在加载，先中断
+    if (isLoading && abortControllerRef.current) {
+      abortControllerRef.current.abort()
+    }
     setCurrentSessionId(null)
     setServerSessionId(null)  // Reset backend session for new conversation
     setMessages([])
@@ -346,6 +381,38 @@ export default function AssistantPage() {
     setSelectedProduct(null)
     setUrlInput('')
     setShowHistory(false)
+    setIsInterrupted(false)
+  }
+
+  // 中断当前请求
+  const interruptRequest = () => {
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort()
+      setIsInterrupted(true)
+      setIsLoading(false)
+
+      // 标记当前正在流式传输的消息为已中断
+      setMessages(prev => prev.map(msg => {
+        if (msg.isStreaming) {
+          return {
+            ...msg,
+            isStreaming: false,
+            content: msg.content + '\n\n*[已中断]*',
+            contentBlocks: (msg.contentBlocks || []).map(block => ({
+              ...block,
+              isStreaming: false
+            }))
+          }
+        }
+        return msg
+      }))
+    }
+  }
+
+  // 恢复/继续对话
+  const resumeConversation = () => {
+    setIsInterrupted(false)
+    // 可以在这里添加恢复逻辑，比如重新发送最后一条消息
   }
 
   // 切换会话
@@ -416,6 +483,10 @@ export default function AssistantPage() {
     setMessages(newMessages)
     setInput('')
     setIsLoading(true)
+    setIsInterrupted(false)
+
+    // 创建新的 AbortController
+    abortControllerRef.current = new AbortController()
 
     // 更新会话标题（如果是第一条消息）
     if (messages.length === 0) {
@@ -536,7 +607,8 @@ export default function AssistantPage() {
             )
             return { ...msg, toolStatus: updatedTools }
           }))
-        }
+        },
+        abortControllerRef.current.signal  // 传递中断信号
       )
 
       // 标记流式传输完成，计算耗时
@@ -662,15 +734,14 @@ export default function AssistantPage() {
                   onClick={() => setShowHistory(!showHistory)}
                   className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-content-secondary hover:bg-surface hover:text-content-primary transition-colors"
                 >
-                  <FontAwesomeIcon icon={faClockRotateLeft} className="h-3.5 w-3.5" />
+                  <History className="h-3.5 w-3.5" />
                   历史对话
                   {sessions.length > 0 && (
                     <span className="px-1.5 py-0.5 bg-accent-primary/10 text-accent-primary text-xs rounded-full font-medium">
                       {sessions.length}
                     </span>
                   )}
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
+                  <ChevronDown
                     className={cn('h-2.5 w-2.5 opacity-60 transition-transform duration-200', showHistory && 'rotate-180')}
                   />
                 </button>
@@ -684,7 +755,7 @@ export default function AssistantPage() {
                         onClick={createNewSession}
                         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-primary text-white text-xs font-medium hover:bg-accent-primary/90 transition-colors"
                       >
-                        <FontAwesomeIcon icon={faPlus} className="h-3 w-3" />
+                        <Plus className="h-3 w-3" />
                         新对话
                       </button>
                     </div>
@@ -702,20 +773,20 @@ export default function AssistantPage() {
                                   : 'hover:bg-surface text-content-secondary hover:text-content-primary'
                               )}
                             >
-                              <FontAwesomeIcon icon={faMessage} className="h-3.5 w-3.5 flex-shrink-0 opacity-60" />
+                              <MessageSquare className="h-3.5 w-3.5 flex-shrink-0 opacity-60" />
                               <span className="flex-1 truncate">{session.title}</span>
                               <button
                                 onClick={(e) => deleteSession(session.id, e)}
                                 className="opacity-0 group-hover:opacity-100 p-1.5 hover:text-red-500 transition-all rounded-lg hover:bg-surface-hover"
                               >
-                                <FontAwesomeIcon icon={faTrash} className="h-3 w-3" />
+                                <Trash2 className="h-3 w-3" />
                               </button>
                             </button>
                           ))}
                         </div>
                       ) : (
                         <div className="text-center py-6">
-                          <FontAwesomeIcon icon={faMessage} className="h-8 w-8 text-content-muted/30 mb-2" />
+                          <MessageSquare className="h-8 w-8 text-content-muted/30 mb-2" />
                           <p className="text-xs text-content-muted">暂无历史对话</p>
                         </div>
                       )}
@@ -731,7 +802,7 @@ export default function AssistantPage() {
                 {/* 标题区域 */}
                 <div className="flex items-center gap-3 mb-6">
                   <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-accent-primary to-accent-secondary flex items-center justify-center shadow-lg">
-                    <FontAwesomeIcon icon={faWandMagicSparkles} className="h-5 w-5 text-white" />
+                    <Sparkles className="h-5 w-5 text-white" />
                   </div>
                   <div>
                     <h1 className="text-xl font-display font-semibold text-content-primary">
@@ -768,9 +839,9 @@ export default function AssistantPage() {
                         )}
                       >
                         {isLoading ? (
-                          <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                          <Loader2 className="h-4 w-4 animate-spin" />
                         ) : (
-                          <FontAwesomeIcon icon={faPaperPlane} className="h-4 w-4" />
+                          <Send className="h-4 w-4" />
                         )}
                       </button>
                     </div>
@@ -788,10 +859,9 @@ export default function AssistantPage() {
                               : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
                           )}
                         >
-                          <FontAwesomeIcon icon={faCompass} className="h-3 w-3" />
+                          <Compass className="h-3 w-3" />
                           {selectedChannels.length > 0 ? `已选 ${selectedChannels.length} 个渠道` : '渠道探索'}
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
+                          <ChevronDown
                             className={cn('h-2 w-2 transition-transform duration-200', showChannelMenu && 'rotate-180')}
                           />
                           {selectedChannels.length > 0 && (
@@ -803,7 +873,7 @@ export default function AssistantPage() {
                               className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-content-muted hover:bg-content-secondary text-white rounded-full cursor-pointer transition-colors"
                               title="清除选择"
                             >
-                              <FontAwesomeIcon icon={faXmark} className="h-2 w-2" />
+                              <X className="h-2 w-2" />
                             </span>
                           )}
                         </button>
@@ -834,8 +904,7 @@ export default function AssistantPage() {
                                       )}
                                       style={{ backgroundColor: isSelected ? `${channel.color}20` : undefined }}
                                     >
-                                      <FontAwesomeIcon
-                                        icon={channel.icon}
+                                      <channel.Icon
                                         className="h-4 w-4"
                                         style={{ color: isSelected ? channel.color : undefined }}
                                       />
@@ -853,7 +922,7 @@ export default function AssistantPage() {
                                         : 'border-content-muted/30'
                                     )}>
                                       {isSelected && (
-                                        <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5 text-white" />
+                                        <Check className="h-2.5 w-2.5 text-white" />
                                       )}
                                     </div>
                                   </button>
@@ -878,7 +947,7 @@ export default function AssistantPage() {
                               : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
                           )}
                         >
-                          <FontAwesomeIcon icon={faLink} className="h-3 w-3" />
+                          <Link2 className="h-3 w-3" />
                           {hasContext
                             ? (contextType === 'database'
                                 ? (selectedProducts.length > 1
@@ -886,8 +955,7 @@ export default function AssistantPage() {
                                     : selectedProduct?.name)
                                 : '已添加链接')
                             : '关联产品'}
-                          <FontAwesomeIcon
-                            icon={faChevronDown}
+                          <ChevronDown
                             className={cn('h-2 w-2 transition-transform duration-200', showContextMenu && 'rotate-180')}
                           />
                           {hasContext && (
@@ -901,7 +969,7 @@ export default function AssistantPage() {
                               className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-content-muted hover:bg-content-secondary text-white rounded-full cursor-pointer transition-colors"
                               title="取消关联"
                             >
-                              <FontAwesomeIcon icon={faXmark} className="h-2 w-2" />
+                              <X className="h-2 w-2" />
                             </span>
                           )}
                         </button>
@@ -916,7 +984,7 @@ export default function AssistantPage() {
                                   contextType === 'database' ? 'bg-accent-primary/10 text-accent-primary' : 'text-content-muted hover:bg-surface'
                                 )}
                               >
-                                <FontAwesomeIcon icon={faDatabase} className="h-3 w-3" />
+                                <Database className="h-3 w-3" />
                                 已有产品
                               </button>
                               <button
@@ -926,7 +994,7 @@ export default function AssistantPage() {
                                   contextType === 'url' ? 'bg-accent-primary/10 text-accent-primary' : 'text-content-muted hover:bg-surface'
                                 )}
                               >
-                                <FontAwesomeIcon icon={faGlobe} className="h-3 w-3" />
+                                <Globe className="h-3 w-3" />
                                 外部链接
                               </button>
                             </div>
@@ -934,10 +1002,11 @@ export default function AssistantPage() {
                               {contextType === 'database' && (
                                 <div>
                                   <div className="relative mb-2">
-                                    <FontAwesomeIcon
-                                      icon={isSearching ? faSpinner : faMagnifyingGlass}
-                                      className={cn('absolute left-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-content-muted', isSearching && 'animate-spin')}
-                                    />
+                                    {isSearching ? (
+                                      <Loader2 className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-content-muted animate-spin" />
+                                    ) : (
+                                      <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-content-muted" />
+                                    )}
                                     <input
                                       type="text"
                                       value={productSearch}
@@ -989,7 +1058,7 @@ export default function AssistantPage() {
                                               : 'border-content-muted/30'
                                           )}>
                                             {isSelected && (
-                                              <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5 text-white" />
+                                              <Check className="h-2.5 w-2.5 text-white" />
                                             )}
                                           </div>
                                         </button>
@@ -1052,10 +1121,9 @@ export default function AssistantPage() {
                     onClick={() => setShowHistory(!showHistory)}
                     className="flex items-center gap-2 px-3 py-2 rounded-xl text-sm text-content-secondary hover:bg-surface hover:text-content-primary transition-colors"
                   >
-                    <FontAwesomeIcon icon={faClockRotateLeft} className="h-3.5 w-3.5" />
+                    <History className="h-3.5 w-3.5" />
                     <span className="hidden sm:inline">历史</span>
-                    <FontAwesomeIcon
-                      icon={faChevronDown}
+                    <ChevronDown
                       className={cn('h-2.5 w-2.5 opacity-60 transition-transform duration-200', showHistory && 'rotate-180')}
                     />
                   </button>
@@ -1069,7 +1137,7 @@ export default function AssistantPage() {
                           onClick={createNewSession}
                           className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-accent-primary text-white text-xs font-medium hover:bg-accent-primary/90 transition-colors"
                         >
-                          <FontAwesomeIcon icon={faPlus} className="h-3 w-3" />
+                          <Plus className="h-3 w-3" />
                           新对话
                         </button>
                       </div>
@@ -1087,20 +1155,20 @@ export default function AssistantPage() {
                                     : 'hover:bg-surface text-content-secondary hover:text-content-primary'
                                 )}
                               >
-                                <FontAwesomeIcon icon={faMessage} className="h-3.5 w-3.5 flex-shrink-0 opacity-60" />
+                                <MessageSquare className="h-3.5 w-3.5 flex-shrink-0 opacity-60" />
                                 <span className="flex-1 truncate">{session.title}</span>
                                 <button
                                   onClick={(e) => deleteSession(session.id, e)}
                                   className="opacity-0 group-hover:opacity-100 p-1.5 hover:text-red-500 transition-all rounded-lg hover:bg-surface-hover"
                                 >
-                                  <FontAwesomeIcon icon={faTrash} className="h-3 w-3" />
+                                  <Trash2 className="h-3 w-3" />
                                 </button>
                               </button>
                             ))}
                           </div>
                         ) : (
                           <div className="text-center py-6">
-                            <FontAwesomeIcon icon={faMessage} className="h-8 w-8 text-content-muted/30 mb-2" />
+                            <MessageSquare className="h-8 w-8 text-content-muted/30 mb-2" />
                             <p className="text-xs text-content-muted">暂无历史对话</p>
                           </div>
                         )}
@@ -1113,7 +1181,7 @@ export default function AssistantPage() {
                 <div className="flex items-center gap-2">
                   {hasContext && (
                     <span className="inline-flex items-center gap-1.5 px-2 py-1 rounded-lg text-xs font-medium bg-accent-success/10 text-accent-success">
-                      <FontAwesomeIcon icon={contextType === 'database' ? faDatabase : faGlobe} className="h-3 w-3" />
+                      {contextType === 'database' ? <Database className="h-3 w-3" /> : <Globe className="h-3 w-3" />}
                       {contextType === 'database' ? selectedProduct?.name : '外部链接'}
                     </span>
                   )}
@@ -1123,7 +1191,7 @@ export default function AssistantPage() {
                 onClick={createNewSession}
                 className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm text-content-secondary hover:bg-surface hover:text-content-primary transition-colors"
               >
-                <FontAwesomeIcon icon={faPlus} className="h-3 w-3" />
+                <Plus className="h-3 w-3" />
                 新对话
               </button>
             </div>
@@ -1173,9 +1241,9 @@ export default function AssistantPage() {
                 )}
               >
                 {isLoading ? (
-                  <FontAwesomeIcon icon={faSpinner} className="h-4 w-4 animate-spin" />
+                  <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (
-                  <FontAwesomeIcon icon={faPaperPlane} className="h-4 w-4" />
+                  <Send className="h-4 w-4" />
                 )}
               </button>
             </div>
@@ -1190,7 +1258,7 @@ export default function AssistantPage() {
           onClick={scrollToBottom}
           className="fixed bottom-28 right-6 z-30 inline-flex items-center gap-2 rounded-full bg-accent-primary text-white px-3 py-2 shadow-lg hover:bg-accent-primary/90 transition-colors"
         >
-          <FontAwesomeIcon icon={faChevronDown} className="h-4 w-4" />
+          <ChevronDown className="h-4 w-4" />
           <span className="text-sm">回到最新</span>
         </button>
       )}

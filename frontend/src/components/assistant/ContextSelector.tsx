@@ -3,14 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Card } from '@/components/ui/Card'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faDatabase,
-  faGlobe,
-  faMagnifyingGlass,
-  faSpinner,
-  faCheck,
-} from '@fortawesome/free-solid-svg-icons'
+import { Database, Globe, Search, Loader2, Check } from 'lucide-react'
 import { getStartups } from '@/lib/api'
 import type { Startup } from '@/types'
 
@@ -63,7 +56,7 @@ export function ContextSelector({
   return (
     <Card padding="sm">
       <h3 className="text-sm font-medium text-content-primary mb-3 flex items-center gap-2">
-        <FontAwesomeIcon icon={faDatabase} className="h-3.5 w-3.5 text-accent-success" />
+        <Database className="h-3.5 w-3.5 text-accent-success" />
         分析上下文
       </h3>
 
@@ -81,7 +74,7 @@ export function ContextSelector({
               : 'text-content-muted hover:text-content-secondary'
           )}
         >
-          <FontAwesomeIcon icon={faDatabase} className="h-3 w-3" />
+          <Database className="h-3 w-3" />
           从数据库
         </button>
         <button
@@ -97,7 +90,7 @@ export function ContextSelector({
               : 'text-content-muted hover:text-content-secondary'
           )}
         >
-          <FontAwesomeIcon icon={faGlobe} className="h-3 w-3" />
+          <Globe className="h-3 w-3" />
           输入链接
         </button>
       </div>
@@ -106,13 +99,11 @@ export function ContextSelector({
       {contextType === 'database' && (
         <div className="relative">
           <div className="relative">
-            <FontAwesomeIcon
-              icon={isSearching ? faSpinner : faMagnifyingGlass}
-              className={cn(
-                'absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-content-muted',
-                isSearching && 'animate-spin'
-              )}
-            />
+            {isSearching ? (
+              <Loader2 className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-content-muted animate-spin" />
+            ) : (
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-content-muted" />
+            )}
             <input
               type="text"
               value={searchQuery}
@@ -149,7 +140,7 @@ export function ContextSelector({
                     <span className="text-xs text-content-muted">{product.category}</span>
                   )}
                   {selectedProduct === product.name && (
-                    <FontAwesomeIcon icon={faCheck} className="h-3 w-3 text-accent-primary" />
+                    <Check className="h-3 w-3 text-accent-primary" />
                   )}
                 </button>
               ))}
@@ -159,7 +150,7 @@ export function ContextSelector({
           {/* 已选择提示 */}
           {selectedProduct && (
             <div className="mt-2 text-xs text-accent-success flex items-center gap-1">
-              <FontAwesomeIcon icon={faCheck} className="h-3 w-3" />
+              <Check className="h-3 w-3" />
               已选择: {selectedProduct}
             </div>
           )}
@@ -170,10 +161,7 @@ export function ContextSelector({
       {contextType === 'url' && (
         <div>
           <div className="relative">
-            <FontAwesomeIcon
-              icon={faGlobe}
-              className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-content-muted"
-            />
+            <Globe className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-content-muted" />
             <input
               type="url"
               value={urlInput}

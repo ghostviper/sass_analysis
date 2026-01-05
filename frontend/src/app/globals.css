@@ -1,40 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ============================================
+   设计系统 - 全局样式
+   ============================================ */
+
 @layer base {
-  /* Light theme - Optimized for readability */
+  /* ============================================
+     Light Theme - 清新明亮
+     ============================================ */
   :root {
-    --background: 255 255 255;
-    --background-secondary: 250 251 252;
-    --background-tertiary: 244 246 248;
+    /* 背景色 */
+    --background: 252 252 253;
+    --background-secondary: 248 249 251;
+    --background-tertiary: 243 244 246;
+
+    /* 表面色 */
     --surface: 255 255 255;
     --surface-hover: 248 250 252;
-    --surface-border: 230 234 240;
-    /* Optimized text colors with better contrast */
-    --content-primary: 17 24 39;      /* gray-900 - high contrast */
-    --content-secondary: 55 65 81;    /* gray-700 - good readable */
-    --content-tertiary: 107 114 128;  /* gray-500 - secondary info */
-    --content-muted: 156 163 175;     /* gray-400 - decorative */
+    --surface-border: 229 231 235;
+    --surface-elevated: 255 255 255;
+
+    /* 文本色 - 优化对比度 */
+    --content-primary: 15 23 42;
+    --content-secondary: 51 65 85;
+    --content-tertiary: 100 116 139;
+    --content-muted: 148 163 184;
+
+    /* 强调色 */
+    --accent-primary: 99 102 241;
+    --accent-primary-hover: 79 70 229;
+    --accent-secondary: 139 92 246;
   }
 
-  /* Dark theme - Balanced for eye comfort */
+  /* ============================================
+     Dark Theme - 深邃优雅
+     ============================================ */
   .dark {
-    --background: 9 14 25;
-    --background-secondary: 15 23 42;
-    --background-tertiary: 30 41 59;
-    --surface: 30 41 59;
-    --surface-hover: 51 65 85;
-    --surface-border: 51 65 81;
-    /* Optimized text colors - softer white for less eye strain */
-    --content-primary: 241 245 249;   /* slate-100 - soft white */
-    --content-secondary: 203 213 225; /* slate-300 - readable */
-    --content-tertiary: 148 163 184;  /* slate-400 - secondary */
-    --content-muted: 100 116 139;     /* slate-500 - muted */
+    /* 背景色 - 深蓝灰色调 */
+    --background: 10 13 20;
+    --background-secondary: 15 20 30;
+    --background-tertiary: 22 28 40;
+
+    /* 表面色 */
+    --surface: 22 28 40;
+    --surface-hover: 32 40 55;
+    --surface-border: 45 55 72;
+    --surface-elevated: 28 35 50;
+
+    /* 文本色 - 柔和护眼 */
+    --content-primary: 241 245 249;
+    --content-secondary: 203 213 225;
+    --content-tertiary: 148 163 184;
+    --content-muted: 100 116 139;
+
+    /* 强调色 - 暗色模式下稍微提亮 */
+    --accent-primary: 129 140 248;
+    --accent-primary-hover: 99 102 241;
+    --accent-secondary: 167 139 250;
   }
 
+  /* ============================================
+     全局重置与基础样式
+     ============================================ */
   * {
     @apply border-surface-border;
   }
@@ -43,31 +72,34 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   body {
     @apply bg-background text-content-primary font-sans;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     min-height: 100vh;
   }
 
-  /* Light theme background */
+  /* Light theme 背景 */
   :root body {
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.04), transparent),
-      linear-gradient(to bottom, rgb(255, 255, 255), rgb(250, 251, 252));
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(99 102 241 / 0.04), transparent),
+      linear-gradient(to bottom, rgb(252 252 253), rgb(248 249 251));
     background-attachment: fixed;
   }
 
-  /* Dark theme background */
+  /* Dark theme 背景 */
   .dark body {
     background-image:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.06), transparent),
-      linear-gradient(to bottom, #090e19, #0f172a);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgb(99 102 241 / 0.08), transparent),
+      radial-gradient(ellipse 60% 40% at 80% 80%, rgb(139 92 246 / 0.04), transparent),
+      linear-gradient(to bottom, rgb(10 13 20), rgb(15 20 30));
     background-attachment: fixed;
   }
 
-  /* Custom scrollbar */
+  /* ============================================
+     滚动条样式
+     ============================================ */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -78,68 +110,108 @@
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-surface-border/60 rounded-full;
+    @apply bg-surface-border/50 rounded-full;
+    transition: background-color 0.2s;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    @apply bg-content-muted/50;
+    @apply bg-content-muted/40;
   }
 
-  /* Text selection */
+  /* ============================================
+     文本选择
+     ============================================ */
   ::selection {
     @apply bg-accent-primary/20 text-content-primary;
   }
 
-  /* Headings */
+  /* ============================================
+     标题样式
+     ============================================ */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display font-semibold tracking-tight text-content-primary;
   }
 
-  /* Monospace for numbers */
+  /* ============================================
+     数字等宽
+     ============================================ */
   .tabular-nums {
     font-variant-numeric: tabular-nums;
   }
 }
 
 @layer components {
-  /* Card styles */
+  /* ============================================
+     卡片系统
+     ============================================ */
   .card {
-    @apply bg-surface/70 backdrop-blur-sm border border-surface-border rounded-xl p-5;
-    @apply shadow-card dark:shadow-card-dark transition-all duration-200;
+    @apply bg-surface/80 backdrop-blur-sm border border-surface-border rounded-xl p-5;
+    @apply shadow-card dark:shadow-card-dark;
+    @apply transition-all duration-200 ease-out;
   }
 
   .card-hover {
-    @apply hover:shadow-card-hover dark:hover:shadow-card-dark-hover hover:border-accent-primary/20 hover:bg-surface/90;
+    @apply hover:shadow-card-hover dark:hover:shadow-card-dark-hover;
+    @apply hover:border-accent-primary/20 hover:bg-surface/95;
+    @apply hover:-translate-y-0.5;
   }
 
-  /* Glass effect */
+  .card-interactive {
+    @apply card card-hover cursor-pointer;
+  }
+
+  /* ============================================
+     玻璃效果
+     ============================================ */
   .glass {
-    @apply bg-surface/40 backdrop-blur-md border border-white/5;
+    @apply bg-surface/50 backdrop-blur-xl border border-white/10;
   }
 
-  /* Gradient text */
+  .glass-subtle {
+    @apply bg-surface/30 backdrop-blur-md border border-surface-border/50;
+  }
+
+  /* ============================================
+     渐变文本
+     ============================================ */
   .text-gradient {
-    @apply bg-gradient-to-r from-accent-primary via-accent-secondary to-market-blue-ocean bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-brand-500 via-brand-400 to-accent-secondary bg-clip-text text-transparent;
   }
 
-  /* Glow effects */
-  .glow-blue {
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1);
+  .text-gradient-brand {
+    @apply bg-gradient-brand bg-clip-text text-transparent;
   }
 
-  .glow-cyan {
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.3), 0 0 40px rgba(6, 182, 212, 0.1);
+  /* ============================================
+     发光效果
+     ============================================ */
+  .glow-brand {
+    @apply shadow-glow-brand;
   }
 
-  /* Grid background */
+  .glow-success {
+    @apply shadow-glow-success;
+  }
+
+  /* ============================================
+     网格背景
+     ============================================ */
   .bg-grid {
     background-size: 40px 40px;
     background-image:
-      linear-gradient(to right, rgba(59, 130, 246, 0.02) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(59, 130, 246, 0.02) 1px, transparent 1px);
+      linear-gradient(to right, rgb(99 102 241 / 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(99 102 241 / 0.03) 1px, transparent 1px);
   }
 
-  /* Diagonal grid background - modern SaaS style */
+  .dark .bg-grid {
+    background-image:
+      linear-gradient(to right, rgb(99 102 241 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(99 102 241 / 0.05) 1px, transparent 1px);
+  }
+
+  /* ============================================
+     斜线网格背景
+     ============================================ */
   .bg-diagonal-grid {
     position: relative;
     overflow: hidden;
@@ -154,15 +226,15 @@
         -45deg,
         transparent,
         transparent 40px,
-        rgba(59, 130, 246, 0.02) 40px,
-        rgba(59, 130, 246, 0.02) 41px
+        rgb(99 102 241 / 0.02) 40px,
+        rgb(99 102 241 / 0.02) 41px
       ),
       repeating-linear-gradient(
         45deg,
         transparent,
         transparent 40px,
-        rgba(139, 92, 246, 0.015) 40px,
-        rgba(139, 92, 246, 0.015) 41px
+        rgb(139 92 246 / 0.015) 40px,
+        rgb(139 92 246 / 0.015) 41px
       );
     pointer-events: none;
     z-index: 0;
@@ -174,15 +246,15 @@
         -45deg,
         transparent,
         transparent 40px,
-        rgba(59, 130, 246, 0.04) 40px,
-        rgba(59, 130, 246, 0.04) 41px
+        rgb(99 102 241 / 0.04) 40px,
+        rgb(99 102 241 / 0.04) 41px
       ),
       repeating-linear-gradient(
         45deg,
         transparent,
         transparent 40px,
-        rgba(139, 92, 246, 0.03) 40px,
-        rgba(139, 92, 246, 0.03) 41px
+        rgb(139 92 246 / 0.03) 40px,
+        rgb(139 92 246 / 0.03) 41px
       );
   }
 
@@ -191,7 +263,9 @@
     z-index: 1;
   }
 
-  /* Gradient accent corners for assistant page */
+  /* ============================================
+     助手页面光晕
+     ============================================ */
   .bg-assistant-glow {
     position: relative;
     overflow: hidden;
@@ -206,8 +280,8 @@
     height: 50%;
     background: radial-gradient(
       ellipse at center,
-      rgba(59, 130, 246, 0.08) 0%,
-      rgba(139, 92, 246, 0.04) 40%,
+      rgb(99 102 241 / 0.08) 0%,
+      rgb(139 92 246 / 0.04) 40%,
       transparent 70%
     );
     pointer-events: none;
@@ -217,8 +291,8 @@
   .dark .bg-assistant-glow::after {
     background: radial-gradient(
       ellipse at center,
-      rgba(59, 130, 246, 0.12) 0%,
-      rgba(139, 92, 246, 0.06) 40%,
+      rgb(99 102 241 / 0.12) 0%,
+      rgb(139 92 246 / 0.06) 40%,
       transparent 70%
     );
   }
@@ -229,242 +303,8 @@
   }
 
   /* ============================================
-     Decorative Card Patterns
+     进度条
      ============================================ */
-
-  /* Pattern 1: Leaves - organic curved shapes */
-  .card-pattern-leaves {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-leaves::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: -20px;
-    width: 80px;
-    height: 80px;
-    background:
-      radial-gradient(ellipse 60% 40% at 70% 30%, rgba(34, 197, 94, 0.08) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 30% 70%, rgba(34, 197, 94, 0.05) 0%, transparent 60%);
-    border-radius: 0 0 0 100%;
-    pointer-events: none;
-  }
-  .card-pattern-leaves::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    background: radial-gradient(ellipse at center, rgba(34, 197, 94, 0.06) 0%, transparent 70%);
-    border-radius: 50% 50% 50% 0;
-    transform: rotate(-45deg);
-    pointer-events: none;
-  }
-
-  /* Pattern 2: Stars - scattered dots */
-  .card-pattern-stars {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-stars::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image:
-      radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 2px, transparent 2px),
-      radial-gradient(circle at 75% 35%, rgba(139, 92, 246, 0.08) 0%, rgba(139, 92, 246, 0.08) 1.5px, transparent 1.5px),
-      radial-gradient(circle at 90% 45%, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 1px, transparent 1px),
-      radial-gradient(circle at 65% 20%, rgba(139, 92, 246, 0.06) 0%, rgba(139, 92, 246, 0.06) 2.5px, transparent 2.5px),
-      radial-gradient(circle at 80% 55%, rgba(139, 92, 246, 0.07) 0%, rgba(139, 92, 246, 0.07) 1px, transparent 1px);
-    pointer-events: none;
-  }
-  .card-pattern-stars::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(ellipse at 100% 0%, rgba(139, 92, 246, 0.08) 0%, transparent 60%);
-    pointer-events: none;
-  }
-
-  /* Pattern 3: Light rays - radial beams */
-  .card-pattern-light {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-light::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 150%;
-    height: 150%;
-    background: conic-gradient(
-      from 180deg at 100% 0%,
-      transparent 0deg,
-      rgba(251, 191, 36, 0.04) 15deg,
-      transparent 30deg,
-      rgba(251, 191, 36, 0.03) 45deg,
-      transparent 60deg,
-      rgba(251, 191, 36, 0.05) 75deg,
-      transparent 90deg
-    );
-    pointer-events: none;
-  }
-  .card-pattern-light::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(ellipse at 100% 0%, rgba(251, 191, 36, 0.12) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  /* Pattern 4: Circles - overlapping circles */
-  .card-pattern-circles {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-circles::before {
-    content: '';
-    position: absolute;
-    top: -30px;
-    right: -30px;
-    width: 100px;
-    height: 100px;
-    background:
-      radial-gradient(circle at 50% 50%, transparent 30%, rgba(59, 130, 246, 0.06) 31%, rgba(59, 130, 246, 0.06) 33%, transparent 34%),
-      radial-gradient(circle at 30% 70%, transparent 20%, rgba(59, 130, 246, 0.04) 21%, rgba(59, 130, 246, 0.04) 23%, transparent 24%),
-      radial-gradient(circle at 70% 30%, transparent 15%, rgba(59, 130, 246, 0.05) 16%, rgba(59, 130, 246, 0.05) 18%, transparent 19%);
-    pointer-events: none;
-  }
-  .card-pattern-circles::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    background: radial-gradient(circle at 50% 50%, transparent 40%, rgba(59, 130, 246, 0.05) 41%, rgba(59, 130, 246, 0.05) 45%, transparent 46%);
-    pointer-events: none;
-  }
-
-  /* Pattern 5: Grass - thin vertical lines */
-  .card-pattern-grass {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-grass::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 10px;
-    width: 60px;
-    height: 50px;
-    background:
-      linear-gradient(95deg, transparent 49%, rgba(16, 185, 129, 0.1) 49%, rgba(16, 185, 129, 0.1) 51%, transparent 51%),
-      linear-gradient(85deg, transparent 49%, rgba(16, 185, 129, 0.07) 49%, rgba(16, 185, 129, 0.07) 51%, transparent 51%),
-      linear-gradient(100deg, transparent 49%, rgba(16, 185, 129, 0.08) 49%, rgba(16, 185, 129, 0.08) 51%, transparent 51%),
-      linear-gradient(80deg, transparent 49%, rgba(16, 185, 129, 0.06) 49%, rgba(16, 185, 129, 0.06) 51%, transparent 51%),
-      linear-gradient(92deg, transparent 49%, rgba(16, 185, 129, 0.09) 49%, rgba(16, 185, 129, 0.09) 51%, transparent 51%);
-    background-size: 12px 100%, 10px 100%, 14px 100%, 8px 100%, 11px 100%;
-    pointer-events: none;
-  }
-  .card-pattern-grass::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 80px;
-    height: 80px;
-    background: radial-gradient(ellipse at 100% 0%, rgba(16, 185, 129, 0.06) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  /* Pattern 6: Ribbons - curved arc lines */
-  .card-pattern-ribbons {
-    position: relative;
-    overflow: hidden;
-  }
-  .card-pattern-ribbons::before {
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: -40px;
-    width: 120px;
-    height: 120px;
-    background:
-      radial-gradient(circle at 50% 50%, transparent 35%, rgba(236, 72, 153, 0.04) 36%, rgba(236, 72, 153, 0.04) 37%, transparent 38%),
-      radial-gradient(circle at 50% 50%, transparent 50%, rgba(236, 72, 153, 0.03) 51%, rgba(236, 72, 153, 0.03) 52%, transparent 53%),
-      radial-gradient(circle at 50% 50%, transparent 65%, rgba(236, 72, 153, 0.025) 66%, rgba(236, 72, 153, 0.025) 67%, transparent 68%);
-    pointer-events: none;
-  }
-  .card-pattern-ribbons::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 70px;
-    height: 70px;
-    background: radial-gradient(ellipse at 100% 0%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
-    pointer-events: none;
-  }
-
-  /* Dark mode adjustments for patterns */
-  .dark .card-pattern-leaves::before {
-    background:
-      radial-gradient(ellipse 60% 40% at 70% 30%, rgba(34, 197, 94, 0.12) 0%, transparent 70%),
-      radial-gradient(ellipse 40% 60% at 30% 70%, rgba(34, 197, 94, 0.08) 0%, transparent 60%);
-  }
-  .dark .card-pattern-stars::before {
-    background-image:
-      radial-gradient(circle at 85% 15%, rgba(139, 92, 246, 0.18) 0%, rgba(139, 92, 246, 0.18) 2px, transparent 2px),
-      radial-gradient(circle at 75% 35%, rgba(139, 92, 246, 0.12) 0%, rgba(139, 92, 246, 0.12) 1.5px, transparent 1.5px),
-      radial-gradient(circle at 90% 45%, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0.15) 1px, transparent 1px),
-      radial-gradient(circle at 65% 20%, rgba(139, 92, 246, 0.1) 0%, rgba(139, 92, 246, 0.1) 2.5px, transparent 2.5px),
-      radial-gradient(circle at 80% 55%, rgba(139, 92, 246, 0.11) 0%, rgba(139, 92, 246, 0.11) 1px, transparent 1px);
-  }
-  .dark .card-pattern-light::before {
-    background: conic-gradient(
-      from 180deg at 100% 0%,
-      transparent 0deg,
-      rgba(251, 191, 36, 0.06) 15deg,
-      transparent 30deg,
-      rgba(251, 191, 36, 0.05) 45deg,
-      transparent 60deg,
-      rgba(251, 191, 36, 0.07) 75deg,
-      transparent 90deg
-    );
-  }
-  .dark .card-pattern-circles::before {
-    background:
-      radial-gradient(circle at 50% 50%, transparent 30%, rgba(59, 130, 246, 0.1) 31%, rgba(59, 130, 246, 0.1) 33%, transparent 34%),
-      radial-gradient(circle at 30% 70%, transparent 20%, rgba(59, 130, 246, 0.07) 21%, rgba(59, 130, 246, 0.07) 23%, transparent 24%),
-      radial-gradient(circle at 70% 30%, transparent 15%, rgba(59, 130, 246, 0.08) 16%, rgba(59, 130, 246, 0.08) 18%, transparent 19%);
-  }
-  .dark .card-pattern-grass::before {
-    background:
-      linear-gradient(95deg, transparent 49%, rgba(16, 185, 129, 0.15) 49%, rgba(16, 185, 129, 0.15) 51%, transparent 51%),
-      linear-gradient(85deg, transparent 49%, rgba(16, 185, 129, 0.11) 49%, rgba(16, 185, 129, 0.11) 51%, transparent 51%),
-      linear-gradient(100deg, transparent 49%, rgba(16, 185, 129, 0.12) 49%, rgba(16, 185, 129, 0.12) 51%, transparent 51%),
-      linear-gradient(80deg, transparent 49%, rgba(16, 185, 129, 0.09) 49%, rgba(16, 185, 129, 0.09) 51%, transparent 51%),
-      linear-gradient(92deg, transparent 49%, rgba(16, 185, 129, 0.13) 49%, rgba(16, 185, 129, 0.13) 51%, transparent 51%);
-    background-size: 12px 100%, 10px 100%, 14px 100%, 8px 100%, 11px 100%;
-  }
-  .dark .card-pattern-ribbons::before {
-    background:
-      radial-gradient(circle at 50% 50%, transparent 35%, rgba(236, 72, 153, 0.07) 36%, rgba(236, 72, 153, 0.07) 37%, transparent 38%),
-      radial-gradient(circle at 50% 50%, transparent 50%, rgba(236, 72, 153, 0.05) 51%, rgba(236, 72, 153, 0.05) 52%, transparent 53%),
-      radial-gradient(circle at 50% 50%, transparent 65%, rgba(236, 72, 153, 0.04) 66%, rgba(236, 72, 153, 0.04) 67%, transparent 68%);
-  }
-
-  /* Score bar */
   .score-bar {
     @apply h-1.5 rounded-full overflow-hidden bg-background-tertiary;
   }
@@ -478,37 +318,67 @@
     from { width: 0; }
   }
 
-  /* Data grid */
+  /* ============================================
+     数据网格
+     ============================================ */
   .data-grid {
     @apply grid gap-4;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   }
 
-  /* Tag */
+  /* ============================================
+     标签
+     ============================================ */
   .tag {
-    @apply inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md text-xs font-medium;
+    @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium;
+    @apply bg-surface border border-surface-border/50;
+    @apply transition-colors duration-150;
   }
 
-  /* Skeleton */
+  .tag-brand {
+    @apply bg-brand-50 text-brand-600 border-brand-200;
+    @apply dark:bg-brand-950/50 dark:text-brand-400 dark:border-brand-800/50;
+  }
+
+  .tag-success {
+    @apply bg-accent-success-light text-accent-success border-accent-success/20;
+    @apply dark:bg-accent-success/10 dark:text-accent-success dark:border-accent-success/20;
+  }
+
+  .tag-warning {
+    @apply bg-accent-warning-light text-accent-warning border-accent-warning/20;
+    @apply dark:bg-accent-warning/10 dark:text-accent-warning dark:border-accent-warning/20;
+  }
+
+  .tag-error {
+    @apply bg-accent-error-light text-accent-error border-accent-error/20;
+    @apply dark:bg-accent-error/10 dark:text-accent-error dark:border-accent-error/20;
+  }
+
+  /* ============================================
+     骨架屏
+     ============================================ */
   .skeleton {
-    @apply animate-pulse bg-surface-border/50 rounded;
+    @apply animate-pulse bg-surface-border/40 rounded;
   }
 
-  /* Typography classes */
+  /* ============================================
+     排版类
+     ============================================ */
   .text-display {
-    @apply text-3xl md:text-4xl font-display font-bold tracking-tight text-content-primary;
+    @apply text-4xl md:text-5xl font-display font-bold tracking-tight text-content-primary;
   }
 
   .text-heading-lg {
-    @apply text-xl md:text-2xl font-display font-semibold tracking-tight text-content-primary;
+    @apply text-2xl md:text-3xl font-display font-semibold tracking-tight text-content-primary;
   }
 
   .text-heading {
-    @apply text-lg font-display font-semibold tracking-tight text-content-primary;
+    @apply text-xl font-display font-semibold tracking-tight text-content-primary;
   }
 
   .text-heading-sm {
-    @apply text-base font-medium text-content-primary;
+    @apply text-lg font-medium text-content-primary;
   }
 
   .text-body {
@@ -524,92 +394,150 @@
   }
 
   .text-label {
-    @apply text-xs font-medium uppercase tracking-wider text-content-muted;
+    @apply text-xs font-semibold uppercase tracking-wider text-content-muted;
   }
 
-  /* Page title */
+  /* ============================================
+     页面标题
+     ============================================ */
   .page-title {
     @apply text-2xl md:text-3xl font-display font-bold tracking-tight text-content-primary;
   }
 
   .page-subtitle {
-    @apply text-sm text-content-tertiary mt-0.5;
+    @apply text-sm text-content-tertiary mt-1;
   }
 
-  /* Stat number */
+  /* ============================================
+     统计数字
+     ============================================ */
   .stat-number {
-    @apply text-2xl md:text-3xl font-display font-bold tracking-tight tabular-nums;
+    @apply text-3xl md:text-4xl font-display font-bold tracking-tight tabular-nums;
   }
 
-  /* Nav link */
+  /* ============================================
+     导航链接
+     ============================================ */
   .nav-link {
-    @apply flex items-center gap-3 px-3 py-2 rounded-lg text-sm font-medium text-content-secondary;
-    @apply hover:bg-surface hover:text-content-primary transition-colors;
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-xl text-sm font-medium text-content-secondary;
+    @apply hover:bg-surface hover:text-content-primary;
+    @apply transition-all duration-150;
   }
 
   .nav-link-active {
-    @apply bg-accent-primary/10 text-accent-primary;
+    @apply bg-brand-50 text-brand-600 dark:bg-brand-950/50 dark:text-brand-400;
   }
 
-  /* Data table */
+  /* ============================================
+     数据表格
+     ============================================ */
   .data-table {
     @apply w-full text-sm;
   }
 
   .data-table th {
-    @apply text-left text-xs font-medium uppercase tracking-wider text-content-muted py-3 px-4 border-b border-surface-border;
+    @apply text-left text-xs font-semibold uppercase tracking-wider text-content-muted;
+    @apply py-3 px-4 border-b border-surface-border;
   }
 
   .data-table td {
-    @apply py-3 px-4 text-content-secondary border-b border-surface-border/50;
+    @apply py-3.5 px-4 text-content-secondary border-b border-surface-border/50;
+  }
+
+  .data-table tr {
+    @apply transition-colors duration-150;
   }
 
   .data-table tr:hover td {
-    @apply bg-surface/30;
+    @apply bg-surface/50;
   }
 
-  /* Button */
+  /* ============================================
+     按钮系统
+     ============================================ */
   .btn {
-    @apply inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-sm font-medium;
-    @apply transition-colors disabled:opacity-50 disabled:cursor-not-allowed;
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-sm font-medium;
+    @apply transition-all duration-150 ease-out;
+    @apply disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background;
   }
 
   .btn-primary {
-    @apply bg-accent-primary text-white hover:bg-accent-primary/90;
+    @apply bg-brand-500 text-white;
+    @apply hover:bg-brand-600 hover:shadow-md hover:-translate-y-0.5;
+    @apply focus:ring-brand-500/50;
+    @apply active:translate-y-0;
   }
 
   .btn-secondary {
     @apply bg-surface text-content-secondary border border-surface-border;
-    @apply hover:bg-surface-hover hover:text-content-primary;
+    @apply hover:bg-surface-hover hover:text-content-primary hover:border-surface-border;
+    @apply focus:ring-surface-border;
   }
 
-  /* Input */
+  .btn-ghost {
+    @apply bg-transparent text-content-secondary;
+    @apply hover:bg-surface hover:text-content-primary;
+    @apply focus:ring-surface-border;
+  }
+
+  .btn-danger {
+    @apply bg-accent-error text-white;
+    @apply hover:bg-accent-error/90 hover:shadow-md;
+    @apply focus:ring-accent-error/50;
+  }
+
+  .btn-sm {
+    @apply px-3 py-1.5 text-xs rounded-lg;
+  }
+
+  .btn-lg {
+    @apply px-6 py-3 text-base rounded-xl;
+  }
+
+  .btn-icon {
+    @apply p-2.5 rounded-xl;
+  }
+
+  /* ============================================
+     输入框
+     ============================================ */
   .input {
-    @apply w-full px-3 py-2 bg-background-secondary border border-surface-border rounded-lg;
+    @apply w-full px-4 py-2.5 bg-background-secondary border border-surface-border rounded-xl;
     @apply text-sm text-content-primary placeholder:text-content-muted;
-    @apply focus:outline-none focus:border-accent-primary/50 focus:ring-1 focus:ring-accent-primary/20;
-    @apply transition-colors;
+    @apply focus:outline-none focus:border-brand-500/50 focus:ring-2 focus:ring-brand-500/20;
+    @apply transition-all duration-150;
   }
 
-  /* Select */
+  .input-error {
+    @apply border-accent-error/50 focus:border-accent-error focus:ring-accent-error/20;
+  }
+
+  /* ============================================
+     选择框
+     ============================================ */
   .select {
-    @apply input appearance-none cursor-pointer pr-9;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
-    background-position: right 0.5rem center;
+    @apply input appearance-none cursor-pointer pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%2394a3b8' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
     background-repeat: no-repeat;
     background-size: 1.25rem;
   }
 
-  /* Chat styles */
+  /* ============================================
+     聊天样式
+     ============================================ */
   .chat-message-user {
-    @apply bg-accent-primary text-white rounded-2xl rounded-tr-sm;
+    @apply bg-brand-500 text-white rounded-2xl rounded-tr-md;
   }
 
   .chat-message-assistant {
-    @apply bg-surface border border-surface-border rounded-2xl rounded-tl-sm;
+    @apply bg-surface border border-surface-border rounded-2xl rounded-tl-md;
   }
 
-  /* Markdown prose */
+  /* ============================================
+     Markdown 样式
+     ============================================ */
   .prose-chat {
     @apply text-sm leading-relaxed text-content-secondary;
   }
@@ -650,7 +578,7 @@
   }
 
   .prose-chat blockquote {
-    @apply border-l-2 border-accent-primary/40 pl-3 my-2 text-content-tertiary italic;
+    @apply border-l-2 border-brand-500/40 pl-3 my-2 text-content-tertiary italic;
   }
 
   .prose-chat table {
@@ -666,13 +594,14 @@
     @apply font-semibold text-content-primary;
   }
 
-  /* Streamdown 全局字体样式 - 统一项目字体风格 */
+  /* ============================================
+     Streamdown 样式
+     ============================================ */
   [data-streamdown] {
     @apply font-sans;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
-  /* Streamdown 标题 */
   [data-streamdown="heading-1"] {
     @apply text-xl font-display font-bold tracking-tight text-content-primary mt-6 mb-3;
   }
@@ -691,7 +620,6 @@
     @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-3 mb-1.5;
   }
 
-  /* Streamdown 段落和文本 */
   [data-streamdown="paragraph"] {
     @apply text-[0.9375rem] leading-[1.65] text-content-secondary my-2.5;
   }
@@ -705,10 +633,9 @@
   }
 
   [data-streamdown="link"] {
-    @apply text-accent-primary hover:text-accent-primary/80 underline underline-offset-2 transition-colors;
+    @apply text-brand-500 hover:text-brand-600 underline underline-offset-2 transition-colors;
   }
 
-  /* Streamdown 列表 */
   [data-streamdown="ordered-list"],
   [data-streamdown="unordered-list"] {
     @apply my-2.5 ml-5 text-[0.9375rem] leading-[1.65] text-content-secondary;
@@ -726,13 +653,12 @@
     @apply my-1.5;
   }
 
-  /* Streamdown 代码 */
   [data-streamdown="inline-code"] {
-    @apply font-mono text-[0.875rem] bg-surface/60 text-accent-primary px-1.5 py-0.5 rounded;
+    @apply font-mono text-[0.875rem] bg-surface/60 text-brand-500 px-1.5 py-0.5 rounded;
   }
 
   [data-streamdown="code-block"] {
-    @apply font-mono text-[0.875rem] bg-surface/50 rounded-lg border border-surface-border/40 overflow-hidden my-3;
+    @apply font-mono text-[0.875rem] bg-surface/50 rounded-xl border border-surface-border/40 overflow-hidden my-3;
   }
 
   [data-streamdown="code-block"] pre {
@@ -743,9 +669,8 @@
     @apply text-[0.875rem] leading-relaxed;
   }
 
-  /* Streamdown 表格 */
   [data-streamdown="table-wrapper"] {
-    @apply overflow-x-auto my-3 rounded-lg border border-surface-border/50;
+    @apply overflow-x-auto my-3 rounded-xl border border-surface-border/50;
   }
 
   [data-streamdown="table"] {
@@ -772,32 +697,29 @@
     @apply px-3 py-2.5 text-[0.9375rem] text-content-secondary;
   }
 
-  /* Streamdown 引用块 */
   [data-streamdown="blockquote"] {
-    @apply border-l-2 border-accent-primary/40 pl-4 my-3 text-content-tertiary italic text-[0.9375rem] leading-[1.65];
+    @apply border-l-2 border-brand-500/40 pl-4 my-3 text-content-tertiary italic text-[0.9375rem] leading-[1.65];
   }
 
-  /* Streamdown 分隔线 */
   [data-streamdown="horizontal-rule"] {
     @apply my-4 border-surface-border/50;
   }
 
-  /* Typing cursor */
+  /* ============================================
+     打字光标
+     ============================================ */
   .typing-cursor::after {
     content: '|';
-    @apply animate-pulse text-accent-primary;
+    @apply animate-pulse text-brand-500;
   }
 
   /* ============================================
-     Chat Content Blocks - Similar to Streamdown
+     聊天内容块
      ============================================ */
-
-  /* Base content block wrapper */
   [data-chat-block] {
     @apply relative;
   }
 
-  /* Thinking block - collapsible with subtle styling */
   [data-chat-block="thinking"] {
     @apply my-3 rounded-xl border border-violet-500/20 bg-violet-500/5 overflow-hidden;
   }
@@ -822,12 +744,10 @@
     @apply bg-violet-500/10 text-violet-600 dark:text-violet-400;
   }
 
-  /* Text block - main response content */
   [data-chat-block="text"] {
     @apply text-content-secondary text-[0.9375rem] leading-[1.65];
   }
 
-  /* Block separator - horizontal rule between blocks */
   [data-chat-block="separator"] {
     @apply my-4 flex items-center gap-3;
   }
@@ -842,7 +762,6 @@
     @apply text-[10px] font-medium uppercase tracking-wider text-content-muted/60;
   }
 
-  /* Redacted thinking block */
   [data-chat-block="redacted"] {
     @apply my-3 px-3 py-2.5 rounded-lg;
     @apply bg-amber-500/5 border border-amber-500/20;
@@ -854,33 +773,37 @@
     @apply w-4 h-4 opacity-70;
   }
 
-  /* Animation for streaming blocks */
   [data-chat-block].streaming {
     @apply animate-pulse;
   }
 
-  /* Dark mode adjustments */
   .dark [data-chat-block="thinking"] {
     @apply border-violet-400/20 bg-violet-400/5;
   }
 }
 
 @layer utilities {
-  /* Gradient border */
+  /* ============================================
+     渐变边框
+     ============================================ */
   .border-gradient {
     border: 1px solid transparent;
     background:
       linear-gradient(var(--tw-gradient-stops)) padding-box,
-      linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(139, 92, 246, 0.5)) border-box;
+      linear-gradient(135deg, rgb(99 102 241 / 0.5), rgb(139 92 246 / 0.5)) border-box;
   }
 
-  /* Text stroke */
+  /* ============================================
+     文本描边
+     ============================================ */
   .text-stroke {
     -webkit-text-stroke: 1px currentColor;
     -webkit-text-fill-color: transparent;
   }
 
-  /* Hide scrollbar */
+  /* ============================================
+     隐藏滚动条
+     ============================================ */
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -890,13 +813,28 @@
     display: none;
   }
 
-  /* Text balance */
+  /* ============================================
+     文本平衡
+     ============================================ */
   .text-balance {
     text-wrap: balance;
   }
 
-  /* Focus ring utility */
+  /* ============================================
+     焦点环
+     ============================================ */
   .focus-ring {
-    @apply focus:outline-none focus:ring-2 focus:ring-accent-primary/30 focus:ring-offset-2 focus:ring-offset-background;
+    @apply focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:ring-offset-2 focus:ring-offset-background;
+  }
+
+  /* ============================================
+     渐变遮罩
+     ============================================ */
+  .mask-gradient-b {
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+  }
+
+  .mask-gradient-t {
+    mask-image: linear-gradient(to top, black 60%, transparent);
   }
 }

@@ -4,13 +4,7 @@ import Link from 'next/link'
 import { Card, CardHeader } from '@/components/ui/Card'
 import { Badge, ComplexityBadge } from '@/components/ui/Badge'
 import { formatCurrency } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faArrowRight,
-  faMedal,
-  faCheck,
-  faBolt,
-} from '@fortawesome/free-solid-svg-icons'
+import { ArrowRight, Check, Zap } from 'lucide-react'
 import type { OpportunityProduct } from '@/types'
 
 interface OpportunityRankingProps {
@@ -39,7 +33,7 @@ export function OpportunityRanking({
             className="flex items-center gap-1 text-sm text-accent-primary hover:underline"
           >
             查看全部
-            <FontAwesomeIcon icon={faArrowRight} className="h-3 w-3" />
+            <ArrowRight className="h-3 w-3" />
           </Link>
         }
       />
@@ -134,7 +128,7 @@ function OpportunityItem({ product, rank }: OpportunityItemProps) {
           </span>
           {analysis.is_product_driven && (
             <Badge variant="success" size="sm">
-              <FontAwesomeIcon icon={faBolt} className="h-2.5 w-2.5" />
+              <Zap className="h-2.5 w-2.5" />
               产品驱动
             </Badge>
           )}
@@ -143,7 +137,7 @@ function OpportunityItem({ product, rank }: OpportunityItemProps) {
           <span>{startup.category || '未分类'}</span>
           {comboMatches > 0 && (
             <span className="flex items-center gap-1 text-accent-success">
-              <FontAwesomeIcon icon={faCheck} className="h-2.5 w-2.5" />
+              <Check className="h-2.5 w-2.5" />
               {comboMatches} 组合
             </span>
           )}

@@ -1,12 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faMagnifyingGlass,
-  faChartLine,
-  faCompass,
-} from '@fortawesome/free-solid-svg-icons'
+import { Search, TrendingUp, Compass } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 interface SuggestedPromptsProps {
@@ -16,7 +11,7 @@ interface SuggestedPromptsProps {
 const categories = [
   {
     id: 'product',
-    icon: faMagnifyingGlass,
+    icon: Search,
     label: '产品分析',
     description: '深度分析产品数据、收入、竞争力等',
     prompts: [
@@ -28,7 +23,7 @@ const categories = [
   },
   {
     id: 'trend',
-    icon: faChartLine,
+    icon: TrendingUp,
     label: '行业趋势',
     description: '洞察赛道机会、市场动态与趋势',
     prompts: [
@@ -40,7 +35,7 @@ const categories = [
   },
   {
     id: 'career',
-    icon: faCompass,
+    icon: Compass,
     label: '方向探索',
     description: '根据你的背景推荐适合的方向',
     prompts: [
@@ -72,6 +67,7 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
       <div className="flex flex-wrap justify-center gap-5">
         {categories.map((category) => {
           const isExpanded = expandedId === category.id
+          const Icon = category.icon
           return (
             <button
               key={category.id}
@@ -83,8 +79,7 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
                   : 'bg-surface border-surface-border text-content-secondary hover:border-accent-primary/40 hover:bg-accent-primary/5 hover:text-accent-primary hover:shadow-md'
               )}
             >
-              <FontAwesomeIcon
-                icon={category.icon}
+              <Icon
                 className={cn(
                   'h-3.5 w-3.5 transition-all duration-300',
                   isExpanded ? 'text-accent-primary' : 'text-content-muted group-hover:text-accent-primary'
@@ -114,10 +109,7 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
                 {/* 标题区 - 简洁风格 */}
                 <div className="flex items-center gap-2.5 mb-3 pb-3 border-b border-surface-border/50">
                   <div className="w-7 h-7 rounded-lg bg-background-tertiary flex items-center justify-center">
-                    <FontAwesomeIcon
-                      icon={expandedCategory.icon}
-                      className="h-3.5 w-3.5 text-content-secondary"
-                    />
+                    <expandedCategory.icon className="h-3.5 w-3.5 text-content-secondary" />
                   </div>
                   <div>
                     <h3 className="text-sm font-medium text-content-primary">

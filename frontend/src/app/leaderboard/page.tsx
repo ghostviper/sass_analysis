@@ -14,20 +14,20 @@ import {
 } from '@/lib/api'
 import { formatCurrency, cn } from '@/lib/utils'
 import { useLocale } from '@/contexts/LocaleContext'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faTrophy,
-  faShare,
-  faCheck,
-  faChevronLeft,
-  faChevronRight,
-  faBoxesStacked,
-  faUserGroup,
-  faArrowDownWideShort,
-  faMedal,
-  faChartLine,
-} from '@fortawesome/free-solid-svg-icons'
-import { faXTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+  Trophy,
+  Share2,
+  Check,
+  ChevronLeft,
+  ChevronRight,
+  Package,
+  Users,
+  ArrowDownWideNarrow,
+  Medal,
+  TrendingUp,
+  Twitter,
+  Linkedin,
+} from 'lucide-react'
 
 type RankingDimension = {
   key: LeaderboardSortField
@@ -141,7 +141,7 @@ export default function LeaderboardPage() {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
           <h1 className="text-2xl font-display font-bold text-content-primary flex items-center gap-3">
-            <FontAwesomeIcon icon={faTrophy} className="text-accent-warning" />
+            <Trophy className="h-6 w-6 text-accent-warning" />
             {t('leaderboard.title')}
           </h1>
           {stats && (
@@ -164,7 +164,7 @@ export default function LeaderboardPage() {
           onClick={handleShare}
           className="btn btn-secondary self-start sm:self-auto"
         >
-          <FontAwesomeIcon icon={copied ? faCheck : faShare} className="h-4 w-4 mr-2" />
+          {copied ? <Check className="h-4 w-4 mr-2" /> : <Share2 className="h-4 w-4 mr-2" />}
           {copied ? t('common.copied') : t('leaderboard.shareList')}
         </button>
       </div>
@@ -172,7 +172,7 @@ export default function LeaderboardPage() {
       {/* 筛选栏 */}
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2 text-sm text-content-muted">
-          <FontAwesomeIcon icon={faArrowDownWideShort} className="h-4 w-4" />
+          <ArrowDownWideNarrow className="h-4 w-4" />
           <span>{t('leaderboard.sort')}</span>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -245,7 +245,7 @@ export default function LeaderboardPage() {
             disabled={page === 1}
             className="btn btn-secondary"
           >
-            <FontAwesomeIcon icon={faChevronLeft} className="h-4 w-4" />
+            <ChevronLeft className="h-4 w-4" />
           </button>
           <span className="px-4 text-sm text-content-secondary">
             {page} / {totalPages}
@@ -255,7 +255,7 @@ export default function LeaderboardPage() {
             disabled={page === totalPages}
             className="btn btn-secondary"
           >
-            <FontAwesomeIcon icon={faChevronRight} className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4" />
           </button>
         </div>
       )}
@@ -277,9 +277,9 @@ function FounderRow({ founder, index, dimension, sortBy, t }: FounderRowProps) {
 
   // 奖杯颜色配置
   const getRankStyle = (rank: number) => {
-    if (rank === 1) return { bg: 'bg-gradient-to-br from-yellow-400 to-yellow-600', icon: faTrophy, color: 'text-yellow-400' }
-    if (rank === 2) return { bg: 'bg-gradient-to-br from-gray-300 to-gray-500', icon: faMedal, color: 'text-gray-400' }
-    if (rank === 3) return { bg: 'bg-gradient-to-br from-amber-600 to-amber-800', icon: faMedal, color: 'text-amber-600' }
+    if (rank === 1) return { bg: 'bg-gradient-to-br from-yellow-400 to-yellow-600', Icon: Trophy, color: 'text-yellow-400' }
+    if (rank === 2) return { bg: 'bg-gradient-to-br from-gray-300 to-gray-500', Icon: Medal, color: 'text-gray-400' }
+    if (rank === 3) return { bg: 'bg-gradient-to-br from-amber-600 to-amber-800', Icon: Medal, color: 'text-amber-600' }
     return null
   }
 
@@ -287,10 +287,10 @@ function FounderRow({ founder, index, dimension, sortBy, t }: FounderRowProps) {
   const getSocialIcon = (platform: string) => {
     const p = platform?.toLowerCase() || ''
     if (p.includes('linkedin')) {
-      return { icon: faLinkedin, color: 'hover:text-[#0A66C2]' }
+      return { Icon: Linkedin, color: 'hover:text-[#0A66C2]' }
     }
     // 默认为 X/Twitter
-    return { icon: faXTwitter, color: 'hover:text-content-primary' }
+    return { Icon: Twitter, color: 'hover:text-content-primary' }
   }
 
   const rankStyle = getRankStyle(founder.rank)
@@ -314,10 +314,7 @@ function FounderRow({ founder, index, dimension, sortBy, t }: FounderRowProps) {
         {/* 排名 */}
         <div className="w-10 flex justify-center flex-shrink-0">
           {rankStyle ? (
-            <FontAwesomeIcon
-              icon={rankStyle.icon}
-              className={cn('h-6 w-6', rankStyle.color)}
-            />
+            <rankStyle.Icon className={cn('h-6 w-6', rankStyle.color)} />
           ) : (
             <span className="text-lg font-mono font-bold text-content-muted">
               {founder.rank}
@@ -376,24 +373,24 @@ function FounderRow({ founder, index, dimension, sortBy, t }: FounderRowProps) {
                 socialIcon.color
               )}
             >
-              <FontAwesomeIcon icon={socialIcon.icon} className="h-3.5 w-3.5" />
+              <socialIcon.Icon className="h-3.5 w-3.5" />
             </a>
           </div>
           <div className="flex items-center gap-3 text-caption">
             <span>@{founder.username}</span>
             <span className="flex items-center gap-1">
-              <FontAwesomeIcon icon={faBoxesStacked} className="h-3 w-3" />
+              <Package className="h-3 w-3" />
               {founder.product_count}
             </span>
             {founder.followers > 0 && (
               <span className="flex items-center gap-1">
-                <FontAwesomeIcon icon={faUserGroup} className="h-3 w-3" />
+                <Users className="h-3 w-3" />
                 {founder.followers >= 1000 ? `${(founder.followers / 1000).toFixed(1)}K` : founder.followers}
               </span>
             )}
             {founder.max_growth > 0 && sortBy !== 'max_growth' && (
               <span className="text-accent-success flex items-center gap-1">
-                <FontAwesomeIcon icon={faChartLine} className="h-3 w-3" />
+                <TrendingUp className="h-3 w-3" />
                 +{founder.max_growth.toFixed(1)}%
               </span>
             )}

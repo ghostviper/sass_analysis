@@ -1,13 +1,33 @@
 import type { Metadata } from 'next'
+import { DM_Sans, Noto_Sans_SC, JetBrains_Mono } from 'next/font/google'
 import { Sidebar } from '@/components/layout/Sidebar'
 import { MainContent } from '@/components/layout/MainContent'
 import { Providers } from '@/components/providers/Providers'
 import './globals.css'
 
-// FontAwesome 配置
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
-config.autoAddCss = false
+// 主要西文字体 - DM Sans
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+})
+
+// 中文字体 - Noto Sans SC
+const notoSansSC = Noto_Sans_SC({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-noto-sans-sc',
+  display: 'swap',
+})
+
+// 等宽字体 - JetBrains Mono
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-jetbrains-mono',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   title: 'SaaS 产品分析 - 发现独立开发者的产品机会',
@@ -21,7 +41,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN" suppressHydrationWarning>
-      <body className="min-h-screen">
+      <body className={`${dmSans.variable} ${notoSansSC.variable} ${jetbrainsMono.variable} min-h-screen`}>
         <Providers>
           {/* 背景装饰 */}
           <div className="fixed inset-0 -z-10 overflow-hidden">

@@ -2,8 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState, useCallback, useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons'
+import { Sun, Moon } from 'lucide-react'
 import { createPortal } from 'react-dom'
 
 export function ThemeSwitcher() {
@@ -85,10 +84,11 @@ export function ThemeSwitcher() {
         aria-label={isDark ? 'Switch to light mode' : 'Switch to dark mode'}
         title={isDark ? '切换到浅色模式' : '切换到深色模式'}
       >
-        <FontAwesomeIcon
-          icon={isDark ? faSun : faMoon}
-          className="w-[18px] h-[18px]"
-        />
+        {isDark ? (
+          <Sun className="w-[18px] h-[18px]" />
+        ) : (
+          <Moon className="w-[18px] h-[18px]" />
+        )}
       </button>
 
       {/* Theme transition overlay */}

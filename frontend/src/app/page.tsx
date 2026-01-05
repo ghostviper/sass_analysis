@@ -11,8 +11,7 @@ import {
   getCategoryAnalysis,
 } from '@/lib/api'
 import type { OpportunityProduct, CategoryAnalysis } from '@/types'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLightbulb, faChartLine, faRocket } from '@fortawesome/free-solid-svg-icons'
+import { Rocket, Lightbulb, TrendingUp } from 'lucide-react'
 
 export default function DashboardPage() {
   const [loading, setLoading] = useState(true)
@@ -71,7 +70,7 @@ export default function DashboardPage() {
         <div className="relative">
           <div className="flex items-center gap-3 mb-3">
             <div className="w-12 h-12 rounded-xl bg-accent-primary/20 flex items-center justify-center">
-              <FontAwesomeIcon icon={faRocket} className="h-6 w-6 text-accent-primary" />
+              <Rocket className="h-6 w-6 text-accent-primary" />
             </div>
             <div>
               <h1 className="text-display">
@@ -84,11 +83,11 @@ export default function DashboardPage() {
           </div>
           <div className="flex flex-wrap gap-4 mt-4">
             <div className="flex items-center gap-2 text-caption">
-              <FontAwesomeIcon icon={faLightbulb} className="text-accent-warning" />
+              <Lightbulb className="h-4 w-4 text-accent-warning" />
               <span>筛选低竞争高收益产品</span>
             </div>
             <div className="flex items-center gap-2 text-caption">
-              <FontAwesomeIcon icon={faChartLine} className="text-accent-success" />
+              <TrendingUp className="h-4 w-4 text-accent-success" />
               <span>分析市场类型与机会</span>
             </div>
           </div>

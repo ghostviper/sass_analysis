@@ -1,14 +1,13 @@
 'use client'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faBoxesStacked,
-  faChartPie,
-  faWater,
-  faLightbulb,
-  faDollarSign,
-  faArrowTrendUp,
-} from '@fortawesome/free-solid-svg-icons'
+  Package,
+  PieChart,
+  Waves,
+  Lightbulb,
+  DollarSign,
+  TrendingUp,
+} from 'lucide-react'
 import { StatCard, CardPattern } from '@/components/ui/Card'
 import { formatCurrency, formatNumber } from '@/lib/utils'
 
@@ -35,42 +34,42 @@ export function MetricsOverview({ stats }: MetricsOverviewProps) {
       title: '产品总数',
       value: formatNumber(stats.total_products),
       subtitle: `${stats.products_with_revenue} 个有收入`,
-      icon: <FontAwesomeIcon icon={faBoxesStacked} className="h-5 w-5" />,
+      icon: <Package className="h-5 w-5" />,
       pattern: 'circles',
     },
     {
       title: '分析赛道',
       value: formatNumber(stats.total_categories),
       subtitle: `${stats.blue_ocean_categories} 个蓝海`,
-      icon: <FontAwesomeIcon icon={faChartPie} className="h-5 w-5" />,
+      icon: <PieChart className="h-5 w-5" />,
       pattern: 'stars',
     },
     {
       title: '蓝海赛道',
       value: formatNumber(stats.blue_ocean_categories),
       subtitle: '低竞争高收益',
-      icon: <FontAwesomeIcon icon={faWater} className="h-5 w-5" />,
+      icon: <Waves className="h-5 w-5" />,
       pattern: 'leaves',
     },
     {
       title: '机会产品',
       value: formatNumber(stats.opportunity_products),
       subtitle: '符合筛选条件',
-      icon: <FontAwesomeIcon icon={faLightbulb} className="h-5 w-5" />,
+      icon: <Lightbulb className="h-5 w-5" />,
       pattern: 'light',
     },
     {
       title: '平均收入',
       value: formatCurrency(stats.avg_revenue),
       subtitle: '月收入/产品',
-      icon: <FontAwesomeIcon icon={faDollarSign} className="h-5 w-5" />,
+      icon: <DollarSign className="h-5 w-5" />,
       pattern: 'grass',
     },
     {
       title: '数据完整度',
       value: `${Math.round((stats.products_with_revenue / stats.total_products) * 100)}%`,
       subtitle: '有收入数据',
-      icon: <FontAwesomeIcon icon={faArrowTrendUp} className="h-5 w-5" />,
+      icon: <TrendingUp className="h-5 w-5" />,
       pattern: 'ribbons',
     },
   ]

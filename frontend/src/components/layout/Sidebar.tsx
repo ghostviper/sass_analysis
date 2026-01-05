@@ -2,21 +2,24 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faChartLine,
-  faLayerGroup,
-  faBoxesStacked,
-  faLightbulb,
-  faCircleInfo,
-  faRobot,
-  faChevronLeft,
-  faChevronRight,
-  faXmark,
-  faTrophy,
-} from '@fortawesome/free-solid-svg-icons'
+  LayoutDashboard,
+  Layers,
+  Package,
+  Trophy,
+  Bot,
+  X,
+  Settings,
+  HelpCircle,
+  LogOut,
+  Gem,
+  ChevronUp,
+  Lightbulb,
+  PanelLeftClose,
+  PanelLeft,
+} from 'lucide-react'
 import { useSidebar } from '@/contexts/SidebarContext'
 import { useLocale } from '@/contexts/LocaleContext'
 
@@ -24,76 +27,97 @@ export function Sidebar() {
   const pathname = usePathname()
   const { isCollapsed, isMobileOpen, toggleSidebar, closeMobile } = useSidebar()
   const { t } = useLocale()
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
+  const userMenuRef = useRef<HTMLDivElement>(null)
 
   // Close mobile menu on route change
   useEffect(() => {
     closeMobile()
   }, [pathname, closeMobile])
 
+  // Close user menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
   const navigation = [
-    { name: t('nav.dashboard'), href: '/', icon: faChartLine },
-    { name: t('nav.categories'), href: '/categories', icon: faLayerGroup },
-    { name: t('nav.products'), href: '/products', icon: faBoxesStacked },
-    { name: t('nav.leaderboard'), href: '/leaderboard', icon: faTrophy, isNew: true },
-    { name: t('nav.assistant'), href: '/assistant', icon: faRobot },
+    { name: t('nav.dashboard'), href: '/', icon: LayoutDashboard },
+    { name: t('nav.categories'), href: '/categories', icon: Layers },
+    { name: t('nav.products'), href: '/products', icon: Package },
+    { name: t('nav.leaderboard'), href: '/leaderboard', icon: Trophy, isNew: true },
+    { name: t('nav.assistant'), href: '/assistant', icon: Bot },
   ]
 
-  const secondaryNavigation = [
-    { name: t('nav.about'), href: '/about', icon: faCircleInfo },
+  const userMenuItems = [
+    { name: t('nav.settings') || 'Settings', icon: Settings, href: '/settings' },
+    { name: t('nav.help') || 'Help', icon: HelpCircle, href: '/about' },
+    { name: t('nav.upgrade') || 'Upgrade', icon: Gem, action: 'upgrade' },
+    { name: t('nav.logout') || 'Logout', icon: LogOut, action: 'logout' },
   ]
 
   const sidebarContent = (
     <div className="flex h-full flex-col">
-      {/* Logo */}
+      {/* Logo and Toggle - 与 Header 高度一致 h-14，下方有分割线 */}
       <div
         className={cn(
-          'flex h-14 items-center transition-all duration-300',
+          'flex h-14 items-center border-b border-surface-border transition-all duration-300',
           isCollapsed && !isMobileOpen ? 'justify-center px-2' : 'justify-between px-4'
         )}
       >
-        <div className={cn('flex items-center gap-3', isCollapsed && !isMobileOpen && 'justify-center')}>
-          <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-accent-primary to-accent-secondary">
-            <FontAwesomeIcon icon={faLightbulb} className="h-4 w-4 text-white" />
-          </div>
-          {(!isCollapsed || isMobileOpen) && (
-            <h1 className="font-display font-semibold text-content-primary whitespace-nowrap tracking-tight">
-              {t('common.appName')}
-            </h1>
-          )}
-        </div>
-
-        {/* Desktop collapse button */}
-        {!isCollapsed && !isMobileOpen && (
+        {/* Collapsed: Show toggle button in logo position */}
+        {isCollapsed && !isMobileOpen ? (
           <button
             onClick={toggleSidebar}
-            className="hidden lg:flex h-6 w-6 items-center justify-center rounded text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
+            className="hidden lg:flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-brand text-white hover:opacity-90 transition-opacity shadow-sm"
+            title={t('nav.expandMenu') || 'Expand menu'}
           >
-            <FontAwesomeIcon icon={faChevronLeft} className="h-3 w-3" />
+            <PanelLeft className="h-5 w-5" />
           </button>
-        )}
+        ) : (
+          <>
+            <div className="flex items-center gap-3 overflow-hidden">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-gradient-brand shadow-sm">
+                <Lightbulb className="h-4 w-4 text-white" />
+              </div>
+              <h1
+                className={cn(
+                  'font-display font-semibold text-content-primary whitespace-nowrap tracking-tight transition-all duration-300 overflow-hidden',
+                  isCollapsed && !isMobileOpen ? 'w-0 opacity-0' : 'w-auto opacity-100'
+                )}
+              >
+                {t('common.appName')}
+              </h1>
+            </div>
 
-        {/* Mobile close button */}
-        {isMobileOpen && (
-          <button
-            onClick={closeMobile}
-            className="flex lg:hidden h-6 w-6 items-center justify-center rounded text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
-          >
-            <FontAwesomeIcon icon={faXmark} className="h-4 w-4" />
-          </button>
+            {/* Desktop collapse button */}
+            {!isMobileOpen && (
+              <button
+                onClick={toggleSidebar}
+                className="hidden lg:flex h-8 w-8 items-center justify-center rounded-lg text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
+                title={t('nav.collapseMenu') || 'Collapse menu'}
+              >
+                <PanelLeftClose className="h-5 w-5" />
+              </button>
+            )}
+
+            {/* Mobile close button */}
+            {isMobileOpen && (
+              <button
+                onClick={closeMobile}
+                className="flex lg:hidden h-8 w-8 items-center justify-center rounded-lg text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
+              >
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </>
         )}
       </div>
-
-      {/* Desktop expand button */}
-      {isCollapsed && !isMobileOpen && (
-        <div className="hidden lg:flex justify-center py-3">
-          <button
-            onClick={toggleSidebar}
-            className="flex h-7 w-7 items-center justify-center rounded text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
-          >
-            <FontAwesomeIcon icon={faChevronRight} className="h-3 w-3" />
-          </button>
-        </div>
-      )}
 
       {/* 主导航 */}
       <nav className="flex-1 px-3 py-4">
@@ -109,25 +133,34 @@ export function Sidebar() {
                 href={item.href}
                 title={showCollapsed ? item.name : undefined}
                 className={cn(
-                  'group relative flex items-center rounded-xl text-sm font-medium transition-colors',
+                  'group relative flex items-center rounded-xl text-sm font-medium transition-all duration-200',
                   showCollapsed ? 'justify-center p-3' : 'gap-3 px-3 py-3',
                   isActive
-                    ? 'bg-accent-primary/10 text-accent-primary'
+                    ? 'bg-brand-50 text-brand-600 dark:bg-brand-950/50 dark:text-brand-400'
                     : 'text-content-secondary hover:bg-surface hover:text-content-primary'
                 )}
               >
-                <FontAwesomeIcon
-                  icon={item.icon}
+                <item.icon
                   className={cn(
-                    'h-[18px] w-[18px] shrink-0',
-                    isActive ? 'text-accent-primary' : 'text-content-muted group-hover:text-content-secondary'
+                    'h-[18px] w-[18px] shrink-0 transition-all duration-200',
+                    isActive ? 'text-brand-600 dark:text-brand-400' : 'text-content-muted group-hover:text-content-secondary'
                   )}
                 />
-                {!showCollapsed && (
-                  <span className="flex-1">{item.name}</span>
-                )}
-                {'isNew' in item && item.isNew && !showCollapsed && (
-                  <span className="rounded bg-accent-primary/20 px-1.5 py-0.5 text-[10px] font-medium text-accent-primary">
+                <span
+                  className={cn(
+                    'whitespace-nowrap transition-all duration-300 overflow-hidden',
+                    showCollapsed ? 'w-0 opacity-0' : 'w-auto opacity-100 flex-1'
+                  )}
+                >
+                  {item.name}
+                </span>
+                {'isNew' in item && item.isNew && (
+                  <span
+                    className={cn(
+                      'rounded-md bg-brand-500/15 px-1.5 py-0.5 text-[10px] font-semibold text-brand-600 dark:text-brand-400 whitespace-nowrap transition-all duration-200',
+                      showCollapsed ? 'hidden' : 'block'
+                    )}
+                  >
                     NEW
                   </span>
                 )}
@@ -135,7 +168,7 @@ export function Sidebar() {
                 {/* Tooltip for desktop collapsed */}
                 {showCollapsed && (
                   <div className="absolute left-full ml-2 hidden group-hover:block z-50">
-                    <div className="whitespace-nowrap rounded-md bg-background-tertiary px-2.5 py-1.5 text-sm shadow-lg border border-surface-border text-content-primary">
+                    <div className="whitespace-nowrap rounded-lg bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border text-content-primary">
                       {item.name}
                     </div>
                   </div>
@@ -143,7 +176,7 @@ export function Sidebar() {
 
                 {/* NEW indicator for collapsed */}
                 {showCollapsed && 'isNew' in item && item.isNew && (
-                  <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-accent-primary" />
+                  <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-brand-500" />
                 )}
               </Link>
             )
@@ -151,38 +184,141 @@ export function Sidebar() {
         </div>
       </nav>
 
-      {/* 次级导航 */}
-      <div className="border-t border-surface-border px-3 py-4">
-        {secondaryNavigation.map((item) => {
-          const isActive = pathname === item.href
-          const showCollapsed = isCollapsed && !isMobileOpen
+      {/* User Profile Section */}
+      <div className="border-t border-surface-border px-3 py-3" ref={userMenuRef}>
+        <div className="relative">
+          <button
+            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+            className={cn(
+              'group relative flex w-full items-center rounded-xl transition-all duration-200',
+              isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-3 p-2',
+              'hover:bg-surface/80'
+            )}
+          >
+            {/* Avatar */}
+            <div className="relative shrink-0">
+              <div className="h-9 w-9 rounded-xl bg-gradient-brand flex items-center justify-center text-white text-sm font-semibold shadow-sm">
+                U
+              </div>
+              {/* Online indicator */}
+              <span className="absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full bg-accent-success border-2 border-background-secondary" />
+            </div>
 
-          return (
-            <Link
-              key={item.name}
-              href={item.href}
-              title={showCollapsed ? item.name : undefined}
+            {/* User info - only show when expanded */}
+            <div
               className={cn(
-                'group relative flex items-center rounded-xl text-sm font-medium transition-colors',
-                showCollapsed ? 'justify-center p-3' : 'gap-3 px-3 py-3',
-                isActive
-                  ? 'bg-surface text-content-primary'
-                  : 'text-content-muted hover:bg-surface/50 hover:text-content-secondary'
+                'flex items-center gap-2 transition-all duration-300 overflow-hidden min-w-0',
+                isCollapsed && !isMobileOpen ? 'w-0 opacity-0' : 'w-auto opacity-100 flex-1'
               )}
             >
-              <FontAwesomeIcon icon={item.icon} className="h-[18px] w-[18px] shrink-0" />
-              {!showCollapsed && <span>{item.name}</span>}
+              <div className="flex-1 text-left min-w-0">
+                <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap">
+                  {t('nav.user') || 'User'}
+                </p>
+                <p className="text-xs text-content-muted truncate whitespace-nowrap">
+                  {t('nav.freeplan') || 'Free Plan'}
+                </p>
+              </div>
+              <ChevronUp
+                className={cn(
+                  'h-4 w-4 text-content-muted transition-transform duration-200 shrink-0',
+                  isUserMenuOpen && 'rotate-180'
+                )}
+              />
+            </div>
 
-              {showCollapsed && (
-                <div className="absolute left-full ml-2 hidden group-hover:block z-50">
-                  <div className="whitespace-nowrap rounded-md bg-background-tertiary px-2.5 py-1.5 text-sm shadow-lg border border-surface-border text-content-primary">
-                    {item.name}
+            {/* Tooltip for collapsed state */}
+            {isCollapsed && !isMobileOpen && (
+              <div className="absolute left-full ml-2 hidden group-hover:block z-50">
+                <div className="whitespace-nowrap rounded-xl bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border">
+                  <p className="font-medium text-content-primary">{t('nav.user') || 'User'}</p>
+                  <p className="text-xs text-content-muted">{t('nav.freeplan') || 'Free Plan'}</p>
+                </div>
+              </div>
+            )}
+          </button>
+
+          {/* Dropdown Menu */}
+          {isUserMenuOpen && (
+            <div
+              className={cn(
+                'absolute z-50 rounded-2xl border border-surface-border bg-surface-elevated shadow-xl overflow-hidden',
+                isCollapsed && !isMobileOpen
+                  ? 'left-full bottom-0 ml-2 w-52'
+                  : 'left-0 right-0 bottom-full mb-2'
+              )}
+            >
+              {/* User info header in dropdown */}
+              <div className="px-4 py-3 border-b border-surface-border bg-surface/50">
+                <div className="flex items-center gap-3">
+                  <div className="h-10 w-10 rounded-xl bg-gradient-brand flex items-center justify-center text-white text-sm font-semibold shadow-sm">
+                    U
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-sm font-medium text-content-primary truncate">
+                      {t('nav.user') || 'User'}
+                    </p>
+                    <p className="text-xs text-content-muted truncate">
+                      {t('nav.freeplan') || 'Free Plan'}
+                    </p>
                   </div>
                 </div>
-              )}
-            </Link>
-          )
-        })}
+              </div>
+
+              <div className="py-1.5">
+                {userMenuItems.map((item, index) => {
+                  const isLastItem = index === userMenuItems.length - 1
+
+                  if (item.href) {
+                    return (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsUserMenuOpen(false)}
+                        className={cn(
+                          'flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
+                          'text-content-secondary hover:bg-surface hover:text-content-primary',
+                          isLastItem && 'border-t border-surface-border mt-1 pt-2.5 text-accent-error hover:text-accent-error hover:bg-accent-error/5'
+                        )}
+                      >
+                        <item.icon className="h-4 w-4" />
+                        <span>{item.name}</span>
+                      </Link>
+                    )
+                  }
+
+                  return (
+                    <button
+                      key={item.name}
+                      onClick={() => {
+                        setIsUserMenuOpen(false)
+                        if (item.action === 'logout') {
+                          console.log('Logout clicked')
+                        } else if (item.action === 'upgrade') {
+                          console.log('Upgrade clicked')
+                        }
+                      }}
+                      className={cn(
+                        'flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors',
+                        'text-content-secondary hover:bg-surface hover:text-content-primary',
+                        item.action === 'logout' && 'border-t border-surface-border mt-1 pt-2.5 text-accent-error hover:text-accent-error hover:bg-accent-error/5',
+                        item.action === 'upgrade' && 'text-brand-600 dark:text-brand-400 hover:text-brand-600 hover:bg-brand-500/5'
+                      )}
+                    >
+                      <item.icon className="h-4 w-4" />
+                      <span className="flex-1 text-left">{item.name}</span>
+                      {item.action === 'upgrade' && (
+                        <span className="rounded-md bg-brand-500/15 px-2 py-0.5 text-[10px] font-semibold text-brand-600 dark:text-brand-400">
+                          PRO
+                        </span>
+                      )}
+                    </button>
+                  )
+                })}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   )

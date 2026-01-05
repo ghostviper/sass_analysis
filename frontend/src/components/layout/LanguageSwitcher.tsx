@@ -2,8 +2,7 @@
 
 import { useLocale, Locale } from '@/contexts/LocaleContext'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGlobe, faCheck } from '@fortawesome/free-solid-svg-icons'
+import { Globe, Check } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
 const languages: { code: Locale; label: string; flag: string }[] = [
@@ -37,7 +36,7 @@ export function LanguageSwitcher() {
         className="flex h-9 w-9 items-center justify-center rounded-lg text-content-muted hover:text-content-secondary hover:bg-surface/50 transition-colors"
         title={currentLang?.label}
       >
-        <FontAwesomeIcon icon={faGlobe} className="w-[18px] h-[18px]" />
+        <Globe className="w-[18px] h-[18px]" />
       </button>
 
       {isOpen && (
@@ -60,7 +59,7 @@ export function LanguageSwitcher() {
                 <span className="text-base">{lang.flag}</span>
                 <span className="flex-1 text-left">{lang.label}</span>
                 {locale === lang.code && (
-                  <FontAwesomeIcon icon={faCheck} className="w-3.5 h-3.5" />
+                  <Check className="w-3.5 h-3.5" />
                 )}
               </button>
             ))}

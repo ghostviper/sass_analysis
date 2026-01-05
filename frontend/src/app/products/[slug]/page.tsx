@@ -17,23 +17,22 @@ import {
   getCategoryByName,
 } from '@/lib/api'
 import { formatCurrency, formatDate, cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
-  faArrowLeft,
-  faExternalLink,
-  faCheck,
-  faXmark,
-  faLightbulb,
-  faTriangleExclamation,
-  faCircleCheck,
-  faBolt,
-  faChartLine,
-  faCode,
-  faDollarSign,
-  faUsers,
-  faCalendar,
-} from '@fortawesome/free-solid-svg-icons'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons'
+  ArrowLeft,
+  ExternalLink,
+  Check,
+  X,
+  Lightbulb,
+  AlertTriangle,
+  CheckCircle,
+  Zap,
+  TrendingUp,
+  Code,
+  DollarSign,
+  Users,
+  Calendar,
+  Twitter,
+} from 'lucide-react'
 import type {
   Startup,
   ComprehensiveAnalysis,
@@ -126,7 +125,7 @@ export default function ProductDetailPage() {
         href="/products"
         className="inline-flex items-center gap-2 text-content-muted hover:text-content-primary transition-colors"
       >
-        <FontAwesomeIcon icon={faArrowLeft} className="h-4 w-4" />
+        <ArrowLeft className="h-4 w-4" />
         返回产品列表
       </Link>
 
@@ -173,37 +172,37 @@ export default function ProductDetailPage() {
               label="产品成熟度"
               score={comprehensive.maturity_score}
               description="产品完成度与功能完整性"
-              icon={<FontAwesomeIcon icon={faChartLine} className="h-4 w-4" />}
+              icon={<TrendingUp className="h-4 w-4" />}
             />
             <ScoreCard
               label="定位清晰度"
               score={comprehensive.positioning_clarity}
               description="目标用户与价值主张清晰度"
-              icon={<FontAwesomeIcon icon={faUsers} className="h-4 w-4" />}
+              icon={<Users className="h-4 w-4" />}
             />
             <ScoreCard
               label="痛点锋利度"
               score={comprehensive.pain_point_sharpness}
               description="解决的问题是否足够痛"
-              icon={<FontAwesomeIcon icon={faLightbulb} className="h-4 w-4" />}
+              icon={<Lightbulb className="h-4 w-4" />}
             />
             <ScoreCard
               label="定价清晰度"
               score={comprehensive.pricing_clarity}
               description="价格体系是否清晰合理"
-              icon={<FontAwesomeIcon icon={faDollarSign} className="h-4 w-4" />}
+              icon={<DollarSign className="h-4 w-4" />}
             />
             <ScoreCard
               label="转化友好度"
               score={comprehensive.conversion_friendliness}
               description="用户转化路径是否顺畅"
-              icon={<FontAwesomeIcon icon={faCircleCheck} className="h-4 w-4" />}
+              icon={<CheckCircle className="h-4 w-4" />}
             />
             <ScoreCard
               label="可复制性"
               score={comprehensive.individual_replicability}
               description="独立开发者复制难度"
-              icon={<FontAwesomeIcon icon={faCode} className="h-4 w-4" />}
+              icon={<Code className="h-4 w-4" />}
             />
           </div>
         </section>
@@ -232,21 +231,21 @@ export default function ProductDetailPage() {
             <InsightCard
               title="优势"
               items={summary.strengths}
-              icon={faCircleCheck}
+              icon={CheckCircle}
               color="text-accent-success"
               bgColor="bg-accent-success/10"
             />
             <InsightCard
               title="风险"
               items={summary.risks}
-              icon={faTriangleExclamation}
+              icon={AlertTriangle}
               color="text-accent-warning"
               bgColor="bg-accent-warning/10"
             />
             <InsightCard
               title="建议"
               items={summary.recommendations}
-              icon={faLightbulb}
+              icon={Lightbulb}
               color="text-accent-primary"
               bgColor="bg-accent-primary/10"
             />
@@ -335,7 +334,7 @@ function ProductHeader({ product, category }: { product: Startup; category: Cate
                 rel="noopener noreferrer"
                 className="btn btn-secondary flex-shrink-0"
               >
-                <FontAwesomeIcon icon={faExternalLink} className="h-4 w-4" />
+                <ExternalLink className="h-4 w-4" />
                 访问网站
               </a>
             )}
@@ -352,7 +351,7 @@ function ProductHeader({ product, category }: { product: Startup; category: Cate
                 {formatCurrency(product.revenue_30d)}
               </div>
               <div className="text-sm text-content-muted flex items-center gap-1">
-                <FontAwesomeIcon icon={faDollarSign} className="h-3 w-3" />
+                <DollarSign className="h-3 w-3" />
                 月收入
               </div>
             </div>
@@ -363,7 +362,7 @@ function ProductHeader({ product, category }: { product: Startup; category: Cate
                   {product.twitter_followers.toLocaleString()}
                 </div>
                 <div className="text-sm text-content-muted flex items-center gap-1">
-                  <FontAwesomeIcon icon={faTwitter} className="h-3 w-3" />
+                  <Twitter className="h-3 w-3" />
                   关注者
                 </div>
               </div>
@@ -375,7 +374,7 @@ function ProductHeader({ product, category }: { product: Startup; category: Cate
                   {formatDate(product.founded_date)}
                 </div>
                 <div className="text-sm text-content-muted flex items-center gap-1">
-                  <FontAwesomeIcon icon={faCalendar} className="h-3 w-3" />
+                  <Calendar className="h-3 w-3" />
                   成立时间
                 </div>
               </div>
@@ -435,10 +434,11 @@ function SelectionAnalysisCard({ selection }: { selection: ProductSelectionAnaly
                 f.value ? 'bg-accent-success/10' : 'bg-background-tertiary'
               )}
             >
-              <FontAwesomeIcon
-                icon={f.value ? faCheck : faXmark}
-                className={cn('h-3.5 w-3.5', f.value ? 'text-accent-success' : 'text-content-muted')}
-              />
+              {f.value ? (
+                <Check className={cn('h-3.5 w-3.5', 'text-accent-success')} />
+              ) : (
+                <X className={cn('h-3.5 w-3.5', 'text-content-muted')} />
+              )}
               <span className={cn('text-sm', f.value ? 'text-content-primary' : 'text-content-muted')}>
                 {f.label}
               </span>
@@ -483,7 +483,7 @@ function ComboMatchCard({ selection }: { selection: ProductSelectionAnalysis }) 
         action={
           matchCount >= 2 ? (
             <Badge variant="success">
-              <FontAwesomeIcon icon={faBolt} className="h-3 w-3" />
+              <Zap className="h-3 w-3" />
               高度推荐
             </Badge>
           ) : matchCount >= 1 ? (
@@ -508,10 +508,11 @@ function ComboMatchCard({ selection }: { selection: ProductSelectionAnalysis }) 
                 'w-8 h-8 rounded-lg flex items-center justify-center',
                 combo.match ? 'bg-accent-success/20' : 'bg-surface'
               )}>
-                <FontAwesomeIcon
-                  icon={combo.match ? faCheck : faXmark}
-                  className={cn('h-4 w-4', combo.match ? 'text-accent-success' : 'text-content-muted')}
-                />
+                {combo.match ? (
+                  <Check className={cn('h-4 w-4', 'text-accent-success')} />
+                ) : (
+                  <X className={cn('h-4 w-4', 'text-content-muted')} />
+                )}
               </div>
               <div>
                 <div className={cn(
@@ -540,13 +541,13 @@ function ComboMatchCard({ selection }: { selection: ProductSelectionAnalysis }) 
 function InsightCard({
   title,
   items,
-  icon,
+  icon: Icon,
   color,
   bgColor,
 }: {
   title: string
   items: string[]
-  icon: any
+  icon: React.ComponentType<{ className?: string }>
   color: string
   bgColor: string
 }) {
@@ -554,7 +555,7 @@ function InsightCard({
     <Card className={cn('border-l-4', color.replace('text-', 'border-'))}>
       <div className="flex items-center gap-2 mb-4">
         <div className={cn('w-8 h-8 rounded-lg flex items-center justify-center', bgColor)}>
-          <FontAwesomeIcon icon={icon} className={cn('h-4 w-4', color)} />
+          <Icon className={cn('h-4 w-4', color)} />
         </div>
         <h3 className="font-medium text-content-primary">{title}</h3>
       </div>
@@ -687,7 +688,7 @@ function LandingAnalysisSection({ landing }: { landing: LandingPageAnalysis }) {
             <ul className="space-y-2">
               {landing.core_features.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-content-secondary">
-                  <FontAwesomeIcon icon={faCheck} className="mt-0.5 h-3 w-3 text-accent-success flex-shrink-0" />
+                  <Check className="mt-0.5 h-3 w-3 text-accent-success flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -703,7 +704,7 @@ function LandingAnalysisSection({ landing }: { landing: LandingPageAnalysis }) {
             <ul className="space-y-2">
               {landing.value_propositions.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-content-secondary">
-                  <FontAwesomeIcon icon={faLightbulb} className="mt-0.5 h-3 w-3 text-accent-warning flex-shrink-0" />
+                  <Lightbulb className="mt-0.5 h-3 w-3 text-accent-warning flex-shrink-0" />
                   {item}
                 </li>
               ))}
@@ -723,7 +724,7 @@ function LandingAnalysisSection({ landing }: { landing: LandingPageAnalysis }) {
               <ul className="space-y-2">
                 {landing.pain_points.map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-content-secondary">
-                    <FontAwesomeIcon icon={faTriangleExclamation} className="mt-0.5 h-3 w-3 text-accent-danger flex-shrink-0" />
+                    <AlertTriangle className="mt-0.5 h-3 w-3 text-accent-danger flex-shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -738,14 +739,14 @@ function LandingAnalysisSection({ landing }: { landing: LandingPageAnalysis }) {
                 'flex items-center gap-1.5 px-2 py-1 rounded text-xs',
                 landing.uses_before_after ? 'bg-accent-success/10 text-accent-success' : 'bg-background-tertiary text-content-muted'
               )}>
-                <FontAwesomeIcon icon={landing.uses_before_after ? faCheck : faXmark} className="h-3 w-3" />
+                {landing.uses_before_after ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
                 新旧对比
               </div>
               <div className={cn(
                 'flex items-center gap-1.5 px-2 py-1 rounded text-xs',
                 landing.uses_emotional_words ? 'bg-accent-success/10 text-accent-success' : 'bg-background-tertiary text-content-muted'
               )}>
-                <FontAwesomeIcon icon={landing.uses_emotional_words ? faCheck : faXmark} className="h-3 w-3" />
+                {landing.uses_emotional_words ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
                 情绪化表达
               </div>
             </div>
@@ -836,7 +837,7 @@ function LandingAnalysisSection({ landing }: { landing: LandingPageAnalysis }) {
               'flex items-center gap-2 p-2 rounded text-sm',
               landing.has_instant_value_demo ? 'bg-accent-success/10 text-accent-success' : 'bg-background-tertiary text-content-muted'
             )}>
-              <FontAwesomeIcon icon={landing.has_instant_value_demo ? faCheck : faXmark} className="h-3.5 w-3.5" />
+              {landing.has_instant_value_demo ? <Check className="h-3.5 w-3.5" /> : <X className="h-3.5 w-3.5" />}
               {landing.has_instant_value_demo ? '有即时价值体验' : '无即时价值体验'}
             </div>
           </div>
@@ -855,10 +856,7 @@ function DataSourceBadge({ label, available }: { label: string; available: boole
         ? 'bg-accent-success/10 text-accent-success'
         : 'bg-background-tertiary text-content-muted'
     )}>
-      <FontAwesomeIcon
-        icon={available ? faCheck : faXmark}
-        className="h-3 w-3"
-      />
+      {available ? <Check className="h-3 w-3" /> : <X className="h-3 w-3" />}
       {label}
     </span>
   )

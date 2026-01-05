@@ -1,8 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCheck, faRobot, faUser } from '@fortawesome/free-solid-svg-icons'
+import { Check, Bot, User } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 // 字体方案配置
@@ -219,7 +218,7 @@ export default function FontPreviewPage() {
               {/* 选中标记 */}
               {isSelected && (
                 <div className="absolute top-4 right-4 w-6 h-6 rounded-full bg-accent-primary flex items-center justify-center z-10">
-                  <FontAwesomeIcon icon={faCheck} className="h-3 w-3 text-white" />
+                  <Check className="h-3 w-3 text-white" />
                 </div>
               )}
 
@@ -248,7 +247,7 @@ export default function FontPreviewPage() {
                   >
                     {msg.role === 'assistant' && (
                       <div className="w-8 h-8 rounded-full bg-accent-primary/10 flex items-center justify-center flex-shrink-0">
-                        <FontAwesomeIcon icon={faRobot} className="h-4 w-4 text-accent-primary" />
+                        <Bot className="h-4 w-4 text-accent-primary" />
                       </div>
                     )}
                     <div
@@ -273,7 +272,7 @@ export default function FontPreviewPage() {
                     </div>
                     {msg.role === 'user' && (
                       <div className="w-8 h-8 rounded-full bg-accent-secondary/10 flex items-center justify-center flex-shrink-0">
-                        <FontAwesomeIcon icon={faUser} className="h-4 w-4 text-accent-secondary" />
+                        <User className="h-4 w-4 text-accent-secondary" />
                       </div>
                     )}
                   </div>

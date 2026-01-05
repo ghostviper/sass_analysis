@@ -1,12 +1,10 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
-import { faCheck } from '@fortawesome/free-solid-svg-icons'
+import { Check, LucideIcon } from 'lucide-react'
 
 interface QuickActionCardProps {
-  icon: IconDefinition
+  icon: LucideIcon
   title: string
   description: string
   isActive?: boolean
@@ -15,7 +13,7 @@ interface QuickActionCardProps {
 }
 
 export function QuickActionCard({
-  icon,
+  icon: Icon,
   title,
   description,
   isActive = false,
@@ -40,8 +38,7 @@ export function QuickActionCard({
             : 'bg-background-secondary'
         )}
       >
-        <FontAwesomeIcon
-          icon={icon}
+        <Icon
           className={cn(
             'h-4 w-4',
             isActive ? 'text-white' : 'text-content-muted'
@@ -61,7 +58,7 @@ export function QuickActionCard({
       </div>
       {isActive && (
         <div className="w-5 h-5 rounded-full bg-accent-primary flex items-center justify-center flex-shrink-0">
-          <FontAwesomeIcon icon={faCheck} className="h-3 w-3 text-white" />
+          <Check className="h-3 w-3 text-white" />
         </div>
       )}
     </button>

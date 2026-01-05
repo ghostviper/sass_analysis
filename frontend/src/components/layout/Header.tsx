@@ -3,11 +3,7 @@
 import { useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faMagnifyingGlass,
-  faBars,
-} from '@fortawesome/free-solid-svg-icons'
+import { Search, Menu } from 'lucide-react'
 import { ThemeSwitcher } from './ThemeSwitcher'
 import { LanguageSwitcher } from './LanguageSwitcher'
 import { useLocale } from '@/contexts/LocaleContext'
@@ -61,7 +57,7 @@ export function Header() {
               className="lg:hidden -ml-1 flex h-9 w-9 items-center justify-center rounded-lg text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
               onClick={openMobile}
             >
-              <FontAwesomeIcon icon={faBars} className="h-5 w-5" />
+              <Menu className="h-5 w-5" />
             </button>
 
             <div className="min-w-0">
@@ -76,14 +72,11 @@ export function Header() {
             {/* 搜索框 - 桌面端 */}
             <div className="hidden lg:block">
               <div className="relative">
-                <FontAwesomeIcon
-                  icon={faMagnifyingGlass}
-                  className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-content-muted"
-                />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-content-muted" />
                 <input
                   type="text"
                   placeholder={t('common.search')}
-                  className="h-9 w-56 rounded-lg border border-surface-border bg-background-secondary pl-9 pr-4 text-sm text-content-primary placeholder:text-content-muted focus:border-accent-primary/50 focus:outline-none focus:ring-1 focus:ring-accent-primary/30"
+                  className="h-9 w-56 rounded-xl border border-surface-border bg-background-secondary pl-9 pr-4 text-sm text-content-primary placeholder:text-content-muted focus:border-brand-500/50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-all duration-150"
                 />
               </div>
             </div>
@@ -94,7 +87,7 @@ export function Header() {
               className="lg:hidden flex h-9 w-9 items-center justify-center rounded-lg text-content-muted hover:bg-surface hover:text-content-primary transition-colors"
               onClick={() => setSearchOpen(true)}
             >
-              <FontAwesomeIcon icon={faMagnifyingGlass} className="h-4 w-4" />
+              <Search className="h-4 w-4" />
             </button>
 
             {/* 语言切换 */}
@@ -106,7 +99,7 @@ export function Header() {
             {/* 数据状态指示器 - 仅桌面端 */}
             <div className="hidden md:flex items-center gap-2 rounded-full bg-accent-success/10 px-3 py-1.5">
               <span className="h-1.5 w-1.5 rounded-full bg-accent-success animate-pulse" />
-              <span className="text-xs font-medium text-accent-success whitespace-nowrap tracking-wide">数据已同步</span>
+              <span className="text-xs font-medium text-accent-success whitespace-nowrap">数据已同步</span>
             </div>
           </div>
         </div>
@@ -119,22 +112,19 @@ export function Header() {
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setSearchOpen(false)}
           />
-          <div className="fixed left-4 right-4 top-4 rounded-xl bg-background-secondary border border-surface-border p-4 animate-slide-up">
+          <div className="fixed left-4 right-4 top-4 rounded-2xl bg-background-secondary border border-surface-border p-4 animate-fade-in-down shadow-xl">
             <div className="relative">
-              <FontAwesomeIcon
-                icon={faMagnifyingGlass}
-                className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-content-muted"
-              />
+              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-content-muted" />
               <input
                 type="text"
                 placeholder={t('common.search')}
                 autoFocus
-                className="h-12 w-full rounded-lg border border-surface-border bg-background pl-10 pr-4 text-base text-content-primary placeholder:text-content-muted focus:border-accent-primary/50 focus:outline-none focus:ring-1 focus:ring-accent-primary/30"
+                className="h-12 w-full rounded-xl border border-surface-border bg-background pl-10 pr-4 text-base text-content-primary placeholder:text-content-muted focus:border-brand-500/50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 transition-all duration-150"
               />
             </div>
             <button
               type="button"
-              className="mt-3 w-full rounded-lg bg-surface py-2 text-sm text-content-muted hover:bg-surface-hover transition-colors"
+              className="mt-3 w-full rounded-xl bg-surface py-2.5 text-sm font-medium text-content-muted hover:bg-surface-hover hover:text-content-secondary transition-colors"
               onClick={() => setSearchOpen(false)}
             >
               取消
