@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react'
 import { MetricsOverview, MetricsOverviewSkeleton } from '@/components/dashboard/MetricsOverview'
 import { OpportunityRanking, OpportunityRankingSkeleton } from '@/components/dashboard/OpportunityRanking'
 import { CategoryOverview, CategoryOverviewSkeleton, MarketTypeDistribution } from '@/components/dashboard/CategoryOverview'
+import { LeaderboardSwitcher } from '@/components/dashboard/LeaderboardSwitcher'
+import { DataDisclaimer } from '@/components/ui/DataDisclaimer'
 import { Card, CardHeader } from '@/components/ui/Card'
 import { useLocale } from '@/contexts/LocaleContext'
 import {
@@ -115,22 +117,13 @@ export default function DashboardPage() {
 
       {/* 主要内容区 */}
       <div className="grid lg:grid-cols-3 gap-6">
-        {/* 机会榜单 - 占 2 列 */}
+        {/* 多视角榜单 - 占 2 列 */}
         <div className="lg:col-span-2">
-          {loading ? (
-            <OpportunityRankingSkeleton />
-          ) : (
-            <OpportunityRanking
-              products={opportunities}
-              title={`🔥 ${t('dashboard.opportunityRanking')}`}
-              subtitle={t('dashboard.opportunitySubtitle')}
-              limit={5}
-            />
-          )}
+          <LeaderboardSwitcher limit={5} />
         </div>
 
         {/* 市场分布 */}
-        <div className="lg:sticky lg:top-20 lg:self-start">
+        <div className="lg:sticky lg:top-20 lg:self-start space-y-4">
           {loading ? (
             <Card className="animate-pulse">
               <div className="h-64 bg-surface-border rounded" />
@@ -138,8 +131,24 @@ export default function DashboardPage() {
           ) : (
             <MarketTypeDistribution categories={categories} />
           )}
+          {/* 数据说明 - 紧凑版 */}
+          <DataDisclaimer variant="compact" />
         </div>
       </div>
+
+      {/* 机会榜单 */}
+      <section>
+        {loading ? (
+          <OpportunityRankingSkeleton />
+        ) : (
+          <OpportunityRanking
+            products={opportunities}
+            title={`🔥 ${t('dashboard.opportunityRanking')}`}
+            subtitle={t('dashboard.opportunitySubtitle')}
+            limit={5}
+          />
+        )}
+      </section>
 
       {/* 赛道分析 */}
       <section>

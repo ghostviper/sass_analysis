@@ -2,7 +2,7 @@
 Product Analysis API - 选品分析接口
 """
 
-from typing import Optional
+from typing import Optional, List
 from fastapi import APIRouter, Depends, Query, HTTPException
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -11,6 +11,8 @@ from database.db import get_db
 from database.models import Startup, ProductSelectionAnalysis, ComprehensiveAnalysis
 from analysis.product_selector import ProductSelector
 from analysis.comprehensive import ComprehensiveAnalyzer
+from analysis.domain_knowledge import DomainKnowledge
+from analysis.leaderboards import LeaderboardService, LEADERBOARDS
 
 router = APIRouter(prefix="/analysis/product", tags=["Product Analysis"])
 
@@ -195,9 +197,25 @@ async def get_product_analysis(
     existing_analysis = analysis_result.scalar_one_or_none()
 
     if existing_analysis:
+        # 获取标签和洞察
+        tags = existing_analysis.to_tags_dict()
+        domain_insights = DomainKnowledge.get_insights(tags)
+        summary_points = DomainKnowledge.get_summary_points(tags)
+        risk_assessment = DomainKnowledge.get_risk_assessment(tags)
+
         return {
             "startup": startup.to_dict(),
             "analysis": existing_analysis.to_dict(),
+            # 新增：结构化输出
+            "data_layer": {
+                "tags": tags,
+                "scores": existing_analysis.to_scores_dict(),
+            },
+            "display_layer": {
+                "summary_points": summary_points,
+                "domain_insights": domain_insights,
+                "risk_assessment": risk_assessment,
+            }
         }
 
     # 生成新分析
@@ -207,9 +225,25 @@ async def get_product_analysis(
     # 保存分析
     analysis = await selector.save_analysis(score)
 
+    # 获取标签和洞察
+    tags = analysis.to_tags_dict()
+    domain_insights = DomainKnowledge.get_insights(tags)
+    summary_points = DomainKnowledge.get_summary_points(tags)
+    risk_assessment = DomainKnowledge.get_risk_assessment(tags)
+
     return {
         "startup": startup.to_dict(),
         "analysis": analysis.to_dict(),
+        # 新增：结构化输出
+        "data_layer": {
+            "tags": tags,
+            "scores": analysis.to_scores_dict(),
+        },
+        "display_layer": {
+            "summary_points": summary_points,
+            "domain_insights": domain_insights,
+            "risk_assessment": risk_assessment,
+        }
     }
 
 
@@ -265,4 +299,123 @@ async def analyze_comprehensive(
         "message": "综合分析完成",
         "startup": startup.to_dict(),
         "analysis": analysis.to_dict(),
+    }
+
+
+# ========== 榜单相关接口 ==========
+
+@router.get("/leaderboards/list")
+async def get_leaderboards():
+    """获取所有榜单列表"""
+    return {
+        "data": LeaderboardService.get_all_leaderboards(),
+        "total": len(LEADERBOARDS)
+    }
+
+
+@router.get("/leaderboards/stats")
+async def get_leaderboards_stats(
+    db: AsyncSession = Depends(get_db),
+):
+    """获取所有榜单的统计信息"""
+    service = LeaderboardService(db)
+    stats = await service.get_leaderboard_stats()
+    return {
+        "data": stats
+    }
+
+
+@router.get("/leaderboards/{leaderboard_id}")
+async def get_leaderboard_products(
+    leaderboard_id: str,
+    page: int = Query(1, ge=1),
+    page_size: int = Query(20, ge=1, le=100),
+    db: AsyncSession = Depends(get_db),
+):
+    """获取指定榜单的产品列表"""
+    service = LeaderboardService(db)
+    result = await service.get_leaderboard_products(
+        leaderboard_id=leaderboard_id,
+        page=page,
+        page_size=page_size
+    )
+
+    if "error" in result:
+        raise HTTPException(status_code=404, detail=result["error"])
+
+    return result
+
+
+# ========== 标签相关接口 ==========
+
+@router.get("/{slug}/tags")
+async def get_product_tags(
+    slug: str,
+    db: AsyncSession = Depends(get_db),
+):
+    """获取产品标签数据（AI友好格式）"""
+    # 获取Startup
+    result = await db.execute(
+        select(Startup).where(Startup.slug == slug)
+    )
+    startup = result.scalar_one_or_none()
+
+    if not startup:
+        raise HTTPException(status_code=404, detail="产品未找到")
+
+    # 获取分析
+    analysis_result = await db.execute(
+        select(ProductSelectionAnalysis)
+        .where(ProductSelectionAnalysis.startup_id == startup.id)
+    )
+    analysis = analysis_result.scalar_one_or_none()
+
+    if not analysis:
+        # 生成新分析
+        selector = ProductSelector(db)
+        score = await selector.analyze_product(startup)
+        analysis = await selector.save_analysis(score)
+
+    return {
+        "slug": slug,
+        "tags": analysis.to_tags_dict(),
+        "scores": analysis.to_scores_dict(),
+    }
+
+
+@router.get("/{slug}/insights")
+async def get_product_insights(
+    slug: str,
+    db: AsyncSession = Depends(get_db),
+):
+    """获取产品的确定性洞察"""
+    # 获取Startup
+    result = await db.execute(
+        select(Startup).where(Startup.slug == slug)
+    )
+    startup = result.scalar_one_or_none()
+
+    if not startup:
+        raise HTTPException(status_code=404, detail="产品未找到")
+
+    # 获取分析
+    analysis_result = await db.execute(
+        select(ProductSelectionAnalysis)
+        .where(ProductSelectionAnalysis.startup_id == startup.id)
+    )
+    analysis = analysis_result.scalar_one_or_none()
+
+    if not analysis:
+        # 生成新分析
+        selector = ProductSelector(db)
+        score = await selector.analyze_product(startup)
+        analysis = await selector.save_analysis(score)
+
+    tags = analysis.to_tags_dict()
+
+    return {
+        "slug": slug,
+        "insights": DomainKnowledge.get_insights(tags),
+        "summary_points": DomainKnowledge.get_summary_points(tags),
+        "risk_assessment": DomainKnowledge.get_risk_assessment(tags),
     }

@@ -49,16 +49,24 @@ interface CardHeaderProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string
   subtitle?: string
   action?: React.ReactNode
+  icon?: React.ReactNode
 }
 
-export function CardHeader({ title, subtitle, action, className, ...props }: CardHeaderProps) {
+export function CardHeader({ title, subtitle, action, icon, className, ...props }: CardHeaderProps) {
   return (
     <div className={cn('flex items-start justify-between mb-4', className)} {...props}>
-      <div>
-        <h3 className="text-heading">{title}</h3>
-        {subtitle && (
-          <p className="text-caption mt-1">{subtitle}</p>
+      <div className="flex items-start gap-2.5">
+        {icon && (
+          <div className="flex-shrink-0 mt-0.5">
+            {icon}
+          </div>
         )}
+        <div>
+          <h3 className="text-heading">{title}</h3>
+          {subtitle && (
+            <p className="text-caption mt-1">{subtitle}</p>
+          )}
+        </div>
       </div>
       {action && <div>{action}</div>}
     </div>

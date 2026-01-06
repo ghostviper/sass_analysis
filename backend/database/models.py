@@ -246,6 +246,7 @@ class ProductSelectionAnalysis(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     startup_id = Column(Integer, ForeignKey("startups.id"), nullable=False, unique=True, index=True)
 
+    # ========== 原有字段 ==========
     # 产品驱动型指标
     is_product_driven = Column(Boolean, default=False)  # 产品驱动型标记
     ip_dependency_score = Column(Float, default=5.0)  # 0-10, IP依赖度，越低越好
@@ -277,6 +278,34 @@ class ProductSelectionAnalysis(Base):
     has_follower_data = Column(Boolean, default=True)
     data_quality_notes = Column(String(255), nullable=True)
 
+    # ========== 新增标签字段 (v2) ==========
+
+    # 【收入验证维度】
+    revenue_tier = Column(String(20), nullable=True)  # micro(<$500) / small($500-2K) / medium($2K-10K) / large(>$10K)
+    revenue_follower_ratio_level = Column(String(20), nullable=True)  # high(>2) / medium(0.5-2) / low(<0.5)
+
+    # 【增长驱动维度】
+    growth_driver = Column(String(20), nullable=True)  # product_driven / ip_driven / content_driven / community_driven
+
+    # 【技术特征维度】
+    ai_dependency_level = Column(String(20), nullable=True)  # none / light / heavy
+    has_realtime_feature = Column(Boolean, nullable=True)  # 是否有实时功能
+    is_data_intensive = Column(Boolean, nullable=True)  # 是否数据密集型
+    has_compliance_requirement = Column(Boolean, nullable=True)  # 是否有合规要求
+
+    # 【商业模式维度】
+    pricing_model = Column(String(20), nullable=True)  # subscription / one_time / usage / freemium
+    target_customer = Column(String(20), nullable=True)  # b2c / b2b_smb / b2b_enterprise / b2d
+    market_scope = Column(String(20), nullable=True)  # horizontal / vertical
+
+    # 【可复制性维度】
+    feature_complexity = Column(String(20), nullable=True)  # simple / moderate / complex
+    moat_type = Column(String(100), nullable=True)  # none / data / network / brand / tech (逗号分隔多选)
+    startup_cost_level = Column(String(20), nullable=True)  # low(<$100) / medium($100-1K) / high(>$1K)
+
+    # 【生命周期维度】
+    product_stage = Column(String(20), nullable=True)  # early(<6月) / growth(6-24月) / mature(>24月)
+
     analyzed_at = Column(DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -286,6 +315,7 @@ class ProductSelectionAnalysis(Base):
         return {
             "id": self.id,
             "startup_id": self.startup_id,
+            # 原有字段
             "is_product_driven": self.is_product_driven,
             "ip_dependency_score": self.ip_dependency_score,
             "follower_revenue_ratio": self.follower_revenue_ratio,
@@ -305,7 +335,52 @@ class ProductSelectionAnalysis(Base):
             "individual_dev_suitability": self.individual_dev_suitability,
             "has_follower_data": self.has_follower_data,
             "data_quality_notes": self.data_quality_notes,
+            # 新增标签字段 (v2)
+            "revenue_tier": self.revenue_tier,
+            "revenue_follower_ratio_level": self.revenue_follower_ratio_level,
+            "growth_driver": self.growth_driver,
+            "ai_dependency_level": self.ai_dependency_level,
+            "has_realtime_feature": self.has_realtime_feature,
+            "is_data_intensive": self.is_data_intensive,
+            "has_compliance_requirement": self.has_compliance_requirement,
+            "pricing_model": self.pricing_model,
+            "target_customer": self.target_customer,
+            "market_scope": self.market_scope,
+            "feature_complexity": self.feature_complexity,
+            "moat_type": self.moat_type,
+            "startup_cost_level": self.startup_cost_level,
+            "product_stage": self.product_stage,
             "analyzed_at": self.analyzed_at.isoformat() if self.analyzed_at else None,
+        }
+
+    def to_tags_dict(self):
+        """返回纯标签数据（AI友好格式）"""
+        return {
+            "revenue_tier": self.revenue_tier,
+            "revenue_follower_ratio_level": self.revenue_follower_ratio_level,
+            "growth_driver": self.growth_driver,
+            "ai_dependency_level": self.ai_dependency_level,
+            "has_realtime_feature": self.has_realtime_feature,
+            "is_data_intensive": self.is_data_intensive,
+            "has_compliance_requirement": self.has_compliance_requirement,
+            "pricing_model": self.pricing_model,
+            "target_customer": self.target_customer,
+            "market_scope": self.market_scope,
+            "feature_complexity": self.feature_complexity,
+            "moat_type": self.moat_type,
+            "startup_cost_level": self.startup_cost_level,
+            "product_stage": self.product_stage,
+            "tech_complexity_level": self.tech_complexity_level,
+            "maintenance_cost_level": self.maintenance_cost_level,
+        }
+
+    def to_scores_dict(self):
+        """返回评分数据"""
+        return {
+            "individual_dev_suitability": self.individual_dev_suitability,
+            "ip_dependency_score": self.ip_dependency_score,
+            "feature_simplicity_score": self.feature_simplicity_score,
+            "follower_revenue_ratio": self.follower_revenue_ratio,
         }
 
 

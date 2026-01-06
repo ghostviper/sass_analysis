@@ -285,5 +285,111 @@
     "concentrated": "集中市场",
     "red_ocean": "红海市场",
     "weak_demand": "弱需求市场"
+  },
+  "tags": {
+    "revenue_tier": {
+      "label": "收入规模",
+      "micro": "微型 (<$500)",
+      "small": "小型 ($500-2K)",
+      "medium": "中型 ($2K-10K)",
+      "large": "大型 (>$10K)"
+    },
+    "tech_complexity_level": {
+      "label": "技术门槛",
+      "low": "低门槛",
+      "medium": "中等",
+      "high": "高门槛"
+    },
+    "ai_dependency_level": {
+      "label": "AI依赖",
+      "none": "不依赖AI",
+      "light": "轻度使用",
+      "heavy": "核心依赖"
+    },
+    "target_customer": {
+      "label": "目标客户",
+      "b2c": "个人消费者",
+      "b2b_smb": "中小企业",
+      "b2b_enterprise": "大企业",
+      "b2d": "开发者"
+    },
+    "pricing_model": {
+      "label": "定价模式",
+      "subscription": "订阅制",
+      "one_time": "一次性",
+      "usage": "按量付费",
+      "freemium": "免费增值"
+    },
+    "feature_complexity": {
+      "label": "功能复杂度",
+      "simple": "简单",
+      "moderate": "中等",
+      "complex": "复杂"
+    },
+    "growth_driver": {
+      "label": "增长驱动",
+      "product_driven": "产品驱动",
+      "ip_driven": "IP驱动",
+      "content_driven": "内容驱动",
+      "community_driven": "社区驱动"
+    },
+    "product_stage": {
+      "label": "产品阶段",
+      "early": "早期 (<6月)",
+      "growth": "成长期 (6-24月)",
+      "mature": "成熟期 (>24月)"
+    },
+    "startup_cost_level": {
+      "label": "启动成本",
+      "low": "低 (<$100)",
+      "medium": "中 ($100-1K)",
+      "high": "高 (>$1K)"
+    },
+    "market_scope": {
+      "label": "市场类型",
+      "horizontal": "通用市场",
+      "vertical": "垂直市场"
+    }
+  },
+  "leaderboards": {
+    "title": "多视角榜单",
+    "subtitle": "根据不同维度筛选产品",
+    "revenue_verified": "收入验证榜",
+    "quick_start": "快速启动榜",
+    "small_beautiful": "小而美榜",
+    "emerging": "新兴机会榜",
+    "low_risk": "低风险榜",
+    "product_driven": "产品驱动榜",
+    "b2d_tools": "开发者工具榜",
+    "no_ai": "非AI产品榜"
+  },
+  "insights": {
+    "title": "确定性洞察",
+    "riskAssessment": "风险评估",
+    "keyAdvantages": "关键优势",
+    "keyRisks": "关键风险",
+    "advantages": "优势",
+    "risks": "风险",
+    "highConfidence": "高置信度",
+    "source": "来源",
+    "moreInsights": "更多洞察"
+  },
+  "dataInfo": {
+    "title": "数据说明",
+    "dataSource": "数据来源",
+    "products": "产品数",
+    "categories": "赛道数",
+    "withRevenue": "有收入数据",
+    "analyzed": "已分析",
+    "limitations": "数据局限性",
+    "dataUpdated": "数据更新",
+    "analysisUpdated": "分析更新"
+  },
+  "filter": {
+    "title": "多维度筛选",
+    "clearAll": "清除全部",
+    "clear": "清除",
+    "apply": "确定",
+    "filter": "筛选"
   }
 }

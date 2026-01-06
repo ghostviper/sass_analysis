@@ -6,7 +6,8 @@ import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Badge, MarketTypeBadge, ComplexityBadge } from '@/components/ui/Badge'
 import { ProductLogo } from '@/components/ui/ProductLogo'
-import { getStartups, getOpportunityProducts, getCategoryAnalysis, getCountries, type Country, type SortField, type SortOrder } from '@/lib/api'
+import { CompactFilter } from '@/components/filters/MultiDimensionFilter'
+import { getStartups, getOpportunityProducts, getCategoryAnalysis, getCountries, FILTER_DIMENSIONS, type Country, type SortField, type SortOrder } from '@/lib/api'
 import { formatCurrency, cn } from '@/lib/utils'
 import { useLocale } from '@/contexts/LocaleContext'
 import {
@@ -29,6 +30,10 @@ import type { Startup, OpportunityProduct, CategoryAnalysis } from '@/types'
 
 type ViewMode = 'all' | 'opportunities'
 type LayoutMode = 'grid' | 'list'
+
+interface TagFilters {
+  [key: string]: string[]
+}
 
 export default function ProductsPage() {
   return (
@@ -59,6 +64,7 @@ function ProductsContent() {
   const [selectedCountry, setSelectedCountry] = useState<string>('all')
   const [sortBy, setSortBy] = useState<SortField>('revenue_30d')
   const [sortOrder, setSortOrder] = useState<SortOrder>('desc')
+  const [tagFilters, setTagFilters] = useState<TagFilters>({})
   const pageSize = 20
 
   useEffect(() => {
@@ -80,6 +86,14 @@ function ProductsContent() {
         setOpportunities(data)
         setTotal(data.length)
       } else {
+        // 构建筛选参数
+        const filterParams: Record<string, string[]> = {}
+        Object.entries(tagFilters).forEach(([key, values]) => {
+          if (values && values.length > 0) {
+            filterParams[key] = values
+          }
+        })
+
         const data = await getStartups({
           page,
           page_size: pageSize,
@@ -88,6 +102,7 @@ function ProductsContent() {
           search: search || undefined,
           sort_by: sortBy,
           sort_order: sortOrder,
+          ...filterParams,
         })
         setProducts(data.items)
         setTotal(data.total)
@@ -97,7 +112,7 @@ function ProductsContent() {
     } finally {
       setLoading(false)
     }
-  }, [viewMode, page, selectedCategory, selectedCountry, search, sortBy, sortOrder])
+  }, [viewMode, page, selectedCategory, selectedCountry, search, sortBy, sortOrder, tagFilters])
 
   useEffect(() => {
     fetchProducts()
@@ -105,7 +120,7 @@ function ProductsContent() {
 
   useEffect(() => {
     setPage(1)
-  }, [viewMode, selectedCategory, selectedCountry, search, sortBy, sortOrder])
+  }, [viewMode, selectedCategory, selectedCountry, search, sortBy, sortOrder, tagFilters])
 
   const totalPages = Math.ceil(total / pageSize)
 
@@ -273,6 +288,13 @@ function ProductsContent() {
                 className="input pl-10 py-1.5 text-sm"
               />
             </div>
+
+            {/* 高级筛选 */}
+            <CompactFilter
+              dimensions={FILTER_DIMENSIONS}
+              value={tagFilters}
+              onChange={setTagFilters}
+            />
           </>
         )}
 

@@ -285,5 +285,111 @@
     "concentrated": "Concentrated",
     "red_ocean": "Red Ocean",
     "weak_demand": "Weak Demand"
+  },
+  "tags": {
+    "revenue_tier": {
+      "label": "Revenue Tier",
+      "micro": "Micro (<$500)",
+      "small": "Small ($500-2K)",
+      "medium": "Medium ($2K-10K)",
+      "large": "Large (>$10K)"
+    },
+    "tech_complexity_level": {
+      "label": "Tech Complexity",
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "ai_dependency_level": {
+      "label": "AI Dependency",
+      "none": "None",
+      "light": "Light",
+      "heavy": "Heavy"
+    },
+    "target_customer": {
+      "label": "Target Customer",
+      "b2c": "B2C",
+      "b2b_smb": "B2B SMB",
+      "b2b_enterprise": "B2B Enterprise",
+      "b2d": "B2D (Developers)"
+    },
+    "pricing_model": {
+      "label": "Pricing Model",
+      "subscription": "Subscription",
+      "one_time": "One-time",
+      "usage": "Usage-based",
+      "freemium": "Freemium"
+    },
+    "feature_complexity": {
+      "label": "Feature Complexity",
+      "simple": "Simple",
+      "moderate": "Moderate",
+      "complex": "Complex"
+    },
+    "growth_driver": {
+      "label": "Growth Driver",
+      "product_driven": "Product Driven",
+      "ip_driven": "IP Driven",
+      "content_driven": "Content Driven",
+      "community_driven": "Community Driven"
+    },
+    "product_stage": {
+      "label": "Product Stage",
+      "early": "Early (<6mo)",
+      "growth": "Growth (6-24mo)",
+      "mature": "Mature (>24mo)"
+    },
+    "startup_cost_level": {
+      "label": "Startup Cost",
+      "low": "Low (<$100)",
+      "medium": "Medium ($100-1K)",
+      "high": "High (>$1K)"
+    },
+    "market_scope": {
+      "label": "Market Scope",
+      "horizontal": "Horizontal",
+      "vertical": "Vertical"
+    }
+  },
+  "leaderboards": {
+    "title": "Multi-perspective Rankings",
+    "subtitle": "Filter products by different dimensions",
+    "revenue_verified": "Revenue Verified",
+    "quick_start": "Quick Start",
+    "small_beautiful": "Small & Beautiful",
+    "emerging": "Emerging Opportunities",
+    "low_risk": "Low Risk",
+    "product_driven": "Product Driven",
+    "b2d_tools": "Developer Tools",
+    "no_ai": "Non-AI Products"
+  },
+  "insights": {
+    "title": "Domain Insights",
+    "riskAssessment": "Risk Assessment",
+    "keyAdvantages": "Key Advantages",
+    "keyRisks": "Key Risks",
+    "advantages": "advantages",
+    "risks": "risks",
+    "highConfidence": "High Confidence",
+    "source": "Source",
+    "moreInsights": "more insights"
+  },
+  "dataInfo": {
+    "title": "Data Information",
+    "dataSource": "Data Source",
+    "products": "Products",
+    "categories": "Categories",
+    "withRevenue": "With Revenue",
+    "analyzed": "Analyzed",
+    "limitations": "Limitations",
+    "dataUpdated": "Data Updated",
+    "analysisUpdated": "Analysis Updated"
+  },
+  "filter": {
+    "title": "Multi-dimension Filter",
+    "clearAll": "Clear All",
+    "clear": "Clear",
+    "apply": "Apply",
+    "filter": "Filter"
   }
 }

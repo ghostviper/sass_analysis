@@ -27,7 +27,10 @@
       "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && dir src\\\\components\\\\ui\\\\Card.tsx\")",
       "mcp__context7__resolve-library-id",
       "mcp__context7__get-library-docs",
-      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && type package.json | findstr streamdown\")"
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && type package.json | findstr streamdown\")",
+      "Bash(git -C \"D:\\\\project\\\\sass_analysis\" log --all --oneline)",
+      "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\backend && dir /b *.py\")",
+      "Bash(git -C \"D:\\\\project\\\\sass_analysis\" log --oneline -20 -- \"frontend/src/app/products/[slug]/page.tsx\")"
     ]
   }
 }

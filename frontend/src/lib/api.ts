@@ -38,7 +38,7 @@ export interface Country {
 export type SortField = 'revenue_30d' | 'name' | 'scraped_at'
 export type SortOrder = 'asc' | 'desc'
 
-export async function getStartups(params?: {
+export interface StartupFilters {
   page?: number
   page_size?: number
   category?: string
@@ -46,7 +46,20 @@ export async function getStartups(params?: {
   search?: string
   sort_by?: SortField
   sort_order?: SortOrder
-}): Promise<{ items: Startup[]; total: number }> {
+  // 多维度筛选
+  revenue_tier?: string[]
+  tech_complexity_level?: string[]
+  ai_dependency_level?: string[]
+  target_customer?: string[]
+  pricing_model?: string[]
+  feature_complexity?: string[]
+  growth_driver?: string[]
+  product_stage?: string[]
+  startup_cost_level?: string[]
+  market_scope?: string[]
+}
+
+export async function getStartups(params?: StartupFilters): Promise<{ items: Startup[]; total: number }> {
   const searchParams = new URLSearchParams()
   if (params?.page) searchParams.set('page', params.page.toString())
   if (params?.page_size) searchParams.set('limit', params.page_size.toString())
@@ -55,6 +68,20 @@ export async function getStartups(params?: {
   if (params?.search) searchParams.set('search', params.search)
   if (params?.sort_by) searchParams.set('sort_by', params.sort_by)
   if (params?.sort_order) searchParams.set('sort_order', params.sort_order)
+
+  // 多维度筛选参数
+  const tagFilters = [
+    'revenue_tier', 'tech_complexity_level', 'ai_dependency_level',
+    'target_customer', 'pricing_model', 'feature_complexity',
+    'growth_driver', 'product_stage', 'startup_cost_level', 'market_scope'
+  ] as const
+
+  for (const key of tagFilters) {
+    const values = params?.[key]
+    if (values && values.length > 0) {
+      searchParams.set(key, values.join(','))
+    }
+  }
 
   const query = searchParams.toString()
   const response = await fetchApi<{ data: Startup[]; pagination: { total: number } }>(
@@ -280,4 +307,278 @@ export interface LeaderboardStats {
 
 export async function getLeaderboardStats(): Promise<LeaderboardStats> {
   return fetchApi<LeaderboardStats>('/leaderboard/stats')
+}
+
+// ============ Tag Distribution API ============
+
+export interface TagDistributionItem {
+  value: string
+  count: number
+  percentage: number
+}
+
+export interface TagDistribution {
+  [key: string]: TagDistributionItem[]
+}
+
+export async function getTagDistribution(): Promise<TagDistribution> {
+  try {
+    const response = await fetchApi<{ distribution: TagDistribution }>('/analytics/tag-distribution')
+    return response.distribution || {}
+  } catch (error) {
+    console.error('Failed to fetch tag distribution:', error)
+    return {}
+  }
+}
+
+// ============ Filter Dimensions (静态定义) ============
+
+import type { FilterDimensions } from '@/types'
+
+export const FILTER_DIMENSIONS: FilterDimensions = {
+  revenue_tier: {
+    key: 'revenue_tier',
+    label: '收入层级',
+    label_en: 'Revenue Tier',
+    options: [
+      { value: 'micro', label: '微型 (<$1K)', label_en: 'Micro (<$1K)' },
+      { value: 'small', label: '小型 ($1K-$10K)', label_en: 'Small ($1K-$10K)' },
+      { value: 'medium', label: '中型 ($10K-$50K)', label_en: 'Medium ($10K-$50K)' },
+      { value: 'large', label: '大型 ($50K-$100K)', label_en: 'Large ($50K-$100K)' },
+      { value: 'enterprise', label: '企业级 (>$100K)', label_en: 'Enterprise (>$100K)' },
+    ],
+  },
+  tech_complexity_level: {
+    key: 'tech_complexity_level',
+    label: '技术复杂度',
+    label_en: 'Tech Complexity',
+    options: [
+      { value: 'low', label: '低', label_en: 'Low' },
+      { value: 'medium', label: '中', label_en: 'Medium' },
+      { value: 'high', label: '高', label_en: 'High' },
+    ],
+  },
+  ai_dependency_level: {
+    key: 'ai_dependency_level',
+    label: 'AI 依赖程度',
+    label_en: 'AI Dependency',
+    options: [
+      { value: 'none', label: '无依赖', label_en: 'None' },
+      { value: 'light', label: '轻度依赖', label_en: 'Light' },
+      { value: 'heavy', label: '重度依赖', label_en: 'Heavy' },
+      { value: 'core', label: '核心依赖', label_en: 'Core' },
+    ],
+  },
+  target_customer: {
+    key: 'target_customer',
+    label: '目标客户',
+    label_en: 'Target Customer',
+    options: [
+      { value: 'b2c', label: '个人消费者', label_en: 'B2C' },
+      { value: 'b2b_smb', label: '中小企业', label_en: 'B2B SMB' },
+      { value: 'b2b_enterprise', label: '大型企业', label_en: 'B2B Enterprise' },
+      { value: 'b2b2c', label: 'B2B2C', label_en: 'B2B2C' },
+    ],
+  },
+  pricing_model: {
+    key: 'pricing_model',
+    label: '定价模式',
+    label_en: 'Pricing Model',
+    options: [
+      { value: 'freemium', label: '免费增值', label_en: 'Freemium' },
+      { value: 'subscription', label: '订阅制', label_en: 'Subscription' },
+      { value: 'one_time', label: '一次性付费', label_en: 'One-time' },
+      { value: 'usage_based', label: '按量计费', label_en: 'Usage-based' },
+      { value: 'hybrid', label: '混合模式', label_en: 'Hybrid' },
+    ],
+  },
+  feature_complexity: {
+    key: 'feature_complexity',
+    label: '功能复杂度',
+    label_en: 'Feature Complexity',
+    options: [
+      { value: 'simple', label: '简单', label_en: 'Simple' },
+      { value: 'moderate', label: '适中', label_en: 'Moderate' },
+      { value: 'complex', label: '复杂', label_en: 'Complex' },
+    ],
+  },
+  growth_driver: {
+    key: 'growth_driver',
+    label: '增长驱动',
+    label_en: 'Growth Driver',
+    options: [
+      { value: 'product_led', label: '产品驱动', label_en: 'Product-led' },
+      { value: 'sales_led', label: '销售驱动', label_en: 'Sales-led' },
+      { value: 'marketing_led', label: '营销驱动', label_en: 'Marketing-led' },
+      { value: 'ip_driven', label: 'IP驱动', label_en: 'IP-driven' },
+    ],
+  },
+  product_stage: {
+    key: 'product_stage',
+    label: '产品阶段',
+    label_en: 'Product Stage',
+    options: [
+      { value: 'early', label: '早期', label_en: 'Early' },
+      { value: 'growth', label: '成长期', label_en: 'Growth' },
+      { value: 'mature', label: '成熟期', label_en: 'Mature' },
+    ],
+  },
+  startup_cost_level: {
+    key: 'startup_cost_level',
+    label: '启动成本',
+    label_en: 'Startup Cost',
+    options: [
+      { value: 'low', label: '低', label_en: 'Low' },
+      { value: 'medium', label: '中', label_en: 'Medium' },
+      { value: 'high', label: '高', label_en: 'High' },
+    ],
+  },
+  market_scope: {
+    key: 'market_scope',
+    label: '市场范围',
+    label_en: 'Market Scope',
+    options: [
+      { value: 'niche', label: '细分市场', label_en: 'Niche' },
+      { value: 'vertical', label: '垂直市场', label_en: 'Vertical' },
+      { value: 'horizontal', label: '横向市场', label_en: 'Horizontal' },
+      { value: 'global', label: '全球市场', label_en: 'Global' },
+    ],
+  },
+}
+
+// ============ Product Insights API ============
+
+import type { DomainInsight, SummaryPoint, RiskAssessment } from '@/types'
+
+export interface ProductInsightsResponse {
+  insights: DomainInsight[]
+  summary_points: SummaryPoint[]
+  risk_assessment: RiskAssessment
+}
+
+export async function getProductInsights(slug: string): Promise<ProductInsightsResponse | null> {
+  try {
+    const response = await fetchApi<ProductInsightsResponse>(`/analysis/product/${slug}/insights`)
+    return response
+  } catch (error) {
+    console.error('Failed to fetch product insights:', error)
+    return null
+  }
+}
+
+// ============ Product Leaderboards API ============
+
+export interface ProductLeaderboard {
+  id: string
+  name: string
+  name_en: string
+  description: string
+  description_en: string
+  icon: string
+}
+
+export interface ProductLeaderboardStats {
+  [key: string]: {
+    id: string
+    name: string
+    name_en: string
+    icon: string
+    count: number
+  }
+}
+
+export interface LeaderboardProduct {
+  id: number
+  name: string
+  slug: string
+  description: string
+  category: string
+  website_url: string
+  logo_url: string | null
+  revenue_30d: number
+  mrr: number
+  growth_rate: number
+  country: string
+  country_code: string
+  analysis?: any
+  tags?: any
+}
+
+export interface LeaderboardProductsResponse {
+  leaderboard: ProductLeaderboard
+  products: LeaderboardProduct[]
+  pagination: {
+    page: number
+    page_size: number
+    total: number
+    total_pages: number
+  }
+}
+
+export async function getProductLeaderboards(): Promise<ProductLeaderboard[]> {
+  try {
+    const response = await fetchApi<{ data: ProductLeaderboard[]; total: number }>(
+      '/analysis/product/leaderboards/list'
+    )
+    return response.data || []
+  } catch (error) {
+    console.error('Failed to fetch product leaderboards:', error)
+    return []
+  }
+}
+
+export async function getProductLeaderboardStats(): Promise<ProductLeaderboardStats> {
+  try {
+    const response = await fetchApi<{ data: ProductLeaderboardStats }>(
+      '/analysis/product/leaderboards/stats'
+    )
+    return response.data || {}
+  } catch (error) {
+    console.error('Failed to fetch leaderboard stats:', error)
+    return {}
+  }
+}
+
+export async function getLeaderboardProducts(
+  leaderboardId: string,
+  params?: { page?: number; page_size?: number }
+): Promise<LeaderboardProductsResponse | null> {
+  try {
+    const searchParams = new URLSearchParams()
+    if (params?.page) searchParams.set('page', params.page.toString())
+    if (params?.page_size) searchParams.set('page_size', params.page_size.toString())
+
+    const query = searchParams.toString()
+    const response = await fetchApi<LeaderboardProductsResponse>(
+      `/analysis/product/leaderboards/${leaderboardId}${query ? `?${query}` : ''}`
+    )
+    return response
+  } catch (error) {
+    console.error('Failed to fetch leaderboard products:', error)
+    return null
+  }
+}
+
+// ============ Data Info API ============
+
+export interface DataInfo {
+  data_source: string
+  data_source_url: string
+  total_products: number
+  total_categories: number
+  total_countries: number
+  products_with_revenue: number
+  analyzed_products: number
+  last_crawl_time: string | null
+  last_analysis_time: string | null
+}
+
+export async function getDataInfo(): Promise<DataInfo | null> {
+  try {
+    const response = await fetchApi<DataInfo>('/analytics/data-info')
+    return response
+  } catch (error) {
+    console.error('Failed to fetch data info:', error)
+    return null
+  }
 }

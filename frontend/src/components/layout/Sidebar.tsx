@@ -50,7 +50,7 @@ export function Sidebar() {
     { name: t('nav.dashboard'), href: '/', icon: LayoutDashboard },
     { name: t('nav.categories'), href: '/categories', icon: Layers },
     { name: t('nav.products'), href: '/products', icon: Package },
-    { name: t('nav.leaderboard'), href: '/leaderboard', icon: Trophy, isNew: true },
+    { name: t('nav.leaderboard'), href: '/leaderboard', icon: Trophy },
     { name: t('nav.assistant'), href: '/assistant', icon: Bot },
   ]
 
