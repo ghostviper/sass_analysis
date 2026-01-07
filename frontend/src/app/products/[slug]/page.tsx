@@ -217,41 +217,6 @@ export default function ProductDetailPage() {
         <div className="grid lg:grid-cols-3 gap-6">
           {/* 左侧：产品详情 */}
           <div className="lg:col-span-2 space-y-6">
-            {/* 综合评分卡片 */}
-            {comprehensive && (
-              <Card padding="none">
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <h2 className="text-lg font-semibold text-content-primary flex items-center gap-2">
-                      <Sparkles className="w-5 h-5 text-brand-500" />
-                      {isZh ? '综合分析' : 'Comprehensive Analysis'}
-                    </h2>
-                    <div className="text-right">
-                      <div className="text-3xl font-bold font-mono text-brand-500">
-                        {comprehensive.overall_recommendation.toFixed(1)}
-                      </div>
-                      <div className="text-xs text-content-tertiary mt-0.5">
-                        {comprehensive.overall_recommendation >= 8 ? (isZh ? '强烈推荐' : 'Highly Recommended') :
-                         comprehensive.overall_recommendation >= 6 ? (isZh ? '值得研究' : 'Worth Studying') :
-                         (isZh ? '可以参考' : 'Reference')}
-                      </div>
-                    </div>
-                  </div>
-                  <AnalysisRadarChart
-                    scores={{
-                      maturity_score: comprehensive.maturity_score,
-                      positioning_clarity: comprehensive.positioning_clarity,
-                      pain_point_sharpness: comprehensive.pain_point_sharpness,
-                      pricing_clarity: comprehensive.pricing_clarity,
-                      conversion_friendliness: comprehensive.conversion_friendliness,
-                      individual_replicability: comprehensive.individual_replicability,
-                    }}
-                    className="h-64 mt-4"
-                  />
-                </div>
-              </Card>
-            )}
-
             {/* 产品定位 */}
             {(landing?.target_audience?.length || landing?.target_roles?.length || landing?.core_features?.length || landing?.use_cases?.length) && (
               <Card padding="none">
@@ -466,10 +431,108 @@ export default function ProductDetailPage() {
                 </div>
               </Card>
             )}
+
+            {/* 市场信息与产品洞察 */}
+            {(category || (insights && insights.summary_points && insights.summary_points.length > 0)) && (
+              <Card padding="none">
+                <div className="p-6">
+                  <h2 className="text-lg font-semibold text-content-primary mb-4 flex items-center gap-2">
+                    <TrendingUp className="w-5 h-5 text-brand-500" />
+                    {isZh ? '市场与洞察' : 'Market & Insights'}
+                  </h2>
+                  <div className="space-y-5">
+                    {/* 市场信息 */}
+                    {category && (
+                      <div>
+                        <div className="flex items-center justify-between mb-3">
+                          <h3 className="text-sm font-medium text-content-primary">{category.category}</h3>
+                          <MarketTypeBadge type={category.market_type} size="sm" />
+                        </div>
+                        <div className="grid grid-cols-2 gap-3 text-sm">
+                          <div className="flex items-center justify-between">
+                            <span className="text-content-muted">{isZh ? '同类产品' : 'Products'}</span>
+                            <span className="text-content-secondary font-medium">{category.total_projects}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-content-muted">{isZh ? 'TOP10占比' : 'TOP10 Share'}</span>
+                            <span className="text-content-secondary font-medium">{category.top10_revenue_share.toFixed(0)}%</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-content-muted">{isZh ? '赛道收入' : 'Category Revenue'}</span>
+                            <span className="text-content-secondary font-medium">{formatCurrency(category.total_revenue)}</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-content-muted">{isZh ? '平均收入' : 'Avg Revenue'}</span>
+                            <span className="text-content-secondary font-medium">{formatCurrency(category.avg_revenue)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 产品洞察 */}
+                    {insights && insights.summary_points && insights.summary_points.length > 0 && (
+                      <div>
+                        {category && <div className="border-t border-surface-border/50 -mx-6 mb-4"></div>}
+                        <h3 className="text-sm font-medium text-content-primary mb-3">{isZh ? '产品洞察' : 'Product Insights'}</h3>
+                        <div className="space-y-2.5">
+                          {insights.summary_points.map((point, i) => (
+                            <div key={i} className="flex items-start gap-2">
+                              <div className={cn(
+                                "w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0",
+                                point.type === 'strength' ? 'bg-accent-success' :
+                                point.type === 'weakness' ? 'bg-accent-error' :
+                                point.type === 'opportunity' ? 'bg-brand-500' :
+                                'bg-content-muted'
+                              )} />
+                              <p className="text-sm text-content-secondary leading-relaxed">{point.text}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Card>
+            )}
           </div>
 
           {/* 右侧：评分与指标 */}
           <div className="lg:col-span-1 space-y-6">
+            {/* 综合评分卡片 */}
+            {comprehensive && (
+              <Card padding="none">
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <h2 className="text-base font-semibold text-content-primary flex items-center gap-2">
+                      <Sparkles className="w-5 h-5 text-brand-500" />
+                      {isZh ? '综合分析' : 'Comprehensive Analysis'}
+                    </h2>
+                    <div className="text-right">
+                      <div className="text-3xl font-bold font-mono text-brand-500">
+                        {comprehensive.overall_recommendation.toFixed(1)}
+                      </div>
+                      <div className="text-xs text-content-tertiary mt-0.5">
+                        {comprehensive.overall_recommendation >= 8 ? (isZh ? '强烈推荐' : 'Highly Recommended') :
+                         comprehensive.overall_recommendation >= 6 ? (isZh ? '值得研究' : 'Worth Studying') :
+                         (isZh ? '可以参考' : 'Reference')}
+                      </div>
+                    </div>
+                  </div>
+                  <AnalysisRadarChart
+                    scores={{
+                      maturity_score: comprehensive.maturity_score,
+                      positioning_clarity: comprehensive.positioning_clarity,
+                      pain_point_sharpness: comprehensive.pain_point_sharpness,
+                      pricing_clarity: comprehensive.pricing_clarity,
+                      conversion_friendliness: comprehensive.conversion_friendliness,
+                      individual_replicability: comprehensive.individual_replicability,
+                    }}
+                    className="h-64 mt-4"
+                  />
+                </div>
+              </Card>
+            )}
+
             {/* Landing Page 评分 */}
             {landing && (landing.positioning_clarity_score || landing.pain_point_sharpness || landing.pricing_clarity_score || landing.conversion_friendliness_score) && (
               <Card padding="none">
@@ -524,48 +587,6 @@ export default function ProductDetailPage() {
                     {selection.has_realtime_feature && <Badge variant="warning" size="sm">{isZh ? '实时功能' : 'Realtime'}</Badge>}
                     {selection.is_data_intensive && <Badge variant="warning" size="sm">{isZh ? '数据密集' : 'Data Intensive'}</Badge>}
                     {selection.has_compliance_requirement && <Badge variant="error" size="sm">{isZh ? '合规要求' : 'Compliance'}</Badge>}
-                  </div>
-                </div>
-              </Card>
-            )}
-
-            {/* 市场信息 */}
-            {category && (
-              <Card padding="none">
-                <div className="p-6">
-                  <h3 className="text-base font-semibold text-content-primary mb-4">{isZh ? '市场信息' : 'Market Info'}</h3>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-sm font-medium text-content-primary">{category.category}</span>
-                    <MarketTypeBadge type={category.market_type} size="sm" />
-                  </div>
-                  <div className="space-y-2.5 text-sm">
-                    <Row label={isZh ? '同类产品' : 'Products'} value={category.total_projects.toString()} />
-                    <Row label={isZh ? '赛道收入' : 'Category Revenue'} value={formatCurrency(category.total_revenue)} />
-                    <Row label={isZh ? '平均收入' : 'Avg Revenue'} value={formatCurrency(category.avg_revenue)} />
-                    <Row label={isZh ? 'TOP10占比' : 'TOP10 Share'} value={`${category.top10_revenue_share.toFixed(0)}%`} />
-                  </div>
-                </div>
-              </Card>
-            )}
-
-            {/* 产品洞察 */}
-            {insights && insights.summary_points && insights.summary_points.length > 0 && (
-              <Card padding="none">
-                <div className="p-6">
-                  <h3 className="text-base font-semibold text-content-primary mb-4">{isZh ? '产品洞察' : 'Product Insights'}</h3>
-                  <div className="space-y-3">
-                    {insights.summary_points.map((point, i) => (
-                      <div key={i} className="flex items-start gap-2">
-                        <div className={cn(
-                          "w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0",
-                          point.type === 'strength' ? 'bg-accent-success' :
-                          point.type === 'weakness' ? 'bg-accent-error' :
-                          point.type === 'opportunity' ? 'bg-brand-500' :
-                          'bg-content-muted'
-                        )} />
-                        <p className="text-sm text-content-secondary leading-relaxed">{point.text}</p>
-                      </div>
-                    ))}
                   </div>
                 </div>
               </Card>
