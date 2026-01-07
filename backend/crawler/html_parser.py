@@ -6,7 +6,7 @@ import re
 from pathlib import Path
 from typing import Dict, Any, Optional, List, Union
 from bs4 import BeautifulSoup
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass, asdict, field
 import json
 
 
@@ -30,6 +30,9 @@ class StartupData:
     revenue_last_4_weeks_raw: int = 0
     revenue_change_percent: str = ""
     active_subscriptions: int = 0
+
+    # 收入时序数据 (每日收入明细)
+    revenue_history: List[Dict[str, Any]] = field(default_factory=list)
 
     # 排名
     rank: int = 0

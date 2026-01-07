@@ -11,10 +11,11 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from sqlalchemy import select
 from database.db import init_db, AsyncSessionLocal
-from database.models import Startup, Founder, LeaderboardEntry
+from database.models import Startup, Founder, LeaderboardEntry, RevenueHistory
 from crawler.browser import BrowserManager
 from crawler.acquire_scraper import AcquireScraper
 from crawler.leaderboard_scraper import LeaderboardScraper
+from datetime import datetime
 
 
 async def save_startups(startups: list):
@@ -26,41 +27,171 @@ async def save_startups(startups: list):
                 select(Startup).where(Startup.slug == data["slug"])
             )
             existing = result.scalar_one_or_none()
-            
+
+            # 字段映射: HTMLParser 字段名 -> Startup 模型字段名
+            field_mapping = {
+                'total_revenue_raw': 'total_revenue',
+                'mrr_raw': 'mrr',
+                'revenue_last_4_weeks_raw': 'revenue_30d',
+                'asking_price_raw': 'asking_price',
+                'active_subscriptions': 'customers_count',
+                'founded': 'founded_date',
+                'trustmrr_url': 'profile_url',
+            }
+
+            # 需要跳过的字段（不直接映射到 Startup 模型）
+            skip_fields = {
+                'scraped_at', 'revenue_history', 'total_revenue', 'mrr',
+                'revenue_last_4_weeks', 'asking_price', 'revenue_multiple',
+                'founder_profile_url', 'founder_avatar_url', 'category_slug',
+                'last_updated', 'buyers_interested'
+            }
+
             if existing:
                 # Update existing record
                 for key, value in data.items():
-                    if key != "scraped_at" and value is not None:
-                        setattr(existing, key, value)
+                    if key in skip_fields:
+                        continue
+                    # 跳过空值，保留原有数据
+                    if value is None or value == "" or value == 0:
+                        continue
+                    # 使用映射后的字段名
+                    db_field = field_mapping.get(key, key)
+                    if hasattr(existing, db_field):
+                        setattr(existing, db_field, value)
+
+                # 处理特殊字段
+                if data.get('revenue_change_percent'):
+                    growth_str = str(data['revenue_change_percent']).replace('%', '').strip()
+                    try:
+                        existing.growth_rate = float(growth_str)
+                    except ValueError:
+                        pass
+
+                if data.get('revenue_multiple'):
+                    multiple_str = str(data['revenue_multiple']).lower().replace('x', '').strip()
+                    try:
+                        existing.multiple = float(multiple_str)
+                    except ValueError:
+                        pass
+
+                if data.get('verified_source'):
+                    existing.is_verified = True
+                    existing.verified_source = data['verified_source']
+
                 print(f"  Updated: {data['slug']}")
+                startup_id = existing.id
             else:
-                # Create new record
+                # Create new record with mapped fields
                 startup = Startup(
-                    name=data["name"],
+                    name=data.get("name", data["slug"]),
                     slug=data["slug"],
                     description=data.get("description"),
                     category=data.get("category"),
+                    website_url=data.get("website_url"),
+                    logo_url=data.get("logo_url"),
+                    profile_url=data.get("profile_url") or data.get("trustmrr_url"),
                     founder_name=data.get("founder_name"),
                     founder_username=data.get("founder_username"),
-                    revenue_30d=data.get("revenue_30d"),
-                    revenue_arr=data.get("revenue_arr"),
-                    asking_price=data.get("asking_price"),
-                    multiple=data.get("multiple"),
-                    growth_rate=data.get("growth_rate"),
-                    profit_margin=data.get("profit_margin"),
-                    customers_count=data.get("customers_count"),
-                    team_size=data.get("team_size"),
-                    founded_date=data.get("founded_date"),
-                    is_for_sale=data.get("is_for_sale", True),
-                    is_verified=data.get("is_verified", False),
-                    profile_url=data.get("profile_url"),
+                    founder_followers=data.get("founder_followers"),
+                    founder_social_platform=data.get("founder_social_platform"),
+                    founder_avatar_url=data.get("founder_avatar_url"),
+                    total_revenue=data.get("total_revenue_raw"),
+                    mrr=data.get("mrr_raw"),
+                    revenue_30d=data.get("revenue_last_4_weeks_raw") or data.get("revenue_30d"),
+                    asking_price=data.get("asking_price_raw") or data.get("asking_price"),
+                    is_for_sale=data.get("is_for_sale", False),
+                    rank=data.get("rank"),
+                    customers_count=data.get("active_subscriptions") or data.get("customers_count"),
+                    founded_date=data.get("founded"),
+                    country=data.get("country"),
+                    country_code=data.get("country_code"),
+                    is_verified=bool(data.get("verified_source")),
+                    verified_source=data.get("verified_source"),
                     html_snapshot_path=data.get("html_snapshot_path"),
                 )
+
+                # 处理增长率
+                if data.get('revenue_change_percent'):
+                    growth_str = str(data['revenue_change_percent']).replace('%', '').strip()
+                    try:
+                        startup.growth_rate = float(growth_str)
+                    except ValueError:
+                        pass
+
+                # 处理倍数
+                if data.get('revenue_multiple'):
+                    multiple_str = str(data['revenue_multiple']).lower().replace('x', '').strip()
+                    try:
+                        startup.multiple = float(multiple_str)
+                    except ValueError:
+                        pass
+
                 session.add(startup)
+                await session.flush()  # 获取新创建的ID
+                startup_id = startup.id
                 print(f"  Created: {data['slug']}")
-        
+
+            # 保存收入时序数据
+            revenue_history = data.get("revenue_history", [])
+            if revenue_history:
+                await save_revenue_history(session, startup_id, revenue_history)
+                print(f"    Saved {len(revenue_history)} days of revenue history")
+
         await session.commit()
         print(f"\nSaved {len(startups)} startups to database")
+
+
+async def save_revenue_history(session, startup_id: int, history: list):
+    """
+    保存收入时序数据到数据库
+
+    Args:
+        session: 数据库会话
+        startup_id: Startup ID
+        history: 收入时序数据列表
+    """
+    if not history:
+        return
+
+    for entry in history:
+        date_str = entry.get('date')
+        if not date_str:
+            continue
+
+        # 解析日期
+        try:
+            date = datetime.strptime(date_str, '%Y-%m-%d').date()
+        except ValueError:
+            continue
+
+        # 查找现有记录
+        result = await session.execute(
+            select(RevenueHistory).where(
+                RevenueHistory.startup_id == startup_id,
+                RevenueHistory.date == date
+            )
+        )
+        existing = result.scalar_one_or_none()
+
+        if existing:
+            # 更新现有记录
+            existing.revenue = entry.get('revenue')
+            existing.mrr = entry.get('mrr')
+            existing.charges = entry.get('charges')
+            existing.subscription_revenue = entry.get('subscription_revenue') or entry.get('subscriptionRevenue')
+            existing.scraped_at = datetime.utcnow()
+        else:
+            # 创建新记录
+            record = RevenueHistory(
+                startup_id=startup_id,
+                date=date,
+                revenue=entry.get('revenue'),
+                mrr=entry.get('mrr'),
+                charges=entry.get('charges'),
+                subscription_revenue=entry.get('subscription_revenue') or entry.get('subscriptionRevenue'),
+            )
+            session.add(record)
 
 
 async def save_leaderboard_entries(entries: list):

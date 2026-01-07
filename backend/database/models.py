@@ -3,7 +3,7 @@ SQLAlchemy models for SaaS Analysis Tool
 """
 
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Text, Date, ForeignKey, JSON
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Text, Date, ForeignKey, JSON, Index
 from sqlalchemy.orm import DeclarativeBase
 
 
@@ -561,4 +561,44 @@ class ComprehensiveAnalysis(Base):
             "analysis_summary": self.analysis_summary,
             "analyzed_at": self.analyzed_at.isoformat() if self.analyzed_at else None,
             "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class RevenueHistory(Base):
+    """收入时序数据表 - 存储每日收入明细"""
+    __tablename__ = "revenue_history"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    startup_id = Column(Integer, ForeignKey("startups.id"), nullable=False, index=True)
+
+    # 时间点
+    date = Column(Date, nullable=False, index=True)
+
+    # 收入数据 (单位: 美分，与 TrustMRR 原始数据一致)
+    revenue = Column(Integer, nullable=True)           # 总收入
+    mrr = Column(Integer, nullable=True)               # 月度经常性收入
+    charges = Column(Integer, nullable=True)           # 一次性收费
+    subscription_revenue = Column(Integer, nullable=True)  # 订阅收入
+
+    # 元数据
+    scraped_at = Column(DateTime, default=datetime.utcnow)
+
+    # 唯一约束: 同一产品同一日期只有一条记录
+    __table_args__ = (
+        Index('ix_revenue_history_startup_date', 'startup_id', 'date', unique=True),
+    )
+
+    def __repr__(self):
+        return f"<RevenueHistory(startup_id={self.startup_id}, date={self.date}, revenue={self.revenue})>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "startup_id": self.startup_id,
+            "date": self.date.isoformat() if self.date else None,
+            "revenue": self.revenue,
+            "mrr": self.mrr,
+            "charges": self.charges,
+            "subscription_revenue": self.subscription_revenue,
+            "scraped_at": self.scraped_at.isoformat() if self.scraped_at else None,
         }

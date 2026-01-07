@@ -9,25 +9,17 @@
 ### Windows
 
 ```bash
-# 1. 查看已安装的 Python 版本
-py -0
-
-# 2. 创建虚拟环境（指定 Python 3.10+）
+# 1. 创建虚拟环境
 py -3.10 -m venv venv
-# 或 py -3.11 -m venv venv
-# 或 py -3.12 -m venv venv
 
-# 3. 激活虚拟环境
+# 2. 激活虚拟环境
 venv\Scripts\activate
 
-# 4. 确认 Python 版本
-python --version
-
-# 5. 安装依赖
+# 3. 安装依赖
 pip install -r requirements.txt
 playwright install chromium
 
-# 6. 配置环境变量
+# 4. 配置环境变量
 copy .env.example .env
 ```
 
@@ -36,7 +28,6 @@ copy .env.example .env
 ```bash
 # 1. 创建虚拟环境
 python3.10 -m venv venv
-# 或 python3.11 -m venv venv
 
 # 2. 激活虚拟环境
 source venv/bin/activate
@@ -48,8 +39,6 @@ playwright install chromium
 # 4. 配置环境变量
 cp .env.example .env
 ```
-
-> **注意**：如果系统没有 Python 3.10+，请从 https://www.python.org/downloads/ 下载安装。
 
 编辑 `.env` 文件：
 ```bash
@@ -64,56 +53,101 @@ HTTPS_PROXY=http://127.0.0.1:7890
 
 ---
 
-## 使用流程
+## 数据流程概览
 
-### 第一步：抓取数据（首次使用）
-
-```bash
-python main.py scrape          # 抓取TrustMRR网站数据
-python main.py update          # 解析HTML更新数据库
-python main.py sync            # 同步创始人信息
 ```
-
-### 第二步：运行分析
-
-```bash
-# 1. 赛道分析 - 找蓝海市场
-python main.py analyze category
-
-# 2. 选品分析 - 找机会产品并保存
-python main.py analyze product --opportunities --limit 300 --save
-
-# 3. Landing Page分析 - AI分析产品官网
-python main.py analyze landing --update    # 增量更新（推荐，只分析新增产品）
-python main.py analyze landing --all       # 全量分析所有产品
-
-# 4. 综合分析 - 生成推荐列表
-python main.py analyze comprehensive --top --limit 50
-```
-
-### 第三步：查看结果
-
-```bash
-# 启动API服务
-uvicorn api.main:app --port 8001 --reload
-
-# 打开浏览器访问
-# http://localhost:8001/docs
+┌─────────────────────────────────────────────────────────────────────────┐
+│                           数据采集与分析流程                              │
+├─────────────────────────────────────────────────────────────────────────┤
+│                                                                         │
+│  阶段1: 数据抓取 (scrape)                                                │
+│  ├── 访问 TrustMRR 产品页面                                              │
+│  ├── 提取收入时序数据 (dailyRevenue)                                     │
+│  ├── 保存 HTML 快照                                                      │
+│  ├── 解析产品完整信息                                                    │
+│  └── 入库: startups + revenue_history + leaderboard_entries            │
+│                                                                         │
+│  阶段2: 赛道分析 (analyze category)                                      │
+│  └── 分析市场类型，识别蓝海/红海                                          │
+│                                                                         │
+│  阶段3: 选品分析 (analyze product)                                       │
+│  └── 评估产品复杂度、IP依赖度、个人开发适合度                              │
+│                                                                         │
+│  阶段4: Landing Page 分析 (analyze landing)                              │
+│  └── AI 分析产品官网，提取定位、功能、定价等                               │
+│                                                                         │
+│  阶段5: 综合分析 (analyze comprehensive)                                 │
+│  └── 汇总所有维度，生成推荐列表                                           │
+│                                                                         │
+└─────────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 常用命令速查
+## 每日更新流程
 
-### 赛道分析
+### 完整更新（推荐）
+
 ```bash
-python main.py analyze category                    # 分析所有赛道
-python main.py analyze category --name "AI"        # 分析指定赛道
+# 1. 抓取数据（包含产品信息 + 收入时序数据）
+python main.py scrape
+
+# 2. 赛道分析
+python main.py analyze category
+
+# 3. 选品分析
+python main.py analyze product --opportunities --limit 500 --save
+
+# 4. Landing Page 分析（增量，只分析新增产品）
+python main.py analyze landing --update
+
+# 5. 综合分析（可选）
+python main.py analyze comprehensive --top --limit 50
 ```
 
-### 选品分析
+### 快速测试
+
 ```bash
-# 筛选机会产品
+# 只抓取少量产品测试
+python main.py scrape --max-startups 5
+```
+
+---
+
+## 命令详解
+
+### scrape - 数据抓取
+
+抓取 TrustMRR 网站数据，一次性完成：
+- 产品基本信息（名称、描述、分类、创始人等）
+- 财务数据（收入、MRR、增长率等）
+- **收入时序数据**（每日收入明细，用于图表展示）
+- 排行榜数据
+
+```bash
+python main.py scrape                    # 抓取全部产品
+python main.py scrape --max-startups 10  # 限制数量（测试用）
+python main.py scrape --skip-leaderboard # 跳过排行榜
+```
+
+> **注意**：`scrape` 命令已整合数据解析，无需单独执行 `update` 命令。
+
+### analyze category - 赛道分析
+
+分析各赛道的市场竞争情况。
+
+```bash
+python main.py analyze category                # 分析所有赛道
+python main.py analyze category --name "AI"    # 分析指定赛道
+python main.py analyze category --templates    # 显示模板化产品
+```
+
+### analyze product - 选品分析
+
+评估产品的个人开发适合度。
+
+```bash
+# 筛选机会产品并保存
 python main.py analyze product --opportunities --limit 100 --save
 
 # 按条件筛选
@@ -127,28 +161,28 @@ python main.py analyze product --opportunities \
 python main.py analyze product --slug product-name --save
 ```
 
-### Landing Page 分析
+### analyze landing - Landing Page 分析
+
+使用 AI 分析产品官网，提取定位、功能、定价等信息。
+
 ```bash
-# 增量更新模式（推荐）- 只分析新增/未分析的产品
+# 增量更新（推荐）- 只分析新增/未分析的产品
 python main.py analyze landing --update
-
-# 全量分析所有产品
-python main.py analyze landing --all
-
-# 全量分析但跳过已分析的（等同于 --update）
-python main.py analyze landing --all --skip-analyzed
-
-# 只分析前N个高收入产品
-python main.py analyze landing --batch --limit 50 --skip-analyzed
 
 # 分析单个产品
 python main.py analyze landing --slug product-name
 
 # 强制重新分析（重新爬取官网）
 python main.py analyze landing --slug product-name --force
+
+# 批量分析前N个高收入产品
+python main.py analyze landing --batch --limit 50 --skip-analyzed
 ```
 
-### 综合分析
+### analyze comprehensive - 综合分析
+
+汇总所有分析维度，生成推荐列表。
+
 ```bash
 # 获取TOP推荐列表
 python main.py analyze comprehensive --top --limit 30
@@ -159,18 +193,31 @@ python main.py analyze comprehensive --slug product-name --export report.json
 
 ---
 
-## 数据库维护
+## 辅助命令
 
 ```bash
-# 重建分析表（保留原始数据）
-python rebuild_analysis_tables.py
+# 同步创始人和排行榜数据（通常不需要单独执行）
+python main.py sync
 
-# 检查数据质量
-python data_audit.py
-
-# 测试OpenAI连接
-python test_openai.py
+# 从HTML快照更新数据库（用于修复数据，通常不需要）
+python main.py update
 ```
+
+---
+
+## 数据库表结构
+
+| 表名 | 说明 | 更新时机 |
+|------|------|----------|
+| `startups` | 产品基本信息 | scrape |
+| `revenue_history` | 收入时序数据（每日） | scrape |
+| `leaderboard_entries` | 排行榜历史记录 | scrape |
+| `founders` | 创始人信息 | scrape |
+| `category_analysis` | 赛道分析结果 | analyze category |
+| `product_selection_analysis` | 选品分析结果 | analyze product |
+| `landing_page_snapshots` | 官网快照 | analyze landing |
+| `landing_page_analysis` | 官网AI分析结果 | analyze landing |
+| `comprehensive_analysis` | 综合分析结果 | analyze comprehensive |
 
 ---
 
@@ -180,14 +227,14 @@ python test_openai.py
 
 | 类型 | 含义 | 建议 |
 |-----|------|-----|
-| `blue_ocean` | 竞争少，多数产品盈利 | ⭐ 优先考虑 |
-| `emerging` | 新兴市场，早期机会 | ⭐ 值得关注 |
+| `blue_ocean` | 竞争少，多数产品盈利 | 优先考虑 |
+| `emerging` | 新兴市场，早期机会 | 值得关注 |
 | `moderate` | 中等竞争 | 需要差异化 |
 | `concentrated` | 头部集中 | 新手慎入 |
 | `red_ocean` | 竞争激烈 | 避开 |
 | `weak_demand` | 需求不足 | 避开 |
 
-### 选品分析 - 三个组合
+### 选品分析 - 组合匹配
 
 | 组合 | 条件 | 说明 |
 |-----|------|-----|
@@ -208,16 +255,21 @@ python test_openai.py
 
 ---
 
-## API 接口
+## API 服务
 
-启动服务后访问 `http://localhost:8001/docs` 查看完整文档。
+```bash
+# 启动API服务
+uvicorn api.main:app --port 8001 --reload
+
+# 访问文档
+# http://localhost:8001/docs
+```
 
 主要接口：
 - `GET /api/startups` - 产品列表
 - `GET /api/analysis/category/` - 赛道分析
 - `GET /api/analysis/product/opportunities` - 机会产品
 - `GET /api/analysis/landing/{slug}` - Landing Page分析
-- `POST /api/analysis/landing/scrape/{slug}` - 触发分析
 
 ---
 
@@ -225,17 +277,26 @@ python test_openai.py
 
 ```
 backend/
-├── main.py              # CLI入口
-├── analysis/            # 分析模块
-│   ├── category_analyzer.py   # 赛道分析
-│   ├── product_selector.py    # 选品分析
-│   ├── landing_analyzer.py    # Landing Page分析
-│   └── comprehensive.py       # 综合分析
-├── crawler/             # 爬虫模块
-├── database/            # 数据库
-├── api/                 # REST API
-└── data/                # 数据文件
-    └── sass_analysis.db     # SQLite数据库
+├── main.py                  # CLI入口
+├── crawler/                 # 爬虫模块
+│   ├── acquire_scraper.py   # 产品页面爬虫
+│   ├── leaderboard_scraper.py # 排行榜爬虫
+│   ├── chart_extractor.py   # 收入时序数据提取
+│   ├── html_extractor.py    # HTML清洗
+│   ├── html_parser.py       # HTML解析
+│   └── run.py               # 爬虫入口
+├── analysis/                # 分析模块
+│   ├── category_analyzer.py # 赛道分析
+│   ├── product_selector.py  # 选品分析
+│   ├── landing_analyzer.py  # Landing Page分析
+│   └── comprehensive.py     # 综合分析
+├── database/                # 数据库
+│   ├── models.py            # 数据模型
+│   └── db.py                # 数据库连接
+├── api/                     # REST API
+└── data/                    # 数据文件
+    ├── sass_analysis.db     # SQLite数据库
+    └── html_snapshots/      # HTML快照
 ```
 
 ---
@@ -251,31 +312,28 @@ python test_openai.py
 HTTPS_PROXY=http://127.0.0.1:7890
 ```
 
-**Q: 分析中断了怎么办？**
+**Q: Landing Page 分析中断了怎么办？**
 ```bash
-# Landing Page分析支持断点续传，使用增量更新模式继续
+# 支持断点续传，使用增量更新模式继续
 python main.py analyze landing --update
 ```
 
-**Q: 如何重新分析？**
+**Q: 如何重新分析单个产品？**
 ```bash
-# 重建分析表
-python rebuild_analysis_tables.py
-
-# 或强制重新分析单个产品
+# 强制重新爬取并分析
 python main.py analyze landing --slug xxx --force
 ```
+
+**Q: scrape 和 update 有什么区别？**
+- `scrape`：访问网站抓取最新数据，包含收入时序数据
+- `update`：从本地 HTML 快照解析数据（不包含时序数据）
+- **推荐使用 `scrape`**，它已整合完整的数据采集和解析流程
+
+---
 
 ## AI 助手
 
 项目集成了基于 Claude 的智能分析助手，支持流式对话和工具调用。
-
-### 依赖版本
-
-| 组件 | 版本 | 说明 |
-|-----|------|------|
-| claude-agent-sdk | 0.1.10 | Claude Agent SDK Python 客户端 |
-| Claude CLI | 需安装 | `npm install -g @anthropic-ai/claude-code` |
 
 ### 配置
 
@@ -285,8 +343,6 @@ python main.py analyze landing --slug xxx --force
 ANTHROPIC_API_KEY=your_api_key       # 必填，Anthropic API Key
 ANTHROPIC_BASE_URL=https://...       # 可选，自定义 API 地址
 CLAUDE_MODEL=claude-sonnet-4-5       # 可选，默认模型
-CLAUDE_CLI_PATH=/path/to/claude      # 可选，自定义 CLI 路径
-DEBUG_STREAM=1                       # 可选，开启流式调试日志
 ```
 
 ### 功能
@@ -294,18 +350,3 @@ DEBUG_STREAM=1                       # 可选，开启流式调试日志
 - **产品分析**：查询数据库中的产品数据，分析单个产品或批量对比
 - **赛道分析**：分析市场类目，识别蓝海市场和机会
 - **趋势报告**：生成行业趋势报告，洞察市场动态
-- **排行榜**：获取创始人排行榜数据
-
-### 已知限制
-
-由于 Claude Agent SDK 内部缓冲机制，流式输出可能会有延迟（整体响应完成后批量返回）。前端已针对此情况做了 UX 优化，显示工具调用状态和进度。
-
----
-
-## TODO
-
-Agent 定位是面向分析的助手，目标是通过和 AI 对话洞察分析：
-
-- **产品分析**：库里面的产品、用户提出的产品（通过链接）、总结性报告、哪些地方做的好（技术、市场、产品本身、定位等等）
-- **行业趋势分析**：报告、探索性分析、通过结合收录的数据和外部检索途径分析
-- **个人职业探索**：我适合做什么、我该做什么？有哪些机会，主要帮助个人开发寻找和探索适合自己的产品方向和思路

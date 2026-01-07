@@ -30,7 +30,9 @@
       "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\frontend && type package.json | findstr streamdown\")",
       "Bash(git -C \"D:\\\\project\\\\sass_analysis\" log --all --oneline)",
       "Bash(cmd /c \"cd /d D:\\\\project\\\\sass_analysis\\\\backend && dir /b *.py\")",
-      "Bash(git -C \"D:\\\\project\\\\sass_analysis\" log --oneline -20 -- \"frontend/src/app/products/[slug]/page.tsx\")"
+      "Bash(git -C \"D:\\\\project\\\\sass_analysis\" log --oneline -20 -- \"frontend/src/app/products/[slug]/page.tsx\")",
+      "WebFetch(domain:trustmrr.com)",
+      "Bash(cmd /c:*)"
     ]
   }
 }

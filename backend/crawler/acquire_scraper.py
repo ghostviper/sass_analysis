@@ -128,6 +128,14 @@ class AcquireScraper:
                 # 等待页面初始加载
                 await self.browser.random_delay(2, 3)
 
+                # 提取图表时序数据 (通过 API 请求)
+                from .chart_extractor import extract_revenue_history
+                revenue_history = await extract_revenue_history(page, slug)
+                if revenue_history:
+                    print(f"  Extracted {len(revenue_history)} days of revenue history")
+                else:
+                    print(f"  No revenue history data available")
+
                 # 使用HTMLExtractor获取完整渲染后的纯净HTML
                 html_content = await HTMLExtractor.extract(
                     page,
@@ -140,9 +148,15 @@ class AcquireScraper:
                 html_path.write_text(html_content, encoding='utf-8')
                 print(f"  Saved rendered HTML snapshot ({len(html_content)} bytes) to {html_path.name}")
 
-                # Parse startup data from the page
-                startup_data = await self._parse_startup_page(page, slug, url)
+                # 使用 HTMLParser 解析完整数据 (与 update 命令使用相同的解析器)
+                from .html_parser import parse_html_file
+                startup_data = parse_html_file(html_path)
+
+                # 补充 HTMLParser 没有的字段
                 startup_data['html_snapshot_path'] = str(html_path)
+                startup_data['revenue_history'] = revenue_history or []
+                startup_data['is_for_sale'] = startup_data.get('is_for_sale', True)
+                startup_data['profile_url'] = url
 
                 return startup_data
 
