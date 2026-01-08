@@ -23,44 +23,10 @@ import {
 } from 'lucide-react'
 import { ChatMessage, MessageRole } from '@/components/assistant/ChatMessage'
 import { SuggestedPrompts } from '@/components/assistant/SuggestedPrompts'
-import { getStartups } from '@/lib/api'
+import { getStartups, getChatSessions, getChatSession, deleteChatSession } from '@/lib/api'
 import type { Startup } from '@/types'
+import type { ChatSessionListItem, ChatMessageItem } from '@/lib/api'
 import { useLocale } from '@/contexts/LocaleContext'
-
-// 渠道图标组件
-const RedditIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm5.01 4.744c.688 0 1.25.561 1.25 1.249a1.25 1.25 0 0 1-2.498.056l-2.597-.547-.8 3.747c1.824.07 3.48.632 4.674 1.488.308-.309.73-.491 1.207-.491.968 0 1.754.786 1.754 1.754 0 .716-.435 1.333-1.01 1.614a3.111 3.111 0 0 1 .042.52c0 2.694-3.13 4.87-7.004 4.87-3.874 0-7.004-2.176-7.004-4.87 0-.183.015-.366.043-.534A1.748 1.748 0 0 1 4.028 12c0-.968.786-1.754 1.754-1.754.463 0 .898.196 1.207.49 1.207-.883 2.878-1.43 4.744-1.487l.885-4.182a.342.342 0 0 1 .14-.197.35.35 0 0 1 .238-.042l2.906.617a1.214 1.214 0 0 1 1.108-.701zM9.25 12C8.561 12 8 12.562 8 13.25c0 .687.561 1.248 1.25 1.248.687 0 1.248-.561 1.248-1.249 0-.688-.561-1.249-1.249-1.249zm5.5 0c-.687 0-1.248.561-1.248 1.25 0 .687.561 1.248 1.249 1.248.688 0 1.249-.561 1.249-1.249 0-.687-.562-1.249-1.25-1.249zm-5.466 3.99a.327.327 0 0 0-.231.094.33.33 0 0 0 0 .463c.842.842 2.484.913 2.961.913.477 0 2.105-.056 2.961-.913a.361.361 0 0 0 .029-.463.33.33 0 0 0-.464 0c-.547.533-1.684.73-2.512.73-.828 0-1.979-.196-2.512-.73a.326.326 0 0 0-.232-.095z"/>
-  </svg>
-)
-
-const IndieHackersIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M0 0h24v24H0V0zm3.18 6h2.1v12h-2.1V6zm5.88 0h2.1v12h-2.1V6zm5.88 0h2.1v12h-2.1V6z"/>
-  </svg>
-)
-
-const ProductHuntIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M13.604 8.4h-3.405V12h3.405c.995 0 1.801-.806 1.801-1.801 0-.993-.805-1.799-1.801-1.799zM12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm1.604 14.4h-3.405V18H7.801V6h5.804c2.319 0 4.2 1.88 4.2 4.199 0 2.321-1.881 4.201-4.201 4.201z"/>
-  </svg>
-)
-
-const GoogleIcon = ({ className, style }: { className?: string; style?: React.CSSProperties }) => (
-  <svg className={className} style={style} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-  </svg>
-)
-
-// 渠道配置
-const CHANNELS = [
-  { id: 'reddit', name: 'Reddit', Icon: RedditIcon, color: '#FF4500' },
-  { id: 'indiehacker', name: 'IndieHackers', Icon: IndieHackersIcon, color: '#0E76A8' },
-  { id: 'producthunt', name: 'Product Hunt', Icon: ProductHuntIcon, color: '#DA552F' },
-  { id: 'google', name: 'Google', Icon: GoogleIcon, color: '#4285F4' },
-] as const
-
-type ChannelId = typeof CHANNELS[number]['id']
 
 // 工具调用状态
 interface ToolStatus {
@@ -68,6 +34,7 @@ interface ToolStatus {
   status: 'running' | 'completed'
   input?: Record<string, unknown>
   result?: string
+  displayText?: string  // 用户友好的显示文本
 }
 
 // 消息统计
@@ -110,16 +77,33 @@ interface ContentBlock {
   isStreaming?: boolean
 }
 
-// SSE 事件类型
-interface StreamEvent {
-  type: 'text' | 'thinking' | 'tool_start' | 'tool_end' | 'status' | 'done' | 'error'
+// SSE 事件类型 - V2 格式
+// layer: primary = 最终输出（显示给用户）, process = 中间过程（折叠显示）, debug = 调试信息
+type OutputLayer = 'primary' | 'process' | 'debug'
+
+// V2 事件格式 - 基于 block 的流式输出
+interface StreamEventV2 {
+  type: 'block_start' | 'block_delta' | 'block_end' | 'tool_start' | 'tool_end' | 'status' | 'done' | 'error'
+  layer?: OutputLayer
+  // Block 管理
+  block_id?: string
+  block_type?: 'thinking' | 'text' | 'tool_use' | 'tool_result'
+  block_index?: number
+  // 内容
   content?: string
+  // 工具相关
   tool_name?: string
   tool_input?: Record<string, unknown>
   tool_result?: string
+  display_text?: string
+  // 元数据
   cost?: number
-  session_id?: string  // Backend session ID for multi-turn conversations
+  session_id?: string
+  timestamp?: number
 }
+
+// 兼容旧格式的类型别名
+type StreamEvent = StreamEventV2
 
 // 会话类型
 interface ChatSession {
@@ -135,11 +119,33 @@ interface ChatSession {
   updatedAt: Date
 }
 
+// 将后端消息转换为前端消息格式
+function convertBackendMessage(msg: ChatMessageItem): Message {
+  return {
+    id: msg.id.toString(),
+    role: msg.role as MessageRole,
+    content: msg.content,
+    timestamp: new Date(msg.created_at),
+    toolStatus: msg.tool_calls?.map(tc => ({
+      name: tc.name,
+      status: 'completed' as const,
+      input: tc.input,
+      result: tc.output || undefined
+    })),
+    metrics: msg.cost || msg.duration_ms ? {
+      cost: msg.cost || undefined,
+      duration: msg.duration_ms ? msg.duration_ms / 1000 : undefined
+    } : undefined
+  }
+}
+
 export default function AssistantPage() {
   const { t } = useLocale()
 
   // 会话管理
   const [sessions, setSessions] = useState<ChatSession[]>([])
+  const [dbSessions, setDbSessions] = useState<ChatSessionListItem[]>([])  // 数据库中的会话列表
+  const [isLoadingSessions, setIsLoadingSessions] = useState(false)
   const [currentSessionId, setCurrentSessionId] = useState<string | null>(null)
   const [showHistory, setShowHistory] = useState(false)
 
@@ -161,9 +167,8 @@ export default function AssistantPage() {
   const [selectedProducts, setSelectedProducts] = useState<Startup[]>([])
   const [urlInput, setUrlInput] = useState('')
 
-  // 渠道探索
-  const [showChannelMenu, setShowChannelMenu] = useState(false)
-  const [selectedChannels, setSelectedChannels] = useState<ChannelId[]>([])
+  // 联网搜索
+  const [enableWebSearch, setEnableWebSearch] = useState(false)
 
   // 产品搜索
   const [products, setProducts] = useState<Startup[]>([])
@@ -184,7 +189,6 @@ export default function AssistantPage() {
   const messagesContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const contextMenuRef = useRef<HTMLDivElement>(null)
-  const channelMenuRef = useRef<HTMLDivElement>(null)
   const historyMenuRef = useRef<HTMLDivElement>(null)
 
   // 获取当前会话
@@ -196,9 +200,6 @@ export default function AssistantPage() {
       if (contextMenuRef.current && !contextMenuRef.current.contains(e.target as Node)) {
         setShowContextMenu(false)
       }
-      if (channelMenuRef.current && !channelMenuRef.current.contains(e.target as Node)) {
-        setShowChannelMenu(false)
-      }
       if (historyMenuRef.current && !historyMenuRef.current.contains(e.target as Node)) {
         setShowHistory(false)
       }
@@ -206,6 +207,24 @@ export default function AssistantPage() {
     document.addEventListener('mousedown', handleClickOutside)
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [])
+
+  // 加载历史会话列表
+  const loadSessions = useCallback(async () => {
+    setIsLoadingSessions(true)
+    try {
+      const result = await getChatSessions({ limit: 50 })
+      setDbSessions(result.sessions)
+    } catch (error) {
+      console.error('Failed to load sessions:', error)
+    } finally {
+      setIsLoadingSessions(false)
+    }
+  }, [])
+
+  // 初始加载历史会话
+  useEffect(() => {
+    loadSessions()
+  }, [loadSessions])
 
   // 搜索产品
   useEffect(() => {
@@ -263,7 +282,7 @@ export default function AssistantPage() {
     return () => container.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // 调用后端 SSE 流式 API
+  // 调用后端 SSE 流式 API - V2 事件格式
   const streamFromBackend = async (
     userMessage: string,
     aiMessageId: string,
@@ -271,11 +290,14 @@ export default function AssistantPage() {
     onText: (text: string) => void,
     onThinking: (thinking: string) => void,  // 思考内容回调
     onToolStart: (tool: ToolStatus) => void,
-    onToolEnd: (toolName: string, result: string) => void,
+    onToolEnd: (toolName: string, result: string, displayText?: string) => void,
     onError: (error: string) => void,
     onDone: (cost?: number, newSessionId?: string) => void,
     signal?: AbortSignal  // 添加中断信号
   ): Promise<void> => {
+    // 跟踪活跃的内容块
+    const activeBlocks: Map<string, { type: string; content: string }> = new Map()
+
     try {
       const response = await fetch('/api/chat/stream', {
         method: 'POST',
@@ -283,9 +305,11 @@ export default function AssistantPage() {
         body: JSON.stringify({
           message: userMessage,
           session_id: sessionId,  // Pass session_id for multi-turn conversations
+          enable_web_search: enableWebSearch,  // Pass web search flag
           context: contextType ? {
             type: contextType,
-            value: contextType === 'database' ? selectedProduct?.name : urlInput
+            value: contextType === 'database' ? selectedProduct?.name : urlInput,
+            products: contextType === 'database' ? selectedProducts.map(p => p.name) : undefined
           } : undefined
         }),
         signal  // 传递中断信号
@@ -322,36 +346,90 @@ export default function AssistantPage() {
               const event: StreamEvent = JSON.parse(data)
 
               switch (event.type) {
-                case 'text':
-                  if (event.content) {
-                    onText(event.content)
+                // V2 Block 事件处理
+                case 'block_start': {
+                  const blockId = event.block_id || `block_${Date.now()}`
+                  activeBlocks.set(blockId, {
+                    type: event.block_type || 'text',
+                    content: ''
+                  })
+                  // 如果是工具调用块，触发 tool_start
+                  if (event.block_type === 'tool_use' && event.tool_name) {
+                    onToolStart({
+                      name: event.tool_name,
+                      status: 'running',
+                      input: event.tool_input,
+                      displayText: event.display_text
+                    })
                   }
                   break
-                case 'thinking':
+                }
+
+                case 'block_delta': {
+                  const blockId = event.block_id
+                  const blockInfo = blockId ? activeBlocks.get(blockId) : null
+
                   if (event.content) {
-                    onThinking(event.content)
+                    // 根据 block_type 确定内容类型，block_type 优先于 layer
+                    const blockType = event.block_type || blockInfo?.type
+
+                    if (blockType === 'thinking') {
+                      // 思考内容 - 流式输出到思考块（折叠显示）
+                      if (blockInfo) {
+                        blockInfo.content += event.content
+                      }
+                      onThinking(event.content)
+                    } else if (blockType === 'text') {
+                      // 文本内容 - 只有 primary 层才显示给用户
+                      if (event.layer === 'primary' || !event.layer) {
+                        if (blockInfo) {
+                          blockInfo.content += event.content
+                        }
+                        onText(event.content)
+                      }
+                    }
+                    // tool_use 和 tool_result 块的 delta 事件通常是 JSON 增量，不需要特殊处理
                   }
                   break
+                }
+
+                case 'block_end': {
+                  const blockId = event.block_id
+                  if (blockId) {
+                    activeBlocks.delete(blockId)
+                  }
+                  break
+                }
+
+                // 工具事件（兼容旧格式和新格式）
                 case 'tool_start':
                   if (event.tool_name) {
                     onToolStart({
                       name: event.tool_name,
                       status: 'running',
-                      input: event.tool_input
+                      input: event.tool_input,
+                      displayText: event.display_text
                     })
                   }
                   break
+
                 case 'tool_end':
                   if (event.tool_name) {
-                    onToolEnd(event.tool_name, event.tool_result || '')
+                    onToolEnd(event.tool_name, event.tool_result || '', event.display_text)
                   }
                   break
+
                 case 'error':
                   onError(event.content || t('assistant.unknownError'))
                   break
+
                 case 'done':
                   // 传递成本信息和 session_id
                   onDone(event.cost, event.session_id)
+                  break
+
+                case 'status':
+                  // 状态事件可以忽略或用于调试
                   break
               }
             } catch {
@@ -418,32 +496,86 @@ export default function AssistantPage() {
     // 可以在这里添加恢复逻辑，比如重新发送最后一条消息
   }
 
-  // 切换会话
-  const switchSession = (sessionId: string) => {
-    const session = sessions.find(s => s.id === sessionId)
-    if (session) {
+  // 切换会话 - 从数据库加载
+  const switchSession = async (sessionId: string) => {
+    // 先检查是否在本地缓存中
+    const localSession = sessions.find(s => s.id === sessionId)
+    if (localSession) {
       setCurrentSessionId(sessionId)
-      setServerSessionId(session.serverSessionId || null)  // Restore backend session
-      setMessages(session.messages)
-      setContextType(session.context.type)
-      // 恢复会话时，如果有产品名称，创建简化的产品对象用于显示
-      if (session.context.type === 'database' && session.context.value) {
-        setSelectedProduct({ name: session.context.value } as Startup)
+      setServerSessionId(localSession.serverSessionId || sessionId)
+      setMessages(localSession.messages)
+      setContextType(localSession.context.type)
+      if (localSession.context.type === 'database' && localSession.context.value) {
+        setSelectedProduct({ name: localSession.context.value } as Startup)
       } else {
         setSelectedProduct(null)
       }
-      setUrlInput(session.context.type === 'url' ? session.context.value || '' : '')
+      setUrlInput(localSession.context.type === 'url' ? localSession.context.value || '' : '')
       setShowHistory(false)
+      return
     }
+
+    // 从数据库加载
+    try {
+      const result = await getChatSession(sessionId)
+      if (result) {
+        const convertedMessages = result.messages.map(convertBackendMessage)
+
+        // 创建本地会话缓存
+        const newSession: ChatSession = {
+          id: sessionId,
+          title: result.session.title || '新对话',
+          messages: convertedMessages,
+          context: {
+            type: result.session.context_type as 'database' | 'url' | null,
+            value: result.session.context_value
+          },
+          serverSessionId: sessionId,
+          createdAt: new Date(result.session.created_at),
+          updatedAt: new Date(result.session.updated_at)
+        }
+
+        setSessions(prev => {
+          // 避免重复添加
+          if (prev.some(s => s.id === sessionId)) return prev
+          return [newSession, ...prev]
+        })
+
+        setCurrentSessionId(sessionId)
+        setServerSessionId(sessionId)
+        setMessages(convertedMessages)
+        setContextType(result.session.context_type as 'database' | 'url' | null)
+
+        if (result.session.context_type === 'database' && result.session.context_value) {
+          setSelectedProduct({ name: result.session.context_value } as Startup)
+        } else {
+          setSelectedProduct(null)
+        }
+        setUrlInput(result.session.context_type === 'url' ? result.session.context_value || '' : '')
+      }
+    } catch (error) {
+      console.error('Failed to load session:', error)
+    }
+    setShowHistory(false)
   }
 
   // 删除会话
-  const deleteSession = (sessionId: string, e: React.MouseEvent) => {
+  const deleteSession = async (sessionId: string, e: React.MouseEvent) => {
     e.stopPropagation()
-    setSessions(prev => prev.filter(s => s.id !== sessionId))
-    if (currentSessionId === sessionId) {
-      setCurrentSessionId(null)
-      setMessages([])
+
+    try {
+      await deleteChatSession(sessionId)
+      // 从本地状态移除
+      setSessions(prev => prev.filter(s => s.id !== sessionId))
+      setDbSessions(prev => prev.filter(s => s.session_id !== sessionId))
+
+      if (currentSessionId === sessionId) {
+        setCurrentSessionId(null)
+        setServerSessionId(null)
+        setMessages([])
+      }
+    } catch (error) {
+      console.error('Failed to delete session:', error)
     }
   }
 
@@ -581,11 +713,11 @@ export default function AssistantPage() {
           }))
         },
         // onToolEnd - 工具调用完成
-        (toolName, result) => {
+        (toolName, result, displayText) => {
           setMessages(prev => prev.map(msg => {
             if (msg.id !== aiMessageId) return msg
             const updatedTools = (msg.toolStatus || []).map(t =>
-              t.name === toolName ? { ...t, status: 'completed' as const, result } : t
+              t.name === toolName ? { ...t, status: 'completed' as const, result, displayText: displayText || t.displayText } : t
             )
             return { ...msg, toolStatus: updatedTools }
           }))
@@ -683,16 +815,9 @@ export default function AssistantPage() {
     })
   }
 
-  // 切换渠道选择
-  const toggleChannel = (channelId: ChannelId) => {
-    setSelectedChannels(prev => {
-      const isSelected = prev.includes(channelId)
-      if (isSelected) {
-        return prev.filter(id => id !== channelId)
-      } else {
-        return [...prev, channelId]
-      }
-    })
+  // 切换联网搜索
+  const toggleWebSearch = () => {
+    setEnableWebSearch(prev => !prev)
   }
 
   const confirmUrl = () => {
@@ -723,6 +848,21 @@ export default function AssistantPage() {
   const hasMessages = messages.length > 0
   const hasContext = (contextType === 'database' && selectedProduct) || (contextType === 'url' && urlInput)
 
+  // 合并本地会话和数据库会话用于显示
+  const allSessions = [
+    ...sessions,
+    ...dbSessions
+      .filter(dbS => !sessions.some(s => s.id === dbS.session_id))
+      .map(dbS => ({
+        id: dbS.session_id,
+        title: dbS.title || '新对话',
+        messages: [],
+        context: { type: null as 'database' | 'url' | null, value: null },
+        createdAt: new Date(dbS.created_at),
+        updatedAt: new Date(dbS.updated_at)
+      }))
+  ].sort((a, b) => b.updatedAt.getTime() - a.updatedAt.getTime())
+
   return (
     <div className="h-[calc(100vh-3.5rem)] flex relative bg-diagonal-grid bg-assistant-glow">
       {/* 主内容区 */}
@@ -739,9 +879,9 @@ export default function AssistantPage() {
                 >
                   <History className="h-3.5 w-3.5" />
                   <span className="font-medium">{t('assistant.history')}</span>
-                  {sessions.length > 0 && (
+                  {allSessions.length > 0 && (
                     <span className="px-1.5 py-0.5 bg-brand-500/10 text-brand-600 dark:text-brand-400 text-[10px] rounded-full font-semibold">
-                      {sessions.length}
+                      {allSessions.length}
                     </span>
                   )}
                   <ChevronDown
@@ -763,9 +903,13 @@ export default function AssistantPage() {
                       </button>
                     </div>
                     <div className="max-h-72 overflow-y-auto p-2">
-                      {sessions.length > 0 ? (
+                      {isLoadingSessions ? (
+                        <div className="flex items-center justify-center py-6">
+                          <Loader2 className="h-5 w-5 animate-spin text-brand-500" />
+                        </div>
+                      ) : allSessions.length > 0 ? (
                         <div className="space-y-1">
-                          {sessions.map(session => (
+                          {allSessions.map(session => (
                             <button
                               key={session.id}
                               onClick={() => switchSession(session.id)}
@@ -849,89 +993,21 @@ export default function AssistantPage() {
                       </button>
                     </div>
 
-                    {/* 底部工具栏 - 渠道探索 + 关联产品 */}
+                    {/* 底部工具栏 - 联网搜索 + 关联产品 */}
                     <div className="flex items-center gap-2.5 px-5 pb-4">
-                      {/* 渠道探索 */}
-                      <div className="relative" ref={channelMenuRef}>
-                        <button
-                          onClick={() => setShowChannelMenu(!showChannelMenu)}
-                          className={cn(
-                            'relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200',
-                            selectedChannels.length > 0
-                              ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400 ring-1 ring-brand-500/20'
-                              : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
-                          )}
-                        >
-                          <Compass className="h-3 w-3" />
-                          {selectedChannels.length > 0 ? t('assistant.selectedChannels').replace('{count}', String(selectedChannels.length)) : t('assistant.channelExplore')}
-                          <ChevronDown
-                            className={cn('h-2 w-2 transition-transform duration-200', showChannelMenu && 'rotate-180')}
-                          />
-                          {selectedChannels.length > 0 && (
-                            <span
-                              onClick={(e) => {
-                                e.stopPropagation()
-                                setSelectedChannels([])
-                              }}
-                              className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-content-muted hover:bg-content-secondary text-white rounded-full cursor-pointer transition-colors"
-                              title={t('assistant.clearSelection')}
-                            >
-                              <X className="h-2 w-2" />
-                            </span>
-                          )}
-                        </button>
-
-                        {showChannelMenu && (
-                          <div className="absolute left-0 top-full mt-2 w-56 bg-background/95 backdrop-blur-xl border border-surface-border/80 rounded-xl shadow-xl z-50 overflow-hidden">
-                            <div className="p-2 border-b border-surface-border/50">
-                              <span className="text-[11px] text-content-muted px-2 font-semibold tracking-wide">{t('assistant.selectDataSource')}</span>
-                            </div>
-                            <div className="p-2 space-y-1">
-                              {CHANNELS.map((channel) => {
-                                const isSelected = selectedChannels.includes(channel.id)
-                                return (
-                                  <button
-                                    key={channel.id}
-                                    onClick={() => toggleChannel(channel.id)}
-                                    className={cn(
-                                      'w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all',
-                                      isSelected
-                                        ? 'bg-brand-500/10'
-                                        : 'hover:bg-surface/60'
-                                    )}
-                                  >
-                                    <div
-                                      className="w-7 h-7 rounded-lg flex items-center justify-center transition-all"
-                                      style={{ backgroundColor: `${channel.color}15` }}
-                                    >
-                                      <channel.Icon
-                                        className="h-4 w-4 transition-all"
-                                        style={{ color: channel.color }}
-                                      />
-                                    </div>
-                                    <span className={cn(
-                                      'flex-1 text-sm',
-                                      isSelected ? 'text-content-primary font-semibold' : 'text-content-secondary font-medium'
-                                    )}>
-                                      {channel.name}
-                                    </span>
-                                    <div className={cn(
-                                      'w-4 h-4 rounded border-2 flex items-center justify-center transition-all',
-                                      isSelected
-                                        ? 'bg-brand-500 border-brand-500'
-                                        : 'border-content-muted/30'
-                                    )}>
-                                      {isSelected && (
-                                        <Check className="h-2.5 w-2.5 text-white" />
-                                      )}
-                                    </div>
-                                  </button>
-                                )
-                              })}
-                            </div>
-                          </div>
+                      {/* 联网搜索 */}
+                      <button
+                        onClick={toggleWebSearch}
+                        className={cn(
+                          'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200',
+                          enableWebSearch
+                            ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400 ring-1 ring-brand-500/20'
+                            : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50'
                         )}
-                      </div>
+                      >
+                        <Globe className="h-3 w-3" />
+                        {t('assistant.webSearch')}
+                      </button>
 
                       {/* 关联产品 */}
                       <div className="relative" ref={contextMenuRef}>
@@ -1142,9 +1218,13 @@ export default function AssistantPage() {
                         </button>
                       </div>
                       <div className="max-h-72 overflow-y-auto p-2">
-                        {sessions.length > 0 ? (
+                        {isLoadingSessions ? (
+                          <div className="flex items-center justify-center py-6">
+                            <Loader2 className="h-5 w-5 animate-spin text-brand-500" />
+                          </div>
+                        ) : allSessions.length > 0 ? (
                           <div className="space-y-1">
-                            {sessions.map(session => (
+                            {allSessions.map(session => (
                               <button
                                 key={session.id}
                                 onClick={() => switchSession(session.id)}

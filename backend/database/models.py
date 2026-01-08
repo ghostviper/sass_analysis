@@ -1,5 +1,7 @@
 """
 SQLAlchemy models for SaaS Analysis Tool
+
+Compatible with PostgreSQL (Supabase), MySQL, and SQLite.
 """
 
 from datetime import datetime
@@ -391,8 +393,8 @@ class LandingPageSnapshot(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     startup_id = Column(Integer, ForeignKey("startups.id"), nullable=False, index=True)
     url = Column(String(512), nullable=False)
-    html_content = Column(Text, nullable=True)
-    raw_text = Column(Text, nullable=True)
+    html_content = Column(Text, nullable=True)  # Text works for all databases
+    raw_text = Column(Text, nullable=True)  # Text works for all databases
     snapshot_path = Column(String(512), nullable=True)
 
     # 状态
@@ -601,4 +603,136 @@ class RevenueHistory(Base):
             "charges": self.charges,
             "subscription_revenue": self.subscription_revenue,
             "scraped_at": self.scraped_at.isoformat() if self.scraped_at else None,
+        }
+
+
+# ============================================================================
+# Chat Session Models
+# ============================================================================
+
+class ChatSession(Base):
+    """用户会话表 - 存储会话基本信息"""
+    __tablename__ = "chat_sessions"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    session_id = Column(String(64), unique=True, nullable=False, index=True)  # UUID格式的会话ID
+
+    # 会话元信息
+    title = Column(String(255), nullable=True)  # 会话标题（可从首条消息自动生成）
+    summary = Column(Text, nullable=True)  # 会话摘要
+
+    # 用户标识（预留，目前无用户系统）
+    user_id = Column(String(64), nullable=True, index=True)
+
+    # 会话配置
+    enable_web_search = Column(Boolean, default=False)  # 是否启用联网搜索
+    context_type = Column(String(20), nullable=True)  # database / url
+    context_value = Column(Text, nullable=True)  # 关联的产品名或URL
+    context_products = Column(JSON, nullable=True)  # 关联的多个产品名列表
+
+    # 统计信息
+    message_count = Column(Integer, default=0)  # 消息数量
+    turn_count = Column(Integer, default=0)  # 对话轮数
+    total_cost = Column(Float, default=0.0)  # 累计消耗（美元）
+    total_input_tokens = Column(Integer, default=0)  # 累计输入token
+    total_output_tokens = Column(Integer, default=0)  # 累计输出token
+
+    # 状态
+    is_archived = Column(Boolean, default=False)  # 是否已归档
+    is_deleted = Column(Boolean, default=False)  # 是否已删除（软删除）
+
+    # 时间戳
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    last_message_at = Column(DateTime, nullable=True)  # 最后一条消息时间
+
+    def __repr__(self):
+        return f"<ChatSession(session_id='{self.session_id}', title='{self.title}')>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "session_id": self.session_id,
+            "title": self.title,
+            "summary": self.summary,
+            "user_id": self.user_id,
+            "enable_web_search": self.enable_web_search,
+            "context_type": self.context_type,
+            "context_value": self.context_value,
+            "context_products": self.context_products,
+            "message_count": self.message_count,
+            "turn_count": self.turn_count,
+            "total_cost": self.total_cost,
+            "total_input_tokens": self.total_input_tokens,
+            "total_output_tokens": self.total_output_tokens,
+            "is_archived": self.is_archived,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "last_message_at": self.last_message_at.isoformat() if self.last_message_at else None,
+        }
+
+    def to_list_dict(self):
+        """返回列表展示用的精简数据"""
+        return {
+            "session_id": self.session_id,
+            "title": self.title,
+            "message_count": self.message_count,
+            "turn_count": self.turn_count,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+            "last_message_at": self.last_message_at.isoformat() if self.last_message_at else None,
+        }
+
+
+class ChatMessage(Base):
+    """聊天消息表 - 存储每条消息"""
+    __tablename__ = "chat_messages"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    session_id = Column(String(64), ForeignKey("chat_sessions.session_id"), nullable=False, index=True)
+
+    # 消息内容
+    role = Column(String(20), nullable=False)  # user / assistant / system
+    content = Column(Text, nullable=False)  # 消息内容
+
+    # 消息序号
+    sequence = Column(Integer, nullable=False)  # 消息在会话中的序号
+
+    # 工具调用信息（仅assistant消息）
+    tool_calls = Column(JSON, nullable=True)  # 工具调用记录 [{name, input, output, duration_ms}]
+
+    # Token统计（仅assistant消息）
+    input_tokens = Column(Integer, nullable=True)
+    output_tokens = Column(Integer, nullable=True)
+    cost = Column(Float, nullable=True)  # 本条消息消耗（美元）
+
+    # 元数据
+    model = Column(String(100), nullable=True)  # 使用的模型
+    duration_ms = Column(Integer, nullable=True)  # 响应耗时（毫秒）
+
+    # 时间戳
+    created_at = Column(DateTime, default=datetime.utcnow, index=True)
+
+    # 索引
+    __table_args__ = (
+        Index('ix_chat_messages_session_sequence', 'session_id', 'sequence'),
+    )
+
+    def __repr__(self):
+        return f"<ChatMessage(session_id='{self.session_id}', role='{self.role}', seq={self.sequence})>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "session_id": self.session_id,
+            "role": self.role,
+            "content": self.content,
+            "sequence": self.sequence,
+            "tool_calls": self.tool_calls,
+            "input_tokens": self.input_tokens,
+            "output_tokens": self.output_tokens,
+            "cost": self.cost,
+            "model": self.model,
+            "duration_ms": self.duration_ms,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
         }

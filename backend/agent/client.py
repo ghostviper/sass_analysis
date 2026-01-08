@@ -39,17 +39,60 @@ from claude_agent_sdk import (
 
 @dataclass
 class StreamEvent:
-    """Represents a streaming event for the frontend."""
-    type: str  # "text", "tool_start", "tool_end", "thinking", "status", "done"
+    """
+    Enhanced streaming event with output layer and block management.
+
+    Event types:
+    - block_start: A content block (thinking/text/tool_use) is starting
+    - block_delta: Incremental content for a block
+    - block_end: A content block has completed
+    - tool_start: Tool execution is starting (legacy, maps to block_start)
+    - tool_end: Tool execution completed (legacy, maps to block_end)
+    - status: Status message
+    - done: Stream completed
+    - error: Error occurred
+
+    Layers:
+    - primary: Final output content (text responses)
+    - process: Intermediate processing (thinking, tool calls)
+    - debug: Debug information (not shown to users by default)
+    """
+    type: str  # "block_start", "block_delta", "block_end", "tool_start", "tool_end", "status", "done", "error"
+    layer: str = "primary"  # "primary", "process", "debug"
+
+    # Block management
+    block_id: Optional[str] = None
+    block_type: Optional[str] = None  # "thinking", "text", "tool_use", "tool_result"
+    block_index: Optional[int] = None
+
+    # Content
     content: str = ""
+
+    # Tool-related (for tool_start/tool_end and tool_use blocks)
     tool_name: str = ""
     tool_input: Dict[str, Any] = None
     tool_result: str = ""
+    display_text: str = ""  # User-friendly display text
+
+    # Metadata
     cost: float = 0.0
-    session_id: str = ""  # Return session_id for frontend to track
+    session_id: str = ""
+    timestamp: float = 0.0
 
     def to_dict(self) -> Dict[str, Any]:
-        result = {"type": self.type}
+        """Convert to dictionary for JSON serialization."""
+        import time as time_module
+        result = {
+            "type": self.type,
+            "layer": self.layer,
+            "timestamp": self.timestamp or time_module.time(),
+        }
+        if self.block_id:
+            result["block_id"] = self.block_id
+        if self.block_type:
+            result["block_type"] = self.block_type
+        if self.block_index is not None:
+            result["block_index"] = self.block_index
         if self.content:
             result["content"] = self.content
         if self.tool_name:
@@ -58,11 +101,17 @@ class StreamEvent:
             result["tool_input"] = self.tool_input
         if self.tool_result:
             result["tool_result"] = self.tool_result
+        if self.display_text:
+            result["display_text"] = self.display_text
         if self.cost > 0:
             result["cost"] = self.cost
         if self.session_id:
             result["session_id"] = self.session_id
         return result
+
+
+# Legacy alias for backward compatibility
+StreamEventV2 = StreamEvent
 
 
 @dataclass
@@ -94,6 +143,141 @@ from .tools import (
     get_leaderboard_tool,
 )
 from .prompts import SYSTEM_PROMPT
+
+
+# ============================================================================
+# Friendly Description Helpers (参考 form_filling_app 的实现)
+# ============================================================================
+
+def _get_friendly_tool_description(tool_name: str, tool_input: Dict[str, Any]) -> str:
+    """
+    Convert a tool call into a user-friendly description.
+
+    This provides human-readable descriptions for tool calls,
+    making the agent's actions more transparent to users.
+    """
+    if not isinstance(tool_input, dict):
+        return ""
+
+    # Remove MCP prefix for cleaner matching
+    clean_name = tool_name.replace("mcp__saas__", "")
+
+    if clean_name == "query_startups":
+        parts = []
+        if tool_input.get("category"):
+            parts.append(f"类目: {tool_input['category']}")
+        if tool_input.get("search"):
+            parts.append(f"搜索: {tool_input['search']}")
+        if tool_input.get("min_revenue"):
+            parts.append(f"最低收入: ${tool_input['min_revenue']}")
+        if tool_input.get("tech_complexity"):
+            parts.append(f"技术复杂度: {tool_input['tech_complexity']}")
+        if tool_input.get("min_suitability"):
+            parts.append(f"适合度≥{tool_input['min_suitability']}")
+
+        if parts:
+            return f"查询产品 ({', '.join(parts[:3])})"
+        return "查询产品数据库"
+
+    elif clean_name == "get_category_analysis":
+        category = tool_input.get("category")
+        if category:
+            return f"分析「{category}」类目"
+        return "分析所有类目"
+
+    elif clean_name == "get_trend_report":
+        return "生成市场趋势报告"
+
+    elif clean_name == "get_leaderboard":
+        limit = tool_input.get("limit", 20)
+        return f"获取创始人排行榜 (Top {limit})"
+
+    elif clean_name == "find_excellent_developers":
+        min_products = tool_input.get("min_products", 2)
+        sort_by = tool_input.get("sort_by", "total_revenue")
+        sort_labels = {
+            "total_revenue": "总收入",
+            "avg_revenue": "平均收入",
+            "product_count": "产品数",
+            "followers": "粉丝数"
+        }
+        return f"查找优秀开发者 (≥{min_products}个产品, 按{sort_labels.get(sort_by, sort_by)}排序)"
+
+    elif clean_name == "web_search":
+        query = tool_input.get("query", "")
+        site = tool_input.get("site")
+        if site:
+            return f"搜索「{query[:30]}...」(限定 {site})"
+        return f"搜索「{query[:40]}{'...' if len(query) > 40 else ''}"
+
+    return ""
+
+
+def _parse_tool_result_friendly(content: Any) -> str:
+    """
+    Try to extract user-friendly info from tool results.
+
+    Parses JSON tool results and generates human-readable summaries.
+    """
+    import json
+
+    try:
+        # Content might be a list of blocks
+        if isinstance(content, list):
+            for item in content:
+                if hasattr(item, "content"):
+                    text = item.content
+                    if isinstance(text, str):
+                        data = json.loads(text)
+                        return _format_tool_result(data)
+        elif isinstance(content, str):
+            data = json.loads(content)
+            return _format_tool_result(data)
+    except:
+        pass
+    return ""
+
+
+def _format_tool_result(data: Any) -> str:
+    """Format tool result data into user-friendly text."""
+    if not isinstance(data, (dict, list)):
+        return ""
+
+    # List of startups/products
+    if isinstance(data, list) and len(data) > 0:
+        if isinstance(data[0], dict):
+            if "name" in data[0] and "revenue_30d" in data[0]:
+                return f"找到 {len(data)} 个产品"
+            if "username" in data[0] and "metrics" in data[0]:
+                return f"找到 {len(data)} 位开发者"
+            if "title" in data[0] and "url" in data[0]:
+                return f"找到 {len(data)} 条搜索结果"
+        return f"返回 {len(data)} 条数据"
+
+    if not isinstance(data, dict):
+        return ""
+
+    # Error response
+    if "error" in data:
+        return f"错误: {data['error'][:50]}"
+
+    # Category analysis
+    if "categories" in data:
+        return f"分析了 {len(data['categories'])} 个类目"
+
+    if "category" in data and "count" in data:
+        return f"「{data['category']}」: {data['count']} 个产品, 总收入 ${data.get('total_revenue', 0):,.0f}"
+
+    # Trend report
+    if "overview" in data and "top_categories" in data:
+        overview = data["overview"]
+        return f"市场概览: {overview.get('total_startups', 0)} 个产品, 总收入 ${overview.get('total_market_revenue', 0):,.0f}"
+
+    # Leaderboard
+    if isinstance(data, list) and len(data) > 0 and "rank" in data[0]:
+        return f"排行榜: Top {len(data)} 创始人"
+
+    return ""
 
 
 def _create_mcp_server():
@@ -129,9 +313,18 @@ class SaaSAnalysisAgent:
         # Get API configuration from environment
         self.api_key = os.getenv("ANTHROPIC_API_KEY")
         self.base_url = os.getenv("ANTHROPIC_BASE_URL")  # Optional for third-party endpoints
-        self.model = os.getenv("CLAUDE_MODEL", "claude-sonnet-4-5")
         self.cli_path = os.getenv("CLAUDE_CLI_PATH")  # Optional: custom CLI path
         self.debug_stream = os.getenv("DEBUG_STREAM", "0") == "1"
+
+        # Model configuration - 4 model environment variables
+        # ANTHROPIC_MODEL: Main model used for requests
+        # ANTHROPIC_DEFAULT_SONNET_MODEL: Default Sonnet model
+        # ANTHROPIC_DEFAULT_HAIKU_MODEL: Default Haiku model (for fast/simple tasks)
+        # ANTHROPIC_DEFAULT_OPUS_MODEL: Default Opus model (for complex tasks)
+        self.model = os.getenv("ANTHROPIC_MODEL", "glm")
+        self.default_sonnet_model = os.getenv("ANTHROPIC_DEFAULT_SONNET_MODEL", "glm")
+        self.default_haiku_model = os.getenv("ANTHROPIC_DEFAULT_HAIKU_MODEL", "glm")
+        self.default_opus_model = os.getenv("ANTHROPIC_DEFAULT_OPUS_MODEL", "glm")
 
         # Session management configuration
         self.max_turns = int(os.getenv("CLAUDE_MAX_TURNS", "10"))  # Max conversation turns
@@ -146,6 +339,11 @@ class SaaSAnalysisAgent:
         # Build environment variables for Claude CLI
         self._env = {
             "ANTHROPIC_API_KEY": self.api_key,
+            # Model configuration - pass all 4 model variables to CLI
+            "ANTHROPIC_MODEL": self.model,
+            "ANTHROPIC_DEFAULT_SONNET_MODEL": self.default_sonnet_model,
+            "ANTHROPIC_DEFAULT_HAIKU_MODEL": self.default_haiku_model,
+            "ANTHROPIC_DEFAULT_OPUS_MODEL": self.default_opus_model,
             # Force Node.js to use unbuffered stdout (may help streaming on Windows)
             "NODE_OPTIONS": "--no-warnings",
             "FORCE_COLOR": "0",  # Disable color output which can cause buffering
@@ -255,7 +453,9 @@ class SaaSAnalysisAgent:
     async def query_stream_events(
         self,
         message: str,
-        session_id: Optional[str] = None
+        session_id: Optional[str] = None,
+        enable_web_search: bool = False,
+        context: Optional[Dict[str, Any]] = None
     ) -> AsyncIterator[StreamEvent]:
         """
         Stream a query to Claude and yield detailed events including tool usage.
@@ -270,6 +470,8 @@ class SaaSAnalysisAgent:
             message: User's question or request
             session_id: Optional session ID for multi-turn conversations.
                        If None, creates a new session. If provided, resumes the session.
+            enable_web_search: Whether to enable web search capability (not implemented yet)
+            context: Optional context with product info or URLs (not implemented yet)
 
         Yields:
             StreamEvent objects with detailed information
@@ -286,10 +488,15 @@ class SaaSAnalysisAgent:
         # Cleanup expired sessions first
         self._cleanup_expired_sessions()
 
-        # Track tool usage to avoid duplicate events
+        # Block state tracking for V2 events
+        active_blocks: Dict[int, Dict[str, Any]] = {}  # index -> {type, id, content, tool_id, tool_name}
+        block_counter = 0  # For generating unique block IDs
+
+        # Legacy tracking for backward compatibility
         active_tools = {}
         # Track text we've already sent to avoid duplicates
         sent_text_length = 0  # persists across messages when accumulate_streaming_content=True
+        sent_thinking_length = 0  # Track thinking separately
 
         # Determine if resuming or creating new session
         resume_session = None
@@ -353,229 +560,356 @@ class SaaSAnalysisAgent:
                 final_cost = 0.0
 
                 async for msg in client.receive_response():
-                    # ========== 消息类型调试打印 ==========
+                    # Debug logging for message types
                     msg_type = type(msg).__name__
-                    print(f"\n{'='*60}", flush=True)
-                    print(f"📨 [MESSAGE TYPE] {msg_type}", flush=True)
-
-                    # 打印消息的所有属性以便调试
-                    if hasattr(msg, '__dict__'):
-                        print(f"   属性: {list(msg.__dict__.keys())}", flush=True)
-                    print(f"{'='*60}", flush=True)
+                    if self.debug_stream:
+                        print(f"\n{'='*60}", flush=True)
+                        print(f"📨 [MESSAGE TYPE] {msg_type}", flush=True)
+                        if hasattr(msg, '__dict__'):
+                            print(f"   属性: {list(msg.__dict__.keys())}", flush=True)
+                        print(f"{'='*60}", flush=True)
 
                     # Handle partial streaming events (when include_partial_messages=True)
                     if hasattr(msg, 'type') and msg.type == 'stream_event':
-                        print(f"  🔄 [StreamEvent]", flush=True)
+                        if self.debug_stream:
+                            print(f"  🔄 [StreamEvent]", flush=True)
                         # This is a streaming event - extract text delta if available
                         event = getattr(msg, 'event', None)
                         if event:
                             event_type = getattr(event, 'type', None)
-                            print(f"     ├─ event.type: {event_type}", flush=True)
+                            if self.debug_stream:
+                                print(f"     ├─ event.type: {event_type}", flush=True)
 
-                            # ========== 详细打印各种 event type ==========
+                            # Handle different event types
                             if event_type == 'message_start':
-                                print(f"     │  🚀 [message_start] 消息开始", flush=True)
-                                message = getattr(event, 'message', None)
-                                if message:
-                                    print(f"     │     ├─ id: {getattr(message, 'id', 'N/A')}", flush=True)
-                                    print(f"     │     ├─ model: {getattr(message, 'model', 'N/A')}", flush=True)
-                                    print(f"     │     └─ role: {getattr(message, 'role', 'N/A')}", flush=True)
+                                if self.debug_stream:
+                                    print(f"     │  🚀 [message_start] 消息开始", flush=True)
+                                    message = getattr(event, 'message', None)
+                                    if message:
+                                        print(f"     │     ├─ id: {getattr(message, 'id', 'N/A')}", flush=True)
+                                        print(f"     │     ├─ model: {getattr(message, 'model', 'N/A')}", flush=True)
+                                        print(f"     │     └─ role: {getattr(message, 'role', 'N/A')}", flush=True)
 
                             elif event_type == 'content_block_start':
                                 content_block = getattr(event, 'content_block', None)
-                                index = getattr(event, 'index', 'N/A')
-                                print(f"     │  📦 [content_block_start] index={index}", flush=True)
+                                index = getattr(event, 'index', 0)
+                                if self.debug_stream:
+                                    print(f"     │  📦 [content_block_start] index={index}", flush=True)
+
                                 if content_block:
                                     block_type = getattr(content_block, 'type', None)
-                                    print(f"     │     └─ content_block.type: {block_type}", flush=True)
+                                    if self.debug_stream:
+                                        print(f"     │     └─ content_block.type: {block_type}", flush=True)
+
+                                    # Generate unique block ID
+                                    block_id = f"block_{block_counter}"
+                                    block_counter += 1
+
+                                    # Determine layer based on block type
+                                    layer = "process" if block_type in ("thinking", "tool_use") else "primary"
+
+                                    # Store block info
+                                    block_info = {
+                                        "type": block_type,
+                                        "id": block_id,
+                                        "content": "",
+                                        "layer": layer,
+                                    }
 
                                     if block_type == 'thinking':
-                                        print(f"     │        💭 开始思考块", flush=True)
+                                        if self.debug_stream:
+                                            print(f"     │        💭 开始思考块", flush=True)
+                                        # Emit block_start event
+                                        yield StreamEvent(
+                                            type="block_start",
+                                            layer="process",
+                                            block_id=block_id,
+                                            block_type="thinking",
+                                            block_index=index
+                                        )
+
                                     elif block_type == 'text':
-                                        print(f"     │        📝 开始文本块", flush=True)
+                                        if self.debug_stream:
+                                            print(f"     │        📝 开始文本块", flush=True)
+                                        yield StreamEvent(
+                                            type="block_start",
+                                            layer="primary",
+                                            block_id=block_id,
+                                            block_type="text",
+                                            block_index=index
+                                        )
+
                                     elif block_type == 'tool_use':
                                         tool_name = getattr(content_block, 'name', '').replace("mcp__saas__", "")
                                         tool_id = getattr(content_block, 'id', '')
-                                        print(f"     │        🔧 开始工具调用块", flush=True)
-                                        print(f"     │           ├─ name: {tool_name}", flush=True)
-                                        print(f"     │           └─ id: {tool_id}", flush=True)
+                                        tool_input = getattr(content_block, 'input', {}) or {}
+                                        # Generate friendly description for the tool call
+                                        friendly_desc = _get_friendly_tool_description(tool_name, tool_input)
+                                        if self.debug_stream:
+                                            print(f"     │        🔧 开始工具调用块", flush=True)
+                                            print(f"     │           ├─ name: {tool_name}", flush=True)
+                                            print(f"     │           ├─ id: {tool_id}", flush=True)
+                                            print(f"     │           └─ friendly: {friendly_desc}", flush=True)
+
+                                        block_info["tool_id"] = tool_id
+                                        block_info["tool_name"] = tool_name
+                                        block_info["tool_input"] = tool_input
+                                        block_info["display_text"] = friendly_desc
+
+                                        # Store in active_tools for tool_result matching
                                         if tool_id and tool_id not in active_tools:
-                                            active_tools[tool_id] = tool_name
-                                            yield StreamEvent(
-                                                type="tool_start",
-                                                tool_name=tool_name,
-                                                tool_input={}
-                                            )
+                                            active_tools[tool_id] = {"name": tool_name, "display_text": friendly_desc}
+
+                                        # Emit both block_start and tool_start for compatibility
+                                        yield StreamEvent(
+                                            type="block_start",
+                                            layer="process",
+                                            block_id=block_id,
+                                            block_type="tool_use",
+                                            block_index=index,
+                                            tool_name=tool_name,
+                                            display_text=friendly_desc
+                                        )
+                                        yield StreamEvent(
+                                            type="tool_start",
+                                            layer="process",
+                                            block_id=block_id,
+                                            tool_name=tool_name,
+                                            tool_input=tool_input,
+                                            display_text=friendly_desc
+                                        )
+
+                                    active_blocks[index] = block_info
 
                             elif event_type == 'content_block_delta':
                                 delta = getattr(event, 'delta', None)
-                                index = getattr(event, 'index', 'N/A')
-                                print(f"     │  📤 [content_block_delta] index={index}", flush=True)
+                                index = getattr(event, 'index', 0)
+                                if self.debug_stream:
+                                    print(f"     │  📤 [content_block_delta] index={index}", flush=True)
+
+                                block_info = active_blocks.get(index, {})
+                                block_id = block_info.get("id")
+
                                 if delta:
                                     delta_type = getattr(delta, 'type', None)
-                                    print(f"     │     └─ delta.type: {delta_type}", flush=True)
+                                    if self.debug_stream:
+                                        print(f"     │     └─ delta.type: {delta_type}", flush=True)
 
                                     if delta_type == 'thinking_delta':
                                         thinking = getattr(delta, 'thinking', '')
-                                        preview = thinking[:60] + "..." if len(thinking) > 60 else thinking
-                                        print(f"     │        💭 thinking_delta: {preview}", flush=True)
-                                        # Yield thinking event for frontend
-                                        yield StreamEvent(type="thinking", content=thinking)
+                                        if thinking:
+                                            block_info["content"] = block_info.get("content", "") + thinking
+                                            # Update sent_thinking_length to avoid duplicates in AssistantMessage
+                                            sent_thinking_length += len(thinking)
+                                            if self.debug_stream:
+                                                preview = thinking[:60] + "..." if len(thinking) > 60 else thinking
+                                                print(f"     │        💭 thinking_delta: {preview}", flush=True)
+                                            # Emit block_delta event
+                                            yield StreamEvent(
+                                                type="block_delta",
+                                                layer="process",
+                                                block_id=block_id,
+                                                block_type="thinking",
+                                                content=thinking
+                                            )
 
                                     elif delta_type == 'text_delta':
                                         text = getattr(delta, 'text', '')
-                                        preview = text[:60] + "..." if len(text) > 60 else text
-                                        print(f"     │        📝 text_delta: {preview}", flush=True)
-                                        yield StreamEvent(type="text", content=text)
+                                        if text:
+                                            block_info["content"] = block_info.get("content", "") + text
+                                            # Update sent_text_length to avoid duplicates in AssistantMessage
+                                            sent_text_length += len(text)
+                                            if self.debug_stream:
+                                                preview = text[:60] + "..." if len(text) > 60 else text
+                                                print(f"     │        📝 text_delta: {preview}", flush=True)
+                                            # Emit block_delta event
+                                            yield StreamEvent(
+                                                type="block_delta",
+                                                layer="primary",
+                                                block_id=block_id,
+                                                block_type="text",
+                                                content=text
+                                            )
 
                                     elif delta_type == 'signature_delta':
-                                        signature = getattr(delta, 'signature', '')
-                                        print(f"     │        🔏 signature_delta: {signature[:40]}...", flush=True)
+                                        if self.debug_stream:
+                                            signature = getattr(delta, 'signature', '')
+                                            print(f"     │        🔏 signature_delta: {signature[:40]}...", flush=True)
 
                                     elif delta_type == 'input_json_delta':
                                         partial_json = getattr(delta, 'partial_json', '')
-                                        print(f"     │        📋 input_json_delta: {partial_json[:60]}...", flush=True)
+                                        if self.debug_stream:
+                                            print(f"     │        📋 input_json_delta: {partial_json[:60]}...", flush=True)
+                                        # Accumulate tool input JSON
+                                        block_info["input_json"] = block_info.get("input_json", "") + partial_json
 
                                     else:
-                                        print(f"     │        ❓ unknown delta: {delta}", flush=True)
+                                        if self.debug_stream:
+                                            print(f"     │        ❓ unknown delta: {delta}", flush=True)
 
                             elif event_type == 'content_block_stop':
-                                index = getattr(event, 'index', 'N/A')
-                                print(f"     │  ⏹️ [content_block_stop] index={index} 内容块结束", flush=True)
+                                index = getattr(event, 'index', 0)
+                                if self.debug_stream:
+                                    print(f"     │  ⏹️ [content_block_stop] index={index} 内容块结束", flush=True)
+
+                                # Get and remove block info
+                                block_info = active_blocks.pop(index, {})
+                                block_id = block_info.get("id")
+                                block_type = block_info.get("type")
+                                layer = block_info.get("layer", "primary")
+
+                                if block_id and block_type:
+                                    # Emit block_end event
+                                    yield StreamEvent(
+                                        type="block_end",
+                                        layer=layer,
+                                        block_id=block_id,
+                                        block_type=block_type
+                                    )
 
                             elif event_type == 'message_delta':
                                 delta = getattr(event, 'delta', None)
-                                print(f"     │  📊 [message_delta]", flush=True)
-                                if delta:
-                                    stop_reason = getattr(delta, 'stop_reason', None)
-                                    stop_sequence = getattr(delta, 'stop_sequence', None)
-                                    print(f"     │     ├─ stop_reason: {stop_reason}", flush=True)
-                                    print(f"     │     └─ stop_sequence: {stop_sequence}", flush=True)
-                                usage = getattr(event, 'usage', None)
-                                if usage:
-                                    print(f"     │     └─ usage: {usage}", flush=True)
+                                if self.debug_stream:
+                                    print(f"     │  📊 [message_delta]", flush=True)
+                                    if delta:
+                                        stop_reason = getattr(delta, 'stop_reason', None)
+                                        stop_sequence = getattr(delta, 'stop_sequence', None)
+                                        print(f"     │     ├─ stop_reason: {stop_reason}", flush=True)
+                                        print(f"     │     └─ stop_sequence: {stop_sequence}", flush=True)
+                                    usage = getattr(event, 'usage', None)
+                                    if usage:
+                                        print(f"     │     └─ usage: {usage}", flush=True)
 
                             elif event_type == 'message_stop':
-                                print(f"     │  🏁 [message_stop] 消息结束", flush=True)
+                                if self.debug_stream:
+                                    print(f"     │  🏁 [message_stop] 消息结束", flush=True)
 
                             else:
-                                print(f"     │  ❓ [unknown event_type] {event_type}", flush=True)
-                                print(f"     │     └─ raw event: {str(event)[:100]}...", flush=True)
+                                if self.debug_stream:
+                                    print(f"     │  ❓ [unknown event_type] {event_type}", flush=True)
+                                    print(f"     │     └─ raw event: {str(event)[:100]}...", flush=True)
 
                             _t(f"stream_event: {event_type}")
                         continue
 
-                    # Handle UserMessage
+                    # Handle UserMessage (skip, just log for debugging)
                     if isinstance(msg, UserMessage):
-                        print(f"  👤 [UserMessage]", flush=True)
-                        if hasattr(msg, 'uuid') and msg.uuid:
-                            print(f"     └─ uuid: {msg.uuid}", flush=True)
-                        if isinstance(msg.content, str):
-                            print(f"     └─ content: {msg.content[:100]}..." if len(msg.content) > 100 else f"     └─ content: {msg.content}", flush=True)
-                        else:
-                            print(f"     └─ content blocks: {len(msg.content)}", flush=True)
-                            for i, block in enumerate(msg.content):
-                                block_type = type(block).__name__
-                                print(f"        [{i}] {block_type}", flush=True)
-                                if isinstance(block, TextBlock):
-                                    print(f"            └─ 📝 text: {block.text[:80]}..." if len(block.text) > 80 else f"            └─ 📝 text: {block.text}", flush=True)
-                                elif isinstance(block, ToolResultBlock):
-                                    print(f"            └─ 📤 tool_use_id: {block.tool_use_id}", flush=True)
-                                    content_preview = str(block.content)[:80] if block.content else "None"
-                                    print(f"            └─ 📤 content: {content_preview}...", flush=True)
-                                    print(f"            └─ is_error: {block.is_error}", flush=True)
+                        if self.debug_stream:
+                            print(f"  👤 [UserMessage]", flush=True)
+                            if hasattr(msg, 'uuid') and msg.uuid:
+                                print(f"     └─ uuid: {msg.uuid}", flush=True)
 
-                    # Handle complete assistant messages
+                    # Handle complete assistant messages (fallback for non-streaming)
                     elif isinstance(msg, AssistantMessage):
-                        print(f"  🤖 [AssistantMessage]", flush=True)
-                        if hasattr(msg, 'model'):
-                            print(f"     └─ model: {msg.model}", flush=True)
-                        if hasattr(msg, 'error') and msg.error:
-                            print(f"     └─ ❌ error: {msg.error}", flush=True)
-                        print(f"     └─ content blocks: {len(msg.content)}", flush=True)
+                        if self.debug_stream:
+                            print(f"  🤖 [AssistantMessage]", flush=True)
+                            if hasattr(msg, 'model'):
+                                print(f"     └─ model: {msg.model}", flush=True)
+                            if hasattr(msg, 'error') and msg.error:
+                                print(f"     └─ ❌ error: {msg.error}", flush=True)
+                            print(f"     └─ content blocks: {len(msg.content)}", flush=True)
 
                         for i, block in enumerate(msg.content):
-                            block_type = type(block).__name__
-                            print(f"        [{i}] {block_type}", flush=True)
+                            if self.debug_stream:
+                                block_type_name = type(block).__name__
+                                print(f"        [{i}] {block_type_name}", flush=True)
 
                             if isinstance(block, TextBlock):
                                 if block.text:
-                                    preview = block.text[:80] + "..." if len(block.text) > 80 else block.text
-                                    print(f"            └─ 📝 text ({len(block.text)} chars): {preview}", flush=True)
-                                    # Only yield new text (avoid duplicates from partial messages)
+                                    if self.debug_stream:
+                                        preview = block.text[:80] + "..." if len(block.text) > 80 else block.text
+                                        print(f"            └─ 📝 text ({len(block.text)} chars): {preview}", flush=True)
+                                    # Only yield new text (avoid duplicates from streaming)
                                     new_text = block.text[sent_text_length:]
                                     if new_text:
                                         _t(f"text block ({len(new_text)} chars)")
-                                        yield StreamEvent(type="text", content=new_text)
+                                        yield StreamEvent(
+                                            type="block_delta",
+                                            layer="primary",
+                                            block_type="text",
+                                            content=new_text
+                                        )
                                         sent_text_length = len(block.text)
 
                             elif isinstance(block, ThinkingBlock):
-                                thinking_preview = block.thinking[:100] + "..." if len(block.thinking) > 100 else block.thinking
-                                print(f"            └─ 💭 thinking ({len(block.thinking)} chars): {thinking_preview}", flush=True)
-                                if hasattr(block, 'signature'):
-                                    print(f"            └─ signature: {block.signature[:50]}..." if len(str(block.signature)) > 50 else f"            └─ signature: {block.signature}", flush=True)
-                                # Yield thinking event for frontend
-                                yield StreamEvent(type="thinking", content=block.thinking)
+                                if self.debug_stream:
+                                    thinking_preview = block.thinking[:100] + "..." if len(block.thinking) > 100 else block.thinking
+                                    print(f"            └─ 💭 thinking ({len(block.thinking)} chars): {thinking_preview}", flush=True)
+                                # Only yield new thinking (avoid duplicates)
+                                new_thinking = block.thinking[sent_thinking_length:]
+                                if new_thinking:
+                                    yield StreamEvent(
+                                        type="block_delta",
+                                        layer="process",
+                                        block_type="thinking",
+                                        content=new_thinking
+                                    )
+                                    sent_thinking_length = len(block.thinking)
 
                             elif isinstance(block, ToolUseBlock):
                                 tool_name = block.name.replace("mcp__saas__", "")
-                                print(f"            └─ 🔧 tool_use: {block.name}", flush=True)
-                                print(f"            └─ id: {block.id}", flush=True)
-                                print(f"            └─ input: {str(block.input)[:100]}..." if len(str(block.input)) > 100 else f"            └─ input: {block.input}", flush=True)
+                                tool_input = block.input if hasattr(block, 'input') else {}
+                                friendly_desc = _get_friendly_tool_description(tool_name, tool_input)
+                                if self.debug_stream:
+                                    print(f"            └─ 🔧 tool_use: {block.name}", flush=True)
+                                    print(f"            └─ id: {block.id}", flush=True)
+                                    print(f"            └─ friendly: {friendly_desc}", flush=True)
                                 if block.id not in active_tools:
-                                    active_tools[block.id] = tool_name
+                                    active_tools[block.id] = {"name": tool_name, "display_text": friendly_desc}
                                     _t(f"tool_start: {tool_name}")
                                     yield StreamEvent(
                                         type="tool_start",
+                                        layer="process",
                                         tool_name=tool_name,
-                                        tool_input=block.input if hasattr(block, 'input') else {}
+                                        tool_input=tool_input,
+                                        display_text=friendly_desc
                                     )
 
                             elif isinstance(block, ToolResultBlock):
-                                tool_name = active_tools.get(block.tool_use_id, "unknown")
+                                tool_info = active_tools.get(block.tool_use_id, {"name": "unknown", "display_text": ""})
+                                tool_name = tool_info["name"] if isinstance(tool_info, dict) else tool_info
+                                tool_display = tool_info.get("display_text", "") if isinstance(tool_info, dict) else ""
                                 content = block.content if isinstance(block.content, str) else str(block.content)
-                                print(f"            └─ 📤 tool_result for: {block.tool_use_id}", flush=True)
-                                print(f"            └─ tool_name: {tool_name}", flush=True)
-                                print(f"            └─ is_error: {block.is_error}", flush=True)
-                                print(f"            └─ content ({len(content)} chars): {content[:80]}...", flush=True)
-                                # Truncate long results for the event
+                                # Generate friendly result description
+                                result_friendly = _parse_tool_result_friendly(block.content)
+                                if self.debug_stream:
+                                    print(f"            └─ 📤 tool_result for: {block.tool_use_id}", flush=True)
+                                    print(f"            └─ tool_name: {tool_name}", flush=True)
+                                    print(f"            └─ result_friendly: {result_friendly}", flush=True)
+                                # Truncate long results
                                 if len(content) > 500:
                                     content = content[:500] + "..."
                                 _t(f"tool_end: {tool_name}")
                                 yield StreamEvent(
                                     type="tool_end",
+                                    layer="process",
                                     tool_name=tool_name,
-                                    tool_result=content
+                                    tool_result=content,
+                                    display_text=result_friendly or tool_display
                                 )
                             else:
-                                # Unknown block type
-                                print(f"            └─ ❓ unknown block: {block}", flush=True)
-                    # Do not reset sent_text_length here; we accumulate across messages
+                                if self.debug_stream:
+                                    print(f"            └─ ❓ unknown block: {block}", flush=True)
 
                     # Handle SystemMessage
                     elif isinstance(msg, SystemMessage):
-                        print(f"  ⚙️ [SystemMessage]", flush=True)
-                        if hasattr(msg, 'subtype'):
-                            print(f"     └─ subtype: {msg.subtype}", flush=True)
-                        if hasattr(msg, 'data'):
-                            data_str = str(msg.data)
-                            print(f"     └─ data: {data_str[:100]}..." if len(data_str) > 100 else f"     └─ data: {msg.data}", flush=True)
-                        # Yield system event for frontend
-                        yield StreamEvent(type="status", content=f"System: {getattr(msg, 'subtype', 'unknown')}")
+                        if self.debug_stream:
+                            print(f"  ⚙️ [SystemMessage]", flush=True)
+                            if hasattr(msg, 'subtype'):
+                                print(f"     └─ subtype: {msg.subtype}", flush=True)
+                        yield StreamEvent(type="status", layer="debug", content=f"System: {getattr(msg, 'subtype', 'unknown')}")
 
                     # Result message at end
                     elif isinstance(msg, ResultMessage):
-                        print(f"  ✅ [ResultMessage]", flush=True)
+                        if self.debug_stream:
+                            print(f"  ✅ [ResultMessage]", flush=True)
                         final_cost = getattr(msg, 'total_cost_usd', 0) or 0
-                        print(f"     └─ total_cost_usd: ${final_cost:.4f}", flush=True)
-                        if hasattr(msg, 'usage') and msg.usage:
-                            print(f"     └─ usage:", flush=True)
-                            print(f"        └─ input_tokens: {msg.usage.get('input_tokens', 'N/A')}", flush=True)
-                            print(f"        └─ output_tokens: {msg.usage.get('output_tokens', 'N/A')}", flush=True)
-                        if hasattr(msg, 'session_id'):
-                            print(f"     └─ session_id: {msg.session_id}", flush=True)
-                        if hasattr(msg, 'structured_output') and msg.structured_output:
-                            print(f"     └─ structured_output: {msg.structured_output}", flush=True)
+                        if self.debug_stream:
+                            print(f"     └─ total_cost_usd: ${final_cost:.4f}", flush=True)
+                            if hasattr(msg, 'usage') and msg.usage:
+                                print(f"     └─ usage:", flush=True)
+                                print(f"        └─ input_tokens: {msg.usage.get('input_tokens', 'N/A')}", flush=True)
+                                print(f"        └─ output_tokens: {msg.usage.get('output_tokens', 'N/A')}", flush=True)
                         # Get the session ID from the result if available
                         result_session_id = getattr(msg, 'session_id', None)
                         if result_session_id:
@@ -583,8 +917,9 @@ class SaaSAnalysisAgent:
 
                     else:
                         # Unknown message type
-                        print(f"  ❓ [Unknown Message Type] {msg_type}", flush=True)
-                        print(f"     └─ raw: {str(msg)[:200]}...", flush=True)
+                        if self.debug_stream:
+                            print(f"  ❓ [Unknown Message Type] {msg_type}", flush=True)
+                            print(f"     └─ raw: {str(msg)[:200]}...", flush=True)
 
                 # Update or create session info
                 current_time = time.time()
@@ -605,7 +940,7 @@ class SaaSAnalysisAgent:
                     )
 
                 _t(f"done, cost={final_cost}, session={session_id}")
-                yield StreamEvent(type="done", cost=final_cost, session_id=session_id)
+                yield StreamEvent(type="done", layer="primary", cost=final_cost, session_id=session_id)
 
     async def query(
         self,
@@ -632,7 +967,8 @@ class SaaSAnalysisAgent:
         result_session_id = session_id or ""
 
         async for event in self.query_stream_events(message, session_id=session_id):
-            if event.type == "text":
+            # Collect text content from block_delta events with text type
+            if event.type == "block_delta" and event.block_type == "text":
                 response_parts.append(event.content)
             elif event.type == "done" and event.session_id:
                 result_session_id = event.session_id

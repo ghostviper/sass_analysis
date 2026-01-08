@@ -65,3 +65,4 @@ nul
 # Test files
 test_*.py
 !backend/tests/
+examples/*

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Search, TrendingUp, Compass, X } from 'lucide-react'
+import { Search, TrendingUp, Compass, Users, X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useLocale } from '@/contexts/LocaleContext'
 
@@ -60,6 +60,18 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
         t('assistant.prompts.career2'),
         t('assistant.prompts.career3'),
         t('assistant.prompts.career4'),
+      ],
+    },
+    {
+      id: 'developer',
+      icon: Users,
+      label: t('assistant.categories.developer'),
+      description: t('assistant.categories.developerDesc'),
+      prompts: [
+        t('assistant.prompts.developer1'),
+        t('assistant.prompts.developer2'),
+        t('assistant.prompts.developer3'),
+        t('assistant.prompts.developer4'),
       ],
     },
   ]

@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "SaaS 分析",
+    "appName": "BuildWhat",
     "appSlogan": "产品机会洞察",
     "dataSource": "数据来源：TrustMRR | 分析仅供参考",
     "builtFor": "Built for Indie Hackers",
@@ -24,15 +24,15 @@
   },
   "nav": {
     "analysisModules": "分析模块",
-    "dashboard": "数据概览",
+    "dashboard": "概览",
     "dashboardDesc": "关键指标与榜单",
-    "categories": "赛道分析",
+    "categories": "赛道",
     "categoriesDesc": "市场机会洞察",
-    "products": "产品库",
+    "products": "产品",
     "productsDesc": "全部分析产品",
-    "leaderboard": "排行榜",
+    "leaderboard": "创作者",
     "leaderboardDesc": "Indie Hacker 榜单",
-    "assistant": "AI 分析助手",
+    "assistant": "决策助手",
     "assistantDesc": "智能分析对话",
     "about": "分析说明",
     "new": "NEW",
@@ -157,7 +157,7 @@
     }
   },
   "assistant": {
-    "title": "SaaS 分析助手",
+    "title": "我现在该做什么产品？",
     "subtitle": "产品洞察 · 趋势分析 · 机会发现",
     "inputPlaceholder": "问我任何关于 SaaS 产品的问题...",
     "continueChat": "继续提问...",
@@ -167,9 +167,7 @@
     "historyShort": "历史",
     "newChat": "新对话",
     "noHistory": "暂无历史对话",
-    "channelExplore": "渠道探索",
-    "selectedChannels": "已选 {count} 个渠道",
-    "selectDataSource": "选择数据来源渠道",
+    "webSearch": "联网搜索",
     "linkProduct": "关联产品",
     "selectedProducts": "已选 {count} 个产品",
     "addedLink": "已添加链接",
@@ -233,26 +231,32 @@
       "share": "分享"
     },
     "categories": {
-      "product": "产品分析",
-      "productDesc": "深度分析产品数据、收入、竞争力等",
+      "product": "产品发现",
+      "productDesc": "基于新维度筛选适合的产品",
       "trend": "行业趋势",
       "trendDesc": "洞察赛道机会、市场动态与趋势",
       "career": "方向探索",
-      "careerDesc": "根据你的背景推荐适合的方向"
+      "careerDesc": "根据你的背景推荐适合的方向",
+      "developer": "开发者",
+      "developerDesc": "发现优秀的独立开发者与成功案例"
     },
     "prompts": {
-      "product1": "分析月收入超过 $5000 的产品有什么共同特点？",
-      "product2": "技术复杂度低但收入不错的产品有哪些？",
-      "product3": "有哪些小而美的产品案例值得学习？",
-      "product4": "如何评估一个产品的可复制性？",
-      "trend1": "当前最值得关注的 SaaS 赛道有哪些？",
+      "product1": "找到技术复杂度低、适合独立开发者的产品",
+      "product2": "有哪些 AI 依赖程度轻的早期产品？",
+      "product3": "分析 B2C 市场中高适合度的产品",
+      "product4": "推荐启动成本低的小而美产品",
+      "trend1": "当前最值得关注的蓝海赛道有哪些？",
       "trend2": "哪些领域竞争相对较小但有潜力？",
       "trend3": "AI 工具赛道还有哪些机会？",
-      "trend4": "2024 年独立开发者应该关注什么趋势？",
+      "trend4": "分析成长期产品的共同特征",
       "career1": "独立开发者适合做什么类型的产品？",
       "career2": "我是前端开发，适合做什么 SaaS？",
       "career3": "如何从个人痛点出发找到产品方向？",
-      "career4": "副业做 SaaS 需要注意什么？"
+      "career4": "副业做 SaaS 需要注意什么？",
+      "developer1": "有哪些优秀的独立开发者值得学习？",
+      "developer2": "找到拥有多个成功产品的开发者",
+      "developer3": "哪些开发者的平均收入最高？",
+      "developer4": "分析成功开发者的产品策略"
     }
   },
   "leaderboard": {

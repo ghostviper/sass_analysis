@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "SaaS Analytics",
+    "appName": "BuildWhat",
     "appSlogan": "Product Opportunity Insights",
     "dataSource": "Data Source: TrustMRR | For Reference Only",
     "builtFor": "Built for Indie Hackers",
@@ -24,15 +24,15 @@
   },
   "nav": {
     "analysisModules": "Analytics",
-    "dashboard": "Dashboard",
+    "dashboard": "Overview",
     "dashboardDesc": "Key metrics & rankings",
     "categories": "Categories",
     "categoriesDesc": "Market opportunities",
     "products": "Products",
     "productsDesc": "All analyzed products",
-    "leaderboard": "Leaderboard",
+    "leaderboard": "Creators",
     "leaderboardDesc": "Indie Hacker rankings",
-    "assistant": "AI Assistant",
+    "assistant": "Advisor",
     "assistantDesc": "Intelligent analysis chat",
     "about": "About",
     "new": "NEW",
@@ -157,7 +157,7 @@
     }
   },
   "assistant": {
-    "title": "SaaS Analysis Assistant",
+    "title": "What should I build next?",
     "subtitle": "Product Insights · Trend Analysis · Opportunity Discovery",
     "inputPlaceholder": "Ask me anything about SaaS products...",
     "continueChat": "Continue asking...",
@@ -167,9 +167,7 @@
     "historyShort": "History",
     "newChat": "New Chat",
     "noHistory": "No chat history",
-    "channelExplore": "Channel Explore",
-    "selectedChannels": "{count} channels selected",
-    "selectDataSource": "Select data source channels",
+    "webSearch": "Web Search",
     "linkProduct": "Link Product",
     "selectedProducts": "{count} products selected",
     "addedLink": "Link added",
@@ -233,26 +231,32 @@
       "share": "Share"
     },
     "categories": {
-      "product": "Product Analysis",
-      "productDesc": "Deep analysis of product data, revenue, competitiveness",
+      "product": "Product Discovery",
+      "productDesc": "Filter products by new analysis dimensions",
       "trend": "Industry Trends",
       "trendDesc": "Insights on market opportunities and trends",
       "career": "Direction Exploration",
-      "careerDesc": "Recommend directions based on your background"
+      "careerDesc": "Recommend directions based on your background",
+      "developer": "Developers",
+      "developerDesc": "Discover excellent indie developers and success stories"
     },
     "prompts": {
-      "product1": "What do products with MRR over $5000 have in common?",
-      "product2": "Which products have low tech complexity but good revenue?",
-      "product3": "What small and beautiful product cases are worth learning?",
-      "product4": "How to evaluate a product's replicability?",
-      "trend1": "What are the most promising SaaS niches right now?",
+      "product1": "Find products with low tech complexity suitable for indie devs",
+      "product2": "Which early-stage products have light AI dependency?",
+      "product3": "Analyze high-suitability products in B2C market",
+      "product4": "Recommend small & beautiful products with low startup cost",
+      "trend1": "What are the most promising blue ocean niches right now?",
       "trend2": "Which areas have less competition but potential?",
       "trend3": "What opportunities remain in the AI tools space?",
-      "trend4": "What trends should indie hackers focus on in 2024?",
+      "trend4": "Analyze common characteristics of growth-stage products",
       "career1": "What types of products suit indie hackers?",
       "career2": "I'm a frontend developer, what SaaS should I build?",
       "career3": "How to find product direction from personal pain points?",
-      "career4": "What to consider when building SaaS as a side project?"
+      "career4": "What to consider when building SaaS as a side project?",
+      "developer1": "Which excellent indie developers are worth learning from?",
+      "developer2": "Find developers with multiple successful products",
+      "developer3": "Which developers have the highest average revenue?",
+      "developer4": "Analyze successful developers' product strategies"
     }
   },
   "leaderboard": {

@@ -132,81 +132,156 @@ export default function ProductDetailPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.2 }}
       >
-        <Card padding="none">
-          {/* 头部：Logo + 名称 + 标签 */}
-          <div className="p-6 pb-4">
-            <div className="flex items-start gap-4">
-              <ProductLogo name={product.name} logoUrl={product.logo_url} size="lg" />
-              <div className="flex-1 min-w-0 pt-1">
-                <div className="flex items-center gap-3 flex-wrap mb-2">
-                  <h1 className="text-2xl font-display font-bold text-content-primary tracking-tight">
-                    {product.name}
-                  </h1>
-                  <div className="flex items-center gap-1.5 flex-wrap">
-                    {product.is_verified && <Badge variant="success" size="sm">{isZh ? '已验证' : 'Verified'}</Badge>}
-                    {category && <MarketTypeBadge type={category.market_type} size="sm" />}
-                    {product.country_code && <Badge variant="muted" size="sm">{product.country_code}</Badge>}
+        <Card padding="none" className="overflow-hidden">
+          {/* 头部区域 */}
+          <div className="relative">
+            {/* 背景装饰 */}
+            <div className="absolute inset-0 bg-gradient-to-br from-brand-500/5 via-transparent to-transparent pointer-events-none" />
+
+            <div className="relative p-8">
+              <div className="flex items-start gap-6">
+                {/* Logo */}
+                <div className="flex-shrink-0">
+                  <ProductLogo name={product.name} logoUrl={product.logo_url} size="lg" className="ring-2 ring-surface-border/50 ring-offset-4 ring-offset-surface-base" />
+                </div>
+
+                {/* 主要信息 */}
+                <div className="flex-1 min-w-0">
+                  {/* 标题行 */}
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-3 flex-wrap mb-2">
+                        <h1 className="text-3xl font-display font-bold text-content-primary tracking-tight">
+                          {product.name}
+                        </h1>
+                        <div className="flex items-center gap-1.5 flex-wrap">
+                          {product.is_verified && (
+                            <Badge variant="success" size="sm" className="shadow-sm">
+                              <Check className="w-3 h-3 mr-1" />
+                              {isZh ? '已验证' : 'Verified'}
+                            </Badge>
+                          )}
+                          {category && <MarketTypeBadge type={category.market_type} size="sm" className="shadow-sm" />}
+                        </div>
+                      </div>
+
+                      {/* 分类和国家 */}
+                      <div className="flex items-center gap-2 text-sm text-content-muted">
+                        {product.category && (
+                          <>
+                            <span className="font-medium">{product.category}</span>
+                            {product.country_code && <span className="text-content-tertiary">•</span>}
+                          </>
+                        )}
+                        {product.country_code && (
+                          <span className="inline-flex items-center gap-1">
+                            <span className="text-content-tertiary">{product.country_code}</span>
+                            {product.country && <span className="text-content-tertiary">({product.country})</span>}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* 访问按钮 */}
+                    {product.website_url && (
+                      <a
+                        href={product.website_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-all shadow-sm hover:shadow-md"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                        {isZh ? '访问官网' : 'Visit Website'}
+                      </a>
+                    )}
+                  </div>
+
+                  {/* 描述文本 */}
+                  <div className="space-y-2 mt-4">
+                    {landing?.headline_text && (
+                      <p className="text-base text-content-primary leading-relaxed font-medium">
+                        {landing.headline_text}
+                      </p>
+                    )}
+                    {product.description && (
+                      <p className="text-sm text-content-secondary leading-relaxed">
+                        {product.description}
+                      </p>
+                    )}
                   </div>
                 </div>
-                {product.category && (
-                  <p className="text-sm text-content-tertiary">{product.category}</p>
-                )}
-                {landing?.headline_text && (
-                  <p className="text-base text-content-secondary leading-relaxed mt-2">
-                    {landing.headline_text}
-                  </p>
-                )}
-                {product.description && (
-                  <p className="text-sm text-content-tertiary leading-relaxed mt-1.5">
-                    {product.description}
-                  </p>
-                )}
               </div>
-              {/* 访问按钮 - 右上角 */}
-              {product.website_url && (
-                <a
-                  href={product.website_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-shrink-0 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-surface-border text-sm font-medium text-content-secondary hover:text-content-primary hover:border-content-muted transition-colors"
-                >
-                  <ExternalLink className="w-4 h-4" />
-                  {isZh ? '官网' : 'Website'}
-                </a>
-              )}
             </div>
           </div>
 
-          {/* 核心指标 */}
-          <div className="border-t border-surface-border/50 px-6 py-4 bg-surface-subtle/30">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-              <MetricItem
-                icon={<DollarSign className="w-4 h-4" />}
-                label={isZh ? '月收入' : 'Monthly Revenue'}
-                value={formatCurrency(product.revenue_30d)}
-                valueClassName="text-content-primary"
-              />
-              <MetricItem
-                icon={<TrendingUp className="w-4 h-4" />}
-                label={isZh ? '增长率' : 'Growth Rate'}
-                value={product.growth_rate ? `${product.growth_rate > 0 ? '+' : ''}${product.growth_rate.toFixed(1)}%` : '-'}
-                valueClassName={cn(
-                  product.growth_rate && product.growth_rate > 0 ? 'text-accent-success' :
-                  product.growth_rate && product.growth_rate < 0 ? 'text-accent-error' : 'text-content-secondary'
-                )}
-              />
-              <MetricItem
-                icon={<Users className="w-4 h-4" />}
-                label={isZh ? '关注者' : 'Followers'}
-                value={product.founder_followers ? product.founder_followers.toLocaleString() : '-'}
-                valueClassName="text-content-secondary"
-              />
-              <MetricItem
-                icon={<Calendar className="w-4 h-4" />}
-                label={isZh ? '成立时间' : 'Founded'}
-                value={product.founded_date ? formatDate(product.founded_date) : '-'}
-                valueClassName="text-content-secondary"
-              />
+          {/* 核心指标区域 */}
+          <div className="border-t border-surface-border/50 bg-gradient-to-b from-surface-subtle/50 to-surface-subtle/30">
+            <div className="px-8 py-6">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+                {/* 月收入 */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-medium text-content-muted uppercase tracking-wider">
+                    <div className="p-1.5 rounded-md bg-brand-500/10">
+                      <DollarSign className="w-3.5 h-3.5 text-brand-500" />
+                    </div>
+                    {isZh ? '月收入' : 'Monthly Revenue'}
+                  </div>
+                  <div className="text-2xl font-bold font-mono tabular-nums text-content-primary">
+                    {formatCurrency(product.revenue_30d)}
+                  </div>
+                </div>
+
+                {/* 增长率 */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-medium text-content-muted uppercase tracking-wider">
+                    <div className={cn(
+                      "p-1.5 rounded-md",
+                      product.growth_rate && product.growth_rate > 0 ? 'bg-accent-success/10' :
+                      product.growth_rate && product.growth_rate < 0 ? 'bg-accent-error/10' : 'bg-surface-border/50'
+                    )}>
+                      <TrendingUp className={cn(
+                        "w-3.5 h-3.5",
+                        product.growth_rate && product.growth_rate > 0 ? 'text-accent-success' :
+                        product.growth_rate && product.growth_rate < 0 ? 'text-accent-error' : 'text-content-muted'
+                      )} />
+                    </div>
+                    {isZh ? '增长率' : 'Growth Rate'}
+                  </div>
+                  <div className={cn(
+                    "text-2xl font-bold font-mono tabular-nums",
+                    product.growth_rate && product.growth_rate > 0 ? 'text-accent-success' :
+                    product.growth_rate && product.growth_rate < 0 ? 'text-accent-error' : 'text-content-secondary'
+                  )}>
+                    {product.growth_rate ? `${product.growth_rate > 0 ? '+' : ''}${product.growth_rate.toFixed(1)}%` : '-'}
+                  </div>
+                </div>
+
+                {/* 关注者 */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-medium text-content-muted uppercase tracking-wider">
+                    <div className="p-1.5 rounded-md bg-surface-border/50">
+                      <Users className="w-3.5 h-3.5 text-content-muted" />
+                    </div>
+                    {isZh ? '关注者' : 'Followers'}
+                  </div>
+                  <div className="text-2xl font-bold font-mono tabular-nums text-content-secondary">
+                    {product.founder_followers ? product.founder_followers.toLocaleString() : '-'}
+                  </div>
+                </div>
+
+                {/* 成立时间 */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-xs font-medium text-content-muted uppercase tracking-wider">
+                    <div className="p-1.5 rounded-md bg-surface-border/50">
+                      <Calendar className="w-3.5 h-3.5 text-content-muted" />
+                    </div>
+                    {isZh ? '成立时间' : 'Founded'}
+                  </div>
+                  <div className="text-2xl font-bold font-mono tabular-nums text-content-secondary">
+                    {product.founded_date ? formatDate(product.founded_date) : '-'}
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </Card>

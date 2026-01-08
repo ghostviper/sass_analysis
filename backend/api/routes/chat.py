@@ -1,16 +1,19 @@
 """
-Chat API Routes - AI-powered Q&A using Claude Agent SDK
+Chat API Routes - AI-powered Q&A for BuildWhat
+
+Lightweight streaming implementation for smooth AI responses.
 """
 
 import json
 import asyncio
-import sys
+import time
+import uuid
 from typing import Optional, List
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 
-from agent.client import SaaSAnalysisAgent
+from agent.client import SaaSAnalysisAgent, StreamEvent
 
 router = APIRouter()
 
@@ -28,6 +31,9 @@ class ChatRequest(BaseModel):
     message: str
     session_id: Optional[str] = None  # Session ID for multi-turn conversations
     history: Optional[List[ChatMessage]] = []  # Legacy field, kept for compatibility
+    channels: Optional[List[str]] = None  # Selected channels for search (e.g., ["reddit", "google"])
+    context: Optional[dict] = None  # Additional context (product info, URLs, etc.)
+    enable_web_search: bool = False  # Enable web search capability
 
 
 class ChatResponse(BaseModel):
@@ -108,7 +114,12 @@ async def chat(request: ChatRequest):
         response_parts = []
         result_session_id = request.session_id
 
-        async for event in agent.query_stream_events(request.message, session_id=request.session_id):
+        async for event in agent.query_stream_events(
+            request.message,
+            session_id=request.session_id,
+            enable_web_search=request.enable_web_search,
+            context=request.context
+        ):
             if event.type == "text":
                 response_parts.append(event.content)
             elif event.type == "done" and event.session_id:
@@ -132,33 +143,20 @@ async def chat_stream(request: ChatRequest):
     """
     Streaming chat endpoint with Server-Sent Events (SSE).
 
-    Provides real-time streaming responses for better user experience.
-    Compatible with Vercel AI SDK and other SSE clients.
-    Supports multi-turn conversations via session_id.
+    Lightweight version - no persistence during streaming to ensure smooth output.
+    Session persistence is handled separately if needed.
 
     Args:
         request: ChatRequest with message and optional session_id
 
     Returns:
         StreamingResponse with SSE events
-
-    Event types:
-        - text: Text content from Claude {"type": "text", "content": "..."}
-        - tool_start: Tool call started {"type": "tool_start", "tool_name": "...", "tool_input": {...}}
-        - tool_end: Tool call completed {"type": "tool_end", "tool_name": "...", "tool_result": "..."}
-        - status: System status update {"type": "status", "content": "..."}
-        - done: Stream completed {"type": "done", "cost": 0.0, "session_id": "..."}
-        - error: Error occurred {"type": "error", "content": "..."}
-
-    Example:
-        POST /api/chat/stream
-        {
-            "message": "有哪些高收入的 SaaS 产品？",
-            "session_id": null
-        }
     """
     async def generate():
         """Generator function for SSE streaming"""
+        # Generate session_id if not provided
+        session_id = request.session_id or str(uuid.uuid4())
+
         try:
             agent = get_agent()
 
@@ -167,9 +165,23 @@ async def chat_stream(request: ChatRequest):
                 yield "data: [DONE]\n\n"
                 return
 
-            # Stream response with detailed events, passing session_id for multi-turn
-            async for event in agent.query_stream_events(request.message, session_id=request.session_id):
-                # Format as SSE event using StreamEvent.to_dict()
+            # Stream response directly without any persistence
+            async for event in agent.query_stream_events(
+                request.message,
+                session_id=session_id,
+                enable_web_search=request.enable_web_search,
+                context=request.context
+            ):
+                # Override session_id in done event
+                if event.type == "done":
+                    event = StreamEvent(
+                        type="done",
+                        layer="primary",
+                        cost=event.cost,
+                        session_id=session_id
+                    )
+
+                # Format as SSE event
                 event_data = json.dumps(event.to_dict(), ensure_ascii=False)
                 yield f"data: {event_data}\n\n"
 
@@ -180,8 +192,7 @@ async def chat_stream(request: ChatRequest):
             import traceback
             error_detail = f"{type(e).__name__}: {str(e)}"
             print(f"[Stream Error] {error_detail}\n{traceback.format_exc()}")
-            # Send error event
-            error_data = json.dumps({'type': 'error', 'content': error_detail}, ensure_ascii=False)
+            error_data = json.dumps({'type': 'error', 'layer': 'primary', 'content': error_detail}, ensure_ascii=False)
             yield f"data: {error_data}\n\n"
             yield "data: [DONE]\n\n"
 
@@ -191,7 +202,7 @@ async def chat_stream(request: ChatRequest):
         headers={
             "Cache-Control": "no-cache, no-transform",
             "Connection": "keep-alive",
-            "X-Accel-Buffering": "no",  # Disable nginx buffering
+            "X-Accel-Buffering": "no",
             "Content-Type": "text/event-stream",
         }
     )
@@ -245,7 +256,12 @@ async def chat_stream_debug(request: ChatRequest):
                 return
 
             event_count = 0
-            async for event in agent.query_stream_events(request.message, session_id=request.session_id):
+            async for event in agent.query_stream_events(
+                request.message,
+                session_id=request.session_id,
+                enable_web_search=request.enable_web_search,
+                context=request.context
+            ):
                 event_count += 1
                 event_dict = event.to_dict()
                 print(f"[DEBUG] Event #{event_count}: {event.type} - {str(event_dict)[:100]}...", flush=True)

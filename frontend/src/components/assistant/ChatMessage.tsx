@@ -21,6 +21,7 @@ import {
   Share2,
   Clock,
   Coins,
+  Globe,
 } from 'lucide-react'
 import { LucideIcon } from 'lucide-react'
 import { Streamdown } from 'streamdown'
@@ -48,6 +49,7 @@ interface ToolStatus {
   status: 'running' | 'completed'
   input?: Record<string, unknown>
   result?: string
+  displayText?: string  // 用户友好的显示文本
 }
 
 // 消息统计
@@ -159,12 +161,21 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   const [expandedTools, setExpandedTools] = useState<Record<string, boolean>>({})
   const isUser = message.role === 'user'
 
+  // 工具名称映射 - 优先使用后端提供的 displayText
+  const getToolLabel = (tool: ToolStatus): string => {
+    if (tool.displayText) return tool.displayText
+    const toolInfo = toolNameMap[tool.name]
+    return toolInfo?.label || tool.name
+  }
+
   // 工具名称映射
   const toolNameMap: Record<string, { label: string; icon: LucideIcon }> = {
     query_startups: { label: t('assistant.tools.queryProducts'), icon: Database },
     get_category_analysis: { label: t('assistant.tools.analyzeCategory'), icon: Layers },
     get_trend_report: { label: t('assistant.tools.generateTrend'), icon: TrendingUp },
     get_leaderboard: { label: t('assistant.tools.getLeaderboard'), icon: Trophy },
+    find_excellent_developers: { label: t('assistant.tools.findDevelopers') || '查找优秀开发者', icon: User },
+    web_search: { label: t('assistant.tools.webSearch') || '搜索网络信息', icon: Globe },
   }
 
   // 复制内容
@@ -231,6 +242,8 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
             const toolKey = `${tool.name}-${idx}`
             const isExpanded = expandedTools[toolKey]
             const isLastItem = idx === message.toolStatus!.length - 1
+            // 使用 displayText 或回退到 toolInfo.label
+            const displayLabel = tool.displayText || toolInfo.label
 
             return (
               <div key={`${tool.name}-${idx}`} className="relative flex gap-3">
@@ -253,7 +266,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                 {/* 右侧内容 */}
                 <div className="flex-1 min-w-0 pb-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-sm font-semibold text-content-primary">{toolInfo.label}</span>
+                    <span className="text-sm font-semibold text-content-primary">{displayLabel}</span>
                     <span className="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-semibold rounded bg-surface/60 text-content-muted border border-surface-border/60">
                       {idx + 1}/{message.toolStatus!.length}
                     </span>
@@ -305,6 +318,8 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
     const isDoneTool = latestTool.status === 'completed'
     const totalTools = message.toolStatus?.length || 0
     const completedCount = message.toolStatus?.filter(t => t.status === 'completed').length || 0
+    // 使用 displayText 或回退到 toolInfo.label
+    const displayLabel = latestTool.displayText || toolInfo.label
 
     return (
       <button
@@ -324,7 +339,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
           </div>
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-semibold text-content-primary">{toolInfo.label}</span>
+              <span className="text-sm font-semibold text-content-primary">{displayLabel}</span>
               <span className="text-[10px] font-semibold text-content-muted bg-surface/60 px-1.5 py-0.5 rounded border border-surface-border/60">
                 {completedCount}/{totalTools}
               </span>
@@ -386,6 +401,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                 <ThinkingBlock
                   content={thinkingBlock.content}
                   isStreaming={thinkingBlock.isStreaming}
+                  t={t}
                 />
               )}
 

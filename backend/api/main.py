@@ -28,10 +28,10 @@ from dotenv import load_dotenv
 env_path = Path(__file__).parent.parent / ".env"
 load_dotenv(dotenv_path=env_path)
 
-from database.db import init_db
-from api.routes import startups, chat, analytics
+from database.db import init_db, close_db
+from api.routes import startups, chat, analytics, search
 from api.routes import category_analysis, product_analysis, landing_analysis
-from api.routes import leaderboard
+from api.routes import leaderboard, sessions
 
 
 @asynccontextmanager
@@ -42,11 +42,12 @@ async def lifespan(app: FastAPI):
     print("Database initialized")
     yield
     # Shutdown
+    await close_db()
     print("Application shutting down")
 
 
 app = FastAPI(
-    title="SaaS Analysis API",
+    title="BuildWhat API",
     description="API for TrustMRR data analysis and AI-powered insights",
     version="1.0.0",
     lifespan=lifespan,
@@ -65,12 +66,14 @@ app.add_middleware(
 app.include_router(startups.router, prefix="/api", tags=["Startups"])
 app.include_router(chat.router, prefix="/api", tags=["Chat"])
 app.include_router(analytics.router, prefix="/api", tags=["Analytics"])
+app.include_router(search.router, prefix="/api", tags=["Search"])
 
 # Analysis routers
 app.include_router(category_analysis.router, prefix="/api", tags=["Category Analysis"])
 app.include_router(product_analysis.router, prefix="/api", tags=["Product Analysis"])
 app.include_router(landing_analysis.router, prefix="/api", tags=["Landing Page Analysis"])
 app.include_router(leaderboard.router, prefix="/api", tags=["Leaderboard"])
+app.include_router(sessions.router, prefix="/api", tags=["Sessions"])
 
 
 @app.get("/")

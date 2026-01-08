@@ -28,23 +28,39 @@ async def query_startups(
     max_revenue: Optional[float] = None,
     search: Optional[str] = None,
     limit: int = 20,
+    # 新增过滤参数
+    tech_complexity: Optional[str] = None,  # low, medium, high
+    ai_dependency: Optional[str] = None,  # none, light, heavy
+    target_customer: Optional[str] = None,  # b2c, b2b_smb, b2b_enterprise, b2d
+    product_stage: Optional[str] = None,  # early, growth, mature
+    min_suitability: Optional[float] = None,  # 最低独立开发适合度
+    include_analysis: bool = True,  # 是否包含分析数据
 ) -> List[Dict[str, Any]]:
     """
-    Query startups from the database with optional filters.
-    
+    Query startups from the database with optional filters including new analysis dimensions.
+
     Args:
         category: Filter by category (e.g., "AI", "SaaS", "Fintech")
         min_revenue: Minimum 30-day revenue
         max_revenue: Maximum 30-day revenue
         search: Search term for name/description
         limit: Maximum number of results
-        
+        tech_complexity: Filter by technical complexity (low/medium/high)
+        ai_dependency: Filter by AI dependency level (none/light/heavy)
+        target_customer: Filter by target customer type (b2c/b2b_smb/b2b_enterprise/b2d)
+        product_stage: Filter by product lifecycle stage (early/growth/mature)
+        min_suitability: Minimum individual developer suitability score (0-10)
+        include_analysis: Include comprehensive analysis data in results
+
     Returns:
-        List of startup dictionaries with their data
+        List of startup dictionaries with their data and optional analysis
     """
+    from database.models import ProductSelectionAnalysis, LandingPageAnalysis, ComprehensiveAnalysis
+
     async with AsyncSessionLocal() as db:
         query = select(Startup)
-        
+
+        # 基础过滤
         if category:
             query = query.where(Startup.category == category)
         if min_revenue is not None:
@@ -54,16 +70,71 @@ async def query_startups(
         if search:
             pattern = f"%{search}%"
             query = query.where(
-                (Startup.name.ilike(pattern)) | 
+                (Startup.name.ilike(pattern)) |
                 (Startup.description.ilike(pattern))
             )
-        
+
+        # 新增分析维度过滤
+        if any([tech_complexity, ai_dependency, target_customer, product_stage, min_suitability]):
+            query = query.join(ProductSelectionAnalysis, Startup.id == ProductSelectionAnalysis.startup_id)
+
+            if tech_complexity:
+                query = query.where(ProductSelectionAnalysis.tech_complexity_level == tech_complexity)
+            if ai_dependency:
+                query = query.where(ProductSelectionAnalysis.ai_dependency_level == ai_dependency)
+            if target_customer:
+                query = query.where(ProductSelectionAnalysis.target_customer == target_customer)
+            if product_stage:
+                query = query.where(ProductSelectionAnalysis.product_stage == product_stage)
+            if min_suitability is not None:
+                query = query.where(ProductSelectionAnalysis.individual_dev_suitability >= min_suitability)
+
         query = query.order_by(desc(Startup.revenue_30d)).limit(limit)
-        
+
         result = await db.execute(query)
         startups = result.scalars().all()
-        
-        return [s.to_dict() for s in startups]
+
+        # 构建返回数据
+        results = []
+        for s in startups:
+            data = s.to_dict()
+
+            # 如果需要包含分析数据
+            if include_analysis:
+                # 获取产品选品分析
+                selection_result = await db.execute(
+                    select(ProductSelectionAnalysis).where(ProductSelectionAnalysis.startup_id == s.id)
+                )
+                selection = selection_result.scalar_one_or_none()
+                if selection:
+                    data['selection_analysis'] = {
+                        'individual_dev_suitability': selection.individual_dev_suitability,
+                        'tech_complexity_level': selection.tech_complexity_level,
+                        'ai_dependency_level': selection.ai_dependency_level,
+                        'target_customer': selection.target_customer,
+                        'product_stage': selection.product_stage,
+                        'feature_complexity': selection.feature_complexity,
+                        'startup_cost_level': selection.startup_cost_level,
+                        'is_product_driven': selection.is_product_driven,
+                        'is_small_and_beautiful': selection.is_small_and_beautiful,
+                    }
+
+                # 获取综合分析评分
+                comp_result = await db.execute(
+                    select(ComprehensiveAnalysis).where(ComprehensiveAnalysis.startup_id == s.id)
+                )
+                comp = comp_result.scalar_one_or_none()
+                if comp:
+                    data['comprehensive_analysis'] = {
+                        'overall_recommendation': comp.overall_recommendation,
+                        'maturity_score': comp.maturity_score,
+                        'positioning_clarity': comp.positioning_clarity,
+                        'individual_replicability': comp.individual_replicability,
+                    }
+
+            results.append(data)
+
+        return results
 
 
 async def get_category_analysis(category: Optional[str] = None) -> Dict[str, Any]:
@@ -248,18 +319,36 @@ async def get_leaderboard(limit: int = 20) -> List[Dict[str, Any]]:
 
 @tool(
     "query_startups",
-    "Query startups from the database with optional filters for category, revenue range, and search terms. Returns detailed information about matching startups including revenue, category, description, and pricing.",
-    {"category": str, "min_revenue": float, "max_revenue": float, "search": str, "limit": int}
+    "Query startups from the database with comprehensive filters including category, revenue range, search terms, technical complexity, AI dependency, target customer type, product stage, and developer suitability. Returns detailed information about matching startups including revenue, analysis scores, and product characteristics. Use this to find products suitable for indie developers or specific technical requirements.",
+    {
+        "category": str,
+        "min_revenue": float,
+        "max_revenue": float,
+        "search": str,
+        "limit": int,
+        "tech_complexity": str,  # low, medium, high
+        "ai_dependency": str,  # none, light, heavy
+        "target_customer": str,  # b2c, b2b_smb, b2b_enterprise, b2d
+        "product_stage": str,  # early, growth, mature
+        "min_suitability": float,  # 0-10
+        "include_analysis": bool
+    }
 )
 async def query_startups_tool(args: Dict[str, Any]) -> Dict[str, Any]:
-    """MCP tool wrapper for query_startups"""
+    """MCP tool wrapper for query_startups with enhanced filtering"""
     try:
         result = await query_startups(
             category=args.get("category"),
             min_revenue=args.get("min_revenue"),
             max_revenue=args.get("max_revenue"),
             search=args.get("search"),
-            limit=min(args.get("limit", 20), 100)  # Cap at 100
+            limit=min(args.get("limit", 20), 100),  # Cap at 100
+            tech_complexity=args.get("tech_complexity"),
+            ai_dependency=args.get("ai_dependency"),
+            target_customer=args.get("target_customer"),
+            product_stage=args.get("product_stage"),
+            min_suitability=args.get("min_suitability"),
+            include_analysis=args.get("include_analysis", True)
         )
 
         return {
@@ -355,6 +444,246 @@ async def get_leaderboard_tool(args: Dict[str, Any]) -> Dict[str, Any]:
             "content": [{
                 "type": "text",
                 "text": json.dumps({"error": str(e), "type": "leaderboard_error"}, ensure_ascii=False)
+            }],
+            "is_error": True
+        }
+
+
+async def find_excellent_developers(
+    min_products: int = 2,
+    min_total_revenue: Optional[float] = None,
+    min_avg_revenue: Optional[float] = None,
+    min_followers: Optional[int] = None,
+    sort_by: str = "total_revenue",  # total_revenue, avg_revenue, product_count, followers
+    limit: int = 20,
+) -> List[Dict[str, Any]]:
+    """
+    Find excellent indie developers based on their product portfolio and metrics.
+
+    Args:
+        min_products: Minimum number of products (default: 2)
+        min_total_revenue: Minimum total revenue across all products
+        min_avg_revenue: Minimum average revenue per product
+        min_followers: Minimum follower count
+        sort_by: Sort criteria (total_revenue/avg_revenue/product_count/followers)
+        limit: Maximum number of developers to return
+
+    Returns:
+        List of developer profiles with their products and metrics
+    """
+    async with AsyncSessionLocal() as db:
+        # 查询创始人及其产品
+        query = select(
+            Startup.founder_username,
+            Startup.founder_name,
+            Startup.founder_followers,
+            Startup.founder_social_platform,
+            Startup.founder_avatar_url,
+            func.count(Startup.id).label("product_count"),
+            func.sum(Startup.revenue_30d).label("total_revenue"),
+            func.avg(Startup.revenue_30d).label("avg_revenue"),
+            func.max(Startup.revenue_30d).label("max_revenue"),
+        ).where(
+            Startup.founder_username.isnot(None)
+        ).group_by(
+            Startup.founder_username,
+            Startup.founder_name,
+            Startup.founder_followers,
+            Startup.founder_social_platform,
+            Startup.founder_avatar_url,
+        )
+
+        # 应用过滤条件
+        query = query.having(func.count(Startup.id) >= min_products)
+
+        if min_total_revenue is not None:
+            query = query.having(func.sum(Startup.revenue_30d) >= min_total_revenue)
+
+        if min_avg_revenue is not None:
+            query = query.having(func.avg(Startup.revenue_30d) >= min_avg_revenue)
+
+        if min_followers is not None:
+            query = query.having(Startup.founder_followers >= min_followers)
+
+        # 排序
+        if sort_by == "total_revenue":
+            query = query.order_by(desc("total_revenue"))
+        elif sort_by == "avg_revenue":
+            query = query.order_by(desc("avg_revenue"))
+        elif sort_by == "product_count":
+            query = query.order_by(desc("product_count"))
+        elif sort_by == "followers":
+            query = query.order_by(desc(Startup.founder_followers))
+
+        query = query.limit(limit)
+
+        result = await db.execute(query)
+        developers = result.all()
+
+        # 为每个开发者获取产品列表
+        developer_profiles = []
+        for dev in developers:
+            # 获取该开发者的所有产品
+            products_query = select(Startup).where(
+                Startup.founder_username == dev.founder_username
+            ).order_by(desc(Startup.revenue_30d))
+
+            products_result = await db.execute(products_query)
+            products = products_result.scalars().all()
+
+            # 构建开发者档案
+            profile = {
+                "username": dev.founder_username,
+                "name": dev.founder_name,
+                "followers": dev.founder_followers,
+                "social_platform": dev.founder_social_platform,
+                "avatar_url": dev.founder_avatar_url,
+                "metrics": {
+                    "product_count": dev.product_count,
+                    "total_revenue": round(dev.total_revenue or 0, 2),
+                    "avg_revenue": round(dev.avg_revenue or 0, 2),
+                    "max_revenue": round(dev.max_revenue or 0, 2),
+                },
+                "products": [
+                    {
+                        "name": p.name,
+                        "slug": p.slug,
+                        "category": p.category,
+                        "revenue_30d": p.revenue_30d,
+                        "growth_rate": p.growth_rate,
+                        "website_url": p.website_url,
+                        "description": p.description,
+                    }
+                    for p in products
+                ]
+            }
+
+            developer_profiles.append(profile)
+
+        return developer_profiles
+
+
+@tool(
+    "find_excellent_developers",
+    "Find excellent indie developers based on their product portfolio and success metrics. Returns developer profiles with their products, total/average revenue, follower counts, and product categories. Use this to discover successful indie developers, learn from their product strategies, or find potential collaborators/mentors.",
+    {
+        "min_products": int,
+        "min_total_revenue": float,
+        "min_avg_revenue": float,
+        "min_followers": int,
+        "sort_by": str,  # total_revenue, avg_revenue, product_count, followers
+        "limit": int
+    }
+)
+async def find_excellent_developers_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """MCP tool wrapper for find_excellent_developers"""
+    try:
+        result = await find_excellent_developers(
+            min_products=args.get("min_products", 2),
+            min_total_revenue=args.get("min_total_revenue"),
+            min_avg_revenue=args.get("min_avg_revenue"),
+            min_followers=args.get("min_followers"),
+            sort_by=args.get("sort_by", "total_revenue"),
+            limit=min(args.get("limit", 20), 50)  # Cap at 50
+        )
+
+        return {
+            "content": [{
+                "type": "text",
+                "text": json.dumps(result, indent=2, ensure_ascii=False)
+            }]
+        }
+    except Exception as e:
+        return {
+            "content": [{
+                "type": "text",
+                "text": json.dumps({"error": str(e), "type": "developer_query_error"}, ensure_ascii=False)
+            }],
+            "is_error": True
+        }
+
+
+# ============================================================================
+# Web Search Tool
+# ============================================================================
+
+async def web_search(
+    query: str,
+    limit: int = 10,
+    site: Optional[str] = None,
+) -> List[Dict[str, Any]]:
+    """
+    Search the web using Tavily (AI-optimized search)
+
+    Args:
+        query: Search query
+        limit: Maximum number of results
+        site: Optional site to restrict search (e.g., "reddit.com", "indiehackers.com")
+
+    Returns:
+        List of search results
+    """
+    from services.search.factory import SearchServiceFactory
+
+    try:
+        # Check if Tavily is configured
+        if not SearchServiceFactory.is_available():
+            return [{
+                "error": "Tavily search not configured. Please set TAVILY_API_KEY in .env file.",
+                "title": "Configuration Required",
+                "url": "",
+                "snippet": "Set TAVILY_API_KEY to enable web search functionality"
+            }]
+
+        service = SearchServiceFactory.get_search_service()
+
+        # Search with or without site restriction
+        if site:
+            response = await service.search_site(query, site, limit=limit)
+        else:
+            response = await service.search(query, limit=limit)
+
+        # Convert to list of dicts
+        return [result.to_dict() for result in response.results]
+
+    except Exception as e:
+        return [{
+            "error": str(e),
+            "title": "Search Error",
+            "url": "",
+            "snippet": f"Failed to search: {str(e)}"
+        }]
+
+
+@tool(
+    "web_search",
+    "Search the web for information about SaaS products, market trends, indie hacker discussions, or any topic. Automatically searches across multiple sources including Reddit, IndieHackers, Product Hunt, and general web. Can optionally restrict search to specific websites using the site parameter (e.g., 'reddit.com', 'indiehackers.com', 'producthunt.com').",
+    {
+        "query": str,
+        "limit": int,
+        "site": str,  # Optional: "reddit.com", "indiehackers.com", "producthunt.com", etc.
+    }
+)
+async def web_search_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """MCP tool wrapper for web search"""
+    try:
+        results = await web_search(
+            query=args.get("query", ""),
+            limit=args.get("limit", 10),
+            site=args.get("site"),
+        )
+
+        return {
+            "content": [{
+                "type": "text",
+                "text": json.dumps(results, indent=2, ensure_ascii=False)
+            }]
+        }
+    except Exception as e:
+        return {
+            "content": [{
+                "type": "text",
+                "text": json.dumps({"error": str(e), "type": "search_error"}, ensure_ascii=False)
             }],
             "is_error": True
         }

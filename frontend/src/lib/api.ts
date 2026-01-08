@@ -582,3 +582,182 @@ export async function getDataInfo(): Promise<DataInfo | null> {
     return null
   }
 }
+
+// ============ Chat Sessions API ============
+
+export interface ChatSessionListItem {
+  session_id: string
+  title: string | null
+  message_count: number
+  turn_count: number
+  created_at: string
+  updated_at: string
+  last_message_at: string | null
+}
+
+export interface ChatSessionDetail {
+  id: number
+  session_id: string
+  title: string | null
+  summary: string | null
+  user_id: string | null
+  enable_web_search: boolean
+  context_type: string | null
+  context_value: string | null
+  context_products: string[] | null
+  message_count: number
+  turn_count: number
+  total_cost: number
+  total_input_tokens: number
+  total_output_tokens: number
+  is_archived: boolean
+  created_at: string
+  updated_at: string
+  last_message_at: string | null
+}
+
+export interface ChatMessageItem {
+  id: number
+  session_id: string
+  role: 'user' | 'assistant' | 'system'
+  content: string
+  sequence: number
+  tool_calls: Array<{
+    name: string
+    input: any
+    output: string | null
+    duration_ms: number | null
+  }> | null
+  input_tokens: number | null
+  output_tokens: number | null
+  cost: number | null
+  model: string | null
+  duration_ms: number | null
+  created_at: string
+}
+
+export async function getChatSessions(params?: {
+  user_id?: string
+  include_archived?: boolean
+  limit?: number
+  offset?: number
+}): Promise<{ sessions: ChatSessionListItem[]; total: number }> {
+  const searchParams = new URLSearchParams()
+  if (params?.user_id) searchParams.set('user_id', params.user_id)
+  if (params?.include_archived) searchParams.set('include_archived', 'true')
+  if (params?.limit) searchParams.set('limit', params.limit.toString())
+  if (params?.offset) searchParams.set('offset', params.offset.toString())
+
+  const query = searchParams.toString()
+  const response = await fetchApi<{ sessions: ChatSessionListItem[]; total: number }>(
+    `/sessions${query ? `?${query}` : ''}`
+  )
+  return response
+}
+
+export async function getChatSession(sessionId: string): Promise<{
+  session: ChatSessionDetail
+  messages: ChatMessageItem[]
+} | null> {
+  try {
+    const response = await fetchApi<{
+      session: ChatSessionDetail
+      messages: ChatMessageItem[]
+    }>(`/sessions/${sessionId}`)
+    return response
+  } catch (error) {
+    console.error('Failed to fetch chat session:', error)
+    return null
+  }
+}
+
+export async function getChatSessionMessages(
+  sessionId: string,
+  params?: { limit?: number; offset?: number }
+): Promise<ChatMessageItem[]> {
+  const searchParams = new URLSearchParams()
+  if (params?.limit) searchParams.set('limit', params.limit.toString())
+  if (params?.offset) searchParams.set('offset', params.offset.toString())
+
+  const query = searchParams.toString()
+  const response = await fetchApi<{
+    session_id: string
+    messages: ChatMessageItem[]
+    total: number
+  }>(`/sessions/${sessionId}/messages${query ? `?${query}` : ''}`)
+  return response.messages
+}
+
+export async function updateChatSession(
+  sessionId: string,
+  data: { title?: string; summary?: string; is_archived?: boolean }
+): Promise<boolean> {
+  try {
+    await fetchApi(`/sessions/${sessionId}`, {
+      method: 'PATCH',
+      body: JSON.stringify(data),
+    })
+    return true
+  } catch (error) {
+    console.error('Failed to update chat session:', error)
+    return false
+  }
+}
+
+export async function deleteChatSession(
+  sessionId: string,
+  hardDelete: boolean = false
+): Promise<boolean> {
+  try {
+    const query = hardDelete ? '?hard_delete=true' : ''
+    await fetchApi(`/sessions/${sessionId}${query}`, {
+      method: 'DELETE',
+    })
+    return true
+  } catch (error) {
+    console.error('Failed to delete chat session:', error)
+    return false
+  }
+}
+
+export async function archiveChatSession(sessionId: string): Promise<boolean> {
+  try {
+    await fetchApi(`/sessions/${sessionId}/archive`, {
+      method: 'POST',
+    })
+    return true
+  } catch (error) {
+    console.error('Failed to archive chat session:', error)
+    return false
+  }
+}
+
+export async function unarchiveChatSession(sessionId: string): Promise<boolean> {
+  try {
+    await fetchApi(`/sessions/${sessionId}/unarchive`, {
+      method: 'POST',
+    })
+    return true
+  } catch (error) {
+    console.error('Failed to unarchive chat session:', error)
+    return false
+  }
+}
+
+export async function getChatSessionStats(): Promise<{
+  total_sessions: number
+  total_messages: number
+  total_cost: number
+} | null> {
+  try {
+    const response = await fetchApi<{
+      total_sessions: number
+      total_messages: number
+      total_cost: number
+    }>('/sessions/stats/overview')
+    return response
+  } catch (error) {
+    console.error('Failed to fetch chat session stats:', error)
+    return null
+  }
+}
