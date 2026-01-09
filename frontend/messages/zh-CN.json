@@ -183,11 +183,14 @@
     "sendTip": "按 Enter 发送 · Shift + Enter 换行",
     "scrollToLatest": "回到最新",
     "interrupted": "已中断",
+    "send": "发送",
+    "stop": "停止",
     "errorOccurred": "抱歉，发生了错误",
     "errorRetry": "抱歉，发生了错误。请稍后重试。",
     "unknownError": "未知错误",
     "connectionFailed": "连接失败",
     "close": "关闭",
+    "refresh": "换一批",
     "modes": {
       "general": "通用分析",
       "generalDesc": "综合性的问题回答和分析",
@@ -213,7 +216,10 @@
       "executing": "正在执行...",
       "waitingResult": "等待结果...",
       "expand": "展开全部",
-      "collapse": "收起"
+      "collapse": "收起",
+      "showDetails": "查看详情",
+      "hideDetails": "隐藏详情",
+      "stepsCompleted": "个步骤完成"
     },
     "thinking": {
       "title": "思考过程",

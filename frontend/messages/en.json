@@ -183,11 +183,14 @@
     "sendTip": "Press Enter to send · Shift + Enter for new line",
     "scrollToLatest": "Scroll to latest",
     "interrupted": "Interrupted",
+    "send": "Send",
+    "stop": "Stop",
     "errorOccurred": "Sorry, an error occurred",
     "errorRetry": "Sorry, an error occurred. Please try again later.",
     "unknownError": "Unknown error",
     "connectionFailed": "Connection failed",
     "close": "Close",
+    "refresh": "Refresh",
     "modes": {
       "general": "General Analysis",
       "generalDesc": "Comprehensive Q&A and analysis",
@@ -213,7 +216,10 @@
       "executing": "Executing...",
       "waitingResult": "Waiting for result...",
       "expand": "Expand all",
-      "collapse": "Collapse"
+      "collapse": "Collapse",
+      "showDetails": "Show details",
+      "hideDetails": "Hide details",
+      "stepsCompleted": "steps completed"
     },
     "thinking": {
       "title": "Thinking Process",

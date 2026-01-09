@@ -8,10 +8,6 @@ import {
   User,
   Loader2,
   Check,
-  Database,
-  TrendingUp,
-  Trophy,
-  Layers,
   ChevronDown,
   ChevronUp,
   Copy,
@@ -21,31 +17,15 @@ import {
   Share2,
   Clock,
   Coins,
-  Globe,
 } from 'lucide-react'
-import { LucideIcon } from 'lucide-react'
 import { Streamdown } from 'streamdown'
 
 export type MessageRole = 'user' | 'assistant'
 
-// 内容块类型 - 对应 Claude Agent SDK 的 content blocks
-type ContentBlockType = 'thinking' | 'text' | 'tool_use' | 'tool_result'
-
-interface ContentBlock {
-  type: ContentBlockType
-  content: string
-  // For tool blocks
-  toolName?: string
-  toolInput?: Record<string, unknown>
-  toolResult?: string
-  toolStatus?: 'running' | 'completed'
-  // For thinking blocks
-  isStreaming?: boolean
-}
-
 // 工具调用状态
 interface ToolStatus {
   name: string
+  toolId?: string  // Unique ID for matching tool_start with tool_end
   status: 'running' | 'completed'
   input?: Record<string, unknown>
   result?: string
@@ -57,6 +37,13 @@ interface MessageMetrics {
   duration?: number  // 耗时（秒）
   tokens?: number    // token 数
   cost?: number      // 费用
+}
+
+// 内容块类型
+interface ContentBlock {
+  type: 'thinking' | 'text' | 'tool_use' | 'tool_result'
+  content: string
+  isStreaming?: boolean
 }
 
 interface Message {
@@ -80,14 +67,6 @@ interface ChatMessageProps {
   onRetry?: () => void
   onCopy?: (content: string) => void
   onFeedback?: (type: 'like' | 'dislike') => void
-}
-
-// 工具名称映射
-const toolNameMap: Record<string, { label: string; icon: LucideIcon }> = {
-  query_startups: { label: '查询产品数据', icon: Database },
-  get_category_analysis: { label: '分析市场类目', icon: Layers },
-  get_trend_report: { label: '生成趋势报告', icon: TrendingUp },
-  get_leaderboard: { label: '获取排行榜', icon: Trophy },
 }
 
 // 思考块图标
@@ -158,25 +137,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   const [copied, setCopied] = useState(false)
   const [feedback, setFeedback] = useState<'like' | 'dislike' | null>(null)
   const [toolsExpanded, setToolsExpanded] = useState(false)
-  const [expandedTools, setExpandedTools] = useState<Record<string, boolean>>({})
   const isUser = message.role === 'user'
-
-  // 工具名称映射 - 优先使用后端提供的 displayText
-  const getToolLabel = (tool: ToolStatus): string => {
-    if (tool.displayText) return tool.displayText
-    const toolInfo = toolNameMap[tool.name]
-    return toolInfo?.label || tool.name
-  }
-
-  // 工具名称映射
-  const toolNameMap: Record<string, { label: string; icon: LucideIcon }> = {
-    query_startups: { label: t('assistant.tools.queryProducts'), icon: Database },
-    get_category_analysis: { label: t('assistant.tools.analyzeCategory'), icon: Layers },
-    get_trend_report: { label: t('assistant.tools.generateTrend'), icon: TrendingUp },
-    get_leaderboard: { label: t('assistant.tools.getLeaderboard'), icon: Trophy },
-    find_excellent_developers: { label: t('assistant.tools.findDevelopers') || '查找优秀开发者', icon: User },
-    web_search: { label: t('assistant.tools.webSearch') || '搜索网络信息', icon: Globe },
-  }
 
   // 复制内容
   const handleCopy = async () => {
@@ -200,8 +161,8 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
     // 用户消息 - 使用气泡样式，靠右
     return (
       <div className="flex justify-end gap-3">
-        <div className="flex flex-col items-end gap-1.5">
-          <div className="max-w-[85%] md:max-w-[75%] rounded-2xl rounded-tr-md px-5 py-3.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-md shadow-brand-500/20">
+        <div className="flex flex-col items-end gap-1.5 flex-1 min-w-0">
+          <div className="max-w-full rounded-2xl rounded-tr-md px-5 py-3.5 bg-gradient-to-r from-brand-500 to-brand-600 text-white shadow-md shadow-brand-500/20">
             <div className="text-[0.9375rem] leading-[1.7] whitespace-pre-wrap font-normal break-words">
               {message.content}
             </div>
@@ -222,153 +183,53 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   const runningTool = message.toolStatus?.find(t => t.status === 'running')
   const completedToolsCount = message.toolStatus?.filter(t => t.status === 'completed').length || 0
   const isComplete = !message.isStreaming && message.content
-  const latestTool = message.toolStatus && message.toolStatus.length > 0
-    ? message.toolStatus[message.toolStatus.length - 1]
-    : undefined
+  const totalTools = message.toolStatus?.length || 0
+  const allToolsCompleted = totalTools > 0 && completedToolsCount === totalTools
 
-  // 工具调用时间线
-  const renderToolTimeline = () => {
-    if (!message.toolStatus || message.toolStatus.length === 0) return null
+  // 工具状态栏 - 只在完成后显示
+  const renderToolStatusBar = () => {
+    // 只有完成后才显示状态栏
+    if (!hasActiveTools || message.isStreaming) return null
 
     return (
-      <div className="mb-4 rounded-xl border border-surface-border/50 bg-surface/30 backdrop-blur-sm p-4 shadow-sm">
-        <div className="text-xs font-semibold text-content-secondary mb-4 tracking-wide">{t('assistant.tools.analysisSteps')}</div>
-        <div className="space-y-4">
-          {message.toolStatus.map((tool, idx) => {
-            const toolInfo = toolNameMap[tool.name] || { label: tool.name, icon: Database }
-            const ToolIcon = toolInfo.icon
-            const isRunningTool = tool.status === 'running'
-            const isDoneTool = tool.status === 'completed'
-            const toolKey = `${tool.name}-${idx}`
-            const isExpanded = expandedTools[toolKey]
-            const isLastItem = idx === message.toolStatus!.length - 1
-            // 使用 displayText 或回退到 toolInfo.label
-            const displayLabel = tool.displayText || toolInfo.label
+      <div className="mt-4 flex justify-center">
+        <div className="inline-flex flex-col items-center">
+          {/* 摘要行 */}
+          <button
+            type="button"
+            onClick={() => setToolsExpanded(!toolsExpanded)}
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs text-content-muted hover:text-content-secondary bg-surface/50 hover:bg-surface/80 transition-all cursor-pointer"
+          >
+            <Check className="h-3 w-3 text-emerald-500" />
+            <span className="font-medium">
+              {completedToolsCount} {t('assistant.tools.stepsCompleted') || '个步骤完成'}
+            </span>
+            <ChevronDown className={cn(
+              'h-3 w-3 transition-transform',
+              toolsExpanded && 'rotate-180'
+            )} />
+          </button>
 
-            return (
-              <div key={`${tool.name}-${idx}`} className="relative flex gap-3">
-                {/* 左侧时间线 */}
-                <div className="flex flex-col items-center">
-                  <div className={cn(
-                    'w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0',
-                    isDoneTool ? 'bg-emerald-500/10' : isRunningTool ? 'bg-amber-500/10' : 'bg-surface/60'
-                  )}>
-                    <ToolIcon className={cn(
-                      'h-4 w-4',
-                      isDoneTool ? 'text-emerald-500' : isRunningTool ? 'text-amber-500' : 'text-content-muted'
-                    )} />
-                  </div>
-                  {!isLastItem && (
-                    <div className="w-px flex-1 bg-surface-border/60 my-1" />
-                  )}
-                </div>
+          {/* 展开的详情 */}
+          {toolsExpanded && (
+            <div className="mt-2 flex flex-wrap justify-center gap-1.5">
+              {message.toolStatus?.map((tool, idx) => {
+                const displayLabel = tool.displayText || tool.name
 
-                {/* 右侧内容 */}
-                <div className="flex-1 min-w-0 pb-1">
-                  <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-sm font-semibold text-content-primary">{displayLabel}</span>
-                    <span className="inline-flex items-center justify-center px-1.5 py-0.5 text-[10px] font-semibold rounded bg-surface/60 text-content-muted border border-surface-border/60">
-                      {idx + 1}/{message.toolStatus!.length}
-                    </span>
-                    {isRunningTool && (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-500">
-                        <Loader2 className="h-3 w-3 animate-spin" />
-                        {t('assistant.tools.inProgress')}
-                      </span>
-                    )}
-                    {isDoneTool && (
-                      <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-500">
-                        <Check className="h-3 w-3" />
-                        {t('assistant.tools.completed')}
-                      </span>
-                    )}
+                return (
+                  <div 
+                    key={`${tool.name}-${idx}`} 
+                    className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                  >
+                    <Check className="h-2.5 w-2.5" />
+                    <span className="font-medium truncate max-w-[180px]">{displayLabel}</span>
                   </div>
-                  {tool.result ? (
-                    <div className="mt-2 rounded-lg bg-surface/40 border border-surface-border/40 p-3 text-xs text-content-secondary whitespace-pre-wrap leading-relaxed">
-                      {isExpanded || tool.result.length <= 200 ? tool.result : `${tool.result.slice(0, 200)}…`}
-                      {tool.result.length > 200 && (
-                        <button
-                          type="button"
-                          className="mt-2 block text-[11px] font-semibold text-brand-500 hover:text-brand-600 transition-colors"
-                          onClick={() => setExpandedTools(prev => ({ ...prev, [toolKey]: !isExpanded }))}
-                        >
-                          {isExpanded ? t('assistant.tools.collapse') : t('assistant.tools.expand')}
-                        </button>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="mt-1 text-xs text-content-muted/70 font-medium">
-                      {isRunningTool ? t('assistant.tools.executing') : t('assistant.tools.waitingResult')}
-                    </div>
-                  )}
-                </div>
-              </div>
-            )
-          })}
+                )
+              })}
+            </div>
+          )}
         </div>
       </div>
-    )
-  }
-
-  const renderToolSummary = () => {
-    if (!latestTool) return null
-    const toolInfo = toolNameMap[latestTool.name] || { label: latestTool.name, icon: Database }
-    const ToolIcon = toolInfo.icon
-    const isRunningTool = latestTool.status === 'running'
-    const isDoneTool = latestTool.status === 'completed'
-    const totalTools = message.toolStatus?.length || 0
-    const completedCount = message.toolStatus?.filter(t => t.status === 'completed').length || 0
-    // 使用 displayText 或回退到 toolInfo.label
-    const displayLabel = latestTool.displayText || toolInfo.label
-
-    return (
-      <button
-        type="button"
-        onClick={() => setToolsExpanded(!toolsExpanded)}
-        className="mb-3 w-full rounded-xl border border-surface-border/50 bg-surface/30 backdrop-blur-sm px-4 py-3 text-left hover:border-brand-500/30 hover:bg-surface/40 transition-all shadow-sm"
-      >
-        <div className="flex items-center gap-3">
-          <div className={cn(
-            'flex h-9 w-9 items-center justify-center rounded-lg flex-shrink-0',
-            isDoneTool ? 'bg-emerald-500/10' : isRunningTool ? 'bg-amber-500/10' : 'bg-brand-500/10'
-          )}>
-            <ToolIcon className={cn(
-              'h-4 w-4',
-              isDoneTool ? 'text-emerald-500' : isRunningTool ? 'text-amber-500' : 'text-brand-500'
-            )} />
-          </div>
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="text-sm font-semibold text-content-primary">{displayLabel}</span>
-              <span className="text-[10px] font-semibold text-content-muted bg-surface/60 px-1.5 py-0.5 rounded border border-surface-border/60">
-                {completedCount}/{totalTools}
-              </span>
-              {isRunningTool && (
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-amber-500">
-                  <Loader2 className="h-3 w-3 animate-spin" />
-                  {t('assistant.tools.inProgress')}
-                </span>
-              )}
-              {isDoneTool && completedCount === totalTools && (
-                <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-emerald-500">
-                  <Check className="h-3 w-3" />
-                  {t('assistant.tools.allCompleted')}
-                </span>
-              )}
-            </div>
-            <div className="text-xs text-content-muted/70 mt-1 truncate font-medium">
-              {latestTool.result ? latestTool.result : (isRunningTool ? t('assistant.tools.executing') : t('assistant.tools.waitingResult'))}
-            </div>
-          </div>
-          <div className="flex-shrink-0 p-1">
-            {toolsExpanded ? (
-              <ChevronUp className="h-4 w-4 text-content-muted/60" />
-            ) : (
-              <ChevronDown className="h-4 w-4 text-content-muted/60" />
-            )}
-          </div>
-        </div>
-      </button>
     )
   }
 
@@ -378,14 +239,6 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
         <Bot className="h-4 w-4 text-brand-500" />
       </div>
       <div className="flex-1 min-w-0 pt-1">
-        {/* 工具调用摘要 / 时间线 */}
-        {hasActiveTools && (
-          <>
-            {renderToolSummary()}
-            {toolsExpanded && renderToolTimeline()}
-          </>
-        )}
-
         {/* 消息内容 - 使用 contentBlocks 渲染不同类型的内容 */}
         {(() => {
           // 提取 thinking 和 text 内容块
@@ -417,8 +270,9 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                     {textBlock.content}
                   </Streamdown>
                 </div>
-              ) : message.isStreaming && !message.content && runningTool ? (
-                <div className="flex items-center gap-2.5 text-content-muted">
+              ) : hasActiveTools ? (
+                // 没有文本但有工具调用时，显示加载状态
+                <div className="flex items-center gap-2.5 text-content-muted py-2">
                   <Loader2 className="h-4 w-4 animate-spin text-brand-500" />
                   <span className="text-sm font-medium">{t('assistant.queryingData')}</span>
                 </div>
@@ -434,6 +288,9 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                   </Streamdown>
                 </div>
               ) : null}
+
+              {/* 工具状态栏 - 放在文本内容下方居中 */}
+              {renderToolStatusBar()}
             </>
           )
         })()}

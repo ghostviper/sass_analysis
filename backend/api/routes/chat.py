@@ -2,18 +2,22 @@
 Chat API Routes - AI-powered Q&A for BuildWhat
 
 Lightweight streaming implementation for smooth AI responses.
+Integrates with ChatHistoryService for session persistence.
 """
 
 import json
 import asyncio
-import time
 import uuid
+import time
 from typing import Optional, List
 from fastapi import APIRouter, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
+import httpx
+import os
 
 from agent.client import SaaSAnalysisAgent, StreamEvent
+from services.chat_history import ChatHistoryService
 
 router = APIRouter()
 
@@ -40,6 +44,14 @@ class ChatResponse(BaseModel):
     response: str
     session_id: Optional[str] = None  # Return session_id for client to track
     sources: Optional[List[dict]] = None
+
+
+class SuggestPromptsRequest(BaseModel):
+    category: str  # "product", "trend", "career", "developer"
+
+
+class SuggestPromptsResponse(BaseModel):
+    prompts: List[str]
 
 
 # ============================================================================
@@ -92,13 +104,6 @@ async def chat(request: ChatRequest):
 
     Returns:
         ChatResponse with complete AI response and session_id
-
-    Example:
-        POST /api/chat
-        {
-            "message": "分析 AI 赛道的趋势",
-            "session_id": null
-        }
     """
     try:
         agent = get_agent()
@@ -110,23 +115,68 @@ async def chat(request: ChatRequest):
                 sources=None
             )
 
-        # Collect complete response from stream
+        # Generate or use provided session_id
+        session_id = request.session_id or str(uuid.uuid4())
+        is_new_session = not request.session_id
+        start_time = time.time()
+        model_used = os.getenv("ANTHROPIC_MODEL", "claude")
+
+        # Collect response (no DB operations during streaming)
         response_parts = []
-        result_session_id = request.session_id
+        tool_calls = []
+        total_cost = 0.0
+        result_session_id = session_id
 
         async for event in agent.query_stream_events(
             request.message,
-            session_id=request.session_id,
+            session_id=session_id,
             enable_web_search=request.enable_web_search,
             context=request.context
         ):
-            if event.type == "text":
+            if event.type == "block_delta" and event.block_type == "text":
                 response_parts.append(event.content)
-            elif event.type == "done" and event.session_id:
-                result_session_id = event.session_id
+            elif event.type == "tool_start":
+                tool_calls.append({
+                    "name": event.tool_name,
+                    "input": event.tool_input,
+                    "output": None,
+                    "duration_ms": None
+                })
+            elif event.type == "tool_end":
+                for tc in reversed(tool_calls):
+                    if tc["name"] == event.tool_name and tc["output"] is None:
+                        tc["output"] = event.tool_result[:500] if event.tool_result else None
+                        break
+            elif event.type == "done":
+                total_cost = event.cost or 0.0
+                if event.session_id:
+                    result_session_id = event.session_id
+
+        response_content = ''.join(response_parts)
+        duration_ms = int((time.time() - start_time) * 1000)
+
+        # 异步后台持久化
+        context_data = {
+            "type": request.context.get("type") if request.context else None,
+            "value": request.context.get("value") if request.context else None,
+            "products": request.context.get("products") if request.context else None,
+        } if request.context else None
+        
+        asyncio.create_task(_persist_chat_async(
+            session_id=session_id,
+            user_message=request.message,
+            assistant_content=response_content,
+            tool_calls=tool_calls,
+            cost=total_cost,
+            model=model_used,
+            duration_ms=duration_ms,
+            is_new_session=is_new_session,
+            context=context_data,
+            enable_web_search=request.enable_web_search,
+        ))
 
         return ChatResponse(
-            response=''.join(response_parts),
+            response=response_content,
             session_id=result_session_id,
             sources=None
         )
@@ -138,13 +188,68 @@ async def chat(request: ChatRequest):
         raise HTTPException(status_code=500, detail=error_detail)
 
 
+async def _persist_chat_async(
+    session_id: str,
+    user_message: str,
+    assistant_content: str,
+    tool_calls: list,
+    cost: float,
+    model: str,
+    duration_ms: int,
+    is_new_session: bool,
+    context: dict = None,
+    enable_web_search: bool = False
+):
+    """
+    异步持久化聊天记录（后台任务，不阻塞响应）
+    
+    流式完成后调用，所有数据库操作在这里执行
+    """
+    try:
+        # 1. 确保会话存在
+        await ChatHistoryService.ensure_session_exists(
+            session_id=session_id,
+            enable_web_search=enable_web_search,
+            context=context
+        )
+        
+        # 2. 保存用户消息
+        await ChatHistoryService.add_message(
+            session_id=session_id,
+            role="user",
+            content=user_message,
+        )
+        
+        # 3. 保存助手消息
+        await ChatHistoryService.add_message(
+            session_id=session_id,
+            role="assistant",
+            content=assistant_content,
+            tool_calls=tool_calls if tool_calls else None,
+            cost=cost,
+            model=model,
+            duration_ms=duration_ms,
+        )
+        
+        # 4. 新会话自动生成标题
+        if is_new_session and user_message:
+            title = await ChatHistoryService.generate_title_from_message(user_message)
+            await ChatHistoryService.update_session(session_id, title=title)
+            
+    except Exception as e:
+        # 持久化失败只记录日志，不影响用户
+        print(f"[Persistence Error] session={session_id}: {e}")
+
+
 @router.post("/chat/stream")
 async def chat_stream(request: ChatRequest):
     """
     Streaming chat endpoint with Server-Sent Events (SSE).
 
-    Lightweight version - no persistence during streaming to ensure smooth output.
-    Session persistence is handled separately if needed.
+    持久化策略：
+    - 流式过程中：纯内存累积，零数据库操作
+    - 流式完成后：异步后台任务持久化，不阻塞 [DONE] 响应
+    - 支持通过 session_id 恢复会话
 
     Args:
         request: ChatRequest with message and optional session_id
@@ -154,8 +259,16 @@ async def chat_stream(request: ChatRequest):
     """
     async def generate():
         """Generator function for SSE streaming"""
-        # Generate session_id if not provided
+        # Generate or validate session_id
         session_id = request.session_id or str(uuid.uuid4())
+        is_new_session = not request.session_id
+        
+        # 内存累积变量（流式过程中不做任何 DB 操作）
+        start_time = time.time()
+        accumulated_content = ""
+        tool_calls = []
+        total_cost = 0.0
+        model_used = os.getenv("ANTHROPIC_MODEL", "claude")
 
         try:
             agent = get_agent()
@@ -165,15 +278,30 @@ async def chat_stream(request: ChatRequest):
                 yield "data: [DONE]\n\n"
                 return
 
-            # Stream response directly without any persistence
+            # 流式响应 - 只做内存累积
             async for event in agent.query_stream_events(
                 request.message,
                 session_id=session_id,
                 enable_web_search=request.enable_web_search,
                 context=request.context
             ):
-                # Override session_id in done event
-                if event.type == "done":
+                # 内存累积（无 IO）
+                if event.type == "block_delta" and event.block_type == "text":
+                    accumulated_content += event.content
+                elif event.type == "tool_start":
+                    tool_calls.append({
+                        "name": event.tool_name,
+                        "input": event.tool_input,
+                        "output": None,
+                        "duration_ms": None
+                    })
+                elif event.type == "tool_end":
+                    for tc in reversed(tool_calls):
+                        if tc["name"] == event.tool_name and tc["output"] is None:
+                            tc["output"] = event.tool_result[:500] if event.tool_result else None
+                            break
+                elif event.type == "done":
+                    total_cost = event.cost or 0.0
                     event = StreamEvent(
                         type="done",
                         layer="primary",
@@ -181,12 +309,33 @@ async def chat_stream(request: ChatRequest):
                         session_id=session_id
                     )
 
-                # Format as SSE event
+                # 立即输出事件
                 event_data = json.dumps(event.to_dict(), ensure_ascii=False)
                 yield f"data: {event_data}\n\n"
 
-            # Signal completion
+            # 先发送完成信号，再异步持久化
             yield "data: [DONE]\n\n"
+            
+            # 异步后台持久化（不阻塞响应）
+            duration_ms = int((time.time() - start_time) * 1000)
+            context_data = {
+                "type": request.context.get("type") if request.context else None,
+                "value": request.context.get("value") if request.context else None,
+                "products": request.context.get("products") if request.context else None,
+            } if request.context else None
+            
+            asyncio.create_task(_persist_chat_async(
+                session_id=session_id,
+                user_message=request.message,
+                assistant_content=accumulated_content,
+                tool_calls=tool_calls,
+                cost=total_cost,
+                model=model_used,
+                duration_ms=duration_ms,
+                is_new_session=is_new_session,
+                context=context_data,
+                enable_web_search=request.enable_web_search,
+            ))
 
         except Exception as e:
             import traceback
@@ -293,3 +442,96 @@ async def chat_stream_debug(request: ChatRequest):
             "Content-Type": "text/event-stream",
         }
     )
+
+
+# ============================================================================
+# Prompt Suggestion API
+# ============================================================================
+
+# Category descriptions for prompt generation
+CATEGORY_PROMPTS = {
+    "product": "SaaS产品分析、产品对比、功能评估、定价策略、竞品分析",
+    "trend": "市场趋势、行业动态、技术发展、投资热点、增长预测",
+    "career": "职业发展、技能提升、创业建议、行业转型、个人成长",
+    "developer": "开发者工具、技术栈选择、开源项目、编程效率、技术学习",
+}
+
+
+@router.post("/chat/suggest-prompts", response_model=SuggestPromptsResponse)
+async def suggest_prompts(request: SuggestPromptsRequest):
+    """
+    Generate suggested prompts for a category using LLM.
+    
+    Args:
+        request: SuggestPromptsRequest with category
+        
+    Returns:
+        SuggestPromptsResponse with list of 4 prompts
+    """
+    category_desc = CATEGORY_PROMPTS.get(request.category, "通用问题")
+    
+    system_prompt = """你是一个SaaS行业分析助手。请根据给定的类别生成4个有价值的问题建议。
+要求：
+1. 问题要具体、有深度、有实用价值
+2. 问题要与SaaS行业、创业、产品分析相关
+3. 每个问题控制在30字以内
+4. 直接返回4个问题，每行一个，不要编号或其他格式"""
+
+    user_prompt = f"请为「{category_desc}」类别生成4个有价值的问题建议。"
+    
+    api_key = os.getenv("ANTHROPIC_API_KEY")
+    base_url = os.getenv("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
+    model = os.getenv("ANTHROPIC_MODEL", "claude-3-haiku-20240307")
+    
+    if not api_key:
+        # Return default prompts if no API key
+        return SuggestPromptsResponse(prompts=[
+            "有哪些值得关注的SaaS产品？",
+            "当前市场有什么新趋势？",
+            "如何评估一个SaaS产品的潜力？",
+            "有什么推荐的开发者工具？",
+        ])
+    
+    try:
+        async with httpx.AsyncClient(timeout=30.0) as client:
+            response = await client.post(
+                f"{base_url}/v1/messages",
+                headers={
+                    "x-api-key": api_key,
+                    "anthropic-version": "2023-06-01",
+                    "content-type": "application/json",
+                },
+                json={
+                    "model": model,
+                    "max_tokens": 256,
+                    "system": system_prompt,
+                    "messages": [{"role": "user", "content": user_prompt}],
+                }
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                content = data.get("content", [{}])[0].get("text", "")
+                # Parse the response - split by newlines and filter empty lines
+                prompts = [line.strip() for line in content.split("\n") if line.strip()]
+                # Take first 4 prompts
+                prompts = prompts[:4]
+                if len(prompts) >= 4:
+                    return SuggestPromptsResponse(prompts=prompts)
+            
+            # Fallback to defaults
+            return SuggestPromptsResponse(prompts=[
+                "有哪些值得关注的SaaS产品？",
+                "当前市场有什么新趋势？",
+                "如何评估一个SaaS产品的潜力？",
+                "有什么推荐的开发者工具？",
+            ])
+            
+    except Exception as e:
+        print(f"[Suggest Prompts Error] {e}")
+        return SuggestPromptsResponse(prompts=[
+            "有哪些值得关注的SaaS产品？",
+            "当前市场有什么新趋势？",
+            "如何评估一个SaaS产品的潜力？",
+            "有什么推荐的开发者工具？",
+        ])

@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Search, TrendingUp, Compass, Users, X } from 'lucide-react'
+import { Search, TrendingUp, Compass, Users, RefreshCw, Loader2 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useLocale } from '@/contexts/LocaleContext'
 
@@ -9,9 +9,39 @@ interface SuggestedPromptsProps {
   onSelect: (prompt: string) => void
 }
 
+// 默认问题（静态）
+const getDefaultPrompts = (t: (key: string) => string) => ({
+  product: [
+    t('assistant.prompts.product1'),
+    t('assistant.prompts.product2'),
+    t('assistant.prompts.product3'),
+    t('assistant.prompts.product4'),
+  ],
+  trend: [
+    t('assistant.prompts.trend1'),
+    t('assistant.prompts.trend2'),
+    t('assistant.prompts.trend3'),
+    t('assistant.prompts.trend4'),
+  ],
+  career: [
+    t('assistant.prompts.career1'),
+    t('assistant.prompts.career2'),
+    t('assistant.prompts.career3'),
+    t('assistant.prompts.career4'),
+  ],
+  developer: [
+    t('assistant.prompts.developer1'),
+    t('assistant.prompts.developer2'),
+    t('assistant.prompts.developer3'),
+    t('assistant.prompts.developer4'),
+  ],
+})
+
 export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
   const { t } = useLocale()
   const [expandedId, setExpandedId] = useState<string | null>(null)
+  const [dynamicPrompts, setDynamicPrompts] = useState<Record<string, string[]>>({})
+  const [isRefreshing, setIsRefreshing] = useState(false)
   const panelRef = useRef<HTMLDivElement>(null)
 
   // 点击外部关闭弹出层
@@ -25,56 +55,67 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
     return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [expandedId])
 
+  const defaultPrompts = getDefaultPrompts(t)
+
   const categories = [
     {
       id: 'product',
       icon: Search,
       label: t('assistant.categories.product'),
       description: t('assistant.categories.productDesc'),
-      prompts: [
-        t('assistant.prompts.product1'),
-        t('assistant.prompts.product2'),
-        t('assistant.prompts.product3'),
-        t('assistant.prompts.product4'),
-      ],
     },
     {
       id: 'trend',
       icon: TrendingUp,
       label: t('assistant.categories.trend'),
       description: t('assistant.categories.trendDesc'),
-      prompts: [
-        t('assistant.prompts.trend1'),
-        t('assistant.prompts.trend2'),
-        t('assistant.prompts.trend3'),
-        t('assistant.prompts.trend4'),
-      ],
     },
     {
       id: 'career',
       icon: Compass,
       label: t('assistant.categories.career'),
       description: t('assistant.categories.careerDesc'),
-      prompts: [
-        t('assistant.prompts.career1'),
-        t('assistant.prompts.career2'),
-        t('assistant.prompts.career3'),
-        t('assistant.prompts.career4'),
-      ],
     },
     {
       id: 'developer',
       icon: Users,
       label: t('assistant.categories.developer'),
       description: t('assistant.categories.developerDesc'),
-      prompts: [
-        t('assistant.prompts.developer1'),
-        t('assistant.prompts.developer2'),
-        t('assistant.prompts.developer3'),
-        t('assistant.prompts.developer4'),
-      ],
     },
   ]
+
+  // 获取当前分类的问题列表
+  const getPrompts = (categoryId: string): string[] => {
+    return dynamicPrompts[categoryId] || defaultPrompts[categoryId as keyof typeof defaultPrompts] || []
+  }
+
+  // 换一批 - 调用后端生成新问题
+  const handleRefresh = async (categoryId: string) => {
+    if (isRefreshing) return
+    
+    setIsRefreshing(true)
+    try {
+      const response = await fetch('/api/chat/suggest-prompts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ category: categoryId })
+      })
+      
+      if (response.ok) {
+        const data = await response.json()
+        if (data.prompts && Array.isArray(data.prompts)) {
+          setDynamicPrompts(prev => ({
+            ...prev,
+            [categoryId]: data.prompts
+          }))
+        }
+      }
+    } catch (error) {
+      console.error('Failed to refresh prompts:', error)
+    } finally {
+      setIsRefreshing(false)
+    }
+  }
 
   const handleClick = (id: string) => {
     setExpandedId(expandedId === id ? null : id)
@@ -86,6 +127,7 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
   }
 
   const expandedCategory = categories.find(c => c.id === expandedId)
+  const currentPrompts = expandedId ? getPrompts(expandedId) : []
 
   return (
     <div className="w-full">
@@ -129,7 +171,7 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
               : 'opacity-0 scale-95 -translate-y-2'
           )}
         >
-          <div className="bg-surface/95 backdrop-blur-xl rounded-2xl border border-surface-border/80 shadow-xl shadow-black/10">
+          <div className="bg-surface/95 backdrop-blur-xl rounded-2xl border border-surface-border/80 shadow-xl shadow-black/10 overflow-hidden">
             {/* 内容区域 */}
             <div className="p-4">
               {/* 标题区 - 简洁风格 */}
@@ -145,19 +187,26 @@ export function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
                     {expandedCategory.description}
                   </p>
                 </div>
-                {/* 关闭按钮 */}
+                {/* 换一批按钮 */}
                 <button
-                  onClick={() => setExpandedId(null)}
-                  className="w-7 h-7 rounded-lg flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover transition-all"
-                  title={t('assistant.close')}
+                  onClick={() => handleRefresh(expandedCategory.id)}
+                  disabled={isRefreshing}
+                  className={cn(
+                    'inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all',
+                    'text-content-secondary hover:text-brand-600 dark:hover:text-brand-400',
+                    'hover:bg-brand-500/10',
+                    isRefreshing && 'opacity-50 cursor-not-allowed'
+                  )}
+                  title={t('assistant.refresh')}
                 >
-                  <X className="h-4 w-4" />
+                  <RefreshCw className={cn('h-3.5 w-3.5', isRefreshing && 'animate-spin')} />
+                  <span>{t('assistant.refresh')}</span>
                 </button>
               </div>
 
               {/* 问题列表 - 简洁卡片风格 */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                {expandedCategory.prompts.map((prompt, idx) => (
+                {currentPrompts.map((prompt, idx) => (
                   <button
                     key={idx}
                     onClick={() => handlePromptSelect(prompt)}

@@ -17,9 +17,7 @@ import {
   History,
   Trash2,
   MessageSquare,
-  Compass,
   Square,
-  RotateCcw,
 } from 'lucide-react'
 import { ChatMessage, MessageRole } from '@/components/assistant/ChatMessage'
 import { SuggestedPrompts } from '@/components/assistant/SuggestedPrompts'
@@ -31,10 +29,9 @@ import { useLocale } from '@/contexts/LocaleContext'
 // 工具调用状态
 interface ToolStatus {
   name: string
+  toolId?: string
   status: 'running' | 'completed'
-  input?: Record<string, unknown>
-  result?: string
-  displayText?: string  // 用户友好的显示文本
+  displayText?: string
 }
 
 // 消息统计
@@ -68,12 +65,6 @@ type ContentBlockType = 'thinking' | 'text' | 'tool_use' | 'tool_result'
 interface ContentBlock {
   type: ContentBlockType
   content: string
-  // For tool blocks
-  toolName?: string
-  toolInput?: Record<string, unknown>
-  toolResult?: string
-  toolStatus?: 'running' | 'completed'
-  // For thinking blocks
   isStreaming?: boolean
 }
 
@@ -93,6 +84,7 @@ interface StreamEventV2 {
   content?: string
   // 工具相关
   tool_name?: string
+  tool_id?: string  // Unique ID for matching tool_start with tool_end
   tool_input?: Record<string, unknown>
   tool_result?: string
   display_text?: string
@@ -128,9 +120,7 @@ function convertBackendMessage(msg: ChatMessageItem): Message {
     timestamp: new Date(msg.created_at),
     toolStatus: msg.tool_calls?.map(tc => ({
       name: tc.name,
-      status: 'completed' as const,
-      input: tc.input,
-      result: tc.output || undefined
+      status: 'completed' as const
     })),
     metrics: msg.cost || msg.duration_ms ? {
       cost: msg.cost || undefined,
@@ -156,10 +146,12 @@ export default function AssistantPage() {
   const [input, setInput] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const [showScrollToLatest, setShowScrollToLatest] = useState(false)
+  
+  // 当前正在执行的工具状态（用于在输入框显示）
+  const [currentToolLabel, setCurrentToolLabel] = useState<string>('')
 
   // 中断控制
   const abortControllerRef = useRef<AbortController | null>(null)
-  const [isInterrupted, setIsInterrupted] = useState(false)
 
   // 上下文相关
   const [showContextMenu, setShowContextMenu] = useState(false)
@@ -290,7 +282,7 @@ export default function AssistantPage() {
     onText: (text: string) => void,
     onThinking: (thinking: string) => void,  // 思考内容回调
     onToolStart: (tool: ToolStatus) => void,
-    onToolEnd: (toolName: string, result: string, displayText?: string) => void,
+    onToolEnd: (toolId: string, toolName: string, result: string, displayText?: string) => void,
     onError: (error: string) => void,
     onDone: (cost?: number, newSessionId?: string) => void,
     signal?: AbortSignal  // 添加中断信号
@@ -358,7 +350,6 @@ export default function AssistantPage() {
                     onToolStart({
                       name: event.tool_name,
                       status: 'running',
-                      input: event.tool_input,
                       displayText: event.display_text
                     })
                   }
@@ -406,16 +397,16 @@ export default function AssistantPage() {
                   if (event.tool_name) {
                     onToolStart({
                       name: event.tool_name,
+                      toolId: event.tool_id,
                       status: 'running',
-                      input: event.tool_input,
                       displayText: event.display_text
                     })
                   }
                   break
 
                 case 'tool_end':
-                  if (event.tool_name) {
-                    onToolEnd(event.tool_name, event.tool_result || '', event.display_text)
+                  if (event.tool_name || event.tool_id) {
+                    onToolEnd(event.tool_id || '', event.tool_name || '', event.tool_result || '', event.display_text)
                   }
                   break
 
@@ -456,29 +447,33 @@ export default function AssistantPage() {
       abortControllerRef.current.abort()
     }
     setCurrentSessionId(null)
-    setServerSessionId(null)  // Reset backend session for new conversation
+    setServerSessionId(null)
     setMessages([])
     setContextType(null)
     setSelectedProduct(null)
     setUrlInput('')
     setShowHistory(false)
-    setIsInterrupted(false)
   }
 
   // 中断当前请求
   const interruptRequest = () => {
     if (abortControllerRef.current) {
       abortControllerRef.current.abort()
-      setIsInterrupted(true)
       setIsLoading(false)
+      setCurrentToolLabel('')
 
       // 标记当前正在流式传输的消息为已中断
       setMessages(prev => prev.map(msg => {
         if (msg.isStreaming) {
+          const updatedTools = (msg.toolStatus || []).map(tool => 
+            tool.status === 'running' 
+              ? { ...tool, status: 'completed' as const }
+              : tool
+          )
           return {
             ...msg,
             isStreaming: false,
-            content: msg.content + '\n\n*[' + t('assistant.interrupted') + ']*',
+            toolStatus: updatedTools,
             contentBlocks: (msg.contentBlocks || []).map(block => ({
               ...block,
               isStreaming: false
@@ -488,12 +483,6 @@ export default function AssistantPage() {
         return msg
       }))
     }
-  }
-
-  // 恢复/继续对话
-  const resumeConversation = () => {
-    setIsInterrupted(false)
-    // 可以在这里添加恢复逻辑，比如重新发送最后一条消息
   }
 
   // 切换会话 - 从数据库加载
@@ -618,7 +607,6 @@ export default function AssistantPage() {
     setMessages(newMessages)
     setInput('')
     setIsLoading(true)
-    setIsInterrupted(false)
 
     // 创建新的 AbortController
     abortControllerRef.current = new AbortController()
@@ -703,6 +691,9 @@ export default function AssistantPage() {
         },
         // onToolStart - 工具开始调用
         (tool) => {
+          // 更新输入框显示的当前工具状态
+          setCurrentToolLabel(tool.displayText || tool.name)
+          
           setMessages(prev => prev.map(msg => {
             if (msg.id !== aiMessageId) return msg
             const existingTools = msg.toolStatus || []
@@ -712,13 +703,16 @@ export default function AssistantPage() {
             }
           }))
         },
-        // onToolEnd - 工具调用完成
-        (toolName, result, displayText) => {
+        // onToolEnd - 工具调用完成（简化：只记录完成，不追踪具体哪个工具）
+        (toolId, toolName, result, displayText) => {
           setMessages(prev => prev.map(msg => {
             if (msg.id !== aiMessageId) return msg
-            const updatedTools = (msg.toolStatus || []).map(t =>
-              t.name === toolName ? { ...t, status: 'completed' as const, result, displayText: displayText || t.displayText } : t
-            )
+            const existingTools = msg.toolStatus || []
+            // 简化：将所有工具标记为完成
+            const updatedTools = existingTools.map(t => ({
+              ...t,
+              status: 'completed' as const
+            }))
             return { ...msg, toolStatus: updatedTools }
           }))
         },
@@ -734,7 +728,9 @@ export default function AssistantPage() {
         (cost, returnedSessionId) => {
           totalCost = cost || 0
           newServerSessionId = returnedSessionId
-          // 将仍在运行的工具标记为已完成，避免卡在旋转状态
+          // 清除当前工具状态
+          setCurrentToolLabel('')
+          // 将仍在运行的工具标记为已完成
           setMessages(prev => prev.map(msg => {
             if (msg.id !== aiMessageId) return msg
             const updatedTools = (msg.toolStatus || []).map(t =>
@@ -971,22 +967,25 @@ export default function AssistantPage() {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={handleKeyDown}
                         placeholder={t('assistant.inputPlaceholder')}
-                        className="flex-1 bg-transparent resize-none text-content-primary placeholder:text-content-muted/70 focus:outline-none min-h-[72px] max-h-48 text-[0.9375rem] leading-relaxed font-normal"
+                        className="flex-1 bg-transparent resize-none text-content-secondary placeholder:text-content-muted/60 focus:outline-none min-h-[72px] max-h-48 text-[0.9375rem] leading-relaxed font-normal"
                         rows={3}
                         disabled={isLoading}
                       />
                       <button
-                        onClick={() => sendMessage()}
-                        disabled={!input.trim() || isLoading}
+                        onClick={() => isLoading ? interruptRequest() : sendMessage()}
+                        disabled={!input.trim() && !isLoading}
                         className={cn(
                           'flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-200 mb-1',
-                          input.trim() && !isLoading
-                            ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25'
-                            : 'bg-surface-hover text-content-muted cursor-not-allowed'
+                          isLoading
+                            ? 'bg-rose-500/10 text-rose-500 hover:bg-rose-500/20 ring-1 ring-rose-500/20'
+                            : input.trim()
+                              ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25'
+                              : 'bg-surface-hover text-content-muted cursor-not-allowed'
                         )}
+                        title={isLoading ? t('assistant.stop') : t('assistant.send')}
                       >
                         {isLoading ? (
-                          <Loader2 className="h-4 w-4 animate-spin" />
+                          <Square className="h-4 w-4 fill-current" />
                         ) : (
                           <Send className="h-4 w-4" />
                         )}
@@ -1295,13 +1294,20 @@ export default function AssistantPage() {
         <div className="max-w-3xl mx-auto">
           <div className="relative bg-surface/70 backdrop-blur-sm rounded-2xl border border-surface-border/80 focus-within:border-brand-500/60 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:shadow-lg focus-within:shadow-brand-500/5 transition-all duration-300">
             <div className="flex items-end gap-3 px-4 py-3">
+              {/* 加载状态图标 */}
+              {isLoading && (
+                <Loader2 className="flex-shrink-0 h-4 w-4 text-brand-500 animate-spin mb-1" />
+              )}
               <textarea
                 ref={inputRef}
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder={t('assistant.continueChat')}
-                className="flex-1 bg-transparent resize-none text-content-primary placeholder:text-content-muted/70 focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed font-normal"
+                placeholder={isLoading 
+                  ? (currentToolLabel ? `${t('assistant.tools.executing').replace('...', '')} ${currentToolLabel}...` : t('assistant.thinkingStatus'))
+                  : t('assistant.continueChat')
+                }
+                className="flex-1 bg-transparent resize-none text-content-secondary placeholder:text-content-muted/60 focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed font-normal"
                 rows={1}
                 disabled={isLoading}
                 onInput={(e) => {
@@ -1311,17 +1317,20 @@ export default function AssistantPage() {
                 }}
               />
               <button
-                onClick={() => sendMessage()}
-                disabled={!input.trim() || isLoading}
+                onClick={() => isLoading ? interruptRequest() : sendMessage()}
+                disabled={!input.trim() && !isLoading}
                 className={cn(
                   'flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200',
-                  input.trim() && !isLoading
-                    ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25'
-                    : 'bg-surface-hover text-content-muted cursor-not-allowed'
+                  isLoading
+                    ? 'bg-rose-500/10 text-rose-500 hover:bg-rose-500/20 ring-1 ring-rose-500/20'
+                    : input.trim()
+                      ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25'
+                      : 'bg-surface-hover text-content-muted cursor-not-allowed'
                 )}
+                title={isLoading ? t('assistant.stop') : t('assistant.send')}
               >
                 {isLoading ? (
-                  <Loader2 className="h-4 w-4 animate-spin" />
+                  <Square className="h-4 w-4 fill-current" />
                 ) : (
                   <Send className="h-4 w-4" />
                 )}
