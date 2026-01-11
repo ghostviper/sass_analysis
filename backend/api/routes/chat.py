@@ -246,10 +246,10 @@ async def chat_stream(request: ChatRequest):
     """
     Streaming chat endpoint with Server-Sent Events (SSE).
 
-    持久化策略：
-    - 流式过程中：纯内存累积，零数据库操作
-    - 流式完成后：异步后台任务持久化，不阻塞 [DONE] 响应
-    - 支持通过 session_id 恢复会话
+    多轮对话说明：
+    - 首次对话：不传 session_id
+    - 后续对话：传入上次返回的 claude_session_id（来自 done 事件）
+    - Claude SDK 会自动恢复会话上下文
 
     Args:
         request: ChatRequest with message and optional session_id
@@ -257,17 +257,23 @@ async def chat_stream(request: ChatRequest):
     Returns:
         StreamingResponse with SSE events
     """
+    # 使用请求中的 session_id（如果有的话，这是 Claude SDK 的 session_id）
+    claude_session_id = request.session_id  # 可能为 None（新会话）
+    
+    # 生成一个本地 session_id 用于数据库存储
+    local_session_id = request.session_id or str(uuid.uuid4())
+    is_new_session = not request.session_id
+
     async def generate():
         """Generator function for SSE streaming"""
-        # Generate or validate session_id
-        session_id = request.session_id or str(uuid.uuid4())
-        is_new_session = not request.session_id
+        nonlocal claude_session_id, local_session_id, is_new_session
         
         # 内存累积变量（流式过程中不做任何 DB 操作）
         start_time = time.time()
         accumulated_content = ""
         tool_calls = []
         total_cost = 0.0
+        returned_session_id = None  # Claude SDK 返回的 session_id
         model_used = os.getenv("ANTHROPIC_MODEL", "claude")
 
         try:
@@ -278,10 +284,10 @@ async def chat_stream(request: ChatRequest):
                 yield "data: [DONE]\n\n"
                 return
 
-            # 流式响应 - 只做内存累积
+            # 流式响应 - 传入 Claude session_id 用于恢复会话
             async for event in agent.query_stream_events(
                 request.message,
-                session_id=session_id,
+                session_id=claude_session_id,  # 传入 Claude SDK 的 session_id
                 enable_web_search=request.enable_web_search,
                 context=request.context
             ):
@@ -302,12 +308,12 @@ async def chat_stream(request: ChatRequest):
                             break
                 elif event.type == "done":
                     total_cost = event.cost or 0.0
-                    event = StreamEvent(
-                        type="done",
-                        layer="primary",
-                        cost=event.cost,
-                        session_id=session_id
-                    )
+                    # 获取 Claude SDK 返回的 session_id，用于后续多轮对话
+                    returned_session_id = event.session_id
+                    if returned_session_id:
+                        print(f"[DEBUG] Got session_id from Claude SDK: {returned_session_id}")
+                        # 更新 local_session_id 为 Claude 返回的 session_id
+                        local_session_id = returned_session_id
 
                 # 立即输出事件
                 event_data = json.dumps(event.to_dict(), ensure_ascii=False)
@@ -325,7 +331,7 @@ async def chat_stream(request: ChatRequest):
             } if request.context else None
             
             asyncio.create_task(_persist_chat_async(
-                session_id=session_id,
+                session_id=local_session_id,
                 user_message=request.message,
                 assistant_content=accumulated_content,
                 tool_calls=tool_calls,

@@ -2,6 +2,12 @@
 Claude Agent SDK client wrapper for SaaS Analysis
 
 Supports multi-turn conversations with session management.
+
+重要：Claude Agent SDK 的多轮对话有两种方式：
+1. 同一个 ClaudeSDKClient 上下文中多次调用 query() - 推荐用于实时对话
+2. 使用 resume 参数恢复之前的会话 - 用于跨请求的会话恢复
+
+由于 HTTP 请求是无状态的，我们使用方式2，通过 ResultMessage 中的 session_id 来恢复会话。
 """
 
 import os
@@ -51,6 +57,7 @@ class StreamEvent:
     display_text: str = ""
     cost: float = 0.0
     session_id: str = ""
+    checkpoint_id: str = ""  # 新增：checkpoint ID for multi-turn
     timestamp: float = 0.0
 
     def to_dict(self) -> Dict[str, Any]:
@@ -83,17 +90,9 @@ class StreamEvent:
             result["cost"] = self.cost
         if self.session_id:
             result["session_id"] = self.session_id
+        if self.checkpoint_id:
+            result["checkpoint_id"] = self.checkpoint_id
         return result
-
-
-@dataclass
-class SessionInfo:
-    """Tracks session state for multi-turn conversations."""
-    session_id: str
-    created_at: float
-    last_used_at: float
-    turn_count: int = 0
-    total_cost: float = 0.0
 
 
 from .tools import (
@@ -167,8 +166,6 @@ class SaaSAnalysisAgent:
         self.cli_path = os.getenv("CLAUDE_CLI_PATH")
         self.model = os.getenv("ANTHROPIC_MODEL", "glm")
         self.max_turns = int(os.getenv("CLAUDE_MAX_TURNS", "10"))
-        self.session_timeout = int(os.getenv("CLAUDE_SESSION_TIMEOUT", "1800"))
-        self._sessions: Dict[str, SessionInfo] = {}
 
         if not self.api_key:
             raise ValueError("ANTHROPIC_API_KEY not found in environment variables")
@@ -208,73 +205,52 @@ class SaaSAnalysisAgent:
             "model": self.model,
             "env": self._env,
             "include_partial_messages": True,
-            "accumulate_streaming_content": True,
             "max_turns": self.max_turns,
         }
         if self.cli_path:
             options["cli_path"] = self.cli_path
         if resume:
+            # 恢复会话时，使用 fork_session 创建新的分支
             options["resume"] = resume
+            options["fork_session"] = True
+            print(f"[DEBUG] Resuming session: {resume}", flush=True)
         return ClaudeAgentOptions(**options)
 
     def _generate_session_id(self) -> str:
         import uuid
         return str(uuid.uuid4())
 
-    def _cleanup_expired_sessions(self) -> None:
-        current_time = time.time()
-        expired = [sid for sid, info in self._sessions.items() 
-                   if current_time - info.last_used_at > self.session_timeout]
-        for sid in expired:
-            del self._sessions[sid]
-
     async def query_stream_events(
         self,
         message: str,
         session_id: Optional[str] = None,
+        checkpoint_id: Optional[str] = None,  # 保留但不再使用，改用 session_id
         enable_web_search: bool = False,
         context: Optional[Dict[str, Any]] = None
     ) -> AsyncIterator[StreamEvent]:
-        """Stream a query to Claude and yield events."""
-        self._cleanup_expired_sessions()
-
+        """
+        Stream a query to Claude and yield events.
+        
+        多轮对话说明：
+        - 首次对话：不传 session_id，会创建新会话
+        - 后续对话：传入上次返回的 session_id，会恢复会话上下文
+        - session_id 来自 ResultMessage.session_id
+        """
         active_blocks: Dict[int, Dict[str, Any]] = {}
         block_counter = 0
         active_tools = {}
         sent_text_length = 0
         sent_thinking_length = 0
+        new_session_id = None  # 从 ResultMessage 获取的新 session_id
 
-        # Determine if resuming or creating new session
+        # 确定是否恢复会话
         resume_session = None
-        if session_id and session_id in self._sessions:
-            session_info = self._sessions[session_id]
-            # Check if we've exceeded max turns
-            if session_info.turn_count >= self.max_turns:
-                yield StreamEvent(
-                    type="status",
-                    content=f"会话已达到最大轮数 ({self.max_turns})，开始新会话..."
-                )
-                # Create new session instead
-                session_id = self._generate_session_id()
-            else:
-                resume_session = session_id
-        elif session_id:
-            # Session ID provided but not found (expired or invalid)
-            yield StreamEvent(
-                type="status",
-                content="会话已过期，开始新会话..."
-            )
-            session_id = self._generate_session_id()
+        if session_id:
+            # 有 session_id，尝试恢复会话
+            resume_session = session_id
+            yield StreamEvent(type="status", content="正在恢复会话上下文...")
         else:
-            # No session ID provided, create new
-            session_id = self._generate_session_id()
-
-        # Status heartbeat so frontend立即有反馈
-        if self._query_lock.locked():
-            yield StreamEvent(type="status", content="等待可用的 Claude 连接...")
-        else:
-            status_msg = "正在继续对话..." if resume_session else "正在初始化 Claude 连接..."
-            yield StreamEvent(type="status", content=status_msg)
+            yield StreamEvent(type="status", content="正在初始化 Claude 连接...")
 
         start_time = asyncio.get_event_loop().time()
 
@@ -288,9 +264,17 @@ class SaaSAnalysisAgent:
                 await client.query(message)
 
                 final_cost = 0.0
+                last_event_time = asyncio.get_event_loop().time()
 
                 async for msg in client.receive_response():
+                    # 更新最后事件时间
+                    current_time = asyncio.get_event_loop().time()
+                    time_since_last = current_time - last_event_time
+                    last_event_time = current_time
+                    
+                    # 调试：打印事件类型
                     msg_type = type(msg).__name__
+                    print(f"[DEBUG] Received message type: {msg_type}, time since last: {time_since_last:.1f}s")
 
                     # Handle partial streaming events (when include_partial_messages=True)
                     if hasattr(msg, 'type') and msg.type == 'stream_event':
@@ -452,18 +436,28 @@ class SaaSAnalysisAgent:
 
                         continue
 
-                    # Handle UserMessage (skip)
+                    # Handle UserMessage - 捕获 checkpoint ID
                     if isinstance(msg, UserMessage):
-                        pass
+                        print(f"[DEBUG] UserMessage received", flush=True)
+                        if hasattr(msg, 'uuid') and msg.uuid:
+                            new_checkpoint_id = msg.uuid
+                            print(f"[DEBUG] Captured checkpoint ID: {new_checkpoint_id}", flush=True)
 
                     # Handle complete assistant messages (fallback for non-streaming)
                     elif isinstance(msg, AssistantMessage):
+                        print(f"[DEBUG] AssistantMessage received with {len(msg.content)} blocks", flush=True)
                         for i, block in enumerate(msg.content):
+                            block_type_name = type(block).__name__
+                            print(f"[DEBUG]   Block {i}: {block_type_name}", flush=True)
+                            
                             if isinstance(block, TextBlock):
                                 if block.text:
+                                    print(f"[DEBUG]   TextBlock content length: {len(block.text)}, sent_text_length: {sent_text_length}", flush=True)
+                                    print(f"[DEBUG]   TextBlock preview: {block.text[:200]}..." if len(block.text) > 200 else f"[DEBUG]   TextBlock content: {block.text}", flush=True)
                                     # Only yield new text (avoid duplicates from streaming)
                                     new_text = block.text[sent_text_length:]
                                     if new_text:
+                                        print(f"[DEBUG]   Yielding new text length: {len(new_text)}", flush=True)
                                         yield StreamEvent(
                                             type="block_delta",
                                             layer="primary",
@@ -471,6 +465,10 @@ class SaaSAnalysisAgent:
                                             content=new_text
                                         )
                                         sent_text_length = len(block.text)
+                                    else:
+                                        print(f"[DEBUG]   No new text to yield (already sent)", flush=True)
+                                else:
+                                    print(f"[DEBUG]   TextBlock is empty!", flush=True)
 
                             elif isinstance(block, ThinkingBlock):
                                 # Only yield new thinking (avoid duplicates)
@@ -487,6 +485,7 @@ class SaaSAnalysisAgent:
                             elif isinstance(block, ToolUseBlock):
                                 tool_name = block.name.replace("mcp__saas__", "")
                                 tool_input = block.input if hasattr(block, 'input') else {}
+                                print(f"[DEBUG]   ToolUseBlock: {tool_name}, input: {tool_input}", flush=True)
                                 friendly_desc = _get_friendly_tool_description(tool_name, tool_input)
                                 if block.id not in active_tools:
                                     active_tools[block.id] = {"name": tool_name, "display_text": friendly_desc}
@@ -499,6 +498,7 @@ class SaaSAnalysisAgent:
                                     )
 
                             elif isinstance(block, ToolResultBlock):
+                                print(f"[DEBUG]   ToolResultBlock: tool_use_id={block.tool_use_id}", flush=True)
                                 tool_info = active_tools.get(block.tool_use_id, {"name": "unknown", "display_text": ""})
                                 tool_name = tool_info["name"] if isinstance(tool_info, dict) else tool_info
                                 tool_display = tool_info.get("display_text", "") if isinstance(tool_info, dict) else ""
@@ -517,35 +517,38 @@ class SaaSAnalysisAgent:
 
                     # Handle SystemMessage
                     elif isinstance(msg, SystemMessage):
-                        yield StreamEvent(type="status", layer="debug", content=f"System: {getattr(msg, 'subtype', 'unknown')}")
+                        subtype = getattr(msg, 'subtype', 'unknown')
+                        print(f"[DEBUG] SystemMessage received: subtype={subtype}", flush=True)
+                        yield StreamEvent(type="status", layer="debug", content=f"System: {subtype}")
 
                     # Result message at end
                     elif isinstance(msg, ResultMessage):
+                        print(f"[DEBUG] ResultMessage received!", flush=True)
                         final_cost = getattr(msg, 'total_cost_usd', 0) or 0
-                        # Get the session ID from the result if available
+                        print(f"[DEBUG] Final cost: {final_cost}", flush=True)
+                        
+                        # 获取 session_id - 这是恢复会话的关键
                         result_session_id = getattr(msg, 'session_id', None)
                         if result_session_id:
-                            session_id = result_session_id
+                            new_session_id = result_session_id
+                            print(f"[DEBUG] Got session_id from ResultMessage: {new_session_id}", flush=True)
+                        else:
+                            print(f"[DEBUG] No session_id in ResultMessage", flush=True)
+                    
+                    else:
+                        # 未知消息类型
+                        print(f"[DEBUG] Unknown message type: {msg_type}", flush=True)
 
-                # Update or create session info
-                current_time = time.time()
-                if session_id in self._sessions:
-                    # Update existing session
-                    session_info = self._sessions[session_id]
-                    session_info.last_used_at = current_time
-                    session_info.turn_count += 1
-                    session_info.total_cost += final_cost
-                else:
-                    # Create new session record (store session_id for resume)
-                    self._sessions[session_id] = SessionInfo(
-                        session_id=session_id,
-                        created_at=current_time,
-                        last_used_at=current_time,
-                        turn_count=1,
-                        total_cost=final_cost,
-                    )
-
-                yield StreamEvent(type="done", layer="primary", cost=final_cost, session_id=session_id)
+                # 返回最终事件，包含 session_id 用于后续多轮对话
+                final_session_id = new_session_id or session_id or ""
+                print(f"[DEBUG] Final session_id to return: {final_session_id}", flush=True)
+                
+                yield StreamEvent(
+                    type="done",
+                    layer="primary",
+                    cost=final_cost,
+                    session_id=final_session_id,
+                )
 
     async def query(
         self,

@@ -26,13 +26,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 直接返回后端的流式响应
+    // 直接返回后端的流式响应，使用正确的 SSE Content-Type
     return new Response(response.body, {
       headers: {
-        'Content-Type': 'text/plain; charset=utf-8',
-        'Cache-Control': 'no-cache, no-transform',
+        'Content-Type': 'text/event-stream; charset=utf-8',
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
         'Connection': 'keep-alive',
         'X-Accel-Buffering': 'no',
+        // 防止浏览器缓存
+        'Pragma': 'no-cache',
+        'Expires': '0',
       },
     })
   } catch (error) {

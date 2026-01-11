@@ -1294,8 +1294,8 @@ export default function AssistantPage() {
         <div className="max-w-3xl mx-auto">
           <div className="relative bg-surface/70 backdrop-blur-sm rounded-2xl border border-surface-border/80 focus-within:border-brand-500/60 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:shadow-lg focus-within:shadow-brand-500/5 transition-all duration-300">
             <div className="flex items-end gap-3 px-4 py-3">
-              {/* 加载状态图标 */}
-              {isLoading && (
+              {/* 加载状态图标 - 只在执行工具时显示 */}
+              {isLoading && currentToolLabel && (
                 <Loader2 className="flex-shrink-0 h-4 w-4 text-brand-500 animate-spin mb-1" />
               )}
               <textarea
@@ -1304,7 +1304,7 @@ export default function AssistantPage() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={isLoading 
-                  ? (currentToolLabel ? `${t('assistant.tools.executing').replace('...', '')} ${currentToolLabel}...` : t('assistant.thinkingStatus'))
+                  ? (currentToolLabel ? `${t('assistant.tools.executing').replace('...', '')} ${currentToolLabel}...` : t('assistant.continueChat'))
                   : t('assistant.continueChat')
                 }
                 className="flex-1 bg-transparent resize-none text-content-secondary placeholder:text-content-muted/60 focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed font-normal"

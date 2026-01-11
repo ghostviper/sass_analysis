@@ -199,7 +199,8 @@ class ChatHistoryService:
         output_tokens: Optional[int] = None,
         cost: Optional[float] = None,
         model: Optional[str] = None,
-        duration_ms: Optional[int] = None
+        duration_ms: Optional[int] = None,
+        checkpoint_id: Optional[str] = None  # 新增：checkpoint ID
     ) -> ChatMessage:
         """
         添加消息到会话
@@ -214,6 +215,7 @@ class ChatHistoryService:
             cost: 消耗费用
             model: 使用的模型
             duration_ms: 响应耗时
+            checkpoint_id: Claude Agent SDK checkpoint ID (用于多轮对话恢复)
 
         Returns:
             创建的消息对象
@@ -238,6 +240,7 @@ class ChatHistoryService:
                 cost=cost,
                 model=model,
                 duration_ms=duration_ms,
+                checkpoint_id=checkpoint_id,  # 保存 checkpoint ID
             )
             db.add(message)
 
@@ -269,6 +272,28 @@ class ChatHistoryService:
             await db.commit()
             await db.refresh(message)
             return message
+
+    @staticmethod
+    async def get_last_checkpoint_id(session_id: str) -> Optional[str]:
+        """
+        获取会话的最后一个 checkpoint ID
+        
+        Args:
+            session_id: 会话ID
+            
+        Returns:
+            最后一个 checkpoint ID 或 None
+        """
+        async with AsyncSessionLocal() as db:
+            result = await db.execute(
+                select(ChatMessage.checkpoint_id)
+                .where(ChatMessage.session_id == session_id)
+                .where(ChatMessage.checkpoint_id.isnot(None))
+                .order_by(desc(ChatMessage.sequence))
+                .limit(1)
+            )
+            checkpoint_id = result.scalar_one_or_none()
+            return checkpoint_id
 
     @staticmethod
     async def get_messages(

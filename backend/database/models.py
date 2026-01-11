@@ -709,6 +709,9 @@ class ChatMessage(Base):
     # 元数据
     model = Column(String(100), nullable=True)  # 使用的模型
     duration_ms = Column(Integer, nullable=True)  # 响应耗时（毫秒）
+    
+    # Claude Agent SDK checkpoint ID (用于多轮对话恢复)
+    checkpoint_id = Column(String(64), nullable=True, index=True)  # UserMessage UUID
 
     # 时间戳
     created_at = Column(DateTime, default=datetime.utcnow, index=True)
@@ -734,5 +737,6 @@ class ChatMessage(Base):
             "cost": self.cost,
             "model": self.model,
             "duration_ms": self.duration_ms,
+            "checkpoint_id": self.checkpoint_id,
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }

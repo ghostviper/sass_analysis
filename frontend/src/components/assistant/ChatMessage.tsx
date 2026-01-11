@@ -89,8 +89,6 @@ function ThinkingBlock({
   t: (key: string) => string
 }) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const previewLength = 150
-  const hasMore = content.length > previewLength
 
   return (
     <div data-chat-block="thinking" className={isStreaming ? 'streaming' : ''}>
@@ -270,24 +268,27 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                     {textBlock.content}
                   </Streamdown>
                 </div>
-              ) : hasActiveTools ? (
-                // 没有文本但有工具调用时，显示加载状态
-                <div className="flex items-center gap-2.5 text-content-muted py-2">
-                  <Loader2 className="h-4 w-4 animate-spin text-brand-500" />
-                  <span className="text-sm font-medium">{t('assistant.queryingData')}</span>
-                </div>
-              ) : message.isStreaming && !message.content ? (
-                <div className="flex items-center gap-2.5 text-content-muted">
-                  <Loader2 className="h-4 w-4 animate-spin text-brand-500" />
-                  <span className="text-sm font-medium">{t('assistant.thinkingStatus')}</span>
-                </div>
               ) : message.content ? (
+                // 有 content 但没有 textBlock（兼容旧格式）
                 <div data-chat-block="text">
                   <Streamdown isAnimating={message.isStreaming}>
                     {message.content}
                   </Streamdown>
                 </div>
               ) : null}
+
+              {/* 
+                加载状态显示逻辑：
+                1. 有思考内容正在输出时 -> 不显示额外的加载状态（思考块已有转圈）
+                2. 有工具正在执行时 -> 不显示（输入框 placeholder 会显示）
+                3. 正在流式传输但没有任何内容时 -> 显示"正在思考"
+              */}
+              {message.isStreaming && !hasText && !message.content && !hasThinking && !runningTool && (
+                <div className="flex items-center gap-2.5 text-content-muted py-2">
+                  <Loader2 className="h-4 w-4 animate-spin text-brand-500" />
+                  <span className="text-sm font-medium">{t('assistant.thinkingStatus')}</span>
+                </div>
+              )}
 
               {/* 工具状态栏 - 放在文本内容下方居中 */}
               {renderToolStatusBar()}
