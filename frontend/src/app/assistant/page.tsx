@@ -301,7 +301,12 @@ export default function AssistantPage() {
           context: contextType ? {
             type: contextType,
             value: contextType === 'database' ? selectedProduct?.name : urlInput,
-            products: contextType === 'database' ? selectedProducts.map(p => p.name) : undefined
+            // 传入完整的产品信息（包含 id, name, slug），便于后端精确查询
+            products: contextType === 'database' ? selectedProducts.map(p => ({
+              id: p.id,
+              name: p.name,
+              slug: p.slug
+            })) : undefined
           } : undefined
         }),
         signal  // 传递中断信号

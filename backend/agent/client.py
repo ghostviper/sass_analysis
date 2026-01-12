@@ -96,7 +96,11 @@ class StreamEvent:
 
 
 from .tools import (
-    query_startups_tool,
+    # 原子化工具 - 替代旧的 query_startups_tool
+    get_startups_by_ids_tool,
+    search_startups_tool,
+    browse_startups_tool,
+    # 分析工具
     get_category_analysis_tool,
     get_trend_report_tool,
     get_leaderboard_tool,
@@ -111,8 +115,31 @@ def _get_friendly_tool_description(tool_name: str, tool_input: Dict[str, Any]) -
 
     clean_name = tool_name.replace("mcp__saas__", "")
 
-    if clean_name == "query_startups":
+    if clean_name == "get_startups_by_ids":
+        ids = tool_input.get("ids", [])
+        if ids:
+            return f"精确查询产品 (IDs: {ids})"
+        return "查询产品数据"
+
+    elif clean_name == "search_startups":
+        keyword = tool_input.get("keyword", "")
+        return f"搜索产品「{keyword}」" if keyword else "搜索产品"
+
+    elif clean_name == "browse_startups":
         parts = []
+        if tool_input.get("category"):
+            parts.append(f"类目: {tool_input['category']}")
+        if tool_input.get("min_revenue"):
+            parts.append(f"最低收入: ${tool_input['min_revenue']}")
+        if parts:
+            return f"浏览产品 ({', '.join(parts)})"
+        return "浏览产品列表"
+
+    # 保留旧工具名的兼容性
+    elif clean_name == "query_startups":
+        parts = []
+        if tool_input.get("ids"):
+            return f"查询产品 (IDs: {tool_input['ids']})"
         if tool_input.get("category"):
             parts.append(f"类目: {tool_input['category']}")
         if tool_input.get("search"):
@@ -149,7 +176,11 @@ def _create_mcp_server():
         name="saas_analysis",
         version="1.0.0",
         tools=[
-            query_startups_tool,
+            # 原子化查询工具 - 语义清晰，避免模型选择困难
+            get_startups_by_ids_tool,    # 有 ID 时用这个
+            search_startups_tool,         # 按名称搜索用这个
+            browse_startups_tool,         # 浏览筛选用这个
+            # 分析工具
             get_category_analysis_tool,
             get_trend_report_tool,
             get_leaderboard_tool,
@@ -185,28 +216,55 @@ class SaaSAnalysisAgent:
                 self._env[var] = val
                 self._env[var.lower()] = val
 
-        self._system_prompt = (
-            "You are a SaaS industry analyst. Use the available tools to query startup data, "
-            "analyze categories, and generate trend reports. Respond in the user's language."
-        )
         self._query_lock = asyncio.Lock()
 
-    def _create_options(self, resume: Optional[str] = None) -> ClaudeAgentOptions:
+    def _create_options(
+        self,
+        resume: Optional[str] = None,
+        enable_web_search: bool = False,
+        context: Optional[Dict[str, Any]] = None
+    ) -> ClaudeAgentOptions:
+        from pathlib import Path
+        
         mcp_server = _create_mcp_server()
+        
+        # 获取 agent 目录的绝对路径
+        # SDK 会从 cwd/.claude/ 目录加载配置文件（CLAUDE.md, settings.json 等）
+        # 参考: claude-cookbooks/claude_agent_sdk/chief_of_staff_agent/agent.py
+        agent_dir = Path(__file__).parent.absolute()
+        
         options = {
             "mcp_servers": {"saas": mcp_server},
             "allowed_tools": [
-                "mcp__saas__query_startups",
+                # MCP 工具 - 原子化数据查询
+                "mcp__saas__get_startups_by_ids",  # 通过 ID 精确查询
+                "mcp__saas__search_startups",       # 通过关键词搜索
+                "mcp__saas__browse_startups",       # 浏览筛选
+                # MCP 工具 - 分析
                 "mcp__saas__get_category_analysis",
                 "mcp__saas__get_trend_report",
                 "mcp__saas__get_leaderboard",
+                # Task 工具 - 启用子代理委托
+                # 子代理定义在 .claude/agents/ 目录下
+                "Task",
             ],
-            "system_prompt": self._system_prompt,
             "model": self.model,
             "env": self._env,
             "include_partial_messages": True,
+            "accumulate_streaming_content": True,  # 让 SDK 累积流式内容，确保流式输出正常
             "max_turns": self.max_turns,
+            # 设置工作目录为 agent 目录，隔离上下文
+            # SDK 会从 agent/.claude/ 加载:
+            # - CLAUDE.md 主要指令
+            # - settings.json 权限配置
+            # - agents/ 子代理定义
+            # - commands/ 斜杠命令
+            # - output-styles/ 输出风格
+            "cwd": agent_dir,
+            # IMPORTANT: setting_sources 必须包含 "project" 才能加载文件系统配置
+            "setting_sources": ["project"],
         }
+        
         if self.cli_path:
             options["cli_path"] = self.cli_path
         if resume:
@@ -214,7 +272,90 @@ class SaaSAnalysisAgent:
             options["resume"] = resume
             options["fork_session"] = True
             print(f"[DEBUG] Resuming session: {resume}", flush=True)
+        
+        # 打印调试信息
+        if context:
+            print(f"[DEBUG] Context provided: type={context.get('type')}, products={context.get('products')}", flush=True)
+        print(f"[DEBUG] Agent cwd: {agent_dir}", flush=True)
+        
         return ClaudeAgentOptions(**options)
+    
+    def _build_context_prefix(self, context: Optional[Dict[str, Any]]) -> str:
+        """
+        构建上下文前缀，附加到用户消息前面。
+        这样可以避免修改 system_prompt 导致命令行过长。
+        
+        context 结构:
+        {
+            "type": "database" | "url",
+            "value": "单个产品名或URL",
+            "products": [
+                {"id": 1, "name": "ProductA", "slug": "product-a"},
+                {"id": 2, "name": "ProductB", "slug": "product-b"}
+            ]
+        }
+        """
+        if not context:
+            return ""
+        
+        context_type = context.get("type")
+        context_value = context.get("value")
+        context_products = context.get("products", [])
+        
+        prefix_parts = []
+        
+        if context_type == "database" and (context_value or context_products):
+            if context_products and len(context_products) > 1:
+                # 多产品对比分析 - 传入 ID 以便精确查询
+                if isinstance(context_products[0], dict):
+                    # 新格式：包含 id, name, slug
+                    product_ids = [p.get("id") for p in context_products if p.get("id")]
+                    product_names = [p.get("name", p.get("slug", "Unknown")) for p in context_products]
+                    names_str = ", ".join(product_names)
+                    ids_str = ", ".join(str(id) for id in product_ids)
+                    prefix_parts.append(
+                        f"[上下文：用户选择了以下产品进行关联分析：{names_str}（IDs: {ids_str}）。"
+                        f"请使用 get_startups_by_ids 工具精确查询这些产品：ids=[{ids_str}]，"
+                        f"然后委托给 @comparison-analyst 进行深度对比分析。]"
+                    )
+                else:
+                    # 旧格式：只有产品名
+                    product_names = ", ".join(context_products)
+                    prefix_parts.append(
+                        f"[上下文：用户选择了以下产品进行关联分析：{product_names}。"
+                        f"请使用 search_startups 工具查询这些产品的详细信息，"
+                        f"然后委托给 @comparison-analyst 进行深度对比分析。]"
+                    )
+            elif context_products and len(context_products) == 1:
+                # 单产品查询
+                product = context_products[0]
+                if isinstance(product, dict):
+                    product_id = product.get("id")
+                    product_name = product.get("name", product.get("slug", "Unknown"))
+                    if product_id:
+                        prefix_parts.append(
+                            f"[上下文：用户正在询问关于产品「{product_name}」(ID: {product_id}) 的问题。"
+                            f"请使用 get_startups_by_ids 工具精确查询：ids=[{product_id}]。]"
+                        )
+                    else:
+                        prefix_parts.append(
+                            f"[上下文：用户正在询问关于产品「{product_name}」的问题。"
+                            f"请使用 search_startups 工具查询该产品信息。]"
+                        )
+                else:
+                    prefix_parts.append(
+                        f"[上下文：用户正在询问关于产品「{product}」的问题。"
+                        f"请使用 search_startups 工具查询该产品信息。]"
+                    )
+            elif context_value:
+                prefix_parts.append(f"[上下文：用户正在询问关于产品「{context_value}」的问题。]")
+        
+        elif context_type == "url" and context_value:
+            prefix_parts.append(f"[上下文：用户提供了外部 URL 进行分析：{context_value}]")
+        
+        if prefix_parts:
+            return "\n".join(prefix_parts) + "\n\n"
+        return ""
 
     def _generate_session_id(self) -> str:
         import uuid
@@ -257,11 +398,22 @@ class SaaSAnalysisAgent:
         # Serialize queries - only one at a time
         async with self._query_lock:
             # Create options with resume parameter if continuing session
-            options = self._create_options(resume=resume_session)
+            options = self._create_options(
+                resume=resume_session,
+                enable_web_search=enable_web_search,
+                context=context
+            )
+            
+            # 构建带上下文前缀的消息（避免修改 system_prompt 导致命令行过长）
+            context_prefix = self._build_context_prefix(context)
+            full_message = context_prefix + message if context_prefix else message
+            
+            if context_prefix:
+                print(f"[DEBUG] Added context prefix ({len(context_prefix)} chars) to message", flush=True)
 
             # Use context manager to ensure proper cleanup
             async with ClaudeSDKClient(options=options) as client:
-                await client.query(message)
+                await client.query(full_message)
 
                 final_cost = 0.0
                 last_event_time = asyncio.get_event_loop().time()

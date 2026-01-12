@@ -141,19 +141,41 @@ def build_dynamic_system_prompt(
         context_products = context.get("products", [])
 
         if context_type == "database" and (context_value or context_products):
-            # Single product or multiple products from database
-            if context_products and len(context_products) > 0:
+            # Multiple products from database - for comparison and correlation analysis
+            if context_products and len(context_products) > 1:
                 product_names = ", ".join(context_products)
                 prompt_parts.append(f"""
 
-## Current Context: Related Products
-The user has selected the following products for this conversation: **{product_names}**
+## Current Context: Multi-Product Analysis
+The user has selected the following products for comparative analysis: **{product_names}**
 
 When answering questions:
-1. Focus your analysis on these specific products
-2. Use query_startups with search parameter to find detailed information about these products
-3. Compare these products if the user asks for comparison
-4. Provide insights specific to these products' categories, revenue, and characteristics
+1. Focus your analysis on these specific products and their relationships
+2. Use query_startups with search parameter to find detailed information about each product
+3. Proactively compare these products across dimensions like:
+   - Revenue and growth metrics
+   - Category and market positioning
+   - Technical complexity and AI dependency
+   - Target customer segments
+   - Pricing and valuation multiples
+4. Identify patterns, correlations, and insights across these products
+5. If the user asks general questions, relate them back to these products when relevant
+6. Highlight similarities and differences between the products
+7. Provide actionable insights for product selection or investment decisions
+""")
+            elif context_products and len(context_products) == 1:
+                # Single product context
+                product_name = context_products[0]
+                prompt_parts.append(f"""
+
+## Current Context: Related Product
+The user is asking about a specific product: **{product_name}**
+
+When answering questions:
+1. Focus your analysis on this specific product
+2. Use query_startups with search="{product_name}" to find detailed information
+3. Provide insights specific to this product's category, revenue, and characteristics
+4. If the user asks general questions, relate them back to this product when relevant
 """)
             elif context_value:
                 prompt_parts.append(f"""

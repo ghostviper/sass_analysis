@@ -23,6 +23,8 @@ except ImportError:
 
 
 async def query_startups(
+    ids: Optional[List[int]] = None,
+    slugs: Optional[List[str]] = None,
     category: Optional[str] = None,
     min_revenue: Optional[float] = None,
     max_revenue: Optional[float] = None,
@@ -33,10 +35,12 @@ async def query_startups(
     Query startups from the database with optional filters.
     
     Args:
+        ids: List of startup IDs to query (exact match, highest priority)
+        slugs: List of startup slugs to query (exact match)
         category: Filter by category (e.g., "AI", "SaaS", "Fintech")
         min_revenue: Minimum 30-day revenue
         max_revenue: Maximum 30-day revenue
-        search: Search term for name/description
+        search: Search term for name/description (fuzzy match)
         limit: Maximum number of results
         
     Returns:
@@ -45,18 +49,53 @@ async def query_startups(
     async with AsyncSessionLocal() as db:
         query = select(Startup)
         
-        if category:
-            query = query.where(Startup.category == category)
-        if min_revenue is not None:
-            query = query.where(Startup.revenue_30d >= min_revenue)
-        if max_revenue is not None:
-            query = query.where(Startup.revenue_30d <= max_revenue)
+        # 处理 ids 参数 - 可能是字符串 '[]' 或真正的列表
+        if ids:
+            # 如果是字符串，尝试解析
+            if isinstance(ids, str):
+                try:
+                    ids = json.loads(ids) if ids.strip() not in ('', '[]') else None
+                except:
+                    ids = None
+            # 确保是非空列表
+            if ids and isinstance(ids, list) and len(ids) > 0:
+                query = query.where(Startup.id.in_(ids))
+                query = query.limit(limit)
+                result = await db.execute(query)
+                startups = result.scalars().all()
+                return [s.to_dict() for s in startups]
+        
+        # 处理 slugs 参数
+        if slugs:
+            if isinstance(slugs, str):
+                try:
+                    slugs = json.loads(slugs) if slugs.strip() not in ('', '[]') else None
+                except:
+                    slugs = None
+            if slugs and isinstance(slugs, list) and len(slugs) > 0:
+                query = query.where(Startup.slug.in_(slugs))
+                query = query.limit(limit)
+                result = await db.execute(query)
+                startups = result.scalars().all()
+                return [s.to_dict() for s in startups]
+        
+        # 如果有 search 参数，优先使用模糊搜索，不要加其他限制条件
+        # 这样可以避免因为 category 或 revenue 限制导致搜不到
         if search:
             pattern = f"%{search}%"
             query = query.where(
                 (Startup.name.ilike(pattern)) | 
-                (Startup.description.ilike(pattern))
+                (Startup.description.ilike(pattern)) |
+                (Startup.slug.ilike(pattern))  # 也搜索 slug
             )
+        else:
+            # 只有在没有 search 时才应用其他过滤条件
+            if category:
+                query = query.where(Startup.category == category)
+            if min_revenue is not None and min_revenue > 0:
+                query = query.where(Startup.revenue_30d >= min_revenue)
+            if max_revenue is not None:
+                query = query.where(Startup.revenue_30d <= max_revenue)
         
         query = query.order_by(desc(Startup.revenue_30d)).limit(limit)
         
@@ -243,71 +282,199 @@ async def get_leaderboard(limit: int = 20) -> List[Dict[str, Any]]:
 
 
 # ============================================================================
-# MCP Tools for Claude Agent SDK
+# 原子化的底层查询函数
+# ============================================================================
+
+async def _get_startups_by_ids(ids: List[int]) -> List[Dict[str, Any]]:
+    """通过 ID 列表精确查询产品"""
+    async with AsyncSessionLocal() as db:
+        query = select(Startup).where(Startup.id.in_(ids))
+        result = await db.execute(query)
+        startups = result.scalars().all()
+        return [s.to_dict() for s in startups]
+
+
+async def _search_startups(keyword: str, limit: int = 20) -> List[Dict[str, Any]]:
+    """通过关键词模糊搜索产品"""
+    async with AsyncSessionLocal() as db:
+        pattern = f"%{keyword}%"
+        query = select(Startup).where(
+            (Startup.name.ilike(pattern)) | 
+            (Startup.description.ilike(pattern)) |
+            (Startup.slug.ilike(pattern))
+        ).order_by(desc(Startup.revenue_30d)).limit(limit)
+        result = await db.execute(query)
+        startups = result.scalars().all()
+        return [s.to_dict() for s in startups]
+
+
+async def _browse_startups(
+    category: Optional[str] = None,
+    min_revenue: Optional[float] = None,
+    max_revenue: Optional[float] = None,
+    limit: int = 20
+) -> List[Dict[str, Any]]:
+    """浏览筛选产品"""
+    async with AsyncSessionLocal() as db:
+        query = select(Startup)
+        if category:
+            query = query.where(Startup.category == category)
+        if min_revenue is not None and min_revenue > 0:
+            query = query.where(Startup.revenue_30d >= min_revenue)
+        if max_revenue is not None:
+            query = query.where(Startup.revenue_30d <= max_revenue)
+        query = query.order_by(desc(Startup.revenue_30d)).limit(limit)
+        result = await db.execute(query)
+        startups = result.scalars().all()
+        return [s.to_dict() for s in startups]
+
+
+# ============================================================================
+# MCP Tools - 原子化工具定义
 # ============================================================================
 
 @tool(
-    "query_startups",
-    "Query startups from the database with optional filters for category, revenue range, and search terms. Returns detailed information about matching startups including revenue, category, description, and pricing.",
-    {"category": str, "min_revenue": float, "max_revenue": float, "search": str, "limit": int}
+    "get_startups_by_ids",
+    "Get startups by their IDs. Use this when you have specific product IDs from the context.",
+    {
+        "type": "object",
+        "properties": {
+            "ids": {
+                "type": "array",
+                "items": {"type": "integer"},
+                "description": "List of product IDs. Example: [4, 1]"
+            }
+        },
+        "required": ["ids"]
+    }
 )
-async def query_startups_tool(args: Dict[str, Any]) -> Dict[str, Any]:
-    """MCP tool wrapper for query_startups"""
+async def get_startups_by_ids_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """通过 ID 查询产品 - 最精确的方式"""
     import time as time_module
     import asyncio as aio
-    import sys
     
     start_time = time_module.time()
-    print(f"[TOOL] query_startups started with args: {args}", flush=True)
-    sys.stdout.flush()
+    ids = args.get("ids", [])
+    
+    # 处理可能的字符串格式
+    if isinstance(ids, str):
+        try:
+            ids = json.loads(ids)
+        except:
+            ids = []
+    
+    print(f"[TOOL] get_startups_by_ids called with ids={ids}", flush=True)
+    
+    if not ids:
+        return {
+            "content": [{"type": "text", "text": json.dumps({"error": "No IDs provided", "type": "invalid_input"}, ensure_ascii=False)}],
+            "is_error": True
+        }
     
     try:
-        # 添加超时保护
+        result = await aio.wait_for(_get_startups_by_ids(ids), timeout=30.0)
+        elapsed = time_module.time() - start_time
+        print(f"[TOOL] get_startups_by_ids completed in {elapsed:.2f}s, returned {len(result)} items", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps(result, indent=2, ensure_ascii=False)}]}
+    except Exception as e:
+        print(f"[TOOL] get_startups_by_ids failed: {e}", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps({"error": str(e)}, ensure_ascii=False)}], "is_error": True}
+
+
+@tool(
+    "search_startups",
+    "Search startups by keyword (name or description). Use this when you need to find products by name.",
+    {
+        "type": "object",
+        "properties": {
+            "keyword": {
+                "type": "string",
+                "description": "Search keyword for product name or description"
+            },
+            "limit": {
+                "type": "integer",
+                "description": "Maximum results. Default: 20"
+            }
+        },
+        "required": ["keyword"]
+    }
+)
+async def search_startups_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """通过关键词搜索产品"""
+    import time as time_module
+    import asyncio as aio
+    
+    start_time = time_module.time()
+    keyword = args.get("keyword", "")
+    limit = min(args.get("limit", 20), 100)
+    
+    print(f"[TOOL] search_startups called with keyword='{keyword}', limit={limit}", flush=True)
+    
+    if not keyword:
+        return {
+            "content": [{"type": "text", "text": json.dumps({"error": "No keyword provided", "type": "invalid_input"}, ensure_ascii=False)}],
+            "is_error": True
+        }
+    
+    try:
+        result = await aio.wait_for(_search_startups(keyword, limit), timeout=30.0)
+        elapsed = time_module.time() - start_time
+        print(f"[TOOL] search_startups completed in {elapsed:.2f}s, returned {len(result)} items", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps(result, indent=2, ensure_ascii=False)}]}
+    except Exception as e:
+        print(f"[TOOL] search_startups failed: {e}", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps({"error": str(e)}, ensure_ascii=False)}], "is_error": True}
+
+
+@tool(
+    "browse_startups",
+    "Browse startups with filters. Use this when exploring products by category or revenue range.",
+    {
+        "type": "object",
+        "properties": {
+            "category": {
+                "type": "string",
+                "description": "Filter by category (e.g., 'AI', 'SaaS', 'Fintech')"
+            },
+            "min_revenue": {
+                "type": "number",
+                "description": "Minimum 30-day revenue"
+            },
+            "max_revenue": {
+                "type": "number",
+                "description": "Maximum 30-day revenue"
+            },
+            "limit": {
+                "type": "integer",
+                "description": "Maximum results. Default: 20"
+            }
+        }
+    }
+)
+async def browse_startups_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """浏览筛选产品"""
+    import time as time_module
+    import asyncio as aio
+    
+    start_time = time_module.time()
+    print(f"[TOOL] browse_startups called with args={args}", flush=True)
+    
+    try:
         result = await aio.wait_for(
-            query_startups(
+            _browse_startups(
                 category=args.get("category"),
                 min_revenue=args.get("min_revenue"),
                 max_revenue=args.get("max_revenue"),
-                search=args.get("search"),
-                limit=min(args.get("limit", 20), 100)  # Cap at 100
+                limit=min(args.get("limit", 20), 100)
             ),
-            timeout=30.0  # 30秒超时
+            timeout=30.0
         )
-        
         elapsed = time_module.time() - start_time
-        print(f"[TOOL] query_startups completed in {elapsed:.2f}s, returned {len(result)} items", flush=True)
-        sys.stdout.flush()
-
-        return {
-            "content": [{
-                "type": "text",
-                "text": json.dumps(result, indent=2, ensure_ascii=False)
-            }]
-        }
-    except aio.TimeoutError:
-        elapsed = time_module.time() - start_time
-        print(f"[TOOL] query_startups TIMEOUT after {elapsed:.2f}s", flush=True)
-        sys.stdout.flush()
-        return {
-            "content": [{
-                "type": "text",
-                "text": json.dumps({"error": "Database query timeout", "type": "timeout_error"}, ensure_ascii=False)
-            }],
-            "is_error": True
-        }
+        print(f"[TOOL] browse_startups completed in {elapsed:.2f}s, returned {len(result)} items", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps(result, indent=2, ensure_ascii=False)}]}
     except Exception as e:
-        import traceback
-        elapsed = time_module.time() - start_time
-        print(f"[TOOL] query_startups failed after {elapsed:.2f}s: {e}", flush=True)
-        print(f"[TOOL] Traceback: {traceback.format_exc()}", flush=True)
-        sys.stdout.flush()
-        return {
-            "content": [{
-                "type": "text",
-                "text": json.dumps({"error": str(e), "type": "query_error"}, ensure_ascii=False)
-            }],
-            "is_error": True
-        }
+        print(f"[TOOL] browse_startups failed: {e}", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps({"error": str(e)}, ensure_ascii=False)}], "is_error": True}
 
 
 @tool(

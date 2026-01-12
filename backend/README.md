@@ -333,7 +333,7 @@ python main.py analyze landing --slug xxx --force
 
 ## AI 助手
 
-项目集成了基于 Claude 的智能分析助手，支持流式对话和工具调用。
+项目集成了基于 Claude Agent SDK 的智能分析助手，支持流式对话和工具调用。
 
 ### 配置
 
@@ -345,8 +345,38 @@ ANTHROPIC_BASE_URL=https://...       # 可选，自定义 API 地址
 CLAUDE_MODEL=claude-sonnet-4-5       # 可选，默认模型
 ```
 
+### Claude Agent SDK 版本要求
+
+**重要**：流式输出功能依赖 `accumulate_streaming_content` 参数，该功能由 [PR #274](https://github.com/anthropics/claude-agent-sdk-python/pull/274) 引入。
+
+请确保安装的 `claude-agent-sdk` 版本包含此功能（2025年1月后的版本）。
+
+```bash
+# 安装最新版本
+pip install claude-agent-sdk --upgrade
+
+# 或指定版本（如果有兼容性问题）
+pip install claude-agent-sdk>=0.x.x
+```
+
+**关键配置**（在 `agent/client.py` 中）：
+
+```python
+options = ClaudeAgentOptions(
+    include_partial_messages=True,
+    accumulate_streaming_content=True,  # 必须设置为 True，否则流式输出会退化为阻塞式
+    ...
+)
+```
+
+如果前端出现"文本一次性返回而非逐字流式显示"的问题，请检查：
+1. SDK 版本是否支持 `accumulate_streaming_content` 参数
+2. 该参数是否设置为 `True`
+
 ### 功能
 
 - **产品分析**：查询数据库中的产品数据，分析单个产品或批量对比
 - **赛道分析**：分析市场类目，识别蓝海市场和机会
 - **趋势报告**：生成行业趋势报告，洞察市场动态
+- **多轮对话**：支持上下文连续对话，通过 `session_id` 恢复会话
+- **子代理委托**：支持将复杂任务委托给专业子代理（对比分析师、机会发现者等）

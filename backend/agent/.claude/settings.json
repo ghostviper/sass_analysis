@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "permissions": {
+    "allow": [
+      "mcp__saas__get_startups_by_ids",
+      "mcp__saas__search_startups",
+      "mcp__saas__browse_startups",
+      "mcp__saas__get_category_analysis",
+      "mcp__saas__get_trend_report",
+      "mcp__saas__get_leaderboard",
+      "Task"
+    ],
+    "deny": []
+  }
+}
