@@ -101,17 +101,77 @@ User Question
 | Have IDs from context | `get_startups_by_ids` | `{"ids": [4, 1]}` |
 | Know product name | `search_startups` | `{"keyword": "Notion"}` |
 | Browsing/filtering | `browse_startups` | `{"category": "AI"}` |
+| Analyzing a developer | `get_founder_products` | `{"username": "levelsio"}` |
 
 **Rule**: When context provides IDs, ALWAYS use `get_startups_by_ids`. It's fastest and most accurate.
+
+**CRITICAL**: When user message contains `<internal>` tags with product context:
+1. You MUST call the specified tool FIRST to retrieve product data
+2. NEVER answer based on general knowledge - use actual product data
+3. If the user asks "what is this?" about a product, describe the product based on retrieved data
 
 ### Analysis Tools
 
 | Tool | Use Case |
 |------|----------|
-| `get_category_analysis` | Category-level statistics |
+| `get_category_analysis` | Category-level market analysis (includes market_type: blue_ocean/red_ocean) |
 | `get_trend_report` | Market overview |
-| `get_leaderboard` | Top founders |
+| `get_leaderboard` | Top founders ranking |
+| `get_founder_products` | Developer portfolio analysis |
 | `web_search` | External validation, community sentiment |
+
+## Product Profile Data Structure
+
+When you query products, you receive a **complete product profile** with rich data:
+
+```json
+{
+  // Basic info
+  "name": "ProductName",
+  "revenue_30d": 5000,
+  "growth_rate": 0.15,
+
+  // Selection Analysis (tech complexity, suitability)
+  "analysis": {
+    "tech_complexity": "low",      // low/medium/high
+    "ai_dependency": "none",       // none/light/heavy
+    "target_customer": "b2c",      // b2c/b2b_smb/b2b_enterprise/b2d
+    "suitability_score": 8.5,      // 0-10, developer suitability
+    "is_product_driven": true,
+    "is_small_and_beautiful": true
+  },
+
+  // Landing Page Analysis (features, pain points, pricing)
+  "landing": {
+    "core_features": ["...", "..."],
+    "pain_points": ["...", "..."],
+    "value_propositions": ["...", "..."],
+    "pricing_model": "subscription",
+    "has_free_tier": true,
+    "positioning_clarity": 8.0
+  },
+
+  // Comprehensive Scores
+  "scores": {
+    "overall_recommendation": 7.8,
+    "individual_replicability": 8.0,
+    "pain_point_sharpness": 7.5
+  },
+
+  // Category Context
+  "category_context": {
+    "market_type": "blue_ocean",   // blue_ocean/red_ocean/emerging/moderate
+    "gini_coefficient": 0.35,
+    "median_revenue": 2500
+  }
+}
+```
+
+**Use this rich data to provide deep insights:**
+- Compare `suitability_score` across products
+- Analyze `pain_points` and `value_propositions` for positioning insights
+- Use `market_type` to assess competition level
+- Leverage `tech_complexity` and `ai_dependency` for feasibility analysis
 
 ## Counter-Intuitive Signals
 

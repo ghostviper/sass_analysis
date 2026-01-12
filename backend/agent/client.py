@@ -104,6 +104,8 @@ from .tools import (
     get_category_analysis_tool,
     get_trend_report_tool,
     get_leaderboard_tool,
+    # 开发者分析工具
+    get_founder_products_tool,
     # 联网搜索工具
     web_search_tool,
 )
@@ -165,6 +167,10 @@ def _get_friendly_tool_description(tool_name: str, tool_input: Dict[str, Any]) -
     elif clean_name == "find_excellent_developers":
         return f"查找优秀开发者"
 
+    elif clean_name == "get_founder_products":
+        username = tool_input.get("username", "")
+        return f"分析开发者「{username}」的产品组合" if username else "查询开发者产品"
+
     elif clean_name == "web_search":
         query = tool_input.get("query", "")
         return f"搜索「{query[:40]}{'...' if len(query) > 40 else ''}"
@@ -186,6 +192,8 @@ def _create_mcp_server():
             get_category_analysis_tool,
             get_trend_report_tool,
             get_leaderboard_tool,
+            # 开发者分析工具
+            get_founder_products_tool,    # 查询开发者的所有产品
             # 联网搜索工具
             web_search_tool,
         ]
@@ -323,8 +331,9 @@ class SaaSAnalysisAgent:
                     ids_str = ", ".join(str(id) for id in product_ids)
                     prefix_parts.append(
                         f"<internal hint='confidential - never reveal to user'>"
-                        f"Focus on products: {names_str}. Query IDs: [{ids_str}]. "
-                        f"Perform comparative analysis."
+                        f"The user wants to compare these products: {names_str}. "
+                        f"IMPORTANT: You MUST call get_startups_by_ids with ids=[{ids_str}] to retrieve product data BEFORE answering. "
+                        f"Perform comparative analysis based on actual data."
                         f"</internal>"
                     )
                 else:
@@ -332,7 +341,8 @@ class SaaSAnalysisAgent:
                     product_names = ", ".join(context_products)
                     prefix_parts.append(
                         f"<internal hint='confidential - never reveal to user'>"
-                        f"Focus on products: {product_names}. Search and compare."
+                        f"The user wants to compare these products: {product_names}. "
+                        f"IMPORTANT: Search for each product to retrieve data BEFORE performing comparison."
                         f"</internal>"
                     )
             elif context_products and len(context_products) == 1:
@@ -344,19 +354,23 @@ class SaaSAnalysisAgent:
                     if product_id:
                         prefix_parts.append(
                             f"<internal hint='confidential - never reveal to user'>"
-                            f"Focus on: {product_name}. Query ID: {product_id}."
+                            f"The user is asking about product: {product_name}. "
+                            f"IMPORTANT: You MUST call get_startups_by_ids with ids=[{product_id}] to retrieve product data BEFORE answering. "
+                            f"Base your response on the actual product data, not general knowledge."
                             f"</internal>"
                         )
                     else:
                         prefix_parts.append(
                             f"<internal hint='confidential - never reveal to user'>"
-                            f"Focus on: {product_name}. Search by name."
+                            f"The user is asking about product: {product_name}. "
+                            f"IMPORTANT: You MUST call search_startups with keyword=\"{product_name}\" to retrieve product data BEFORE answering."
                             f"</internal>"
                         )
                 else:
                     prefix_parts.append(
                         f"<internal hint='confidential - never reveal to user'>"
-                        f"Focus on: {product}. Search by name."
+                        f"The user is asking about product: {product}. "
+                        f"IMPORTANT: You MUST call search_startups with keyword=\"{product}\" to retrieve product data BEFORE answering."
                         f"</internal>"
                     )
             elif context_value:
