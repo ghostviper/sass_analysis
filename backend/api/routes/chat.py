@@ -472,50 +472,222 @@ async def chat_stream_debug(request: ChatRequest):
 # Prompt Suggestion API
 # ============================================================================
 
-# Category descriptions for prompt generation
-CATEGORY_PROMPTS = {
-    "product": "SaaS产品分析、产品对比、功能评估、定价策略、竞品分析",
-    "trend": "市场趋势、行业动态、技术发展、投资热点、增长预测",
-    "career": "职业发展、技能提升、创业建议、行业转型、个人成长",
-    "developer": "开发者工具、技术栈选择、开源项目、编程效率、技术学习",
+# Category-specific context for generating high-quality prompts
+CATEGORY_CONTEXTS = {
+    "product": {
+        "persona": "indie hacker or solo developer looking to build a profitable SaaS",
+        "pain_points": [
+            "limited time and resources",
+            "need to validate ideas quickly",
+            "want to avoid saturated markets",
+            "looking for replicable business models",
+            "concerned about technical complexity vs revenue potential",
+        ],
+        "data_available": [
+            "revenue data (MRR)",
+            "growth rates",
+            "technical complexity scores",
+            "AI dependency levels",
+            "target customer segments",
+            "developer suitability scores",
+        ],
+        "good_examples": [
+            "哪些低技术门槛的产品月收入超过5000美元？",
+            "有没有不依赖AI但增长稳定的产品？",
+            "B2C市场中启动成本最低的产品有哪些？",
+            "哪些产品的收入/复杂度比值最高？",
+        ],
+        "bad_examples": [
+            "有哪些SaaS产品？",  # too vague
+            "推荐一些产品",  # no specific criteria
+            "什么产品好？",  # meaningless
+        ],
+    },
+    "trend": {
+        "persona": "entrepreneur or investor analyzing market opportunities",
+        "pain_points": [
+            "hard to spot emerging trends early",
+            "need to distinguish hype from real demand",
+            "want to find underserved niches",
+            "concerned about market timing",
+            "looking for defensible positions",
+        ],
+        "data_available": [
+            "category-level revenue distribution",
+            "market concentration (Gini coefficient)",
+            "blue ocean vs red ocean classification",
+            "growth patterns across segments",
+            "revenue standard deviation",
+        ],
+        "good_examples": [
+            "哪些蓝海赛道的中位收入正在上升？",
+            "AI工具赛道的竞争集中度如何？",
+            "有哪些新兴类目头部玩家还未出现？",
+            "哪些垂直市场的基尼系数最低？",
+        ],
+        "bad_examples": [
+            "市场趋势是什么？",  # too broad
+            "哪个赛道好？",  # no criteria
+            "现在流行什么？",  # vague
+        ],
+    },
+    "career": {
+        "persona": "developer or professional considering indie hacking or side projects",
+        "pain_points": [
+            "unsure which skills translate to product building",
+            "balancing day job with side projects",
+            "finding the right niche for their background",
+            "validating ideas without quitting job",
+            "building in public vs stealth mode",
+        ],
+        "data_available": [
+            "successful founder profiles",
+            "common tech stacks in profitable products",
+            "time-to-profitability patterns",
+            "solo vs team success rates",
+            "background-to-product-type correlations",
+        ],
+        "good_examples": [
+            "后端开发者最适合做哪类SaaS？",
+            "有没有非技术背景成功的案例？",
+            "副业做SaaS平均需要多久盈利？",
+            "哪些产品类型适合一个人运营？",
+        ],
+        "bad_examples": [
+            "我该做什么？",  # too personal, no context
+            "怎么赚钱？",  # too broad
+            "独立开发好吗？",  # opinion-based
+        ],
+    },
+    "developer": {
+        "persona": "someone researching successful indie hackers and their strategies",
+        "pain_points": [
+            "want to learn from successful builders",
+            "looking for replicable patterns",
+            "understanding what separates winners from others",
+            "finding mentors or role models",
+            "analyzing portfolio strategies",
+        ],
+        "data_available": [
+            "founder revenue rankings",
+            "multi-product portfolios",
+            "follower-to-revenue ratios",
+            "product diversification strategies",
+            "growth trajectories over time",
+        ],
+        "good_examples": [
+            "哪些开发者拥有3个以上盈利产品？",
+            "粉丝少但收入高的开发者有哪些特点？",
+            "收入最高的开发者都做什么类型的产品？",
+            "有没有从零到月入万刀的案例分析？",
+        ],
+        "bad_examples": [
+            "谁最厉害？",  # no criteria
+            "推荐开发者",  # vague
+            "有哪些人？",  # meaningless
+        ],
+    },
 }
+
+# Default fallback prompts per category (high quality)
+DEFAULT_PROMPTS = {
+    "product": [
+        "哪些产品技术复杂度低但月收入超过3000美元？",
+        "不依赖AI的成熟期产品有哪些值得参考？",
+        "B2D市场中适合独立开发者的产品有哪些？",
+        "哪些早期产品的增长率最高？",
+    ],
+    "trend": [
+        "目前哪些蓝海赛道竞争最小？",
+        "AI工具类目的市场集中度如何变化？",
+        "哪些新兴赛道还没有明显的头部玩家？",
+        "收入中位数上涨最快的类目有哪些？",
+    ],
+    "career": [
+        "前端开发背景适合做什么类型的SaaS？",
+        "有哪些成功的非全职独立开发案例？",
+        "一个人能运营好的产品有什么共同特点？",
+        "从副业到全职需要达到什么收入水平？",
+    ],
+    "developer": [
+        "拥有多个盈利产品的开发者有哪些？",
+        "低粉丝高收入的开发者是怎么做到的？",
+        "月收入最高的独立开发者做什么产品？",
+        "有没有值得学习的产品组合策略？",
+    ],
+}
+
+
+SUGGEST_SYSTEM_PROMPT = """You are an expert at crafting insightful questions for indie hackers and SaaS entrepreneurs.
+
+Your task: Generate 4 high-quality questions in Chinese for the given category.
+
+## Quality Criteria
+
+GOOD questions are:
+- Specific and actionable (include concrete criteria like revenue ranges, complexity levels)
+- Data-driven (leverage the available metrics)
+- Address real pain points of the target persona
+- Lead to actionable insights, not just information
+
+BAD questions are:
+- Vague ("有哪些产品？", "什么趋势？")
+- Opinion-based without data backing ("哪个好？")
+- Too broad to answer meaningfully ("怎么赚钱？")
+- Generic advice-seeking ("我该怎么做？")
+
+## Output Format
+
+Return exactly 4 questions, one per line.
+No numbering, no bullet points, no explanations.
+Each question should be 15-35 Chinese characters.
+Questions must be in Chinese.
+"""
 
 
 @router.post("/chat/suggest-prompts", response_model=SuggestPromptsResponse)
 async def suggest_prompts(request: SuggestPromptsRequest):
     """
-    Generate suggested prompts for a category using LLM.
-    
-    Args:
-        request: SuggestPromptsRequest with category
-        
-    Returns:
-        SuggestPromptsResponse with list of 4 prompts
-    """
-    category_desc = CATEGORY_PROMPTS.get(request.category, "通用问题")
-    
-    system_prompt = """你是一个SaaS行业分析助手。请根据给定的类别生成4个有价值的问题建议。
-要求：
-1. 问题要具体、有深度、有实用价值
-2. 问题要与SaaS行业、创业、产品分析相关
-3. 每个问题控制在30字以内
-4. 直接返回4个问题，每行一个，不要编号或其他格式"""
+    Generate high-quality suggested prompts for a category using LLM.
 
-    user_prompt = f"请为「{category_desc}」类别生成4个有价值的问题建议。"
-    
+    The prompts are designed to:
+    1. Address real pain points of indie hackers
+    2. Leverage available data dimensions
+    3. Be specific and actionable
+    4. Avoid vague or generic questions
+    """
+    category = request.category
+    context = CATEGORY_CONTEXTS.get(category)
+
+    if not context:
+        return SuggestPromptsResponse(prompts=DEFAULT_PROMPTS.get("product", []))
+
     api_key = os.getenv("ANTHROPIC_API_KEY")
     base_url = os.getenv("ANTHROPIC_BASE_URL", "https://api.anthropic.com")
-    model = os.getenv("ANTHROPIC_MODEL", "claude-3-haiku-20240307")
-    
-    if not api_key:
-        # Return default prompts if no API key
-        return SuggestPromptsResponse(prompts=[
-            "有哪些值得关注的SaaS产品？",
-            "当前市场有什么新趋势？",
-            "如何评估一个SaaS产品的潜力？",
-            "有什么推荐的开发者工具？",
-        ])
-    
+    model = os.getenv("ANTHROPIC_MODEL")
+
+    if not api_key or not model:
+        return SuggestPromptsResponse(prompts=DEFAULT_PROMPTS.get(category, []))
+
+    # Build a rich user prompt with context
+    user_prompt = f"""Category: {category}
+
+Target Persona: {context['persona']}
+
+Their Pain Points:
+{chr(10).join(f"- {p}" for p in context['pain_points'])}
+
+Available Data Dimensions:
+{chr(10).join(f"- {d}" for d in context['data_available'])}
+
+Examples of GOOD questions:
+{chr(10).join(f"- {e}" for e in context['good_examples'])}
+
+Examples of BAD questions (avoid these patterns):
+{chr(10).join(f"- {e}" for e in context['bad_examples'])}
+
+Generate 4 new questions that are different from the examples but equally specific and actionable."""
+
     try:
         async with httpx.AsyncClient(timeout=30.0) as client:
             response = await client.post(
@@ -527,35 +699,37 @@ async def suggest_prompts(request: SuggestPromptsRequest):
                 },
                 json={
                     "model": model,
-                    "max_tokens": 256,
-                    "system": system_prompt,
+                    "max_tokens": 512,
+                    "temperature": 0.8,  # Higher temperature for variety
+                    "system": SUGGEST_SYSTEM_PROMPT,
                     "messages": [{"role": "user", "content": user_prompt}],
                 }
             )
-            
+
             if response.status_code == 200:
                 data = response.json()
                 content = data.get("content", [{}])[0].get("text", "")
-                # Parse the response - split by newlines and filter empty lines
-                prompts = [line.strip() for line in content.split("\n") if line.strip()]
-                # Take first 4 prompts
-                prompts = prompts[:4]
+
+                # Parse response - filter empty lines and clean up
+                prompts = []
+                for line in content.split("\n"):
+                    line = line.strip()
+                    # Skip empty lines and lines that look like formatting
+                    if not line or line.startswith("#") or line.startswith("-"):
+                        continue
+                    # Remove any leading numbers or bullets
+                    cleaned = line.lstrip("0123456789.、-) ").strip()
+                    if cleaned and len(cleaned) >= 10:  # Minimum reasonable length
+                        prompts.append(cleaned)
+
                 if len(prompts) >= 4:
-                    return SuggestPromptsResponse(prompts=prompts)
-            
-            # Fallback to defaults
-            return SuggestPromptsResponse(prompts=[
-                "有哪些值得关注的SaaS产品？",
-                "当前市场有什么新趋势？",
-                "如何评估一个SaaS产品的潜力？",
-                "有什么推荐的开发者工具？",
-            ])
-            
+                    return SuggestPromptsResponse(prompts=prompts[:4])
+            else:
+                print(f"[Suggest Prompts] API returned {response.status_code}: {response.text[:200]}")
+
+            # Fallback to category-specific defaults
+            return SuggestPromptsResponse(prompts=DEFAULT_PROMPTS.get(category, []))
+
     except Exception as e:
-        print(f"[Suggest Prompts Error] {e}")
-        return SuggestPromptsResponse(prompts=[
-            "有哪些值得关注的SaaS产品？",
-            "当前市场有什么新趋势？",
-            "如何评估一个SaaS产品的潜力？",
-            "有什么推荐的开发者工具？",
-        ])
+        print(f"[Suggest Prompts Error] {type(e).__name__}: {e}")
+        return SuggestPromptsResponse(prompts=DEFAULT_PROMPTS.get(category, []))
