@@ -5,14 +5,98 @@ Compatible with PostgreSQL (Supabase), MySQL, and SQLite.
 """
 
 from datetime import datetime
-from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Text, Date, ForeignKey, JSON, Index
-from sqlalchemy.orm import DeclarativeBase
+from sqlalchemy import Column, Integer, String, Float, Boolean, DateTime, Text, Date, ForeignKey, JSON, Index, BigInteger
+from sqlalchemy.orm import DeclarativeBase, relationship
 
 
 class Base(DeclarativeBase):
     """Base class for all models"""
     pass
 
+
+# ============================================================================
+# User Authentication Models
+# ============================================================================
+
+class User(Base):
+    """用户表 - 与 fix_auth_tables.py 迁移脚本保持一致"""
+    __tablename__ = "user"
+    
+    id = Column(String(255), primary_key=True)
+    email = Column(String(255), unique=True, nullable=False, index=True)
+    email_verified = Column("emailVerified", Boolean, default=False)  # camelCase in DB
+    name = Column(String(255), nullable=True)
+    image = Column(String(512), nullable=True)
+    
+    # 扩展字段
+    plan = Column(String(20), default="free")
+    locale = Column(String(10), default="zh-CN")
+    daily_chat_limit = Column("dailyChatLimit", Integer, default=10)
+    daily_chat_used = Column("dailyChatUsed", Integer, default=0)
+    
+    # 时间戳 (camelCase in DB)
+    created_at = Column("createdAt", DateTime, default=datetime.utcnow)
+    updated_at = Column("updatedAt", DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    accounts = relationship("Account", back_populates="user", cascade="all, delete-orphan")
+    chat_sessions = relationship("ChatSession", back_populates="user")
+    
+    def __repr__(self):
+        return f"<User(id='{self.id}', email='{self.email}')>"
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "email": self.email,
+            "emailVerified": self.email_verified,
+            "name": self.name,
+            "image": self.image,
+            "plan": self.plan,
+            "locale": self.locale,
+            "dailyChatLimit": self.daily_chat_limit,
+            "dailyChatUsed": self.daily_chat_used,
+            "createdAt": self.created_at.isoformat() if self.created_at else None,
+            "updatedAt": self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class Account(Base):
+    """第三方账户关联表"""
+    __tablename__ = "account"
+    
+    id = Column(String(255), primary_key=True)
+    user_id = Column("userId", String(255), ForeignKey("user.id", ondelete="CASCADE"), nullable=False, index=True)
+    account_id = Column("accountId", String(255), nullable=False)
+    provider_id = Column("providerId", String(255), nullable=False)
+    access_token = Column("accessToken", Text, nullable=True)
+    refresh_token = Column("refreshToken", Text, nullable=True)
+    access_token_expires_at = Column("accessTokenExpiresAt", DateTime, nullable=True)
+    scope = Column(String(255), nullable=True)
+    id_token = Column("idToken", Text, nullable=True)
+    password = Column(String(255), nullable=True)
+    created_at = Column("createdAt", DateTime, default=datetime.utcnow)
+    updated_at = Column("updatedAt", DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    user = relationship("User", back_populates="accounts")
+    
+    __table_args__ = (
+        Index('ix_account_provider_account', 'providerId', 'accountId', unique=True),
+    )
+    
+    def __repr__(self):
+        return f"<Account(id='{self.id}', provider='{self.provider_id}')>"
+
+
+# Session 和 Verification 表已移除
+# 当前使用 JWT 无状态认证，不需要服务端会话存储
+# 如需实现邮箱验证/密码重置功能，可以重新添加 Verification 表
+
+
+# ============================================================================
+# Business Data Models
+# ============================================================================
 
 class Startup(Base):
     """Startup/Product information from TrustMRR"""
@@ -621,8 +705,8 @@ class ChatSession(Base):
     title = Column(String(255), nullable=True)  # 会话标题（可从首条消息自动生成）
     summary = Column(Text, nullable=True)  # 会话摘要
 
-    # 用户标识（预留，目前无用户系统）
-    user_id = Column(String(64), nullable=True, index=True)
+    # 用户标识 - 关联 user 表
+    user_id = Column(String(64), ForeignKey("user.id", ondelete="SET NULL"), nullable=True, index=True)
 
     # 会话配置
     enable_web_search = Column(Boolean, default=False)  # 是否启用联网搜索
@@ -645,6 +729,10 @@ class ChatSession(Base):
     created_at = Column(DateTime, default=datetime.utcnow, index=True)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
     last_message_at = Column(DateTime, nullable=True)  # 最后一条消息时间
+    
+    # Relationships
+    user = relationship("User", back_populates="chat_sessions")
+    messages = relationship("ChatMessage", back_populates="session", cascade="all, delete-orphan")
 
     def __repr__(self):
         return f"<ChatSession(session_id='{self.session_id}', title='{self.title}')>"
@@ -689,7 +777,7 @@ class ChatMessage(Base):
     __tablename__ = "chat_messages"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
-    session_id = Column(String(64), ForeignKey("chat_sessions.session_id"), nullable=False, index=True)
+    session_id = Column(String(64), ForeignKey("chat_sessions.session_id", ondelete="CASCADE"), nullable=False, index=True)
 
     # 消息内容
     role = Column(String(20), nullable=False)  # user / assistant / system
@@ -715,6 +803,9 @@ class ChatMessage(Base):
 
     # 时间戳
     created_at = Column(DateTime, default=datetime.utcnow, index=True)
+    
+    # Relationships
+    session = relationship("ChatSession", back_populates="messages")
 
     # 索引
     __table_args__ = (

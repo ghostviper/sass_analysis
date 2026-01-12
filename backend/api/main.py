@@ -31,7 +31,7 @@ load_dotenv(dotenv_path=env_path)
 from database.db import init_db, close_db
 from api.routes import startups, chat, analytics, search
 from api.routes import category_analysis, product_analysis, landing_analysis
-from api.routes import leaderboard, sessions
+from api.routes import leaderboard, sessions, auth, user
 
 
 @asynccontextmanager
@@ -74,6 +74,8 @@ app.include_router(product_analysis.router, prefix="/api", tags=["Product Analys
 app.include_router(landing_analysis.router, prefix="/api", tags=["Landing Page Analysis"])
 app.include_router(leaderboard.router, prefix="/api", tags=["Leaderboard"])
 app.include_router(sessions.router, prefix="/api", tags=["Sessions"])
+app.include_router(auth.router, prefix="/api", tags=["Auth"])
+app.include_router(user.router, prefix="/api", tags=["User"])
 
 
 @app.get("/")

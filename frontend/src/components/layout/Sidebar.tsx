@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useState, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import {
@@ -19,14 +19,19 @@ import {
   Lightbulb,
   PanelLeftClose,
   PanelLeft,
+  LogIn,
 } from 'lucide-react'
 import { useSidebar } from '@/contexts/SidebarContext'
 import { useLocale } from '@/contexts/LocaleContext'
+import { useAuth } from '@/hooks/useAuth'
+import { UserAvatar } from '@/components/user/UserAvatar'
 
 export function Sidebar() {
   const pathname = usePathname()
+  const router = useRouter()
   const { isCollapsed, isMobileOpen, toggleSidebar, closeMobile } = useSidebar()
   const { t } = useLocale()
+  const { user, isAuthenticated, isLoading, logout } = useAuth()
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false)
   const userMenuRef = useRef<HTMLDivElement>(null)
 
@@ -61,16 +66,38 @@ export function Sidebar() {
     { name: t('nav.logout') || 'Logout', icon: LogOut, action: 'logout' },
   ]
 
+  const handleLogout = async () => {
+    setIsUserMenuOpen(false)
+    await logout()
+  }
+
+  const handleUpgrade = () => {
+    setIsUserMenuOpen(false)
+    router.push('/settings/billing')
+  }
+
+  const handleLogin = () => {
+    router.push('/auth/sign-in')
+  }
+
+  // 获取用户显示名称
+  const displayName = user?.name || user?.email?.split('@')[0] || t('nav.user') || 'User'
+  // 获取会员计划显示
+  const planDisplay = user?.plan === 'pro' 
+    ? 'Pro Plan' 
+    : user?.plan === 'enterprise' 
+      ? 'Enterprise' 
+      : t('nav.freeplan') || 'Free Plan'
+
   const sidebarContent = (
     <div className="flex h-full flex-col">
-      {/* Logo and Toggle - 与 Header 高度一致 h-14，下方有分割线 */}
+      {/* Logo and Toggle */}
       <div
         className={cn(
           'flex h-14 items-center border-b border-surface-border transition-all duration-300',
           isCollapsed && !isMobileOpen ? 'justify-center px-2' : 'justify-between px-4'
         )}
       >
-        {/* Collapsed: Show toggle button in logo position */}
         {isCollapsed && !isMobileOpen ? (
           <button
             onClick={toggleSidebar}
@@ -95,7 +122,6 @@ export function Sidebar() {
               </h1>
             </div>
 
-            {/* Desktop collapse button */}
             {!isMobileOpen && (
               <button
                 onClick={toggleSidebar}
@@ -106,7 +132,6 @@ export function Sidebar() {
               </button>
             )}
 
-            {/* Mobile close button */}
             {isMobileOpen && (
               <button
                 onClick={closeMobile}
@@ -154,29 +179,13 @@ export function Sidebar() {
                 >
                   {item.name}
                 </span>
-                {'isNew' in item && item.isNew && (
-                  <span
-                    className={cn(
-                      'rounded-md bg-brand-500/15 px-1.5 py-0.5 text-[10px] font-semibold text-brand-600 dark:text-brand-400 whitespace-nowrap transition-all duration-200',
-                      showCollapsed ? 'hidden' : 'block'
-                    )}
-                  >
-                    NEW
-                  </span>
-                )}
 
-                {/* Tooltip for desktop collapsed */}
                 {showCollapsed && (
                   <div className="absolute left-full ml-2 hidden group-hover:block z-50">
                     <div className="whitespace-nowrap rounded-lg bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border text-content-primary">
                       {item.name}
                     </div>
                   </div>
-                )}
-
-                {/* NEW indicator for collapsed */}
-                {showCollapsed && 'isNew' in item && item.isNew && (
-                  <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-brand-500" />
                 )}
               </Link>
             )
@@ -187,136 +196,179 @@ export function Sidebar() {
       {/* User Profile Section */}
       <div className="px-3 py-2" ref={userMenuRef}>
         <div className="relative">
-          <button
-            onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-            className={cn(
-              'group relative flex w-full items-center rounded-xl transition-all duration-200',
-              isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-2.5 px-2 py-1.5',
-              'hover:bg-surface/80'
-            )}
-          >
-            {/* Avatar */}
-            <div className="relative shrink-0">
-              <div className="h-8 w-8 rounded-lg bg-gradient-brand flex items-center justify-center text-white text-xs font-semibold shadow-sm">
-                U
-              </div>
-              {/* Online indicator */}
-              <span className="absolute -bottom-0.5 -right-0.5 h-2 w-2 rounded-full bg-accent-success border-2 border-background-secondary" />
-            </div>
-
-            {/* User info - only show when expanded */}
-            <div
+          {/* 未登录状态 */}
+          {!isLoading && !isAuthenticated ? (
+            <button
+              onClick={handleLogin}
               className={cn(
-                'flex items-center gap-2 transition-all duration-300 overflow-hidden min-w-0',
-                isCollapsed && !isMobileOpen ? 'w-0 opacity-0' : 'w-auto opacity-100 flex-1'
+                'group relative flex w-full items-center rounded-xl transition-all duration-200',
+                isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-2.5 px-2 py-1.5',
+                'hover:bg-surface/80'
               )}
             >
-              <div className="flex-1 text-left min-w-0">
-                <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap leading-tight">
-                  {t('nav.user') || 'User'}
-                </p>
-                <p className="text-[11px] text-content-muted truncate whitespace-nowrap leading-tight">
-                  {t('nav.freeplan') || 'Free Plan'}
-                </p>
+              <div className="relative shrink-0">
+                <div className="h-8 w-8 rounded-lg bg-surface flex items-center justify-center text-content-muted">
+                  <LogIn className="h-4 w-4" />
+                </div>
               </div>
-              <ChevronUp
+
+              <div
                 className={cn(
-                  'h-3.5 w-3.5 text-content-muted transition-transform duration-200 shrink-0',
-                  isUserMenuOpen && 'rotate-180'
+                  'flex items-center gap-2 transition-all duration-300 overflow-hidden min-w-0',
+                  isCollapsed && !isMobileOpen ? 'w-0 opacity-0' : 'w-auto opacity-100 flex-1'
                 )}
-              />
-            </div>
-
-            {/* Tooltip for collapsed state */}
-            {isCollapsed && !isMobileOpen && (
-              <div className="absolute left-full ml-2 hidden group-hover:block z-50">
-                <div className="whitespace-nowrap rounded-xl bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border">
-                  <p className="font-medium text-content-primary">{t('nav.user') || 'User'}</p>
-                  <p className="text-xs text-content-muted">{t('nav.freeplan') || 'Free Plan'}</p>
+              >
+                <div className="flex-1 text-left min-w-0">
+                  <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap leading-tight">
+                    {t('nav.login') || '登录'}
+                  </p>
+                  <p className="text-[11px] text-content-muted truncate whitespace-nowrap leading-tight">
+                    {t('nav.loginHint') || '登录以同步数据'}
+                  </p>
                 </div>
               </div>
-            )}
-          </button>
 
-          {/* Dropdown Menu */}
-          {isUserMenuOpen && (
-            <div
-              className={cn(
-                'absolute z-50 rounded-2xl border border-surface-border bg-surface-elevated shadow-xl overflow-hidden',
-                isCollapsed && !isMobileOpen
-                  ? 'left-full bottom-0 ml-2 w-52'
-                  : 'left-0 right-0 bottom-full mb-2'
+              {isCollapsed && !isMobileOpen && (
+                <div className="absolute left-full ml-2 hidden group-hover:block z-50">
+                  <div className="whitespace-nowrap rounded-xl bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border">
+                    <p className="font-medium text-content-primary">{t('nav.login') || '登录'}</p>
+                  </div>
+                </div>
               )}
-            >
-              {/* User info header in dropdown */}
-              <div className="px-4 py-3 border-b border-surface-border bg-surface/50">
-                <div className="flex items-center gap-3">
-                  <div className="h-10 w-10 rounded-xl bg-gradient-brand flex items-center justify-center text-white text-sm font-semibold shadow-sm">
-                    U
+            </button>
+          ) : (
+            /* 已登录状态 */
+            <>
+              <button
+                onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
+                className={cn(
+                  'group relative flex w-full items-center rounded-xl transition-all duration-200',
+                  isCollapsed && !isMobileOpen ? 'justify-center p-2' : 'gap-2.5 px-2 py-1.5',
+                  'hover:bg-surface/80'
+                )}
+              >
+                <UserAvatar
+                  email={user?.email}
+                  image={user?.image}
+                  name={user?.name}
+                  size="md"
+                  showOnlineStatus={isAuthenticated}
+                />
+
+                <div
+                  className={cn(
+                    'flex items-center gap-2 transition-all duration-300 overflow-hidden min-w-0',
+                    isCollapsed && !isMobileOpen ? 'w-0 opacity-0' : 'w-auto opacity-100 flex-1'
+                  )}
+                >
+                  <div className="flex-1 text-left min-w-0">
+                    <p className="text-sm font-medium text-content-primary truncate whitespace-nowrap leading-tight">
+                      {isLoading ? '...' : displayName}
+                    </p>
+                    <p className="text-[11px] text-content-muted truncate whitespace-nowrap leading-tight">
+                      {isLoading ? '...' : planDisplay}
+                    </p>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-content-primary truncate">
-                      {t('nav.user') || 'User'}
-                    </p>
-                    <p className="text-xs text-content-muted truncate">
-                      {t('nav.freeplan') || 'Free Plan'}
-                    </p>
+                  <ChevronUp
+                    className={cn(
+                      'h-3.5 w-3.5 text-content-muted transition-transform duration-200 shrink-0',
+                      isUserMenuOpen && 'rotate-180'
+                    )}
+                  />
+                </div>
+
+                {isCollapsed && !isMobileOpen && (
+                  <div className="absolute left-full ml-2 hidden group-hover:block z-50">
+                    <div className="whitespace-nowrap rounded-xl bg-surface-elevated px-3 py-2 text-sm shadow-lg border border-surface-border">
+                      <p className="font-medium text-content-primary">{displayName}</p>
+                      <p className="text-xs text-content-muted">{planDisplay}</p>
+                    </div>
+                  </div>
+                )}
+              </button>
+
+              {/* Dropdown Menu */}
+              {isUserMenuOpen && (
+                <div
+                  className={cn(
+                    'absolute z-50 rounded-2xl border border-surface-border bg-surface-elevated shadow-xl overflow-hidden',
+                    isCollapsed && !isMobileOpen
+                      ? 'left-full bottom-0 ml-2 w-52'
+                      : 'left-0 right-0 bottom-full mb-2'
+                  )}
+                >
+                  {/* User info header */}
+                  <div className="px-4 py-3 border-b border-surface-border bg-surface/50">
+                    <div className="flex items-center gap-3">
+                      <UserAvatar
+                        email={user?.email}
+                        image={user?.image}
+                        name={user?.name}
+                        size="lg"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-content-primary truncate">
+                          {displayName}
+                        </p>
+                        <p className="text-xs text-content-muted truncate">
+                          {user?.email || planDisplay}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="py-1.5">
+                    {userMenuItems.map((item, index) => {
+                      const isLastItem = index === userMenuItems.length - 1
+
+                      if (item.href) {
+                        return (
+                          <Link
+                            key={item.name}
+                            href={item.href}
+                            onClick={() => setIsUserMenuOpen(false)}
+                            className={cn(
+                              'flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
+                              'text-content-secondary hover:bg-surface hover:text-content-primary'
+                            )}
+                          >
+                            <item.icon className="h-4 w-4" />
+                            <span>{item.name}</span>
+                          </Link>
+                        )
+                      }
+
+                      return (
+                        <button
+                          key={item.name}
+                          onClick={() => {
+                            if (item.action === 'logout') {
+                              handleLogout()
+                            } else if (item.action === 'upgrade') {
+                              handleUpgrade()
+                            }
+                          }}
+                          className={cn(
+                            'flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors',
+                            'text-content-secondary hover:bg-surface hover:text-content-primary',
+                            item.action === 'logout' && 'border-t border-surface-border mt-1 pt-2.5 text-accent-error hover:text-accent-error hover:bg-accent-error/5',
+                            item.action === 'upgrade' && 'text-brand-600 dark:text-brand-400 hover:text-brand-600 hover:bg-brand-500/5'
+                          )}
+                        >
+                          <item.icon className="h-4 w-4" />
+                          <span className="flex-1 text-left">{item.name}</span>
+                          {item.action === 'upgrade' && (
+                            <span className="rounded-md bg-brand-500/15 px-2 py-0.5 text-[10px] font-semibold text-brand-600 dark:text-brand-400">
+                              PRO
+                            </span>
+                          )}
+                        </button>
+                      )
+                    })}
                   </div>
                 </div>
-              </div>
-
-              <div className="py-1.5">
-                {userMenuItems.map((item, index) => {
-                  const isLastItem = index === userMenuItems.length - 1
-
-                  if (item.href) {
-                    return (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        onClick={() => setIsUserMenuOpen(false)}
-                        className={cn(
-                          'flex items-center gap-3 px-4 py-2.5 text-sm transition-colors',
-                          'text-content-secondary hover:bg-surface hover:text-content-primary',
-                          isLastItem && 'border-t border-surface-border mt-1 pt-2.5 text-accent-error hover:text-accent-error hover:bg-accent-error/5'
-                        )}
-                      >
-                        <item.icon className="h-4 w-4" />
-                        <span>{item.name}</span>
-                      </Link>
-                    )
-                  }
-
-                  return (
-                    <button
-                      key={item.name}
-                      onClick={() => {
-                        setIsUserMenuOpen(false)
-                        if (item.action === 'logout') {
-                          console.log('Logout clicked')
-                        } else if (item.action === 'upgrade') {
-                          console.log('Upgrade clicked')
-                        }
-                      }}
-                      className={cn(
-                        'flex w-full items-center gap-3 px-4 py-2.5 text-sm transition-colors',
-                        'text-content-secondary hover:bg-surface hover:text-content-primary',
-                        item.action === 'logout' && 'border-t border-surface-border mt-1 pt-2.5 text-accent-error hover:text-accent-error hover:bg-accent-error/5',
-                        item.action === 'upgrade' && 'text-brand-600 dark:text-brand-400 hover:text-brand-600 hover:bg-brand-500/5'
-                      )}
-                    >
-                      <item.icon className="h-4 w-4" />
-                      <span className="flex-1 text-left">{item.name}</span>
-                      {item.action === 'upgrade' && (
-                        <span className="rounded-md bg-brand-500/15 px-2 py-0.5 text-[10px] font-semibold text-brand-600 dark:text-brand-400">
-                          PRO
-                        </span>
-                      )}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
+              )}
+            </>
           )}
         </div>
       </div>
@@ -339,13 +391,10 @@ export function Sidebar() {
       {/* Mobile Sidebar Overlay */}
       {isMobileOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
-          {/* Backdrop */}
           <div
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={closeMobile}
           />
-
-          {/* Sidebar */}
           <aside className="fixed left-0 top-0 h-screen w-64 border-r border-surface-border bg-background-secondary animate-slide-in-left">
             {sidebarContent}
           </aside>

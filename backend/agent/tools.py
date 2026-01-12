@@ -2,13 +2,18 @@
 Agent tools for querying and analyzing SaaS data
 """
 
+import os
 from typing import Optional, List, Dict, Any
 from sqlalchemy import select, func, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 import json
+import httpx
 
 from database.db import AsyncSessionLocal
 from database.models import Startup, Founder
+
+# Tavily API for web search
+TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
 try:
     from claude_agent_sdk import tool
@@ -555,5 +560,154 @@ async def get_leaderboard_tool(args: Dict[str, Any]) -> Dict[str, Any]:
                 "type": "text",
                 "text": json.dumps({"error": str(e), "type": "leaderboard_error"}, ensure_ascii=False)
             }],
+            "is_error": True
+        }
+
+
+# ============================================================================
+# Web Search Tool (Tavily API)
+# ============================================================================
+
+async def _tavily_search(
+    query: str,
+    search_depth: str = "basic",
+    include_domains: Optional[List[str]] = None,
+    max_results: int = 5
+) -> Dict[str, Any]:
+    """
+    Search the web using Tavily API.
+    
+    Args:
+        query: Search query
+        search_depth: "basic" or "advanced" (advanced is slower but more thorough)
+        include_domains: Limit search to specific domains (e.g., ["reddit.com", "indiehackers.com"])
+        max_results: Maximum number of results to return
+        
+    Returns:
+        Search results with title, url, content, and score
+    """
+    if not TAVILY_API_KEY:
+        return {"error": "TAVILY_API_KEY not configured", "results": []}
+    
+    async with httpx.AsyncClient(timeout=30.0) as client:
+        payload = {
+            "api_key": TAVILY_API_KEY,
+            "query": query,
+            "search_depth": search_depth,
+            "max_results": max_results,
+            "include_answer": True,  # Get AI-generated answer summary
+        }
+        
+        if include_domains:
+            payload["include_domains"] = include_domains
+        
+        try:
+            response = await client.post(
+                "https://api.tavily.com/search",
+                json=payload
+            )
+            response.raise_for_status()
+            return response.json()
+        except httpx.HTTPStatusError as e:
+            return {"error": f"Tavily API error: {e.response.status_code}", "results": []}
+        except Exception as e:
+            return {"error": str(e), "results": []}
+
+
+@tool(
+    "web_search",
+    "Search the web for information about products, market trends, community discussions, reviews, and recent news. Use this when you need real-time information beyond the database.",
+    {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "Search query. Be specific and include relevant keywords."
+            },
+            "search_depth": {
+                "type": "string",
+                "enum": ["basic", "advanced"],
+                "description": "Search depth. 'basic' is faster, 'advanced' is more thorough. Default: basic"
+            },
+            "include_domains": {
+                "type": "array",
+                "items": {"type": "string"},
+                "description": "Limit search to specific domains. E.g., ['reddit.com', 'indiehackers.com', 'producthunt.com']"
+            },
+            "max_results": {
+                "type": "integer",
+                "description": "Maximum number of results. Default: 5, Max: 10"
+            }
+        },
+        "required": ["query"]
+    }
+)
+async def web_search_tool(args: Dict[str, Any]) -> Dict[str, Any]:
+    """Search the web using Tavily API"""
+    import time as time_module
+    import asyncio as aio
+    
+    start_time = time_module.time()
+    query = args.get("query", "")
+    search_depth = args.get("search_depth", "basic")
+    include_domains = args.get("include_domains")
+    max_results = min(args.get("max_results", 5), 10)
+    
+    print(f"[TOOL] web_search called with query='{query[:50]}...', depth={search_depth}", flush=True)
+    
+    if not query:
+        return {
+            "content": [{"type": "text", "text": json.dumps({"error": "No query provided"}, ensure_ascii=False)}],
+            "is_error": True
+        }
+    
+    if not TAVILY_API_KEY:
+        return {
+            "content": [{"type": "text", "text": json.dumps({
+                "error": "Web search is not configured. Please set TAVILY_API_KEY in environment variables.",
+                "hint": "Get your API key from https://tavily.com"
+            }, ensure_ascii=False)}],
+            "is_error": True
+        }
+    
+    try:
+        result = await aio.wait_for(
+            _tavily_search(query, search_depth, include_domains, max_results),
+            timeout=30.0
+        )
+        elapsed = time_module.time() - start_time
+        
+        # Format results for better readability
+        if "results" in result:
+            formatted_results = []
+            for r in result.get("results", []):
+                formatted_results.append({
+                    "title": r.get("title", ""),
+                    "url": r.get("url", ""),
+                    "content": r.get("content", "")[:500],  # Truncate long content
+                    "score": r.get("score", 0)
+                })
+            
+            output = {
+                "answer": result.get("answer", ""),  # AI-generated summary
+                "results": formatted_results,
+                "query": query,
+                "search_time_ms": int(elapsed * 1000)
+            }
+        else:
+            output = result
+        
+        print(f"[TOOL] web_search completed in {elapsed:.2f}s, returned {len(result.get('results', []))} results", flush=True)
+        return {"content": [{"type": "text", "text": json.dumps(output, indent=2, ensure_ascii=False)}]}
+        
+    except asyncio.TimeoutError:
+        return {
+            "content": [{"type": "text", "text": json.dumps({"error": "Search timed out"}, ensure_ascii=False)}],
+            "is_error": True
+        }
+    except Exception as e:
+        print(f"[TOOL] web_search failed: {e}", flush=True)
+        return {
+            "content": [{"type": "text", "text": json.dumps({"error": str(e)}, ensure_ascii=False)}],
             "is_error": True
         }

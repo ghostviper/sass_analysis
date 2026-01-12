@@ -99,18 +99,31 @@ Think step by step:
 WEB_SEARCH_PROMPT_ADDITION = """
 
 ## Web Search Enabled
-You have access to the web_search tool. Use it proactively when:
+You have access to the `web_search` tool (powered by Tavily). Use it proactively when:
 - User asks about community discussions, reviews, or feedback
 - User wants to know what others are saying about a product/topic
 - User needs market research or industry insights beyond the database
 - User asks about trends, news, or recent developments
-- User mentions Reddit, IndieHackers, Product Hunt, or other communities
+- User mentions Reddit, IndieHackers, Product Hunt, Hacker News, or other communities
+- User asks "what do people think about X" or "reviews of X"
 
 When using web_search:
-- Craft effective search queries
-- Use site parameter for specific communities (e.g., site="reddit.com")
+- Craft specific, targeted search queries
+- Use `include_domains` parameter for specific communities:
+  - Reddit: ["reddit.com"]
+  - IndieHackers: ["indiehackers.com"]
+  - Product Hunt: ["producthunt.com"]
+  - Hacker News: ["news.ycombinator.com"]
+  - Multiple: ["reddit.com", "indiehackers.com"]
+- Use `search_depth: "advanced"` for more thorough research
 - Synthesize findings from multiple results
-- Always cite sources with links
+- Always cite sources with URLs in your response
+- The tool returns an AI-generated summary (`answer`) plus individual results
+
+Example usage:
+- General search: web_search(query="best SaaS tools for startups 2024")
+- Reddit specific: web_search(query="SaaS pricing strategies", include_domains=["reddit.com"])
+- Deep research: web_search(query="indie hacker success stories", search_depth="advanced")
 """
 
 

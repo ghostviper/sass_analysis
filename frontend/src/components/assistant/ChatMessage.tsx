@@ -121,15 +121,6 @@ function ThinkingBlock({
   )
 }
 
-// 内容块分隔符
-function BlockSeparator({ label }: { label?: string }) {
-  return (
-    <div data-chat-block="separator">
-      {label && <span className="separator-label">{label}</span>}
-    </div>
-  )
-}
-
 export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessageProps) {
   const { t } = useLocale()
   const [copied, setCopied] = useState(false)
@@ -254,11 +245,6 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                   isStreaming={thinkingBlock.isStreaming}
                   t={t}
                 />
-              )}
-
-              {/* 思考和回复之间的分隔符 */}
-              {hasThinking && hasText && (
-                <BlockSeparator label={t('assistant.reply')} />
               )}
 
               {/* 文本内容 */}

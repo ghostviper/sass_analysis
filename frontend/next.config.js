@@ -16,7 +16,7 @@ const nextConfig = {
       },
     ],
   },
-  // API 代理 - 使用 127.0.0.1 而不是 localhost 避免 IPv6 问题
+  // API 代理 - 所有 /api/* 请求代理到 Python 后端
   async rewrites() {
     return [
       {

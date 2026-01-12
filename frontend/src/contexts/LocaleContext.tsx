@@ -30,14 +30,16 @@ export function LocaleProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     setMounted(true)
-    const saved = localStorage.getItem(STORAGE_KEY) as Locale | null
-    if (saved && (saved === 'zh-CN' || saved === 'en')) {
-      setLocaleState(saved)
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(STORAGE_KEY) as Locale | null
+      if (saved && (saved === 'zh-CN' || saved === 'en')) {
+        setLocaleState(saved)
+      }
     }
   }, [])
 
   useEffect(() => {
-    if (mounted) {
+    if (mounted && typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, locale)
       // Update html lang attribute
       document.documentElement.lang = locale === 'zh-CN' ? 'zh-CN' : 'en'

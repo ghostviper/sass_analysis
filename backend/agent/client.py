@@ -104,6 +104,8 @@ from .tools import (
     get_category_analysis_tool,
     get_trend_report_tool,
     get_leaderboard_tool,
+    # 联网搜索工具
+    web_search_tool,
 )
 from .prompts import SYSTEM_PROMPT
 
@@ -184,6 +186,8 @@ def _create_mcp_server():
             get_category_analysis_tool,
             get_trend_report_tool,
             get_leaderboard_tool,
+            # 联网搜索工具
+            web_search_tool,
         ]
     )
 
@@ -244,6 +248,8 @@ class SaaSAnalysisAgent:
                 "mcp__saas__get_category_analysis",
                 "mcp__saas__get_trend_report",
                 "mcp__saas__get_leaderboard",
+                # MCP 工具 - 联网搜索
+                "mcp__saas__web_search",
                 # Task 工具 - 启用子代理委托
                 # 子代理定义在 .claude/agents/ 目录下
                 "Task",

@@ -721,7 +721,7 @@
   }
 
   [data-chat-block="thinking"] {
-    @apply my-3 rounded-xl border border-violet-500/20 bg-violet-500/5 overflow-hidden;
+    @apply mb-3 rounded-xl border border-violet-500/20 bg-violet-500/5 overflow-hidden;
   }
 
   [data-chat-block="thinking"] .thinking-header {

@@ -23,15 +23,17 @@ export function SidebarProvider({ children }: { children: ReactNode }) {
   // Load saved state from localStorage
   useEffect(() => {
     setMounted(true)
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved !== null) {
-      setIsCollapsed(JSON.parse(saved))
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem(STORAGE_KEY)
+      if (saved !== null) {
+        setIsCollapsed(JSON.parse(saved))
+      }
     }
   }, [])
 
   // Save state to localStorage
   useEffect(() => {
-    if (mounted) {
+    if (mounted && typeof window !== 'undefined') {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(isCollapsed))
     }
   }, [isCollapsed, mounted])

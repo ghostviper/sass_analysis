@@ -3,6 +3,7 @@ Chat API Routes - AI-powered Q&A for BuildWhat
 
 Lightweight streaming implementation for smooth AI responses.
 Integrates with ChatHistoryService for session persistence.
+Supports user association and quota management.
 """
 
 import json
@@ -10,7 +11,7 @@ import asyncio
 import uuid
 import time
 from typing import Optional, List
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends, Request
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import httpx
@@ -18,6 +19,7 @@ import os
 
 from agent.client import SaaSAnalysisAgent, StreamEvent
 from services.chat_history import ChatHistoryService
+from api.routes.auth import get_current_user, decode_token
 
 router = APIRouter()
 
@@ -91,7 +93,7 @@ def get_agent() -> Optional[SaaSAnalysisAgent]:
 # ============================================================================
 
 @router.post("/chat", response_model=ChatResponse)
-async def chat(request: ChatRequest):
+async def chat(request: ChatRequest, req: Request):
     """
     Standard chat endpoint (non-streaming).
 
@@ -105,6 +107,12 @@ async def chat(request: ChatRequest):
     Returns:
         ChatResponse with complete AI response and session_id
     """
+    # 尝试获取当前用户（可选）
+    user_id = None
+    token = req.cookies.get("auth_token")
+    if token:
+        user_id = decode_token(token)
+    
     try:
         agent = get_agent()
 
@@ -173,6 +181,7 @@ async def chat(request: ChatRequest):
             is_new_session=is_new_session,
             context=context_data,
             enable_web_search=request.enable_web_search,
+            user_id=user_id,
         ))
 
         return ChatResponse(
@@ -198,7 +207,8 @@ async def _persist_chat_async(
     duration_ms: int,
     is_new_session: bool,
     context: dict = None,
-    enable_web_search: bool = False
+    enable_web_search: bool = False,
+    user_id: str = None  # 新增：用户ID
 ):
     """
     异步持久化聊天记录（后台任务，不阻塞响应）
@@ -209,6 +219,7 @@ async def _persist_chat_async(
         # 1. 确保会话存在
         await ChatHistoryService.ensure_session_exists(
             session_id=session_id,
+            user_id=user_id,  # 传入用户ID
             enable_web_search=enable_web_search,
             context=context
         )
@@ -242,7 +253,7 @@ async def _persist_chat_async(
 
 
 @router.post("/chat/stream")
-async def chat_stream(request: ChatRequest):
+async def chat_stream(request: ChatRequest, req: Request):
     """
     Streaming chat endpoint with Server-Sent Events (SSE).
 
@@ -257,6 +268,12 @@ async def chat_stream(request: ChatRequest):
     Returns:
         StreamingResponse with SSE events
     """
+    # 尝试获取当前用户（可选）
+    user_id = None
+    token = req.cookies.get("auth_token")
+    if token:
+        user_id = decode_token(token)
+    
     # 使用请求中的 session_id（如果有的话，这是 Claude SDK 的 session_id）
     claude_session_id = request.session_id  # 可能为 None（新会话）
     
@@ -266,7 +283,7 @@ async def chat_stream(request: ChatRequest):
 
     async def generate():
         """Generator function for SSE streaming"""
-        nonlocal claude_session_id, local_session_id, is_new_session
+        nonlocal claude_session_id, local_session_id, is_new_session, user_id
         
         # 内存累积变量（流式过程中不做任何 DB 操作）
         start_time = time.time()
@@ -341,6 +358,7 @@ async def chat_stream(request: ChatRequest):
                 is_new_session=is_new_session,
                 context=context_data,
                 enable_web_search=request.enable_web_search,
+                user_id=user_id,
             ))
 
         except Exception as e:

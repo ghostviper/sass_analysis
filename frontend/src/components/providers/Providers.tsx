@@ -4,6 +4,7 @@ import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 import { SidebarProvider } from '@/contexts/SidebarContext'
 import { LocaleProvider } from '@/contexts/LocaleContext'
+import { AuthProvider } from '@/components/auth/AuthProvider'
 
 interface ProvidersProps {
   children: ReactNode
@@ -17,11 +18,13 @@ export function Providers({ children }: ProvidersProps) {
       enableSystem={false}
       disableTransitionOnChange
     >
-      <LocaleProvider>
-        <SidebarProvider>
-          {children}
-        </SidebarProvider>
-      </LocaleProvider>
+      <AuthProvider>
+        <LocaleProvider>
+          <SidebarProvider>
+            {children}
+          </SidebarProvider>
+        </LocaleProvider>
+      </AuthProvider>
     </ThemeProvider>
   )
 }

@@ -28,3 +28,6 @@ openai>=1.0.0
 # Utilities
 httpx==0.28.1
 asyncio==3.4.3
+
+# Auth
+PyJWT>=2.8.0

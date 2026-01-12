@@ -195,7 +195,7 @@ export function LeaderboardSwitcher({ className, limit = 5 }: LeaderboardSwitche
 
                   {/* Logo */}
                   <ProductLogo
-                    src={product.logo_url}
+                    logoUrl={product.logo_url}
                     name={product.name}
                     size="sm"
                   />
