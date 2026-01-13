@@ -9,6 +9,7 @@ const protectedPaths = [
   "/leaderboard",
   "/assistant",
   "/settings",
+  "/about",
 ];
 
 // 已登录用户不应访问的路径（登录/注册页）

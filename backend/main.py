@@ -173,23 +173,35 @@ async def cmd_analyze_product(args):
                 await selector.save_analysis(score)
                 print("\n分析结果已保存到数据库")
 
-        elif args.opportunities:
+        elif args.opportunities or getattr(args, 'all', False):
             # 筛选机会产品
-            print(f"\n筛选适合个人开发者的机会产品...")
+            is_all = getattr(args, 'all', False)
+            
+            if is_all:
+                print(f"\n分析所有产品的选品评分...")
+            else:
+                print(f"\n筛选适合个人开发者的机会产品...")
+            
             opportunities = await selector.find_opportunities(
-                min_revenue=args.min_revenue,
-                max_complexity=args.max_complexity,
-                limit=args.limit
+                min_revenue=args.min_revenue if not is_all else 0,
+                max_complexity=args.max_complexity if not is_all else 'high',
+                limit=0 if is_all else args.limit,
+                analyze_all=is_all
             )
 
             print(f"\n{'名称':<30} {'收入':>10} {'复杂度':>8} {'适合度':>8} {'数据质量':<12}")
             print("-" * 75)
 
-            for o in opportunities:
+            display_list = opportunities if is_all else opportunities[:args.limit]
+            for o in display_list[:50]:  # 最多显示50条
                 quality = "完整" if o.has_follower_data else "缺粉丝数据"
-                print(f"{o.name[:28]:<30} ${o.follower_revenue_ratio*1000:>8,.0f} {o.tech_complexity_level:>8} {o.individual_dev_suitability:>8.1f} {quality:<12}")
+                revenue = o.follower_revenue_ratio * 1000 if o.follower_revenue_ratio else 0
+                print(f"{o.name[:28]:<30} ${revenue:>8,.0f} {o.tech_complexity_level:>8} {o.individual_dev_suitability:>8.1f} {quality:<12}")
 
-            print(f"\n共找到 {len(opportunities)} 个机会产品")
+            if len(opportunities) > 50:
+                print(f"... 还有 {len(opportunities) - 50} 条未显示")
+            
+            print(f"\n共分析 {len(opportunities)} 个产品")
 
             # 保存所有分析结果
             if args.save:
@@ -425,8 +437,55 @@ async def cmd_analyze_comprehensive(args):
                 analysis = rec['analysis']
                 print(f"{i:>4} {startup['name'][:28]:<30} ${startup.get('revenue_30d', 0):>8,.0f} {analysis['overall_recommendation']:>8.1f}")
 
+        elif getattr(args, 'all', False) or getattr(args, 'update', False):
+            # 批量综合分析
+            from database.models import LandingPageAnalysis, ComprehensiveAnalysis
+            from sqlalchemy import func
+            
+            is_update = getattr(args, 'update', False)
+            
+            # 获取有 landing_page_analysis 的产品（综合分析依赖它）
+            query = (
+                select(Startup.id)
+                .join(LandingPageAnalysis, LandingPageAnalysis.startup_id == Startup.id)
+            )
+            
+            # 增量模式：跳过已有综合分析的
+            if is_update:
+                analyzed_ids = select(ComprehensiveAnalysis.startup_id)
+                query = query.where(Startup.id.notin_(analyzed_ids))
+            
+            query = query.order_by(func.coalesce(Startup.revenue_30d, 0).desc())
+            
+            result = await db.execute(query)
+            startup_ids = [row[0] for row in result.all()]
+            
+            if not startup_ids:
+                print("没有需要分析的产品（需要先完成 Landing Page 分析）")
+                return
+            
+            print(f"\n批量综合分析: {len(startup_ids)} 个产品")
+            print("=" * 50)
+            
+            success = 0
+            failed = 0
+            for i, sid in enumerate(startup_ids, 1):
+                try:
+                    analysis = await analyzer.analyze_startup(sid)
+                    if analysis:
+                        success += 1
+                        if i % 10 == 0:
+                            print(f"  进度: {i}/{len(startup_ids)}")
+                    else:
+                        failed += 1
+                except Exception as e:
+                    failed += 1
+                    logger.error(f"分析 {sid} 失败: {e}")
+            
+            print(f"\n完成: 成功 {success}, 失败 {failed}")
+
         else:
-            print("请使用 --slug 指定产品或使用 --top 获取推荐列表")
+            print("请使用 --slug 指定产品、--top 获取推荐、--all 批量分析或 --update 增量更新")
 
 
 def main():
@@ -484,11 +543,12 @@ def main():
     # analyze product
     prod_parser = analyze_subparsers.add_parser('product', help='选品分析')
     prod_parser.add_argument('--slug', type=str, help='产品slug')
-    prod_parser.add_argument('--opportunities', action='store_true', help='筛选机会产品')
-    prod_parser.add_argument('--min-revenue', type=float, default=3000, help='最低收入')
-    prod_parser.add_argument('--max-complexity', type=str, default='medium',
+    prod_parser.add_argument('--all', action='store_true', help='分析所有产品')
+    prod_parser.add_argument('--opportunities', action='store_true', help='筛选机会产品（有过滤条件）')
+    prod_parser.add_argument('--min-revenue', type=float, default=500, help='最低收入')
+    prod_parser.add_argument('--max-complexity', type=str, default='high',
                              choices=['low', 'medium', 'high'], help='最高复杂度')
-    prod_parser.add_argument('--limit', type=int, default=20, help='结果数量限制')
+    prod_parser.add_argument('--limit', type=int, default=50, help='结果数量限制')
     prod_parser.add_argument('--save', action='store_true', help='保存分析结果')
 
     # analyze landing
@@ -505,6 +565,8 @@ def main():
     # analyze comprehensive
     comp_parser = analyze_subparsers.add_parser('comprehensive', help='综合分析')
     comp_parser.add_argument('--slug', type=str, help='产品slug')
+    comp_parser.add_argument('--all', action='store_true', help='批量分析所有有Landing Page分析的产品')
+    comp_parser.add_argument('--update', action='store_true', help='增量更新（只分析新增的）')
     comp_parser.add_argument('--top', action='store_true', help='获取TOP推荐列表')
     comp_parser.add_argument('--limit', type=int, default=20, help='结果数量限制')
     comp_parser.add_argument('--export', type=str, help='导出JSON文件路径')

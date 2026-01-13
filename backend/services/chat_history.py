@@ -385,6 +385,43 @@ class ChatHistoryService:
         return title or "新对话"
 
     @staticmethod
+    async def generate_summary_from_response(content: str, max_length: int = 200) -> str:
+        """
+        从助手回复内容生成会话摘要
+
+        Args:
+            content: 助手回复内容
+            max_length: 最大长度
+
+        Returns:
+            生成的摘要
+        """
+        if not content:
+            return ""
+        
+        # 移除 markdown 格式符号
+        summary = content
+        # 移除标题标记
+        import re
+        summary = re.sub(r'^#{1,6}\s+', '', summary, flags=re.MULTILINE)
+        # 移除加粗/斜体
+        summary = re.sub(r'\*{1,2}([^*]+)\*{1,2}', r'\1', summary)
+        # 移除代码块
+        summary = re.sub(r'```[\s\S]*?```', '', summary)
+        # 移除行内代码
+        summary = re.sub(r'`([^`]+)`', r'\1', summary)
+        # 移除链接，保留文字
+        summary = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', summary)
+        # 移除多余空白
+        summary = re.sub(r'\s+', ' ', summary).strip()
+
+        # 截断
+        if len(summary) > max_length:
+            summary = summary[:max_length - 3] + "..."
+
+        return summary
+
+    @staticmethod
     async def ensure_session_exists(
         session_id: str,
         user_id: Optional[str] = None,
@@ -392,7 +429,7 @@ class ChatHistoryService:
         context: Optional[Dict[str, Any]] = None
     ) -> ChatSession:
         """
-        确保会话存在，不存在则创建
+        确保会话存在，不存在则创建，存在则更新缺失字段
 
         Args:
             session_id: 会话ID
@@ -411,6 +448,24 @@ class ChatHistoryService:
                 enable_web_search=enable_web_search,
                 context=context
             )
+        else:
+            # 会话已存在，更新缺失的字段
+            update_data = {}
+            if user_id and not session.user_id:
+                update_data["user_id"] = user_id
+            if context:
+                if context.get("type") and not session.context_type:
+                    update_data["context_type"] = context.get("type")
+                if context.get("value") and not session.context_value:
+                    update_data["context_value"] = context.get("value")
+                if context.get("products") and not session.context_products:
+                    update_data["context_products"] = context.get("products")
+            
+            if update_data:
+                await ChatHistoryService.update_session(session_id, **update_data)
+                # 重新获取更新后的会话
+                session = await ChatHistoryService.get_session(session_id)
+        
         return session
 
     @staticmethod

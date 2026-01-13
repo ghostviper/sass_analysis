@@ -208,7 +208,9 @@ async def _persist_chat_async(
     is_new_session: bool,
     context: dict = None,
     enable_web_search: bool = False,
-    user_id: str = None  # 新增：用户ID
+    user_id: str = None,
+    input_tokens: int = 0,
+    output_tokens: int = 0
 ):
     """
     异步持久化聊天记录（后台任务，不阻塞响应）
@@ -240,16 +242,34 @@ async def _persist_chat_async(
             cost=cost,
             model=model,
             duration_ms=duration_ms,
+            input_tokens=input_tokens if input_tokens else None,
+            output_tokens=output_tokens if output_tokens else None,
         )
         
-        # 4. 新会话自动生成标题
-        if is_new_session and user_message:
+        # 4. 新会话自动生成标题和摘要
+        session = await ChatHistoryService.get_session(session_id)
+        update_fields = {}
+        
+        # 生成标题（从用户消息）
+        if user_message and (is_new_session or (session and not session.title)):
             title = await ChatHistoryService.generate_title_from_message(user_message)
-            await ChatHistoryService.update_session(session_id, title=title)
+            update_fields["title"] = title
+            print(f"[Persistence] Generated title: {title}")
+        
+        # 生成摘要（从助手回复）
+        if assistant_content and (is_new_session or (session and not session.summary)):
+            summary = await ChatHistoryService.generate_summary_from_response(assistant_content)
+            if summary:
+                update_fields["summary"] = summary
+                print(f"[Persistence] Generated summary: {summary[:50]}...")
+        
+        if update_fields:
+            await ChatHistoryService.update_session(session_id, **update_fields)
             
     except Exception as e:
         # 持久化失败只记录日志，不影响用户
-        print(f"[Persistence Error] session={session_id}: {e}")
+        import traceback
+        print(f"[Persistence Error] session={session_id}: {e}\n{traceback.format_exc()}")
 
 
 @router.post("/chat/stream")
@@ -290,6 +310,8 @@ async def chat_stream(request: ChatRequest, req: Request):
         accumulated_content = ""
         tool_calls = []
         total_cost = 0.0
+        total_input_tokens = 0
+        total_output_tokens = 0
         returned_session_id = None  # Claude SDK 返回的 session_id
         model_used = os.getenv("ANTHROPIC_MODEL", "claude")
 
@@ -325,10 +347,16 @@ async def chat_stream(request: ChatRequest, req: Request):
                             break
                 elif event.type == "done":
                     total_cost = event.cost or 0.0
+                    total_input_tokens = event.input_tokens or 0
+                    total_output_tokens = event.output_tokens or 0
                     # 获取 Claude SDK 返回的 session_id，用于后续多轮对话
                     returned_session_id = event.session_id
                     if returned_session_id:
                         print(f"[DEBUG] Got session_id from Claude SDK: {returned_session_id}")
+                        # 如果 Claude 返回了不同的 session_id，说明是新会话
+                        if returned_session_id != local_session_id:
+                            print(f"[DEBUG] Session ID changed: {local_session_id} -> {returned_session_id}, marking as new session")
+                            is_new_session = True
                         # 更新 local_session_id 为 Claude 返回的 session_id
                         local_session_id = returned_session_id
 
@@ -347,6 +375,8 @@ async def chat_stream(request: ChatRequest, req: Request):
                 "products": request.context.get("products") if request.context else None,
             } if request.context else None
             
+            print(f"[DEBUG] Persist: session_id={local_session_id}, user_id={user_id}, context={context_data}, is_new={is_new_session}")
+            
             asyncio.create_task(_persist_chat_async(
                 session_id=local_session_id,
                 user_message=request.message,
@@ -359,6 +389,8 @@ async def chat_stream(request: ChatRequest, req: Request):
                 context=context_data,
                 enable_web_search=request.enable_web_search,
                 user_id=user_id,
+                input_tokens=total_input_tokens,
+                output_tokens=total_output_tokens,
             ))
 
         except Exception as e:

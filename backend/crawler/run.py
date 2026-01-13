@@ -9,7 +9,7 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 from database.db import init_db, AsyncSessionLocal
 from database.models import Startup, Founder, LeaderboardEntry, RevenueHistory
 from crawler.browser import BrowserManager
@@ -195,18 +195,37 @@ async def save_revenue_history(session, startup_id: int, history: list):
 
 
 async def save_leaderboard_entries(entries: list):
-    """Save leaderboard entries to database"""
+    """Save leaderboard entries to database (每天只保留一条记录)"""
     async with AsyncSessionLocal() as session:
+        today = datetime.utcnow().date()
+        
         for data in entries:
-            # Create new leaderboard entry (we keep historical records)
-            entry = LeaderboardEntry(
-                startup_slug=data["startup_slug"],
-                rank=data["rank"],
-                revenue_30d=data.get("revenue_30d"),
-                growth_rate=data.get("growth_rate"),
-                multiple=data.get("multiple"),
+            # 检查今天是否已有该产品的排名记录
+            result = await session.execute(
+                select(LeaderboardEntry).where(
+                    LeaderboardEntry.startup_slug == data["startup_slug"],
+                    func.date(LeaderboardEntry.leaderboard_date) == today
+                )
             )
-            session.add(entry)
+            existing = result.scalar_one_or_none()
+            
+            if existing:
+                # 更新现有记录
+                existing.rank = data["rank"]
+                existing.revenue_30d = data.get("revenue_30d")
+                existing.growth_rate = data.get("growth_rate")
+                existing.multiple = data.get("multiple")
+                existing.scraped_at = datetime.utcnow()
+            else:
+                # 创建新记录
+                entry = LeaderboardEntry(
+                    startup_slug=data["startup_slug"],
+                    rank=data["rank"],
+                    revenue_30d=data.get("revenue_30d"),
+                    growth_rate=data.get("growth_rate"),
+                    multiple=data.get("multiple"),
+                )
+                session.add(entry)
             print(f"  Rank #{data['rank']}: {data['startup_slug']}")
         
         await session.commit()

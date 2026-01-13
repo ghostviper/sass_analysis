@@ -128,6 +128,7 @@ class DataSyncManager:
             'created': 0,
             'errors': 0,
             'founders_synced': 0,
+            'skipped_duplicates': 0,
         }
 
         founders_data: Dict[str, Dict] = {}
@@ -152,6 +153,20 @@ class DataSyncManager:
                         stats['updated'] += 1
                         logger.debug(f"更新: {slug}")
                     else:
+                        # 检查 website_url 是否已存在（防止重复）
+                        website_url = data.get('website_url')
+                        if website_url:
+                            result = await session.execute(
+                                select(Startup).where(Startup.website_url == website_url)
+                            )
+                            existing = result.scalar_one_or_none()
+                            if existing:
+                                # 已存在相同 website_url 的记录，更新它而不是创建新的
+                                self._update_startup_from_data(existing, data, html_file)
+                                stats['skipped_duplicates'] += 1
+                                logger.info(f"跳过重复: {slug} (website_url={website_url} 已存在于 {existing.slug})")
+                                continue
+                        
                         # 创建新记录
                         startup = self._create_startup_from_data(slug, data, html_file)
                         session.add(startup)

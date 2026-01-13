@@ -30,6 +30,9 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: 'BuildWhat - 发现独立开发者的产品机会',
   description: '基于数据驱动的 SaaS 产品分析平台，帮助独立开发者发现蓝海市场和可复制的产品机会',
+  icons: {
+    icon: '/icon.svg',
+  },
 }
 
 export default function RootLayout({

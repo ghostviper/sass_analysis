@@ -716,39 +716,41 @@ class ProductSelector:
 
     async def find_opportunities(
         self,
-        min_revenue: float = 500,  # 降低门槛，适配数据集
-        max_complexity: str = "medium",
-        limit: int = 30
+        min_revenue: float = 0,
+        max_complexity: str = "high",
+        limit: int = 0,  # 0 = 无限制
+        analyze_all: bool = False
     ) -> List[ProductScore]:
         """
         筛选适合个人开发者的机会产品
 
-        核心筛选逻辑：
-        1. 有一定收入验证市场需求
-        2. 技术复杂度可控
-        3. 优先低IP依赖、简单描述的产品
-
         Args:
-            min_revenue: 最低收入门槛（默认$500，约前35%产品）
+            min_revenue: 最低收入门槛
             max_complexity: 最高复杂度 (low, medium, high)
-            limit: 返回数量限制
+            limit: 返回数量限制 (0 = 无限制)
+            analyze_all: 是否分析所有产品
 
         Returns:
             ProductScore列表，按适合度降序排列
         """
-        # 获取有收入的产品
-        result = await self.db.execute(
-            select(Startup)
-            .where(Startup.revenue_30d.isnot(None))
-            .where(Startup.revenue_30d >= min_revenue)
-            .order_by(desc(Startup.revenue_30d))
-            .limit(300)  # 分析有收入的产品
-        )
+        # 构建查询
+        query = select(Startup).where(Startup.revenue_30d.isnot(None))
+        
+        if min_revenue > 0:
+            query = query.where(Startup.revenue_30d >= min_revenue)
+        
+        query = query.order_by(desc(Startup.revenue_30d))
+        
+        # 如果不是分析全部，限制数量
+        if not analyze_all and limit > 0:
+            query = query.limit(limit * 3)  # 多取一些用于过滤
+        
+        result = await self.db.execute(query)
         startups = result.scalars().all()
 
         scores = []
         complexity_levels = {"low": 0, "medium": 1, "high": 2}
-        max_level = complexity_levels.get(max_complexity, 1)
+        max_level = complexity_levels.get(max_complexity, 2)
 
         for startup in startups:
             score = await self.analyze_product(startup)
@@ -761,7 +763,10 @@ class ProductSelector:
         # 按适合度排序
         scores.sort(key=lambda x: x.individual_dev_suitability, reverse=True)
 
-        return scores[:limit]
+        # 限制返回数量
+        if limit > 0:
+            return scores[:limit]
+        return scores
 
     async def find_product_driven(
         self,

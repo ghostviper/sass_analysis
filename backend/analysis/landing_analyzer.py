@@ -5,7 +5,7 @@ Landing Page Analyzer - 使用AI分析Landing Page内容
 import logging
 from datetime import datetime
 from typing import Dict, Any, Optional
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.models import Startup, LandingPageSnapshot, LandingPageAnalysis
@@ -131,6 +131,20 @@ class LandingPageAnalyzer:
         await browser.start()
 
         try:
+            # 检查今天是否已有快照
+            today = datetime.utcnow().date()
+            result = await self.db.execute(
+                select(LandingPageSnapshot).where(
+                    LandingPageSnapshot.startup_id == startup.id,
+                    func.date(LandingPageSnapshot.scraped_at) == today
+                )
+            )
+            existing_snapshot = result.scalar_one_or_none()
+            
+            if existing_snapshot and not force_rescrape:
+                logger.info(f"今天已有快照，跳过: {startup.name}")
+                return existing_snapshot
+            
             scraper = LandingPageScraper(browser)
             result = await scraper.scrape_landing_page(
                 startup_id=startup.id,
@@ -138,19 +152,32 @@ class LandingPageAnalyzer:
                 save_snapshot=True
             )
 
-            # 保存快照到数据库
-            snapshot = LandingPageSnapshot(
-                startup_id=startup.id,
-                url=startup.website_url,
-                html_content=result.html_content,
-                raw_text=result.raw_text,
-                snapshot_path=result.snapshot_path,
-                status=result.status,
-                error_message=result.error_message,
-                page_load_time_ms=result.page_load_time_ms,
-                content_length=result.content_length,
-            )
-            self.db.add(snapshot)
+            if existing_snapshot:
+                # 更新现有快照
+                existing_snapshot.html_content = result.html_content
+                existing_snapshot.raw_text = result.raw_text
+                existing_snapshot.snapshot_path = result.snapshot_path
+                existing_snapshot.status = result.status
+                existing_snapshot.error_message = result.error_message
+                existing_snapshot.page_load_time_ms = result.page_load_time_ms
+                existing_snapshot.content_length = result.content_length
+                existing_snapshot.scraped_at = datetime.utcnow()
+                snapshot = existing_snapshot
+            else:
+                # 保存新快照到数据库
+                snapshot = LandingPageSnapshot(
+                    startup_id=startup.id,
+                    url=startup.website_url,
+                    html_content=result.html_content,
+                    raw_text=result.raw_text,
+                    snapshot_path=result.snapshot_path,
+                    status=result.status,
+                    error_message=result.error_message,
+                    page_load_time_ms=result.page_load_time_ms,
+                    content_length=result.content_length,
+                )
+                self.db.add(snapshot)
+            
             await self.db.commit()
             await self.db.refresh(snapshot)
 

@@ -59,6 +59,8 @@ class StreamEvent:
     session_id: str = ""
     checkpoint_id: str = ""  # 新增：checkpoint ID for multi-turn
     timestamp: float = 0.0
+    input_tokens: int = 0  # Token 统计
+    output_tokens: int = 0
 
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization."""
@@ -92,6 +94,10 @@ class StreamEvent:
             result["session_id"] = self.session_id
         if self.checkpoint_id:
             result["checkpoint_id"] = self.checkpoint_id
+        if self.input_tokens > 0:
+            result["input_tokens"] = self.input_tokens
+        if self.output_tokens > 0:
+            result["output_tokens"] = self.output_tokens
         return result
 
 
@@ -417,6 +423,8 @@ class SaaSAnalysisAgent:
         sent_text_length = 0
         sent_thinking_length = 0
         new_session_id = None  # 从 ResultMessage 获取的新 session_id
+        final_input_tokens = 0  # Token 统计
+        final_output_tokens = 0
 
         # 确定是否恢复会话
         resume_session = None
@@ -493,6 +501,8 @@ class SaaSAnalysisAgent:
                                     }
 
                                     if block_type == 'thinking':
+                                        # Reset sent_thinking_length for new thinking block
+                                        sent_thinking_length = 0
                                         # Emit block_start event
                                         yield StreamEvent(
                                             type="block_start",
@@ -503,6 +513,8 @@ class SaaSAnalysisAgent:
                                         )
 
                                     elif block_type == 'text':
+                                        # Reset sent_text_length for new text block to avoid truncation
+                                        sent_text_length = 0
                                         yield StreamEvent(
                                             type="block_start",
                                             layer="primary",
@@ -644,6 +656,7 @@ class SaaSAnalysisAgent:
                                     new_text = block.text[sent_text_length:]
                                     if new_text:
                                         print(f"[DEBUG]   Yielding new text length: {len(new_text)}", flush=True)
+                                        print(f"[DEBUG]   New text preview: {new_text[:100]}..." if len(new_text) > 100 else f"[DEBUG]   New text: {new_text}", flush=True)
                                         yield StreamEvent(
                                             type="block_delta",
                                             layer="primary",
@@ -713,6 +726,20 @@ class SaaSAnalysisAgent:
                         final_cost = getattr(msg, 'total_cost_usd', 0) or 0
                         print(f"[DEBUG] Final cost: {final_cost}", flush=True)
                         
+                        # 获取 token 使用统计
+                        usage = getattr(msg, 'usage', None)
+                        print(f"[DEBUG] Usage raw: {usage}, type: {type(usage)}", flush=True)
+                        if usage:
+                            if isinstance(usage, dict):
+                                final_input_tokens = usage.get('input_tokens', 0) or 0
+                                final_output_tokens = usage.get('output_tokens', 0) or 0
+                            else:
+                                final_input_tokens = getattr(usage, 'input_tokens', 0) or 0
+                                final_output_tokens = getattr(usage, 'output_tokens', 0) or 0
+                            print(f"[DEBUG] Token usage: input={final_input_tokens}, output={final_output_tokens}", flush=True)
+                        else:
+                            print(f"[DEBUG] No usage data in ResultMessage", flush=True)
+                        
                         # 获取 session_id - 这是恢复会话的关键
                         result_session_id = getattr(msg, 'session_id', None)
                         if result_session_id:
@@ -727,13 +754,15 @@ class SaaSAnalysisAgent:
 
                 # 返回最终事件，包含 session_id 用于后续多轮对话
                 final_session_id = new_session_id or session_id or ""
-                print(f"[DEBUG] Final session_id to return: {final_session_id}", flush=True)
+                print(f"[DEBUG] Final: session_id={final_session_id}, input_tokens={final_input_tokens}, output_tokens={final_output_tokens}", flush=True)
                 
                 yield StreamEvent(
                     type="done",
                     layer="primary",
                     cost=final_cost,
                     session_id=final_session_id,
+                    input_tokens=final_input_tokens,
+                    output_tokens=final_output_tokens,
                 )
 
     async def query(

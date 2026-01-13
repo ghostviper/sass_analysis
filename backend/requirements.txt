@@ -24,6 +24,7 @@ lxml==5.3.0
 # AI Services
 claude-agent-sdk
 openai>=1.0.0
+pinecone
 
 # Utilities
 httpx==0.28.1

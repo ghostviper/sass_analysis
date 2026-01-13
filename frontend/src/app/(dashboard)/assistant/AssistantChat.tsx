@@ -604,6 +604,9 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
         serverSessionId,
         (textChunk) => {
           accumulatedText += textChunk
+          console.log('[DEBUG Frontend] Text chunk received:', textChunk.substring(0, 50))
+          console.log('[DEBUG Frontend] Accumulated text length:', accumulatedText.length)
+          console.log('[DEBUG Frontend] Accumulated text preview:', accumulatedText.substring(0, 100))
           setMessages(prev => prev.map(msg => {
             if (msg.id !== aiMessageId) return msg
             const newMsg = { ...msg, content: accumulatedText }
