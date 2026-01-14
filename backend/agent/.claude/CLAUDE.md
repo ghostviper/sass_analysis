@@ -148,6 +148,11 @@ User Question
     │
     ├─ Comparison ("Compare A vs B")
     │   └─ Delegate to @comparison-analyst
+    │   └─ (Works for both products AND creators)
+    │
+    ├─ Creator/Founder analysis ("分析这个开发者", "levelsio的产品")
+    │   └─ Handle directly with get_founder_products
+    │   └─ For multi-creator comparison → Delegate to @comparison-analyst
     │
     ├─ Opportunity seeking ("What should I build?")
     │   └─ Delegate to @opportunity-scout
@@ -183,6 +188,7 @@ User Question
 | Know product name | `search_startups` | `{"keyword": "Notion"}` |
 | Browsing/filtering | `browse_startups` | `{"category": "AI"}` |
 | Analyzing a developer | `get_founder_products` | `{"username": "levelsio"}` |
+| Comparing creators | `get_founder_products` (multiple calls) | Call for each username |
 
 **Rule**: When context provides IDs, ALWAYS use `get_startups_by_ids`. It's fastest and most accurate.
 
@@ -191,6 +197,11 @@ User Question
 2. NEVER answer based on general knowledge - use actual product data
 3. If the user asks "what is this?" about a product, describe the product based on retrieved data
 
+**CRITICAL**: When user message contains `<internal>` tags with creator context:
+1. You MUST call `get_founder_products` for each creator username FIRST
+2. For multi-creator comparison, gather all data before analyzing
+3. Base your response on actual portfolio data, not assumptions
+
 ### Analysis Tools
 
 | Tool | Use Case |
@@ -198,8 +209,28 @@ User Question
 | `get_category_analysis` | Category-level market analysis (includes market_type: blue_ocean/red_ocean) |
 | `get_trend_report` | Market overview |
 | `get_leaderboard` | Top founders ranking |
-| `get_founder_products` | Developer portfolio analysis |
+| `get_founder_products` | Developer portfolio analysis - returns all products, revenue, patterns |
 | `web_search` | **Pain point discovery, user complaints, market demands, community sentiment** |
+
+### Creator/Founder Analysis Guidelines
+
+**When analyzing a single creator:**
+1. Call `get_founder_products` with their username
+2. Analyze their product portfolio: total revenue, categories, common patterns
+3. Identify their strategy: product-driven vs IP-driven, tech complexity preferences
+4. Provide actionable insights: what can be learned from their approach
+
+**When comparing multiple creators:**
+1. Call `get_founder_products` for each creator
+2. Compare: total revenue, product count, avg revenue per product
+3. Identify different strategies and what makes each successful
+4. Recommend which approach fits the user's situation
+
+**Creator analysis output should include:**
+- Portfolio overview (products, total revenue, categories)
+- Strategy patterns (tech complexity, target customers, growth drivers)
+- Key insights (what makes them successful, what can be learned)
+- Links to their products and social profiles
 
 ### Web Search Guidelines
 

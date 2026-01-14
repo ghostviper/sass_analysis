@@ -24,6 +24,7 @@ async def get_founder_leaderboard(
     limit: int = Query(50, ge=1, le=200),
     page: int = Query(1, ge=1),
     min_products: int = Query(1, ge=1),
+    search: Optional[str] = Query(None, description="Search by username or name"),
     db: AsyncSession = Depends(get_db),
 ):
     """
@@ -55,6 +56,14 @@ async def get_founder_leaderboard(
         .group_by(Startup.founder_username)
         .having(func.count(Startup.id) >= min_products)
     )
+
+    # 搜索过滤
+    if search:
+        search_pattern = f"%{search}%"
+        query = query.having(
+            (Startup.founder_username.ilike(search_pattern)) |
+            (func.max(Startup.founder_name).ilike(search_pattern))
+        )
 
     # 计算总数
     count_subquery = query.subquery()

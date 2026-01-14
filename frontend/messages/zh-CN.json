@@ -26,6 +26,8 @@
     "analysisModules": "分析模块",
     "dashboard": "概览",
     "dashboardDesc": "关键指标与榜单",
+    "discover": "发现",
+    "discoverDesc": "AI策展与灵感发现",
     "categories": "赛道",
     "categoriesDesc": "市场机会洞察",
     "products": "产品",
@@ -192,6 +194,19 @@
     "connectionFailed": "连接失败",
     "close": "关闭",
     "refresh": "换一批",
+    "contextSelector": {
+      "title": "关联分析",
+      "products": "产品",
+      "creators": "创作者",
+      "searchProducts": "搜索已有产品...",
+      "searchCreators": "搜索创作者...",
+      "orAddUrl": "或添加外部链接",
+      "add": "添加",
+      "selected": "已选择",
+      "clear": "清空",
+      "clearAll": "清空",
+      "noCreators": "暂无创作者"
+    },
     "modes": {
       "general": "通用分析",
       "generalDesc": "综合性的问题回答和分析",
@@ -402,5 +417,67 @@
     "clear": "清除",
     "apply": "确定",
     "filter": "筛选"
+  },
+  "discover": {
+    "title": "发现",
+    "subtitle": "AI 策展 · 灵感发现 · 机会洞察",
+    "todayCuration": {
+      "title": "今日 AI 策展",
+      "subtitle": "每日精选，发现隐藏的机会",
+      "askAI": "让 AI 帮你分析",
+      "viewAll": "查看全部"
+    },
+    "topics": {
+      "title": "主题合集",
+      "subtitle": "按主题探索产品与创作者",
+      "viewMore": "查看更多",
+      "products": "个产品",
+      "creators": "位创作者"
+    },
+    "breakdown": {
+      "title": "爆款解剖",
+      "subtitle": "深度拆解成功产品的秘密",
+      "readMore": "深度阅读",
+      "timeline": "产品时间线",
+      "keyInsights": "核心洞察",
+      "canYouCopy": "你能复制吗？"
+    },
+    "creatorUniverse": {
+      "title": "创作者宇宙",
+      "subtitle": "发现值得关注的独立开发者",
+      "viewProfile": "查看主页",
+      "products": "产品",
+      "totalMRR": "总月收入"
+    },
+    "forYou": {
+      "title": "为你推荐",
+      "subtitle": "基于你的兴趣，你可能想尝试这些方向",
+      "whyForYou": "为什么适合你",
+      "explore": "深入探索"
+    },
+    "cta": {
+      "askAI": "问 AI 更多",
+      "canICopy": "我能做类似的吗？",
+      "findSimilar": "帮我找类似的",
+      "deepDive": "深入分析"
+    },
+    "tags": {
+      "underrated": "被低估的赚钱机器",
+      "soloMaintain": "一个人也能维护",
+      "smallButProfitable": "看起来很小，但复购很高",
+      "noFunding": "没有融资，但活得很好",
+      "ignoredByBigCo": "被大厂忽视的角落需求",
+      "quietEarner": "不爱写推特，但很会赚钱",
+      "productOverPerson": "产品比人火",
+      "fewLaunches": "一年只发布 2 个产品",
+      "tutorialToSaas": "靠教程起家，靠 SaaS 变现",
+      "uglyButProfitable": "没有官网设计感，但 MRR 超过 $10k",
+      "notAI": "不是 AI，但活得很好",
+      "boringNeed": "靠一个很无聊的需求赚到了钱"
+    },
+    "empty": {
+      "title": "暂无内容",
+      "description": "AI 正在为你策展精彩内容，敬请期待"
+    }
   }
 }

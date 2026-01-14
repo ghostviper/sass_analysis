@@ -26,6 +26,8 @@
     "analysisModules": "Analytics",
     "dashboard": "Overview",
     "dashboardDesc": "Key metrics & rankings",
+    "discover": "Discover",
+    "discoverDesc": "AI curation & inspiration",
     "categories": "Categories",
     "categoriesDesc": "Market opportunities",
     "products": "Products",
@@ -191,6 +193,19 @@
     "connectionFailed": "Connection failed",
     "close": "Close",
     "refresh": "Refresh",
+    "contextSelector": {
+      "title": "Context Analysis",
+      "products": "Products",
+      "creators": "Creators",
+      "searchProducts": "Search existing products...",
+      "searchCreators": "Search creators...",
+      "orAddUrl": "or add external link",
+      "add": "Add",
+      "selected": "Selected",
+      "clear": "Clear",
+      "clearAll": "Clear all",
+      "noCreators": "No creators"
+    },
     "modes": {
       "general": "General Analysis",
       "generalDesc": "Comprehensive Q&A and analysis",
@@ -401,5 +416,67 @@
     "clear": "Clear",
     "apply": "Apply",
     "filter": "Filter"
+  },
+  "discover": {
+    "title": "Discover",
+    "subtitle": "AI Curation · Inspiration · Opportunity Insights",
+    "todayCuration": {
+      "title": "Today's AI Curation",
+      "subtitle": "Daily picks, discover hidden opportunities",
+      "askAI": "Ask AI to analyze",
+      "viewAll": "View all"
+    },
+    "topics": {
+      "title": "Topic Collections",
+      "subtitle": "Explore products and creators by theme",
+      "viewMore": "View more",
+      "products": "products",
+      "creators": "creators"
+    },
+    "breakdown": {
+      "title": "Success Breakdown",
+      "subtitle": "Deep dive into successful products",
+      "readMore": "Read more",
+      "timeline": "Product Timeline",
+      "keyInsights": "Key Insights",
+      "canYouCopy": "Can you replicate?"
+    },
+    "creatorUniverse": {
+      "title": "Creator Universe",
+      "subtitle": "Discover indie hackers worth following",
+      "viewProfile": "View profile",
+      "products": "Products",
+      "totalMRR": "Total MRR"
+    },
+    "forYou": {
+      "title": "For You",
+      "subtitle": "Based on your interests, you might want to try these",
+      "whyForYou": "Why it's for you",
+      "explore": "Explore"
+    },
+    "cta": {
+      "askAI": "Ask AI more",
+      "canICopy": "Can I build something similar?",
+      "findSimilar": "Find similar ones",
+      "deepDive": "Deep dive"
+    },
+    "tags": {
+      "underrated": "Underrated money makers",
+      "soloMaintain": "Solo maintainable",
+      "smallButProfitable": "Small but high retention",
+      "noFunding": "No funding, thriving",
+      "ignoredByBigCo": "Ignored by big tech",
+      "quietEarner": "Quiet earners",
+      "productOverPerson": "Product > Person fame",
+      "fewLaunches": "Few launches per year",
+      "tutorialToSaas": "Tutorial to SaaS",
+      "uglyButProfitable": "No design, $10k+ MRR",
+      "notAI": "Not AI, still thriving",
+      "boringNeed": "Boring need, real money"
+    },
+    "empty": {
+      "title": "No content yet",
+      "description": "AI is curating amazing content for you, stay tuned"
+    }
   }
 }

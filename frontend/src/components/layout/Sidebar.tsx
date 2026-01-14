@@ -20,6 +20,7 @@ import {
   PanelLeftClose,
   PanelLeft,
   LogIn,
+  Compass,
 } from 'lucide-react'
 import { useSidebar } from '@/contexts/SidebarContext'
 import { useLocale } from '@/contexts/LocaleContext'
@@ -53,6 +54,7 @@ export function Sidebar() {
 
   const navigation = [
     { name: t('nav.dashboard'), href: '/', icon: LayoutDashboard },
+    { name: t('nav.discover'), href: '/discover', icon: Compass, isNew: true },
     { name: t('nav.categories'), href: '/categories', icon: Layers },
     { name: t('nav.products'), href: '/products', icon: Package },
     { name: t('nav.leaderboard'), href: '/leaderboard', icon: Trophy },
@@ -179,6 +181,11 @@ export function Sidebar() {
                 >
                   {item.name}
                 </span>
+                {item.isNew && !showCollapsed && (
+                  <span className="px-1.5 py-0.5 text-[10px] font-semibold rounded bg-brand-500/15 text-brand-600 dark:text-brand-400">
+                    NEW
+                  </span>
+                )}
 
                 {showCollapsed && (
                   <div className="absolute left-full ml-2 hidden group-hover:block z-50">

@@ -603,25 +603,25 @@
   }
 
   [data-streamdown="heading-1"] {
-    @apply text-lg font-display font-bold tracking-tight text-content-primary mt-4 mb-2;
+    @apply text-lg font-display font-bold tracking-tight text-content-primary mt-3 mb-1.5;
   }
 
   [data-streamdown="heading-2"] {
-    @apply text-base font-display font-bold tracking-tight text-content-primary mt-3.5 mb-1.5;
+    @apply text-base font-display font-bold tracking-tight text-content-primary mt-2.5 mb-1;
   }
 
   [data-streamdown="heading-3"] {
-    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-3 mb-1;
+    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-2 mb-0.5;
   }
 
   [data-streamdown="heading-4"],
   [data-streamdown="heading-5"],
   [data-streamdown="heading-6"] {
-    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-2.5 mb-1;
+    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-2 mb-0.5;
   }
 
   [data-streamdown="paragraph"] {
-    @apply text-[0.9375rem] leading-[1.7] text-content-secondary my-1.5;
+    @apply text-[0.9375rem] leading-[1.55] text-content-secondary my-1;
   }
 
   /* 首个段落不需要上边距 */
@@ -648,7 +648,7 @@
 
   [data-streamdown="ordered-list"],
   [data-streamdown="unordered-list"] {
-    @apply my-1.5 ml-5 text-[0.9375rem] leading-[1.7] text-content-secondary;
+    @apply my-1 ml-5 text-[0.9375rem] leading-[1.55] text-content-secondary;
   }
 
   [data-streamdown="ordered-list"] {
@@ -714,7 +714,7 @@
   }
 
   [data-streamdown="blockquote"] {
-    @apply border-l-2 border-brand-500/40 pl-3 my-2 text-content-tertiary italic text-[0.9375rem] leading-[1.7];
+    @apply border-l-2 border-brand-500/40 pl-3 my-1.5 text-content-tertiary italic text-[0.9375rem] leading-[1.55];
   }
 
   [data-streamdown="horizontal-rule"] {
@@ -761,7 +761,7 @@
   }
 
   [data-chat-block="text"] {
-    @apply text-content-secondary text-[0.9375rem] leading-[1.65];
+    @apply text-content-secondary text-[0.9375rem] leading-[1.5];
   }
 
   [data-chat-block="separator"] {

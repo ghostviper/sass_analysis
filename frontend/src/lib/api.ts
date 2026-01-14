@@ -259,7 +259,9 @@ export async function getFounderLeaderboard(params?: {
   sort_order?: 'asc' | 'desc'
   limit?: number
   page?: number
+  page_size?: number
   min_products?: number
+  search?: string
 }): Promise<{
   items: FounderLeaderboardItem[]
   total: number
@@ -269,8 +271,10 @@ export async function getFounderLeaderboard(params?: {
   if (params?.sort_by) searchParams.set('sort_by', params.sort_by)
   if (params?.sort_order) searchParams.set('sort_order', params.sort_order)
   if (params?.limit) searchParams.set('limit', params.limit.toString())
+  if (params?.page_size) searchParams.set('limit', params.page_size.toString())
   if (params?.page) searchParams.set('page', params.page.toString())
   if (params?.min_products) searchParams.set('min_products', params.min_products.toString())
+  if (params?.search) searchParams.set('search', params.search)
 
   const query = searchParams.toString()
   const response = await fetchApi<{

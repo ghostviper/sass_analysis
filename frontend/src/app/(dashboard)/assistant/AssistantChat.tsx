@@ -19,12 +19,14 @@ import {
   Trash2,
   MessageSquare,
   Square,
+  User,
 } from 'lucide-react'
 import { ChatMessage, MessageRole } from '@/components/assistant/ChatMessage'
 import { SuggestedPrompts } from '@/components/assistant/SuggestedPrompts'
-import { getStartups, getChatSessions, getChatSession, deleteChatSession } from '@/lib/api'
+import { ContextSelector, SelectedItem } from '@/components/assistant/ContextSelector'
+import { getStartups, getChatSessions, getChatSession, deleteChatSession, getFounderLeaderboard } from '@/lib/api'
 import type { Startup } from '@/types'
-import type { ChatSessionListItem, ChatMessageItem } from '@/lib/api'
+import type { ChatSessionListItem, ChatMessageItem, FounderLeaderboardItem } from '@/lib/api'
 import { useLocale } from '@/contexts/LocaleContext'
 import { saveCurrentSession, getLastSession } from '@/lib/sessionStorage'
 
@@ -173,33 +175,33 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
   // 中断控制
   const abortControllerRef = useRef<AbortController | null>(null)
 
-  // 上下文相关
+  // 上下文相关 - 旧变量保留用于兼容
   const [showContextMenu, setShowContextMenu] = useState(false)
   const [contextType, setContextType] = useState<'database' | 'url' | null>(initialData?.contextType || null)
-  const [selectedProducts, setSelectedProducts] = useState<Startup[]>([])
   const [urlInput, setUrlInput] = useState(initialData?.contextType === 'url' ? initialData.contextValue || '' : '')
 
-  // 联网搜索
-  const [enableWebSearch, setEnableWebSearch] = useState(false)
+  // 关联分析 - 新的统一状态
+  const [selectedItems, setSelectedItems] = useState<SelectedItem[]>([])
 
   // 产品搜索
   const [products, setProducts] = useState<Startup[]>([])
   const [productSearch, setProductSearch] = useState('')
   const [isSearching, setIsSearching] = useState(false)
 
-  const selectedProduct = selectedProducts.length > 0 ? selectedProducts[0] : null
-  const setSelectedProduct = (product: Startup | null) => {
-    if (product) {
-      setSelectedProducts([product])
-    } else {
-      setSelectedProducts([])
-    }
-  }
+  // 创作者搜索
+  const [creators, setCreators] = useState<Array<{
+    id: number
+    username: string
+    display_name?: string
+    avatar_url?: string
+    total_revenue?: number
+    product_count?: number
+  }>>([])
+  const [isSearchingCreators, setIsSearchingCreators] = useState(false)
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const messagesContainerRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
-  const contextMenuRef = useRef<HTMLDivElement>(null)
   const historyMenuRef = useRef<HTMLDivElement>(null)
 
   const currentSession = sessions.find(s => s.id === currentSessionId)
@@ -212,9 +214,6 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
   // 点击外部关闭菜单
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (contextMenuRef.current && !contextMenuRef.current.contains(e.target as Node)) {
-        setShowContextMenu(false)
-      }
       if (historyMenuRef.current && !historyMenuRef.current.contains(e.target as Node)) {
         setShowHistory(false)
       }
@@ -240,9 +239,54 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
     loadSessions()
   }, [loadSessions])
 
-  // 搜索产品
+  // 初始加载产品列表
   useEffect(() => {
-    if (contextType !== 'database' || !showContextMenu) return
+    const loadInitialProducts = async () => {
+      setIsSearching(true)
+      try {
+        const data = await getStartups({
+          page: 1,
+          page_size: 8,
+        })
+        setProducts(data.items)
+      } catch (error) {
+        console.error('Failed to load products:', error)
+      } finally {
+        setIsSearching(false)
+      }
+    }
+    loadInitialProducts()
+  }, [])
+
+  // 初始加载创作者列表
+  useEffect(() => {
+    const loadInitialCreators = async () => {
+      setIsSearchingCreators(true)
+      try {
+        const data = await getFounderLeaderboard({ page_size: 8 })
+        if (data.items && data.items.length > 0) {
+          setCreators(data.items.map((f) => ({
+            id: f.rank,
+            username: f.username,
+            display_name: f.name,
+            avatar_url: f.avatar_url || undefined,
+            total_revenue: f.total_revenue,
+            product_count: f.product_count,
+          })))
+        }
+      } catch (error) {
+        console.error('Failed to load creators:', error)
+      } finally {
+        setIsSearchingCreators(false)
+      }
+    }
+    loadInitialCreators()
+  }, [])
+
+  // 搜索产品 - 由 productSearch 变化触发
+  useEffect(() => {
+    // 跳过初始空值
+    if (productSearch === '') return
 
     const search = async () => {
       setIsSearching(true)
@@ -250,7 +294,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
         const data = await getStartups({
           page: 1,
           page_size: 8,
-          search: productSearch || undefined,
+          search: productSearch,
         })
         setProducts(data.items)
       } catch (error) {
@@ -262,7 +306,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
 
     const debounce = setTimeout(search, 300)
     return () => clearTimeout(debounce)
-  }, [productSearch, contextType, showContextMenu])
+  }, [productSearch])
 
   // 滚动到底部
   const scrollToBottom = useCallback(() => {
@@ -311,6 +355,28 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
   ): Promise<void> => {
     const activeBlocks: Map<string, { type: string; content: string }> = new Map()
 
+    // 构建 context - 基于新的 selectedItems
+    const buildContext = () => {
+      if (selectedItems.length === 0) return undefined
+      
+      const productItems = selectedItems.filter(item => item.type === 'product')
+      const urlItems = selectedItems.filter(item => item.type === 'url')
+      const creatorItems = selectedItems.filter(item => item.type === 'creator')
+      
+      return {
+        type: 'analysis' as const,
+        products: productItems.map(item => {
+          const product = item.data as Startup
+          return { id: product.id, name: product.name, slug: product.slug }
+        }),
+        urls: urlItems.map(item => item.data as string),
+        creators: creatorItems.map(item => {
+          const creator = item.data as { id: number; username: string; display_name?: string }
+          return { id: creator.id, username: creator.username, display_name: creator.display_name }
+        }),
+      }
+    }
+
     try {
       const response = await fetch('/api/chat/stream', {
         method: 'POST',
@@ -318,16 +384,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
         body: JSON.stringify({
           message: userMessage,
           session_id: sessionId,
-          enable_web_search: enableWebSearch,
-          context: contextType ? {
-            type: contextType,
-            value: contextType === 'database' ? selectedProduct?.name : urlInput,
-            products: contextType === 'database' ? selectedProducts.map(p => ({
-              id: p.id,
-              name: p.name,
-              slug: p.slug
-            })) : undefined
-          } : undefined
+          context: buildContext()
         }),
         signal
       })
@@ -464,7 +521,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
     setServerSessionId(null)
     setMessages([])
     setContextType(null)
-    setSelectedProduct(null)
+    setSelectedItems([])
     setUrlInput('')
     setShowHistory(false)
     // 导航到新会话页面
@@ -533,6 +590,13 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
     const text = messageText || input.trim()
     if (!text || isLoading) return
 
+    // 构建 context 描述
+    const getContextDescription = () => {
+      if (selectedItems.length === 0) return null
+      const names = selectedItems.map(item => item.name).join(', ')
+      return names
+    }
+
     // 如果没有当前会话，创建一个新的（临时 ID，后端会返回真实 ID）
     let sessionId = currentSessionId
     if (!sessionId) {
@@ -542,8 +606,8 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
         title: text.slice(0, 20) + (text.length > 20 ? '...' : ''),
         messages: [],
         context: {
-          type: contextType,
-          value: contextType === 'database' ? selectedProduct?.name || null : urlInput || null
+          type: selectedItems.length > 0 ? 'database' : null,
+          value: getContextDescription()
         },
         createdAt: new Date(),
         updatedAt: new Date(),
@@ -558,9 +622,9 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
       role: 'user',
       content: text,
       timestamp: new Date(),
-      context: contextType ? {
-        type: contextType === 'database' ? 'product' : 'url',
-        value: contextType === 'database' ? selectedProduct?.name || undefined : urlInput || undefined
+      context: selectedItems.length > 0 ? {
+        type: 'product',
+        value: getContextDescription() || undefined
       } : undefined
     }
 
@@ -743,26 +807,33 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
     }
   }
 
-  const selectProduct = (product: Startup) => {
-    setSelectedProducts(prev => {
-      const isSelected = prev.some(p => p.id === product.id)
-      if (isSelected) {
-        return prev.filter(p => p.id !== product.id)
+  // 创作者搜索处理
+  const handleCreatorSearch = useCallback(async (query: string) => {
+    setIsSearchingCreators(true)
+    try {
+      const data = await getFounderLeaderboard({ 
+        search: query.trim() || undefined, 
+        page_size: 8 
+      })
+      if (data.items && data.items.length > 0) {
+        setCreators(data.items.map((f) => ({
+          id: f.rank,
+          username: f.username,
+          display_name: f.name,
+          avatar_url: f.avatar_url || undefined,
+          total_revenue: f.total_revenue,
+          product_count: f.product_count,
+        })))
       } else {
-        return [...prev, product]
+        setCreators([])
       }
-    })
-  }
-
-  const toggleWebSearch = () => {
-    setEnableWebSearch(prev => !prev)
-  }
-
-  const confirmUrl = () => {
-    if (urlInput.trim()) {
-      setShowContextMenu(false)
+    } catch (error) {
+      console.error('Failed to search creators:', error)
+      setCreators([])
+    } finally {
+      setIsSearchingCreators(false)
     }
-  }
+  }, [])
 
   const handleSuggestedPrompt = (prompt: string) => {
     setInput(prompt)
@@ -781,7 +852,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
   }
 
   const hasMessages = messages.length > 0
-  const hasContext = (contextType === 'database' && selectedProduct) || (contextType === 'url' && urlInput)
+  const hasContext = selectedItems.length > 0
 
   const allSessions = [
     ...sessions,
@@ -875,74 +946,17 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
                     </div>
 
                     <div className="flex items-center gap-2.5 px-5 pb-4">
-                      <button onClick={toggleWebSearch} className={cn('inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200', enableWebSearch ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400 ring-1 ring-brand-500/20' : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50')}>
-                        <Globe className="h-3 w-3" />
-                        {t('assistant.webSearch')}
-                      </button>
-
-                      <div className="relative" ref={contextMenuRef}>
-                        <button onClick={() => { setShowContextMenu(!showContextMenu); if (!contextType) setContextType('database') }} className={cn('relative inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200', hasContext ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-500/20' : 'text-content-muted hover:text-content-secondary hover:bg-surface-hover/50')}>
-                          <Link2 className="h-3 w-3" />
-                          {hasContext ? (contextType === 'database' ? (selectedProducts.length > 1 ? t('assistant.selectedProducts').replace('{count}', String(selectedProducts.length)) : selectedProduct?.name) : t('assistant.addedLink')) : t('assistant.linkProduct')}
-                          <ChevronDown className={cn('h-2 w-2 transition-transform duration-200', showContextMenu && 'rotate-180')} />
-                          {hasContext && (
-                            <span onClick={(e) => { e.stopPropagation(); setSelectedProducts([]); setUrlInput(''); setContextType(null) }} className="absolute -top-1.5 -right-1.5 w-4 h-4 flex items-center justify-center bg-content-muted hover:bg-content-secondary text-white rounded-full cursor-pointer transition-colors" title={t('assistant.cancelLink')}>
-                              <X className="h-2 w-2" />
-                            </span>
-                          )}
-                        </button>
-
-                        {showContextMenu && (
-                          <div className="absolute left-0 top-full mt-2 w-72 bg-background/95 backdrop-blur-xl border border-surface-border/80 rounded-xl shadow-xl z-50 overflow-hidden">
-                            <div className="flex gap-1 p-2 border-b border-surface-border/50">
-                              <button onClick={() => setContextType('database')} className={cn('flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all', contextType === 'database' ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400' : 'text-content-muted hover:bg-surface/60')}>
-                                <Database className="h-3 w-3" />
-                                {t('assistant.existingProducts')}
-                              </button>
-                              <button onClick={() => setContextType('url')} className={cn('flex-1 flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg text-xs font-semibold transition-all', contextType === 'url' ? 'bg-brand-500/10 text-brand-600 dark:text-brand-400' : 'text-content-muted hover:bg-surface/60')}>
-                                <Globe className="h-3 w-3" />
-                                {t('assistant.externalLink')}
-                              </button>
-                            </div>
-                            <div className="p-2.5">
-                              {contextType === 'database' && (
-                                <div>
-                                  <div className="relative mb-2.5">
-                                    {isSearching ? <Loader2 className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-brand-500 animate-spin" /> : <Search className="absolute left-2.5 top-1/2 -translate-y-1/2 h-3 w-3 text-content-muted" />}
-                                    <input type="text" value={productSearch} onChange={(e) => setProductSearch(e.target.value)} placeholder={t('assistant.searchProducts')} className="w-full pl-8 pr-3 py-2 bg-surface/60 rounded-lg text-sm font-medium focus:outline-none focus:ring-1 focus:ring-brand-500/30 placeholder:text-content-muted/60" />
-                                  </div>
-                                  <div className="max-h-48 overflow-y-auto space-y-0.5">
-                                    {products.length > 0 ? products.map((product) => {
-                                      const isSelected = selectedProducts.some(p => p.id === product.id)
-                                      return (
-                                        <button key={product.id} onClick={() => selectProduct(product)} className={cn('w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all', isSelected ? 'bg-brand-500/10' : 'hover:bg-surface/60')}>
-                                          <div className="w-8 h-8 rounded-lg bg-surface/60 flex items-center justify-center flex-shrink-0 overflow-hidden">
-                                            {product.logo_url ? <img src={product.logo_url} alt={product.name} className="w-full h-full object-cover" onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden') }} /> : null}
-                                            <span className={cn('text-xs font-semibold text-content-muted', product.logo_url && 'hidden')}>{product.name.slice(0, 2).toUpperCase()}</span>
-                                          </div>
-                                          <span className={cn('flex-1 text-sm truncate', isSelected ? 'text-content-primary font-semibold' : 'text-content-primary font-medium')}>{product.name}</span>
-                                          <div className={cn('w-4 h-4 rounded border-2 flex items-center justify-center transition-all flex-shrink-0', isSelected ? 'bg-brand-500 border-brand-500' : 'border-content-muted/30')}>
-                                            {isSelected && <Check className="h-2.5 w-2.5 text-white" />}
-                                          </div>
-                                        </button>
-                                      )
-                                    }) : <p className="text-xs text-content-muted text-center py-3 font-medium">{isSearching ? t('assistant.searching') : t('assistant.noProducts')}</p>}
-                                  </div>
-                                </div>
-                              )}
-                              {contextType === 'url' && (
-                                <div>
-                                  <p className="text-xs text-content-muted mb-2.5 font-medium">{t('assistant.enterUrl')}</p>
-                                  <div className="flex gap-2">
-                                    <input type="url" value={urlInput} onChange={(e) => setUrlInput(e.target.value)} placeholder="https://..." className="flex-1 px-3 py-2 bg-surface/60 rounded-lg text-sm font-medium focus:outline-none focus:ring-1 focus:ring-brand-500/30 placeholder:text-content-muted/60" />
-                                    <button onClick={confirmUrl} disabled={!urlInput.trim()} className={cn('px-4 py-2 rounded-lg text-sm font-semibold transition-all', urlInput.trim() ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700' : 'bg-surface/60 text-content-muted')}>{t('assistant.confirm')}</button>
-                                  </div>
-                                </div>
-                              )}
-                            </div>
-                          </div>
-                        )}
-                      </div>
+                      <ContextSelector
+                        selectedItems={selectedItems}
+                        onItemsChange={setSelectedItems}
+                        products={products}
+                        onProductSearch={setProductSearch}
+                        isSearchingProducts={isSearching}
+                        creators={creators}
+                        onCreatorSearch={handleCreatorSearch}
+                        isSearchingCreators={isSearchingCreators}
+                        maxItems={5}
+                      />
                     </div>
                   </div>
                   <p className="text-xs text-content-muted/70 mt-2.5 text-center font-medium tracking-wide">{t('assistant.sendTip')}</p>
@@ -1000,13 +1014,23 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
                 </div>
 
                 <div className="h-4 w-px bg-surface-border/60" />
-                <div className="flex items-center gap-2">
-                  {hasContext && (
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-1 ring-emerald-500/20">
-                      {contextType === 'database' ? <Database className="h-3 w-3" /> : <Globe className="h-3 w-3" />}
-                      {contextType === 'database' ? selectedProduct?.name : t('assistant.externalLink')}
+                <div className="flex items-center gap-2 flex-wrap">
+                  {selectedItems.map((item) => (
+                    <span
+                      key={item.id}
+                      className={cn(
+                        'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-semibold ring-1',
+                        item.type === 'product' && 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 ring-emerald-500/20',
+                        item.type === 'url' && 'bg-amber-500/10 text-amber-600 dark:text-amber-400 ring-amber-500/20',
+                        item.type === 'creator' && 'bg-blue-500/10 text-blue-600 dark:text-blue-400 ring-blue-500/20'
+                      )}
+                    >
+                      {item.type === 'product' && <Database className="h-3 w-3" />}
+                      {item.type === 'url' && <Globe className="h-3 w-3" />}
+                      {item.type === 'creator' && <User className="h-3 w-3" />}
+                      <span className="max-w-[100px] truncate">{item.name}</span>
                     </span>
-                  )}
+                  ))}
                 </div>
               </div>
               <button onClick={createNewSession} className="flex items-center gap-1.5 px-3 py-2 rounded-xl text-sm text-content-secondary hover:bg-surface/60 hover:text-content-primary transition-all duration-200">

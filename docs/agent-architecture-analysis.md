@@ -161,7 +161,7 @@
 | 子代理 | 用途 | 可用工具 |
 |--------|------|----------|
 | `product-researcher` | 数据收集 | get_startups_by_ids, search_startups, get_category_analysis |
-| `comparison-analyst` | 产品对比 | get_startups_by_ids, search_startups, get_category_analysis |
+| `comparison-analyst` | 产品/创作者对比 | get_startups_by_ids, search_startups, get_category_analysis, get_founder_products |
 | `opportunity-scout` | 机会发现 | browse_startups, get_category_analysis, get_trend_report |
 | `demand-researcher` | 痛点/需求发现 | web_search |
 
@@ -187,8 +187,12 @@
     ├─ 用户迷茫 ("我不知道做什么")
     │   └─ 激活 indie-dev-advisor Skill
     │
-    ├─ 复杂分析 ("对比 A 和 B")
+    ├─ 产品对比 ("对比 A 和 B")
     │   └─ 委托给 @comparison-analyst
+    │
+    ├─ 创作者分析 ("分析这个开发者", "levelsio的产品")
+    │   └─ 直接用 get_founder_products
+    │   └─ 多创作者对比 → 委托给 @comparison-analyst
     │
     └─ 机会发现 ("有什么蓝海机会?")
         └─ 委托给 @opportunity-scout
