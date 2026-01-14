@@ -75,10 +75,14 @@ export function useAuth() {
 
   // 登出
   const logout = useCallback(async () => {
-    await apiSignOut();
+    // 立即清除用户状态并跳转，不等待 API 响应
     setUser(null);
     router.push("/auth/sign-in");
-    router.refresh();
+    
+    // API 调用在后台进行，不阻塞 UI
+    apiSignOut().catch(() => {
+      // 忽略错误，用户已经被登出
+    });
   }, [router]);
 
   // 跳转到登录页
