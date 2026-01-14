@@ -440,8 +440,10 @@ class ChatHistoryService:
         Returns:
             会话对象
         """
+        print(f"[ChatHistory] ensure_session_exists: session_id={session_id}, user_id={user_id}")
         session = await ChatHistoryService.get_session(session_id)
         if not session:
+            print(f"[ChatHistory] Creating new session with user_id={user_id}")
             session = await ChatHistoryService.create_session(
                 session_id=session_id,
                 user_id=user_id,
@@ -450,9 +452,12 @@ class ChatHistoryService:
             )
         else:
             # 会话已存在，更新缺失的字段
+            print(f"[ChatHistory] Session exists, current user_id={session.user_id}, new user_id={user_id}")
             update_data = {}
+            # 如果传入了 user_id 且会话没有 user_id，则更新
             if user_id and not session.user_id:
                 update_data["user_id"] = user_id
+                print(f"[ChatHistory] Will update user_id to {user_id}")
             if context:
                 if context.get("type") and not session.context_type:
                     update_data["context_type"] = context.get("type")
@@ -462,6 +467,7 @@ class ChatHistoryService:
                     update_data["context_products"] = context.get("products")
             
             if update_data:
+                print(f"[ChatHistory] Updating session with: {update_data}")
                 await ChatHistoryService.update_session(session_id, **update_data)
                 # 重新获取更新后的会话
                 session = await ChatHistoryService.get_session(session_id)

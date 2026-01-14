@@ -831,3 +831,119 @@ class ChatMessage(Base):
             "checkpoint_id": self.checkpoint_id,
             "created_at": self.created_at.isoformat() if self.created_at else None,
         }
+
+
+# ============================================================================
+# Product Hunt Data Models
+# ============================================================================
+
+class ProductHuntPost(Base):
+    """
+    Product Hunt 产品数据表
+    
+    独立存储 PH 数据，与 Startup 表分离。
+    后续可通过 name/url 匹配关联。
+    """
+    __tablename__ = "producthunt_posts"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    
+    # Product Hunt 原始 ID 和标识
+    ph_id = Column(String(50), unique=True, nullable=False, index=True)  # PH 的 ID
+    slug = Column(String(255), unique=True, nullable=False, index=True)
+    name = Column(String(255), nullable=False, index=True)
+    tagline = Column(String(500), nullable=True)
+    description = Column(Text, nullable=True)
+    
+    # URLs
+    url = Column(String(512), nullable=True)  # PH 跟踪链接（带 utm 参数）
+    website = Column(String(512), nullable=True)  # PH 返回的 website（可能是重定向链接）
+    website_resolved = Column(String(512), nullable=True)  # 解析后的真实官网地址
+    ph_url = Column(String(512), nullable=True)  # PH 页面链接
+    thumbnail_url = Column(String(512), nullable=True)
+    
+    # 互动指标（核心数据）
+    votes_count = Column(Integer, default=0, index=True)  # 点赞数
+    comments_count = Column(Integer, default=0)  # 评论数
+    reviews_count = Column(Integer, default=0)  # 评价数
+    reviews_rating = Column(Float, nullable=True)  # 评分
+    
+    # 时间信息
+    featured_at = Column(DateTime, nullable=True, index=True)  # 上榜时间
+    ph_created_at = Column(DateTime, nullable=True)  # PH 上创建时间
+    
+    # 分类信息（JSON 存储多个 topic）
+    topics = Column(Text, nullable=True)  # JSON string: [{"id": "xxx", "name": "AI", "slug": "ai"}, ...]
+    
+    # Makers 信息（JSON 存储）
+    makers = Column(Text, nullable=True)  # JSON string: [{"id": "xxx", "name": "John", "username": "john"}, ...]
+    
+    # 创建者信息（JSON 存储）
+    user = Column(Text, nullable=True)  # JSON string: {"id": "xxx", "name": "John", "username": "john", "headline": "..."}
+    
+    # 媒体资源（JSON 存储）
+    media = Column(Text, nullable=True)  # JSON string: [{"url": "xxx", "type": "image"}, ...]
+    product_links = Column(Text, nullable=True)  # JSON string: [{"url": "xxx"}, ...]
+    
+    # 关联字段（可选，用于与 Startup 表关联）
+    matched_startup_id = Column(Integer, ForeignKey("startups.id", ondelete="SET NULL"), nullable=True, index=True)
+    match_confidence = Column(Float, nullable=True)  # 匹配置信度 0-1
+    
+    # 元数据
+    raw_data = Column(Text, nullable=True)  # 原始 API 响应 (JSON string)
+    synced_at = Column(DateTime, default=datetime.utcnow, index=True)  # 同步时间
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    def __repr__(self):
+        return f"<ProductHuntPost(name='{self.name}', votes={self.votes_count})>"
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "ph_id": self.ph_id,
+            "slug": self.slug,
+            "name": self.name,
+            "tagline": self.tagline,
+            "description": self.description,
+            "url": self.url,
+            "website": self.website,
+            "website_resolved": self.website_resolved,
+            "ph_url": self.ph_url,
+            "thumbnail_url": self.thumbnail_url,
+            "votes_count": self.votes_count,
+            "comments_count": self.comments_count,
+            "reviews_count": self.reviews_count,
+            "reviews_rating": self.reviews_rating,
+            "featured_at": self.featured_at.isoformat() if self.featured_at else None,
+            "ph_created_at": self.ph_created_at.isoformat() if self.ph_created_at else None,
+            "topics": self.topics,
+            "makers": self.makers,
+            "user": self.user,
+            "media": self.media,
+            "product_links": self.product_links,
+            "matched_startup_id": self.matched_startup_id,
+            "match_confidence": self.match_confidence,
+            "synced_at": self.synced_at.isoformat() if self.synced_at else None,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+        }
+    
+    def to_list_dict(self):
+        """列表展示用的精简字典"""
+        return {
+            "id": self.id,
+            "ph_id": self.ph_id,
+            "slug": self.slug,
+            "name": self.name,
+            "tagline": self.tagline,
+            "url": self.url,
+            "website": self.website,
+            "ph_url": self.ph_url,
+            "thumbnail_url": self.thumbnail_url,
+            "votes_count": self.votes_count,
+            "comments_count": self.comments_count,
+            "featured_at": self.featured_at.isoformat() if self.featured_at else None,
+            "topics": self.topics,
+            "matched_startup_id": self.matched_startup_id,
+        }

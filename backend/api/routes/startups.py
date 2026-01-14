@@ -146,15 +146,39 @@ async def get_startups(
     total = total_result.scalar() or 0
 
     # Apply sorting
+    # 优先显示有收入的产品，NULL 和 0 收入的排在后面
     if sort_by == "individual_dev_suitability":
         sort_column = ProductSelectionAnalysis.individual_dev_suitability
+        # 对于适合度排序，NULL 值排在最后
+        if sort_order == "desc":
+            query = query.order_by(
+                sort_column.is_(None).asc(),  # 非 NULL 优先
+                desc(sort_column)
+            )
+        else:
+            query = query.order_by(
+                sort_column.is_(None).asc(),
+                asc(sort_column)
+            )
+    elif sort_by == "revenue_30d":
+        # 收入排序：有收入的优先，NULL 和 0 排在最后
+        if sort_order == "desc":
+            query = query.order_by(
+                # 先按是否有有效收入排序（有收入的排前面）
+                (Startup.revenue_30d.is_(None) | (Startup.revenue_30d == 0)).asc(),
+                desc(Startup.revenue_30d)
+            )
+        else:
+            query = query.order_by(
+                (Startup.revenue_30d.is_(None) | (Startup.revenue_30d == 0)).asc(),
+                asc(Startup.revenue_30d)
+            )
     else:
         sort_column = getattr(Startup, sort_by)
-
-    if sort_order == "desc":
-        query = query.order_by(desc(sort_column))
-    else:
-        query = query.order_by(asc(sort_column))
+        if sort_order == "desc":
+            query = query.order_by(desc(sort_column))
+        else:
+            query = query.order_by(asc(sort_column))
 
     # Apply pagination
     offset = (page - 1) * limit

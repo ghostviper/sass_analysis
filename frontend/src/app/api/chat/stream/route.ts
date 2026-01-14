@@ -9,12 +9,21 @@ export async function POST(request: NextRequest) {
     // 代理到后端的流式端点
     const backendUrl = process.env.BACKEND_URL || 'http://127.0.0.1:8001'
     
+    // 获取 auth_token cookie 并传递给后端
+    const authToken = request.cookies.get('auth_token')?.value
+    const headers: HeadersInit = {
+      'Content-Type': 'application/json',
+      'Accept': 'text/event-stream',
+    }
+    
+    // 如果有 auth_token，传递给后端
+    if (authToken) {
+      headers['Cookie'] = `auth_token=${authToken}`
+    }
+    
     const response = await fetch(`${backendUrl}/api/chat/stream`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'text/event-stream',
-      },
+      headers,
       body: JSON.stringify(body),
       // @ts-expect-error - Cloudflare Workers / Edge Runtime 支持
       cf: { cacheTtl: 0 },

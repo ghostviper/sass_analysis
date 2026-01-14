@@ -291,8 +291,10 @@ async def chat_stream(request: ChatRequest, req: Request):
     # 尝试获取当前用户（可选）
     user_id = None
     token = req.cookies.get("auth_token")
+    print(f"[DEBUG] Auth token from cookie: {token[:20] if token else 'None'}...")
     if token:
         user_id = decode_token(token)
+        print(f"[DEBUG] Decoded user_id: {user_id}")
     
     # 使用请求中的 session_id（如果有的话，这是 Claude SDK 的 session_id）
     claude_session_id = request.session_id  # 可能为 None（新会话）
