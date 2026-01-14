@@ -262,11 +262,25 @@ class SaaSAnalysisAgent:
                 "mcp__saas__get_category_analysis",
                 "mcp__saas__get_trend_report",
                 "mcp__saas__get_leaderboard",
+                # MCP 工具 - 开发者分析
+                "mcp__saas__get_founder_products",
                 # MCP 工具 - 联网搜索
                 "mcp__saas__web_search",
                 # Task 工具 - 启用子代理委托
                 # 子代理定义在 .claude/agents/ 目录下
                 "Task",
+            ],
+            # 显式禁止文件读写、查找等内置工具
+            # 即使 tools=[] 也加上这个作为双重保险
+            "disallowed_tools": [
+                "Read",      # 读取文件
+                "Write",     # 写入文件
+                "Edit",      # 编辑文件
+                "Bash",      # 执行 bash 命令
+                "Glob",      # 文件模式匹配
+                "Grep",      # 文件内容搜索
+                "LS",        # 列出目录
+                "MultiEdit", # 多文件编辑
             ],
             "model": self.model,
             "env": self._env,

@@ -8,8 +8,19 @@
       "mcp__saas__get_category_analysis",
       "mcp__saas__get_trend_report",
       "mcp__saas__get_leaderboard",
+      "mcp__saas__get_founder_products",
+      "mcp__saas__web_search",
       "Task"
     ],
-    "deny": []
+    "deny": [
+      "Read",
+      "Write",
+      "Edit",
+      "Bash",
+      "Glob",
+      "Grep",
+      "LS",
+      "MultiEdit"
+    ]
   }
 }

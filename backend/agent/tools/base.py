@@ -23,8 +23,35 @@ from .decorator import tool
 # 底层查询函数
 # ============================================================================
 
+def _build_founder_social_url(username: str, platform: str) -> Optional[str]:
+    """根据社交平台构建创始人的社交媒体链接"""
+    if not username:
+        return None
+    
+    platform_lower = (platform or "").lower()
+    
+    # X/Twitter
+    if platform_lower in ['x', 'x (twitter)', 'twitter', '𝕏']:
+        return f"https://x.com/{username}"
+    # LinkedIn
+    elif 'linkedin' in platform_lower:
+        return f"https://linkedin.com/in/{username}"
+    # 默认返回 X（大多数创始人使用 X）
+    else:
+        return f"https://x.com/{username}"
+
+
 async def _build_product_profile(db: AsyncSession, startup: Startup) -> Dict[str, Any]:
     """构建完整的产品画像"""
+    # 构建创始人社交媒体链接
+    founder_social_url = _build_founder_social_url(
+        startup.founder_username, 
+        startup.founder_social_platform
+    )
+    
+    # 构建系统内部产品详情页链接
+    internal_product_url = f"/products/{startup.slug}" if startup.slug else None
+    
     profile = {
         "id": startup.id,
         "name": startup.name,
@@ -32,6 +59,7 @@ async def _build_product_profile(db: AsyncSession, startup: Startup) -> Dict[str
         "description": startup.description,
         "category": startup.category,
         "website_url": startup.website_url,
+        "internal_url": internal_product_url,  # 系统内部产品详情页链接
         "revenue_30d": startup.revenue_30d,
         "mrr": startup.mrr,
         "growth_rate": startup.growth_rate,
@@ -40,6 +68,8 @@ async def _build_product_profile(db: AsyncSession, startup: Startup) -> Dict[str
         "founder_name": startup.founder_name,
         "founder_username": startup.founder_username,
         "founder_followers": startup.founder_followers,
+        "founder_social_platform": startup.founder_social_platform,
+        "founder_social_url": founder_social_url,  # 创始人社交媒体链接
         "customers_count": startup.customers_count,
         "is_verified": startup.is_verified,
         "founded_date": startup.founded_date,
@@ -199,7 +229,7 @@ async def query_startups(
     search: Optional[str] = None,
     limit: int = 20,
 ) -> List[Dict[str, Any]]:
-    """Query startups with optional filters"""
+    """Query startups with optional filters - returns full product profiles with links"""
     async with AsyncSessionLocal() as db:
         query = select(Startup)
         
@@ -214,7 +244,7 @@ async def query_startups(
                 query = query.limit(limit)
                 result = await db.execute(query)
                 startups = result.scalars().all()
-                return [s.to_dict() for s in startups]
+                return [await _build_product_profile(db, s) for s in startups]
         
         if slugs:
             if isinstance(slugs, str):
@@ -227,7 +257,7 @@ async def query_startups(
                 query = query.limit(limit)
                 result = await db.execute(query)
                 startups = result.scalars().all()
-                return [s.to_dict() for s in startups]
+                return [await _build_product_profile(db, s) for s in startups]
         
         if search:
             pattern = f"%{search}%"
@@ -247,7 +277,7 @@ async def query_startups(
         query = query.order_by(desc(Startup.revenue_30d)).limit(limit)
         result = await db.execute(query)
         startups = result.scalars().all()
-        return [s.to_dict() for s in startups]
+        return [await _build_product_profile(db, s) for s in startups]
 
 
 async def get_category_analysis(category: Optional[str] = None) -> Dict[str, Any]:
@@ -412,14 +442,15 @@ async def get_trend_report() -> Dict[str, Any]:
                 {"name": cat, "count": count, "total_revenue": round(rev or 0, 2)}
                 for cat, count, rev in top_categories
             ],
-            "fastest_growing": [s.to_dict() for s in fast_growing],
-            "best_deals": [s.to_dict() for s in best_deals],
-            "top_revenue": [s.to_dict() for s in top_revenue],
+            # 使用 _build_product_profile 确保包含 internal_url 和 founder_social_url
+            "fastest_growing": [await _build_product_profile(db, s) for s in fast_growing],
+            "best_deals": [await _build_product_profile(db, s) for s in best_deals],
+            "top_revenue": [await _build_product_profile(db, s) for s in top_revenue],
         }
 
 
 async def get_leaderboard(limit: int = 20) -> List[Dict[str, Any]]:
-    """Get founder leaderboard"""
+    """Get founder leaderboard with social URLs"""
     async with AsyncSessionLocal() as db:
         result = await db.execute(
             select(Founder)
@@ -427,7 +458,19 @@ async def get_leaderboard(limit: int = 20) -> List[Dict[str, Any]]:
             .limit(limit)
         )
         founders = result.scalars().all()
-        return [f.to_dict() for f in founders]
+        
+        # 为每个创始人添加 social_url
+        leaderboard = []
+        for f in founders:
+            founder_dict = f.to_dict()
+            # 构建社交媒体链接
+            founder_dict["social_url"] = _build_founder_social_url(
+                f.username,
+                f.social_platform
+            )
+            leaderboard.append(founder_dict)
+        
+        return leaderboard
 
 
 # ============================================================================

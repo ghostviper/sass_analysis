@@ -34,7 +34,8 @@
       "WebFetch(domain:trustmrr.com)",
       "Bash(cmd /c:*)",
       "Bash(venvScriptspython.exe -c \"import sys; sys.path.insert\\(0, ''.''\\); from database.db import get_db_session; import asyncio; from sqlalchemy import select, func; from database.models import Startup, LandingPageAnalysis, ProductSelectionAnalysis, ComprehensiveAnalysis; async def check\\(\\): async with get_db_session\\(\\) as db: result = await db.execute\\(select\\(func.count\\(Startup.id\\)\\)\\); print\\(f''Total startups: {result.scalar\\(\\)}''\\); result = await db.execute\\(select\\(func.count\\(LandingPageAnalysis.id\\)\\)\\); print\\(f''Landing analyses: {result.scalar\\(\\)}''\\); result = await db.execute\\(select\\(func.count\\(ProductSelectionAnalysis.id\\)\\)\\); print\\(f''Product analyses: {result.scalar\\(\\)}''\\); result = await db.execute\\(select\\(func.count\\(ComprehensiveAnalysis.id\\)\\)\\); print\\(f''Comprehensive analyses: {result.scalar\\(\\)}''\\); asyncio.run\\(check\\(\\)\\)\")",
-      "mcp__context7__query-docs"
+      "mcp__context7__query-docs",
+      "Skill(planning-with-files)"
     ]
   }
 }

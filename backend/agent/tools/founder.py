@@ -52,13 +52,38 @@ async def _get_founder_products(username: str) -> Dict[str, Any]:
             if product_driven and all(pd for pd in product_driven if pd is not None):
                 common_patterns.append("product_driven")
 
+        # 构建创始人社交媒体链接
+        founder_social_url = None
+        founder_username_val = username  # 使用传入的 username 参数
+        
+        # 优先从 Startup 获取社交平台信息
+        if products and products[0].founder_username:
+            founder_username_val = products[0].founder_username
+            platform = (products[0].founder_social_platform or "").lower()
+            if platform in ['x', 'x (twitter)', 'twitter', '𝕏']:
+                founder_social_url = f"https://x.com/{founder_username_val}"
+            elif 'linkedin' in platform:
+                founder_social_url = f"https://linkedin.com/in/{founder_username_val}"
+            else:
+                # 默认使用 X
+                founder_social_url = f"https://x.com/{founder_username_val}"
+        elif founder:
+            # 如果没有产品信息，从 Founder 表获取
+            platform = (founder.social_platform or "").lower()
+            if platform in ['x', 'x (twitter)', 'twitter', '𝕏']:
+                founder_social_url = f"https://x.com/{founder.username}"
+            elif 'linkedin' in platform:
+                founder_social_url = f"https://linkedin.com/in/{founder.username}"
+            else:
+                founder_social_url = f"https://x.com/{founder.username}"
+
         return {
             "founder": {
-                "username": username,
+                "username": founder_username_val,
                 "name": founder.name if founder else (products[0].founder_name if products else None),
                 "rank": founder.rank if founder else None,
                 "followers": founder.followers if founder else (products[0].founder_followers if products else None),
-                "profile_url": founder.profile_url if founder else None,
+                "social_url": founder_social_url,  # 社交媒体链接
             },
             "products": product_profiles,
             "portfolio_insights": {
