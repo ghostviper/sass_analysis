@@ -112,17 +112,17 @@
         ▼                     ▼                     ▼
 ┌───────────────┐    ┌───────────────┐    ┌───────────────┐
 │  MCP Tools    │    │    Skills     │    │   Subagents   │
-│ (8个工具)     │    │ (2个技能)     │    │ (3个子代理)   │
+│ (8个工具)     │    │ (3个技能)     │    │ (4个子代理)   │
 ├───────────────┤    ├───────────────┤    ├───────────────┤
 │ get_startups  │    │ indie-dev-    │    │ product-      │
 │ search_startups│   │   advisor     │    │   researcher  │
 │ browse_startups│   │ market-       │    │ comparison-   │
 │ get_category  │    │   signals     │    │   analyst     │
-│ get_trend     │    └───────────────┘    │ opportunity-  │
-│ get_leaderboard│                        │   scout       │
-│ get_founder   │                         └───────────────┘
-│ web_search    │
-└───────────────┘
+│ get_trend     │    │ demand-       │    │ opportunity-  │
+│ get_leaderboard│   │   discovery   │    │   scout       │
+│ get_founder   │    └───────────────┘    │ demand-       │
+│ web_search    │                         │   researcher  │
+└───────────────┘                         └───────────────┘
 ```
 
 ### 3.2 评估结果
@@ -150,18 +150,20 @@
 | `get_founder_products` | 开发者产品组合 |
 | `web_search` | 联网搜索 |
 
-**Skills (2个)**
+**Skills (3个)**
 | 技能名 | 用途 |
 |--------|------|
 | `indie-dev-advisor` | 帮助迷茫用户找方向 |
 | `market-signals` | 识别反直觉市场信号 |
+| `demand-discovery` | 痛点发现方法论（供 @demand-researcher 使用） |
 
-**Subagents (3个)**
+**Subagents (4个)**
 | 子代理 | 用途 | 可用工具 |
 |--------|------|----------|
 | `product-researcher` | 数据收集 | get_startups_by_ids, search_startups, get_category_analysis |
 | `comparison-analyst` | 产品对比 | get_startups_by_ids, search_startups, get_category_analysis |
 | `opportunity-scout` | 机会发现 | browse_startups, get_category_analysis, get_trend_report |
+| `demand-researcher` | 痛点/需求发现 | web_search |
 
 ---
 
@@ -171,6 +173,10 @@
 
 ```
 用户问题
+    │
+    ├─ 痛点/需求发现 ("有什么痛点", "用户抱怨什么", "市场需求")
+    │   └─ 委托给 @demand-researcher
+    │   └─ (Subagent 使用 demand-discovery skill + web_search)
     │
     ├─ 简单查询 ("X 的收入是多少?")
     │   └─ 直接用 MCP Tools
@@ -209,15 +215,27 @@
 
 ### 4.3 Skills 与 Subagents 协作
 
-Skills 可以被 Subagents 使用。可以在 Subagent 的 `.md` 文件中引用 Skills：
+Skills 可以被 Subagents 使用。在 Subagent 的 `.md` 文件中显式引用 Skills：
+
+**当前实现：**
+
+| Subagent | 引用的 Skills | 引用方式 |
+|----------|--------------|---------|
+| `@demand-researcher` | `demand-discovery` | **MUST FOLLOW** (强制执行) |
+| `@opportunity-scout` | `market-signals`, `indie-dev-advisor` | Available Skills (可选使用) |
+
+**引用强度区分：**
 
 ```markdown
-# 示例：opportunity-scout.md 中添加
+# 强制执行（用于核心方法论）
+## Required Methodology (MUST FOLLOW)
+You MUST strictly follow the **demand-discovery** skill methodology...
+Violation of this methodology = failed research.
 
+# 可选使用（用于增强分析）
 ## Available Skills
 When analyzing opportunities, leverage these skills:
 - **market-signals**: Use to identify counter-intuitive patterns
-- **indie-dev-advisor**: Use to assess developer fit
 ```
 
 ---

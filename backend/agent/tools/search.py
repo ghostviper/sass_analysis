@@ -16,48 +16,261 @@ TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
 # 预定义的可信信息源组
 DOMAIN_PRESETS: Dict[str, List[str]] = {
-    # 独立开发者社区 - 适合产品灵感、收入案例、独立开发经验
+    # ============ 创业与独立开发 ============
+    # 独立开发者社区 - 产品灵感、收入案例、独立开发经验
     "indie": [
         "indiehackers.com",
+        "producthunt.com",
+        "betalist.com",
+        "microconf.com",
+        "barnacl.es",  # bootstrapped startups
+        # Reddit 创业相关
         "reddit.com/r/SideProject",
         "reddit.com/r/startups",
         "reddit.com/r/Entrepreneur",
         "reddit.com/r/SaaS",
-        "producthunt.com",
+        "reddit.com/r/microsaas",
+        "reddit.com/r/micro_saas",
+        "reddit.com/r/indiebiz",
+        "reddit.com/r/indiehackers",
+        "reddit.com/r/IndieDev",
+        "reddit.com/r/SoloDevelopment",
+        "reddit.com/r/smallbusiness",
+        "reddit.com/r/EntrepreneurRideAlong",
+        "reddit.com/r/nocode",
+        # 其他社区
+        "news.ycombinator.com",
+        "lobste.rs",
     ],
-    # 技术新闻 - 适合行业动态、融资新闻、产品发布
+    
+    # 创业融资与商业 - VC、融资、商业模式
+    "startup_business": [
+        "techcrunch.com",
+        "crunchbase.com",
+        "pitchbook.com",
+        "saastr.com",
+        "openviewpartners.com",
+        "tomtunguz.com",
+        "bothsidesofthetable.com",
+        "avc.com",
+        "firstround.com/review",
+        "a]6z.com",
+        "sequoiacap.com",
+        "ycombinator.com/library",
+        "paulgraham.com",
+    ],
+    
+    # ============ 技术与开发 ============
+    # 技术新闻 - 行业动态、产品发布、技术趋势
     "tech_news": [
         "news.ycombinator.com",
         "techcrunch.com",
         "theverge.com",
         "wired.com",
         "arstechnica.com",
+        "thenextweb.com",
+        "venturebeat.com",
+        "zdnet.com",
+        "engadget.com",
+        "gizmodo.com",
+        "mashable.com",
+        "cnet.com",
     ],
-    # 开发者社区 - 适合技术讨论、最佳实践、问题解答
+    
+    # 开发者社区 - 技术讨论、最佳实践、问题解答
     "dev_community": [
-        "reddit.com/r/webdev",
-        "reddit.com/r/programming",
-        "reddit.com/r/javascript",
-        "reddit.com/r/Python",
         "dev.to",
         "stackoverflow.com",
         "github.com",
+        "hashnode.dev",
+        "lobste.rs",
+        "news.ycombinator.com",
+        # Reddit 开发相关
+        "reddit.com/r/webdev",
+        "reddit.com/r/programming",
+        "reddit.com/r/javascript",
+        "reddit.com/r/reactjs",
+        "reddit.com/r/node",
+        "reddit.com/r/Python",
+        "reddit.com/r/golang",
+        "reddit.com/r/rust",
+        "reddit.com/r/typescript",
+        "reddit.com/r/nextjs",
+        "reddit.com/r/sveltejs",
+        "reddit.com/r/vuejs",
+        "reddit.com/r/django",
+        "reddit.com/r/flask",
+        "reddit.com/r/FastAPI",
+        "reddit.com/r/FullStack",
     ],
-    # 产品评测 - 适合竞品分析、用户反馈、市场定位
+    
+    # 官方文档与教程 - 权威技术资料
+    "official_docs": [
+        "docs.github.com",
+        "developer.mozilla.org",
+        "docs.python.org",
+        "nodejs.org",
+        "react.dev",
+        "vuejs.org",
+        "svelte.dev",
+        "nextjs.org",
+        "vercel.com/docs",
+        "docs.aws.amazon.com",
+        "cloud.google.com/docs",
+        "docs.microsoft.com",
+        "supabase.com/docs",
+        "planetscale.com/docs",
+        "stripe.com/docs",
+    ],
+    
+    # ============ AI/ML 领域 ============
+    # AI/ML 综合 - AI 产品、模型、工具、研究
+    "ai_ml": [
+        "huggingface.co",
+        "openai.com",
+        "anthropic.com",
+        "deepmind.com",
+        "arxiv.org",
+        "paperswithcode.com",
+        "ai.googleblog.com",
+        "openai.com/blog",
+        "lilianweng.github.io",
+        "jalammar.github.io",
+        "distill.pub",
+        # Reddit AI 相关
+        "reddit.com/r/MachineLearning",
+        "reddit.com/r/LocalLLaMA",
+        "reddit.com/r/artificial",
+        "reddit.com/r/ChatGPT",
+        "reddit.com/r/ClaudeAI",
+        "reddit.com/r/singularity",
+        "reddit.com/r/StableDiffusion",
+        "reddit.com/r/comfyui",
+        "reddit.com/r/reinforcementlearning",
+    ],
+    
+    # AI 工具与应用 - AI SaaS、工具评测
+    "ai_tools": [
+        "theresanaiforthat.com",
+        "futuretools.io",
+        "aitools.fyi",
+        "toolify.ai",
+        "producthunt.com",
+        "reddit.com/r/ChatGPTPro",
+        "reddit.com/r/OpenAI",
+        "reddit.com/r/midjourney",
+    ],
+    
+    # ============ 产品与市场 ============
+    # 产品评测 - 竞品分析、用户反馈、市场定位
     "product_reviews": [
         "g2.com",
         "capterra.com",
         "trustpilot.com",
         "getapp.com",
         "softwareadvice.com",
+        "trustradius.com",
+        "sourceforge.net",
+        "alternativeto.net",
+        "slant.co",
+        "saasworthy.com",
+        "crozdesk.com",
     ],
-    # AI/ML 领域 - 适合 AI 产品、模型、工具相关搜索
-    "ai_ml": [
-        "huggingface.co",
-        "reddit.com/r/MachineLearning",
-        "reddit.com/r/LocalLLaMA",
-        "arxiv.org",
-        "paperswithcode.com",
+    
+    # 产品设计与 UX - 设计灵感、用户体验
+    "design_ux": [
+        "dribbble.com",
+        "behance.net",
+        "uxdesign.cc",
+        "smashingmagazine.com",
+        "nngroup.com",
+        "lawsofux.com",
+        "mobbin.com",
+        "pageflows.com",
+        "reddit.com/r/userexperience",
+        "reddit.com/r/UI_Design",
+        "reddit.com/r/web_design",
+    ],
+    
+    # 营销与增长 - SEO、内容营销、增长策略
+    "marketing_growth": [
+        "backlinko.com",
+        "neilpatel.com",
+        "moz.com",
+        "ahrefs.com/blog",
+        "semrush.com/blog",
+        "hubspot.com/blog",
+        "growthhackers.com",
+        "cxl.com",
+        "copyblogger.com",
+        "reddit.com/r/marketing",
+        "reddit.com/r/SEO",
+        "reddit.com/r/bigseo",
+        "reddit.com/r/seogrowth",
+        "reddit.com/r/content_marketing",
+        "reddit.com/r/GrowthHacking",
+        "reddit.com/r/digital_marketing",
+        "reddit.com/r/PPC",
+        "reddit.com/r/linkbuilding",
+    ],
+    
+    # ============ 垂直领域 ============
+    # 远程工作与数字游民 - 远程工具、生活方式
+    "remote_nomad": [
+        "nomadlist.com",
+        "remoteok.com",
+        "weworkremotely.com",
+        "levels.fyi",
+        "reddit.com/r/digitalnomad",
+        "reddit.com/r/remotework",
+        "reddit.com/r/WorkOnline",
+    ],
+    
+    # 开源项目 - 开源生态、项目发现
+    "opensource": [
+        "github.com",
+        "gitlab.com",
+        "opensource.com",
+        "opensourcealternative.to",
+        "reddit.com/r/opensource",
+        "reddit.com/r/selfhosted",
+        "news.ycombinator.com",
+    ],
+    
+    # 金融科技 - Fintech、支付、加密
+    "fintech": [
+        "finextra.com",
+        "pymnts.com",
+        "coindesk.com",
+        "theblock.co",
+        "decrypt.co",
+        "reddit.com/r/fintech",
+        "reddit.com/r/CryptoCurrency",
+        "reddit.com/r/defi",
+    ],
+    
+    # 电商与 DTC - 电商工具、品牌建设
+    "ecommerce": [
+        "shopify.com/blog",
+        "bigcommerce.com/blog",
+        "practicalecommerce.com",
+        "ecommercefuel.com",
+        "reddit.com/r/ecommerce",
+        "reddit.com/r/shopify",
+        "reddit.com/r/FulfillmentByAmazon",
+        "reddit.com/r/dropship",
+    ],
+    
+    # 游戏开发 - 游戏引擎、独立游戏
+    "gamedev": [
+        "gamedeveloper.com",
+        "itch.io",
+        "indiedb.com",
+        "reddit.com/r/gamedev",
+        "reddit.com/r/IndieDev",
+        "reddit.com/r/Unity3D",
+        "reddit.com/r/unrealengine",
+        "reddit.com/r/godot",
     ],
 }
 
@@ -119,14 +332,34 @@ async def _tavily_search(
     "web_search",
     """Search the web for information with precise source filtering.
 
-Use domain_preset for common scenarios:
-- "indie": IndieHackers, Reddit (SideProject/startups/SaaS), ProductHunt - for indie dev insights, revenue cases
-- "tech_news": HackerNews, TechCrunch, TheVerge - for industry news, funding, launches
-- "dev_community": Reddit dev subs, dev.to, StackOverflow, GitHub - for technical discussions
-- "product_reviews": G2, Capterra, Trustpilot - for competitor analysis, user feedback
-- "ai_ml": HuggingFace, Reddit ML subs, arXiv - for AI/ML products and research
+Domain presets by category:
 
-Or use include_domains for custom domain filtering.""",
+【创业与独立开发】
+- "indie": IndieHackers, ProductHunt, BetaList, Reddit创业subs, HN - 独立开发经验、收入案例
+- "startup_business": TechCrunch, Crunchbase, SaaStr, VC blogs - 融资、商业模式
+
+【技术与开发】
+- "tech_news": HN, TechCrunch, TheVerge, Wired, Ars - 行业动态、产品发布
+- "dev_community": dev.to, SO, GitHub, Reddit dev subs - 技术讨论、最佳实践
+- "official_docs": MDN, React, Next.js, Vercel, AWS docs - 官方文档
+
+【AI/ML】
+- "ai_ml": HuggingFace, OpenAI, arXiv, Reddit ML subs - AI研究、模型
+- "ai_tools": TheresAnAIForThat, FutureTools, ProductHunt - AI工具发现
+
+【产品与市场】
+- "product_reviews": G2, Capterra, Trustpilot, AlternativeTo - 竞品分析、用户反馈
+- "design_ux": Dribbble, Behance, NN/g, Mobbin - 设计灵感、UX
+- "marketing_growth": Backlinko, Moz, Ahrefs, HubSpot - SEO、增长策略
+
+【垂直领域】
+- "remote_nomad": NomadList, RemoteOK, levels.fyi - 远程工作
+- "opensource": GitHub, GitLab, r/selfhosted - 开源项目
+- "fintech": Finextra, CoinDesk, TheBlock - 金融科技
+- "ecommerce": Shopify blog, r/ecommerce, r/FBA - 电商
+- "gamedev": GameDeveloper, itch.io, r/gamedev - 游戏开发
+
+Or use include_domains for custom filtering.""",
     {
         "type": "object",
         "properties": {
@@ -136,7 +369,13 @@ Or use include_domains for custom domain filtering.""",
             },
             "domain_preset": {
                 "type": "string",
-                "enum": ["indie", "tech_news", "dev_community", "product_reviews", "ai_ml"],
+                "enum": [
+                    "indie", "startup_business",
+                    "tech_news", "dev_community", "official_docs",
+                    "ai_ml", "ai_tools",
+                    "product_reviews", "design_ux", "marketing_growth",
+                    "remote_nomad", "opensource", "fintech", "ecommerce", "gamedev"
+                ],
                 "description": "Predefined trusted domain group. Choose based on query intent."
             },
             "include_domains": {
