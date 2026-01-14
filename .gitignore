@@ -62,6 +62,9 @@ backend/data/
 *.html
 nul
 
+# Claude Agent SDK temp files
+tmpclaude-*
+
 # Test files
 test_*.py
 !backend/tests/

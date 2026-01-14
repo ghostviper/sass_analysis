@@ -598,34 +598,44 @@
      Streamdown 样式
      ============================================ */
   [data-streamdown] {
-    @apply font-sans;
+    @apply font-sans text-[0.9375rem];
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 
   [data-streamdown="heading-1"] {
-    @apply text-xl font-display font-bold tracking-tight text-content-primary mt-6 mb-3;
+    @apply text-lg font-display font-bold tracking-tight text-content-primary mt-4 mb-2;
   }
 
   [data-streamdown="heading-2"] {
-    @apply text-lg font-display font-bold tracking-tight text-content-primary mt-5 mb-2.5;
+    @apply text-base font-display font-bold tracking-tight text-content-primary mt-3.5 mb-1.5;
   }
 
   [data-streamdown="heading-3"] {
-    @apply text-base font-display font-semibold tracking-snug text-content-primary mt-4 mb-2;
+    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-3 mb-1;
   }
 
   [data-streamdown="heading-4"],
   [data-streamdown="heading-5"],
   [data-streamdown="heading-6"] {
-    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-3 mb-1.5;
+    @apply text-[0.9375rem] font-display font-semibold tracking-snug text-content-primary mt-2.5 mb-1;
   }
 
   [data-streamdown="paragraph"] {
-    @apply text-[0.9375rem] leading-[1.65] text-content-secondary my-2.5;
+    @apply text-[0.9375rem] leading-[1.7] text-content-secondary my-1.5;
+  }
+
+  /* 首个段落不需要上边距 */
+  [data-streamdown="paragraph"]:first-child {
+    @apply mt-0;
+  }
+
+  /* 最后一个段落不需要下边距 */
+  [data-streamdown="paragraph"]:last-child {
+    @apply mb-0;
   }
 
   [data-streamdown="strong"] {
-    @apply font-bold text-content-primary;
+    @apply font-semibold text-content-primary;
   }
 
   [data-streamdown="emphasis"] {
@@ -638,7 +648,7 @@
 
   [data-streamdown="ordered-list"],
   [data-streamdown="unordered-list"] {
-    @apply my-2.5 ml-5 text-[0.9375rem] leading-[1.65] text-content-secondary;
+    @apply my-1.5 ml-5 text-[0.9375rem] leading-[1.7] text-content-secondary;
   }
 
   [data-streamdown="ordered-list"] {
@@ -650,31 +660,37 @@
   }
 
   [data-streamdown="list-item"] {
-    @apply my-1.5;
+    @apply my-0.5;
+  }
+
+  /* 嵌套列表间距更紧凑 */
+  [data-streamdown="list-item"] [data-streamdown="ordered-list"],
+  [data-streamdown="list-item"] [data-streamdown="unordered-list"] {
+    @apply my-0.5;
   }
 
   [data-streamdown="inline-code"] {
-    @apply font-mono text-[0.875rem] bg-surface/60 text-brand-500 px-1.5 py-0.5 rounded;
+    @apply font-mono text-[0.8125rem] bg-surface/60 text-brand-500 px-1.5 py-0.5 rounded;
   }
 
   [data-streamdown="code-block"] {
-    @apply font-mono text-[0.875rem] bg-surface/50 rounded-xl border border-surface-border/40 overflow-hidden my-3;
+    @apply font-mono text-[0.8125rem] bg-surface/50 rounded-lg border border-surface-border/40 overflow-hidden my-2;
   }
 
   [data-streamdown="code-block"] pre {
-    @apply p-4 overflow-x-auto;
+    @apply p-3 overflow-x-auto;
   }
 
   [data-streamdown="code-block"] code {
-    @apply text-[0.875rem] leading-relaxed;
+    @apply text-[0.8125rem] leading-relaxed;
   }
 
   [data-streamdown="table-wrapper"] {
-    @apply overflow-x-auto my-3 rounded-xl border border-surface-border/50;
+    @apply overflow-x-auto my-2 rounded-lg border border-surface-border/50;
   }
 
   [data-streamdown="table"] {
-    @apply w-full text-[0.9375rem] border-collapse;
+    @apply w-full text-[0.875rem] border-collapse;
   }
 
   [data-streamdown="table-header"] {
@@ -690,19 +706,19 @@
   }
 
   [data-streamdown="table-header-cell"] {
-    @apply px-3 py-2.5 text-left text-sm font-semibold text-content-primary border-b border-surface-border/50;
+    @apply px-2.5 py-2 text-left text-[0.8125rem] font-semibold text-content-primary border-b border-surface-border/50;
   }
 
   [data-streamdown="table-cell"] {
-    @apply px-3 py-2.5 text-[0.9375rem] text-content-secondary;
+    @apply px-2.5 py-2 text-[0.875rem] text-content-secondary;
   }
 
   [data-streamdown="blockquote"] {
-    @apply border-l-2 border-brand-500/40 pl-4 my-3 text-content-tertiary italic text-[0.9375rem] leading-[1.65];
+    @apply border-l-2 border-brand-500/40 pl-3 my-2 text-content-tertiary italic text-[0.9375rem] leading-[1.7];
   }
 
   [data-streamdown="horizontal-rule"] {
-    @apply my-4 border-surface-border/50;
+    @apply my-3 border-surface-border/50;
   }
 
   /* ============================================

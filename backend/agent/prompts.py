@@ -112,23 +112,3 @@ def build_context_prefix(context: Optional[Dict[str, Any]]) -> str:
     if prefix_parts:
         return "\n".join(prefix_parts) + "\n\n"
     return ""
-
-
-# Legacy exports for backward compatibility
-# These are no longer used but kept to avoid import errors
-SYSTEM_PROMPT = ""  # Deprecated: Use .claude/CLAUDE.md instead
-QUERY_PROMPT_TEMPLATE = ""  # Deprecated: Not used
-WEB_SEARCH_PROMPT_ADDITION = ""  # Deprecated: Not used
-
-
-def build_dynamic_system_prompt(
-    enable_web_search: bool = False,
-    context: Optional[Dict[str, Any]] = None
-) -> str:
-    """
-    Deprecated: System prompt is now loaded from .claude/CLAUDE.md via setting_sources.
-    
-    This function is kept for backward compatibility but returns empty string.
-    Use build_context_prefix() instead to inject dynamic context.
-    """
-    return ""

@@ -21,3 +21,10 @@ data/*.db
 
 # Playwright
 playwright-report/
+
+# Logs (keep directory, ignore contents)
+logs/*.log
+logs/*.jsonl
+
+# Claude Agent SDK temp files
+agent/tmpclaude-*

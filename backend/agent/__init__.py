@@ -3,7 +3,6 @@ Agent module for BuildWhat
 """
 
 from .tools import query_startups, get_category_analysis, get_trend_report, get_leaderboard
-from .prompts import SYSTEM_PROMPT
 
 # Import Claude Agent SDK client (optional, for backward compatibility)
 try:
@@ -15,7 +14,6 @@ try:
         "get_category_analysis",
         "get_trend_report",
         "get_leaderboard",
-        "SYSTEM_PROMPT",
         "BuildWhatAgent",
         "SaaSAnalysisAgent"
     ]
@@ -26,5 +24,4 @@ except ImportError:
         "get_category_analysis",
         "get_trend_report",
         "get_leaderboard",
-        "SYSTEM_PROMPT"
     ]

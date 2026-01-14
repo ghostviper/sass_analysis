@@ -1016,7 +1016,7 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
             </div>
 
             <div className="flex-1 overflow-y-auto px-4 py-4" ref={messagesContainerRef}>
-              <div className="max-w-3xl mx-auto space-y-6">
+              <div className="max-w-3xl mx-auto space-y-5">
                 {messages.map((message) => (
                   <ChatMessage key={message.id} message={message} onRetry={message.role === 'assistant' ? () => handleRetry(message.id) : undefined} />
                 ))}
@@ -1024,12 +1024,12 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
               </div>
             </div>
 
-            <div className="px-4 py-4">
+            <div className="px-4 pb-3 pt-2">
               <div className="max-w-3xl mx-auto">
                 <div className="relative bg-surface/70 backdrop-blur-sm rounded-2xl border border-surface-border/80 focus-within:border-brand-500/60 focus-within:ring-2 focus-within:ring-brand-500/20 focus-within:shadow-lg focus-within:shadow-brand-500/5 transition-all duration-300">
-                  <div className="flex items-end gap-3 px-4 py-3">
-                    {isLoading && currentToolLabel && <Loader2 className="flex-shrink-0 h-4 w-4 text-brand-500 animate-spin mb-1" />}
-                    <textarea ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} placeholder={isLoading ? (currentToolLabel ? `${t('assistant.tools.executing').replace('...', '')} ${currentToolLabel}...` : t('assistant.continueChat')) : t('assistant.continueChat')} className="flex-1 bg-transparent resize-none text-content-secondary placeholder:text-content-muted/60 focus:outline-none min-h-[24px] max-h-32 text-sm leading-relaxed font-normal" rows={1} disabled={isLoading} onInput={(e) => { const target = e.target as HTMLTextAreaElement; target.style.height = 'auto'; target.style.height = Math.min(target.scrollHeight, 128) + 'px' }} />
+                  <div className="flex items-center gap-3 px-4 py-2.5">
+                    {isLoading && currentToolLabel && <Loader2 className="flex-shrink-0 h-4 w-4 text-brand-500 animate-spin" />}
+                    <textarea ref={inputRef} value={input} onChange={(e) => setInput(e.target.value)} onKeyDown={handleKeyDown} placeholder={isLoading ? (currentToolLabel ? `${t('assistant.tools.executing').replace('...', '')} ${currentToolLabel}...` : t('assistant.continueChat')) : t('assistant.continueChat')} className="flex-1 bg-transparent resize-none text-content-secondary placeholder:text-content-muted/60 focus:outline-none min-h-[36px] max-h-32 text-sm leading-[36px] font-normal py-0" rows={1} disabled={isLoading} onInput={(e) => { const target = e.target as HTMLTextAreaElement; target.style.height = 'auto'; target.style.height = Math.min(target.scrollHeight, 128) + 'px'; if (target.scrollHeight > 36) { target.style.lineHeight = '1.5'; target.style.paddingTop = '6px'; target.style.paddingBottom = '6px'; } else { target.style.lineHeight = '36px'; target.style.paddingTop = '0'; target.style.paddingBottom = '0'; } }} />
                     <button onClick={() => isLoading ? interruptRequest() : sendMessage()} disabled={!input.trim() && !isLoading} className={cn('flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center transition-all duration-200', isLoading ? 'bg-rose-500/10 text-rose-500 hover:bg-rose-500/20 ring-1 ring-rose-500/20' : input.trim() ? 'bg-gradient-to-r from-brand-500 to-brand-600 text-white hover:from-brand-600 hover:to-brand-700 shadow-md shadow-brand-500/25' : 'bg-surface-hover text-content-muted cursor-not-allowed')} title={isLoading ? t('assistant.stop') : t('assistant.send')}>
                       {isLoading ? <Square className="h-4 w-4 fill-current" /> : <Send className="h-4 w-4" />}
                     </button>

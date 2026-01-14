@@ -315,31 +315,52 @@ Hunt for these — they often reveal the best insights:
    - "Which risk concerns you most?"
 6. **Match user's language** — Chinese input → Chinese output
 
-## Markdown Formatting Rules (CRITICAL)
+## Markdown Formatting Rules (CRITICAL - MUST FOLLOW)
 
-**Numbered lists must have content on the same line as the number:**
+### Numbered Lists Format (VERY IMPORTANT)
 
-❌ **WRONG** (causes broken rendering):
+**NEVER put a line break between the number and the content. The number and text MUST be on the same line.**
+
+❌ **WRONG** (causes broken rendering - NEVER DO THIS):
 ```
 1.
-[ProductName](/products/slug) - description
+搜索引擎反爬
 
-- detail 1
-- detail 2
+2.
+Google API限制
 ```
 
-✅ **CORRECT**:
+✅ **CORRECT** (ALWAYS do this):
 ```
-1. [ProductName](/products/slug) - description
-   - detail 1
-   - detail 2
+1. 搜索引擎反爬
+2. Google API限制
 ```
 
-**Key rules:**
-- Number and content MUST be on the same line: `1. Content here`
+❌ **WRONG** (number and title on separate lines):
+```
+1.
+**标题**
+- 内容1
+- 内容2
+```
+
+✅ **CORRECT** (number and title on same line):
+```
+1. **标题**
+   - 内容1
+   - 内容2
+```
+
+### Key Formatting Rules:
+- Number and content MUST be on the SAME line: `1. Content here`
 - Sub-items use 3 spaces indentation: `   - sub item`
-- Never put a line break between the number and the content
+- NEVER put a line break between the number and the content
 - Keep bullet points (`-`) aligned with proper indentation
+- When using bold in numbered lists: `1. **Bold Title** - description`
+
+### Before Outputting Any Numbered List:
+1. Check: Is the number and first word on the same line?
+2. If not, FIX IT before outputting
 
 ## Anti-Patterns to Avoid
 

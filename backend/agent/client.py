@@ -115,7 +115,6 @@ from .tools import (
     # 联网搜索工具
     web_search_tool,
 )
-from .prompts import SYSTEM_PROMPT
 
 
 def _get_friendly_tool_description(tool_name: str, tool_input: Dict[str, Any]) -> str:

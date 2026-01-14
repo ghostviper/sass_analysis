@@ -223,11 +223,11 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
   }
 
   return (
-    <div className="flex gap-3 group">
+    <div className="flex gap-3 group items-start">
       <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500/20 via-accent-secondary/20 to-brand-600/20 flex items-center justify-center flex-shrink-0 ring-1 ring-brand-500/10">
         <Bot className="h-4 w-4 text-brand-500" />
       </div>
-      <div className="flex-1 min-w-0 pt-1">
+      <div className="flex-1 min-w-0">
         {/* 消息内容 - 使用 contentBlocks 渲染不同类型的内容 */}
         {(() => {
           // 提取 thinking 和 text 内容块
@@ -270,7 +270,7 @@ export function ChatMessage({ message, onRetry, onCopy, onFeedback }: ChatMessag
                 3. 正在流式传输但没有任何内容时 -> 显示"正在思考"
               */}
               {message.isStreaming && !hasText && !message.content && !hasThinking && !runningTool && (
-                <div className="flex items-center gap-2.5 text-content-muted py-2">
+                <div className="flex items-center gap-2.5 text-content-muted h-8">
                   <Loader2 className="h-4 w-4 animate-spin text-brand-500" />
                   <span className="text-sm font-medium">{t('assistant.thinkingStatus')}</span>
                 </div>
