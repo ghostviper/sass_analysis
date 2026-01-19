@@ -10,8 +10,10 @@ Set DATABASE_URL environment variable to configure:
 
 import os
 from pathlib import Path
-from contextlib import asynccontextmanager
+from contextlib import asynccontextmanager, contextmanager
 from urllib.parse import quote_plus, urlparse, urlunparse
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker, Session
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from sqlalchemy.pool import StaticPool
 
@@ -181,3 +183,52 @@ async def close_db():
     """Close database connections (call on shutdown)"""
     await engine.dispose()
     print("[Database] Connections closed")
+
+
+# =============================================================================
+# Synchronous Session Support (for scripts and CLI tools)
+# =============================================================================
+
+def _get_sync_url(url: str) -> str:
+    """Convert async database URL back to sync format."""
+    if "sqlite+aiosqlite://" in url:
+        return url.replace("sqlite+aiosqlite://", "sqlite://")
+    elif "mysql+aiomysql://" in url:
+        return url.replace("mysql+aiomysql://", "mysql+pymysql://")
+    elif "postgresql+asyncpg://" in url:
+        return url.replace("postgresql+asyncpg://", "postgresql+psycopg2://")
+    return url
+
+
+# Create sync engine
+SYNC_DATABASE_URL = _get_sync_url(DATABASE_URL)
+
+if IS_SQLITE:
+    sync_engine = create_engine(
+        SYNC_DATABASE_URL,
+        echo=os.getenv("DB_ECHO", "false").lower() == "true",
+        connect_args={"check_same_thread": False},
+    )
+else:
+    sync_engine = create_engine(
+        SYNC_DATABASE_URL,
+        echo=os.getenv("DB_ECHO", "false").lower() == "true",
+        pool_size=int(os.getenv("DB_POOL_SIZE", "10")),
+        max_overflow=int(os.getenv("DB_MAX_OVERFLOW", "20")),
+        pool_timeout=int(os.getenv("DB_POOL_TIMEOUT", "30")),
+        pool_recycle=int(os.getenv("DB_POOL_RECYCLE", "3600")),
+        pool_pre_ping=True,
+    )
+
+SyncSessionLocal = sessionmaker(bind=sync_engine, expire_on_commit=False)
+
+
+@contextmanager
+def get_sync_session():
+    """Context manager to get synchronous database session"""
+    Base.metadata.create_all(bind=sync_engine)
+    session = SyncSessionLocal()
+    try:
+        yield session
+    finally:
+        session.close()

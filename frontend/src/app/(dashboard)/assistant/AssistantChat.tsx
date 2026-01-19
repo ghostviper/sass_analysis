@@ -122,6 +122,7 @@ interface AssistantChatProps {
     contextType: 'database' | 'url' | null
     contextValue: string | null
   } | null
+  initialMessage?: string
 }
 
 // 将后端消息转换为前端消息格式
@@ -142,7 +143,7 @@ function convertBackendMessage(msg: ChatMessageItem): Message {
   }
 }
 
-export default function AssistantChat({ initialData }: AssistantChatProps) {
+export default function AssistantChat({ initialData, initialMessage }: AssistantChatProps) {
   const { t } = useLocale()
   const router = useRouter()
 
@@ -238,6 +239,17 @@ export default function AssistantChat({ initialData }: AssistantChatProps) {
   useEffect(() => {
     loadSessions()
   }, [loadSessions])
+
+  // Handle initialMessage from URL params - auto-fill input
+  useEffect(() => {
+    if (initialMessage && !initialData?.sessionId) {
+      setInput(initialMessage)
+      // Focus the input after a short delay
+      setTimeout(() => {
+        inputRef.current?.focus()
+      }, 100)
+    }
+  }, [initialMessage, initialData?.sessionId])
 
   // 初始加载产品列表
   useEffect(() => {

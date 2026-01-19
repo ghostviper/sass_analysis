@@ -99,7 +99,7 @@ class OpenAIService:
         self.default_model = model or os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 
         # 代理配置
-        self.https_proxy = os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
+        self.https_proxy = None #os.getenv("HTTPS_PROXY") or os.getenv("https_proxy")
 
         if not self.api_key:
             raise ValueError("OPENAI_API_KEY not configured")

@@ -43,7 +43,9 @@ export default function DiscoverPage() {
       </div>
 
       {/* 今日 AI 策展 */}
-      <TodayCuration />
+      <div id="curations">
+        <TodayCuration />
+      </div>
 
       {/* 主题合集 */}
       <TopicCollections />

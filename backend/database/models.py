@@ -947,3 +947,431 @@ class ProductHuntPost(Base):
             "topics": self.topics,
             "matched_startup_id": self.matched_startup_id,
         }
+
+
+# ============================================================================
+# Curation System Models (母题判断与策展)
+# ============================================================================
+
+class MotherThemeJudgment(Base):
+    """母题判断结果表"""
+    __tablename__ = "mother_theme_judgments"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    startup_id = Column(Integer, ForeignKey("startups.id"), nullable=False, index=True)
+    theme_key = Column(String(50), nullable=False, index=True)
+    judgment = Column(String(100))
+    confidence = Column(String(20))
+    reasons = Column(JSON)
+    evidence_fields = Column(JSON)
+    uncertainties = Column(JSON)
+    prompt_version = Column(String(20))
+    model = Column(String(100))
+    created_at = Column(DateTime, default=datetime.utcnow)
+    
+    # Unique constraint: one judgment per startup per theme
+    __table_args__ = (
+        Index('ix_judgment_startup_theme', 'startup_id', 'theme_key', unique=True),
+    )
+    
+    # Relationship
+    startup = relationship("Startup", backref="mother_theme_judgments")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "startup_id": self.startup_id,
+            "theme_key": self.theme_key,
+            "judgment": self.judgment,
+            "confidence": self.confidence,
+            "reasons": self.reasons,
+            "evidence_fields": self.evidence_fields,
+            "uncertainties": self.uncertainties,
+            "prompt_version": self.prompt_version,
+            "model": self.model,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class DiscoverTopic(Base):
+    """发现页专题表"""
+    __tablename__ = "discover_topics"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    topic_key = Column(String(100), unique=True, index=True)
+    title = Column(String(200), nullable=False)
+    title_zh = Column(String(200))  # 中文标题
+    title_en = Column(String(200))  # 英文标题
+    description = Column(Text)
+    description_zh = Column(Text)  # 中文描述
+    description_en = Column(Text)  # 英文描述
+    curator_role = Column(String(50))
+    generation_pattern = Column(String(50))
+    filter_rules = Column(JSON)
+    cta_text = Column(String(200))
+    cta_text_zh = Column(String(200))  # 中文 CTA
+    cta_text_en = Column(String(200))  # 英文 CTA
+    is_active = Column(Boolean, default=True)
+    display_order = Column(Integer, default=0)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationship
+    products = relationship("TopicProduct", back_populates="topic", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "topic_key": self.topic_key,
+            "title": self.title,
+            "title_zh": self.title_zh,
+            "title_en": self.title_en,
+            "description": self.description,
+            "description_zh": self.description_zh,
+            "description_en": self.description_en,
+            "curator_role": self.curator_role,
+            "generation_pattern": self.generation_pattern,
+            "filter_rules": self.filter_rules,
+            "cta_text": self.cta_text,
+            "cta_text_zh": self.cta_text_zh,
+            "cta_text_en": self.cta_text_en,
+            "is_active": self.is_active,
+            "display_order": self.display_order,
+            "product_count": len(self.products) if self.products else 0,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+            "updated_at": self.updated_at.isoformat() if self.updated_at else None,
+        }
+
+
+class TopicProduct(Base):
+    """专题-产品关联表"""
+    __tablename__ = "topic_products"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    topic_id = Column(Integer, ForeignKey("discover_topics.id"), nullable=False, index=True)
+    startup_id = Column(Integer, ForeignKey("startups.id"), nullable=False, index=True)
+    ai_label = Column(String(200))
+    counter_intuitive_point = Column(Text)
+    display_order = Column(Integer, default=0)
+    
+    # Relationships
+    topic = relationship("DiscoverTopic", back_populates="products")
+    startup = relationship("Startup")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "topic_id": self.topic_id,
+            "startup_id": self.startup_id,
+            "ai_label": self.ai_label,
+            "counter_intuitive_point": self.counter_intuitive_point,
+            "display_order": self.display_order,
+        }
+
+
+# ============================================================================
+# Discover Page Extended Models (每日策展、爆款故事、用户偏好)
+# ============================================================================
+
+class DailyCuration(Base):
+    """每日策展表 - TodayCuration 区块"""
+    __tablename__ = "daily_curations"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    curation_key = Column(String(100), unique=True, nullable=False, index=True)
+    
+    # 双语标题
+    title = Column(String(200), nullable=False)
+    title_zh = Column(String(200))
+    title_en = Column(String(200))
+    
+    # 双语描述
+    description = Column(Text)
+    description_zh = Column(Text)
+    description_en = Column(Text)
+    
+    # 双语洞察
+    insight = Column(String(300))
+    insight_zh = Column(String(300))
+    insight_en = Column(String(300))
+    
+    # 标签
+    tag = Column(String(100))
+    tag_zh = Column(String(100))
+    tag_en = Column(String(100))
+    tag_color = Column(String(20), default='amber')
+    
+    # 策展类型
+    curation_type = Column(String(50))  # contrast/cognitive/action/niche
+    
+    # 生成规则
+    filter_rules = Column(JSON)
+    conflict_dimensions = Column(JSON)
+    
+    # 时间和状态
+    curation_date = Column(Date, nullable=False, index=True)
+    is_active = Column(Boolean, default=True)
+    display_order = Column(Integer, default=0)
+    
+    # 元数据
+    ai_generated = Column(Boolean, default=True)
+    generation_model = Column(String(100))
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    products = relationship("CurationProduct", back_populates="curation", cascade="all, delete-orphan")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "curation_key": self.curation_key,
+            "title": self.title,
+            "title_zh": self.title_zh,
+            "title_en": self.title_en,
+            "description": self.description,
+            "description_zh": self.description_zh,
+            "description_en": self.description_en,
+            "insight": self.insight,
+            "insight_zh": self.insight_zh,
+            "insight_en": self.insight_en,
+            "tag": self.tag,
+            "tag_zh": self.tag_zh,
+            "tag_en": self.tag_en,
+            "tag_color": self.tag_color,
+            "curation_type": self.curation_type,
+            "filter_rules": self.filter_rules,
+            "conflict_dimensions": self.conflict_dimensions,
+            "curation_date": self.curation_date.isoformat() if self.curation_date else None,
+            "is_active": self.is_active,
+            "display_order": self.display_order,
+            "product_count": len(self.products) if self.products else 0,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class CurationProduct(Base):
+    """策展-产品关联表"""
+    __tablename__ = "curation_products"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    curation_id = Column(Integer, ForeignKey("daily_curations.id", ondelete="CASCADE"), nullable=False, index=True)
+    startup_id = Column(Integer, ForeignKey("startups.id", ondelete="CASCADE"), nullable=False, index=True)
+    
+    highlight_zh = Column(String(200))
+    highlight_en = Column(String(200))
+    display_order = Column(Integer, default=0)
+    
+    # Relationships
+    curation = relationship("DailyCuration", back_populates="products")
+    startup = relationship("Startup")
+    
+    __table_args__ = (
+        Index('ix_curation_product_unique', 'curation_id', 'startup_id', unique=True),
+    )
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "curation_id": self.curation_id,
+            "startup_id": self.startup_id,
+            "highlight_zh": self.highlight_zh,
+            "highlight_en": self.highlight_en,
+            "display_order": self.display_order,
+        }
+
+
+class SuccessStory(Base):
+    """爆款故事表 - SuccessBreakdown 区块"""
+    __tablename__ = "success_stories"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    startup_id = Column(Integer, ForeignKey("startups.id", ondelete="SET NULL"), nullable=True, index=True)
+    
+    # 产品信息
+    product_name = Column(String(200), nullable=False)
+    product_logo = Column(String(20))  # emoji
+    product_mrr = Column(String(50))
+    founder_name = Column(String(200))
+    
+    # 双语标题
+    title = Column(String(300), nullable=False)
+    title_zh = Column(String(300))
+    title_en = Column(String(300))
+    
+    # 双语副标题
+    subtitle = Column(String(300))
+    subtitle_zh = Column(String(300))
+    subtitle_en = Column(String(300))
+    
+    # 样式
+    gradient = Column(String(100), default='from-emerald-500/10 to-teal-500/5')
+    accent_color = Column(String(20), default='emerald')
+    
+    # 状态
+    is_featured = Column(Boolean, default=False, index=True)
+    is_active = Column(Boolean, default=True)
+    display_order = Column(Integer, default=0)
+    
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    timeline_events = relationship("StoryTimelineEvent", back_populates="story", cascade="all, delete-orphan")
+    key_insights = relationship("StoryKeyInsight", back_populates="story", cascade="all, delete-orphan")
+    startup = relationship("Startup")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "startup_id": self.startup_id,
+            "product_name": self.product_name,
+            "product_logo": self.product_logo,
+            "product_mrr": self.product_mrr,
+            "founder_name": self.founder_name,
+            "title": self.title,
+            "title_zh": self.title_zh,
+            "title_en": self.title_en,
+            "subtitle": self.subtitle,
+            "subtitle_zh": self.subtitle_zh,
+            "subtitle_en": self.subtitle_en,
+            "gradient": self.gradient,
+            "accent_color": self.accent_color,
+            "is_featured": self.is_featured,
+            "is_active": self.is_active,
+            "timeline": [e.to_dict() for e in self.timeline_events] if self.timeline_events else [],
+            "key_insights": [i.to_dict() for i in self.key_insights] if self.key_insights else [],
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class StoryTimelineEvent(Base):
+    """故事时间线事件表"""
+    __tablename__ = "story_timeline_events"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    story_id = Column(Integer, ForeignKey("success_stories.id", ondelete="CASCADE"), nullable=False, index=True)
+    
+    event_date = Column(String(20), nullable=False)
+    event_text = Column(String(500), nullable=False)
+    event_text_zh = Column(String(500))
+    event_text_en = Column(String(500))
+    display_order = Column(Integer, default=0)
+    
+    # Relationships
+    story = relationship("SuccessStory", back_populates="timeline_events")
+    
+    def to_dict(self):
+        return {
+            "date": self.event_date,
+            "event": self.event_text,
+            "event_zh": self.event_text_zh,
+            "event_en": self.event_text_en,
+        }
+
+
+class StoryKeyInsight(Base):
+    """故事关键洞察表"""
+    __tablename__ = "story_key_insights"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    story_id = Column(Integer, ForeignKey("success_stories.id", ondelete="CASCADE"), nullable=False, index=True)
+    
+    insight_text = Column(String(300), nullable=False)
+    insight_text_zh = Column(String(300))
+    insight_text_en = Column(String(300))
+    display_order = Column(Integer, default=0)
+    
+    # Relationships
+    story = relationship("SuccessStory", back_populates="key_insights")
+    
+    def to_dict(self):
+        return {
+            "text": self.insight_text,
+            "text_zh": self.insight_text_zh,
+            "text_en": self.insight_text_en,
+        }
+
+
+class UserPreference(Base):
+    """用户偏好表 - ForYouSection 区块"""
+    __tablename__ = "user_preferences"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    user_id = Column(String(255), ForeignKey("user.id", ondelete="CASCADE"), nullable=False, unique=True, index=True)
+    
+    preferred_roles = Column(JSON, default=list)
+    interested_categories = Column(JSON, default=list)
+    skill_level = Column(String(20), default='beginner')
+    goal = Column(String(50))
+    time_commitment = Column(String(20))
+    tech_stack = Column(JSON, default=list)
+    
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    # Relationships
+    user = relationship("User")
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "user_id": self.user_id,
+            "preferred_roles": self.preferred_roles,
+            "interested_categories": self.interested_categories,
+            "skill_level": self.skill_level,
+            "goal": self.goal,
+            "time_commitment": self.time_commitment,
+            "tech_stack": self.tech_stack,
+            "created_at": self.created_at.isoformat() if self.created_at else None,
+        }
+
+
+class FeaturedCreator(Base):
+    """精选创作者表 - CreatorUniverse 区块"""
+    __tablename__ = "featured_creators"
+    
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    
+    name = Column(String(200), nullable=False)
+    handle = Column(String(100))
+    avatar = Column(String(20))  # emoji
+    bio_zh = Column(String(300))
+    bio_en = Column(String(300))
+    
+    tag = Column(String(100))
+    tag_zh = Column(String(100))
+    tag_en = Column(String(100))
+    tag_color = Column(String(20), default='amber')
+    
+    total_mrr = Column(String(50))
+    followers = Column(String(50))
+    product_count = Column(Integer, nullable=True)  # 产品数量
+    
+    founder_username = Column(String(255), index=True)
+    
+    is_featured = Column(Boolean, default=True, index=True)
+    display_order = Column(Integer, default=0)
+    
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+    
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "handle": self.handle,
+            "avatar": self.avatar,
+            "bio_zh": self.bio_zh,
+            "bio_en": self.bio_en,
+            "tag": self.tag,
+            "tag_zh": self.tag_zh,
+            "tag_en": self.tag_en,
+            "tag_color": self.tag_color,
+            "total_mrr": self.total_mrr,
+            "followers": self.followers,
+            "product_count": self.product_count,
+            "founder_username": self.founder_username,
+            "is_featured": self.is_featured,
+            "display_order": self.display_order,
+        }
