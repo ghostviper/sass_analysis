@@ -420,18 +420,23 @@
   },
   "discover": {
     "title": "发现",
-    "subtitle": "AI 策展 · 灵感发现 · 机会洞察",
+    "subtitle": "AI 策展 · 机会研判 · 可复制路径",
+    "hero": {
+      "tagline": "每日从真实营收与案例中挑选值得研究的方向",
+      "primaryCta": "让 AI 评估我是否适合做",
+      "secondaryCta": "先看今日策展"
+    },
     "todayCuration": {
       "title": "今日 AI 策展",
-      "subtitle": "每日精选，发现隐藏的机会",
-      "askAI": "让 AI 帮你分析",
+      "subtitle": "每日 1-2 组，用数据与逻辑标注可研究方向",
+      "askAI": "让 AI 评估可复制性",
       "viewAll": "查看全部"
     },
     "curations": {
-      "title": "每日 AI 策展",
-      "subtitle": "AI 每日精选，发现隐藏的产品机会",
-      "updatedDaily": "每日更新，持续发现新机会",
-      "filterByType": "类型",
+      "title": "AI 策展精选",
+      "subtitle": "每日从真实营收与案例中策展可研究方向",
+      "updatedDaily": "每日更新，保持判断新鲜",
+      "filterByType": "策展类型",
       "sortBy": "排序",
       "latest": "最新",
       "mostProducts": "产品最多",
@@ -441,21 +446,21 @@
       "adjustFilters": "尝试调整筛选条件或稍后再来",
       "types": {
         "all": "全部",
-        "contrast": "对比反差",
-        "cognitive": "认知颠覆",
-        "trend": "趋势洞察"
+        "contrast": "反差洞察",
+        "cognitive": "认知纠偏",
+        "trend": "趋势研判"
       }
     },
     "topics": {
       "title": "主题合集",
-      "subtitle": "按主题探索产品与创作者",
+      "subtitle": "按主题探索产品方向",
       "viewMore": "查看更多",
       "products": "个产品",
       "creators": "位创作者"
     },
     "breakdown": {
       "title": "爆款解剖",
-      "subtitle": "深度拆解成功产品的秘密",
+      "subtitle": "拆分可复制与不可复制要素",
       "readMore": "深度阅读",
       "timeline": "产品时间线",
       "keyInsights": "核心洞察",
@@ -463,22 +468,22 @@
     },
     "creatorUniverse": {
       "title": "创作者宇宙",
-      "subtitle": "发现值得关注的独立开发者",
+      "subtitle": "发现真实跑通商业化的独立开发者",
       "viewProfile": "查看主页",
       "products": "产品",
       "totalMRR": "总月收入"
     },
     "forYou": {
       "title": "为你推荐",
-      "subtitle": "基于你的兴趣，你可能想尝试这些方向",
+      "subtitle": "基于你的背景，推荐更可行动的方向",
       "whyForYou": "为什么适合你",
       "explore": "深入探索"
     },
     "cta": {
-      "askAI": "问 AI 更多",
-      "canICopy": "我能做类似的吗？",
-      "findSimilar": "帮我找类似的",
-      "deepDive": "深入分析"
+      "askAI": "让 AI 评估",
+      "canICopy": "让 AI 评估可复制性",
+      "findSimilar": "看相近方向",
+      "deepDive": "继续拆解"
     },
     "tags": {
       "underrated": "被低估的赚钱机器",

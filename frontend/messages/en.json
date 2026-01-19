@@ -419,18 +419,23 @@
   },
   "discover": {
     "title": "Discover",
-    "subtitle": "AI Curation · Inspiration · Opportunity Insights",
+    "subtitle": "AI curation · opportunity judgment · replicable paths",
+    "hero": {
+      "tagline": "Daily picks from real revenue and cases to highlight worth-building directions",
+      "primaryCta": "Ask AI if this fits me to build",
+      "secondaryCta": "Start with today's curation"
+    },
     "todayCuration": {
       "title": "Today's AI Curation",
-      "subtitle": "Daily picks, discover hidden opportunities",
-      "askAI": "Ask AI to analyze",
+      "subtitle": "1-2 daily, tagged with data-backed judgments",
+      "askAI": "Ask AI to assess replicability",
       "viewAll": "View all"
     },
     "curations": {
-      "title": "AI Curations",
-      "subtitle": "Discover hidden opportunities through AI-curated insights",
-      "updatedDaily": "Updated daily with fresh insights",
-      "filterByType": "Type",
+      "title": "AI Curation Picks",
+      "subtitle": "Daily curated directions grounded in real revenue and cases",
+      "updatedDaily": "Updated daily to keep judgments fresh",
+      "filterByType": "Curation type",
       "sortBy": "Sort by",
       "latest": "Latest",
       "mostProducts": "Most Products",
@@ -440,21 +445,21 @@
       "adjustFilters": "Try adjusting your filters or check back later",
       "types": {
         "all": "All",
-        "contrast": "Contrast",
-        "cognitive": "Cognitive",
-        "trend": "Trend"
+        "contrast": "Contrast insights",
+        "cognitive": "Cognitive corrections",
+        "trend": "Trend assessment"
       }
     },
     "topics": {
       "title": "Topic Collections",
-      "subtitle": "Explore products and creators by theme",
+      "subtitle": "Explore product directions by theme",
       "viewMore": "View more",
       "products": "products",
       "creators": "creators"
     },
     "breakdown": {
       "title": "Success Breakdown",
-      "subtitle": "Deep dive into successful products",
+      "subtitle": "Separate replicable from non-replicable factors",
       "readMore": "Read more",
       "timeline": "Product Timeline",
       "keyInsights": "Key Insights",
@@ -462,22 +467,22 @@
     },
     "creatorUniverse": {
       "title": "Creator Universe",
-      "subtitle": "Discover indie hackers worth following",
+      "subtitle": "See indie hackers who have proven monetization",
       "viewProfile": "View profile",
       "products": "Products",
       "totalMRR": "Total MRR"
     },
     "forYou": {
       "title": "For You",
-      "subtitle": "Based on your interests, you might want to try these",
+      "subtitle": "Based on your background, here are more actionable directions",
       "whyForYou": "Why it's for you",
       "explore": "Explore"
     },
     "cta": {
-      "askAI": "Ask AI more",
-      "canICopy": "Can I build something similar?",
-      "findSimilar": "Find similar ones",
-      "deepDive": "Deep dive"
+      "askAI": "Ask AI to assess",
+      "canICopy": "Ask AI about replicability",
+      "findSimilar": "See similar directions",
+      "deepDive": "Keep breaking down"
     },
     "tags": {
       "underrated": "Underrated money makers",

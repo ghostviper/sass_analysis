@@ -170,7 +170,9 @@ export function SuccessBreakdown() {
                     {story.product.mrr}
                   </span>
                 </div>
-                <span className="text-xs text-content-muted">by {story.product.founder}</span>
+                <span className="text-xs text-content-muted">
+                  {isEn ? `by ${story.product.founder}` : `创始人 ${story.product.founder}`}
+                </span>
               </div>
             </div>
 

@@ -7,6 +7,7 @@ import { SuccessBreakdown } from './components/SuccessBreakdown'
 import { CreatorUniverse } from './components/CreatorUniverse'
 import { ForYouSection } from './components/ForYouSection'
 import { Sparkles, Compass } from 'lucide-react'
+import Link from 'next/link'
 
 export default function DiscoverPage() {
   const { t } = useLocale()
@@ -36,8 +37,22 @@ export default function DiscoverPage() {
               <div className="w-8 h-8 rounded-lg bg-brand-500/10 flex items-center justify-center">
                 <Sparkles className="h-4 w-4 text-brand-500" />
               </div>
-              <span>AI 每日策展，发现隐藏机会</span>
+              <span>{t('discover.hero.tagline')}</span>
             </div>
+          </div>
+          <div className="flex flex-wrap gap-3 mt-4">
+            <Link
+              href="/assistant"
+              className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+            >
+              {t('discover.hero.primaryCta')}
+            </Link>
+            <Link
+              href="#curations"
+              className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-surface border border-surface-border text-sm font-medium text-content-secondary hover:text-content-primary hover:border-brand-500/30 transition-colors"
+            >
+              {t('discover.hero.secondaryCta')}
+            </Link>
           </div>
         </div>
       </div>
