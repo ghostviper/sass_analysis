@@ -38,3 +38,7 @@ next-env.d.ts
 .vscode/
 *.swp
 *.swo
+
+#kiro
+.shared/*
+.kiro/*

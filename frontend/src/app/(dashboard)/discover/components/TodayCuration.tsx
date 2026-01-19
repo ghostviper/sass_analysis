@@ -2,11 +2,12 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { Sparkles, ArrowRight, MessageCircle, TrendingUp, Zap, Loader2 } from 'lucide-react'
+import { ArrowRight, MessageCircle, TrendingUp, Zap, Sparkles } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { Curation } from '@/types/discover'
 import { getCurations } from '@/lib/api/discover'
+import { CurationCardSkeleton } from '@/components/ui/Loading'
 
 // Mock data for fallback
 const mockCurations: Curation[] = [
@@ -62,7 +63,6 @@ export function TodayCuration() {
   const { t, locale } = useLocale()
   const [curations, setCurations] = useState<Curation[]>([])
   const [loading, setLoading] = useState(true)
-  const [useMock, setUseMock] = useState(false)
 
   const isEn = locale === 'en'
 
@@ -75,12 +75,10 @@ export function TodayCuration() {
           setCurations(data.curations)
         } else {
           setCurations(mockCurations)
-          setUseMock(true)
         }
       } catch (err) {
         console.error('Failed to fetch curations:', err)
         setCurations(mockCurations)
-        setUseMock(true)
       } finally {
         setLoading(false)
       }
@@ -92,12 +90,67 @@ export function TodayCuration() {
   const getDesc = (c: Curation) => isEn ? c.description_en : c.description_zh
   const getTag = (c: Curation) => isEn ? c.tag_en : c.tag_zh
   const getInsight = (c: Curation) => isEn ? c.insight_en : c.insight_zh
+  const getProductHighlight = (product: Curation['products'][number]) => {
+    if (isEn) {
+      return product.highlight_en || product.highlight_zh || null
+    }
+    return product.highlight_zh || product.highlight_en || null
+  }
+
+  const buildChatMessage = (c: Curation) => {
+    const title = getTitle(c)
+    const productNames = c.products.map(p => p.name).filter(Boolean)
+    const productList = productNames.length
+      ? productNames.join(isEn ? ', ' : '、')
+      : (isEn ? 'these products' : '这些产品')
+    return isEn
+      ? `I'm interested in the curation "${title}". It includes ${productList}. Can you analyze whether I could build something similar?`
+      : `我对「${title}」这组策展很感兴趣，包含${productList}。帮我分析一下我能不能做类似的产品？`
+  }
+
+  const tagColorClasses: Record<string, string> = {
+    amber: 'bg-amber-500/10 text-amber-600 dark:text-amber-400',
+    emerald: 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400',
+    violet: 'bg-violet-500/10 text-violet-600 dark:text-violet-400',
+    blue: 'bg-blue-500/10 text-blue-600 dark:text-blue-400',
+    rose: 'bg-rose-500/10 text-rose-600 dark:text-rose-400',
+    slate: 'bg-slate-500/10 text-slate-600 dark:text-slate-400',
+    purple: 'bg-purple-500/10 text-purple-600 dark:text-purple-400',
+    orange: 'bg-orange-500/10 text-orange-600 dark:text-orange-400',
+    teal: 'bg-teal-500/10 text-teal-600 dark:text-teal-400',
+    green: 'bg-green-500/10 text-green-600 dark:text-green-400',
+    gray: 'bg-gray-500/10 text-gray-600 dark:text-gray-400',
+    yellow: 'bg-yellow-500/10 text-yellow-600 dark:text-yellow-400',
+    indigo: 'bg-indigo-500/10 text-indigo-600 dark:text-indigo-400',
+    cyan: 'bg-cyan-500/10 text-cyan-600 dark:text-cyan-400',
+  }
 
   if (loading) {
     return (
       <section>
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="h-6 w-6 animate-spin text-content-muted" />
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-violet-500 flex items-center justify-center shadow-lg shadow-brand-500/20">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
+                {t('discover.todayCuration.title')}
+              </h2>
+              <p className="text-xs text-content-muted">{t('discover.todayCuration.subtitle')}</p>
+            </div>
+          </div>
+          <Link
+            href="/discover/curations"
+            className="text-sm text-brand-500 hover:text-brand-600 font-medium flex items-center gap-1 transition-colors cursor-pointer"
+          >
+            {t('discover.todayCuration.viewAll')}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-2 gap-5">
+          <CurationCardSkeleton />
+          <CurationCardSkeleton />
         </div>
       </section>
     )
@@ -107,7 +160,7 @@ export function TodayCuration() {
     <section>
       <div className="flex items-center justify-between mb-5">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-600 flex items-center justify-center shadow-lg shadow-violet-500/20">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-brand-500 to-violet-500 flex items-center justify-center shadow-lg shadow-brand-500/20">
             <Sparkles className="h-5 w-5 text-white" />
           </div>
           <div>
@@ -118,8 +171,8 @@ export function TodayCuration() {
           </div>
         </div>
         <Link
-          href="/discover#curations"
-          className="text-sm text-brand-500 hover:text-brand-600 font-medium flex items-center gap-1 transition-colors"
+          href="/discover/curations"
+          className="text-sm text-brand-500 hover:text-brand-600 font-medium flex items-center gap-1 transition-colors cursor-pointer"
         >
           {t('discover.todayCuration.viewAll')}
           <ArrowRight className="h-4 w-4" />
@@ -128,20 +181,16 @@ export function TodayCuration() {
 
       <div className="grid md:grid-cols-2 gap-5">
         {curations.map((curation) => (
-          <Card key={curation.id} hover className="group relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-violet-500/5 to-transparent rounded-full -translate-y-1/2 translate-x-1/2" />
-            
+          <Card key={curation.id} hover className="group relative overflow-hidden cursor-pointer">
             <div className="relative">
               <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium mb-3
-                ${curation.tag_color === 'amber' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' : ''}
-                ${curation.tag_color === 'emerald' ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : ''}
-                ${curation.tag_color === 'violet' ? 'bg-violet-500/10 text-violet-600 dark:text-violet-400' : ''}
+                ${tagColorClasses[curation.tag_color] || tagColorClasses.amber}
               `}>
                 <Zap className="h-3 w-3" />
                 {getTag(curation)}
               </div>
 
-              <h3 className="text-base font-bold text-content-primary mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors line-clamp-2">
+              <h3 className="text-base font-bold text-content-primary mb-2 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200 line-clamp-2">
                 {getTitle(curation)}
               </h3>
 
@@ -154,19 +203,26 @@ export function TodayCuration() {
                   <Link
                     key={idx}
                     href={product.slug ? `/products/${product.slug}` : '#'}
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-surface/50 border border-surface-border/50 hover:bg-surface hover:border-brand-500/30 transition-all group"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-surface/50 border border-surface-border/50 hover:bg-surface active:bg-surface-hover hover:border-brand-500/30 active:border-brand-500/50 transition-colors duration-200 group/product cursor-pointer"
                   >
-                    <div className="flex items-center gap-2.5">
+                    <div className="flex items-center gap-2.5 min-w-0">
                       {product.logo && product.logo.startsWith('http') ? (
-                        <img src={product.logo} alt={product.name} className="w-6 h-6 rounded object-cover" />
+                        <img src={product.logo} alt={`${product.name} logo`} className="w-6 h-6 rounded object-cover" />
                       ) : (
-                        <div className="w-6 h-6 rounded bg-gradient-to-br from-brand-500/20 to-violet-500/20 flex items-center justify-center group-hover:from-brand-500/30 group-hover:to-violet-500/30 transition-colors">
+                        <div className="w-6 h-6 rounded bg-brand-500/10 border border-brand-500/20 flex items-center justify-center group-hover/product:bg-brand-500/20 transition-colors">
                           <span className="text-xs font-bold text-brand-600 dark:text-brand-400">
                             {product.name?.charAt(0)?.toUpperCase() || 'P'}
                           </span>
                         </div>
                       )}
-                      <span className="text-sm font-medium text-content-primary group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{product.name}</span>
+                      <div className="min-w-0">
+                        <span className="text-sm font-medium text-content-primary group-hover/product:text-brand-600 dark:group-hover/product:text-brand-400 transition-colors block truncate">{product.name}</span>
+                        {getProductHighlight(product) && (
+                          <span className="text-xs text-content-muted block truncate">
+                            {getProductHighlight(product)}
+                          </span>
+                        )}
+                      </div>
                     </div>
                     <span className="text-sm font-mono text-emerald-600 dark:text-emerald-400 font-medium">
                       {product.mrr}
@@ -175,16 +231,16 @@ export function TodayCuration() {
                 ))}
               </div>
 
-              <div className="flex items-center gap-2 p-3 rounded-lg bg-violet-500/5 border border-violet-500/10 mb-4">
-                <TrendingUp className="h-4 w-4 text-violet-500 flex-shrink-0" />
-                <span className="text-sm text-violet-600 dark:text-violet-400 font-medium">
+              <div className="flex items-center gap-2 p-3 rounded-lg bg-brand-500/5 border border-brand-500/10 mb-4">
+                <TrendingUp className="h-4 w-4 text-brand-500 flex-shrink-0" />
+                <span className="text-sm text-brand-600 dark:text-brand-400 font-medium">
                   {getInsight(curation)}
                 </span>
               </div>
 
               <Link
-                href={`/assistant?products=${curation.products.map(p => p.name).join(',')}`}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 text-sm font-medium hover:bg-brand-500/20 transition-colors"
+                href={`/assistant?message=${encodeURIComponent(buildChatMessage(curation))}`}
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium hover:from-amber-500/20 hover:to-orange-500/20 active:from-amber-500/30 active:to-orange-500/30 transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="h-4 w-4" />
                 {t('discover.cta.canICopy')}

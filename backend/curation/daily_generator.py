@@ -287,15 +287,17 @@ class DailyCurationGenerator:
         self, 
         curation_date: date,
         template_keys: Optional[List[str]] = None,
-        force_regenerate: bool = False
+        force_regenerate: bool = False,
+        allow_reuse_rate: float = 0.3,  # 允许30%产品复用
     ) -> List[DailyCuration]:
         """
-        为指定日期生成所有策展
+        为指定日期生成所有策展（带去重逻辑）
         
         Args:
             curation_date: 策展日期
             template_keys: 要生成的模板key列表，None表示全部
             force_regenerate: 是否强制重新生成
+            allow_reuse_rate: 允许的产品复用率（0.0-1.0）
         
         Returns:
             成功生成的策展列表
@@ -304,18 +306,126 @@ class DailyCurationGenerator:
         if template_keys:
             templates = [t for t in templates if t.key in template_keys]
         
+        # 按优先级排序（优先级高的先生成）
+        templates = sorted(templates, key=lambda t: t.priority, reverse=True)
+        
+        used_products = set()  # 全局已使用的产品ID
         results = []
+        
         for template in templates:
             try:
-                curation = self.generate_curation(
-                    template, 
-                    curation_date, 
-                    force_regenerate
+                # 筛选匹配的产品
+                all_matches = self._filter_products(template.filter_rules)
+                
+                if not all_matches:
+                    logger.warning(f"模板 {template.key} 没有匹配的产品")
+                    continue
+                
+                # 分离未使用和已使用的产品
+                unused = [p for p in all_matches if p[0].id not in used_products]
+                reusable = [p for p in all_matches if p[0].id in used_products]
+                
+                # 计算配额
+                total_needed = template.max_products
+                min_unused = int(total_needed * (1 - allow_reuse_rate))
+                
+                # 检查是否有足够的未使用产品
+                if len(unused) < min_unused:
+                    logger.warning(
+                        f"模板 {template.key} 未使用产品不足: "
+                        f"需要 {min_unused}，实际 {len(unused)}"
+                    )
+                    # 如果连最低要求都达不到，跳过
+                    if len(unused) < template.min_products:
+                        continue
+                
+                # 优先使用未使用的产品
+                selected = unused[:total_needed]
+                
+                # 如果不够，补充可复用的产品
+                if len(selected) < total_needed and reusable:
+                    max_reuse = total_needed - len(selected)
+                    selected.extend(reusable[:max_reuse])
+                
+                # 记录新使用的产品
+                for p in selected:
+                    if p[0].id not in used_products:
+                        used_products.add(p[0].id)
+                
+                # 生成策展
+                curation_key = f"{template.key}_{curation_date.isoformat()}"
+                
+                # 检查是否已存在
+                existing = self.db.query(DailyCuration).filter(
+                    DailyCuration.curation_key == curation_key
+                ).first()
+                
+                if existing:
+                    if force_regenerate:
+                        self.db.delete(existing)
+                        self.db.flush()
+                    else:
+                        logger.info(f"策展已存在: {curation_key}")
+                        results.append(existing)
+                        continue
+                
+                # 创建新策展
+                curation = DailyCuration(
+                    curation_key=curation_key,
+                    title=template.title_zh,
+                    title_zh=template.title_zh,
+                    title_en=template.title_en,
+                    description=template.description_zh,
+                    description_zh=template.description_zh,
+                    description_en=template.description_en,
+                    insight=template.insight_zh,
+                    insight_zh=template.insight_zh,
+                    insight_en=template.insight_en,
+                    tag=template.tag_zh,
+                    tag_zh=template.tag_zh,
+                    tag_en=template.tag_en,
+                    tag_color=template.tag_color,
+                    curation_type=template.curation_type,
+                    filter_rules=template.filter_rules,
+                    conflict_dimensions=template.conflict_dimensions,
+                    curation_date=curation_date,
+                    is_active=True,
+                    ai_generated=True,
                 )
-                if curation:
-                    results.append(curation)
+                self.db.add(curation)
+                self.db.flush()
+                
+                # 添加产品关联
+                for i, (startup, highlight_zh, highlight_en) in enumerate(selected):
+                    cp = CurationProduct(
+                        curation_id=curation.id,
+                        startup_id=startup.id,
+                        highlight_zh=highlight_zh,
+                        highlight_en=highlight_en,
+                        display_order=i,
+                    )
+                    self.db.add(cp)
+                
+                self.db.commit()
+                
+                # 统计复用情况
+                reused_count = sum(1 for p in selected if p[0].id in used_products and selected.index(p) > 0)
+                logger.info(
+                    f"生成策展: {curation_key}，"
+                    f"包含 {len(selected)} 个产品 "
+                    f"(新增 {len(selected) - reused_count}, 复用 {reused_count})"
+                )
+                
+                results.append(curation)
+                
             except Exception as e:
                 logger.error(f"生成策展失败 {template.key}: {e}")
+                self.db.rollback()
+        
+        logger.info(
+            f"完成生成 {len(results)} 个策展，"
+            f"共使用 {len(used_products)} 个不同产品"
+        )
         
         return results
     

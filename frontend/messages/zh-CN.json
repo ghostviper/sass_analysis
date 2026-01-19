@@ -427,6 +427,25 @@
       "askAI": "让 AI 帮你分析",
       "viewAll": "查看全部"
     },
+    "curations": {
+      "title": "每日 AI 策展",
+      "subtitle": "AI 每日精选，发现隐藏的产品机会",
+      "updatedDaily": "每日更新，持续发现新机会",
+      "filterByType": "类型",
+      "sortBy": "排序",
+      "latest": "最新",
+      "mostProducts": "产品最多",
+      "showingCount": "显示 {filtered} / {total} 条策展",
+      "clearFilter": "清除筛选",
+      "noCurations": "暂无策展内容",
+      "adjustFilters": "尝试调整筛选条件或稍后再来",
+      "types": {
+        "all": "全部",
+        "contrast": "对比反差",
+        "cognitive": "认知颠覆",
+        "trend": "趋势洞察"
+      }
+    },
     "topics": {
       "title": "主题合集",
       "subtitle": "按主题探索产品与创作者",

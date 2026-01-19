@@ -18,6 +18,7 @@ from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import select, func, desc, and_
 from sqlalchemy.orm import selectinload
+from urllib.parse import urlparse
 
 from database.db import get_db_session
 from database.models import (
@@ -60,7 +61,60 @@ LABEL_MAP = {
 }
 
 
-def extract_key_tags(judgments: dict, role: str) -> List[dict]:
+HIGH_FOLLOWER_THRESHOLD = 5000
+
+
+def build_social_url(handle: Optional[str], platform: Optional[str], username: Optional[str]) -> Optional[str]:
+    """构建创作者社交链接"""
+    if handle:
+        trimmed = handle.strip()
+        if trimmed.startswith("http://") or trimmed.startswith("https://"):
+            return trimmed
+    name = None
+    if handle:
+        name = handle.strip()
+    if name and name.startswith("@"):
+        name = name[1:]
+    if not name:
+        name = username
+    if not name:
+        return None
+    platform_value = (platform or "").lower()
+    if "linkedin" in platform_value:
+        return f"https://www.linkedin.com/in/{name}"
+    if "github" in platform_value:
+        return f"https://github.com/{name}"
+    return f"https://x.com/{name}"
+
+
+def normalize_creator_key(value: Optional[str]) -> Optional[str]:
+    if not value:
+        return None
+    trimmed = value.strip()
+    if not trimmed:
+        return None
+    if trimmed.startswith("http://") or trimmed.startswith("https://"):
+        parsed = urlparse(trimmed)
+        if parsed.path:
+            trimmed = parsed.path.strip("/").split("/")[-1]
+    if trimmed.startswith("@"):
+        trimmed = trimmed[1:]
+    trimmed = trimmed.strip()
+    return trimmed.lower() if trimmed else None
+
+
+def count_products_by_id(products: List[dict]) -> int:
+    ids = {p.get('id') for p in products if p.get('id') is not None}
+    return len(ids) if ids else len(products)
+
+
+def format_followers(count: Optional[int]) -> Optional[str]:
+    if not count:
+        return None
+    return f"{count / 1000:.0f}k" if count >= 1000 else str(count)
+
+
+def extract_key_tags(judgments: dict, role: str, founder_followers: Optional[int] = None) -> List[dict]:
     """提取关键标签"""
     key_fields = KEY_TAGS_BY_ROLE.get(role, ['solo_feasibility', 'entry_barrier', 'primary_risk'])
     tags = []
@@ -69,6 +123,8 @@ def extract_key_tags(judgments: dict, role: str) -> List[dict]:
         if field in judgments:
             judgment_data = judgments[field]
             value = judgment_data.get('judgment', '') if isinstance(judgment_data, dict) else str(judgment_data)
+            if field == 'success_driver' and founder_followers is not None and founder_followers >= HIGH_FOLLOWER_THRESHOLD:
+                value = 'IP/创作者驱动'
             label_data = LABEL_MAP.get(field, {'zh': field, 'en': field})
             tags.append({
                 'key': field,
@@ -224,7 +280,7 @@ async def get_topic_detail(
                 'category': startup.category,
                 'logo_url': startup.logo_url,
                 'revenue_30d': startup.revenue_30d,
-                'key_tags': extract_key_tags(judgments, role),
+                'key_tags': extract_key_tags(judgments, role, startup.founder_followers),
             })
         
         return {
@@ -246,7 +302,7 @@ async def get_topic_detail(
 
 @router.get("/discover/curations")
 async def get_curations(
-    limit: int = Query(4, ge=1, le=10),
+    limit: int = Query(4, ge=1, le=100),
     days: int = Query(30, ge=1, le=365),
 ):
     """获取最近的策展内容"""
@@ -304,6 +360,8 @@ async def get_curations(
                         'slug': startup.slug,
                         'mrr': f"${startup.revenue_30d / 1000:.1f}k" if startup.revenue_30d else None,
                         'logo': startup.logo_url or '📦',
+                        'highlight_zh': cp.highlight_zh,
+                        'highlight_en': cp.highlight_en,
                     })
             
             curation_list.append({
@@ -451,34 +509,61 @@ async def get_creators(
             
             if featured:
                 # 获取关联的产品
-                usernames = [f.founder_username for f in featured if f.founder_username]
-                products_by_username = {}
+                normalized_usernames = []
+                for f in featured:
+                    key = normalize_creator_key(f.founder_username) or normalize_creator_key(f.handle)
+                    if key:
+                        normalized_usernames.append(key)
+                normalized_usernames = list(dict.fromkeys(normalized_usernames))
+                products_by_key = {}
+                avatar_by_key = {}
+                platform_by_key = {}
                 
-                if usernames:
+                if normalized_usernames:
                     products_query = (
                         select(Startup)
-                        .where(Startup.founder_username.in_(usernames))
+                        .where(func.lower(Startup.founder_username).in_(normalized_usernames))
                         .order_by(desc(Startup.revenue_30d))
                     )
                     products_result = await db.execute(products_query)
                     for p in products_result.scalars():
-                        if p.founder_username not in products_by_username:
-                            products_by_username[p.founder_username] = []
-                        products_by_username[p.founder_username].append({
+                        key = normalize_creator_key(p.founder_username)
+                        if not key:
+                            continue
+                        if key not in products_by_key:
+                            products_by_key[key] = []
+                        products_by_key[key].append({
+                            'id': p.id,
                             'name': p.name,
                             'mrr': f"${p.revenue_30d / 1000:.0f}k" if p.revenue_30d else None,
                         })
+                        if p.founder_avatar_url and key not in avatar_by_key:
+                            avatar_by_key[key] = p.founder_avatar_url
+                        if p.founder_social_platform and key not in platform_by_key:
+                            platform_by_key[key] = p.founder_social_platform
                 
                 creator_list = []
                 for f in featured:
-                    products = products_by_username.get(f.founder_username, [])[:3]
-                    # 使用 featured_creators 表中的 product_count，如果没有则用实际查到的数量
-                    product_count = f.product_count if f.product_count else len(products)
+                    creator_key = normalize_creator_key(f.founder_username) or normalize_creator_key(f.handle)
+                    all_products = products_by_key.get(creator_key, []) or []
+                    products = all_products[:3]
+                    # 优先用从 startups 统计出来的数量（与 leaderboard 一致），缺失时再回退
+                    computed_count = count_products_by_id(all_products) if all_products else None
+                    if computed_count:
+                        product_count = computed_count
+                    elif f.product_count is not None:
+                        product_count = f.product_count
+                    else:
+                        product_count = computed_count or 0
+                    avatar_url = avatar_by_key.get(creator_key)
+                    platform = platform_by_key.get(creator_key)
+                    social_url = build_social_url(f.handle, platform, f.founder_username)
                     creator_list.append({
                         'id': f.id,
                         'name': f.name,
                         'handle': f.handle,
                         'avatar': f.avatar or '🚀',
+                        'avatar_url': avatar_url,
                         'bio': f.bio_zh,
                         'bio_zh': f.bio_zh,
                         'bio_en': f.bio_en,
@@ -488,6 +573,8 @@ async def get_creators(
                         'tag_color': f.tag_color or 'amber',
                         'total_mrr': f.total_mrr,
                         'followers': f.followers,
+                        'social_url': social_url,
+                        'social_platform': platform,
                         'products': products,
                         'product_count': product_count,
                     })
@@ -502,6 +589,7 @@ async def get_creators(
                 Startup.founder_name,
                 Startup.founder_avatar_url,
                 Startup.founder_followers,
+                Startup.founder_social_platform,
                 func.sum(Startup.revenue_30d).label('total_revenue'),
                 func.count(Startup.id).label('product_count')
             )
@@ -511,7 +599,8 @@ async def get_creators(
                 Startup.founder_username,
                 Startup.founder_name,
                 Startup.founder_avatar_url,
-                Startup.founder_followers
+                Startup.founder_followers,
+                Startup.founder_social_platform
             )
             .order_by(desc('total_revenue'))
             .limit(limit)
@@ -524,33 +613,51 @@ async def get_creators(
             return {'creators': []}
         
         # 获取每个创作者的产品列表
-        usernames = [r.founder_username for r in rows]
+        usernames = []
+        for r in rows:
+            key = normalize_creator_key(r.founder_username)
+            if key:
+                usernames.append(key)
+        usernames = list(dict.fromkeys(usernames))
         products_query = (
             select(Startup)
-            .where(Startup.founder_username.in_(usernames))
+            .where(func.lower(Startup.founder_username).in_(usernames))
             .order_by(desc(Startup.revenue_30d))
         )
         products_result = await db.execute(products_query)
         
-        products_by_username = {}
+        products_by_key = {}
         for p in products_result.scalars():
-            if p.founder_username not in products_by_username:
-                products_by_username[p.founder_username] = []
-            products_by_username[p.founder_username].append({
+            key = normalize_creator_key(p.founder_username)
+            if not key:
+                continue
+            if key not in products_by_key:
+                products_by_key[key] = []
+            products_by_key[key].append({
+                'id': p.id,
                 'name': p.name,
                 'mrr': f"${p.revenue_30d / 1000:.0f}k" if p.revenue_30d else None,
             })
         
         creator_list = []
         for row in rows:
-            products = products_by_username.get(row.founder_username, [])[:3]
+            row_key = normalize_creator_key(row.founder_username)
+            all_products = products_by_key.get(row_key, []) or []
+            products = all_products[:3]
             total_mrr = row.total_revenue or 0
+            followers = format_followers(row.founder_followers)
+            social_url = build_social_url(
+                f"@{row.founder_username}" if row.founder_username else None,
+                row.founder_social_platform,
+                row.founder_username,
+            )
             
             creator_list.append({
                 'id': row.founder_username,
                 'name': row.founder_name or row.founder_username,
                 'handle': f"@{row.founder_username}" if row.founder_username else None,
-                'avatar': '🚀',
+                'avatar': row.founder_avatar_url or '??',
+                'avatar_url': row.founder_avatar_url,
                 'bio': None,
                 'bio_zh': None,
                 'bio_en': None,
@@ -559,12 +666,120 @@ async def get_creators(
                 'tag_en': None,
                 'tag_color': 'amber',
                 'total_mrr': f"${total_mrr / 1000:.0f}k+" if total_mrr >= 1000 else f"${total_mrr:.0f}",
-                'followers': f"{row.founder_followers / 1000:.0f}k" if row.founder_followers and row.founder_followers >= 1000 else str(row.founder_followers or 0),
+                'followers': followers,
+                'social_url': social_url,
+                'social_platform': row.founder_social_platform,
                 'products': products,
-                'product_count': row.product_count,
+                'product_count': count_products_by_id(all_products),
             })
         
         return {'creators': creator_list}
+
+
+@router.get("/discover/creators/{creator_id}")
+async def get_creator_detail(creator_id: str):
+    """获取创作者详情（精选创作者或按 founder_username 聚合）"""
+    async with get_db_session() as db:
+        creator = None
+        creator_data = None
+        username = None
+
+        # 优先按精选创作者 ID 查找
+        if creator_id.isdigit():
+            featured_query = select(FeaturedCreator).where(FeaturedCreator.id == int(creator_id))
+            featured_result = await db.execute(featured_query)
+            creator = featured_result.scalar_one_or_none()
+
+        if creator:
+            username = creator.founder_username
+            creator_data = {
+                'id': creator.id,
+                'name': creator.name,
+                'handle': creator.handle,
+                'avatar': creator.avatar or '??',
+                'bio': creator.bio_zh,
+                'bio_zh': creator.bio_zh,
+                'bio_en': creator.bio_en,
+                'tag': creator.tag,
+                'tag_zh': creator.tag_zh or creator.tag,
+                'tag_en': creator.tag_en or creator.tag,
+                'tag_color': creator.tag_color or 'amber',
+                'total_mrr': creator.total_mrr,
+                'followers': creator.followers,
+                'products': [],
+                'product_count': creator.product_count or 0,
+            }
+        else:
+            # 兜底：按 founder_username 聚合
+            username = creator_id.lstrip('@')
+
+        products = []
+        avatar_url = None
+        platform = None
+        followers_count = None
+        if username:
+            products_query = (
+                select(Startup)
+                .where(Startup.founder_username == username)
+                .order_by(desc(Startup.revenue_30d))
+            )
+            products_result = await db.execute(products_query)
+            startups = list(products_result.scalars())
+
+            for p in startups:
+                if avatar_url is None and p.founder_avatar_url:
+                    avatar_url = p.founder_avatar_url
+                if platform is None and p.founder_social_platform:
+                    platform = p.founder_social_platform
+                if followers_count is None and p.founder_followers is not None:
+                    followers_count = p.founder_followers
+
+            products = [{
+                'name': p.name,
+                'mrr': f"${p.revenue_30d / 1000:.0f}k" if p.revenue_30d else None,
+            } for p in startups[:6]]
+
+            if not creator_data:
+                total_revenue = sum(p.revenue_30d or 0 for p in startups)
+                creator_data = {
+                    'id': username,
+                    'name': startups[0].founder_name or username if startups else username,
+                    'handle': f"@{username}" if username else None,
+                    'avatar': avatar_url or '??',
+                    'avatar_url': avatar_url,
+                    'bio': None,
+                    'bio_zh': None,
+                    'bio_en': None,
+                    'tag': None,
+                    'tag_zh': None,
+                    'tag_en': None,
+                    'tag_color': 'amber',
+                    'total_mrr': f"${total_revenue / 1000:.0f}k+" if total_revenue >= 1000 else f"${total_revenue:.0f}",
+                    'followers': format_followers(followers_count),
+                    'social_url': build_social_url(f"@{username}", platform, username),
+                    'social_platform': platform,
+                    'products': [],
+                    'product_count': len(startups),
+                }
+
+        if creator_data:
+            if not creator_data.get('avatar_url'):
+                creator_data['avatar_url'] = avatar_url
+            if not creator_data.get('social_url'):
+                creator_data['social_url'] = build_social_url(creator_data.get('handle'), platform, username)
+            if not creator_data.get('social_platform'):
+                creator_data['social_platform'] = platform
+            if not creator_data.get('followers'):
+                creator_data['followers'] = format_followers(followers_count)
+
+        if not creator_data:
+            raise HTTPException(status_code=404, detail="Creator not found")
+
+        creator_data['products'] = products
+        if creator_data['product_count'] == 0:
+            creator_data['product_count'] = len(products)
+
+        return {'creator': creator_data}
 
 
 
@@ -646,6 +861,59 @@ RECOMMENDATION_DIRECTIONS = [
     },
 ]
 
+ROLE_LABELS = {
+    "cautious_indie_dev": {"zh": "谨慎的独立开发者", "en": "Cautious Indie Dev"},
+    "quick_starter": {"zh": "快速启动者", "en": "Quick Starter"},
+    "opportunity_hunter": {"zh": "机会嗅觉型", "en": "Opportunity Hunter"},
+    "anti_bubble": {"zh": "反泡沫分析者", "en": "Anti-Bubble Analyst"},
+    "product_driven_fan": {"zh": "产品驱动爱好者", "en": "Product-Driven"},
+    "niche_hunter": {"zh": "细分市场猎手", "en": "Niche Hunter"},
+    "ux_differentiator": {"zh": "体验差异化追求者", "en": "UX Differentiator"},
+    "low_risk_starter": {"zh": "低风险入门者", "en": "Low-Risk Starter"},
+    "content_to_product": {"zh": "内容创作者转型", "en": "Content Creator"},
+    "scenario_focused": {"zh": "场景聚焦者", "en": "Scenario Focused"},
+}
+
+SKILL_LEVEL_LABELS = {
+    "beginner": {"zh": "入门", "en": "Beginner"},
+    "intermediate": {"zh": "进阶", "en": "Intermediate"},
+    "advanced": {"zh": "高级", "en": "Advanced"},
+}
+
+
+def build_why_for_you(
+    direction: dict,
+    preferred_roles: List[str],
+    interested_categories: List[str],
+    skill_level: Optional[str],
+) -> Dict[str, Optional[str]]:
+    """生成个性化推荐原因"""
+    role_matches = [r for r in direction.get("match_roles", []) if r in preferred_roles]
+    role_labels_zh = [ROLE_LABELS.get(r, {"zh": r}).get("zh", r) for r in role_matches]
+    role_labels_en = [ROLE_LABELS.get(r, {"en": r}).get("en", r) for r in role_matches]
+
+    category_matches = [c for c in direction.get("match_categories", []) if c in interested_categories]
+
+    reasons_zh = []
+    reasons_en = []
+
+    if role_labels_zh:
+        reasons_zh.append(f"匹配你的角色偏好：{', '.join(role_labels_zh)}")
+        reasons_en.append(f"Matches your role preferences: {', '.join(role_labels_en)}")
+    if category_matches:
+        reasons_zh.append(f"符合你关注的领域：{', '.join(category_matches)}")
+        reasons_en.append(f"Aligned with your categories: {', '.join(category_matches)}")
+
+    if skill_level:
+        skill = SKILL_LEVEL_LABELS.get(skill_level, {"zh": skill_level, "en": skill_level})
+        reasons_zh.append(f"难度更适合你的阶段：{skill['zh']}")
+        reasons_en.append(f"Difficulty fits your level: {skill['en']}")
+
+    if not reasons_zh:
+        return {"zh": None, "en": None}
+
+    return {"zh": "；".join(reasons_zh), "en": " · ".join(reasons_en)}
+
 
 @router.get("/discover/recommendations")
 async def get_recommendations(
@@ -672,7 +940,8 @@ async def get_recommendations(
         if user_pref:
             preferred_roles = user_pref.preferred_roles or []
             interested_categories = user_pref.interested_categories or []
-            
+            skill_level = user_pref.skill_level
+
             def score_direction(d):
                 score = 0
                 for role in d.get('match_roles', []):
@@ -684,10 +953,15 @@ async def get_recommendations(
                 return score
             
             recommendations = sorted(recommendations, key=score_direction, reverse=True)
-        
+        else:
+            preferred_roles = []
+            interested_categories = []
+            skill_level = None
+
         # 格式化输出
         result = []
         for d in recommendations[:limit]:
+            why = build_why_for_you(d, preferred_roles, interested_categories, skill_level)
             result.append({
                 'id': d['id'],
                 'direction': d['direction_zh'],
@@ -696,9 +970,9 @@ async def get_recommendations(
                 'description': d['description_zh'],
                 'description_zh': d['description_zh'],
                 'description_en': d['description_en'],
-                'why_for_you': None,  # 可以根据匹配原因生成
-                'why_for_you_zh': None,
-                'why_for_you_en': None,
+                'why_for_you': why['zh'],
+                'why_for_you_zh': why['zh'],
+                'why_for_you_en': why['en'],
                 'examples': d['examples'],
                 'difficulty': d['difficulty'],
                 'potential': d['potential'],

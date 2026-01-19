@@ -4,12 +4,15 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { useLocale } from "@/contexts/LocaleContext";
 import { Card } from "@/components/ui/Card";
-import { Globe, Moon, Sun, Monitor, Check, Bell, Mail } from "lucide-react";
+import { Globe, Moon, Sun, Monitor, Check, Bell, Mail, SlidersHorizontal } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { useAuth } from "@/hooks/useAuth";
+import { getUserPreference, saveUserPreference } from "@/lib/api/discover";
+import type { UserPreference } from "@/types/discover";
 
 const languages = [
   { code: "zh-CN", name: "简体中文", flag: "🇨🇳" },
@@ -25,8 +28,93 @@ const themes = [
 export default function PreferencesSettingsPage() {
   const { theme, setTheme } = useTheme();
   const { locale, setLocale } = useLocale();
+  const { user, isAuthenticated, redirectToLogin } = useAuth();
   const [emailNotifications, setEmailNotifications] = useState(true);
   const [marketingEmails, setMarketingEmails] = useState(false);
+  const [prefLoading, setPrefLoading] = useState(false);
+  const [prefSaving, setPrefSaving] = useState(false);
+  const [preference, setPreference] = useState<UserPreference | null>(null);
+  const [selectedRoles, setSelectedRoles] = useState<string[]>([]);
+  const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+  const [skillLevel, setSkillLevel] = useState<string>("beginner");
+
+  const isEn = locale === "en";
+
+  const roleOptions = [
+    { value: "cautious_indie_dev", zh: "谨慎的独立开发者", en: "Cautious Indie Dev" },
+    { value: "quick_starter", zh: "快速启动者", en: "Quick Starter" },
+    { value: "opportunity_hunter", zh: "机会嗅觉型", en: "Opportunity Hunter" },
+    { value: "product_driven_fan", zh: "产品驱动爱好者", en: "Product-Driven" },
+    { value: "niche_hunter", zh: "细分市场猎手", en: "Niche Hunter" },
+  ];
+
+  const categoryOptions = [
+    "Developer Tools",
+    "API",
+    "Productivity",
+    "Marketing",
+    "Social Media",
+    "AI",
+    "SaaS",
+    "Business",
+  ];
+
+  const skillOptions = [
+    { value: "beginner", zh: "入门", en: "Beginner" },
+    { value: "intermediate", zh: "进阶", en: "Intermediate" },
+    { value: "advanced", zh: "高级", en: "Advanced" },
+  ];
+
+  useEffect(() => {
+    async function fetchPreference() {
+      if (!user?.id) {
+        setPreference(null);
+        return;
+      }
+      try {
+        setPrefLoading(true);
+        const data = await getUserPreference(user.id);
+        setPreference(data.preference);
+        setSelectedRoles(data.preference?.preferred_roles || []);
+        setSelectedCategories(data.preference?.interested_categories || []);
+        setSkillLevel(data.preference?.skill_level || "beginner");
+      } catch (err) {
+        console.error("Failed to fetch user preference:", err);
+      } finally {
+        setPrefLoading(false);
+      }
+    }
+    fetchPreference();
+  }, [user?.id]);
+
+  const toggleValue = (value: string, list: string[], setter: (next: string[]) => void) => {
+    if (list.includes(value)) {
+      setter(list.filter((item) => item !== value));
+      return;
+    }
+    setter([...list, value]);
+  };
+
+  const handleSavePreference = async () => {
+    if (!user?.id) {
+      redirectToLogin("/settings/preferences");
+      return;
+    }
+    try {
+      setPrefSaving(true);
+      const payload: Partial<UserPreference> = {
+        preferred_roles: selectedRoles,
+        interested_categories: selectedCategories,
+        skill_level: skillLevel,
+      };
+      const data = await saveUserPreference(user.id, payload);
+      setPreference(data.preference);
+    } catch (err) {
+      console.error("Failed to save preference:", err);
+    } finally {
+      setPrefSaving(false);
+    }
+  };
 
   return (
     <div className="space-y-6">
@@ -69,6 +157,125 @@ export default function PreferencesSettingsPage() {
             </button>
           ))}
         </div>
+      </Card>
+
+      {/* 策展偏好 */}
+      <Card>
+        <div className="flex items-center gap-3 mb-4">
+          <div className="h-10 w-10 rounded-xl bg-violet-500/10 flex items-center justify-center">
+            <SlidersHorizontal className="h-5 w-5 text-violet-500" />
+          </div>
+          <div>
+            <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
+              {isEn ? "Curation Preferences" : "策展偏好"}
+            </h2>
+            <p className="text-sm text-content-muted">
+              {isEn ? "Tune what you want to explore" : "调整你想看到的推荐方向"}
+            </p>
+          </div>
+        </div>
+
+        {!isAuthenticated ? (
+          <div className="text-sm text-content-muted">
+            {isEn ? "Please sign in to save your preferences." : "请登录后保存你的偏好。"}
+          </div>
+        ) : (
+          <div className="space-y-4">
+            <div>
+              <div className="text-xs text-content-muted mb-2">
+                {isEn ? "Preferred roles" : "角色偏好"}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {roleOptions.map((option) => {
+                  const active = selectedRoles.includes(option.value);
+                  return (
+                    <button
+                      key={option.value}
+                      onClick={() => toggleValue(option.value, selectedRoles, setSelectedRoles)}
+                      className={cn(
+                        "px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors",
+                        active
+                          ? "bg-brand-500/10 text-brand-600 border-brand-500/30"
+                          : "bg-surface text-content-secondary border-surface-border hover:border-brand-500/30"
+                      )}
+                    >
+                      {isEn ? option.en : option.zh}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs text-content-muted mb-2">
+                {isEn ? "Interested categories" : "关注领域"}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {categoryOptions.map((option) => {
+                  const active = selectedCategories.includes(option);
+                  return (
+                    <button
+                      key={option}
+                      onClick={() => toggleValue(option, selectedCategories, setSelectedCategories)}
+                      className={cn(
+                        "px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors",
+                        active
+                          ? "bg-emerald-500/10 text-emerald-600 border-emerald-500/30"
+                          : "bg-surface text-content-secondary border-surface-border hover:border-emerald-500/30"
+                      )}
+                    >
+                      {option}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            <div>
+              <div className="text-xs text-content-muted mb-2">
+                {isEn ? "Skill level" : "技能阶段"}
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {skillOptions.map((option) => (
+                  <button
+                    key={option.value}
+                    onClick={() => setSkillLevel(option.value)}
+                    className={cn(
+                      "px-3 py-1.5 rounded-lg text-xs font-medium border transition-colors",
+                      skillLevel === option.value
+                        ? "bg-violet-500/10 text-violet-600 border-violet-500/30"
+                        : "bg-surface text-content-secondary border-surface-border hover:border-violet-500/30"
+                    )}
+                  >
+                    {isEn ? option.en : option.zh}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="flex items-center justify-between">
+              <div className="text-xs text-content-muted">
+                {prefLoading
+                  ? (isEn ? "Loading preference..." : "加载偏好中...")
+                  : preference
+                    ? (isEn ? "Preference saved" : "偏好已保存")
+                    : (isEn ? "No preference yet" : "尚未保存偏好")}
+              </div>
+              <button
+                onClick={handleSavePreference}
+                disabled={prefSaving}
+                className={cn(
+                  "px-4 py-2 rounded-lg text-xs font-medium transition-colors",
+                  prefSaving
+                    ? "bg-brand-500/20 text-brand-400 cursor-not-allowed"
+                    : "bg-brand-500 text-white hover:bg-brand-600"
+                )}
+              >
+                {prefSaving ? (isEn ? "Saving..." : "保存中...") : (isEn ? "Save preference" : "保存偏好")}
+              </button>
+            </div>
+          </div>
+        )}
       </Card>
 
       {/* 主题设置 */}

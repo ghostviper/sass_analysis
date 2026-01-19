@@ -94,6 +94,8 @@ export interface CurationProduct {
   slug?: string
   mrr: string | null
   logo: string
+  highlight_zh?: string | null
+  highlight_en?: string | null
 }
 
 export interface Curation {
@@ -169,6 +171,7 @@ export interface StoriesResponse {
 // =============================================================================
 
 export interface CreatorProduct {
+  id?: number
   name: string
   mrr: string | null
 }
@@ -178,6 +181,7 @@ export interface Creator {
   name: string
   handle: string | null
   avatar: string
+  avatar_url?: string | null
   bio: string | null
   bio_zh: string | null
   bio_en: string | null
@@ -187,6 +191,8 @@ export interface Creator {
   tag_color: string
   total_mrr: string | null
   followers: string | null
+  social_url?: string | null
+  social_platform?: string | null
   products: CreatorProduct[]
   product_count: number
 }

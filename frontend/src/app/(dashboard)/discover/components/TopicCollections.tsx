@@ -5,7 +5,6 @@ import { Card } from '@/components/ui/Card'
 import { 
   ChevronLeft, 
   ChevronRight, 
-  Loader2,
   ArrowRight,
   TrendingUp,
   Code2,
@@ -24,6 +23,7 @@ import Link from 'next/link'
 import { useRef, useState, useEffect } from 'react'
 import type { TopicSummary } from '@/types/discover'
 import { getTopics, formatRevenue } from '@/lib/api/discover'
+import { TopicCardSkeleton } from '@/components/ui/Loading'
 
 // 临时：角色到图标的映射，后续会从 API 的 icon 字段获取
 const ROLE_ICONS: Record<string, React.ReactNode> = {
@@ -99,8 +99,39 @@ export function TopicCollections() {
   if (loading) {
     return (
       <section className="py-2">
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="h-6 w-6 animate-spin text-content-muted" />
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+              <Layers className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-base font-semibold text-content-primary">
+                {t('discover.topics.title')}
+              </h2>
+              <p className="text-xs text-content-muted mt-0.5">
+                {t('discover.topics.subtitle')}
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <button
+              disabled
+              className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted opacity-30 cursor-not-allowed"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <button
+              disabled
+              className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted opacity-30 cursor-not-allowed"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+        <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+          <TopicCardSkeleton />
+          <TopicCardSkeleton />
+          <TopicCardSkeleton />
         </div>
       </section>
     )
@@ -119,7 +150,9 @@ export function TopicCollections() {
       {/* 标题区 */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-1 h-6 rounded-full bg-gradient-to-b from-brand-500 to-violet-500" />
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-lg shadow-emerald-500/20">
+            <Layers className="h-5 w-5 text-white" />
+          </div>
           <div>
             <h2 className="text-base font-semibold text-content-primary">
               {t('discover.topics.title')}
@@ -134,14 +167,16 @@ export function TopicCollections() {
           <button
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
-            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            aria-label={isEn ? 'Scroll left' : '向左滚动'}
+            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
           <button
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
-            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            aria-label={isEn ? 'Scroll right' : '向右滚动'}
+            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
           >
             <ChevronRight className="h-4 w-4" />
           </button>
@@ -162,19 +197,19 @@ export function TopicCollections() {
             <Link
               key={topic.id}
               href={`/discover/topics/${topic.id}`}
-              className="flex-shrink-0 w-80 snap-start group"
-              style={{ animationDelay: `${index * 50}ms` }}
+              className="flex-shrink-0 w-80 snap-start group cursor-pointer"
+              style={{ animationDelay: `${Math.min(index * 50, 500)}ms` }}
             >
               <Card
                 hover
-                className="h-full border-surface-border/50 hover:border-brand-500/30 transition-all duration-300"
+                className="h-full border-surface-border/50 hover:border-brand-500/30 active:border-brand-500/50 transition-all duration-200"
               >
                 {/* 图标 + 标题 */}
                 <div className="flex items-start gap-3 mb-3">
-                  <div className="w-9 h-9 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                  <div className="w-9 h-9 rounded-xl bg-brand-500/10 border border-brand-500/20 text-brand-600 dark:text-brand-400 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-500/20 transition-all duration-200">
                     {icon}
                   </div>
-                  <h3 className="text-base font-bold text-content-primary leading-snug pt-1 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                  <h3 className="text-base font-bold text-content-primary leading-snug pt-1 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors duration-200">
                     {title}
                   </h3>
                 </div>
@@ -209,9 +244,9 @@ export function TopicCollections() {
                   <span className="text-xs text-content-muted">
                     {topic.product_count} {isEn ? 'products' : '个产品'}
                   </span>
-                  <div className="flex items-center gap-1.5 text-xs text-content-muted group-hover:text-brand-500 transition-colors">
+                  <div className="flex items-center gap-1.5 text-xs text-content-muted group-hover:text-brand-500 transition-colors duration-200">
                     <span>{isEn ? 'Explore' : '探索'}</span>
-                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                   </div>
                 </div>
               </Card>

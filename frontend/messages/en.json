@@ -426,6 +426,25 @@
       "askAI": "Ask AI to analyze",
       "viewAll": "View all"
     },
+    "curations": {
+      "title": "AI Curations",
+      "subtitle": "Discover hidden opportunities through AI-curated insights",
+      "updatedDaily": "Updated daily with fresh insights",
+      "filterByType": "Type",
+      "sortBy": "Sort by",
+      "latest": "Latest",
+      "mostProducts": "Most Products",
+      "showingCount": "Showing {filtered} of {total} curations",
+      "clearFilter": "Clear filter",
+      "noCurations": "No curations found",
+      "adjustFilters": "Try adjusting your filters or check back later",
+      "types": {
+        "all": "All",
+        "contrast": "Contrast",
+        "cognitive": "Cognitive",
+        "trend": "Trend"
+      }
+    },
     "topics": {
       "title": "Topic Collections",
       "subtitle": "Explore products and creators by theme",

@@ -9,6 +9,8 @@ import type {
   StoriesResponse,
   CreatorsResponse,
   RecommendationsResponse,
+  UserPreferenceResponse,
+  UserPreference,
 } from '@/types/discover'
 
 /**
@@ -150,6 +152,64 @@ export async function getRecommendations(options?: {
 
   if (!res.ok) {
     throw new Error('Failed to fetch recommendations')
+  }
+
+  return res.json()
+}
+
+/**
+ * 获取用户偏好
+ */
+export async function getUserPreference(userId: string): Promise<UserPreferenceResponse> {
+  const params = new URLSearchParams()
+  params.set('user_id', userId)
+
+  const res = await fetch(`/api/discover/user-preference?${params.toString()}`, {
+    cache: 'no-store',
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch user preference')
+  }
+
+  return res.json()
+}
+
+/**
+ * 保存用户偏好
+ */
+export async function saveUserPreference(
+  userId: string,
+  preference: Partial<UserPreference>,
+): Promise<UserPreferenceResponse> {
+  const params = new URLSearchParams()
+  params.set('user_id', userId)
+
+  for (const role of preference.preferred_roles || []) {
+    params.append('preferred_roles', role)
+  }
+  for (const category of preference.interested_categories || []) {
+    params.append('interested_categories', category)
+  }
+  if (preference.skill_level) {
+    params.set('skill_level', preference.skill_level)
+  }
+  if (preference.goal) {
+    params.set('goal', preference.goal)
+  }
+  if (preference.time_commitment) {
+    params.set('time_commitment', preference.time_commitment)
+  }
+  for (const tech of preference.tech_stack || []) {
+    params.append('tech_stack', tech)
+  }
+
+  const res = await fetch(`/api/discover/user-preference?${params.toString()}`, {
+    method: 'POST',
+  })
+
+  if (!res.ok) {
+    throw new Error('Failed to save user preference')
   }
 
   return res.json()

@@ -10,6 +10,9 @@ from dataclasses import dataclass, field
 from typing import Any, Dict, List, Optional
 
 
+HIGH_FOLLOWER_THRESHOLD = 5000
+
+
 @dataclass
 class TopicTemplate:
     """专题模板 - 支持双语"""
@@ -48,15 +51,17 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
             "solo_feasibility": ["非常适合"],
             "opportunity_validity": ["真实机会"],
             "entry_barrier": ["低门槛快启动"],
+            "mvp_clarity": ["清晰可执行"],
             "primary_risk": {"exclude": ["技术实现"]},
+            "success_driver": {"exclude": ["IP/创作者驱动"]},
         },
         topic_templates=[
             TopicTemplate(
                 title_zh="最适合独立开发者的产品方向",
                 title_en="Best Products for Solo Developers",
                 pattern="action",
-                description_zh="这些产品一个人就能做、门槛低、风险可控，是独立开发者的理想选择。",
-                description_en="Products that one person can build, with low barriers and manageable risks - ideal for indie developers.",
+                description_zh="单人可做、功能边界清晰、维护成本低，且不依赖个人影响力。",
+                description_en="Solo-buildable, clear scope, low maintenance, and not reliant on personal influence.",
             ),
         ],
     ),
@@ -73,14 +78,15 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
             "mvp_clarity": ["清晰可执行"],
             "solo_feasibility": ["非常适合"],
             "opportunity_validity": ["真实机会"],
+            "primary_risk": {"exclude": ["技术实现"]},
         },
         topic_templates=[
             TopicTemplate(
                 title_zh="周末就能启动的项目",
                 title_en="Weekend Launchable Projects",
                 pattern="action",
-                description_zh="MVP 清晰、门槛低、一个人能做，适合快速验证想法。",
-                description_en="Clear MVP, low barrier, solo-friendly - perfect for quick idea validation.",
+                description_zh="核心流程短、功能集中，适合快速验证和最小实现。",
+                description_en="Short core flow, focused features, ideal for quick validation and MVP.",
             ),
         ],
     ),
@@ -103,8 +109,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="获客路径最清晰的机会",
                 title_en="Clearest Customer Acquisition Paths",
                 pattern="action",
-                description_zh="用户会主动搜索解决方案，不需要教育市场，获客成本低。",
-                description_en="Users actively search for solutions - no market education needed, low acquisition cost.",
+                description_zh="用户主动搜索、需求明确，获客路径和付费意愿更清晰。",
+                description_en="Active search demand with clearer acquisition and willingness to pay.",
             ),
         ],
     ),
@@ -124,8 +130,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="看起来性感但风险很高的产品",
                 title_en="Sexy-Looking but High-Risk Products",
                 pattern="cognitive",
-                description_zh="这些产品营销做得好，但仔细分析会发现明显的风险点。",
-                description_en="Great marketing, but careful analysis reveals significant risk factors.",
+                description_zh="看起来很有想象力，但需求或变现存在明显风险。",
+                description_en="Looks exciting, but demand or monetization carries obvious risks.",
             ),
         ],
     ),
@@ -148,8 +154,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="不靠粉丝也能成功的产品",
                 title_en="Products That Succeed Without Followers",
                 pattern="contrast",
-                description_zh="产品本身就是最好的营销，用户主动搜索，靠产品力获客。",
-                description_en="The product is the marketing - users search for it, growth driven by product quality.",
+                description_zh="产品体验和功能驱动增长，用户愿意为价值付费。",
+                description_en="Product experience and utility drive growth, users pay for clear value.",
             ),
         ],
     ),
@@ -171,8 +177,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="小众但精准的细分市场",
                 title_en="Small but Precise Niche Markets",
                 pattern="niche",
-                description_zh="这些产品瞄准特定人群，竞争小但需求真实。",
-                description_en="Products targeting specific audiences - less competition, real demand.",
+                description_zh="用户画像明确、场景集中，功能围绕单一任务展开。",
+                description_en="Clear audience, focused scenario, and features centered on one job-to-be-done.",
             ),
         ],
     ),
@@ -194,8 +200,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="靠体验打赢竞品的产品",
                 title_en="Products Winning Through Better UX",
                 pattern="contrast",
-                description_zh="功能相似的产品很多，但这些产品靠更好的体验脱颖而出。",
-                description_en="Many similar products exist, but these stand out through superior user experience.",
+                description_zh="功能相似但体验更顺滑，降低学习成本和使用摩擦。",
+                description_en="Similar features, smoother UX, lower learning curve and friction.",
             ),
         ],
     ),
@@ -218,8 +224,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="技术和获客都不难，只需专注变现",
                 title_en="Easy Tech & Acquisition, Focus on Monetization",
                 pattern="action",
-                description_zh="这些产品技术简单、用户好找，主要挑战在于如何变现。",
-                description_en="Simple tech, easy user acquisition - main challenge is monetization.",
+                description_zh="用户好找、功能不复杂，重点在定价和付费转化。",
+                description_en="Easy to build and reach users; pricing and conversion are the key.",
             ),
         ],
     ),
@@ -241,8 +247,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="内容创作者可以做的产品",
                 title_en="Products for Content Creators",
                 pattern="niche",
-                description_zh="这些产品靠内容获客，适合有内容能力的创作者转型。",
-                description_en="Content-driven acquisition - perfect for creators transitioning to products.",
+                description_zh="内容带来流量，产品承接转化，适合内容能力强的人。",
+                description_en="Content brings traffic, products convert it; ideal for strong creators.",
             ),
         ],
     ),
@@ -264,8 +270,8 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
                 title_zh="场景定义清晰的产品",
                 title_en="Products with Clear Use Cases",
                 pattern="niche",
-                description_zh="这些产品解决的场景非常具体，用户一看就知道是不是自己需要的。",
-                description_en="Very specific use cases - users instantly know if it's for them.",
+                description_zh="使用场景具体、功能边界清晰，用户判断成本低。",
+                description_en="Specific use case, clear scope, and low decision friction for users.",
             ),
         ],
     ),
@@ -276,6 +282,54 @@ CURATOR_ROLES: Dict[str, CuratorRole] = {
 # 筛选逻辑
 # =============================================================================
 
+def _normalize_judgments(product: Dict[str, Any]) -> Dict[str, Dict[str, Any]]:
+    """根据结构化信号校正母题判断（避免高粉丝被误判为非IP驱动）"""
+    judgments = product.get("mother_theme_judgments", {})
+    if not judgments:
+        return {}
+
+    normalized = {k: dict(v) for k, v in judgments.items() if isinstance(v, dict)}
+    followers = product.get("founder_followers")
+    driver = normalized.get("success_driver", {})
+    driver_value = driver.get("judgment")
+
+    if isinstance(followers, int) and followers >= HIGH_FOLLOWER_THRESHOLD:
+        if driver_value and driver_value != "IP/创作者驱动":
+            driver["judgment"] = "IP/创作者驱动"
+            driver.setdefault("confidence", "中")
+            driver["_normalized"] = True
+            normalized["success_driver"] = driver
+
+    return normalized
+
+
+def _select_products(
+    filtered: List[Dict[str, Any]],
+    used_products: set,
+    max_products: int,
+    allow_reuse_rate: float,
+) -> List[Dict[str, Any]]:
+    """在减少主题重叠的前提下选择产品"""
+    if not filtered:
+        return []
+
+    total_needed = min(max_products, len(filtered))
+    unused = [p for p in filtered if p.get("id") not in used_products]
+    reusable = [p for p in filtered if p.get("id") in used_products]
+
+    min_unused = max(1, int(total_needed * (1 - allow_reuse_rate)))
+    selected = unused[:total_needed]
+
+    if len(selected) < total_needed and reusable:
+        selected.extend(reusable[:total_needed - len(selected)])
+
+    if len(unused) < min_unused:
+        # 如果新产品不足，仍允许复用补齐，但会降低多样性
+        return selected
+
+    return selected
+
+
 def filter_products_by_rules(
     products: List[Dict[str, Any]], 
     filter_rules: Dict[str, Any],
@@ -284,7 +338,7 @@ def filter_products_by_rules(
     """根据筛选规则过滤产品"""
     result = []
     for product in products:
-        judgments = product.get("mother_theme_judgments", {})
+        judgments = _normalize_judgments(product)
         match = True
         
         for theme_key, rule in filter_rules.items():
@@ -317,22 +371,41 @@ def generate_topics(
     roles: Optional[Dict[str, CuratorRole]] = None,
     min_products: int = 3,
     max_products: int = 15,
+    allow_reuse_rate: float = 0.3,
 ) -> List[Dict[str, Any]]:
     """生成所有符合条件的专题（双语）"""
     if roles is None:
         roles = CURATOR_ROLES
     
     topics = []
+    used_products = set()
     
-    for role_name, role_config in roles.items():
+    for role_index, (role_name, role_config) in enumerate(roles.items()):
         filtered = filter_products_by_rules(products, role_config.filter_rules)
         
         if len(filtered) < min_products:
             continue
         
-        for template in role_config.topic_templates:
-            topic_key = f"{role_name}_{template.pattern}_{len(topics)}"
-            top_products = filtered[:max_products]
+        for template_index, template in enumerate(role_config.topic_templates):
+            selected = _select_products(
+                filtered=filtered,
+                used_products=used_products,
+                max_products=max_products,
+                allow_reuse_rate=allow_reuse_rate,
+            )
+
+            if len(selected) < min_products:
+                continue
+
+            topic_key = f"{role_name}_{template.pattern}_{role_index}"
+            if template_index > 0:
+                topic_key = f"{topic_key}_{template_index}"
+            top_products = selected
+
+            for p in top_products:
+                pid = p.get("id")
+                if pid:
+                    used_products.add(pid)
             
             topics.append({
                 "topic_key": topic_key,
@@ -374,6 +447,7 @@ class CuratorAgent:
         products: List[Dict[str, Any]],
         min_products: int = 3,
         max_products: int = 15,
+        allow_reuse_rate: float = 0.3,
     ) -> List[Dict[str, Any]]:
         """生成专题"""
         return generate_topics(
@@ -381,6 +455,7 @@ class CuratorAgent:
             roles=self.roles,
             min_products=min_products,
             max_products=max_products,
+            allow_reuse_rate=allow_reuse_rate,
         )
     
     def get_role(self, role_name: str) -> Optional[CuratorRole]:

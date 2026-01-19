@@ -3,6 +3,7 @@
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
 import { Users, ArrowRight, ExternalLink, Package, Loader2 } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { Creator } from '@/types/discover'
@@ -74,73 +75,141 @@ export function CreatorUniverse() {
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {creators.map((creator) => (
-          <Card key={creator.id} hover className="group">
-            <div className="flex items-start gap-3 mb-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-surface to-background-tertiary flex items-center justify-center text-2xl shadow-sm border border-surface-border/50">
-                {creator.avatar}
-              </div>
-              <div className="flex-1 min-w-0">
-                <h3 className="text-sm font-bold text-content-primary truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
-                  {creator.name}
-                </h3>
-                <p className="text-xs text-content-muted truncate">{creator.handle}</p>
-              </div>
-            </div>
-
-            {getTag(creator) && (
-              <div className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium mb-2
-                ${creator.tag_color === 'amber' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' : ''}
-                ${creator.tag_color === 'blue' ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400' : ''}
-                ${creator.tag_color === 'violet' ? 'bg-violet-500/10 text-violet-600 dark:text-violet-400' : ''}
-                ${creator.tag_color === 'emerald' ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : ''}
-              `}>
-                {getTag(creator)}
-              </div>
-            )}
-
-            {getBio(creator) && (
-              <p className="text-xs text-content-tertiary mb-3 line-clamp-2">
-                {getBio(creator)}
-              </p>
-            )}
-
-            <div className="space-y-1.5 mb-3">
-              {creator.products.slice(0, 2).map((product, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="text-content-secondary truncate">{product.name}</span>
-                  <span className="font-mono text-emerald-600 dark:text-emerald-400 font-medium">
-                    {product.mrr}
-                  </span>
-                </div>
-              ))}
-              {creator.product_count > 2 && (
-                <span className="text-[10px] text-content-muted">
-                  +{creator.product_count - 2} more
-                </span>
-              )}
-            </div>
-
-            <div className="flex items-center justify-between pt-3 border-t border-surface-border/50">
-              <div className="flex items-center gap-1 text-xs">
-                <Package className="h-3 w-3 text-content-muted" />
-                <span className="text-content-secondary">{creator.product_count}</span>
-                <span className="text-content-muted">{t('discover.creatorUniverse.products')}</span>
-              </div>
-              <div className="text-xs font-mono font-medium text-brand-600 dark:text-brand-400">
-                {creator.total_mrr}
-              </div>
-            </div>
-
-            <Link
-              href={`/leaderboard?creator=${creator.id}`}
-              className="flex items-center justify-center gap-1.5 w-full mt-3 py-2 rounded-lg bg-surface border border-surface-border text-xs font-medium text-content-secondary hover:text-content-primary hover:border-brand-500/30 transition-colors"
-            >
-              {t('discover.creatorUniverse.viewProfile')}
-              <ExternalLink className="h-3 w-3" />
-            </Link>
-          </Card>
+          <CreatorCard
+            key={creator.id}
+            creator={creator}
+            isEn={isEn}
+            getBio={getBio}
+            getTag={getTag}
+            t={t}
+          />
         ))}
       </div>
     </section>
+  )
+}
+
+interface CreatorCardProps {
+  creator: Creator
+  isEn: boolean
+  t: (key: string) => string
+  getBio: (creator: Creator) => string | null
+  getTag: (creator: Creator) => string | null
+}
+
+function CreatorCard({ creator, isEn, t, getBio, getTag }: CreatorCardProps) {
+  const [imgError, setImgError] = useState(false)
+  const handle = creator.handle?.trim()
+  const username = handle && !handle.startsWith('http')
+    ? handle.replace(/^@/, '')
+    : (typeof creator.id === 'string' ? creator.id : null)
+  const avatarUrl =
+    creator.avatar_url ||
+    (creator.avatar && creator.avatar.startsWith('http') ? creator.avatar : null) ||
+    (username ? `https://unavatar.io/x/${username}` : null)
+  const socialUrl = creator.social_url || (handle && handle.startsWith('http') ? handle : null) || (username ? `https://x.com/${username}` : null)
+  const products = creator.products || []
+  const productCount = creator.product_count || products.length
+
+  const fallback = creator.avatar && !creator.avatar.startsWith('http') && creator.avatar !== '??'
+    ? creator.avatar
+    : creator.name?.charAt(0)?.toUpperCase() || 'C'
+
+  const card = (
+    <Card hover className="group">
+      <div className="flex items-start gap-3 mb-3">
+        <div className="w-12 h-12 rounded-xl overflow-hidden flex-shrink-0 border border-surface-border/50 bg-surface">
+          {avatarUrl && !imgError ? (
+            <Image
+              src={avatarUrl}
+              alt={`${creator.name} avatar`}
+              width={48}
+              height={48}
+              className="w-full h-full object-cover"
+              onError={() => setImgError(true)}
+              unoptimized
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-brand-500/10 to-accent-secondary/10 flex items-center justify-center text-sm font-semibold text-content-primary">
+              {fallback}
+            </div>
+          )}
+        </div>
+        <div className="flex-1 min-w-0">
+          <h3 className="text-sm font-bold text-content-primary truncate group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+            {creator.name}
+          </h3>
+          {creator.handle && (
+            <p className="text-xs text-content-muted truncate">{creator.handle}</p>
+          )}
+        </div>
+      </div>
+
+      {getTag(creator) && (
+        <div className={`inline-flex items-center px-2 py-0.5 rounded text-[10px] font-medium mb-2
+          ${creator.tag_color === 'amber' ? 'bg-amber-500/10 text-amber-600 dark:text-amber-400' : ''}
+          ${creator.tag_color === 'blue' ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400' : ''}
+          ${creator.tag_color === 'violet' ? 'bg-violet-500/10 text-violet-600 dark:text-violet-400' : ''}
+          ${creator.tag_color === 'emerald' ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400' : ''}
+        `}>
+          {getTag(creator)}
+        </div>
+      )}
+
+      {getBio(creator) && (
+        <p className="text-xs text-content-tertiary mb-3 line-clamp-2">
+          {getBio(creator)}
+        </p>
+      )}
+
+      <div className="space-y-1.5 mb-3">
+        {products.slice(0, 2).map((product, idx) => (
+          <div key={idx} className="flex items-center justify-between text-xs">
+            <span className="text-content-secondary truncate">{product.name}</span>
+            {product.mrr && (
+              <span className="font-mono text-emerald-600 dark:text-emerald-400 font-medium">
+                {product.mrr}
+              </span>
+            )}
+          </div>
+        ))}
+        {productCount > 2 && (
+          <span className="text-[10px] text-content-muted">
+            +{productCount - 2} more
+          </span>
+        )}
+      </div>
+
+      <div className="flex items-center justify-between pt-3 border-t border-surface-border/50">
+        <div className="flex items-center gap-1 text-xs">
+          <Package className="h-3 w-3 text-content-muted" />
+          <span className="text-content-secondary">{productCount}</span>
+          <span className="text-content-muted">{t('discover.creatorUniverse.products')}</span>
+        </div>
+        {creator.total_mrr && (
+          <div className="text-xs font-mono font-medium text-brand-600 dark:text-brand-400">
+            {creator.total_mrr}
+          </div>
+        )}
+      </div>
+      {creator.followers && (
+        <div className="text-[10px] text-content-muted mt-2">
+          {creator.followers} {isEn ? 'followers' : '粉丝'}
+        </div>
+      )}
+
+      <div className="flex items-center justify-center gap-1.5 w-full mt-3 py-2 rounded-lg bg-surface border border-surface-border text-xs font-medium text-content-secondary group-hover:text-content-primary group-hover:border-brand-500/30 transition-colors">
+        {t('discover.creatorUniverse.viewProfile')}
+        <ExternalLink className="h-3 w-3" />
+      </div>
+    </Card>
+  )
+
+  return socialUrl ? (
+    <a href={socialUrl} target="_blank" rel="noopener noreferrer" className="block">
+      {card}
+    </a>
+  ) : (
+    <div>{card}</div>
   )
 }

@@ -2,14 +2,16 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { Sparkles, ArrowRight, MessageCircle, Heart, Zap, Loader2 } from 'lucide-react'
+import { Sparkles, ArrowRight, MessageCircle, Heart, Zap, Loader2, User } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { Recommendation } from '@/types/discover'
 import { getRecommendations } from '@/lib/api/discover'
+import { useAuth } from '@/hooks/useAuth'
 
 export function ForYouSection() {
   const { t, locale } = useLocale()
+  const { user, isAuthenticated } = useAuth()
   const [recommendations, setRecommendations] = useState<Recommendation[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -19,7 +21,7 @@ export function ForYouSection() {
     async function fetchRecommendations() {
       try {
         setLoading(true)
-        const data = await getRecommendations({ limit: 3 })
+        const data = await getRecommendations({ limit: 3, userId: user?.id })
         setRecommendations(data.recommendations)
       } catch (err) {
         console.error('Failed to fetch recommendations:', err)
@@ -28,7 +30,7 @@ export function ForYouSection() {
       }
     }
     fetchRecommendations()
-  }, [])
+  }, [user?.id])
 
   const getDirection = (r: Recommendation) => isEn ? r.direction_en : r.direction_zh
   const getDesc = (r: Recommendation) => isEn ? r.description_en : r.description_zh
@@ -52,6 +54,7 @@ export function ForYouSection() {
     }
     return isEn ? map[p]?.en || p : map[p]?.zh || p
   }
+
 
   if (loading) {
     return (
@@ -180,17 +183,47 @@ export function ForYouSection() {
         ))}
       </div>
 
-      <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-brand-500/5 via-violet-500/5 to-amber-500/5 border border-brand-500/10 text-center">
-        <p className="text-sm text-content-secondary mb-2">
-          {isEn ? 'Want more personalized recommendations? Tell AI about your background' : '想要更精准的推荐？告诉 AI 你的背景和兴趣'}
-        </p>
-        <Link
-          href="/assistant"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
-        >
-          <MessageCircle className="h-4 w-4" />
-          {isEn ? 'Start conversation for personalized advice' : '开始对话，获取个性化建议'}
-        </Link>
+      <div className="mt-6 space-y-4">
+        {isAuthenticated ? (
+          <div className="p-4 rounded-xl bg-surface border border-surface-border text-center">
+            <p className="text-sm text-content-secondary mb-2">
+              {isEn ? 'Want better recommendations? Update your preferences in Settings' : '想要更准的推荐？去设置里完善偏好'}
+            </p>
+            <Link
+              href="/settings/preferences"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+            >
+              <User className="h-4 w-4" />
+              {isEn ? 'Go to Preferences' : '前往偏好设置'}
+            </Link>
+          </div>
+        ) : (
+          <div className="p-4 rounded-xl bg-surface border border-surface-border text-center">
+            <p className="text-sm text-content-secondary mb-2">
+              {isEn ? 'Sign in to get recommendations tailored to you' : '登录后可以获得更精准的推荐'}
+            </p>
+            <Link
+              href="/auth/sign-in?callbackUrl=/discover"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+            >
+              <User className="h-4 w-4" />
+              {isEn ? 'Sign in to personalize' : '登录并个性化推荐'}
+            </Link>
+          </div>
+        )}
+
+        <div className="p-4 rounded-xl bg-gradient-to-r from-brand-500/5 via-violet-500/5 to-amber-500/5 border border-brand-500/10 text-center">
+          <p className="text-sm text-content-secondary mb-2">
+            {isEn ? 'Want deeper advice? Tell AI about your background' : '想要更深入的建议？告诉 AI 你的背景和目标'}
+          </p>
+          <Link
+            href="/assistant"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-brand-500 text-white text-sm font-medium hover:bg-brand-600 transition-colors shadow-lg shadow-brand-500/20"
+          >
+            <MessageCircle className="h-4 w-4" />
+            {isEn ? 'Start conversation' : '开始对话'}
+          </Link>
+        </div>
       </div>
     </section>
   )

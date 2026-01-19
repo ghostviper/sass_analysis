@@ -27,6 +27,7 @@ class CurationTemplate:
     conflict_dimensions: List[str]
     min_products: int = 3
     max_products: int = 8
+    priority: int = 5  # 优先级 1-10，数字越大优先级越高
 
 
 # =============================================================================
@@ -37,12 +38,12 @@ CONTRAST_TEMPLATES: List[CurationTemplate] = [
     # 1. 低粉丝高收入 - 产品驱动的证明
     CurationTemplate(
         key="low_followers_high_revenue",
-        title_zh="粉丝不到1000，月入过万",
-        title_en="<1K Followers, $10K+ MRR",
-        description_zh="这些产品证明：好产品自己会说话，不需要网红光环",
-        description_en="These products prove: great products speak for themselves",
-        insight_zh="产品力 > 个人IP，专注解决问题比积累粉丝更重要",
-        insight_en="Product > Personal brand. Focus on solving problems.",
+        title_zh="粉丝不多，也能做到 $10k+ MRR",
+        title_en="Few followers, still $10k+ MRR",
+        description_zh="筛选粉丝 <1000 且产品驱动的收入型产品，证明产品力能直接变现",
+        description_en="Products with <1k followers and product-driven revenue, proving product strength converts.",
+        insight_zh="先把转化跑通，再谈影响力",
+        insight_en="Prove conversion first, then grow influence.",
         tag_zh="反常识",
         tag_en="Counter-intuitive",
         tag_color="amber",
@@ -56,18 +57,19 @@ CONTRAST_TEMPLATES: List[CurationTemplate] = [
                 "success_driver": ["产品驱动"]
             }
         },
-        conflict_dimensions=["founder_followers", "revenue_30d", "success_driver"]
+        conflict_dimensions=["founder_followers", "revenue_30d", "success_driver"],
+        priority=10  # 最高优先级：核心反差主题
     ),
     
     # 2. 功能极简但赚钱 - 少即是多
     CurationTemplate(
         key="simple_but_profitable",
-        title_zh="功能只有3个，月入$5K+",
-        title_en="Only 3 Features, $5K+ MRR",
-        description_zh="极简主义的胜利：这些产品证明功能少不是缺点",
-        description_en="Minimalism wins: fewer features can mean more revenue",
-        insight_zh="砍掉80%功能，专注20%核心价值",
-        insight_en="Cut 80% features, focus on 20% core value",
+        title_zh="功能不多，也能稳定月入 $5k+",
+        title_en="Few features, still $5k+ MRR",
+        description_zh="功能简单、落地页功能数不多的产品，核心价值更集中",
+        description_en="Simple products with few listed features; the value is concentrated.",
+        insight_zh="功能越少，价值越清晰",
+        insight_en="Fewer features, clearer value.",
         tag_zh="少即是多",
         tag_en="Less is More",
         tag_color="emerald",
@@ -83,18 +85,19 @@ CONTRAST_TEMPLATES: List[CurationTemplate] = [
                 "feature_count": {"max": 5}
             }
         },
-        conflict_dimensions=["feature_complexity", "revenue_30d"]
+        conflict_dimensions=["feature_complexity", "revenue_30d"],
+        priority=9  # 高优先级：重要反差主题
     ),
     
     # 3. 无聊赛道高收入 - 闷声发财
     CurationTemplate(
         key="boring_but_rich",
-        title_zh="最无聊的需求，最稳定的收入",
-        title_en="Boring Problems, Stable Income",
-        description_zh="PDF转换、发票管理、数据导出...这些「无聊」工具闷声发大财",
-        description_en="PDF tools, invoice managers, data exporters... boring tools making real money",
-        insight_zh="无聊 = 刚需 + 低竞争 + 高付费意愿",
-        insight_en="Boring = Real need + Low competition + High willingness to pay",
+        title_zh="无聊需求，稳定现金流",
+        title_en="Boring needs, steady cash flow",
+        description_zh="主动搜索型 + 真实机会的工具型产品，低竞争但付费明确",
+        description_en="Active-search, real-opportunity tools with clear willingness to pay.",
+        insight_zh="痛点越窄，收入越稳",
+        insight_en="Narrower pain, steadier revenue.",
         tag_zh="闷声发财",
         tag_en="Silent Fortune",
         tag_color="slate",
@@ -108,18 +111,19 @@ CONTRAST_TEMPLATES: List[CurationTemplate] = [
                 "opportunity_validity": ["真实机会"]
             }
         },
-        conflict_dimensions=["demand_type", "revenue_30d"]
+        conflict_dimensions=["demand_type", "revenue_30d"],
+        priority=7  # 中高优先级
     ),
     
     # 4. 高门槛但一人做成 - 技术壁垒
     CurationTemplate(
         key="high_barrier_solo",
-        title_zh="别人说做不了，他一个人做成了",
-        title_en="They Said Impossible, Solo Dev Did It",
-        description_zh="这些「高门槛」产品被一个人攻克，技术壁垒反而成了护城河",
-        description_en="These 'high barrier' products were built solo, tech barriers became moats",
-        insight_zh="高门槛 = 高壁垒 = 低竞争，敢啃硬骨头的人更少",
-        insight_en="High barrier = High moat = Less competition",
+        title_zh="高门槛也能小团队做成",
+        title_en="High barrier, small team wins",
+        description_zh="中高门槛 + 独立可行的产品，技术壁垒反而成护城河",
+        description_en="Mid/high barrier yet solo-feasible products; tech becomes the moat.",
+        insight_zh="敢啃硬骨头，竞争更少",
+        insight_en="Hard problems mean fewer competitors.",
         tag_zh="硬核玩家",
         tag_en="Hardcore",
         tag_color="purple",
@@ -134,7 +138,8 @@ CONTRAST_TEMPLATES: List[CurationTemplate] = [
                 "solo_feasibility": ["有挑战但可行"]
             }
         },
-        conflict_dimensions=["entry_barrier", "team_size", "solo_feasibility"]
+        conflict_dimensions=["entry_barrier", "team_size", "solo_feasibility"],
+        priority=8  # 高优先级：独特主题
     ),
 ]
 
@@ -147,12 +152,12 @@ COGNITIVE_TEMPLATES: List[CurationTemplate] = [
     # 5. MVP清晰度高的产品 - 可执行的灵感
     CurationTemplate(
         key="clear_mvp_inspiration",
-        title_zh="看完就知道怎么做的产品",
-        title_en="Products You Can Start Building Today",
-        description_zh="MVP边界清晰，核心功能明确，2周内可出原型",
-        description_en="Clear MVP scope, defined core features, prototype in 2 weeks",
-        insight_zh="好的产品创意应该让你立刻知道第一步做什么",
-        insight_en="A good idea should tell you exactly what to build first",
+        title_zh="看完就知道先做什么的产品",
+        title_en="Ideas with a clear first step",
+        description_zh="MVP清晰 + 低门槛 + 真实机会，2周内可出原型",
+        description_en="Clear MVP + low barrier + real opportunity; prototypable fast.",
+        insight_zh="清晰的第一步比宏大愿景更重要",
+        insight_en="A clear first step beats a big vision.",
         tag_zh="可执行",
         tag_en="Actionable",
         tag_color="blue",
@@ -164,18 +169,19 @@ COGNITIVE_TEMPLATES: List[CurationTemplate] = [
                 "opportunity_validity": ["真实机会"]
             }
         },
-        conflict_dimensions=["mvp_clarity", "entry_barrier"]
+        conflict_dimensions=["mvp_clarity", "entry_barrier"],
+        priority=8  # 高优先级：行动导向
     ),
     
     # 6. 定价差异化成功案例
     CurationTemplate(
         key="pricing_innovation",
-        title_zh="不走寻常路的定价策略",
-        title_en="Unconventional Pricing That Works",
-        description_zh="一次性买断、按用量付费、lifetime deal...打破订阅制霸权",
-        description_en="One-time purchase, usage-based, lifetime deals... breaking subscription dominance",
-        insight_zh="定价模式本身就是差异化，不是所有产品都适合订阅制",
-        insight_en="Pricing model itself is differentiation",
+        title_zh="用定价做差异化的产品",
+        title_en="Products that differentiate on pricing",
+        description_zh="一次性买断、按用量付费等定价方式，成为核心卖点",
+        description_en="One-time, usage-based, or other pricing turns into the core edge.",
+        insight_zh="定价是产品的一部分",
+        insight_en="Pricing is part of the product.",
         tag_zh="定价创新",
         tag_en="Pricing Innovation",
         tag_color="orange",
@@ -189,18 +195,19 @@ COGNITIVE_TEMPLATES: List[CurationTemplate] = [
                 "differentiation_point": ["定价差异化"]
             }
         },
-        conflict_dimensions=["positioning_insight", "differentiation_point"]
+        conflict_dimensions=["positioning_insight", "differentiation_point"],
+        priority=6  # 中等优先级
     ),
     
     # 7. 垂直细分的成功
     CurationTemplate(
         key="vertical_niche_success",
-        title_zh="只服务一小撮人，赚得比谁都多",
-        title_en="Serving a Tiny Niche, Earning More Than Most",
-        description_zh="Shopify店主、播客主播、独立开发者...精准垂直的力量",
-        description_en="Shopify owners, podcasters, indie devs... the power of vertical focus",
-        insight_zh="宁做小池塘的大鱼，不做大海里的小虾米",
-        insight_en="Better to be a big fish in a small pond",
+        title_zh="服务小人群，也能赚到钱",
+        title_en="Serve a small niche, still earn well",
+        description_zh="精准垂直 + 真实机会，专注特定人群更容易占位",
+        description_en="Vertical focus + real opportunity; easier to own a niche.",
+        insight_zh="小池塘更容易称王",
+        insight_en="Own a small pond.",
         tag_zh="精准垂直",
         tag_en="Vertical Focus",
         tag_color="teal",
@@ -217,7 +224,8 @@ COGNITIVE_TEMPLATES: List[CurationTemplate] = [
                 "market_scope": ["vertical"]
             }
         },
-        conflict_dimensions=["positioning_insight", "market_scope"]
+        conflict_dimensions=["positioning_insight", "market_scope"],
+        priority=7  # 中高优先级
     ),
 ]
 
@@ -230,12 +238,12 @@ ACTION_TEMPLATES: List[CurationTemplate] = [
     # 8. 周末可启动项目
     CurationTemplate(
         key="weekend_launchable",
-        title_zh="周末就能上线的产品",
-        title_en="Launch This Weekend",
-        description_zh="低门槛 + MVP清晰 + 技术简单 = 48小时出原型",
-        description_en="Low barrier + Clear MVP + Simple tech = 48-hour prototype",
-        insight_zh="别想太多，先做出来再说",
-        insight_en="Stop overthinking, just ship it",
+        title_zh="周末可启动的项目",
+        title_en="Projects you can start this weekend",
+        description_zh="低门槛 + MVP清晰 + 低成本/简单功能，适合快速试水",
+        description_en="Low barrier, clear MVP, low cost/simple features for fast starts.",
+        insight_zh="先做出来，再优化",
+        insight_en="Ship first, refine later.",
         tag_zh="快速启动",
         tag_en="Quick Start",
         tag_color="green",
@@ -251,18 +259,19 @@ ACTION_TEMPLATES: List[CurationTemplate] = [
                 "feature_complexity": ["simple"]
             }
         },
-        conflict_dimensions=["entry_barrier", "mvp_clarity", "startup_cost_level"]
+        conflict_dimensions=["entry_barrier", "mvp_clarity", "startup_cost_level"],
+        priority=9  # 高优先级：最实用的行动指南
     ),
     
     # 9. 不需要AI的赚钱产品
     CurationTemplate(
         key="no_ai_profitable",
-        title_zh="不用AI也能月入过万",
-        title_en="$10K+ MRR Without AI",
-        description_zh="在AI焦虑时代，这些传统工具依然稳稳赚钱",
-        description_en="In the age of AI anxiety, these traditional tools still make steady money",
-        insight_zh="不是所有问题都需要AI解决，简单直接往往更有效",
-        insight_en="Not every problem needs AI. Simple and direct often works better.",
+        title_zh="不靠 AI 也能做到 $10k+ MRR",
+        title_en="$10k+ MRR without heavy AI",
+        description_zh="AI依赖低但真实需求明确，传统工具照样稳定赚钱",
+        description_en="Low AI dependency with clear demand; traditional tools still win.",
+        insight_zh="解决问题比堆技术重要",
+        insight_en="Solve the problem, not the hype.",
         tag_zh="回归本质",
         tag_en="Back to Basics",
         tag_color="gray",
@@ -278,18 +287,19 @@ ACTION_TEMPLATES: List[CurationTemplate] = [
                 "opportunity_validity": ["真实机会"]
             }
         },
-        conflict_dimensions=["ai_dependency_level", "revenue_30d"]
+        conflict_dimensions=["ai_dependency_level", "revenue_30d"],
+        priority=6  # 中等优先级
     ),
     
     # 10. 变现风险最低的方向
     CurationTemplate(
         key="low_monetization_risk",
-        title_zh="最容易收到钱的产品类型",
-        title_en="Easiest to Monetize",
-        description_zh="主动搜索型需求 + 清晰定价 + B2B客户 = 付费转化率高",
-        description_en="Active search demand + Clear pricing + B2B = High conversion",
-        insight_zh="选对方向，变现不是问题",
-        insight_en="Choose the right direction, monetization follows",
+        title_zh="更容易收钱的方向",
+        title_en="Directions that monetize easier",
+        description_zh="主动搜索 + B2B + 变现风险低，付费路径更清晰",
+        description_en="Active search + B2B + lower monetization risk; clearer pay path.",
+        insight_zh="付费路径越短越好",
+        insight_en="Shorter pay paths convert better.",
         tag_zh="易变现",
         tag_en="Easy Money",
         tag_color="yellow",
@@ -306,7 +316,8 @@ ACTION_TEMPLATES: List[CurationTemplate] = [
                 "target_customer": ["b2b_smb", "b2b_enterprise"]
             }
         },
-        conflict_dimensions=["demand_type", "primary_risk", "target_customer"]
+        conflict_dimensions=["demand_type", "primary_risk", "target_customer"],
+        priority=7  # 中高优先级
     ),
 ]
 
@@ -319,12 +330,12 @@ NICHE_TEMPLATES: List[CurationTemplate] = [
     # 11. 开发者工具
     CurationTemplate(
         key="dev_tools_gems",
-        title_zh="开发者做给开发者的工具",
-        title_en="Dev Tools by Devs for Devs",
-        description_zh="最懂痛点的人做的产品，B2D赛道的隐藏宝藏",
-        description_en="Products by people who truly understand the pain. Hidden B2D gems.",
-        insight_zh="做自己会用的产品，你就是第一个用户",
-        insight_en="Build what you'd use. You're your first customer.",
+        title_zh="做自己也愿意付费的开发者工具",
+        title_en="Dev tools you'd pay for yourself",
+        description_zh="B2D + 开发者品类，懂痛点的人做给同类用",
+        description_en="B2D and dev categories built by insiders who feel the pain.",
+        insight_zh="先当自己的第一个用户",
+        insight_en="Be your first user.",
         tag_zh="开发者向",
         tag_en="For Devs",
         tag_color="indigo",
@@ -338,18 +349,19 @@ NICHE_TEMPLATES: List[CurationTemplate] = [
                 "target_customer": ["b2d"]
             }
         },
-        conflict_dimensions=["target_customer", "category"]
+        conflict_dimensions=["target_customer", "category"],
+        priority=4  # 低优先级：利基市场
     ),
     
     # 12. Chrome扩展/插件生意
     CurationTemplate(
         key="extension_business",
-        title_zh="小插件，大生意",
-        title_en="Small Extensions, Big Business",
-        description_zh="Chrome扩展、Figma插件、Notion模板...平台生态里的掘金者",
-        description_en="Chrome extensions, Figma plugins, Notion templates... platform ecosystem gold diggers",
-        insight_zh="借平台之力，用最小成本触达精准用户",
-        insight_en="Leverage platforms to reach users with minimal cost",
+        title_zh="平台生态里的小生意",
+        title_en="Small businesses inside platforms",
+        description_zh="渠道驱动的插件/模板类产品，借平台流量换增长",
+        description_en="Channel-driven plugins/templates that ride platform traffic.",
+        insight_zh="借平台流量，省获客成本",
+        insight_en="Leverage platforms to cut CAC.",
         tag_zh="平台生态",
         tag_en="Platform Ecosystem",
         tag_color="cyan",
@@ -362,7 +374,8 @@ NICHE_TEMPLATES: List[CurationTemplate] = [
                 "success_driver": ["渠道驱动"]
             }
         },
-        conflict_dimensions=["success_driver"]
+        conflict_dimensions=["success_driver"],
+        priority=3  # 低优先级：利基市场
     ),
 ]
 

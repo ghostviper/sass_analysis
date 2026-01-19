@@ -292,6 +292,7 @@ async def run_curation(
                     "slug": startup.slug,
                     "category": startup.category,
                     "revenue_30d": startup.revenue_30d,
+                    "founder_followers": startup.founder_followers,
                     "mother_theme_judgments": {},
                 }
             products_map[startup.id]["mother_theme_judgments"][judgment.theme_key] = {

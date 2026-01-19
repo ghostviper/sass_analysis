@@ -69,3 +69,5 @@ tmpclaude-*
 test_*.py
 !backend/tests/
 examples/*
+.codex/*
+.claude/*
