@@ -2,7 +2,7 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { ArrowRight, MessageCircle, TrendingUp, Zap, Sparkles } from 'lucide-react'
+import { ArrowRight, MessageCircle, TrendingUp, Zap, Sparkles, Package } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { Curation } from '@/types/discover'
@@ -137,7 +137,7 @@ export function TodayCuration() {
               <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
                 {t('discover.todayCuration.title')}
               </h2>
-              <p className="text-xs text-content-muted">{t('discover.todayCuration.subtitle')}</p>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.todayCuration.subtitle')}</p>
             </div>
           </div>
           <Link
@@ -181,7 +181,7 @@ export function TodayCuration() {
 
       <div className="grid md:grid-cols-2 gap-5">
         {curations.map((curation) => (
-          <Card key={curation.id} hover className="group relative overflow-hidden cursor-pointer">
+          <Card key={curation.id} className="group relative overflow-hidden">
             <div className="relative">
               <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium mb-3
                 ${tagColorClasses[curation.tag_color] || tagColorClasses.amber}
@@ -203,22 +203,20 @@ export function TodayCuration() {
                   <Link
                     key={idx}
                     href={product.slug ? `/products/${product.slug}` : '#'}
-                    className="flex items-center justify-between p-2.5 rounded-lg bg-surface/50 border border-surface-border/50 hover:bg-surface active:bg-surface-hover hover:border-brand-500/30 active:border-brand-500/50 transition-colors duration-200 group/product cursor-pointer"
+                    className="flex items-center justify-between p-2.5 rounded-lg bg-surface/50 border border-surface-border/50 hover:bg-surface active:bg-surface-hover active:scale-[0.99] hover:border-brand-500/30 active:border-brand-500/50 transition-all duration-200 group/product cursor-pointer"
                   >
                     <div className="flex items-center gap-2.5 min-w-0">
                       {product.logo && product.logo.startsWith('http') ? (
                         <img src={product.logo} alt={`${product.name} logo`} className="w-6 h-6 rounded object-cover" />
                       ) : (
-                        <div className="w-6 h-6 rounded bg-brand-500/10 border border-brand-500/20 flex items-center justify-center group-hover/product:bg-brand-500/20 transition-colors">
-                          <span className="text-xs font-bold text-brand-600 dark:text-brand-400">
-                            {product.name?.charAt(0)?.toUpperCase() || 'P'}
-                          </span>
+                        <div className="w-6 h-6 rounded-lg bg-brand-500/10 border border-brand-500/20 flex items-center justify-center group-hover/product:bg-brand-500/20 transition-colors">
+                          <Package className="h-3.5 w-3.5 text-brand-600 dark:text-brand-400" />
                         </div>
                       )}
                       <div className="min-w-0">
                         <span className="text-sm font-medium text-content-primary group-hover/product:text-brand-600 dark:group-hover/product:text-brand-400 transition-colors block truncate">{product.name}</span>
                         {getProductHighlight(product) && (
-                          <span className="text-xs text-content-muted block truncate">
+                          <span className="text-xs text-slate-600 dark:text-slate-400 block truncate">
                             {getProductHighlight(product)}
                           </span>
                         )}
@@ -240,7 +238,7 @@ export function TodayCuration() {
 
               <Link
                 href={`/assistant?message=${encodeURIComponent(buildChatMessage(curation))}`}
-                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium hover:from-amber-500/20 hover:to-orange-500/20 active:from-amber-500/30 active:to-orange-500/30 transition-all duration-200 cursor-pointer"
+                className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl bg-gradient-to-r from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400 text-sm font-medium hover:from-amber-500/20 hover:to-orange-500/20 active:from-amber-500/30 active:to-orange-500/30 active:scale-[0.98] transition-all duration-200 cursor-pointer"
               >
                 <MessageCircle className="h-4 w-4" />
                 {t('discover.cta.canICopy')}

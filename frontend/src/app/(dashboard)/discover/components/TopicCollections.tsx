@@ -108,7 +108,7 @@ export function TopicCollections() {
               <h2 className="text-base font-semibold text-content-primary">
                 {t('discover.topics.title')}
               </h2>
-              <p className="text-xs text-content-muted mt-0.5">
+              <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
                 {t('discover.topics.subtitle')}
               </p>
             </div>
@@ -168,26 +168,32 @@ export function TopicCollections() {
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
             aria-label={isEn ? 'Scroll left' : '向左滚动'}
-            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+            className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
             aria-label={isEn ? 'Scroll right' : '向右滚动'}
-            className="w-8 h-8 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover disabled:opacity-30 disabled:cursor-not-allowed transition-colors duration-200 cursor-pointer"
+            className="min-w-[44px] min-h-[44px] w-11 h-11 rounded-lg bg-surface border border-surface-border flex items-center justify-center text-content-muted hover:text-content-primary hover:bg-surface-hover active:bg-surface-hover active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed transition-all duration-200 cursor-pointer"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-5 w-5" />
           </button>
         </div>
       </div>
 
       {/* 卡片滚动区 */}
-      <div
-        ref={scrollRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1 snap-x snap-mandatory"
-      >
+      <div className="relative">
+        {/* 左侧渐变提示 */}
+        {canScrollLeft && (
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        )}
+        
+        <div
+          ref={scrollRef}
+          className="flex gap-4 overflow-x-auto scrollbar-hide pb-2 -mx-1 px-1 snap-x snap-mandatory"
+        >
         {topics.map((topic, index) => {
           const icon = ROLE_ICONS[topic.curator_role] || <Layers className="h-4 w-4" />
           const title = getTitle(topic)
@@ -253,6 +259,12 @@ export function TopicCollections() {
             </Link>
           )
         })}
+        </div>
+        
+        {/* 右侧渐变提示 */}
+        {canScrollRight && (
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
+        )}
       </div>
     </section>
   )

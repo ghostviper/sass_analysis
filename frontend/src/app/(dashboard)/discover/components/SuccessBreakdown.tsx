@@ -2,7 +2,7 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { Target, ArrowRight, Clock, Lightbulb, MessageCircle, TrendingUp, Loader2 } from 'lucide-react'
+import { Target, ArrowRight, Clock, Lightbulb, MessageCircle, TrendingUp, Package } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { SuccessStory } from '@/types/discover'
@@ -103,8 +103,26 @@ export function SuccessBreakdown() {
   if (loading) {
     return (
       <section>
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="h-6 w-6 animate-spin text-content-muted" />
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center shadow-lg shadow-rose-500/20">
+              <Target className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
+                {t('discover.breakdown.title')}
+              </h2>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.breakdown.subtitle')}</p>
+            </div>
+          </div>
+        </div>
+        <div className="grid lg:grid-cols-2 gap-5">
+          <Card className="animate-pulse">
+            <div className="h-48 bg-surface-hover rounded-lg" />
+          </Card>
+          <Card className="animate-pulse">
+            <div className="h-48 bg-surface-hover rounded-lg" />
+          </Card>
         </div>
       </section>
     )
@@ -121,7 +139,7 @@ export function SuccessBreakdown() {
             <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
               {t('discover.breakdown.title')}
             </h2>
-            <p className="text-xs text-content-muted">{t('discover.breakdown.subtitle')}</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.breakdown.subtitle')}</p>
           </div>
         </div>
         <Link
@@ -137,8 +155,8 @@ export function SuccessBreakdown() {
         {stories.map((story) => (
           <Card key={story.id} hover className={`group bg-gradient-to-br ${story.gradient}`}>
             <div className="flex items-center gap-3 mb-4 pb-4 border-b border-surface-border/50">
-              <div className="w-12 h-12 rounded-xl bg-surface flex items-center justify-center text-2xl shadow-sm">
-                {story.product.logo}
+              <div className="w-12 h-12 rounded-xl bg-surface border border-surface-border flex items-center justify-center shadow-sm">
+                <Package className="h-6 w-6 text-brand-600 dark:text-brand-400" />
               </div>
               <div className="flex-1">
                 <div className="flex items-center gap-2">

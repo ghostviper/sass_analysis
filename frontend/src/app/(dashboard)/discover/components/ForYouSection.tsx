@@ -2,7 +2,7 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { Sparkles, ArrowRight, MessageCircle, Heart, Zap, Loader2, User } from 'lucide-react'
+import { Sparkles, ArrowRight, MessageCircle, Heart, Zap, User } from 'lucide-react'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
 import type { Recommendation } from '@/types/discover'
@@ -59,8 +59,25 @@ export function ForYouSection() {
   if (loading) {
     return (
       <section>
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="h-6 w-6 animate-spin text-content-muted" />
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center shadow-lg shadow-pink-500/20">
+              <Heart className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
+                {t('discover.forYou.title')}
+              </h2>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.forYou.subtitle')}</p>
+            </div>
+          </div>
+        </div>
+        <div className="grid md:grid-cols-3 gap-4">
+          {[1, 2, 3].map((i) => (
+            <Card key={i} className="animate-pulse">
+              <div className="h-48 bg-surface-hover rounded-lg" />
+            </Card>
+          ))}
         </div>
       </section>
     )
@@ -81,7 +98,7 @@ export function ForYouSection() {
             <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
               {t('discover.forYou.title')}
             </h2>
-            <p className="text-xs text-content-muted">{t('discover.forYou.subtitle')}</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.forYou.subtitle')}</p>
           </div>
         </div>
       </div>
@@ -126,12 +143,12 @@ export function ForYouSection() {
                   <Sparkles className="h-3 w-3" />
                   {t('discover.forYou.whyForYou')}
                 </div>
-                <p className="text-content-secondary">{getWhyForYou(rec)}</p>
+                <p className="text-slate-700 dark:text-slate-300">{getWhyForYou(rec)}</p>
               </div>
             )}
 
             <div className="mb-3">
-              <div className="text-[10px] text-content-muted mb-1.5">
+              <div className="text-[10px] text-slate-600 dark:text-slate-400 mb-1.5">
                 {isEn ? 'Reference directions' : '参考方向'}
               </div>
               <div className="flex flex-wrap gap-1.5">
@@ -148,11 +165,11 @@ export function ForYouSection() {
 
             <div className="flex items-center gap-4 mb-3 text-xs">
               <div>
-                <span className="text-content-muted">{isEn ? 'Difficulty: ' : '难度：'}</span>
+                <span className="text-slate-600 dark:text-slate-400">{isEn ? 'Difficulty: ' : '难度：'}</span>
                 <span className="text-content-secondary font-medium">{getDifficultyLabel(rec.difficulty)}</span>
               </div>
               <div>
-                <span className="text-content-muted">{isEn ? 'Potential: ' : '潜力：'}</span>
+                <span className="text-slate-600 dark:text-slate-400">{isEn ? 'Potential: ' : '潜力：'}</span>
                 <span className={`font-medium
                   ${rec.potential === 'high' ? 'text-emerald-600 dark:text-emerald-400' : ''}
                   ${rec.potential === 'medium-high' ? 'text-amber-600 dark:text-amber-400' : ''}

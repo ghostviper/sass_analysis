@@ -26,13 +26,13 @@ export default function DiscoverPage() {
               <h1 className="text-2xl md:text-3xl font-display font-bold tracking-tight bg-gradient-to-r from-content-primary via-content-primary to-brand-600 dark:to-brand-400 bg-clip-text text-transparent">
                 {t('discover.title')}
               </h1>
-              <p className="text-sm text-content-secondary mt-1 font-medium">
+              <p className="text-sm text-slate-600 dark:text-slate-400 mt-1 font-medium">
                 {t('discover.subtitle')}
               </p>
             </div>
           </div>
           <div className="flex flex-wrap gap-4 mt-5">
-            <div className="flex items-center gap-2.5 text-sm text-content-secondary font-medium">
+            <div className="flex items-center gap-2.5 text-sm text-slate-600 dark:text-slate-400 font-medium">
               <div className="w-8 h-8 rounded-lg bg-brand-500/10 flex items-center justify-center">
                 <Sparkles className="h-4 w-4 text-brand-500" />
               </div>

@@ -13,7 +13,7 @@ Discover API Routes - 发现页 API
 """
 
 from datetime import date, timedelta
-from typing import Optional, List
+from typing import Optional, List, Dict
 from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel
 from sqlalchemy import select, func, desc, and_

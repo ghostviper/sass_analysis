@@ -2,7 +2,7 @@
 
 import { useLocale } from '@/contexts/LocaleContext'
 import { Card } from '@/components/ui/Card'
-import { Users, ArrowRight, ExternalLink, Package, Loader2 } from 'lucide-react'
+import { Users, ArrowRight, ExternalLink, Package } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect } from 'react'
@@ -39,8 +39,25 @@ export function CreatorUniverse() {
   if (loading) {
     return (
       <section>
-        <div className="flex items-center justify-center py-16">
-          <Loader2 className="h-6 w-6 animate-spin text-content-muted" />
+        <div className="flex items-center justify-between mb-5">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center shadow-lg shadow-cyan-500/20">
+              <Users className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
+                {t('discover.creatorUniverse.title')}
+              </h2>
+              <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.creatorUniverse.subtitle')}</p>
+            </div>
+          </div>
+        </div>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {[1, 2, 3, 4].map((i) => (
+            <Card key={i} className="animate-pulse">
+              <div className="h-32 bg-surface-hover rounded-lg" />
+            </Card>
+          ))}
         </div>
       </section>
     )
@@ -61,7 +78,7 @@ export function CreatorUniverse() {
             <h2 className="text-lg font-display font-bold text-content-primary tracking-tight">
               {t('discover.creatorUniverse.title')}
             </h2>
-            <p className="text-xs text-content-muted">{t('discover.creatorUniverse.subtitle')}</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400">{t('discover.creatorUniverse.subtitle')}</p>
           </div>
         </div>
         <Link
@@ -140,7 +157,7 @@ function CreatorCard({ creator, isEn, t, getBio, getTag }: CreatorCardProps) {
             {creator.name}
           </h3>
           {creator.handle && (
-            <p className="text-xs text-content-muted truncate">{creator.handle}</p>
+            <p className="text-xs text-slate-600 dark:text-slate-400 truncate">{creator.handle}</p>
           )}
         </div>
       </div>
@@ -174,7 +191,7 @@ function CreatorCard({ creator, isEn, t, getBio, getTag }: CreatorCardProps) {
           </div>
         ))}
         {productCount > 2 && (
-          <span className="text-[10px] text-content-muted">
+          <span className="text-[10px] text-slate-600 dark:text-slate-400">
             +{productCount - 2} more
           </span>
         )}
@@ -193,7 +210,7 @@ function CreatorCard({ creator, isEn, t, getBio, getTag }: CreatorCardProps) {
         )}
       </div>
       {creator.followers && (
-        <div className="text-[10px] text-content-muted mt-2">
+        <div className="text-[10px] text-slate-600 dark:text-slate-400 mt-2">
           {creator.followers} {isEn ? 'followers' : '粉丝'}
         </div>
       )}
