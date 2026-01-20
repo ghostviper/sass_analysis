@@ -8,11 +8,27 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.db import get_db
-from database.models import Startup, LandingPageSnapshot, LandingPageAnalysis
+from database.models import Startup, Founder, LandingPageSnapshot, LandingPageAnalysis
 from analysis.landing_analyzer import LandingPageAnalyzer
 from services.openai_service import OpenAIService
 
 router = APIRouter(prefix="/analysis/landing", tags=["Landing Page Analysis"])
+
+
+def _merge_founder_info(startup: Startup, founder: Optional[Founder]) -> dict:
+    """Prefer founder table data for display fields when available."""
+    item = startup.to_dict()
+    if not founder:
+        return item
+    if founder.username:
+        item["founder_username"] = founder.username
+    if founder.name:
+        item["founder_name"] = founder.name
+    if founder.followers is not None:
+        item["founder_followers"] = founder.followers
+    if founder.social_platform:
+        item["founder_social_platform"] = founder.social_platform
+    return item
 
 
 @router.get("/{slug}")
@@ -23,12 +39,15 @@ async def get_landing_analysis(
     """获取产品Landing Page分析结果"""
     # 获取Startup
     result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.slug == slug)
     )
-    startup = result.scalar_one_or_none()
+    row = result.first()
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     # 获取分析结果
     analysis_result = await db.execute(
@@ -53,7 +72,7 @@ async def get_landing_analysis(
         snapshot = snapshot_result.scalar_one_or_none()
 
     return {
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
         "snapshot": snapshot.to_dict() if snapshot else None,
     }
@@ -74,12 +93,15 @@ async def scrape_and_analyze(
     """
     # 获取Startup
     result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.slug == slug)
     )
-    startup = result.scalar_one_or_none()
+    row = result.first()
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     if not startup.website_url:
         raise HTTPException(status_code=400, detail="该产品没有官网URL")
@@ -107,7 +129,7 @@ async def scrape_and_analyze(
 
     return {
         "message": "分析完成",
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
     }
 

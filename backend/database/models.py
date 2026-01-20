@@ -114,6 +114,7 @@ class Startup(Base):
     profile_url = Column(String(512), nullable=True)  # TrustMRR页面链接
 
     # Founder information
+    founder_id = Column(Integer, ForeignKey("founders.id"), nullable=True, index=True)
     founder_name = Column(String(255), nullable=True)
     founder_username = Column(String(255), nullable=True, index=True)
     founder_followers = Column(Integer, nullable=True)  # 粉丝数
@@ -152,6 +153,8 @@ class Startup(Base):
     html_snapshot_path = Column(String(512), nullable=True)
     scraped_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    founder = relationship("Founder", back_populates="startups")
     
     def __repr__(self):
         return f"<Startup(name='{self.name}', revenue_30d=${self.revenue_30d})>"
@@ -168,6 +171,7 @@ class Startup(Base):
             "logo_url": self.logo_url,
             "profile_url": self.profile_url,
             # Founder
+            "founder_id": self.founder_id,
             "founder_name": self.founder_name,
             "founder_username": self.founder_username,
             "founder_followers": self.founder_followers,
@@ -253,6 +257,8 @@ class Founder(Base):
     # Metadata
     scraped_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    startups = relationship("Startup", back_populates="founder")
     
     def __repr__(self):
         return f"<Founder(name='{self.name}', rank={self.rank})>"
@@ -1349,12 +1355,15 @@ class FeaturedCreator(Base):
     product_count = Column(Integer, nullable=True)  # 产品数量
     
     founder_username = Column(String(255), index=True)
+    founder_id = Column(Integer, ForeignKey("founders.id"), nullable=True, index=True)
     
     is_featured = Column(Boolean, default=True, index=True)
     display_order = Column(Integer, default=0)
     
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    founder = relationship("Founder")
     
     def to_dict(self):
         return {
@@ -1372,6 +1381,7 @@ class FeaturedCreator(Base):
             "followers": self.followers,
             "product_count": self.product_count,
             "founder_username": self.founder_username,
+            "founder_id": self.founder_id,
             "is_featured": self.is_featured,
             "display_order": self.display_order,
         }

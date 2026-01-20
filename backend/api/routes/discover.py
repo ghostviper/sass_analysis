@@ -16,13 +16,14 @@ from datetime import date, timedelta
 from typing import Optional, List, Dict
 from fastapi import APIRouter, Query, HTTPException
 from pydantic import BaseModel
-from sqlalchemy import select, func, desc, and_
+from sqlalchemy import select, func, desc, and_, or_
+from sqlalchemy.exc import SQLAlchemyError
 from sqlalchemy.orm import selectinload
 from urllib.parse import urlparse
 
 from database.db import get_db_session
 from database.models import (
-    DiscoverTopic, TopicProduct, Startup, MotherThemeJudgment,
+    DiscoverTopic, TopicProduct, Startup, MotherThemeJudgment, Founder,
     DailyCuration, CurationProduct, SuccessStory, StoryTimelineEvent,
     StoryKeyInsight, FeaturedCreator, UserPreference
 )
@@ -510,58 +511,114 @@ async def get_creators(
             if featured:
                 # 获取关联的产品
                 normalized_usernames = []
+                founder_id_by_key = {}
+                creator_key_by_founder_id = {}
+                username_by_key = {}
+
+                featured_founder_ids = [f.founder_id for f in featured if f.founder_id]
+                username_by_id = {}
+                if featured_founder_ids:
+                    founders_result = await db.execute(
+                        select(Founder.id, Founder.username)
+                        .where(Founder.id.in_(featured_founder_ids))
+                    )
+                    for founder_id, username in founders_result.all():
+                        username_by_id[founder_id] = username
+
                 for f in featured:
+                    if f.founder_id and f.founder_id in username_by_id:
+                        key = normalize_creator_key(username_by_id[f.founder_id])
+                        if key:
+                            founder_id_by_key[key] = f.founder_id
+                            creator_key_by_founder_id[f.founder_id] = key
+                            username_by_key[key] = username_by_id[f.founder_id]
+                        continue
                     key = normalize_creator_key(f.founder_username) or normalize_creator_key(f.handle)
                     if key:
                         normalized_usernames.append(key)
                 normalized_usernames = list(dict.fromkeys(normalized_usernames))
+
+                if normalized_usernames:
+                    founders_query = (
+                        select(Founder.id, Founder.username)
+                        .where(func.lower(Founder.username).in_(normalized_usernames))
+                    )
+                    founders_result = await db.execute(founders_query)
+                    for founder_id, username in founders_result.all():
+                        key = normalize_creator_key(username)
+                        if key and key not in founder_id_by_key:
+                            founder_id_by_key[key] = founder_id
+                            creator_key_by_founder_id[founder_id] = key
+                            username_by_key[key] = username
+
+                founder_ids = list(dict.fromkeys(founder_id_by_key.values()))
+                # 兼容 founder_id 未回填的情况，始终保留 username 路径
+                fallback_usernames = list(normalized_usernames)
+
                 products_by_key = {}
                 avatar_by_key = {}
                 platform_by_key = {}
-                
-                if normalized_usernames:
+
+                if founder_ids or fallback_usernames:
+                    conditions = []
+                    if founder_ids:
+                        conditions.append(Startup.founder_id.in_(founder_ids))
+                    if fallback_usernames:
+                        conditions.append(func.lower(Startup.founder_username).in_(fallback_usernames))
                     products_query = (
                         select(Startup)
-                        .where(func.lower(Startup.founder_username).in_(normalized_usernames))
+                        .where(or_(*conditions))
                         .order_by(desc(Startup.revenue_30d))
                     )
-                    products_result = await db.execute(products_query)
-                    for p in products_result.scalars():
-                        key = normalize_creator_key(p.founder_username)
-                        if not key:
-                            continue
-                        if key not in products_by_key:
-                            products_by_key[key] = []
-                        products_by_key[key].append({
-                            'id': p.id,
-                            'name': p.name,
-                            'mrr': f"${p.revenue_30d / 1000:.0f}k" if p.revenue_30d else None,
-                        })
-                        if p.founder_avatar_url and key not in avatar_by_key:
-                            avatar_by_key[key] = p.founder_avatar_url
-                        if p.founder_social_platform and key not in platform_by_key:
-                            platform_by_key[key] = p.founder_social_platform
+                    products_result = None
+                    try:
+                        products_result = await db.execute(products_query)
+                    except SQLAlchemyError:
+                        if normalized_usernames:
+                            fallback_query = (
+                                select(Startup)
+                                .where(func.lower(Startup.founder_username).in_(normalized_usernames))
+                                .order_by(desc(Startup.revenue_30d))
+                            )
+                            products_result = await db.execute(fallback_query)
+                    if products_result:
+                        for p in products_result.scalars():
+                            key = normalize_creator_key(p.founder_username) or creator_key_by_founder_id.get(p.founder_id)
+                            if not key:
+                                continue
+                            if key not in products_by_key:
+                                products_by_key[key] = []
+                            products_by_key[key].append({
+                                'id': p.id,
+                                'name': p.name,
+                                'mrr': f"${p.revenue_30d / 1000:.0f}k" if p.revenue_30d else None,
+                            })
+                            if p.founder_avatar_url and key not in avatar_by_key:
+                                avatar_by_key[key] = p.founder_avatar_url
+                            if p.founder_social_platform and key not in platform_by_key:
+                                platform_by_key[key] = p.founder_social_platform
                 
                 creator_list = []
                 for f in featured:
-                    creator_key = normalize_creator_key(f.founder_username) or normalize_creator_key(f.handle)
+                    if f.founder_id and f.founder_id in creator_key_by_founder_id:
+                        creator_key = creator_key_by_founder_id[f.founder_id]
+                    else:
+                        creator_key = normalize_creator_key(f.founder_username) or normalize_creator_key(f.handle)
                     all_products = products_by_key.get(creator_key, []) or []
                     products = all_products[:3]
-                    # 优先用从 startups 统计出来的数量（与 leaderboard 一致），缺失时再回退
-                    computed_count = count_products_by_id(all_products) if all_products else None
-                    if computed_count:
-                        product_count = computed_count
-                    elif f.product_count is not None:
-                        product_count = f.product_count
-                    else:
-                        product_count = computed_count or 0
+                    # 统一使用 featured_creators.product_count
+                    product_count = f.product_count if f.product_count is not None else 0
+                    resolved_username = username_by_key.get(creator_key) or f.founder_username
                     avatar_url = avatar_by_key.get(creator_key)
                     platform = platform_by_key.get(creator_key)
-                    social_url = build_social_url(f.handle, platform, f.founder_username)
+                    handle = f.handle
+                    if resolved_username and (not handle or not handle.startswith("http")):
+                        handle = f"@{resolved_username}"
+                    social_url = build_social_url(handle, platform, resolved_username)
                     creator_list.append({
                         'id': f.id,
                         'name': f.name,
-                        'handle': f.handle,
+                        'handle': handle,
                         'avatar': f.avatar or '🚀',
                         'avatar_url': avatar_url,
                         'bio': f.bio_zh,
@@ -582,53 +639,110 @@ async def get_creators(
                 return {'creators': creator_list}
         
         # 从 startups 表聚合
-        # 按 founder_username 分组，计算总收入
+        # 按 founder_id 分组，避免用户名变更导致计数错误
         query = (
             select(
-                Startup.founder_username,
-                Startup.founder_name,
-                Startup.founder_avatar_url,
-                Startup.founder_followers,
-                Startup.founder_social_platform,
+                Startup.founder_id.label('founder_id'),
+                Founder.username.label('founder_username'),
+                Founder.name.label('founder_name'),
+                func.max(Startup.founder_avatar_url).label('founder_avatar_url'),
+                func.max(Startup.founder_followers).label('founder_followers'),
+                func.max(Startup.founder_social_platform).label('founder_social_platform'),
                 func.sum(Startup.revenue_30d).label('total_revenue'),
                 func.count(Startup.id).label('product_count')
             )
-            .where(Startup.founder_username.isnot(None))
+            .join(Founder, Startup.founder_id == Founder.id)
+            .where(Startup.founder_id.isnot(None))
             .where(Startup.revenue_30d > 0)
             .group_by(
-                Startup.founder_username,
-                Startup.founder_name,
-                Startup.founder_avatar_url,
-                Startup.founder_followers,
-                Startup.founder_social_platform
+                Startup.founder_id,
+                Founder.username,
+                Founder.name,
             )
             .order_by(desc('total_revenue'))
             .limit(limit)
         )
         
-        result = await db.execute(query)
-        rows = result.fetchall()
+        using_fallback = False
+        try:
+            result = await db.execute(query)
+            rows = result.fetchall()
+        except SQLAlchemyError:
+            rows = []
+            using_fallback = True
+        if not rows:
+            fallback_query = (
+                select(
+                    Startup.founder_username.label('founder_username'),
+                    func.max(Startup.founder_name).label('founder_name'),
+                    func.max(Startup.founder_avatar_url).label('founder_avatar_url'),
+                    func.max(Startup.founder_followers).label('founder_followers'),
+                    func.max(Startup.founder_social_platform).label('founder_social_platform'),
+                    func.sum(Startup.revenue_30d).label('total_revenue'),
+                    func.count(Startup.id).label('product_count')
+                )
+                .where(Startup.founder_username.isnot(None))
+                .where(Startup.founder_username != '')
+                .where(Startup.revenue_30d > 0)
+                .group_by(Startup.founder_username)
+                .order_by(desc('total_revenue'))
+                .limit(limit)
+            )
+            fallback_result = await db.execute(fallback_query)
+            rows = fallback_result.fetchall()
+            using_fallback = True
+
+        if not rows:
+            fallback_query = (
+                select(
+                    Startup.founder_username.label('founder_username'),
+                    func.max(Startup.founder_name).label('founder_name'),
+                    func.max(Startup.founder_avatar_url).label('founder_avatar_url'),
+                    func.max(Startup.founder_followers).label('founder_followers'),
+                    func.max(Startup.founder_social_platform).label('founder_social_platform'),
+                    func.sum(func.coalesce(Startup.revenue_30d, 0)).label('total_revenue'),
+                    func.count(Startup.id).label('product_count')
+                )
+                .where(Startup.founder_username.isnot(None))
+                .where(Startup.founder_username != '')
+                .group_by(Startup.founder_username)
+                .order_by(desc('total_revenue'))
+                .limit(limit)
+            )
+            fallback_result = await db.execute(fallback_query)
+            rows = fallback_result.fetchall()
+            using_fallback = True
         
         if not rows:
             return {'creators': []}
         
         # 获取每个创作者的产品列表
-        usernames = []
-        for r in rows:
-            key = normalize_creator_key(r.founder_username)
-            if key:
-                usernames.append(key)
-        usernames = list(dict.fromkeys(usernames))
-        products_query = (
-            select(Startup)
-            .where(func.lower(Startup.founder_username).in_(usernames))
-            .order_by(desc(Startup.revenue_30d))
-        )
-        products_result = await db.execute(products_query)
+        if using_fallback:
+            usernames = []
+            for r in rows:
+                key = normalize_creator_key(r.founder_username)
+                if key:
+                    usernames.append(key)
+            usernames = list(dict.fromkeys(usernames))
+            products_result = await db.execute(
+                select(Startup)
+                .where(func.lower(Startup.founder_username).in_(usernames))
+                .order_by(desc(Startup.revenue_30d))
+            )
+        else:
+            founder_ids = [r.founder_id for r in rows if r.founder_id is not None]
+            username_by_id = {r.founder_id: r.founder_username for r in rows if r.founder_id is not None}
+            products_result = await db.execute(
+                select(Startup)
+                .where(Startup.founder_id.in_(founder_ids))
+                .order_by(desc(Startup.revenue_30d))
+            )
         
         products_by_key = {}
         for p in products_result.scalars():
             key = normalize_creator_key(p.founder_username)
+            if not using_fallback and key is None:
+                key = normalize_creator_key(username_by_id.get(p.founder_id))
             if not key:
                 continue
             if key not in products_by_key:
@@ -641,23 +755,29 @@ async def get_creators(
         
         creator_list = []
         for row in rows:
-            row_key = normalize_creator_key(row.founder_username)
+            row_username = row.founder_username if hasattr(row, 'founder_username') else None
+            row_name = row.founder_name if hasattr(row, 'founder_name') else None
+            row_avatar_url = row.founder_avatar_url if hasattr(row, 'founder_avatar_url') else None
+            row_followers = row.founder_followers if hasattr(row, 'founder_followers') else None
+            row_social_platform = row.founder_social_platform if hasattr(row, 'founder_social_platform') else None
+            row_key = normalize_creator_key(row_username)
             all_products = products_by_key.get(row_key, []) or []
             products = all_products[:3]
             total_mrr = row.total_revenue or 0
-            followers = format_followers(row.founder_followers)
+            followers = format_followers(row_followers)
             social_url = build_social_url(
-                f"@{row.founder_username}" if row.founder_username else None,
-                row.founder_social_platform,
-                row.founder_username,
+                f"@{row_username}" if row_username else None,
+                row_social_platform,
+                row_username,
             )
-            
+
+            product_count = row.product_count or count_products_by_id(all_products)
             creator_list.append({
-                'id': row.founder_username,
-                'name': row.founder_name or row.founder_username,
-                'handle': f"@{row.founder_username}" if row.founder_username else None,
-                'avatar': row.founder_avatar_url or '??',
-                'avatar_url': row.founder_avatar_url,
+                'id': row_username,
+                'name': row_name or row_username,
+                'handle': f"@{row_username}" if row_username else None,
+                'avatar': row_avatar_url or '??',
+                'avatar_url': row_avatar_url,
                 'bio': None,
                 'bio_zh': None,
                 'bio_en': None,
@@ -668,9 +788,9 @@ async def get_creators(
                 'total_mrr': f"${total_mrr / 1000:.0f}k+" if total_mrr >= 1000 else f"${total_mrr:.0f}",
                 'followers': followers,
                 'social_url': social_url,
-                'social_platform': row.founder_social_platform,
+                'social_platform': row_social_platform,
                 'products': products,
-                'product_count': count_products_by_id(all_products),
+                'product_count': product_count,
             })
         
         return {'creators': creator_list}
@@ -683,6 +803,7 @@ async def get_creator_detail(creator_id: str):
         creator = None
         creator_data = None
         username = None
+        creator_key = None
 
         # 优先按精选创作者 ID 查找
         if creator_id.isdigit():
@@ -691,7 +812,16 @@ async def get_creator_detail(creator_id: str):
             creator = featured_result.scalar_one_or_none()
 
         if creator:
-            username = creator.founder_username
+            if creator.founder_id:
+                founder_result = await db.execute(
+                    select(Founder).where(Founder.id == creator.founder_id)
+                )
+                founder = founder_result.scalar_one_or_none()
+                username = founder.username if founder else (creator.founder_username or creator.handle)
+                creator_key = normalize_creator_key(username)
+            else:
+                username = creator.founder_username or creator.handle
+                creator_key = normalize_creator_key(creator.founder_username) or normalize_creator_key(creator.handle)
             creator_data = {
                 'id': creator.id,
                 'name': creator.name,
@@ -712,17 +842,32 @@ async def get_creator_detail(creator_id: str):
         else:
             # 兜底：按 founder_username 聚合
             username = creator_id.lstrip('@')
+            creator_key = normalize_creator_key(username)
 
         products = []
         avatar_url = None
         platform = None
         followers_count = None
-        if username:
-            products_query = (
-                select(Startup)
-                .where(Startup.founder_username == username)
-                .order_by(desc(Startup.revenue_30d))
+        founder = None
+        if creator_key:
+            founder_result = await db.execute(
+                select(Founder).where(func.lower(Founder.username) == creator_key)
             )
+            founder = founder_result.scalar_one_or_none()
+
+        if creator_key:
+            if founder:
+                products_query = (
+                    select(Startup)
+                    .where(Startup.founder_id == founder.id)
+                    .order_by(desc(Startup.revenue_30d))
+                )
+            else:
+                products_query = (
+                    select(Startup)
+                    .where(func.lower(Startup.founder_username) == creator_key)
+                    .order_by(desc(Startup.revenue_30d))
+                )
             products_result = await db.execute(products_query)
             startups = list(products_result.scalars())
 
@@ -733,6 +878,10 @@ async def get_creator_detail(creator_id: str):
                     platform = p.founder_social_platform
                 if followers_count is None and p.founder_followers is not None:
                     followers_count = p.founder_followers
+            if followers_count is None and founder and founder.followers is not None:
+                followers_count = founder.followers
+            if platform is None and founder and founder.social_platform:
+                platform = founder.social_platform
 
             products = [{
                 'name': p.name,
@@ -741,10 +890,11 @@ async def get_creator_detail(creator_id: str):
 
             if not creator_data:
                 total_revenue = sum(p.revenue_30d or 0 for p in startups)
+                display_username = founder.username if founder else username
                 creator_data = {
-                    'id': username,
-                    'name': startups[0].founder_name or username if startups else username,
-                    'handle': f"@{username}" if username else None,
+                    'id': display_username,
+                    'name': startups[0].founder_name or (founder.name if founder else None) or display_username if startups else display_username,
+                    'handle': f"@{display_username}" if display_username else None,
                     'avatar': avatar_url or '??',
                     'avatar_url': avatar_url,
                     'bio': None,
@@ -756,7 +906,7 @@ async def get_creator_detail(creator_id: str):
                     'tag_color': 'amber',
                     'total_mrr': f"${total_revenue / 1000:.0f}k+" if total_revenue >= 1000 else f"${total_revenue:.0f}",
                     'followers': format_followers(followers_count),
-                    'social_url': build_social_url(f"@{username}", platform, username),
+                    'social_url': build_social_url(f"@{display_username}", platform, display_username),
                     'social_platform': platform,
                     'products': [],
                     'product_count': len(startups),
@@ -766,7 +916,11 @@ async def get_creator_detail(creator_id: str):
             if not creator_data.get('avatar_url'):
                 creator_data['avatar_url'] = avatar_url
             if not creator_data.get('social_url'):
-                creator_data['social_url'] = build_social_url(creator_data.get('handle'), platform, username)
+                creator_data['social_url'] = build_social_url(
+                    creator_data.get('handle'),
+                    platform,
+                    founder.username if founder else username
+                )
             if not creator_data.get('social_platform'):
                 creator_data['social_platform'] = platform
             if not creator_data.get('followers'):

@@ -8,13 +8,47 @@ from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.db import get_db
-from database.models import Startup, ProductSelectionAnalysis, ComprehensiveAnalysis
+from database.models import Startup, Founder, ProductSelectionAnalysis, ComprehensiveAnalysis
 from analysis.product_selector import ProductSelector
 from analysis.comprehensive import ComprehensiveAnalyzer
 from analysis.domain_knowledge import DomainKnowledge
 from analysis.leaderboards import LeaderboardService, LEADERBOARDS
 
 router = APIRouter(prefix="/analysis/product", tags=["Product Analysis"])
+
+
+def _merge_founder_info(startup: Startup, founder: Optional[Founder]) -> dict:
+    """Prefer founder table data for display fields when available."""
+    item = startup.to_dict()
+    if not founder:
+        return item
+    if founder.username:
+        item["founder_username"] = founder.username
+    if founder.name:
+        item["founder_name"] = founder.name
+    if founder.followers is not None:
+        item["founder_followers"] = founder.followers
+    if founder.social_platform:
+        item["founder_social_platform"] = founder.social_platform
+    return item
+
+
+async def _get_startup_with_founder_by_id(db: AsyncSession, startup_id: int):
+    result = await db.execute(
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.id == startup_id)
+    )
+    return result.first()
+
+
+async def _get_startup_with_founder_by_slug(db: AsyncSession, slug: str):
+    result = await db.execute(
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.slug == slug)
+    )
+    return result.first()
 
 
 @router.get("/opportunities")
@@ -35,13 +69,11 @@ async def get_opportunities(
     # 获取对应的startup信息
     result_data = []
     for o in opportunities:
-        startup_result = await db.execute(
-            select(Startup).where(Startup.id == o.startup_id)
-        )
-        startup = startup_result.scalar_one_or_none()
-        if startup:
+        row = await _get_startup_with_founder_by_id(db, o.startup_id)
+        if row:
+            startup, founder = row
             result_data.append({
-                "startup": startup.to_dict(),
+                "startup": _merge_founder_info(startup, founder),
                 "analysis": o.to_dict()
             })
 
@@ -73,13 +105,11 @@ async def get_product_driven(
     # 获取对应的startup信息
     result_data = []
     for p in products:
-        startup_result = await db.execute(
-            select(Startup).where(Startup.id == p.startup_id)
-        )
-        startup = startup_result.scalar_one_or_none()
-        if startup:
+        row = await _get_startup_with_founder_by_id(db, p.startup_id)
+        if row:
+            startup, founder = row
             result_data.append({
-                "startup": startup.to_dict(),
+                "startup": _merge_founder_info(startup, founder),
                 "analysis": p.to_dict()
             })
 
@@ -107,13 +137,11 @@ async def get_small_beautiful(
     # 获取对应的startup信息
     result_data = []
     for p in products:
-        startup_result = await db.execute(
-            select(Startup).where(Startup.id == p.startup_id)
-        )
-        startup = startup_result.scalar_one_or_none()
-        if startup:
+        row = await _get_startup_with_founder_by_id(db, p.startup_id)
+        if row:
+            startup, founder = row
             result_data.append({
-                "startup": startup.to_dict(),
+                "startup": _merge_founder_info(startup, founder),
                 "analysis": p.to_dict()
             })
 
@@ -145,13 +173,11 @@ async def get_comprehensive_analysis(
 ):
     """获取产品综合分析报告"""
     # 获取Startup
-    result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
-    )
-    startup = result.scalar_one_or_none()
+    row = await _get_startup_with_founder_by_slug(db, slug)
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     # 检查是否已有综合分析
     analysis_result = await db.execute(
@@ -169,7 +195,7 @@ async def get_comprehensive_analysis(
         raise HTTPException(status_code=500, detail="分析生成失败")
 
     return {
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
     }
 
@@ -181,13 +207,11 @@ async def get_product_analysis(
 ):
     """获取单个产品的选品分析"""
     # 获取Startup
-    result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
-    )
-    startup = result.scalar_one_or_none()
+    row = await _get_startup_with_founder_by_slug(db, slug)
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     # 检查是否已有分析
     analysis_result = await db.execute(
@@ -204,7 +228,7 @@ async def get_product_analysis(
         risk_assessment = DomainKnowledge.get_risk_assessment(tags)
 
         return {
-            "startup": startup.to_dict(),
+            "startup": _merge_founder_info(startup, founder),
             "analysis": existing_analysis.to_dict(),
             # 新增：结构化输出
             "data_layer": {
@@ -232,7 +256,7 @@ async def get_product_analysis(
     risk_assessment = DomainKnowledge.get_risk_assessment(tags)
 
     return {
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
         # 新增：结构化输出
         "data_layer": {
@@ -255,13 +279,11 @@ async def analyze_product(
 ):
     """触发产品选品分析"""
     # 获取Startup
-    result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
-    )
-    startup = result.scalar_one_or_none()
+    row = await _get_startup_with_founder_by_slug(db, slug)
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     selector = ProductSelector(db)
     score = await selector.analyze_product(startup)
@@ -269,7 +291,7 @@ async def analyze_product(
 
     return {
         "message": "分析完成",
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
     }
 
@@ -281,13 +303,11 @@ async def analyze_comprehensive(
 ):
     """触发产品综合分析"""
     # 获取Startup
-    result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
-    )
-    startup = result.scalar_one_or_none()
+    row = await _get_startup_with_founder_by_slug(db, slug)
 
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="产品未找到")
+    startup, founder = row
 
     analyzer = ComprehensiveAnalyzer(db)
     analysis = await analyzer.analyze_startup(startup.id)
@@ -297,7 +317,7 @@ async def analyze_comprehensive(
 
     return {
         "message": "综合分析完成",
-        "startup": startup.to_dict(),
+        "startup": _merge_founder_info(startup, founder),
         "analysis": analysis.to_dict(),
     }
 

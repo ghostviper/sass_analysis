@@ -43,10 +43,26 @@ def _build_founder_social_url(username: str, platform: str) -> Optional[str]:
 
 async def _build_product_profile(db: AsyncSession, startup: Startup) -> Dict[str, Any]:
     """构建完整的产品画像"""
+    founder = None
+    if startup.founder_id:
+        founder_result = await db.execute(
+            select(Founder).where(Founder.id == startup.founder_id)
+        )
+        founder = founder_result.scalar_one_or_none()
+
+    founder_username = (founder.username if founder and founder.username else startup.founder_username)
+    founder_name = (founder.name if founder and founder.name else startup.founder_name)
+    founder_followers = (
+        founder.followers if founder and founder.followers is not None else startup.founder_followers
+    )
+    founder_platform = (
+        founder.social_platform if founder and founder.social_platform else startup.founder_social_platform
+    )
+
     # 构建创始人社交媒体链接
     founder_social_url = _build_founder_social_url(
-        startup.founder_username, 
-        startup.founder_social_platform
+        founder_username,
+        founder_platform,
     )
     
     # 构建系统内部产品详情页链接
@@ -65,10 +81,10 @@ async def _build_product_profile(db: AsyncSession, startup: Startup) -> Dict[str
         "growth_rate": startup.growth_rate,
         "asking_price": startup.asking_price,
         "multiple": startup.multiple,
-        "founder_name": startup.founder_name,
-        "founder_username": startup.founder_username,
-        "founder_followers": startup.founder_followers,
-        "founder_social_platform": startup.founder_social_platform,
+        "founder_name": founder_name,
+        "founder_username": founder_username,
+        "founder_followers": founder_followers,
+        "founder_social_platform": founder_platform,
         "founder_social_url": founder_social_url,  # 创始人社交媒体链接
         "customers_count": startup.customers_count,
         "is_verified": startup.is_verified,

@@ -190,11 +190,6 @@ function CreatorCard({ creator, isEn, t, getBio, getTag }: CreatorCardProps) {
             )}
           </div>
         ))}
-        {productCount > 2 && (
-          <span className="text-[10px] text-slate-600 dark:text-slate-400">
-            +{productCount - 2} more
-          </span>
-        )}
       </div>
 
       <div className="flex items-center justify-between pt-3 border-t border-surface-border/50">

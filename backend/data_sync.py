@@ -11,7 +11,7 @@ from typing import Optional, Dict, List
 from dotenv import load_dotenv
 load_dotenv()
 
-from sqlalchemy import select, func
+from sqlalchemy import select, func, text
 from database.db import init_db, AsyncSessionLocal
 from database.models import Startup, Founder, LeaderboardEntry
 from crawler.html_parser import parse_html_file
@@ -26,6 +26,18 @@ class DataSyncManager:
     """数据同步管理器"""
 
     DEFAULT_SNAPSHOT_DIR = SNAPSHOT_DIR
+
+    @staticmethod
+    def _normalize_username(value: Optional[str]) -> Optional[str]:
+        if not value:
+            return None
+        trimmed = value.strip()
+        if not trimmed:
+            return None
+        if trimmed.startswith("@"):
+            trimmed = trimmed[1:]
+        trimmed = trimmed.strip()
+        return trimmed.lower() if trimmed else None
 
     async def sync_founders_from_startups(self) -> int:
         """
@@ -48,7 +60,7 @@ class DataSyncManager:
             # 提取唯一的founder数据
             founders_data: Dict[str, Dict] = {}
             for startup in startups:
-                username = startup.founder_username
+                username = self._normalize_username(startup.founder_username)
                 if username and username not in founders_data:
                     founders_data[username] = {
                         'name': startup.founder_name or username,
@@ -96,6 +108,9 @@ class DataSyncManager:
             await session.commit()
 
             logger.info(f"Founder同步完成: 创建 {created_count}, 更新 {updated_count}")
+            await self._link_startups_to_founders()
+            await self._ensure_founders_from_featured_creators()
+            await self._link_featured_creators_to_founders()
             return created_count + updated_count
 
     async def update_from_snapshots(self, snapshot_dir: Optional[Path] = None) -> Dict:
@@ -175,8 +190,8 @@ class DataSyncManager:
 
                     # 收集founder数据
                     if data.get('founder_username'):
-                        username = data['founder_username']
-                        if username not in founders_data:
+                        username = self._normalize_username(data.get('founder_username'))
+                        if username and username not in founders_data:
                             founders_data[username] = {
                                 'name': data.get('founder_name', username),
                                 'username': username,
@@ -194,6 +209,9 @@ class DataSyncManager:
         # 同步founders
         if founders_data:
             stats['founders_synced'] = await self._sync_founders_data(founders_data)
+            await self._link_startups_to_founders()
+            await self._ensure_founders_from_featured_creators()
+            await self._link_featured_creators_to_founders()
 
         logger.info(f"快照更新完成: {stats}")
         return stats
@@ -230,6 +248,75 @@ class DataSyncManager:
 
             await session.commit()
         return count
+
+    async def _link_startups_to_founders(self) -> int:
+        """Populate startups.founder_id from founders.username."""
+        async with AsyncSessionLocal() as session:
+            result = await session.execute(text(
+                """
+                UPDATE startups
+                SET founder_id = (
+                    SELECT MIN(id)
+                    FROM founders
+                    WHERE lower(trim(replace(founders.username, '@', ''))) = lower(trim(replace(NULLIF(trim(startups.founder_username), ''), '@', '')))
+                )
+                WHERE (founder_id IS NULL OR founder_id NOT IN (SELECT id FROM founders))
+                  AND NULLIF(trim(startups.founder_username), '') IS NOT NULL
+                """
+            ))
+            await session.commit()
+            return result.rowcount or 0
+
+    async def _ensure_founders_from_featured_creators(self) -> int:
+        """Insert missing founders based on featured_creators usernames/handles."""
+        async with AsyncSessionLocal() as session:
+            result = await session.execute(text(
+                """
+                INSERT INTO founders (name, username, profile_url, scraped_at, updated_at)
+                SELECT
+                    COALESCE(NULLIF(trim(fc.name), ''), NULLIF(trim(fc.founder_username), ''), fc.handle) AS name,
+                    lower(trim(replace(COALESCE(NULLIF(trim(fc.founder_username), ''), NULLIF(trim(fc.handle), '')), '@', ''))) AS username,
+                    CASE
+                        WHEN fc.handle LIKE 'http%' THEN fc.handle
+                        ELSE 'https://x.com/' || lower(trim(replace(COALESCE(NULLIF(trim(fc.founder_username), ''), NULLIF(trim(fc.handle), '')), '@', '')))
+                    END AS profile_url,
+                    CURRENT_TIMESTAMP,
+                    CURRENT_TIMESTAMP
+                FROM featured_creators fc
+                WHERE COALESCE(NULLIF(trim(fc.founder_username), ''), NULLIF(trim(fc.handle), '')) IS NOT NULL
+                  AND COALESCE(NULLIF(trim(fc.founder_username), ''), NULLIF(trim(fc.handle), '')) != ''
+                  AND NOT EXISTS (
+                    SELECT 1
+                    FROM founders f
+                    WHERE lower(trim(replace(f.username, '@', ''))) = lower(trim(replace(COALESCE(NULLIF(trim(fc.founder_username), ''), NULLIF(trim(fc.handle), '')), '@', '')))
+                  )
+                """
+            ))
+            await session.commit()
+            return result.rowcount or 0
+
+    async def _link_featured_creators_to_founders(self) -> int:
+        """Populate featured_creators.founder_id from founders.username."""
+        async with AsyncSessionLocal() as session:
+            result = await session.execute(text(
+                """
+                UPDATE featured_creators
+                SET founder_id = (
+                    SELECT MIN(id)
+                    FROM founders
+                    WHERE lower(trim(replace(founders.username, '@', ''))) = lower(trim(replace(
+                        COALESCE(NULLIF(trim(featured_creators.founder_username), ''), NULLIF(trim(featured_creators.handle), '')),
+                        '@',
+                        ''
+                    )))
+                )
+                WHERE (founder_id IS NULL OR founder_id NOT IN (SELECT id FROM founders))
+                  AND COALESCE(NULLIF(trim(featured_creators.founder_username), ''), NULLIF(trim(featured_creators.handle), '')) IS NOT NULL
+                  AND COALESCE(NULLIF(trim(featured_creators.founder_username), ''), NULLIF(trim(featured_creators.handle), '')) != ''
+                """
+            ))
+            await session.commit()
+            return result.rowcount or 0
 
     def _update_startup_from_data(self, startup: Startup, data: dict, html_file: Path):
         """从解析的数据更新Startup对象"""

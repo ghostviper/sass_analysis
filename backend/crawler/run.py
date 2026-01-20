@@ -9,7 +9,7 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from sqlalchemy import select, func
+from sqlalchemy import select, func, text
 from database.db import init_db, AsyncSessionLocal
 from database.models import Startup, Founder, LeaderboardEntry, RevenueHistory
 from crawler.browser import BrowserManager
@@ -265,6 +265,19 @@ async def save_founders(founders: list):
                 )
                 session.add(founder)
 
+        await session.flush()
+        await session.execute(text(
+            """
+            UPDATE startups
+            SET founder_id = (
+                SELECT MIN(id)
+                FROM founders
+                WHERE lower(trim(replace(founders.username, '@', ''))) = lower(trim(replace(NULLIF(trim(startups.founder_username), ''), '@', '')))
+            )
+            WHERE (founder_id IS NULL OR founder_id NOT IN (SELECT id FROM founders))
+              AND NULLIF(trim(startups.founder_username), '') IS NOT NULL
+            """
+        ))
         await session.commit()
         print(f"Saved {len(founders)} founders to database")
 
@@ -282,6 +295,10 @@ def extract_founders_from_startups(startups: list) -> list:
     founders = {}
     for startup in startups:
         username = startup.get('founder_username')
+        if username:
+            username = username.strip().lstrip('@').strip().lower()
+        if not username:
+            continue
         if username and username not in founders:
             founders[username] = {
                 'name': startup.get('founder_name') or username,

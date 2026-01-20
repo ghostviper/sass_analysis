@@ -9,7 +9,7 @@ from dataclasses import dataclass
 from sqlalchemy import select, desc, and_, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from database.models import Startup, ProductSelectionAnalysis
+from database.models import Startup, Founder, ProductSelectionAnalysis
 
 
 @dataclass
@@ -193,10 +193,14 @@ class LeaderboardService:
 
         # 构建查询
         query = (
-            select(Startup, ProductSelectionAnalysis)
+            select(Startup, ProductSelectionAnalysis, Founder)
             .outerjoin(
                 ProductSelectionAnalysis,
                 Startup.id == ProductSelectionAnalysis.startup_id
+            )
+            .outerjoin(
+                Founder,
+                Startup.founder_id == Founder.id
             )
         )
 
@@ -299,8 +303,17 @@ class LeaderboardService:
 
         # 格式化结果
         products = []
-        for startup, analysis in rows:
+        for startup, analysis, founder in rows:
             product_data = startup.to_dict()
+            if founder:
+                if founder.username:
+                    product_data["founder_username"] = founder.username
+                if founder.name:
+                    product_data["founder_name"] = founder.name
+                if founder.followers is not None:
+                    product_data["founder_followers"] = founder.followers
+                if founder.social_platform:
+                    product_data["founder_social_platform"] = founder.social_platform
             if analysis:
                 product_data["analysis"] = analysis.to_dict()
                 product_data["tags"] = analysis.to_tags_dict()

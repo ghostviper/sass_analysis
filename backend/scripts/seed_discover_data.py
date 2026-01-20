@@ -22,20 +22,31 @@ from dotenv import load_dotenv
 
 load_dotenv(Path(__file__).parent.parent / ".env")
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.orm import Session
 from database.db import get_db_session, get_sync_session
 from database.models import (
-    DailyCuration, CurationProduct, SuccessStory, 
-    StoryTimelineEvent, StoryKeyInsight, FeaturedCreator, Startup
+    DailyCuration, CurationProduct, SuccessStory,
+    StoryTimelineEvent, StoryKeyInsight, FeaturedCreator, Startup, Founder
 )
 from curation.daily_generator import DailyCurationGenerator
 from curation.daily_templates import ALL_TEMPLATES
 
 
-async def seed_featured_creators():
-    """插入精选创作者数据"""
+async def seed_featured_creators(upsert: bool = False):
+    """插入或更新精选创作者数据"""
     print("Seeding featured creators...")
+
+    def normalize_username(value):
+        if not value:
+            return None
+        trimmed = value.strip()
+        if not trimmed:
+            return None
+        if trimmed.startswith("@"):
+            trimmed = trimmed[1:]
+        trimmed = trimmed.strip()
+        return trimmed.lower() if trimmed else None
     
     creators_data = [
         {
@@ -106,16 +117,38 @@ async def seed_featured_creators():
     
     async with get_db_session() as db:
         for data in creators_data:
+            founder_username = normalize_username(data.get("founder_username") or data.get("handle"))
+            if founder_username:
+                data["founder_username"] = founder_username
+                founder_result = await db.execute(
+                    select(Founder)
+                    .where(func.lower(func.replace(Founder.username, "@", "")) == founder_username)
+                )
+                founder = founder_result.scalar_one_or_none()
+                if not founder:
+                    founder = Founder(
+                        name=data.get("name") or founder_username,
+                        username=founder_username,
+                        profile_url=f"https://x.com/{founder_username}",
+                    )
+                    db.add(founder)
+                    await db.flush()
+                data["founder_id"] = founder.id
             existing = await db.execute(
                 select(FeaturedCreator).where(FeaturedCreator.handle == data["handle"])
             )
-            if existing.scalar_one_or_none():
-                print(f"  Skipping {data['name']} (already exists)")
-                continue
-            
-            creator = FeaturedCreator(**data)
-            db.add(creator)
-            print(f"  Added {data['name']}")
+            existing_creator = existing.scalar_one_or_none()
+            if existing_creator:
+                if not upsert:
+                    print(f"  Skipping {data['name']} (already exists)")
+                    continue
+                for key, value in data.items():
+                    setattr(existing_creator, key, value)
+                print(f"  Updated {data['name']}")
+            else:
+                creator = FeaturedCreator(**data)
+                db.add(creator)
+                print(f"  Added {data['name']}")
         
         await db.commit()
     
@@ -283,6 +316,7 @@ async def main():
     parser.add_argument("--curations-only", action="store_true", help="Only generate daily curations")
     parser.add_argument("--preview", action="store_true", help="Preview template matches without writing")
     parser.add_argument("--force", action="store_true", help="Force regenerate existing curations")
+    parser.add_argument("--upsert", action="store_true", help="Update featured creators when they already exist")
     args = parser.parse_args()
     
     if args.preview:
@@ -296,7 +330,7 @@ async def main():
     if args.curations_only:
         seed_daily_curations_sync(force_regenerate=args.force)
     else:
-        await seed_featured_creators()
+        await seed_featured_creators(upsert=args.upsert)
         await seed_success_stories()
         seed_daily_curations_sync(force_regenerate=args.force)
     

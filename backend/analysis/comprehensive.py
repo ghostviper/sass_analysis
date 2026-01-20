@@ -10,6 +10,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.models import (
     Startup,
+    Founder,
     ProductSelectionAnalysis,
     LandingPageAnalysis,
     CategoryAnalysis,
@@ -346,13 +347,26 @@ class ComprehensiveAnalyzer:
         recommendations = []
         for analysis in analyses:
             startup_result = await self.db.execute(
-                select(Startup).where(Startup.id == analysis.startup_id)
+                select(Startup, Founder)
+                .outerjoin(Founder, Startup.founder_id == Founder.id)
+                .where(Startup.id == analysis.startup_id)
             )
-            startup = startup_result.scalar_one_or_none()
+            row = startup_result.first()
 
-            if startup:
+            if row:
+                startup, founder = row
+                startup_data = startup.to_dict()
+                if founder:
+                    if founder.username:
+                        startup_data["founder_username"] = founder.username
+                    if founder.name:
+                        startup_data["founder_name"] = founder.name
+                    if founder.followers is not None:
+                        startup_data["founder_followers"] = founder.followers
+                    if founder.social_platform:
+                        startup_data["founder_social_platform"] = founder.social_platform
                 recommendations.append({
-                    "startup": startup.to_dict(),
+                    "startup": startup_data,
                     "analysis": analysis.to_dict(),
                 })
 

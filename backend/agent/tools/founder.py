@@ -20,11 +20,18 @@ async def _get_founder_products(username: str) -> Dict[str, Any]:
         )
         founder = founder_result.scalar_one_or_none()
 
-        products_result = await db.execute(
-            select(Startup)
-            .where(Startup.founder_username == username)
-            .order_by(desc(Startup.revenue_30d))
-        )
+        if founder:
+            products_result = await db.execute(
+                select(Startup)
+                .where(Startup.founder_id == founder.id)
+                .order_by(desc(Startup.revenue_30d))
+            )
+        else:
+            products_result = await db.execute(
+                select(Startup)
+                .where(Startup.founder_username == username)
+                .order_by(desc(Startup.revenue_30d))
+            )
         products = products_result.scalars().all()
 
         if not products and not founder:
@@ -54,35 +61,33 @@ async def _get_founder_products(username: str) -> Dict[str, Any]:
 
         # 构建创始人社交媒体链接
         founder_social_url = None
-        founder_username_val = username  # 使用传入的 username 参数
-        
-        # 优先从 Startup 获取社交平台信息
-        if products and products[0].founder_username:
-            founder_username_val = products[0].founder_username
-            platform = (products[0].founder_social_platform or "").lower()
-            if platform in ['x', 'x (twitter)', 'twitter', '𝕏']:
-                founder_social_url = f"https://x.com/{founder_username_val}"
-            elif 'linkedin' in platform:
-                founder_social_url = f"https://linkedin.com/in/{founder_username_val}"
-            else:
-                # 默认使用 X
-                founder_social_url = f"https://x.com/{founder_username_val}"
-        elif founder:
-            # 如果没有产品信息，从 Founder 表获取
+        founder_username_val = founder.username if founder and founder.username else username
+        platform = None
+
+        if founder and founder.social_platform:
             platform = (founder.social_platform or "").lower()
-            if platform in ['x', 'x (twitter)', 'twitter', '𝕏']:
-                founder_social_url = f"https://x.com/{founder.username}"
-            elif 'linkedin' in platform:
-                founder_social_url = f"https://linkedin.com/in/{founder.username}"
-            else:
-                founder_social_url = f"https://x.com/{founder.username}"
+        elif products and products[0].founder_social_platform:
+            platform = (products[0].founder_social_platform or "").lower()
+
+        if not platform and products and products[0].founder_username:
+            founder_username_val = products[0].founder_username
+
+        if platform in ['x', 'x (twitter)', 'twitter', '𝕏'] or not platform:
+            founder_social_url = f"https://x.com/{founder_username_val}"
+        elif 'linkedin' in platform:
+            founder_social_url = f"https://linkedin.com/in/{founder_username_val}"
+        else:
+            founder_social_url = f"https://x.com/{founder_username_val}"
 
         return {
             "founder": {
                 "username": founder_username_val,
-                "name": founder.name if founder else (products[0].founder_name if products else None),
+                "name": founder.name if founder and founder.name else (products[0].founder_name if products else None),
                 "rank": founder.rank if founder else None,
-                "followers": founder.followers if founder else (products[0].founder_followers if products else None),
+                "followers": (
+                    founder.followers if founder and founder.followers is not None
+                    else (products[0].founder_followers if products else None)
+                ),
                 "social_url": founder_social_url,  # 社交媒体链接
             },
             "products": product_profiles,

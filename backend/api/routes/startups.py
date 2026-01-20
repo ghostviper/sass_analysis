@@ -10,6 +10,22 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from database.db import get_db
 from database.models import Startup, Founder, ProductSelectionAnalysis
 
+
+def _merge_founder_info(startup: Startup, founder: Optional[Founder]) -> dict:
+    """Prefer founder table data for display fields when available."""
+    item = startup.to_dict()
+    if not founder:
+        return item
+    if founder.username:
+        item["founder_username"] = founder.username
+    if founder.name:
+        item["founder_name"] = founder.name
+    if founder.followers is not None:
+        item["founder_followers"] = founder.followers
+    if founder.social_platform:
+        item["founder_social_platform"] = founder.social_platform
+    return item
+
 router = APIRouter()
 
 
@@ -53,16 +69,22 @@ async def get_startups(
 
     # Base query
     if need_analysis_join:
-        query = select(Startup, ProductSelectionAnalysis).outerjoin(
+        query = select(Startup, ProductSelectionAnalysis, Founder).outerjoin(
             ProductSelectionAnalysis,
             Startup.id == ProductSelectionAnalysis.startup_id
+        ).outerjoin(
+            Founder,
+            Startup.founder_id == Founder.id
         )
         count_query = select(func.count(Startup.id)).outerjoin(
             ProductSelectionAnalysis,
             Startup.id == ProductSelectionAnalysis.startup_id
         )
     else:
-        query = select(Startup)
+        query = select(Startup, Founder).outerjoin(
+            Founder,
+            Startup.founder_id == Founder.id
+        )
         count_query = select(func.count(Startup.id))
 
     # 收集所有筛选条件
@@ -191,10 +213,8 @@ async def get_startups(
     if need_analysis_join:
         rows = result.all()
         data = []
-        for row in rows:
-            startup = row[0]
-            analysis = row[1]
-            item = startup.to_dict()
+        for startup, analysis, founder in rows:
+            item = _merge_founder_info(startup, founder)
             if analysis:
                 item["analysis"] = analysis.to_dict()
                 item["tags"] = analysis.to_tags_dict()
@@ -203,8 +223,8 @@ async def get_startups(
                 item["tags"] = None
             data.append(item)
     else:
-        startups = result.scalars().all()
-        data = [s.to_dict() for s in startups]
+        rows = result.all()
+        data = [_merge_founder_info(startup, founder) for startup, founder in rows]
 
     return {
         "data": data,
@@ -332,14 +352,17 @@ async def get_startup(
 ):
     """Get a single startup by slug"""
     result = await db.execute(
-        select(Startup).where(Startup.slug == slug)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.slug == slug)
     )
-    startup = result.scalar_one_or_none()
+    row = result.first()
     
-    if not startup:
+    if not row:
         raise HTTPException(status_code=404, detail="Startup not found")
-    
-    return startup.to_dict()
+
+    startup, founder = row
+    return _merge_founder_info(startup, founder)
 
 
 @router.get("/categories")

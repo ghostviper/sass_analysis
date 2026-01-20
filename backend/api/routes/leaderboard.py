@@ -5,7 +5,7 @@ Founder Leaderboard API Routes
 
 from typing import Optional, List
 from fastapi import APIRouter, Depends, Query
-from sqlalchemy import select, func, desc, asc, case
+from sqlalchemy import select, func, desc, asc, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.db import get_db
@@ -37,32 +37,42 @@ async def get_founder_leaderboard(
     - max_growth: 最高增长率
     - followers: 粉丝数
     """
-    # 聚合查询：按创始人用户名分组
-    # 使用 founder_username 作为唯一标识
+    product_count_col = func.count(Startup.id).label("product_count")
+    total_revenue_col = func.sum(func.coalesce(Startup.revenue_30d, 0)).label("total_revenue")
+    avg_revenue_col = func.avg(func.coalesce(Startup.revenue_30d, 0)).label("avg_revenue")
+    max_growth_col = func.max(func.coalesce(Startup.growth_rate, 0)).label("max_growth")
+    followers_col = func.max(func.coalesce(Startup.founder_followers, Founder.followers, 0)).label("followers")
+    social_platform_col = func.max(func.coalesce(Startup.founder_social_platform, Founder.social_platform)).label("social_platform")
+    avatar_url_col = func.max(Startup.founder_avatar_url).label("avatar_url")
+
+    # 聚合查询：按 founder_id 分组，避免同名/大小写差异导致统计错误
     query = (
         select(
-            Startup.founder_username.label("username"),
-            func.max(Startup.founder_name).label("name"),
-            func.count(Startup.id).label("product_count"),
-            func.sum(func.coalesce(Startup.revenue_30d, 0)).label("total_revenue"),
-            func.avg(func.coalesce(Startup.revenue_30d, 0)).label("avg_revenue"),
-            func.max(func.coalesce(Startup.growth_rate, 0)).label("max_growth"),
-            func.max(func.coalesce(Startup.founder_followers, 0)).label("followers"),
-            func.max(Startup.founder_social_platform).label("social_platform"),
-            func.max(Startup.founder_avatar_url).label("avatar_url"),
+            Startup.founder_id.label("founder_id"),
+            Founder.username.label("username"),
+            Founder.name.label("name"),
+            product_count_col,
+            total_revenue_col,
+            avg_revenue_col,
+            max_growth_col,
+            followers_col,
+            social_platform_col,
+            avatar_url_col,
         )
-        .where(Startup.founder_username.isnot(None))
-        .where(Startup.founder_username != "")
-        .group_by(Startup.founder_username)
-        .having(func.count(Startup.id) >= min_products)
+        .join(Founder, Startup.founder_id == Founder.id)
+        .where(Startup.founder_id.isnot(None))
+        .group_by(Startup.founder_id, Founder.username, Founder.name)
+        .having(product_count_col >= min_products)
     )
 
     # 搜索过滤
     if search:
         search_pattern = f"%{search}%"
-        query = query.having(
-            (Startup.founder_username.ilike(search_pattern)) |
-            (func.max(Startup.founder_name).ilike(search_pattern))
+        query = query.where(
+            or_(
+                Founder.username.ilike(search_pattern),
+                Founder.name.ilike(search_pattern),
+            )
         )
 
     # 计算总数
@@ -72,13 +82,13 @@ async def get_founder_leaderboard(
 
     # 应用排序
     sort_column_map = {
-        "total_revenue": "total_revenue",
-        "product_count": "product_count",
-        "avg_revenue": "avg_revenue",
-        "max_growth": "max_growth",
-        "followers": "followers",
+        "total_revenue": total_revenue_col,
+        "product_count": product_count_col,
+        "avg_revenue": avg_revenue_col,
+        "max_growth": max_growth_col,
+        "followers": followers_col,
     }
-    sort_col = sort_column_map.get(sort_by, "total_revenue")
+    sort_col = sort_column_map.get(sort_by, total_revenue_col)
 
     if sort_order == "desc":
         query = query.order_by(desc(sort_col))
@@ -146,12 +156,25 @@ async def get_founder_detail(
     db: AsyncSession = Depends(get_db),
 ):
     """获取创始人详情及其所有产品"""
-    # 获取该创始人的所有产品
-    result = await db.execute(
-        select(Startup)
-        .where(Startup.founder_username == username)
-        .order_by(desc(Startup.revenue_30d))
+    normalized_username = username.strip().lstrip("@")
+    founder_result = await db.execute(
+        select(Founder).where(func.lower(Founder.username) == normalized_username.lower())
     )
+    founder = founder_result.scalar_one_or_none()
+
+    # 获取该创始人的所有产品
+    if founder:
+        result = await db.execute(
+            select(Startup)
+            .where(Startup.founder_id == founder.id)
+            .order_by(desc(Startup.revenue_30d))
+        )
+    else:
+        result = await db.execute(
+            select(Startup)
+            .where(Startup.founder_username == normalized_username)
+            .order_by(desc(Startup.revenue_30d))
+        )
     startups = result.scalars().all()
 
     if not startups:
@@ -164,28 +187,47 @@ async def get_founder_detail(
     followers = max((s.founder_followers or 0 for s in startups), default=0)
 
     first_startup = startups[0]
-    social_platform = first_startup.founder_social_platform or "twitter"
+    social_platform = (
+        first_startup.founder_social_platform
+        or (founder.social_platform if founder else None)
+        or "twitter"
+    )
 
     # 构建社交链接
+    social_username = founder.username if founder else normalized_username
     if social_platform.lower() in ["twitter", "x"]:
-        social_url = f"https://x.com/{username}"
+        social_url = f"https://x.com/{social_username}"
     elif social_platform.lower() == "linkedin":
-        social_url = f"https://linkedin.com/in/{username}"
+        social_url = f"https://linkedin.com/in/{social_username}"
     else:
-        social_url = f"https://x.com/{username}"
+        social_url = f"https://x.com/{social_username}"
+
+    products = []
+    for s in startups:
+        item = s.to_dict()
+        if founder:
+            if founder.username:
+                item["founder_username"] = founder.username
+            if founder.name:
+                item["founder_name"] = founder.name
+            if founder.followers is not None:
+                item["founder_followers"] = founder.followers
+            if founder.social_platform:
+                item["founder_social_platform"] = founder.social_platform
+        products.append(item)
 
     return {
         "data": {
-            "username": username,
-            "name": first_startup.founder_name or username,
+            "username": founder.username if founder else normalized_username,
+            "name": (founder.name if founder else None) or first_startup.founder_name or normalized_username,
             "product_count": len(startups),
             "total_revenue": round(total_revenue, 2),
             "avg_revenue": round(avg_revenue, 2),
             "max_growth": round(max_growth, 2),
-            "followers": followers,
+            "followers": followers or (founder.followers if founder else 0),
             "social_platform": social_platform,
             "social_url": social_url,
-            "products": [s.to_dict() for s in startups],
+            "products": products,
         }
     }
 
@@ -197,9 +239,8 @@ async def get_leaderboard_stats(
     """获取排行榜统计概览"""
     # 统计有效创始人数量（有产品的）
     founder_count_result = await db.execute(
-        select(func.count(func.distinct(Startup.founder_username)))
-        .where(Startup.founder_username.isnot(None))
-        .where(Startup.founder_username != "")
+        select(func.count(func.distinct(Startup.founder_id)))
+        .where(Startup.founder_id.isnot(None))
     )
     total_founders = founder_count_result.scalar() or 0
 
@@ -207,9 +248,9 @@ async def get_leaderboard_stats(
     multi_product_result = await db.execute(
         select(func.count())
         .select_from(
-            select(Startup.founder_username)
-            .where(Startup.founder_username.isnot(None))
-            .group_by(Startup.founder_username)
+            select(Startup.founder_id)
+            .where(Startup.founder_id.isnot(None))
+            .group_by(Startup.founder_id)
             .having(func.count(Startup.id) > 1)
             .subquery()
         )

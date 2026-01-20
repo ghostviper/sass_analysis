@@ -9,9 +9,25 @@ from sqlalchemy import select, func, desc
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from database.db import get_db
-from database.models import Startup, ProductSelectionAnalysis
+from database.models import Startup, Founder, ProductSelectionAnalysis
 
 router = APIRouter()
+
+
+def _merge_founder_info(startup: Startup, founder: Optional[Founder]) -> dict:
+    """Prefer founder table data for display fields when available."""
+    item = startup.to_dict()
+    if not founder:
+        return item
+    if founder.username:
+        item["founder_username"] = founder.username
+    if founder.name:
+        item["founder_name"] = founder.name
+    if founder.followers is not None:
+        item["founder_followers"] = founder.followers
+    if founder.social_platform:
+        item["founder_social_platform"] = founder.social_platform
+    return item
 
 
 @router.get("/analytics/overview")
@@ -97,15 +113,16 @@ async def get_top_growth(
 ):
     """Get startups with highest growth rates"""
     result = await db.execute(
-        select(Startup)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
         .where(Startup.growth_rate.isnot(None))
         .order_by(desc(Startup.growth_rate))
         .limit(limit)
     )
-    startups = result.scalars().all()
+    rows = result.all()
     
     return {
-        "data": [s.to_dict() for s in startups]
+        "data": [_merge_founder_info(startup, founder) for startup, founder in rows]
     }
 
 
@@ -116,15 +133,16 @@ async def get_top_revenue(
 ):
     """Get startups with highest revenue"""
     result = await db.execute(
-        select(Startup)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
         .where(Startup.revenue_30d.isnot(None))
         .order_by(desc(Startup.revenue_30d))
         .limit(limit)
     )
-    startups = result.scalars().all()
+    rows = result.all()
     
     return {
-        "data": [s.to_dict() for s in startups]
+        "data": [_merge_founder_info(startup, founder) for startup, founder in rows]
     }
 
 
@@ -135,16 +153,17 @@ async def get_best_deals(
 ):
     """Get startups with lowest multiples (best value)"""
     result = await db.execute(
-        select(Startup)
+        select(Startup, Founder)
+        .outerjoin(Founder, Startup.founder_id == Founder.id)
         .where(Startup.multiple.isnot(None))
         .where(Startup.multiple > 0)
         .order_by(Startup.multiple)
         .limit(limit)
     )
-    startups = result.scalars().all()
+    rows = result.all()
     
     return {
-        "data": [s.to_dict() for s in startups]
+        "data": [_merge_founder_info(startup, founder) for startup, founder in rows]
     }
 
 

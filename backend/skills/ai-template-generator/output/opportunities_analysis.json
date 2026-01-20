@@ -1,0 +1,12 @@
+{
+  "type_counts": {
+    "market_gap": 1,
+    "value_arbitrage": 1,
+    "competitive_weakness": 1,
+    "metrics_driven": 1,
+    "channel_innovation": 1
+  },
+  "old_types_count": 0,
+  "new_types_count": 5,
+  "total": 5
+}
